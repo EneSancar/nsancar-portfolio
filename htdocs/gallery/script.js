@@ -1,36 +1,61 @@
-// Google Drive klasör ID (herkese açık paylaşım linkiyle uyumlu)
+// Google Drive klasör ID (klasör "Bağlantıya sahip olan herkes" görüntüleyebilir olmalı)
 const folderId = "1Z-KsRAANfGu1AUdkkj36joR5rg-Zs4Op";
 
 const gallery = document.getElementById("gallery");
 const loader = document.getElementById("loader");
 
-// API anahtarı sunucuda tutulur (/api/drive — Vercel env: GOOGLE_DRIVE_API_KEY)
+function showGalleryError(message) {
+  gallery.innerHTML = `<p class="gallery-error">${message}</p>`;
+  loader.style.display = "none";
+}
+
+function renderImages(files) {
+  gallery.innerHTML = "";
+  files.forEach((file) => {
+    const img = document.createElement("img");
+    img.src = `https://drive.google.com/thumbnail?id=${file.id}&sz=w1000`;
+    img.alt = file.name || "Galeri fotoğrafı";
+    img.loading = "lazy";
+    gallery.appendChild(img);
+  });
+  loader.style.display = "none";
+}
+
 async function loadImages() {
-  const url = `/api/drive?folderId=${encodeURIComponent(folderId)}`;
+  const apiUrl = `/api/drive?folderId=${encodeURIComponent(folderId)}`;
 
   try {
-    const res = await fetch(url);
-    const data = await res.json();
+    const res = await fetch(apiUrl);
+    let data;
 
-    if (!data.files || data.files.length === 0) {
-      gallery.innerHTML = "<p style='text-align:center;'>Bu klasörde henüz fotoğraf yok 📂</p>";
-      loader.style.display = "none";
+    try {
+      data = await res.json();
+    } catch {
+      showGalleryError("Galeri servisi yanıt vermedi. Vercel deploy ve /api/drive yolunu kontrol et.");
       return;
     }
 
-    data.files.forEach(file => {
-      const img = document.createElement("img");
-      img.src = `https://drive.google.com/thumbnail?id=${file.id}&sz=w1000`;
-      img.alt = file.name;
-      img.loading = "lazy"; // Lazy Load aktif
-      gallery.appendChild(img);
-    });
+    if (!res.ok) {
+      if (data.error === "missing_api_key") {
+        showGalleryError(
+          "Drive API anahtarı tanımlı değil. Vercel → Settings → Environment Variables → GOOGLE_DRIVE_API_KEY ekle ve yeniden deploy et."
+        );
+        return;
+      }
+      console.error("Drive API:", data);
+      showGalleryError("Fotoğraflar yüklenemedi. API anahtarı veya Drive klasör paylaşımını kontrol et.");
+      return;
+    }
 
-    loader.style.display = "none";
+    if (!data.files || data.files.length === 0) {
+      showGalleryError("Bu klasörde görüntülenecek fotoğraf bulunamadı.");
+      return;
+    }
+
+    renderImages(data.files);
   } catch (err) {
     console.error("Drive API hatası:", err);
-    gallery.innerHTML = "<p style='color:red;'>Fotoğraflar yüklenemedi ❌</p>";
-    loader.style.display = "none";
+    showGalleryError("Fotoğraflar yüklenemedi. İnternet bağlantını veya site deploy ayarlarını kontrol et.");
   }
 }
 
@@ -51,6 +76,4 @@ modal.onclick = (e) => {
   if (e.target === modal) modal.style.display = "none";
 };
 
-
-// Başlat
 loadImages();

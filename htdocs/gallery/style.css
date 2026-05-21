@@ -81,6 +81,15 @@ body.dark #theme-toggle {
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
+.gallery-error {
+  text-align: center;
+  color: #f87171;
+  max-width: 32rem;
+  margin: 2rem auto;
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
 /* Loader */
 .loader-container {
   display: flex;

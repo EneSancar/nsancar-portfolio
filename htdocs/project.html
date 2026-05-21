@@ -43,7 +43,9 @@
         <h2 class="projects-section-title"><i class="fa-brands fa-figma"></i> UI/UX Tasarımları</h2>
         <div class="project-grid">
           <article class="project-card project-card--figma">
-            <div class="project-card-thumb" style="background-image: url('image/projects/cineforum.png')"></div>
+            <div class="project-card-thumb project-card-thumb--img">
+              <img src="image/projects/cineforum.png?v=2" alt="CineForum arayüz önizlemesi" loading="lazy">
+            </div>
             <div class="project-card-body">
               <div class="project-card-tags">
                 <span>Figma</span><span>UI/UX</span><span>Mobil</span><span>AI</span><span>Sosyal</span>
@@ -66,27 +68,22 @@
       <section class="projects-section reveal">
         <h2 class="projects-section-title"><i class="fa-solid fa-code"></i> Web & Geliştirme</h2>
         <div class="project-grid">
-        <article class="project-card reveal">
+        <article class="project-card project-card--dev reveal">
           <div class="project-card-thumb" style="background-image: url('image/blockWp.webp')"></div>
           <div class="project-card-body">
             <div class="project-card-tags">
-              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Eğitim</span>
             </div>
             <h3>IKU Ders Notları</h3>
-            <p>İstanbul Kültür Üniversitesi öğrencileri için ders kaynakları, arama ve karanlık mod destekli masaüstü tarzı web uygulaması.</p>
-            <a href="IKU/index.html" class="project-card-link">Projeyi gör <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card reveal">
-          <div class="project-card-thumb" style="background-image: url('image/webdsgn.webp')"></div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span>Design</span><span>Gallery</span>
+            <p>İstanbul Kültür Üniversitesi öğrencileri için ders kaynakları, arama ve karanlık mod destekli web uygulaması.</p>
+            <div class="project-card-actions">
+              <button type="button" class="project-card-link project-detail-btn" data-project="iku">
+                Detayları gör <i class="fa-solid fa-circle-info"></i>
+              </button>
+              <a href="IKU/index.html" class="project-card-link project-card-link--secondary">
+                Siteye git <i class="fa-solid fa-arrow-right"></i>
+              </a>
             </div>
-            <h3>Web & Grafik Galeri</h3>
-            <p>Web tasarım ve grafik tasarım çalışmalarımın sergilendiği interaktif galeri bölümü.</p>
-            <a href="gallery/index.html" class="project-card-link">Galeriye git <i class="fa-solid fa-arrow-right"></i></a>
           </div>
         </article>
 
@@ -99,18 +96,6 @@
             <h3>nsancar.com</h3>
             <p>Kişisel portfolyo sitesi — hizmetler, yetenekler, iletişim ve proje vitrinini bir arada sunar.</p>
             <a href="index.html" class="project-card-link">Ana sayfa <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </article>
-
-        <article class="project-card coming-soon reveal">
-          <div class="project-card-thumb" style="background-image: url('image/projectwp2.webp')"></div>
-          <div class="project-card-body">
-            <div class="project-card-tags">
-              <span>Yakında</span>
-            </div>
-            <h3>WordPress Projesi</h3>
-            <p>WordPress tabanlı kurumsal site projesi — yapım aşamasında.</p>
-            <span class="project-card-link"><i class="fa-solid fa-lock"></i> Yakında</span>
           </div>
         </article>
         </div>
@@ -135,7 +120,7 @@
       <p class="project-modal-lead">Sinema ve dizi tutkunlarını tek çatı altında toplayan, topluluk odaklı ve yapay zeka destekli sosyal mobil uygulama.</p>
     </div>
     <div class="project-modal-preview">
-      <img src="image/projects/cineforum.png" alt="CineForum mobil arayüz tasarımı">
+      <img src="image/projects/cineforum.png?v=2" alt="CineForum mobil arayüz tasarımı">
     </div>
     <div class="project-modal-body">
       <h3>Proje tanımı</h3>
@@ -149,6 +134,31 @@
       </ul>
       <a href="https://www.figma.com/design/cIKG0HpM5bIbO0JzNK9z6y/CINEFORUM?node-id=0-1" class="btn btn-primary project-modal-cta" target="_blank" rel="noopener">
         <i class="fa-brands fa-figma"></i> Figma dosyasını aç
+      </a>
+    </div>
+  </template>
+
+  <template id="project-detail-iku">
+    <div class="project-modal-header">
+      <span class="project-modal-badge">Web · Eğitim</span>
+      <h2 id="projectModalTitle">IKU Ders Notları</h2>
+      <p class="project-modal-lead">İstanbul Kültür Üniversitesi Bilgisayar Programcılığı öğrencileri için hazırlanmış ders kaynakları ve çalışma platformu.</p>
+    </div>
+    <div class="project-modal-preview">
+      <img src="image/blockWp.webp" alt="IKU Ders Notları arayüzü">
+    </div>
+    <div class="project-modal-body">
+      <h3>Proje hakkında</h3>
+      <p>Ders notları, PDF kaynaklar ve ders sayfalarını tek bir arayüzde toplayan; arama, yan menü ve karanlık mod ile kullanılabilen bir okul projesi.</p>
+      <h3>Özellikler</h3>
+      <ul>
+        <li><strong>Ders arşivi:</strong> Veri tabanı, blok zincir, inkılap ve diğer dersler için ayrı sayfalar.</li>
+        <li><strong>Hızlı arama:</strong> Ders ve kaynaklara anında erişim.</li>
+        <li><strong>Karanlık mod:</strong> Uzun çalışma oturumları için göz yormayan tema.</li>
+        <li><strong>Masaüstü odaklı UI:</strong> Sidebar ve kart tabanlı modern arayüz.</li>
+      </ul>
+      <a href="IKU/index.html" class="btn btn-primary project-modal-cta">
+        <i class="fa-solid fa-arrow-right"></i> Projeyi aç
       </a>
     </div>
   </template>
