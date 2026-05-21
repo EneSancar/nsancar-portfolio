@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Inconsolata:wght@300&family=Josefin+Sans&family=Teko&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Josefin Sans', sans-serif;
+}
+html{
+	scroll-behavior: smooth;
+}
+
+* Örnek CSS ile kaydırma çubuğu tasarımı */
+::-webkit-scrollbar {
+    width: 10px; /* Kaydırma çubuğu genişliği */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Kaydırma çubuğu rengi */
+    border-radius: 15px; /* Yuvarlak köşeler */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Fare üzerine gelindiğinde renk değiştirme */
+}
+
+
+#menu {
+	width: 100%;
+	height: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	z-index: 999;
+	background:linear-gradient( rgba(0,0,0, .7), rgba(0,0,0,.7) );
+	transition: top 0.3s;
+  }
+
+ 
+
+  #navbar{
+	width: 95%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	transition: top 0.4s;
+	overflow: unset;
+  }
+  
+  
+  .logo {
+	margin-left: 10px;
+	font-weight: bold;
+	color: #fff;
+  }
+  
+  .hamburger {
+	display: none;
+  }
+  
+  .nav-bar ul {
+	display: flex;
+  }
+  
+  .nav-bar ul li {
+	list-style: none;
+  }
+  
+  .nav-bar ul li a {
+	text-decoration: none;
+	display: block;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px;
+	transition: 0.2s;
+	margin: 0 5px;
+  }
+  
+  .nav-bar ul li a:hover {
+	color: #000;
+	background: #fff;
+  }
+  
+  #navbar .nav-bar ul li a.active {
+	color: #000;
+	background: #fff;
+  }
+  
+  @media only screen and (max-width: 1320px){
+	.nav-bar ul li a {
+	  padding: 8px;
+	}
+	header .container {
+	  width: 95%;
+	}
+  }
+  
+  @media only screen and (max-width: 950px){
+	.nav-bar ul li a {
+	  padding: 5px;
+	}
+	header .container {
+	  width: 97%;
+	}
+  }
+  
+  @media only screen and (max-width: 800px){
+   .hamburger {
+	display: block;
+	cursor: pointer;
+   }
+   .hamburger .line {
+	width: 30px;
+	height: 3px;
+	background: #fff;
+	margin: 6px 0;
+   }
+   .nav-bar {
+	height: auto; /* Yüksekliği otomatik ayarla */
+	position: absolute;
+	top: 60px;
+	right: 0;
+	width: 100vw;
+	background:linear-gradient( rgba(0,0,0, .9), rgba(0,0,0,.9) );
+	transition: 0.3s;
+	overflow: hidden;
+	display: none; /* Başlangıçta menüyü gizle */
+   }
+   .nav-bar.active {
+	display: block; /* Menüyü göster */
+   }
+   .nav-bar ul {
+	width: fit-content;
+	display: block;
+	margin: 60px auto 0 auto ;
+	text-align: center;
+	transition: 0.5s;
+	opacity: 0;
+   }
+   .nav-bar.active ul {
+	opacity: 1;
+   }
+   .nav-bar ul li a {
+	margin-bottom: 12px;
+   }
+  }
+

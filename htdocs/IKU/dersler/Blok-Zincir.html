@@ -1,0 +1,2477 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Blok Zincir</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div>
+        <h1>IKU-Bilgisayar Programcılığı Hazırlık Sayfası</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+          <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+         <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+
+        <!---------------------------->
+
+
+        <!----------DERS BAŞLIĞI------------------>
+      <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Blok Zincir Teknolojisine Giriş</h1>
+      <div class="fakeimg" Style="height:400px; background: url('../image/blockcahin.webp'); background-position: center;
+      background-repeat: no-repeat; background-size: cover; margin-bottom: 50px;"></div>
+      <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Final Örnek Çalışma Soruları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Çalışma Soruları</h3>
+                    <p></p>
+                    <a href="../Ders Kaynakları/Blok Zincir/14 - Final Çalışma Soruları.pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+              
+
+            </div>
+        </div>
+        
+    </section>
+
+ <h2 class="unite-title">1. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1>Blok Zinciri Temel Kavramlar</h1>
+        <h3 id="blok-zinciri-blockchain-nedir">1. Blok Zinciri (Blockchain) Nedir?</h3>
+<ul>
+<li>
+<p>İşlemlerin kronolojik olarak bloklar halinde kaydedildiği, birbirine zincirlenmiş veri yapısıdır.</p>
+</li>
+<li>
+<p>Merkezi otorite olmadan, dağıtık bir ağda tüm katılımcılar arasında paylaşılır.</p>
+</li>
+<li>
+<p>Güvenlik, kriptografik hash fonksiyonlarıyla sağlanır; veriler değiştirilemez.</p>
+</li>
+</ul>
+<h3 id="dağıtık-defter-teknolojisi-distributed-ledger-technology---dlt">2. Dağıtık Defter Teknolojisi (Distributed Ledger Technology - DLT)</h3>
+<ul>
+<li>
+<p>Kayıtların merkezi olmayan şekilde birden fazla katılımcı tarafından tutulduğu veri tabanıdır.</p>
+</li>
+<li>
+<p>İzinli (private) ve izinsiz (public) sistemler olarak iki türü vardır.</p>
+</li>
+<li>
+<p>Eşler arası (P2P) ağ yapısıyla doğrudan iletişim sağlanır.</p>
+</li>
+<li>
+<p>Konsensüs mekanizmalarıyla ağdaki tüm katılımcıların veri üzerinde anlaşması sağlanır.</p>
+</li>
+</ul>
+<h3 id="hash-fonksiyonu">3. Hash Fonksiyonu</h3>
+<ul>
+<li>
+<p>Girdi verisini alıp, sabit boyutta benzersiz bir çıktı (hash) üretir.</p>
+</li>
+<li>
+<p>En ufak veri değişikliği çıktıyı tamamen değiştirir.</p>
+</li>
+<li>
+<p>Tek yönlüdür; hash’den orijinal veri elde edilemez.</p>
+</li>
+<li>
+<p>Blok zincirinde bloklar birbirine önceki bloğun hash değeri ile bağlanarak bütünlük korunur.</p>
+</li>
+</ul>
+<h3 id="değiştirilemezlik-ve-sabit-boyutta-çıktı-örnekleri">4. Değiştirilemezlik ve Sabit Boyutta Çıktı Örnekleri</h3>
+<ul>
+<li>
+<p>Aynı verinin farklı hash algoritmaları (MD5, SHA1) ile sabit boyutlu, benzersiz çıktı üretir.</p>
+</li>
+<li>
+<p>Veri farklı olsa da hash boyutu sabittir.</p>
+</li>
+<li>
+<p>Bu özellik blok zincirinin güvenliğini destekler.</p>
+</li>
+</ul>
+<h3 id="blok-ve-blok-yapısı">5. Blok ve Blok Yapısı</h3>
+<ul>
+<li>
+<p>Blok, çok sayıda işlemin bir arada kaydedildiği yapıdır.</p>
+</li>
+<li>
+<p>Blok başlığında önceki bloğun hash’i, zaman damgası gibi meta veriler vardır.</p>
+</li>
+<li>
+<p>Blok içinde işlem listesi bulunur.</p>
+</li>
+<li>
+<p>Madenciler yeni blok oluşturdukça blok ödülü olarak kripto para kazanır.</p>
+</li>
+</ul>
+<h3 id="madencilik-mining">6. Madencilik (Mining)</h3>
+<ul>
+<li>
+<p>Blok zincirinde işlemleri doğrulamak ve yeni bloklar eklemek için yapılan hesaplama süreci.</p>
+</li>
+<li>
+<p>Proof of Work (PoW) mekanizması, zorlu matematiksel problemi çözen madenciyi ödüllendirir.</p>
+</li>
+<li>
+<p>Madencilik gücü hash oranı ile ölçülür (saniyedeki hash sayısı).</p>
+</li>
+<li>
+<p>PoW çok enerji tüketir.</p>
+</li>
+</ul>
+<h3 id="akıllı-sözleşmeler-smart-contracts">7. Akıllı Sözleşmeler (Smart Contracts)</h3>
+<ul>
+<li>
+<p>Önceden programlanmış koşullar sağlandığında otomatik işleyen sözleşmeler.</p>
+</li>
+<li>
+<p>Aracı olmadan, blok zincirinde şeffaf ve değiştirilemez olarak uygulanır.</p>
+</li>
+<li>
+<p>Finans, sigorta, tedarik zinciri gibi birçok sektörde kullanılır.</p>
+</li>
+</ul>
+<h3 id="kripto-para-birimleri">8. Kripto Para Birimleri</h3>
+<ul>
+<li>
+<p>Merkezi otoriteye bağlı olmadan dijital olarak işlem gören varlıklardır.</p>
+</li>
+<li>
+<p>Bitcoin ilk ve en ünlü örnektir.</p>
+</li>
+<li>
+<p>Bitcoin dışındaki alternatifler altcoin olarak adlandırılır (Ethereum, Ripple, Litecoin vb).</p>
+</li>
+<li>
+<p>Kripto cüzdanlar dijital varlıkların saklanmasını sağlar.</p>
+</li>
+</ul>
+<h3 id="merkezi-olmayan-uygulamalar-dapps">9. Merkezi Olmayan Uygulamalar (DApps)</h3>
+<ul>
+<li>
+<p>Merkezi otoriteye bağlı olmayan, blok zinciri üzerinde çalışan uygulamalar.</p>
+</li>
+<li>
+<p>Kodları şeffaftır, sansüre karşı dayanıklıdır.</p>
+</li>
+<li>
+<p>Kullanıcılar veri ve varlık üzerinde tam kontrole sahiptir.</p>
+</li>
+</ul>
+<h3 id="ico-initial-coin-offering">10. ICO (Initial Coin Offering)</h3>
+<ul>
+<li>
+<p>Blockchain projelerinin finansman sağlamak için token satışa sunduğu yöntem.</p>
+</li>
+<li>
+<p>Yatırımcılar erken aşamada token satın alır.</p>
+</li>
+<li>
+<p>Yüksek risk içerir, birçok ülke düzenlemeler yapmaktadır.</p>
+</li>
+</ul>
+<h3 id="defi-decentralized-finance">11. DeFi (Decentralized Finance)</h3>
+<ul>
+<li>
+<p>Merkezi finans kurumları olmadan finansal hizmetlerin blok zincirinde sunulması.</p>
+</li>
+<li>
+<p>Akıllı sözleşmeler ile otomatik finansal işlemler (kredi, borç, ticaret) yapılır.</p>
+</li>
+<li>
+<p>Erişim herkese açıktır.</p>
+</li>
+</ul>
+<h3 id="nft-non-fungible-token">12. NFT (Non-Fungible Token)</h3>
+<ul>
+<li>
+<p>Benzersiz, değiştirilemez dijital varlıkları temsil eden tokenler.</p>
+</li>
+<li>
+<p>Dijital sanat, koleksiyon ve sahiplik doğrulamada kullanılır.</p>
+</li>
+<li>
+<p>Blok zinciri üzerinden sahiplik ve orijinallik doğrulanır.</p>
+</li>
+</ul>
+<h3 id="ölçeklendirme-çözümleri">13. Ölçeklendirme Çözümleri</h3>
+<ul>
+<li>
+<p>Katman 2 çözümleri, yan zincirler, rollups ve sharding gibi yöntemlerle işlem kapasitesi artırılır.</p>
+</li>
+<li>
+<p>Amaç blok zinciri temel yapısını değiştirmeden performansı yükseltmek.</p>
+</li>
+</ul>
+<h3 id="gizlilik-mekanizmaları">14. Gizlilik Mekanizmaları</h3>
+<ul>
+<li>
+<p>ZK-Snarks, ring signatures ve gizli işlemlerle işlem gizliliği sağlanır.</p>
+</li>
+<li>
+<p>Monero, Zcash gibi gizlilik odaklı kripto paralar bu teknolojileri kullanır.</p>
+</li>
+</ul>
+<h3 id="dağıtık-otonom-organizasyonlar-daos">15. Dağıtık Otonom Organizasyonlar (DAOs)</h3>
+<ul>
+<li>
+<p>Merkezi yönetimi olmayan, akıllı sözleşmelerle yönetilen otomatik organizasyonlar.</p>
+</li>
+<li>
+<p>Üyeler oylama yoluyla karar alır.</p>
+</li>
+<li>
+<p>Şeffaflık ve otomasyon sağlanır.</p>
+</li>
+</ul>
+<h3 id="kriptografi">16. Kriptografi</h3>
+<ul>
+<li>
+<p>Simetrik ve asimetrik şifreleme yöntemleri.</p>
+</li>
+<li>
+<p>Dijital imzalar ve hash fonksiyonları güvenliği sağlar.</p>
+</li>
+</ul>
+<h3 id="wallet-cüzdan-türleri">17. Wallet (Cüzdan) Türleri</h3>
+<ul>
+<li>
+<p>Yazılım, donanım, kağıt ve çevrimiçi cüzdanlar.</p>
+</li>
+<li>
+<p>Kripto varlıkların saklanması ve yönetilmesi için kullanılır.</p>
+</li>
+</ul>
+<h3 id="blockchain-güvenliği-ve-saldırı-türleri">18. Blockchain Güvenliği ve Saldırı Türleri</h3>
+<ul>
+<li>
+<p>51% saldırısı, çift harcama, Sybil saldırısı, phishing gibi tehditler bulunur.</p>
+</li>
+<li>
+<p>Kullanıcıların özel anahtarlarını koruması çok önemlidir.</p>
+</li>
+</ul>
+
+    </div></div>
+
+     <!----------------------------->
+
+     <h2 class="unite-title">2. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1>Blok Zincir Uygulamaları</h1>
+
+     <h3 id="kripto-para-birimleri">1. Kripto Para Birimleri</h3>
+<ul>
+<li>
+<p><strong>Bitcoin:</strong> İlk merkezi olmayan dijital para birimi.</p>
+</li>
+<li>
+<p><strong>Ethereum:</strong> Akıllı sözleşmeler platformu, kendi para birimi Ether.</p>
+</li>
+<li>
+<p><strong>Ripple:</strong> Hızlı uluslararası ödeme ağı, XRP tokeni kullanır.</p>
+</li>
+<li>
+<p><strong>Litecoin:</strong> Bitcoin’e benzer ancak daha hızlı işlem ve farklı hashing algoritması.</p>
+</li>
+</ul>
+<h3 id="akıllı-sözleşmeler">2. Akıllı Sözleşmeler</h3>
+<ul>
+<li>
+<p>İşlem şartları gerçekleştiğinde otomatik yürütülür.</p>
+</li>
+<li>
+<p>Blok zincirinde saklandığından değiştirilmesi ve hacklenmesi zordur.</p>
+</li>
+<li>
+<p>Şeffaf ve izlenebilir.</p>
+</li>
+<li>
+<p>Aracı olmadan işlemler kesintisiz gerçekleşir.</p>
+</li>
+</ul>
+<h3 id="finansal-hizmetler">3. Finansal Hizmetler</h3>
+<ul>
+<li>
+<p>Düşük ücretli, hızlı uluslararası ödeme sistemleri.</p>
+</li>
+<li>
+<p>DeFi ile merkezi olmayan kredi ve borçlanma platformları.</p>
+</li>
+<li>
+<p>Dijital varlık yönetimi ve takası.</p>
+</li>
+<li>
+<p>Akıllı sözleşmelerle otomatik ve şeffaf sigorta işlemleri.</p>
+</li>
+</ul>
+<h3 id="tedarik-zinciri-yönetimi">4. Tedarik Zinciri Yönetimi</h3>
+<ul>
+<li>
+<p>Ürünlerin kaynaktan tüketiciye yolculuğunu izleme.</p>
+</li>
+<li>
+<p>Sahteciliği önleme ve ürün doğrulama.</p>
+</li>
+<li>
+<p>İşlemleri otomatikleştirerek süreçleri hızlandırma.</p>
+</li>
+<li>
+<p>Tedarik zinciri genelinde şeffaflık sağlama.</p>
+</li>
+</ul>
+<h3 id="oylama-sistemleri">5. Oylama Sistemleri</h3>
+<ul>
+<li>
+<p>Oyların değiştirilmez şekilde kaydedilmesi.</p>
+</li>
+<li>
+<p>Oy verenin kimliğinin gizliliği ve korunması.</p>
+</li>
+<li>
+<p>Uzaktan oylama imkanı.</p>
+</li>
+<li>
+<p>Oylama sonuçlarının herkese açık şeffaflığı.</p>
+</li>
+</ul>
+<h3 id="tıbbi-kayıt-saklama">6. Tıbbi Kayıt Saklama</h3>
+<ul>
+<li>
+<p>Hastaların tıbbi kayıtlarının güvenli ve gizli saklanması.</p>
+</li>
+<li>
+<p>Yetkilendirilmiş erişim kolaylığı.</p>
+</li>
+<li>
+<p>Kayıtların değiştirilemez olması ile hata azaltma.</p>
+</li>
+<li>
+<p>Sağlık kuruluşları ve hastalar arasında güvenli veri paylaşımı.</p>
+</li>
+</ul>
+<h3 id="kimlik-doğrulama-ve-yönetimi">7. Kimlik Doğrulama ve Yönetimi</h3>
+<ul>
+<li>
+<p>Dijital kimliklerin güvenli ve erişilebilir oluşturulması.</p>
+</li>
+<li>
+<p>Kimlik hırsızlığını önleme için güvenlik protokolleri.</p>
+</li>
+<li>
+<p>Veri paylaşımı kullanıcı kontrolünde.</p>
+</li>
+<li>
+<p>Erişimlerin yetkilendirilmesi ve kontrolü.</p>
+</li>
+</ul>
+<h3 id="sanat-ve-telif-hakları-nftler">8. Sanat ve Telif Hakları (NFT’ler)</h3>
+<ul>
+<li>
+<p>Dijital eserlerin sahipliğinin doğrulanması.</p>
+</li>
+<li>
+<p>Sanatçıların doğrudan alıcılarla buluşması.</p>
+</li>
+<li>
+<p>Telif haklarının kayıt altına alınması ve korunması.</p>
+</li>
+<li>
+<p>Dijital koleksiyonculuk ve nadir eserlerin ticareti.</p>
+</li>
+</ul>
+<h3 id="gayrimenkul-kayıt-ve-i̇şlemleri">9. Gayrimenkul Kayıt ve İşlemleri</h3>
+<ul>
+<li>
+<p>Akıllı sözleşmelerle hızlı, güvenli mülkiyet transferi.</p>
+</li>
+<li>
+<p>Güvenli ve şeffaf gayrimenkul kayıt sistemi.</p>
+</li>
+<li>
+<p>Tüm tarafların kolay erişimi.</p>
+</li>
+<li>
+<p>Mülkiyet geçmişinin açık kaydı.</p>
+</li>
+</ul>
+<h3 id="eğitim-ve-akademik-sertifikaların-doğrulanması">10. Eğitim ve Akademik Sertifikaların Doğrulanması</h3>
+<ul>
+<li>
+<p>Diploma ve sertifikaların doğrulanabilirliği ile sahteciliği önleme.</p>
+</li>
+<li>
+<p>Öğrenci ve işverenlerin kolay erişim ve sorgulaması.</p>
+</li>
+<li>
+<p>Otomatik doğrulama süreçleriyle verimlilik artışı.</p>
+</li>
+<li>
+<p>Belgelerin küresel tanınması.</p>
+</li>
+</ul>
+<h3 id="oyunlar-ve-dijital-toplanabilir-nesneler">11. Oyunlar ve Dijital Toplanabilir Nesneler</h3>
+<ul>
+<li>
+<p>Dijital oyun içi varlıkların gerçek sahipliği.</p>
+</li>
+<li>
+<p>Oyun içi öğelerin alım-satım platformları.</p>
+</li>
+<li>
+<p>İşlem ve sahiplik geçmişi şeffaflığı.</p>
+</li>
+<li>
+<p>Dijital öğelerin ekonomi içinde değeri.</p>
+</li>
+</ul>
+<h3 id="enerji-ticareti-ve-yönetimi">12. Enerji Ticareti ve Yönetimi</h3>
+<ul>
+<li>
+<p>Yenilenebilir enerji sertifikalarının doğrulanması.</p>
+</li>
+<li>
+<p>Mikro şebeke yönetimi ve yerel enerji optimizasyonu.</p>
+</li>
+<li>
+<p>Şeffaf ve doğru faturalandırma.</p>
+</li>
+<li>
+<p>Dağıtık enerji üreticilerinin ağa katılımı.</p>
+</li>
+</ul>
+<h3 id="medya-ve-eğlence">13. Medya ve Eğlence</h3>
+<ul>
+<li>
+<p>Telif hakları ve lisanslama işlemlerinin korunması.</p>
+</li>
+<li>
+<p>Mikro ödemelerle içerik tüketimi.</p>
+</li>
+<li>
+<p>Sahte haberlerin ve içeriğin engellenmesi.</p>
+</li>
+<li>
+<p>İçerik üreticilerinin doğrudan desteklenmesi.</p>
+</li>
+</ul>
+<h3 id="sigorta">14. Sigorta</h3>
+<ul>
+<li>
+<p>Akıllı sözleşmelerle otomatik tazminat ödemeleri.</p>
+</li>
+<li>
+<p>Poliçe ve tazminat süreçlerinde şeffaflık ve güven.</p>
+</li>
+<li>
+<p>Kişiselleştirilmiş poliçeler.</p>
+</li>
+<li>
+<p>Blok zinciri verisiyle doğru risk analizi.</p>
+</li>
+</ul>
+<h3 id="kamu-hizmetleri-ve-hükümet-i̇şlemleri">15. Kamu Hizmetleri ve Hükümet İşlemleri</h3>
+<ul>
+<li>
+<p>Kimlik ve vergi işlemlerinin kolaylaştırılması.</p>
+</li>
+<li>
+<p>Mülkiyet ve arazi kayıtlarının şeffaflığı.</p>
+</li>
+<li>
+<p>Sosyal yardım dağıtımının hedeflenmesi.</p>
+</li>
+<li>
+<p>Lisanslama ve sertifika yönetimi.</p>
+</li>
+</ul>
+        
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">3. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+      <h1 id="mutabakat-protokolleri-consensus-protocols">Mutabakat Protokolleri (Consensus Protocols)</h1>
+<h3 id="genel-bilgi">Genel Bilgi</h3>
+<p>Blok zincir ağlarının güvenli ve tutarlı çalışması için kullanılan farklı mutabakat protokolleri vardır. Her bir protokol, güvenlik, ölçeklenebilirlik, enerji verimliliği ve kullanım senaryolarına göre avantaj ve dezavantajlar taşır. Önemli mutabakat protokolleri şunlardır:</p>
+<hr>
+<h3 id="proof-of-work-pow---i̇ş-kanıtı">1. Proof of Work (PoW) - İş Kanıtı</h3>
+<ul>
+<li>
+<p>İlk nesil blok zincirlerinde (Bitcoin gibi) kullanılır.</p>
+</li>
+<li>
+<p>Düğümler karmaşık matematiksel bulmacaları çözer ve ilk çözen blok ekleme hakkı kazanır.</p>
+</li>
+<li>
+<p>Madenciler blok oluşturunca ödül alır (yeni coin ve işlem ücretleri).</p>
+</li>
+<li>
+<p>Güvenliği 51% saldırılarına karşı sağlar; saldırı için ağın hash gücünün yarısından fazlası gerekir.</p>
+</li>
+<li>
+<p>En çok eleştirilen yanı yüksek enerji tüketimidir.</p>
+</li>
+<li>
+<p>Madencilik zorluğu, ağ hızını sabit tutmak için dinamik ayarlanır (örneğin Bitcoin’de her 2016 blokta).</p>
+</li>
+</ul>
+<hr>
+<h3 id="proof-of-stake-pos---pay-kanıtı">2. Proof of Stake (PoS) - Pay Kanıtı</h3>
+<ul>
+<li>
+<p>Düğümler, sahip oldukları coin’leri “bahis” (stake) olarak kilitler.</p>
+</li>
+<li>
+<p>Kilitlenen miktar ve süreye göre blok oluşturma şansı artar.</p>
+</li>
+<li>
+<p>PoW’a göre çok daha az enerji tüketir, çevre dostudur.</p>
+</li>
+<li>
+<p>Saldırganların büyük miktarda coin’i riske atması gerekir, bu da maliyeti artırır.</p>
+</li>
+<li>
+<p>Daha yüksek işlem kapasitesi ve hızlı onay sağlar.</p>
+</li>
+<li>
+<p>Ödüller sahip olunan pay ve süreye göre daha adil dağıtılır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="delegated-proof-of-stake-dpos---temsilci-pay-kanıtı">3. Delegated Proof of Stake (DPoS) - Temsilci Pay Kanıtı</h3>
+<ul>
+<li>
+<p>Token sahipleri, blok oluşturma ve işlemleri doğrulama yetkisini temsilcilere (delegelere) oyla verir.</p>
+</li>
+<li>
+<p>Delegeler, belirlenen sıra ile blok üretir ve işlemleri onaylar.</p>
+</li>
+<li>
+<p>Delegelerin kötü davranışı halinde token sahipleri onları görevden alabilir.</p>
+</li>
+<li>
+<p>Daha hızlı işlem onayları ve yüksek ölçeklenebilirlik sağlar.</p>
+</li>
+<li>
+<p>Enerji tüketimi düşüktür.</p>
+</li>
+<li>
+<p>Dezavantajı, token sahiplerinin fazla olması durumunda merkezileşme riskidir ve oylama manipülasyonlarına açık olabilir.</p>
+</li>
+</ul>
+<hr>
+<h3 id="proof-of-authority-poa---otorite-kanıtı">4. Proof of Authority (PoA) - Otorite Kanıtı</h3>
+<ul>
+<li>
+<p>Önceden onaylanmış ve güvenilir düğümlerin işlemleri onayladığı bir sistemdir.</p>
+</li>
+<li>
+<p>Genellikle özel blok zincirlerinde kullanılır.</p>
+</li>
+<li>
+<p>Çok hızlı işlem onayı sağlar ve enerji tüketimi çok düşüktür.</p>
+</li>
+<li>
+<p>Doğrulayıcıların kimlikleri açık ve şeffaftır.</p>
+</li>
+<li>
+<p>Dezavantajı kısmi merkezileşme ve doğrulayıcı sayısının sınırlı olmasıdır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="byzantine-fault-tolerance-bft---bizans-arıza-toleransı">5. Byzantine Fault Tolerance (BFT) - Bizans Arıza Toleransı</h3>
+<ul>
+<li>
+<p>Ağdaki düğümlerin bir kısmı kötü niyetli olsa da doğru işlemenin devamını sağlar.</p>
+</li>
+<li>
+<p>Konsensüs, tüm düğümlerin birlikte karar almasını gerektirir.</p>
+</li>
+<li>
+<p>Sistem arızalara, saldırılara ve kötü niyetli davranışlara karşı dayanıklıdır.</p>
+</li>
+<li>
+<p>Örnekleri arasında Practical Byzantine Fault Tolerance (PBFT) ve Federated Byzantine Agreement (FBA) vardır.</p>
+</li>
+</ul>
+
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">4. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="akıllı-kontratlar">Akıllı Kontratlar</h1>
+<h3 id="akıllı-kontratlar-nedir">1. Akıllı Kontratlar Nedir?</h3>
+<ul>
+<li>
+<p>Dijital ortamda taraflar arasında blockchain teknolojisi ile otomatik yürütülen anlaşmalar.</p>
+</li>
+<li>
+<p>“If-then” (eğer-ise) mantığıyla yazılmış kod parçalarından oluşur.</p>
+</li>
+<li>
+<p>Koşullar gerçekleştiğinde otomatik tetiklenir.</p>
+</li>
+</ul>
+<h3 id="tanım-ve-temeller">2. Tanım ve Temeller</h3>
+<ul>
+<li>
+<p>Anlaşma koşullarını kodlayarak otomatik işlem sağlar.</p>
+</li>
+<li>
+<p>Blockchain üzerinde kayıtlıdır; şeffaflık, izlenebilirlik ve değiştirilemezlik sağlar.</p>
+</li>
+<li>
+<p>Finansal işlemler, otomatik ödemeler, kimlik doğrulama gibi birçok alanda kullanılır.</p>
+</li>
+</ul>
+<h3 id="çalışma-prensibi">3. Çalışma Prensibi</h3>
+<ul>
+<li>
+<p>Programlama dili (Solidity, Chaincode vb.) ile yazılır.</p>
+</li>
+<li>
+<p>Blockchain ağına dağıtılır, bytecode blok zincirinde adreslenir.</p>
+</li>
+<li>
+<p>Koşullar tetiklendiğinde işlem otomatik yürütülür ve blockchain’de kaydedilir.</p>
+</li>
+</ul>
+<h3 id="blockchain-ile-i̇lişkisi">4. Blockchain ile İlişkisi</h3>
+<ul>
+<li>
+<p>Blockchain güvenliği ve şeffaflığı akıllı kontratların güvenliğini sağlar.</p>
+</li>
+<li>
+<p>Kayıtlar kalıcı ve değiştirilemez olduğundan anlaşmazlıkları önler.</p>
+</li>
+</ul>
+<h3 id="temel-özellikler-ve-teknoloji">5. Temel Özellikler ve Teknoloji</h3>
+<ul>
+<li>
+<p>Şeffaflık: Herkes işlemleri görebilir.</p>
+</li>
+<li>
+<p>Güvenlik: Yüksek kriptografik koruma.</p>
+</li>
+<li>
+<p>Otomasyon: İnsan müdahalesi olmadan çalışır.</p>
+</li>
+<li>
+<p>Kodun gücü: Kodun belirlediği şekilde kesin uygulama.</p>
+</li>
+</ul>
+<h3 id="avantajları">6. Avantajları</h3>
+<ul>
+<li>
+<p>Güvenlik: Kriptografi ile koruma, değiştirilemez kayıtlar.</p>
+</li>
+<li>
+<p>Şeffaflık ve doğrulanabilirlik: Ağdaki herkes işlemleri izleyebilir.</p>
+</li>
+<li>
+<p>Maliyet ve zaman tasarrufu: Aracı yok, otomatik ve hızlı.</p>
+</li>
+<li>
+<p>Hata oranı düşüklüğü: Programlanabilir ve otomatik yürütme ile insan hatası azalır.</p>
+</li>
+<li>
+<p>Geniş kullanım alanları: Finans, tedarik zinciri, sağlık, gayrimenkul, kimlik, oylama, telif hakları gibi.</p>
+</li>
+</ul>
+<h3 id="dezavantajları-ve-zorlukları">7. Dezavantajları ve Zorlukları</h3>
+<ul>
+<li>
+<p>Kod hataları ve güvenlik açıkları: Yazılım hataları ve hacker riskleri (örneğin DAO saldırısı).</p>
+</li>
+<li>
+<p>Yasal ve düzenleyici belirsizlikler: Hukuki statü ve düzenleme eksiklikleri.</p>
+</li>
+<li>
+<p>Teknolojik zorluklar: Değişiklik yapmanın zor olması, ölçeklenebilirlik sorunları.</p>
+</li>
+<li>
+<p>Kullanıcı hataları ve erişim problemleri: Özel anahtarların kaybı, yanlış adreslere transfer.</p>
+</li>
+</ul>
+<h3 id="kullanım-alanları-ve-örnekler">8. Kullanım Alanları ve Örnekler</h3>
+<ul>
+<li>
+<p><strong>Finans ve Bankacılık:</strong> Otomatik kredi, ödeme, sigorta.</p>
+</li>
+<li>
+<p><strong>Tedarik Zinciri:</strong> Ürün takibi, otomatik sözleşmeler.</p>
+</li>
+<li>
+<p><strong>Gayrimenkul:</strong> Mülkiyet transferi, kira sözleşmeleri.</p>
+</li>
+<li>
+<p><strong>Sağlık Hizmetleri:</strong> Hasta kayıtları, otomatik sigorta talepleri.</p>
+</li>
+<li>
+<p><strong>Dijital Kimlik ve Oylama:</strong> Güvenli kimlik doğrulama, şeffaf oy verme.</p>
+</li>
+<li>
+<p><strong>Eğlence ve Telif Hakları:</strong> Dijital içerik yönetimi, oyun içi varlıklar.</p>
+</li>
+</ul>
+
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">5. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+      <h1 id="blok-zincir-platformları">Blok Zincir Platformları</h1>
+<h3 id="ethereum">1. Ethereum</h3>
+<ul>
+<li>
+<p>Akıllı sözleşmelerin çalıştırıldığı programlanabilir blok zinciri.</p>
+</li>
+<li>
+<p>ERC-20 token standardı ile token oluşturma ve işletme imkanı.</p>
+</li>
+<li>
+<p>Ethereum 2.0 ile Proof of Work’ten Proof of Stake’e geçiş hedefleniyor.</p>
+</li>
+<li>
+<p>DeFi uygulamalarının öncüsü.</p>
+</li>
+</ul>
+<h3 id="bitcoin">2. Bitcoin</h3>
+<ul>
+<li>
+<p>Dijital altın olarak bilinir, değer saklama amacıyla kullanılır.</p>
+</li>
+<li>
+<p>Proof of Work madenciliği ile güvenliği sağlanır.</p>
+</li>
+<li>
+<p>Arzı 21 milyon ile sınırlıdır, deflasyonist özellik.</p>
+</li>
+<li>
+<p>SegWit ve Lightning Network ile ölçeklenebilirlik artırıldı.</p>
+</li>
+</ul>
+<h3 id="ripple-xrp-ledger">3. Ripple (XRP Ledger)</h3>
+<ul>
+<li>
+<p>Sınır ötesi bankalar arası ödemeler için tasarlanmış.</p>
+</li>
+<li>
+<p>XRP tokeni ile likidite ve ödeme kolaylığı sağlar.</p>
+</li>
+<li>
+<p>RippleNet ağı hızlı ve güvenli para transferi sunar.</p>
+</li>
+<li>
+<p>On-Demand Liquidity (ODL) sistemi ile likidite yönetimi.</p>
+</li>
+</ul>
+<h3 id="cardano">4. Cardano</h3>
+<ul>
+<li>
+<p>Ouroboros Proof of Stake algoritması kullanır, enerji verimliliği sağlar.</p>
+</li>
+<li>
+<p>Akademik araştırmalarla geliştirilen ilk blok zincirlerden biridir.</p>
+</li>
+<li>
+<p>ADA tokeni, ağ işlemleri ve akıllı sözleşmeler için kullanılır.</p>
+</li>
+<li>
+<p>Katmanlı mimarisi ile esneklik ve ölçeklenebilirlik.</p>
+</li>
+</ul>
+<h3 id="polkadot">5. Polkadot</h3>
+<ul>
+<li>
+<p>Çoklu parachain desteğiyle birbirine bağlı zincirler.</p>
+</li>
+<li>
+<p>Farklı blok zincirleri arasında çapraz zincir iletişimi sağlar.</p>
+</li>
+<li>
+<p>DOT tokeni ağ yönetimi ve staking için kullanılır.</p>
+</li>
+<li>
+<p>Paylaşılan güvenlik ve paralel işlem ile ölçeklenebilirlik.</p>
+</li>
+</ul>
+<h3 id="solana">6. Solana</h3>
+<ul>
+<li>
+<p>Yüksek işlem kapasitesi ve hız.</p>
+</li>
+<li>
+<p>Proof of History (PoH) ile kronolojik işlem sırası doğrulama.</p>
+</li>
+<li>
+<p>SOL tokeni ağ ücretleri ve staking için.</p>
+</li>
+<li>
+<p>Düşük işlem ücretleri.</p>
+</li>
+</ul>
+<h3 id="avalanche">7. Avalanche</h3>
+<ul>
+<li>
+<p>Özelleştirilebilir subnets ile esnek zincir yapısı.</p>
+</li>
+<li>
+<p>Düşük gecikme ve yüksek işlem kapasitesi.</p>
+</li>
+<li>
+<p>AVAX tokeni işlemler ve staking için.</p>
+</li>
+<li>
+<p>Geniş dApp ekosistemi.</p>
+</li>
+</ul>
+<h3 id="binance-smart-chain-bsc">8. Binance Smart Chain (BSC)</h3>
+<ul>
+<li>
+<p>Ethereum Sanal Makinesi (EVM) uyumlu.</p>
+</li>
+<li>
+<p>Çift zincir mimarisi ve BEP-20 token standardı.</p>
+</li>
+<li>
+<p>Yüksek performans ve düşük işlem ücretleri.</p>
+</li>
+</ul>
+<h3 id="tezos">9. Tezos</h3>
+<ul>
+<li>
+<p>Kendi kendini güncelleyebilen blok zinciri.</p>
+</li>
+<li>
+<p>On-chain yönetişim modeli.</p>
+</li>
+<li>
+<p>Formal doğrulama ile akıllı kontrat güvenliği.</p>
+</li>
+<li>
+<p>XTZ tokeni ağda kullanılır.</p>
+</li>
+</ul>
+<h3 id="eos">10. EOS</h3>
+<ul>
+<li>
+<p>Ücretsiz işlem yapısı.</p>
+</li>
+<li>
+<p>Yatay ölçeklenebilirlik.</p>
+</li>
+<li>
+<p>Delegated Proof of Stake konsensüs mekanizması (DPoS).</p>
+</li>
+<li>
+<p>Esnek dApp geliştirme platformu.</p>
+</li>
+</ul>
+<h3 id="tron">11. Tron</h3>
+<ul>
+<li>
+<p>Yüksek işlem kapasitesi, düşük ücretler.</p>
+</li>
+<li>
+<p>TRX tokeni ağ içi işlemler için.</p>
+</li>
+<li>
+<p>Merkeziyetsiz uygulamalar ve dijital içerik platformu.</p>
+</li>
+<li>
+<p>Enerji ve bant genişliği sistemi.</p>
+</li>
+</ul>
+<h3 id="stellar">12. Stellar</h3>
+<ul>
+<li>
+<p>Sınır ötesi ödemelerde hızlı ve düşük maliyetli.</p>
+</li>
+<li>
+<p>Lumens (XLM) tokeni işlem kolaylığı sağlar.</p>
+</li>
+<li>
+<p>Merkeziyetsiz borsa ve varlık tokenizasyonu.</p>
+</li>
+</ul>
+<h3 id="algorand">13. Algorand</h3>
+<ul>
+<li>
+<p>Pure Proof of Stake (PPoS) konsensüsü.</p>
+</li>
+<li>
+<p>Anında finalite ve yüksek performans.</p>
+</li>
+<li>
+<p>ALGO tokeni ağ işlemleri ve güvenliği için.</p>
+</li>
+<li>
+<p>Karbon negatif ağ olma hedefi.</p>
+</li>
+</ul>
+<h3 id="cosmos">14. Cosmos</h3>
+<ul>
+<li>
+<p>Inter Blockchain Communication (IBC) protokolü ile zincirler arası iletişim.</p>
+</li>
+<li>
+<p>ATOM tokeni ağ güvenliği ve yönetimi için.</p>
+</li>
+<li>
+<p>Modüler tasarım ve Hub-and-Spoke mimarisi.</p>
+</li>
+</ul>
+<h3 id="neo">15. NEO</h3>
+<ul>
+<li>
+<p>Dijital varlık ve kimlik yönetimi platformu.</p>
+</li>
+<li>
+<p>Delegated Byzantine Fault Tolerance (dBFT) konsensüsü.</p>
+</li>
+<li>
+<p>GAS tokeni ağ işlemleri için.</p>
+</li>
+<li>
+<p>Akıllı ekonomi vizyonu.</p>
+</li>
+</ul>
+
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">6. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="finansal-teknolojiler">Finansal Teknolojiler</h1>
+<h3 id="kripto-para-birimleri">1. Kripto Para Birimleri</h3>
+<ul>
+<li>
+<p>Bitcoin, Ethereum, Ripple gibi dijital para birimleri blockchain teknolojisiyle oluşturulur.</p>
+</li>
+<li>
+<p>Merkeziyetsiz yapıları sayesinde dünya genelinde kolayca ve güvenle transfer edilir.</p>
+</li>
+</ul>
+<h3 id="akıllı-sözleşmeler">2. Akıllı Sözleşmeler</h3>
+<ul>
+<li>
+<p>Blockchain üzerinde çalışan, belirli koşullar sağlandığında otomatik işlem yapan programlar.</p>
+</li>
+<li>
+<p>Finansal işlemlerde otomasyonu artırır, süreçleri hızlandırır ve maliyetleri azaltır.</p>
+</li>
+</ul>
+<h3 id="defi-merkeziyetsiz-finans">3. DeFi (Merkeziyetsiz Finans)</h3>
+<ul>
+<li>
+<p>Geleneksel bankacılığın aksine, merkezi otorite olmadan kullanıcılar arası finansal hizmet sağlar.</p>
+</li>
+<li>
+<p>Kredi verme, borç alma, likidite havuzları gibi işlemler doğrudan kullanıcılar arasında gerçekleşir.</p>
+</li>
+</ul>
+<h3 id="tokenizasyon">4. Tokenizasyon</h3>
+<ul>
+<li>
+<p>Gerçek dünya varlıklarının (emlak, sanat eseri vb.) dijital tokenlere dönüştürülmesi.</p>
+</li>
+<li>
+<p>Yüksek değerli varlıklar küçük paylara bölünerek daha geniş yatırımcı kitlesine ulaşır.</p>
+</li>
+</ul>
+<h3 id="kripto-para-cüzdanları-ve-ödeme-sistemleri">5. Kripto Para Cüzdanları ve Ödeme Sistemleri</h3>
+<ul>
+<li>
+<p>Dijital varlıkların saklanması, gönderilmesi ve alınması için kullanılan cüzdanlar.</p>
+</li>
+<li>
+<p>Kripto para ödemelerini kolaylaştıran platformlar ve POS sistemleri de yaygınlaşmaktadır.</p>
+</li>
+</ul>
+<h3 id="kripto-borsaları">6. Kripto Borsaları</h3>
+<ul>
+<li>
+<p>Kullanıcıların kripto para alım-satımı yaptığı online platformlar.</p>
+</li>
+<li>
+<p>Likidite sağlar, farklı kripto para birimleri arasında değişim yapılmasını mümkün kılar.</p>
+</li>
+</ul>
+<h3 id="blockchain-tabanlı-finansal-denetim-ve-uyumluluk">7. Blockchain Tabanlı Finansal Denetim ve Uyumluluk</h3>
+<ul>
+<li>
+<p>Değiştirilemez işlem kayıtları sayesinde finansal denetim ve uyumluluk süreçleri iyileşir.</p>
+</li>
+<li>
+<p>Şeffaflık ve güvenilirlik artar, mali suistimaller önlenir.</p>
+</li>
+</ul>
+<h3 id="tedarik-zinciri-finansmanı">8. Tedarik Zinciri Finansmanı</h3>
+<ul>
+<li>
+<p>Blockchain, mal ve hizmet akışının izlenmesiyle tedarikçilere hızlı ödeme imkanı sunar.</p>
+</li>
+<li>
+<p>Özellikle küçük ve orta ölçekli işletmeler (KOBİ) için likidite artışı sağlar.</p>
+</li>
+</ul>
+
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">7. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="dijital-cüzdanlar">Dijital Cüzdanlar</h1>
+<h3 id="dijital-cüzdan-nedir">1. Dijital Cüzdan Nedir?</h3>
+<ul>
+<li>
+<p>Elektronik cihazlarda dijital para ve ödeme bilgilerini saklayan yazılım veya uygulamalar.</p>
+</li>
+<li>
+<p>Para transferi, fatura ödeme ve alışveriş gibi finansal işlemleri kolaylaştırır.</p>
+</li>
+<li>
+<p>Perakende, e-ticaret, bankacılık gibi sektörlerde yaygın kullanılır.</p>
+</li>
+</ul>
+<h3 id="dijital-cüzdan-çeşitleri">2. Dijital Cüzdan Çeşitleri</h3>
+<ul>
+<li>
+<p><strong>Mobil Cüzdanlar:</strong> Akıllı telefon ve tabletlerde çalışan uygulamalar.</p>
+</li>
+<li>
+<p><strong>Masaüstü Cüzdanlar:</strong> Bilgisayarda çalışan, genellikle daha güvenli cüzdanlar.</p>
+</li>
+<li>
+<p><strong>Donanım Cüzdanları:</strong> Fiziksel cihazlar, ekstra güvenlik sağlar.</p>
+</li>
+<li>
+<p><strong>Kağıt Cüzdanlar:</strong> Özel anahtarların fiziksel kopya olarak saklanması.</p>
+</li>
+</ul>
+<h3 id="güvenlik-özellikleri">3. Güvenlik Özellikleri</h3>
+<ul>
+<li>
+<p>Şifreleme teknikleri, çok faktörlü kimlik doğrulama.</p>
+</li>
+<li>
+<p>Güvenlik protokolleri ve sahtekarlık önleyici sistemler kullanılır.</p>
+</li>
+</ul>
+<h3 id="avantajları-ve-dezavantajları">4. Avantajları ve Dezavantajları</h3>
+<ul>
+<li>
+<p>Kolay erişim, düşük maliyet, hızlı işlem.</p>
+</li>
+<li>
+<p>Ancak siber saldırı riski, teknik arızalar ve teknoloji bağımlılığı mevcuttur.</p>
+</li>
+</ul>
+<h3 id="kullanıcı-deneyimi">5. Kullanıcı Deneyimi</h3>
+<ul>
+<li>
+<p>Kullanıcı dostu arayüzler, farklı para birimleri ve ödeme yöntemleriyle uyumluluk.</p>
+</li>
+<li>
+<p>Müşteri destek hizmetleri ve diğer finansal uygulamalarla entegrasyon önemli.</p>
+</li>
+</ul>
+<h3 id="kripto-para-dünyasındaki-rolü">6. Kripto Para Dünyasındaki Rolü</h3>
+<ul>
+<li>
+<p>Kripto varlıkların güvenli saklanması ve işlemlerin hızlı onaylanması.</p>
+</li>
+<li>
+<p>Anonimlik ve gizlilik sağlar.</p>
+</li>
+<li>
+<p>Piyasalara erişimi kolaylaştırır.</p>
+</li>
+</ul>
+<h3 id="mobil-ödeme-sistemleri">7. Mobil Ödeme Sistemleri</h3>
+<ul>
+<li>
+<p>NFC teknolojisi ile temasız ödemeler.</p>
+</li>
+<li>
+<p>QR kodlarla hızlı ve güvenli ödeme.</p>
+</li>
+<li>
+<p>Uygulama içi ödeme kolaylıkları.</p>
+</li>
+<li>
+<p>Farklı platform ve bankalarla uyumluluk.</p>
+</li>
+</ul>
+<h3 id="e-ticaret">8. E-Ticaret</h3>
+<ul>
+<li>
+<p>Kolay ödeme süreçleri, müşteri sadakat programları entegrasyonu.</p>
+</li>
+<li>
+<p>Otomatik ödeme seçenekleri ve uluslararası ödeme kolaylıkları.</p>
+</li>
+</ul>
+<h3 id="gelecekte-dijital-cüzdanlar">9. Gelecekte Dijital Cüzdanlar</h3>
+<ul>
+<li>
+<p>Yapay zeka entegrasyonları ile kişiselleştirilmiş hizmetler.</p>
+</li>
+<li>
+<p>Blockchain teknolojisi ile güvenlik ve şeffaflık artırımı.</p>
+</li>
+<li>
+<p>Yasal düzenlemeler ve sürdürülebilirlik trendleri.</p>
+</li>
+</ul>
+<h3 id="yasal-düzenlemeler">10. Yasal Düzenlemeler</h3>
+<ul>
+<li>
+<p>Kullanıcı veri gizliliği yasaları.</p>
+</li>
+<li>
+<p>Kullanıcı hakları ve finansal suçları önleme için düzenlemeler.</p>
+</li>
+<li>
+<p>Uluslararası iş birliği ve kara para aklama önlemleri.</p>
+</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">8. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="blok-zincir-1.0-ve-bitcoin">Blok Zincir 1.0 ve Bitcoin</h1>
+<h3 id="blok-zincir-1.0-tanımı-ve-özellikleri">1. Blok Zincir 1.0 Tanımı ve Özellikleri</h3>
+<ul>
+<li>
+<p>Verilerin bloklar halinde birbirine zincirlenerek saklandığı, değiştirilmesi neredeyse imkânsız dijital defter.</p>
+</li>
+<li>
+<p>Şeffaflık: İşlemler herkesin erişimine açık ve izlenebilir.</p>
+</li>
+<li>
+<p>Değiştirilemezlik: Onaylanmış veriler geriye dönük değiştirilemez.</p>
+</li>
+<li>
+<p>Dağıtık yapı: Merkezi otorite yok, veriler birçok düğümde eş zamanlı tutulur.</p>
+</li>
+</ul>
+<h3 id="bitcoin’in-ortaya-çıkışı">2. Bitcoin’in Ortaya Çıkışı</h3>
+<ul>
+<li>
+<p>2009’da Satoshi Nakamoto takma adlı kişi veya grup tarafından yaratıldı.</p>
+</li>
+<li>
+<p>Merkezi olmayan, devlet müdahalesi olmayan dijital para.</p>
+</li>
+<li>
+<p>İlk blok “Genesis Block” 50 BTC ödülle oluşturuldu.</p>
+</li>
+<li>
+<p>2008 finansal krizine tepki olarak ortaya çıktı, bankacılığa alternatif.</p>
+</li>
+</ul>
+<h3 id="bitcoin-ve-blok-zincir-i̇lişkisi">3. Bitcoin ve Blok Zincir İlişkisi</h3>
+<ul>
+<li>
+<p>Bitcoin, blok zinciri teknolojisinin ilk uygulamasıdır.</p>
+</li>
+<li>
+<p>Her işlem blok zincirinde şeffaf şekilde kayıt altına alınır.</p>
+</li>
+<li>
+<p>İşlemler kriptografiyle korunur, anonimlik tam değil.</p>
+</li>
+<li>
+<p>Konsensüs mekanizması olarak Proof of Work (PoW) kullanılır.</p>
+</li>
+</ul>
+<h3 id="bitcoin-madenciliği">4. Bitcoin Madenciliği</h3>
+<ul>
+<li>
+<p>Madenciler işlemleri doğrulamak için hash hesaplamaları yapar.</p>
+</li>
+<li>
+<p>Yeni blok bulan madenci ödül olarak Bitcoin kazanır.</p>
+</li>
+<li>
+<p>Madencilik zorluğu düzenli olarak ayarlanır.</p>
+</li>
+<li>
+<p>Enerji tüketimi yüksek ve eleştirilir.</p>
+</li>
+</ul>
+<h3 id="i̇şlem-doğrulama-mekanizması">5. İşlem Doğrulama Mekanizması</h3>
+<ul>
+<li>
+<p>İşlem, madenciler tarafından onaylanana kadar geçerli olmaz.</p>
+</li>
+<li>
+<p>Çifte harcama (aynı bitcoin’in iki kez kullanılması) önlenir.</p>
+</li>
+<li>
+<p>Bloklar kriptografik bağlantılarla zincirlenir.</p>
+</li>
+<li>
+<p>Mempool: Henüz blokta olmayan işlemler geçici depoda tutulur.</p>
+</li>
+</ul>
+<h3 id="bitcoin-cüzdanları-ve-güvenlik">6. Bitcoin Cüzdanları ve Güvenlik</h3>
+<ul>
+<li>
+<p>Yazılım, donanım ve kağıt cüzdan çeşitleri.</p>
+</li>
+<li>
+<p>Özel anahtarlar Bitcoin erişimi için kritiktir.</p>
+</li>
+<li>
+<p>Çoklu imza işlemleri ekstra güvenlik sağlar.</p>
+</li>
+<li>
+<p>Cüzdanlar yedeklenmeli ve kriptolanmalıdır.</p>
+</li>
+</ul>
+<h3 id="bitcoin-kullanım-alanları">7. Bitcoin Kullanım Alanları</h3>
+<ul>
+<li>
+<p>Dijital ödemelerde ödeme aracı.</p>
+</li>
+<li>
+<p>Uluslararası para transferlerinde düşük ücret avantajı.</p>
+</li>
+<li>
+<p>Yatırım ve spekülatif amaçlı kullanım.</p>
+</li>
+</ul>
+<h3 id="yasal-durum-ve-düzenlemeler">8. Yasal Durum ve Düzenlemeler</h3>
+<ul>
+<li>
+<p>Ülkeden ülkeye farklı yasal statü.</p>
+</li>
+<li>
+<p>Vergilendirme çoğu yerde varlık veya para birimi olarak yapılır.</p>
+</li>
+<li>
+<p>AML (Kara para aklama önlemleri) ve KYC (Müşterini tanı) politikaları uygulanabilir.</p>
+</li>
+</ul>
+<h3 id="ekonomiye-etkileri">9. Ekonomiye Etkileri</h3>
+<ul>
+<li>
+<p>Fiyat dalgalanmaları ile piyasa volatilitesi yüksek.</p>
+</li>
+<li>
+<p>Yeni sektörlerin (madencilik, cüzdan hizmetleri) oluşmasına katkı.</p>
+</li>
+<li>
+<p>Finansal kurumlar arasında artan kabul.</p>
+</li>
+<li>
+<p>Ekonomik özerklik sunar.</p>
+</li>
+</ul>
+<h3 id="bitcoin-ve-diğer-kripto-paralar-karşılaştırması">10. Bitcoin ve Diğer Kripto Paralar Karşılaştırması</h3>
+<ul>
+<li>
+<p>Bitcoin blok zincirinin ilk uygulaması, diğerleri farklı teknolojiler kullanabilir.</p>
+</li>
+<li>
+<p>İşlem hızları ve maliyetler farklılık gösterir.</p>
+</li>
+<li>
+<p>Bitcoin piyasa değeri ve volatilitede liderdir.</p>
+</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">9. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="blok-zincir-2.0-ve-ethereum">Blok Zincir 2.0 ve Ethereum</h1>
+<h3 id="blok-zincir-2.0-nedir">1. Blok Zincir 2.0 Nedir?</h3>
+<ul>
+<li>
+<p>Bitcoin’in sunduğu temel blok zincir teknolojisinin ötesinde, akıllı sözleşmeler ve daha karmaşık uygulamalar için geliştirilmiş bir teknoloji.</p>
+</li>
+<li>
+<p>Akıllı sözleşmeler otomatik, koşula bağlı işlem gerçekleştiren programlardır.</p>
+</li>
+<li>
+<p>Dağıtık uygulamalar (DApps) bu teknolojiyle merkeziyetsiz biçimde çalışabilir.</p>
+</li>
+<li>
+<p>Finans, sağlık, tedarik zinciri gibi birçok sektörde uygulama alanı bulmuştur.</p>
+</li>
+</ul>
+<h3 id="ethereum’un-temelleri">2. Ethereum’un Temelleri</h3>
+<ul>
+<li>
+<p>Açık kaynaklı, merkezi olmayan blok zinciri platformudur.</p>
+</li>
+<li>
+<p>2014’te Vitalik Buterin tarafından geliştirilmiştir.</p>
+</li>
+<li>
+<p>Bitcoin’e kıyasla daha zengin programlama dili ve daha hızlı işlem kapasitesine sahiptir.</p>
+</li>
+<li>
+<p>Her blok önceki blokla kriptografik olarak bağlıdır.</p>
+</li>
+</ul>
+<h3 id="akıllı-sözleşmeler">3. Akıllı Sözleşmeler</h3>
+<ul>
+<li>
+<p>Önceden belirlenen koşullar gerçekleştiğinde otomatik işlem yapan kod parçalarıdır.</p>
+</li>
+<li>
+<p>Ethereum Sanal Makinesi (EVM) tarafından yürütülür.</p>
+</li>
+<li>
+<p>Otomatik ödeme, kimlik doğrulama gibi uygulamalar vardır.</p>
+</li>
+<li>
+<p>Kod hataları ve güvenlik açıkları risk oluşturur.</p>
+</li>
+</ul>
+<h3 id="ethereum-virtual-machine-evm">4. Ethereum Virtual Machine (EVM)</h3>
+<ul>
+<li>
+<p>Ethereum blok zinciri üzerinde akıllı sözleşmeleri çalıştıran sanal makinedir.</p>
+</li>
+<li>
+<p>Solidity, Vyper gibi dilleri işler.</p>
+</li>
+<li>
+<p>Merkeziyetsiz, güvenli ve güvenilir hesaplama ortamı sağlar.</p>
+</li>
+</ul>
+<h3 id="ether-kripto-para-birimi">5. Ether Kripto Para Birimi</h3>
+<ul>
+<li>
+<p>Ethereum ağı için ana kripto paradır.</p>
+</li>
+<li>
+<p>Madencilikle yeni Ether üretilir.</p>
+</li>
+<li>
+<p>İşlem ücretleri Ether ile ödenir.</p>
+</li>
+<li>
+<p>Alım-satım ve ödeme aracıdır.</p>
+</li>
+</ul>
+<h3 id="madencilik-ve-konsensüs">6. Madencilik ve Konsensüs</h3>
+<ul>
+<li>
+<p>Orijinal olarak Proof of Work (PoW) kullanılmıştır.</p>
+</li>
+<li>
+<p>Ethereum 2.0 ile Proof of Stake (PoS) sistemine geçiş planlanmıştır.</p>
+</li>
+<li>
+<p>Beacon Chain ve Sharding gibi ölçeklendirme teknikleri geliştirilmiştir.</p>
+</li>
+</ul>
+<h3 id="dapps-dağıtık-uygulamalar">7. DApps (Dağıtık Uygulamalar)</h3>
+<ul>
+<li>
+<p>Merkezi olmayan, blok zinciri üzerinde çalışan uygulamalardır.</p>
+</li>
+<li>
+<p>DeFi, oyunlar, sanat koleksiyonları en popüler DApp örneklerindendir.</p>
+</li>
+<li>
+<p>Truffle, Remix, Metamask gibi geliştirme araçları vardır.</p>
+</li>
+<li>
+<p>Kullanıcılar için şeffaf ve güvenilir deneyim sunar.</p>
+</li>
+</ul>
+<h3 id="ethereum-2.0-ve-yenilikler">8. Ethereum 2.0 ve Yenilikler</h3>
+<ul>
+<li>
+<p>Daha hızlı, güvenli ve ölçeklenebilir bir Ethereum hedeflenir.</p>
+</li>
+<li>
+<p>Shard Chains, yeni konsensüs mekanizması gibi teknolojiler içerir.</p>
+</li>
+<li>
+<p>Daha düşük işlem ücretleri ve daha yüksek işlem hızı beklenir.</p>
+</li>
+</ul>
+<h3 id="güvenlik-sorunları-ve-çözümler">9. Güvenlik Sorunları ve Çözümler</h3>
+<ul>
+<li>
+<p>Reentrancy saldırıları, kod hataları ve ağ saldırıları gibi riskler vardır.</p>
+</li>
+<li>
+<p>Güvenlik denetimleri, dikkatli kodlama ve topluluk işbirliği önemlidir.</p>
+</li>
+<li>
+<p>Ethereum güvenlik araçları (smart contract analiz araçları vb.) kullanılır.</p>
+</li>
+</ul>
+<h3 id="ethereum-ve-diğer-platformlarla-karşılaştırma">10. Ethereum ve Diğer Platformlarla Karşılaştırma</h3>
+<ul>
+<li>
+<p>İşlem hızı, konsensüs yöntemleri ve akıllı sözleşme yetenekleri farklılık gösterir.</p>
+</li>
+<li>
+<p>Geliştirici desteği ve kabul açısından Ethereum öncüdür.</p>
+</li>
+<li>
+<p>Kullanım alanlarına göre platformların avantajları karşılaştırılır.</p>
+</li>
+</ul>
+<h3 id="ethereum’un-geleceği">11. Ethereum’un Geleceği</h3>
+<ul>
+<li>
+<p>Yeni teknolojilerle entegrasyon.</p>
+</li>
+<li>
+<p>Yasal düzenlemeler ve sürdürülebilirlik konuları.</p>
+</li>
+<li>
+<p>PoS’a geçişle enerji tüketiminin azalması.</p>
+</li>
+<li>
+<p>Finans dünyasında ve genel ekonomide artan rol.</p>
+</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">10. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="dağıtık-sistem-mimarileri">Dağıtık Sistem Mimarileri</h1>
+<h3 id="dağıtık-sistemlerin-tanımı-ve-özellikleri">1. Dağıtık Sistemlerin Tanımı ve Özellikleri</h3>
+<ul>
+<li>
+<p>Birden fazla bağımsız bilgisayarın birlikte tek bir sistem gibi çalışması.</p>
+</li>
+<li>
+<p>Bileşenler: Bağımsız makineler, ağlar ve yazılımlar.</p>
+</li>
+<li>
+<p>Avantajlar: Kaynak paylaşımı, yüksek kullanılabilirlik, esneklik.</p>
+</li>
+<li>
+<p>Zorluklar: Karmaşıklık, hata yönetimi, güvenlik sorunları.</p>
+</li>
+<li>
+<p>Uygulama alanları: Finans, sağlık, eğitim vb.</p>
+</li>
+</ul>
+<h3 id="dağıtık-sistem-mimarileri-türleri">2. Dağıtık Sistem Mimarileri Türleri</h3>
+<ul>
+<li>
+<p>İstemci-Sunucu</p>
+</li>
+<li>
+<p>Nesne Tabanlı</p>
+</li>
+<li>
+<p>Katmanlı</p>
+</li>
+<li>
+<p>Eşler Arası (P2P)</p>
+</li>
+<li>
+<p>Hizmet Odaklı (SOA)</p>
+</li>
+</ul>
+<h3 id="i̇letişim-protokolleri-ve-ağ-yapıları">3. İletişim Protokolleri ve Ağ Yapıları</h3>
+<ul>
+<li>
+<p>TCP/IP, UDP</p>
+</li>
+<li>
+<p>RPC (Remote Procedure Call)</p>
+</li>
+<li>
+<p>Middleware yazılımlar</p>
+</li>
+<li>
+<p>Ağ topolojileri: Yıldız, halka, tam bağlı</p>
+</li>
+</ul>
+<h3 id="süreç-ve-i̇ş-parçacığı-yönetimi">4. Süreç ve İş Parçacığı Yönetimi</h3>
+<ul>
+<li>
+<p>Süreçler arası iletişim ve senkronizasyon</p>
+</li>
+<li>
+<p>Thread yönetimi</p>
+</li>
+<li>
+<p>Yük dengeleme ve kaynak yönetimi</p>
+</li>
+<li>
+<p>Görev dağıtımı</p>
+</li>
+</ul>
+<h3 id="hata-toleransı-ve-güvenilirlik">5. Hata Toleransı ve Güvenilirlik</h3>
+<ul>
+<li>
+<p>Hata algılama ve kurtarma</p>
+</li>
+<li>
+<p>Yedekleme ve replikasyon</p>
+</li>
+<li>
+<p>Güvenilirlik modelleri</p>
+</li>
+<li>
+<p>Hata yönetimi stratejileri</p>
+</li>
+</ul>
+<h3 id="konsensüs-algoritmaları-ve-koordinasyon">6. Konsensüs Algoritmaları ve Koordinasyon</h3>
+<ul>
+<li>
+<p>Konsensüs tanımı ve önemi</p>
+</li>
+<li>
+<p>Raft ve Paxos algoritmaları</p>
+</li>
+<li>
+<p>Zaman damgası ve saat senkronizasyonu</p>
+</li>
+<li>
+<p>Transaksiyon yönetimi ve kilit mekanizmaları</p>
+</li>
+</ul>
+<h3 id="veri-tutma-ve-yönetimi">7. Veri Tutma ve Yönetimi</h3>
+<ul>
+<li>
+<p>Dağıtık dosya sistemleri</p>
+</li>
+<li>
+<p>Veritabanı replikasyonu</p>
+</li>
+<li>
+<p>Cache mekanizmaları</p>
+</li>
+<li>
+<p>Veri bütünlüğü ve güvenliği</p>
+</li>
+</ul>
+<h3 id="ölçeklenebilirlik-ve-performans">8. Ölçeklenebilirlik ve Performans</h3>
+<ul>
+<li>
+<p>Yatay ve dikey ölçekleme</p>
+</li>
+<li>
+<p>Yük dengeleme stratejileri</p>
+</li>
+<li>
+<p>Performans metrikleri ve kaynak tahsisi</p>
+</li>
+<li>
+<p>Büyüme yönetimi</p>
+</li>
+</ul>
+<h3 id="güvenlik-politikaları-ve-yöntemleri">9. Güvenlik Politikaları ve Yöntemleri</h3>
+<ul>
+<li>
+<p>Kimlik doğrulama ve yetkilendirme</p>
+</li>
+<li>
+<p>Şifreleme teknikleri</p>
+</li>
+<li>
+<p>Güvenlik duvarları ve saldırı tespiti</p>
+</li>
+<li>
+<p>Güvenlik politikaları ve zararlı yazılım koruması</p>
+</li>
+</ul>
+<h3 id="bulut-bilişim-ve-hizmet-modelleri">10. Bulut Bilişim ve Hizmet Modelleri</h3>
+<ul>
+<li>
+<p>IaaS, PaaS, SaaS tanımları</p>
+</li>
+<li>
+<p>Özel, kamu ve hibrit bulutlar</p>
+</li>
+<li>
+<p>Bulut güvenliği</p>
+</li>
+</ul>
+<h3 id="dağıtık-uygulama-geliştirme">11. Dağıtık Uygulama Geliştirme</h3>
+<ul>
+<li>
+<p>Mikro hizmetler, monolitik ve serverless mimariler</p>
+</li>
+<li>
+<p>Dağıtık veri yönetimi</p>
+</li>
+<li>
+<p>Uygulama dağıtımı, hata yönetimi, test ve izleme</p>
+</li>
+</ul>
+<h3 id="dağıtık-veritabanları">12. Dağıtık Veritabanları</h3>
+<ul>
+<li>
+<p>Parçalanmış veritabanları</p>
+</li>
+<li>
+<p>Sorgu optimizasyonu</p>
+</li>
+<li>
+<p>İşlem yönetimi</p>
+</li>
+<li>
+<p>Tutarlılık, replikasyon ve güvenlik</p>
+</li>
+</ul>
+<h3 id="mikro-hizmetler-ve-konteyner-yapıları">13. Mikro Hizmetler ve Konteyner Yapıları</h3>
+<ul>
+<li>
+<p>Mikro hizmetlerin tanımı</p>
+</li>
+<li>
+<p>Konteyner ve Docker</p>
+</li>
+<li>
+<p>Orkestrasyon (Kubernetes)</p>
+</li>
+<li>
+<p>Hizmetler arası iletişim ve hizmet keşfi</p>
+</li>
+</ul>
+<h3 id="gerçek-zamanlı-sistemler-ve-uygulamaları">14. Gerçek Zamanlı Sistemler ve Uygulamaları</h3>
+<ul>
+<li>
+<p>Gerçek zamanlı işleme ve zaman kısıtlamaları</p>
+</li>
+<li>
+<p>Dağıtık gerçek zamanlı veritabanları</p>
+</li>
+<li>
+<p>Gerçek zamanlı izleme ve analitik</p>
+</li>
+<li>
+<p>Sağlık, finans, üretim uygulamaları</p>
+</li>
+</ul>
+<h3 id="gelecek-trendleri-ve-yeni-teknolojiler">15. Gelecek Trendleri ve Yeni Teknolojiler</h3>
+<ul>
+<li>
+<p>Edge computing</p>
+</li>
+<li>
+<p>Yapay zeka entegrasyonu</p>
+</li>
+<li>
+<p>Blockchain teknolojisi</p>
+</li>
+<li>
+<p>IoT entegrasyonu</p>
+</li>
+<li>
+<p>Sürdürülebilir ve yeşil bilişim</p>
+</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">11. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="blok-zincirde-güvenlik">Blok Zincirde Güvenlik</h1>
+<h3 id="kriptografik-hash-fonksiyonları">1. Kriptografik Hash Fonksiyonları</h3>
+<ul>
+<li>
+<p>Blok içeriğini benzersiz şekilde temsil eden, tersine çevrilemez sayı dizileri.</p>
+</li>
+<li>
+<p>Kolizyon direnci yüksek, yani farklı verilerin aynı hash’i üretmesi zor.</p>
+</li>
+<li>
+<p>Hash hızının blok zincir performansını doğrudan etkilediği belirtiliyor.</p>
+</li>
+<li>
+<p>SHA-256 gibi algoritmalar yaygın kullanılır.</p>
+</li>
+</ul>
+<h3 id="dijital-i̇mzalar">2. Dijital İmzalar</h3>
+<ul>
+<li>
+<p>Özel anahtarla imzalama, kamu anahtarıyla doğrulama yöntemi.</p>
+</li>
+<li>
+<p>Elips eğrileri kriptografisi (ECC) güçlü güvenlik sağlar.</p>
+</li>
+<li>
+<p>İmza algoritması seçiminde güvenlik ve hız dikkate alınır.</p>
+</li>
+</ul>
+<h3 id="i̇ş-kanıtı-proof-of-work---pow">3. İş Kanıtı (Proof of Work - PoW)</h3>
+<ul>
+<li>
+<p>Zorluk ayarı ağdaki madencilik gücüne göre dinamik olarak değişir.</p>
+</li>
+<li>
+<p>Nonce bulma süreciyle geçerli blok onaylanır.</p>
+</li>
+<li>
+<p>Yüksek enerji tüketimi ve çift harcama önleme sağlar.</p>
+</li>
+</ul>
+<h3 id="pay-kanıtı-proof-of-stake---pos">4. Pay Kanıtı (Proof of Stake - PoS)</h3>
+<ul>
+<li>
+<p>Token sahipliği üzerinden blok onaylama hakkı verilir.</p>
+</li>
+<li>
+<p>Randomizasyonla güvenlik sağlanır.</p>
+</li>
+<li>
+<p>Enerji tüketimi PoW’a göre çok daha düşüktür.</p>
+</li>
+<li>
+<p>Zenginlik yoğunlaşması riski vardır.</p>
+</li>
+</ul>
+<h3 id="dağıtık-ağ-yapısı">5. Dağıtık Ağ Yapısı</h3>
+<ul>
+<li>
+<p>Noktadan noktaya bağlantı ve eşit yetki.</p>
+</li>
+<li>
+<p>Saldırıya dayanıklılık, veri doğruluğu ve şeffaflık.</p>
+</li>
+<li>
+<p>Ağda veri çoğaltılmasıyla güvenlik artırılır.</p>
+</li>
+</ul>
+<h3 id="konsensüs-mekanizmaları">6. Konsensüs Mekanizmaları</h3>
+<ul>
+<li>
+<p>Ağdaki düğümlerce kabul edilen kurallar bütünüdür.</p>
+</li>
+<li>
+<p>Çoğunluk kararına dayanır.</p>
+</li>
+<li>
+<p>Çatal (fork) yönetimi, yeni protokol entegrasyonu güvenlik konuları arasında.</p>
+</li>
+</ul>
+<h3 id="akıllı-sözleşme-güvenliği">7. Akıllı Sözleşme Güvenliği</h3>
+<ul>
+<li>
+<p>Kod doğrulama, reentrancy saldırıları önlenmeli.</p>
+</li>
+<li>
+<p>Gas limitleri yönetimi, zamanlama güvenliği önemlidir.</p>
+</li>
+</ul>
+<h3 id="saldırısı-ve-diğer-saldırılar">8. 51% Saldırısı ve Diğer Saldırılar</h3>
+<ul>
+<li>
+<p>Ağın çoğunluk hash gücünü ele geçirmek.</p>
+</li>
+<li>
+<p>Sybil saldırısı, çift harcama, zaman damgası manipülasyonu gibi tehditler.</p>
+</li>
+</ul>
+<h3 id="özel-anahtar-güvenliği">9. Özel Anahtar Güvenliği</h3>
+<ul>
+<li>
+<p>Anahtar saklama yöntemleri, çoklu imza protokolleri.</p>
+</li>
+<li>
+<p>Phishing saldırılarına karşı koruma.</p>
+</li>
+<li>
+<p>Donanım cüzdanlarının önemi.</p>
+</li>
+</ul>
+<h3 id="blok-zinciri-forkları">10. Blok Zinciri Forkları</h3>
+<ul>
+<li>
+<p>Yumuşak forklar uyumlu değişiklikler, sert forklar radikal ve uyumsuz değişiklikler.</p>
+</li>
+<li>
+<p>Topluluk bölünmeleri ve konsensüs değişiklikleri.</p>
+</li>
+</ul>
+<h3 id="zaman-damgası-ve-blok-doğrulama">11. Zaman Damgası ve Blok Doğrulama</h3>
+<ul>
+<li>
+<p>Doğru zaman damgası, blok sıralaması ve blok imzaları.</p>
+</li>
+<li>
+<p>Blok boyutu ve geçerlilik denetimi.</p>
+</li>
+</ul>
+<h3 id="merkezi-olmayan-uygulama-dapps-güvenliği">12. Merkezi Olmayan Uygulama (dApps) Güvenliği</h3>
+<ul>
+<li>
+<p>Kullanıcı arayüzü, bağımlılık yönetimi, veri saklama ve erişim güvenliği.</p>
+</li>
+<li>
+<p>Yanıltıcı dApp saldırılarına karşı korunma.</p>
+</li>
+</ul>
+<h3 id="katılımcı-ve-ağ-kimlik-doğrulaması">13. Katılımcı ve Ağ Kimlik Doğrulaması</h3>
+<ul>
+<li>
+<p>Kimlik doğrulama protokolleri ve yetkilendirme.</p>
+</li>
+<li>
+<p>Kimlik avı saldırılarına karşı savunma.</p>
+</li>
+<li>
+<p>Anonimlik ve gizlilik dengesi.</p>
+</li>
+</ul>
+<h3 id="güvenlik-i̇hlallerine-karşı-korunma-stratejileri">14. Güvenlik İhlallerine Karşı Korunma Stratejileri</h3>
+<ul>
+<li>
+<p>Düzenli güvenlik denetimleri ve yedekleme.</p>
+</li>
+<li>
+<p>Felaket kurtarma planları ve güvenlik politikaları.</p>
+</li>
+<li>
+<p>Eğitim ve farkındalık artırma.</p>
+</li>
+</ul>
+<h3 id="mevzuat-ve-uyum-sorunları">15. Mevzuat ve Uyum Sorunları</h3>
+<ul>
+<li>
+<p>Blockchain teknolojilerine yönelik yasal düzenlemeler.</p>
+</li>
+<li>
+<p>Uyumluluk ve veri gizliliği kanunları (GDPR vb).</p>
+</li>
+<li>
+<p>Kripto para denetimleri.</p>
+</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">12. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="kriptografi-ve-hashing">Kriptografi ve Hashing</h1>
+<h3 id="kriptografi-nedir">1. Kriptografi Nedir?</h3>
+<ul>
+<li>
+<p>Bilginin gizliliğini, bütünlüğünü, doğrulamasını ve inkar edilemezliğini sağlamak için kullanılan bilim dalıdır.</p>
+</li>
+<li>
+<p>Tarih boyunca antik çağlardan modern dijital çağa evrilmiştir.</p>
+</li>
+<li>
+<p>Askeri, finansal ve kişisel veri güvenliği gibi alanlarda yaygın olarak uygulanır.</p>
+</li>
+</ul>
+<h3 id="hashing-hash-fonksiyonları">2. Hashing (Hash Fonksiyonları)</h3>
+<ul>
+<li>
+<p>Veri girişini sabit uzunlukta, benzersiz ve tek yönlü dizilere dönüştüren fonksiyonlardır.</p>
+</li>
+<li>
+<p>Veri bütünlüğünü doğrulamak ve depolama verimliliğini artırmak için kullanılır.</p>
+</li>
+<li>
+<p>Popüler algoritmalar: MD5, SHA-1, SHA-256 gibi.</p>
+</li>
+<li>
+<p>Güçlü hash fonksiyonu çarpışmaya dirençli ve tersine çevrilemez olmalıdır.</p>
+</li>
+</ul>
+<h3 id="şifreleme-yöntemleri">3. Şifreleme Yöntemleri</h3>
+<ul>
+<li>
+<p>Verilerin yetkisiz erişimden korunması için kullanılır.</p>
+</li>
+<li>
+<p>Simetrik Şifreleme: Aynı anahtar hem şifreleme hem de çözmede kullanılır (AES, DES).</p>
+</li>
+<li>
+<p>Asimetrik Şifreleme: Anahtar çifti kullanılır; biri şifreleme, diğeri çözmede (RSA, ECC).</p>
+</li>
+<li>
+<p>Anahtar yönetimi kritik önemdedir; anahtarların güvenli saklanması ve dağıtımı gerekir.</p>
+</li>
+</ul>
+<h3 id="sayısal-i̇mzalar">4. Sayısal İmzalar</h3>
+<ul>
+<li>
+<p>Elektronik belgelerin bütünlüğünü ve doğruluğunu garanti eder.</p>
+</li>
+<li>
+<p>Hukuki geçerliliği ülkeden ülkeye farklıdır.</p>
+</li>
+<li>
+<p>Güvenlik tehditlerine karşı önlemler alınmalıdır.</p>
+</li>
+</ul>
+<h3 id="sertifika-otoriteleri-ca">5. Sertifika Otoriteleri (CA)</h3>
+<ul>
+<li>
+<p>Dijital sertifikalar verir ve güven zincirini yönetir.</p>
+</li>
+<li>
+<p>Merkezi otoriteye bağımlılığı azaltmak için alternatif yöntemler de geliştirilir.</p>
+</li>
+<li>
+<p>Güvenlik açıkları ve zafiyetleri olabilir.</p>
+</li>
+</ul>
+<h3 id="kriptografik-anahtar-yönetimi">6. Kriptografik Anahtar Yönetimi</h3>
+<ul>
+<li>
+<p>Anahtar oluşturma, güvenli saklama, yenileme ve erişim kontrollerini kapsar.</p>
+</li>
+<li>
+<p>Anahtarların düzenli yenilenmesi ve eski anahtarların imhası önemlidir.</p>
+</li>
+</ul>
+<h3 id="blok-zinciri-ve-kriptografi-i̇lişkisi">7. Blok Zinciri ve Kriptografi İlişkisi</h3>
+<ul>
+<li>
+<p>Blok zinciri teknolojisinin temel güvenliği kriptografi tekniklerine dayanır.</p>
+</li>
+<li>
+<p>Veri şifreleme, dijital imza ve hash fonksiyonları blok zincirinin temel bileşenleridir.</p>
+</li>
+<li>
+<p>Finans, sağlık ve diğer sektörlerde blok zinciri uygulamalarında kullanılır.</p>
+</li>
+</ul>
+<h3 id="kriptografik-zafiyetler-ve-ataklar">8. Kriptografik Zafiyetler ve Ataklar</h3>
+<ul>
+<li>
+<p>Sözlük saldırıları, ortadaki adam saldırıları gibi türler bulunur.</p>
+</li>
+<li>
+<p>Zararları minimize etmek için güncel önlemler uygulanmalıdır.</p>
+</li>
+<li>
+<p>Kriptografi alanında devam eden tehditlere karşı stratejiler geliştirilir.</p>
+</li>
+</ul>
+<h3 id="geleceğin-kriptografi-teknolojileri">9. Geleceğin Kriptografi Teknolojileri</h3>
+<ul>
+<li>
+<p>Kuantum kriptografisi, yapay zeka entegrasyonu gibi yeni teknolojiler gelişmektedir.</p>
+</li>
+<li>
+<p>Güvenlik standartları evrimleşmekte ve geleceğe uyum sağlamak üzere geliştirilmekte.</p>
+</li>
+</ul>
+<h3 id="uygulama-alanları-ve-örnekler">10. Uygulama Alanları ve Örnekler</h3>
+<ul>
+<li>Finansal işlemler, ulusal güvenlik, kişisel veri koruma ve endüstriyel otomasyon gibi birçok alanda kullanılır.</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">13. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="kripto-para-madenciliği">Kripto Para Madenciliği</h1>
+<h3 id="kripto-para-madenciliği-nedir">1. Kripto Para Madenciliği Nedir?</h3>
+<ul>
+<li>
+<p>Kripto para işlemlerinin onaylanması ve ağ güvenliğinin sağlanması amacıyla yapılan matematiksel hesaplamalar.</p>
+</li>
+<li>
+<p>Madenciler doğrulama yaptıktan sonra işlemler blok zincirine eklenir.</p>
+</li>
+<li>
+<p>Madencilik süreci yeni kripto para birimlerinin piyasaya sürülmesini sağlar.</p>
+</li>
+<li>
+<p>Madencilere blok doğrulama karşılığında kripto para ödülü verilir.</p>
+</li>
+</ul>
+<h3 id="madencilik-donanımları">2. Madencilik Donanımları</h3>
+<ul>
+<li>
+<p><strong>CPU Madenciliği:</strong> En eski yöntem, düşük performans.</p>
+</li>
+<li>
+<p><strong>GPU Madenciliği:</strong> Ekran kartlarıyla yüksek işlem gücü sağlar.</p>
+</li>
+<li>
+<p><strong>ASIC Cihazları:</strong> Madencilik için özel tasarlanmış yüksek performanslı donanımlar.</p>
+</li>
+<li>
+<p>Donanımlar genellikle yüksek maliyetlidir.</p>
+</li>
+</ul>
+<h3 id="hash-oranı-hash-rate">3. Hash Oranı (Hash Rate)</h3>
+<ul>
+<li>
+<p>Madencilik cihazlarının saniyede gerçekleştirdiği hash sayısıdır.</p>
+</li>
+<li>
+<p>Yüksek hash oranı daha yüksek işlem gücü anlamına gelir.</p>
+</li>
+<li>
+<p>Ağın toplam hash oranı, güvenliğini belirler.</p>
+</li>
+<li>
+<p>Birimleri KH/s, MH/s, GH/s gibi ölçülür.</p>
+</li>
+</ul>
+<h3 id="madencilik-havuzları">4. Madencilik Havuzları</h3>
+<ul>
+<li>
+<p>Küçük madencilerin güçlerini birleştirdiği platformlar.</p>
+</li>
+<li>
+<p>Ödüller madencilerin katkı gücüne göre dağıtılır.</p>
+</li>
+<li>
+<p>Havuzlar genellikle kazançların bir kısmını ücret olarak alır.</p>
+</li>
+<li>
+<p>Güvenilir havuz seçimi önemlidir.</p>
+</li>
+</ul>
+<h3 id="konsensüs-mekanizmaları">5. Konsensüs Mekanizmaları</h3>
+<ul>
+<li>
+<p><strong>Proof of Work (PoW):</strong> Yoğun hesaplama gücü gerektirir.</p>
+</li>
+<li>
+<p><strong>Proof of Stake (PoS):</strong> Sahip olunan kripto miktarına göre doğrulama şansı verir.</p>
+</li>
+<li>
+<p><strong>Delegated Proof of Stake (DPoS):</strong> Oyla seçilen temsilciler blok üretir.</p>
+</li>
+<li>
+<p><strong>Hybrid Sistemler:</strong> PoW ve PoS kombinasyonları.</p>
+</li>
+</ul>
+<h3 id="pow-ve-pos-karşılaştırması">6. PoW ve PoS Karşılaştırması</h3>
+<ul>
+<li>
+<p>PoW madenciliği karmaşık problemlerin çözümüne dayanır, yüksek enerji tüketir.</p>
+</li>
+<li>
+<p>PoS’da kullanıcılar sahip oldukları coin ile doğrulama yapar, daha az enerji harcar.</p>
+</li>
+<li>
+<p>Güvenlik ve merkeziyetçilik açısından farklı avantajları ve dezavantajları vardır.</p>
+</li>
+</ul>
+<h3 id="blok-ödülleri-ve-i̇şlem-ücretleri">7. Blok Ödülleri ve İşlem Ücretleri</h3>
+<ul>
+<li>
+<p>Blok başarıyla eklendiğinde madencilere verilen kripto para miktarı.</p>
+</li>
+<li>
+<p>İşlem ücretleri kullanıcılar tarafından ödenir.</p>
+</li>
+<li>
+<p>Çoğu kripto para biriminde blok ödülleri zamanla azalır.</p>
+</li>
+<li>
+<p>Bu değişiklikler madencilik karlılığını ve kripto para arzını etkiler.</p>
+</li>
+</ul>
+<h3 id="madencilik-zorluğu">8. Madencilik Zorluğu</h3>
+<ul>
+<li>
+<p>Ağdaki toplam hash gücüne göre madencilik zorluğu otomatik ayarlanır.</p>
+</li>
+<li>
+<p>Blok oluşturma sürelerinin sabit kalmasını sağlar.</p>
+</li>
+<li>
+<p>Ağ güvenliği için kritik öneme sahiptir.</p>
+</li>
+</ul>
+<h3 id="enerji-tüketimi-ve-çevresel-etkiler">9. Enerji Tüketimi ve Çevresel Etkiler</h3>
+<ul>
+<li>
+<p>PoW madenciliği yüksek enerji tüketir ve çevre üzerinde olumsuz etkiler yaratabilir.</p>
+</li>
+<li>
+<p>Yenilenebilir enerji kullanımı yaygınlaşmaktadır.</p>
+</li>
+<li>
+<p>Bazı ülkelerde regülasyonlar madencilik faaliyetlerini kısıtlamaktadır.</p>
+</li>
+</ul>
+<h3 id="madencilik-yazılımları">10. Madencilik Yazılımları</h3>
+<ul>
+<li>
+<p>Farklı donanımlar ve işletim sistemleri için çeşitli yazılımlar bulunur.</p>
+</li>
+<li>
+<p>Yazılımlar optimize edilerek maksimum verim alınabilir.</p>
+</li>
+<li>
+<p>Güvenlik özellikleri ve kullanıcı dostu arayüzler önemlidir.</p>
+</li>
+</ul>
+<h3 id="güvenlik-ve-riskler">11. Güvenlik ve Riskler</h3>
+<ul>
+<li>
+<p>Siber saldırılar, 51% saldırısı gibi riskler mevcuttur.</p>
+</li>
+<li>
+<p>Donanım arızaları ve bakım gereksinimleri vardır.</p>
+</li>
+<li>
+<p>Hukuki düzenlemeler ve belirsizlikler madencilikte risk oluşturur.</p>
+</li>
+</ul>
+<h3 id="yasal-durum">12. Yasal Durum</h3>
+<ul>
+<li>
+<p>Ülkeler madencilik faaliyetlerine farklı düzenlemeler getirmektedir.</p>
+</li>
+<li>
+<p>Vergilendirme yaygındır, bazı ülkeler madenciliği yasaklamış veya sınırlandırmıştır.</p>
+</li>
+<li>
+<p>Hukuki belirsizlikler devam etmektedir.</p>
+</li>
+</ul>
+<h3 id="gelecekteki-trendler-ve-teknolojik-gelişmeler">13. Gelecekteki Trendler ve Teknolojik Gelişmeler</h3>
+<ul>
+<li>
+<p>Daha çevreci ve verimli konsensüs mekanizmaları geliştirilmektedir.</p>
+</li>
+<li>
+<p>Blok zinciri teknolojisi farklı sektörlerde genişliyor.</p>
+</li>
+<li>
+<p>Artan regülasyon ve genel kabul.</p>
+</li>
+<li>
+<p>Donanım ve yazılım iyileştirmeleri ile madencilik verimliliği artıyor.</p>
+</li>
+</ul>
+      
+    </div></div>
+
+      <!----------------------------->
+
+     <h2 class="unite-title">14. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+      
+    </div></div>
+
+
+    <div class="accordion">
+        <button class="accordion-btn"></button>
+        <div class="accordion-content">
+
+    </div></div>
+
+  <!------------------------------------------------------------------------>
+
+      <h2 class="info">Summaries prepared by ChatGPT-4o</h2>
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ders Kaynakları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Ders Notları</h3>
+                    <p>1-13 Ders Notları</p>
+                    <a href="../Ders Kaynakları/Blok Zincir/Blok Zincir Teknolojisine Giriş.zip" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+              
+
+            </div>
+        </div>
+        
+    </section>
+
+    </div>
+
+
+   
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+    
+    
+
+
+</div>
+</div>
+
+    
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>İngilizce</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div>
+        <h1>IKU-Bilgisayar Programcılığı Hazırlık Sayfası</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+          <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+         <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+
+       <!---------------------------->
+
+
+       <!----------DERS BAŞLIĞI------------------>
+     <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">İngilizce-II</h1>
+     <div class="fakeimg" Style="height:400px; background: url('../image/english.webp'); background-position: center;
+     background-repeat: no-repeat; background-size: cover; margin-bottom: 50px;"></div>
+     <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+ <h2 class="unite-title">Örnek çalışma soruları <span></span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+         <h2 id="grammar-alıştırma-soruları-–-cevaplar-ve-açıklamalar"><strong>Grammar Alıştırma Soruları – Cevaplar ve Açıklamalar</strong></h2>
+<hr>
+<h4 id="she-____-a-doctor.">
+    <strong>1. She ____ a doctor.</strong></h4>
+<p><strong>Cevap:</strong>  B. is<br>
+<strong>Açıklama:</strong>  “She” tekil öznedir ve “be” fiili olarak “is” kullanılır.</p>
+<hr>
+<h4 id="are-from-norway."><strong>2. ____ are from Norway.</strong></h4>
+<p><strong>Cevap:</strong>  D. They<br>
+<strong>Açıklama:</strong>  “Are” çoğul öznelerle kullanılır. “They” (onlar) çoğul bir zamirdir.</p>
+<hr>
+<h4 id="is-very-smart.-she-can-speak-three-languages."><strong>3. ____ is very smart. She can speak three languages.</strong></h4>
+<p><strong>Cevap:</strong>  A. My sister<br>
+<strong>Açıklama:</strong>  Cümle tekil bir özne (“My sister”) ile başlamalıdır. “She’s” cümlenin başında kullanılmaz.</p>
+<hr>
+<h4 id="my-favorite-sport-____-tennis."><strong>4. My favorite sport ____ Tennis.</strong></h4>
+<p><strong>Cevap:</strong>  B. is<br>
+<strong>Açıklama:</strong>  “Sport” tekil bir isimdir ve “be” fiili olarak “is” kullanılır.</p>
+<hr>
+<h4 id="my-sister’s-name-____-diana."><strong>5. My sister’s name ____ Diana.</strong></h4>
+<p><strong>Cevap:</strong>  A. is<br>
+<strong>Açıklama:</strong>  İsim belirtirken “be” fiili (is) kullanılır. “Am” ve “are” burada uygun değildir.</p>
+<hr>
+<h4 id="kanye-west-____-british.-he-is-american."><strong>6. Kanye West ____ British. He is American.</strong></h4>
+<p><strong>Cevap:</strong>  C. is not<br>
+<strong>Açıklama:</strong>  “Kanye West” tekil öznedir ve olumsuz cümlede “is not” kullanılır.</p>
+<hr>
+<h4 id="how-old-____-your-father"><strong>7. How old ____ your father?</strong></h4>
+<p><strong>Cevap:</strong>  B. is<br>
+<strong>Açıklama:</strong>  “Your father” tekil öznedir ve “be” fiili olarak “is” kullanılır.</p>
+<hr>
+<h4 id="there-____-twenty-students-in-this-classroom-but-there-____-only-15-chairs."><strong>8. There ____ twenty students in this classroom, but there ____ only 15 chairs.</strong></h4>
+<p><strong>Cevap:</strong>  D. are/are<br>
+<strong>Açıklama:</strong>  “Students” ve “chairs” çoğul isimlerdir, bu yüzden “are” kullanılır.</p>
+<hr>
+<h4 id="she-is-my-best-friend-i-love-____-so-much."><strong>9. She is my best friend, I love ____ so much.</strong></h4>
+<p><strong>Cevap:</strong>  C. her<br>
+<strong>Açıklama:</strong>  “She” dişil bir zamirdir ve nesne hali “her” olarak kullanılır.</p>
+<hr>
+<h4 id="i-can’t-find-____-wallet.-i-don’t-know-where-it-is."><strong>10. I can’t find ____ wallet. I don’t know where it is.</strong></h4>
+<p><strong>Cevap:</strong>  A. my<br>
+<strong>Açıklama:</strong>  İyelik sıfatı olarak “my” (benim) kullanılır. “Mine” iyelik zamiridir ve burada uygun değildir.</p>
+<hr>
+<h4 id="i-called-them-yesterday-but-_____-answered-the-phone."><strong>11. I called them yesterday, but _____ answered the phone.</strong></h4>
+<p><strong>Cevap:</strong>  B. nobody<br>
+<strong>Açıklama:</strong>  “Nobody” (hiç kimse) olumsuz bir cevap verir ve bağlama uygundur.</p>
+<hr>
+<h4 id="in-iceland-it-snows-a-lot-so-we-can’t-go-____."><strong>12. In Iceland it snows a lot, so we can’t go ____.</strong></h4>
+<p><strong>Cevap:</strong>  A. anywhere<br>
+<strong>Açıklama:</strong>  “Anywhere” (hiçbir yere) olumsuz cümlelerde kullanılır.</p>
+<hr>
+<h4 id="this-is-harry-he-lives-in-brussels.-he-____-in-a-bank."><strong>13. This is Harry, he lives in Brussels. He ____ in a bank.</strong></h4>
+<p><strong>Cevap:</strong>  D. works<br>
+<strong>Açıklama:</strong>  Geniş zamanda tekil öznelerle fiil “-s” alır. “Work” fiilinin üçüncü hali “works” olur.</p>
+<hr>
+<h4 id="–-does-she-play-the-violin-–-no-she-____."><strong>14. – Does she play the violin? – No, she ____.</strong></h4>
+<p><strong>Cevap:</strong>  C. doesn’t<br>
+<strong>Açıklama:</strong>  “Does” ile başlayan sorulara “doesn’t” ile cevap verilir.</p>
+<hr>
+<h4 id="you-like-playing-volleyball"><strong>15. ____ you like playing volleyball?</strong></h4>
+<p><strong>Cevap:</strong>  B. Do<br>
+<strong>Açıklama:</strong>  Geniş zamanda sorular “do/does” ile başlar. “You” öznesiyle “do” kullanılır.</p>
+<hr>
+<h4 id="jane-hates-cars-she-never-____-to-races."><strong>16. Jane hates cars, she never ____ to races.</strong></h4>
+<p><strong>Cevap:</strong>  A. goes<br>
+<strong>Açıklama:</strong>  Geniş zamanda tekil öznelerle fiil “-s” alır. “Go” fiilinin üçüncü hali “goes” olur.</p>
+<hr>
+<h4 id="jim-loves-hamburgers-so-he-often-____-to-mcdonald’s-for-lunch."><strong>17. Jim loves hamburgers, so he often ____ to McDonald’s for lunch.</strong></h4>
+<p><strong>Cevap:</strong>  D. goes<br>
+<strong>Açıklama:</strong>  “He” tekil öznedir ve geniş zamanda “goes” kullanılır.</p>
+<hr>
+<h4 id="your-father-is-in-the-living-room.-he-____-tv."><strong>18. Your father is in the living room. He ____ TV.</strong></h4>
+<p><strong>Cevap:</strong>  A. is watching<br>
+<strong>Açıklama:</strong>  Şimdiki zamanda devam eden eylemler için “be + Ving” kullanılır. “He” öznesiyle “is watching” doğrudur.</p>
+<hr>
+<h4 id="i-can’t-hear-you-i-______-to-music."><strong>19. I can’t hear you, I ______ to music.</strong></h4>
+<p><strong>Cevap:</strong>  D. am listening<br>
+<strong>Açıklama:</strong>  Şimdiki zamanda “be + Ving” yapısı kullanılır. “I” öznesiyle “am listening” doğrudur.</p>
+<hr>
+<h4 id="be-careful-the-tree-______."><strong>20. Be careful! The tree ______.</strong></h4>
+<p><strong>Cevap:</strong>  B. is falling<br>
+<strong>Açıklama:</strong>  Şu anda gerçekleşen bir eylem olduğu için şimdiki zaman kullanılır. “Tree” tekil öznedir, “is falling” doğrudur.</p>
+<hr>
+<h4 id="the-baby-______-she-is-drinking-milk."><strong>21. The baby ______, she is drinking milk.</strong></h4>
+<p><strong>Cevap:</strong>  A. isn’t sleeping<br>
+<strong>Açıklama:</strong>  Şimdiki zamanda olumsuz cümle “be + not + Ving” ile kurulur. “Baby” tekil öznedir, “isn’t sleeping” doğrudur.</p>
+<hr>
+<h4 id="–-what-______-right-now---i’m-studying-for-my-exam."><strong>22. – What ______ right now? - I’m studying for my exam.</strong></h4>
+<p><strong>Cevap:</strong>  C. are you doing<br>
+<strong>Açıklama:</strong>  Şimdiki zamanda soru yaparken “be + özne + Ving” kullanılır. “You” öznesiyle “are you doing” doğrudur.</p>
+<hr>
+<h4 id="it-was-so-hot-so-i-______-the-window."><strong>23. It was so hot, so I ______ the window.</strong></h4>
+<p><strong>Cevap:</strong>  D. opened<br>
+<strong>Açıklama:</strong>  Geçmiş zamanda tamamlanmış bir eylem olduğu için “open” fiilinin geçmiş hali “opened” kullanılır.</p>
+<hr>
+<h4 id="what-______-you-______-last-weekend"><strong>24. What ______ you ______ last weekend?</strong></h4>
+<p><strong>Cevap:</strong>  C. did/do<br>
+<strong>Açıklama:</strong>  Geçmiş zamanda soru yaparken “did + özne + fiilin yalın hali” kullanılır.</p>
+<hr>
+<h4 id="princess-diana-______-in-a-car-accident-in-1997."><strong>25. Princess Diana ______ in a car accident in 1997.</strong></h4>
+<p><strong>Cevap:</strong>  B. died<br>
+<strong>Açıklama:</strong>  Geçmişte tamamlanmış bir eylem olduğu için “die” fiilinin geçmiş hali “died” kullanılır.</p>
+<hr>
+<h4 id="he-______-working-next-week."><strong>26. He ______ working next week.</strong></h4>
+<p><strong>Cevap:</strong>  B. will start<br>
+<strong>Açıklama:</strong>  Gelecek zaman için “will + fiilin yalın hali” kullanılır.</p>
+<hr>
+<h4 id="you-join-us-tomorrow-afternoon"><strong>27. ______ you join us tomorrow afternoon?</strong></h4>
+<p><strong>Cevap:</strong>  A. Will<br>
+<strong>Açıklama:</strong>  Gelecek zaman soruları “will” ile başlar.</p>
+<hr>
+<h4 id="–-we-don’t-have-any-eggs-for-breakfast.-–-i-know.-i-______-some.-i-took-some-money-from-your-wallet."><strong>28. – We don’t have any eggs for breakfast. – I know. I ______ some. I took some money from your wallet.</strong></h4>
+<p><strong>Cevap:</strong>  D. ‘m going to buy<br>
+<strong>Açıklama:</strong>  Planlanmış gelecek eylemler için “be going to” kullanılır.</p>
+<hr>
+<h4 id="if-you-heat-water-it-______."><strong>29. If you heat water, it ______.</strong></h4>
+<p><strong>Cevap:</strong>  A. boils<br>
+<strong>Açıklama:</strong>  Genel gerçekler için geniş zaman kullanılır. “It” tekil öznedir, “boils” doğrudur.</p>
+<hr>
+<h4 id="i-couldn’t-go-to-school-______-i-was-sick."><strong>30. I couldn’t go to school ______ I was sick.</strong></h4>
+<p><strong>Cevap:</strong>  c. because<br>
+<strong>Açıklama:</strong>  “Because” (çünkü) sebep belirtir.</p>
+<hr>
+<h4 id="when-i-was-5-i-______-climb-trees."><strong>31. When I was 5, I ______ climb trees.</strong></h4>
+<p><strong>Cevap:</strong>  B. could<br>
+<strong>Açıklama:</strong>  Geçmişteki yetenekler için “could” kullanılır.</p>
+<hr>
+<h4 id="–-i-have-a-terrible-headache.-–-you-______-a-painkiller."><strong>32. – I have a terrible headache. – You ______ a painkiller.</strong></h4>
+<p><strong>Cevap:</strong>  D. should take<br>
+<strong>Açıklama:</strong>  Tavsiye için “should + fiilin yalın hali” kullanılır.</p>
+<hr>
+<h4 id="you-______-a-ticket-for-the-train-or-you-will-be-penalized."><strong>33. You ______ a ticket for the train or you will be penalized.</strong></h4>
+<p><strong>Cevap:</strong>  D. have to buy<br>
+<strong>Açıklama:</strong>  Zorunluluk için “have to + fiilin yalın hali” kullanılır.</p>
+<hr>
+<h4 id="it’s-holiday-tomorrow-so-you-______-to-school."><strong>34. It’s holiday tomorrow, so you ______ to school.</strong></h4>
+<p><strong>Cevap:</strong>  C. don’t have to come<br>
+<strong>Açıklama:</strong>  Zorunluluk olmadığını belirtmek için “don’t have to” kullanılır.</p>
+<hr>
+<h4 id="time-do-we-have-for-the-test"><strong>35. ______ time do we have for the test?</strong></h4>
+<p><strong>Cevap:</strong>  A. How much<br>
+<strong>Açıklama:</strong>  Sayılamayan isimler (time) için “how much” kullanılır.</p>
+<hr>
+<h4 id="my-mom-gave-me-a-slice-of-______-and-i-ate-it."><strong>36. My mom gave me a slice of ______ and I ate it.</strong></h4>
+<p><strong>Cevap:</strong>  B. cake<br>
+<strong>Açıklama:</strong>  “Slice of cake” (bir dilim kek) doğru ifadedir.</p>
+<hr>
+<h4 id="i-have-two-______-and-one-brother."><strong>37. I have two ______ and one brother.</strong></h4>
+<p><strong>Cevap:</strong>  A. sisters<br>
+<strong>Açıklama:</strong>  Çoğul isimler “-s” alır. “Sisters” (kız kardeşler) doğrudur.</p>
+<hr>
+<h4 id="are-playing-outside-at-the-moment."><strong>38. ______ are playing outside at the moment.</strong></h4>
+<p><strong>Cevap:</strong>  C. Children<br>
+<strong>Açıklama:</strong>  “Children” (çocuklar) düzensiz çoğul isimdir.</p>
+<hr>
+<h4 id="i-saw-three-old-______-at-the-restaurant-yesterday."><strong>39. I saw three old ______ at the restaurant yesterday.</strong></h4>
+<p><strong>Cevap:</strong>  B. women<br>
+<strong>Açıklama:</strong>  “Women” (kadınlar) düzensiz çoğul isimdir.</p>
+<hr>
+<h4 id="there-is-______-cat-in-the-garden.-she-looks-sick."><strong>40. There is ______ cat in the garden. She looks sick.</strong></h4>
+<p><strong>Cevap:</strong>  A. a<br>
+<strong>Açıklama:</strong>  Belirsiz tekil isimler için “a” kullanılır.</p>
+<hr>
+<h4 id="i-will-apply-for-______-university-in-london."><strong>41. I will apply for ______ university in London.</strong></h4>
+<p><strong>Cevap:</strong>  C. a<br>
+<strong>Açıklama:</strong>  “University” sessiz harfle başlar, bu yüzden “a” kullanılır.</p>
+<hr>
+<h4 id="there-are-five-______-eggs-in-the-fridge."><strong>42. There are five ______ eggs in the fridge.</strong></h4>
+<p><strong>Cevap:</strong>  d. —<br>
+<strong>Açıklama:</strong>  Sayılabilen çoğul isimlerle artikel kullanılmaz.</p>
+<hr>
+<h4 id="i-think-summer-is-______-season-of-the-year."><strong>43. I think summer is ______ season of the year.</strong></h4>
+<p><strong>Cevap:</strong>  D. the most beautiful<br>
+<strong>Açıklama:</strong>  En üstünlük derecesi için “the most + sıfat” kullanılır.</p>
+<hr>
+<h4 id="biology-is-______-than-history."><strong>44. Biology is ______ than History.</strong></h4>
+<p><strong>Cevap:</strong>  C. more difficult<br>
+<strong>Açıklama:</strong>  Karşılaştırma için “more + sıfat + than” kullanılır.</p>
+<hr>
+<h4 id="my-bike-is-______-yours."><strong>45. My bike is ______ yours.</strong></h4>
+<p><strong>Cevap:</strong>  B. faster than<br>
+<strong>Açıklama:</strong>  Karşılaştırma için “sıfat + -er + than” kullanılır.</p>
+<hr>
+<h4 id="this-laptop-is-much-______-than-the-old-one."><strong>46. This laptop is much ______ than the old one.</strong></h4>
+<p><strong>Cevap:</strong>  C. better<br>
+<strong>Açıklama:</strong>  “Good” düzensiz bir sıfattır, karşılaştırma hali "better"dır.</p>
+<hr>
+<h4 id="i-didn’t-enjoy-biology-lessons-______-i-was-at-primary-school."><strong>47. I didn’t enjoy Biology lessons ______ I was at primary school.</strong></h4>
+<p><strong>Cevap:</strong>  A. when<br>
+<strong>Açıklama:</strong>  “When” (ne zaman) geçmişteki bir zamanı belirtir.</p>
+<hr>
+<h4 id="my-grandmother-walks-______-so-she-always-misses-the-bus."><strong>48. My grandmother walks ______, so she always misses the bus.</strong></h4>
+<p><strong>Cevap:</strong>  C. slowly<br>
+<strong>Açıklama:</strong>  “Slowly” (yavaşça) bir zarftır ve fiili niteler.</p>
+<hr>
+<h4 id="i-didn’t-feel-well-______-i-went-to-a-hospital."><strong>49. I didn’t feel well, ______ I went to a hospital.</strong></h4>
+<p><strong>Cevap:</strong>  D. so<br>
+<strong>Açıklama:</strong>  “So” (bu yüzden) sonuç belirtir.</p>
+<hr>
+<h4 id="this-is-my-mother.-she-is-______-my-teacher."><strong>50. This is my mother. She is ______ my teacher.</strong></h4>
+<p><strong>Cevap:</strong>  B. not<br>
+<strong>Açıklama:</strong>  Olumsuzluk için “not” kullanılır.</p>
+
+
+    </div></div>
+
+
+
+      <!------------------------------------------------------------------------>
+
+
+
+
+      <!------------------------------------------------------------------------>
+
+    <div class="accordion">
+        <button class="accordion-btn"></button>
+        <div class="accordion-content">
+
+    </div></div>
+
+  <!------------------------------------------------------------------------>
+
+      <h2 class="info">Summaries prepared by DeepSeek</h2>
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ders Kaynakları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Örnek Sorular</h3>
+                    <p>ING-2 Practice Questions </p>
+                    <a href="../Ders Kaynakları/ingilizce/ING-2 Practice Questions 24-25 Bhr (2).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+               
+               
+            
+              
+
+            </div>
+        </div>
+        
+    </section>
+
+    </div>
+
+
+   
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+    
+    
+
+
+</div>
+</div>
+
+    
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

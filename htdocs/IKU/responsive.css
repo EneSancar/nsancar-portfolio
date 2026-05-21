@@ -1,0 +1,151 @@
+/* orta segment cihazlar */
+@media (max-width: 1208px) {
+
+     .header .left, .header .right {
+        width: 35%; /* Sol ve sağ bölümlerin genişliği */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    #header-area .center {
+       width: 30%;
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+    }
+
+
+.kutu{
+        width: 100%; /* Kutu genişliğini %100 yaptık */
+        max-width: 150px; /* Maksimum genişlik belirledik */
+        height: 100%;
+    }
+.kutu-grid-item{
+        width: 40%;
+    }
+
+    #info-button{
+        bottom: -40%; 
+    }
+
+    #welcome-text {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+
+}
+
+
+
+/*---------------------SAYFANIN MOBİLDE RESPONSİVE TASARIMI (BU ALANDA SADECE MEDİA KODLARI İÇERMEKTEDİR)---------------------*/
+
+
+/* Mobil için */
+@media (max-width: 768px) {
+    .main{
+        padding: 10px 5px 10px 5px;
+    }
+
+    .lesson-header{
+        background-attachment:inherit;
+    }
+
+    
+    .side-toggle {
+        display: none;
+    }
+
+    /*top section bölümü*/
+
+    #header-area {
+        padding: 75px 0;
+        height: auto; /* Yüksekliği 100px olarak ayarladık */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .header .left, .header .right {
+        width: 100%; /* Sol ve sağ bölümlerin genişliği */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .side-title{
+        font-size: 0.9rem;
+    }
+
+    .kutu{
+        width: 85%; /* Kutu genişliğini %100 yaptık */
+        max-width: 150px; /* Maksimum genişlik belirledik */
+        height: 75%;
+    }
+    .kutu-grid-item{
+        width: 50%;
+    }
+
+    #header-area .center{
+        display: none;
+    }
+
+    /*-----------------*/
+
+
+    /* Menü bölümü */
+
+    .account-link{
+        display: flex;
+        flex-direction: column;
+    }
+    .account-link a {
+        height: 50%;
+        background: #fff;
+        padding:10px 15px;
+        transition: 0.3s ease;
+    }
+    header #navbar .account-link i {
+     font-size: 1.5rem;
+    }
+
+    header #navbar .account-link span{
+        font-size: 0.7rem;
+    }
+
+
+
+    .search-container button{
+        padding: 0 12px;
+    }
+    #dersArama{
+        font-size: 0.8rem;
+    }
+
+
+    /*back to top*/
+    .back-to-top{
+        right: 80px;
+    }
+    .back-to-top.visible {
+    bottom: 22px;
+    opacity: 1;
+}
+
+.öys-info-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.öys-info-box .fakeimg{
+    height: 150px;
+    margin-bottom: 0 !important;
+}
+/*-------------------*/
+
+
+
+}
+
+

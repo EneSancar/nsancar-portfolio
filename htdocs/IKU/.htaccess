@@ -1,0 +1,4 @@
+RewriteEngine On
+
+# "/AnaSayfa" adresini "/index.html" dosyasına yönlendir
+RewriteRule ^AnaSayfa$ index.html [L]

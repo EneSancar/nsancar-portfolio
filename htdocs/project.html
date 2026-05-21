@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projeler | Enes Sancar</title>
+  <link rel="icon" href="image/internet.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="image/ns.png" alt="Enes Sancar" height="48">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html">Hakkımda</a></li>
+        <li><a href="project.html" class="active">Projeler</a></li>
+        <li><a href="services.html">Servisler</a></li>
+        <li><a href="fav.html" class="nav-icon" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="projects-page">
+    <div class="container">
+      <div class="projects-hero reveal">
+        <span class="section-label">Portfolyo</span>
+        <h1>Projelerim</h1>
+        <p>Web tasarım, front-end geliştirme ve kişisel projelerimden bir seçki.</p>
+      </div>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <div class="project-card-thumb" style="background-image: url('image/blockWp.webp')"></div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span>HTML</span><span>CSS</span><span>JavaScript</span>
+            </div>
+            <h3>IKU Ders Notları</h3>
+            <p>İstanbul Kültür Üniversitesi öğrencileri için ders kaynakları, arama ve karanlık mod destekli masaüstü tarzı web uygulaması.</p>
+            <a href="IKU/index.html" class="project-card-link">Projeyi gör <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card-thumb" style="background-image: url('image/webdsgn.webp')"></div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span>Design</span><span>Gallery</span>
+            </div>
+            <h3>Web & Grafik Galeri</h3>
+            <p>Web tasarım ve grafik tasarım çalışmalarımın sergilendiği interaktif galeri bölümü.</p>
+            <a href="gallery/index.html" class="project-card-link">Galeriye git <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
+          <div class="project-card-thumb" style="background-image: url('image/my.webp')"></div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span>Portfolio</span><span>Responsive</span>
+            </div>
+            <h3>nsancar.com</h3>
+            <p>Kişisel portfolyo sitesi — hizmetler, yetenekler, iletişim ve proje vitrinini bir arada sunar.</p>
+            <a href="index.html" class="project-card-link">Ana sayfa <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </article>
+
+        <article class="project-card coming-soon reveal">
+          <div class="project-card-thumb" style="background-image: url('image/projectwp2.webp')"></div>
+          <div class="project-card-body">
+            <div class="project-card-tags">
+              <span>Yakında</span>
+            </div>
+            <h3>WordPress Projesi</h3>
+            <p>WordPress tabanlı kurumsal site projesi — yapım aşamasında.</p>
+            <span class="project-card-link"><i class="fa-solid fa-lock"></i> Yakında</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://discord.com/channels/600470766680801290/600482871286824990" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://steamcommunity.com/profiles/76561198886945002/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="about.html">Hakkımda</a>
+        <a href="project.html">Projeler</a>
+        <a href="services.html">Servisler</a>
+        <a href="fav.html">Aktiviteler</a>
+      </nav>
+      <p class="footer-copy">Copyright &copy; 2025 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

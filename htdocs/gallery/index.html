@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fotoğraf Galerisi</title>
+  <link rel="stylesheet" href="style.css" />
+   <link rel="stylesheet" href="menu.css" />
+    	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <header id="menu">
+		<div id="navbar">
+		<div class="logo"><img src="../image/ns.png" alt="logo" height="70px"></div>
+		
+		<div class="hamburger">
+		  <div class="line"></div>
+		  <div class="line"></div>
+		  <div class="line"></div>
+		</div>
+		<nav class="nav-bar">
+		  <ul>
+			<li><a href="../index.html">Ana Sayfa</a></li>	
+			<li><a href="../about.html">Hakkımda</a></li>
+			<li><a href="#">Projeler</a></li>
+			<li><a href="../services.html">Servisler</a></li>
+			<li><a href="../fav.html"><i class="fa-solid fa-icons"></i></a></li>
+		  </ul>
+		</nav>
+	</div>
+	  </header>
+
+  <section>
+    <h1>📸 Fotoğraf Galerisi</h1>
+    <p>Doğanın renkleri, ışığın dansı...</p>
+  </section>
+
+  <main>
+    <div id="loader" class="loader-container">
+      <div class="spinner"></div>
+      <p>Fotoğraflar yükleniyor...</p>
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+  </main>
+
+  <div class="modal" id="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+  </div>
+
+  <script src="script.js"></script>
+  <script src="menu.js"></script>
+
+  <script>
+    	const hamburger = document.querySelector(".hamburger");
+const navBar = document.querySelector(".nav-bar");
+
+hamburger.onclick = function() {
+  navBar.classList.toggle("active");
+}
+
+// Mobil ekran boyutuna geldiğinde menüyü gizle
+window.addEventListener("resize", function() {
+  if (window.innerWidth > 800) { // Eğer ekran genişliği 800px'den büyükse
+    navBar.classList.remove("active"); // Menüyü gizle
+  }
+});
+
+// Menü öğelerine tıklandığında menüyü gizle
+document.querySelectorAll(".nav-bar ul li a").forEach(function(item) {
+  item.addEventListener("click", function() {
+    navBar.classList.remove("active"); // Menüyü gizle
+  });
+});
+
+  </script>
+</body>
+</html>

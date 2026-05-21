@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enes Sancar — Müzik, film ve oyun hobileri">
+  <title>Aktiviteler | Enes Sancar</title>
+  <link rel="icon" href="image/internet.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="image/ns.png" alt="Enes Sancar" height="48">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html">Hakkımda</a></li>
+        <li><a href="project.html">Projeler</a></li>
+        <li><a href="services.html">Servisler</a></li>
+        <li><a href="fav.html" class="nav-icon active" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero fav-hero reveal">
+    <div class="page-hero-content container">
+      <span class="section-label">İlgi Alanlarım</span>
+      <h1>Hobiler & Aktiviteler</h1>
+      <p>Müzik, sinema, oyun ve daha fazlası — boş zamanlarımda nelerden keyif aldığımı keşfet.</p>
+    </div>
+  </section>
+
+  <main class="fav-page">
+    <div class="container">
+      <div class="hobby-pills reveal">
+        <span class="hobby-pill"><i class="fa-solid fa-music"></i> Müzik</span>
+        <span class="hobby-pill"><i class="fa-solid fa-film"></i> Film</span>
+        <span class="hobby-pill"><i class="fa-solid fa-gamepad"></i> Oyun</span>
+        <span class="hobby-pill"><i class="fa-solid fa-camera"></i> Fotoğraf</span>
+        <span class="hobby-pill"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Tenis</span>
+        <span class="hobby-pill"><i class="fa-solid fa-landmark"></i> Gezi</span>
+      </div>
+
+      <!-- Music -->
+      <section class="hobby-section reveal" id="music">
+        <div class="hobby-section-header">
+          <h2><i class="fa-solid fa-music"></i> Favori Müzikler</h2>
+          <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" class="hobby-link-btn spotify" target="_blank" rel="noopener">
+            <i class="fa-brands fa-spotify"></i> Spotify Profilim
+          </a>
+        </div>
+        <div class="music-grid">
+          <div class="music-track">
+            <img src="image/music/kd cudi.jpeg" alt="Kid Cudi">
+            <div class="music-track-info">
+              <h4>Kid Cudi</h4>
+              <p><i class="fa-solid fa-heart heart"></i> Day 'n' Nite</p>
+            </div>
+          </div>
+          <div class="music-track">
+            <img src="image/music/suisside.jpg" alt="Suisside">
+            <div class="music-track-info">
+              <h4>Suisside</h4>
+              <p><i class="fa-solid fa-heart heart"></i> Dark Side Of The Moon</p>
+            </div>
+          </div>
+          <div class="music-track">
+            <img src="image/music/tame impala.jpeg" alt="Tame Impala">
+            <div class="music-track-info">
+              <h4>Tame Impala</h4>
+              <p><i class="fa-solid fa-heart heart"></i> Let It Happen</p>
+            </div>
+          </div>
+          <div class="music-track">
+            <img src="image/music/battletapes.jpeg" alt="Battle Tapes">
+            <div class="music-track-info">
+              <h4>Battle Tapes</h4>
+              <p><i class="fa-solid fa-heart heart"></i> Valkyrie</p>
+            </div>
+          </div>
+          <div class="music-track">
+            <img src="image/music/m83.png" alt="M83">
+            <div class="music-track-info">
+              <h4>M83</h4>
+              <p><i class="fa-solid fa-heart heart"></i> Solitude (Felsmann + Tiley Reinterpretation)</p>
+            </div>
+          </div>
+          <div class="music-track">
+            <img src="image/music/kendricklamar.jpg" alt="Kendrick Lamar">
+            <div class="music-track-info">
+              <h4>Kendrick Lamar</h4>
+              <p><i class="fa-solid fa-heart heart"></i> Money Trees</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Movies -->
+      <section class="hobby-section reveal" id="movies">
+        <div class="hobby-section-header">
+          <h2><i class="fa-solid fa-film"></i> Favori Filmler</h2>
+          <span class="movie-count-badge">13 film</span>
+        </div>
+
+        <div class="movie-showcase">
+          <article class="movie-featured" aria-live="polite">
+            <div class="movie-featured-media">
+              <img class="movie-featured-img" id="movieFeaturedImg" src="favimg/movie/1299427.webp" alt="İnterstellar">
+              <div class="movie-featured-overlay" aria-hidden="true"></div>
+            </div>
+            <div class="movie-featured-body">
+              <span class="movie-featured-rank" id="movieFeaturedRank">#1</span>
+              <h3 class="movie-featured-title" id="movieFeaturedTitle">İnterstellar</h3>
+              <div class="movie-featured-genres" id="movieFeaturedGenres"></div>
+              <div class="movie-featured-meta">
+                <span class="movie-featured-rating" id="movieFeaturedRating">
+                  <i class="fa-solid fa-star"></i> 8.7
+                </span>
+                <span class="movie-featured-year" id="movieFeaturedYear">2014</span>
+              </div>
+            </div>
+            <div class="movie-featured-nav">
+              <button type="button" class="movie-nav-btn" id="moviePrev" aria-label="Önceki film">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button type="button" class="movie-nav-btn" id="movieNext" aria-label="Sonraki film">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </article>
+
+          <div class="movie-rail-wrap">
+            <div class="movie-rail" id="movieRail" role="tablist" aria-label="Film listesi">
+              <button type="button" role="tab" class="movie-thumb is-active" aria-selected="true"
+                data-poster="favimg/movie/1299427.webp"
+                data-title="İnterstellar"
+                data-genres="Sci-Fi,Macera,Drama"
+                data-rating="8.7"
+                data-year="2014">
+                <img src="favimg/movie/1299427.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">İnterstellar</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/1288453.webp"
+                data-title="All Quiet on the Western Front"
+                data-genres="Savaş,Aksiyon,Drama"
+                data-rating="7.8"
+                data-year="2022">
+                <img src="favimg/movie/1288453.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Western Front</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/1148100.webp"
+                data-title="Nobody"
+                data-genres="Aksiyon,Suç,Drama"
+                data-rating="7.4"
+                data-year="2021">
+                <img src="favimg/movie/1148100.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Nobody</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/227571.webp"
+                data-title="Inglourious Basterds"
+                data-genres="Macera,Drama,Savaş"
+                data-rating="8.4"
+                data-year="2009">
+                <img src="favimg/movie/227571.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Basterds</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/671541.webp"
+                data-title="The Revenant"
+                data-genres="Aksiyon,Macera,Drama"
+                data-rating="8.0"
+                data-year="2015">
+                <img src="favimg/movie/671541.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Revenant</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/1008714.webp"
+                data-title="Green Book"
+                data-genres="Biyografi,Drama,Komedi"
+                data-rating="8.2"
+                data-year="2018">
+                <img src="favimg/movie/1008714.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Green Book</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/12-angry-men.webp"
+                data-title="12 Angry Men"
+                data-genres="Drama"
+                data-rating="8.5"
+                data-year="1957">
+                <img src="favimg/movie/12-angry-men.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">12 Angry Men</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/sicario-2.webp"
+                data-title="Sicario 2: Day of the Soldado"
+                data-genres="Aksiyon,Suç,Drama"
+                data-rating="7.1"
+                data-year="2018">
+                <img src="favimg/movie/sicario-2.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Sicario 2</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/heat.webp"
+                data-title="Heat"
+                data-genres="Aksiyon,Suç,Drama"
+                data-rating="8.3"
+                data-year="1995">
+                <img src="favimg/movie/heat.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Heat</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/f1.webp"
+                data-title="F1"
+                data-genres="Drama,Spor"
+                data-rating="7.2"
+                data-year="2025">
+                <img src="favimg/movie/f1.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">F1</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/man-from-earth.webp"
+                data-title="The Man from Earth"
+                data-genres="Bilim Kurgu,Drama"
+                data-rating="7.9"
+                data-year="2007">
+                <img src="favimg/movie/man-from-earth.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Man from Earth</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/hollywood.webp"
+                data-title="Once Upon a Time... in Hollywood"
+                data-genres="Komedi,Drama"
+                data-rating="7.4"
+                data-year="2019">
+                <img src="favimg/movie/hollywood.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Hollywood</span>
+              </button>
+              <button type="button" role="tab" class="movie-thumb" aria-selected="false"
+                data-poster="favimg/movie/spirited-away.webp"
+                data-title="Spirited Away"
+                data-genres="Animasyon,Fantastik,Aile"
+                data-rating="8.5"
+                data-year="2001">
+                <img src="favimg/movie/spirited-away.webp" alt="" loading="lazy">
+                <span class="movie-thumb-label">Spirited Away</span>
+              </button>
+            </div>
+          </div>
+          <p class="movie-showcase-hint"><i class="fa-solid fa-hand-pointer"></i> Posterlere tıklayarak detayı değiştir</p>
+        </div>
+      </section>
+
+      <!-- Games -->
+      <section class="hobby-section reveal" id="games">
+        <div class="hobby-section-header">
+          <h2><i class="fa-solid fa-gamepad"></i> Favori Oyunlar</h2>
+          <a href="https://steamcommunity.com/profiles/76561198886945002/" class="hobby-link-btn steam" target="_blank" rel="noopener">
+            <i class="fa-brands fa-steam"></i> Steam Profilim
+          </a>
+        </div>
+        <div class="games-grid">
+          <div class="game-poster favorite" title="The Artful Escape — Favorim">
+            <img src="favimg/game/artful-escape.jpg?v=2" alt="The Artful Escape" loading="lazy">
+          </div>
+          <div class="game-poster" title="Counter-Strike 2">
+            <img src="favimg/game/cs2.jpg" alt="Counter-Strike 2" loading="lazy">
+          </div>
+          <div class="game-poster" title="Hotline Miami 2: Wrong Number">
+            <img src="favimg/game/hotline-miami-2.jpg" alt="Hotline Miami 2: Wrong Number" loading="lazy">
+          </div>
+          <div class="game-poster" title="Journey">
+            <img src="favimg/game/journey.jpg?v=2" alt="Journey" loading="lazy">
+          </div>
+          <div class="game-poster" title="Terraria">
+            <img src="favimg/game/terraria.jpg" alt="Terraria" loading="lazy">
+          </div>
+          <div class="game-poster" title="Minecraft">
+            <img src="favimg/game/minecraft.jpg?v=2" alt="Minecraft" loading="lazy">
+          </div>
+          <div class="game-poster" title="Ready or Not">
+            <img src="favimg/game/ready-or-not.jpg" alt="Ready or Not" loading="lazy">
+          </div>
+          <div class="game-poster" title="Red Dead Redemption 2">
+            <img src="favimg/game/rdr2.jpg" alt="Red Dead Redemption 2" loading="lazy">
+          </div>
+          <div class="game-poster" title="World War Z">
+            <img src="favimg/game/world-war-z.jpg" alt="World War Z" loading="lazy">
+          </div>
+          <div class="game-poster" title="Forza Horizon 5">
+            <img src="favimg/game/forza-horizon-5.jpg" alt="Forza Horizon 5" loading="lazy">
+          </div>
+          <div class="game-poster" title="Zero Hour">
+            <img src="favimg/game/zero-hour.jpg" alt="Zero Hour" loading="lazy">
+          </div>
+          <div class="game-poster" title="Pixel Worlds">
+            <img src="favimg/game/pixel-worlds.jpg" alt="Pixel Worlds" loading="lazy">
+          </div>
+          <div class="game-poster" title="Intravenous">
+            <img src="favimg/game/intravenous.jpg?v=2" alt="Intravenous" loading="lazy">
+          </div>
+          <div class="game-poster" title="Police Stories">
+            <img src="favimg/game/police-stories.jpg" alt="Police Stories" loading="lazy">
+          </div>
+          <div class="game-poster" title="The Finals">
+            <img src="favimg/game/the-finals.jpg" alt="The Finals" loading="lazy">
+          </div>
+          <div class="game-poster" title="EA SPORTS FC 26">
+            <img src="favimg/game/fc26.jpg?v=2" alt="EA SPORTS FC 26" loading="lazy">
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://discord.com/channels/600470766680801290/600482871286824990" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://steamcommunity.com/profiles/76561198886945002/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="about.html">Hakkımda</a>
+        <a href="project.html">Projeler</a>
+        <a href="services.html">Servisler</a>
+        <a href="fav.html">Aktiviteler</a>
+      </nav>
+      <p class="footer-copy">Copyright &copy; 2025 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

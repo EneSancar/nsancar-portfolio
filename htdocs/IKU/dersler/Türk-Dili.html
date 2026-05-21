@@ -1,0 +1,2625 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Türk Dili</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div>
+        <h1>IKU-Bilgisayar Programcılığı Hazırlık Sayfası</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+           <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+          <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+      <h2 class="info">TDL102, Türk Dili 2 dersi final sınavında 7-14. haftalar arasındaki konulardan sorumlu olacaksınız. 
+        Sınava 7. hafta da dahil olacaktır.!</h2>
+        <!---------------------------->
+
+
+        <!----------DERS BAŞLIĞI------------------>
+      <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Türk Dili Notları ve Çalışma Soruları</h1>
+      <div class="fakeimg" Style="height:400px; background: url('../image/catintebooks.webp'); background-position: center;
+      background-repeat: no-repeat; background-size: cover; margin-bottom: 50px;"></div>
+      <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+      <h2 class="unite-title" style="margin-top: -25px;">7. Hafta Ders Notu <span>özet</span></h2>
+
+      <div class="accordion">
+        <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+        <div class="accordion-content">
+
+            <h3 id="deneme-yazısı">1. Deneme Yazısı</h3>
+<ul>
+<li>
+<p><strong>Tanım:</strong> Deneme, herhangi bir konuyu kişisel görüşlerle, etkili ve samimi bir anlatımla ele alan düzyazı türüdür. Okuyucuyu düşündürmeyi amaçlar ancak makale, fıkra ve eleştiriden farklıdır; belirli bir görüşü zorla kabul ettirmez, belge ve tanıklık zorunluluğu yoktur, kesin yargıya varmaz.</p>
+</li>
+<li>
+<p><strong>Tarihçe:</strong> 16. yüzyıl Fransız yazarı Michel de Montaigne, deneme türünün kurucusu sayılır. Montaigne, denemelerinde kendisini olduğu gibi, özentisiz ve samimi bir şekilde anlatmıştır. Deneme, güçlü bir "ben" bilinciyle yazılır.</p>
+</li>
+<li>
+<p><strong>Özellikleri:</strong></p>
+<ul>
+<li>
+<p>Özneldir, "ben" dili hakimdir.</p>
+</li>
+<li>
+<p>Konu sınırlaması yoktur; günlük hayattan büyük fikirlere kadar her konu işlenebilir.</p>
+</li>
+<li>
+<p>Okurla yazar arasında samimi, sohbet havası vardır.</p>
+</li>
+<li>
+<p>Kurmaca değildir, gerçek düşünceler dile getirilir.</p>
+</li>
+<li>
+<p>İroni, anekdot ve özgün söyleyişler sık kullanılır.</p>
+</li>
+<li>
+<p>Kesin yargıya varılmaz, okurun kendi sonucuna varması beklenir.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Alt Türleri:</strong></p>
+<ul>
+<li>
+<p><strong>Klasik Deneme:</strong> İçten, hoşça vakit geçirten, deneyim ve özdeyişler içerir.</p>
+</li>
+<li>
+<p><strong>Edebî Deneme:</strong> Edebiyat konularında, edebî boyutta düşünceler.</p>
+</li>
+<li>
+<p><strong>Felsefi Deneme:</strong> Doğruyu ve aydınlığı arayan, düşündüren yazılar.</p>
+</li>
+<li>
+<p><strong>Eleştirel Deneme:</strong> Bir konunun iyi-kötü yanlarını değerlendirir.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Türk Edebiyatındaki Temsilcileri:</strong> Ahmet Rasim, Ahmet Haşim, Yahya Kemal, Nurullah Ataç, Sabahattin Eyüboğlu, Melih Cevdet Anday, Yaşar Kemal, vb.</p>
+</li>
+</ul>
+<hr>
+<h3 id="söyleşi-sohbet-yazısı">2. Söyleşi (Sohbet) Yazısı</h3>
+<ul>
+<li>
+<p><strong>Tanım:</strong> Yazarın kendi görüşleri doğrultusunda, günlük sanat olayları veya çeşitli konularda samimi ve konuşma havasında yazdığı yazı türüdür.</p>
+</li>
+<li>
+<p><strong>Özellikleri:</strong></p>
+<ul>
+<li>
+<p>Soru-cevap tarzında anlatım, devrik cümleler yaygındır.</p>
+</li>
+<li>
+<p>İçten, yalın, duru bir dil kullanılır.</p>
+</li>
+<li>
+<p>Konu genellikle genel ve yüzeyseldir.</p>
+</li>
+<li>
+<p>Öznel anlatım, kanıt arama zorunluluğu yoktur.</p>
+</li>
+<li>
+<p>Deneme ile karıştırılabilir ama söyleşi daha uzundur.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Türk Edebiyatındaki Temsilcileri:</strong> Ahmet Rasim, Peyami Safa, Melih Cevdet Anday, Şevket Rado, vb.</p>
+</li>
+<li>
+<p><strong>Örnek Metin:</strong> Nurullah Ataç'ın "Geldiği Gibi" adlı söyleşisi, kış mevsimine dair içten ve samimi gözlemler içerir.</p>
+</li>
+</ul>
+<hr>
+<h3 id="röportaj-yazısı">3. Röportaj Yazısı</h3>
+<ul>
+<li>
+<p><strong>Tanım:</strong> Bir kişi, yer ya da olayı, yazarın görüş ve düşünceleriyle birleştirerek geniş kitlelere tanıtan araştırma ve inceleme yazısıdır. Gazete, dergi, radyo, televizyon ve internet ortamında yaygındır.</p>
+</li>
+<li>
+<p><strong>Özellikleri:</strong></p>
+<ul>
+<li>
+<p>Yaşatarak öğretme ve belgelemeyi amaçlar.</p>
+</li>
+<li>
+<p>Genellikle soru-cevap ya da belgesel tarzında yazılır.</p>
+</li>
+<li>
+<p>Doğruluk belge, fotoğraf, istatistikle desteklenir.</p>
+</li>
+<li>
+<p>Kamuoyu oluşturma, toplum sorunlarını yansıtma işlevi vardır.</p>
+</li>
+<li>
+<p>Yazarın bilgi birikimi ve deneyimiyle öznel boyut da taşır.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Röportaj Yapım Aşamaları:</strong></p>
+<ul>
+<li>
+<p><strong>Planlama:</strong> Konu ve görüşülecek kişi belirlenir; sorular hazırlanır.</p>
+</li>
+<li>
+<p><strong>Görüşme:</strong> Samimi ortam sağlanır; yeni sorular anlık sorulabilir.</p>
+</li>
+<li>
+<p><strong>Yayınlama:</strong> Metin gözden geçirilir, kişi onayı alınır, düzenlenir.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Türk Edebiyatında Örnekler:</strong> Ruşen Eşref Ünaydın, Yaşar Kemal, Fikret Otyam, vb.</p>
+</li>
+<li>
+<p><strong>Örnek Röportaj:</strong> Buket Uzuner ile yapılan söyleşi, yazarlık süreci ve çocuk kitaplarına dair görüşler içerir.</p>
+</li>
+</ul>
+<hr>
+<h3 id="deneme-ve-röportaj-örnekleri">4. Deneme ve Röportaj Örnekleri</h3>
+<ul>
+<li>
+<p>Montaigne'nin ölüm üzerine düşünceleri, yaşam ve ölümün kaçınılmazlığı ve insanın buna bakışı.</p>
+</li>
+<li>
+<p>Afşar Timuçin'in yolculuk temalı denemesi; yolculuğun hayaller, umutlar ve kişisel keşif üzerindeki etkisi.</p>
+</li>
+<li>
+<p>Nurullah Ataç'ın özgür kişi tanımı; gerçek özgürlüğün düşüncelerdeki tutarlılıkla mümkün olduğu.</p>
+</li>
+<li>
+<p>Yaşar Kemal'in çocukluk ve gençlik yıllarına dair röportaj bölümü.</p>
+</li>
+</ul>
+<hr>
+<p><strong>Genel Özet:</strong></p>
+<ol start="7">
+<li>hafta dersinde, farklı yazı türlerinden; özellikle <strong>deneme, söyleşi ve röportaj</strong> türleri detaylı olarak incelenmiştir. Deneme türü, yazarın kişisel düşüncelerini özgürce dile getirdiği, okuru düşündürmeyi amaçlayan özgün ve samimi yazılardır. Söyleşi, daha sohbet havasında, günlük konuları içten bir şekilde ele alır. Röportaj ise bir kişiyi veya olayı belgeleyerek, okuyucuya yaşatarak tanıtmayı hedefler ve genellikle gazetecilikle iç içedir.</li>
+</ol>    
+</div></div>
+
+      <!------------------------------------------------------------------------------------------->
+
+      <h2 class="unite-title">8. Hafta Ders Notu <span>özet</span></h2>
+
+
+      <div class="accordion">
+        <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+        <div class="accordion-content">
+            <h3 id="kişisel-hayatı-konu-alan-metinler">Kişisel Hayatı Konu Alan Metinler</h3>
+            <ol>
+            <li>
+            <p><strong>Anı (Hatıra)</strong></p>
+            <ul>
+            <li>
+            <p>Anı, geçmişte yaşanmış olayların yazarın gözlem, izlenim ve bilgi birikimiyle anlatılmasıdır.</p>
+            </li>
+            <li>
+            <p>Anılar, bireysel ve öznel olmasına rağmen gerçeği saptırmamak önemlidir.</p>
+            </li>
+            <li>
+            <p>Anı ile öz yaşam öyküsü karıştırılmamalıdır; anı dışsal olaylara, öz yaşam öyküsü ise içsel olaylara odaklanır.</p>
+            </li>
+            <li>
+            <p>Anıların yazılması genellikle olaylardan uzun zaman sonra olur, bellek yanılmaları olabilir.</p>
+            </li>
+            <li>
+            <p>Anılar kronolojik ya da karışık sırayla yazılabilir.</p>
+            </li>
+            <li>
+            <p>Amaçları arasında unutulma korkusunu yenmek, gerçekleri kalıcı kılmak, tarihsel döneme ışık tutmak yer alır.</p>
+            </li>
+            <li>
+            <p>Türk edebiyatında anı türü Tanzimat sonrası yaygınlaşmış, önemli yazarlar arasında Yakup Kadri Karaosmanoğlu, Halide Edip Adıvar, Yahya Kemal, Refik Halit Karay gibi isimler vardır.</p>
+            </li>
+            </ul>
+            </li>
+            <li>
+            <p><strong>Günlük (Günce)</strong></p>
+            <ul>
+            <li>
+            <p>Günlük, yazarın kendi duygu, düşünce ve yaşadıklarını gün gün yazdığı yazı türüdür.</p>
+            </li>
+            <li>
+            <p>Günlük yazıları yaşandığı anda yazıldığı için anılardan farklı olarak tazelik ve doğrudanlık taşır.</p>
+            </li>
+            <li>
+            <p>İki türü vardır: içe dönük (kişisel) ve dışa dönük (çağının olaylarını anlatan).</p>
+            </li>
+            <li>
+            <p>Günlükler kanıt amaçlı değildir; içtenlik ve samimiyet önemlidir.</p>
+            </li>
+            <li>
+            <p>Batıda Franz Kafka, Virginia Woolf gibi önemli günlük yazarları vardır.</p>
+            </li>
+            <li>
+            <p>Türk edebiyatında günlük türü Tanzimat'la girmiş, asıl gelişimi ise Cumhuriyet dönemiyle olmuştur (Nurullah Ataç, Salah Birsel, Tomris Uyar gibi).</p>
+            <p>Türk edebiyatında günlük türü Tanzimat’la girmiş, asıl gelişimi ise Cumhuriyet dönemiyle olmuştur (Nurullah Ataç, Salah Birsel, Tomris Uyar gibi).</p>
+            </li>
+            </ul>
+            </li>
+            <li>
+            <p><strong>Gezi Yazısı</strong></p>
+            <ul>
+            <li>
+            <p>Gezi yazısı, yazarın gördüğü yerleri gözlem ve bilgiye dayalı, akıcı ve etkileyici bir şekilde anlattığı yazı türüdür.</p>
+            </li>
+            <li>
+            <p>Amaç farklı kültürleri, coğrafyaları tanıtmak, okuyucunun gezme arzusunu uyandırmaktır.</p>
+            </li>
+            <li>
+            <p>Gezi yazıları nesnel gözlemler ve yazarın öznel izlenimlerini bir arada barındırır.</p>
+            </li>
+            <li>
+            <p>Anı türünden farkı; gezi yazısı daha çok coğrafyaya odaklanırken anı bireysel yaşantılara odaklanır.</p>
+            </li>
+            <li>
+            <p>Anlatım biçimi olarak açıklayıcı, betimleyici, öyküleyici ve tartışmacı anlatım kullanılabilir.</p>
+            </li>
+            <li>
+            <p>Dünyada Marco Polo, İbni Batuta önemli gezi yazarıdır.</p>
+            </li>
+            <li>
+            <p>Türk edebiyatında Evliya Çelebi, Ahmet Mithat Efendi, Mehmet Rauf, Halit Ziya Uşaklıgil gibi isimler bu türde eser vermiştir.</p>
+            </li>
+            <li>
+            <p>Cumhuriyet döneminde Anadolu coğrafyasını ele alan gezi yazıları artmıştır.</p>
+            </li>
+            </ul>
+            </li>
+            </ol>
+            <hr>
+            <h3 id="örnek-metinler">Örnek Metinler</h3>
+            <ul>
+            <li>
+            <p>Mehmet Kemal’in Orhan Veli, Melih Cevdet ve Sait Faik ile ilgili anıları.</p>
+            </li>
+            <li>
+            <p>Günlük türünden Salah Birsel’in yazı örnekleri.</p>
+            </li>
+            <li>
+            <p>Aziz Nesin’in “Ter Koşusu” adlı metni.</p>
+            </li>
+            <li>
+            <p>Vedat Günyol’un “Geldi Olayı” anısı.</p>
+            </li>
+            <li>
+            <p>Murat Belge’nin Sofya sokakları hakkındaki gezi yazısı.</p>
+            </li>
+            <li>
+            <p>Haldun Taner’in Taç Mahal hakkındaki gözlemleri.</p>
+            </li>
+            </ul>
+            <hr>
+            <p><strong>Genel Değerlendirme:</strong></p>
+            <ol start="8">
+            <li>hafta dersinde, kişisel hayatı konu alan yazı türleri detaylı incelenmiştir. Anı türü, yaşanmış geçmişe odaklanırken, günlük türü an ve duygu durumlarını anlık ve içten bir şekilde aktarır. Gezi yazısı ise hem nesnel gözlemler hem de yazarın izlenimlerini harmanlayarak farklı coğrafyaları, kültürleri okuyucuya sunar. Bu türler, hem bireysel deneyimleri hem de toplum ve tarih bilincini yansıtarak edebiyatımızda önemli yer tutar.</li>
+            </ol>
+
+        </div></div>
+
+    <!------------------------------------------------------------------------------------------->
+      <h2 class="unite-title">9. Hafta Ders Notu <span>özet</span></h2>
+
+      <div class="accordion">
+        <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+        <div class="accordion-content">
+
+            <h3 id="kişisel-hayatı-konu-alan-metinler">Kişisel Hayatı Konu Alan Metinler</h3>
+            <h4 id="biyografi-yaşam-öyküsü">1. Biyografi (Yaşam Öyküsü)</h4>
+            <ul>
+            <li>
+            <p>Tanım: Kendi alanlarında tanınmış kişilerin yaşam öykülerinin araştırılıp, okuyucuya bilgi vermek amacıyla yazılan metinlerdir.</p>
+            </li>
+            <li>
+            <p>Özellikleri:</p>
+            <ul>
+            <li>
+            <p>Nesnel, gerçeklere bağlı ve belgelere dayalı olmalıdır.</p>
+            </li>
+            <li>
+            <p>Sade, anlaşılır bir dil kullanılır; abartıya ve öznel yorumlara yer verilmez.</p>
+            </li>
+            <li>
+            <p>Genellikle üçüncü kişi ağzından yazılır.</p>
+            </li>
+            <li>
+            <p>Girişte kişinin doğum tarihi, yeri, ailesi, çevresi; gelişmede eğitim, kariyer, başarılar; sonuçta ise genel değerlendirme ve varsa eser listesi yer alır.</p>
+            </li>
+            <li>
+            <p>Uzunlukları kısa bir fıkradan roman boyutuna kadar değişebilir.</p>
+            </li>
+            </ul>
+            </li>
+            <li>
+            <p>Türler:</p>
+            <ul>
+            <li>Ansiklopedik, belgesel, edebi ve söyleşi biçiminde biyografiler bulunur.</li>
+            </ul>
+            </li>
+            <li>
+            <p>Türk Edebiyatında: Tanzimat’tan itibaren gelişmiş, Cumhuriyet döneminde çeşitli biçimlerde yazılmıştır.</p>
+            </li>
+            <li>
+            <p>Örnek: Sait Faik Abasıyanık’ın biyografisi.</p>
+            </li>
+            </ul>
+            <h4 id="otobiyografi-öz-yaşam-öyküsü">2. Otobiyografi (Öz Yaşam Öyküsü)</h4>
+            <ul>
+            <li>
+            <p>Tanım: Kişinin kendi hayatını anlattığı yazı türüdür.</p>
+            </li>
+            <li>
+            <p>Özellikleri:</p>
+            <ul>
+            <li>
+            <p>Birinci kişi ağzından anlatılır.</p>
+            </li>
+            <li>
+            <p>Anı türüne benzer ancak daha çok yazarın kendisini merkeze aldığı kişisel bir anlatımdır.</p>
+            </li>
+            <li>
+            <p>Gerçeğe bağlı kalınarak yazılır ancak nesnellik beklenmez.</p>
+            </li>
+            <li>
+            <p>Belgesel ve edebi biçimleri vardır.</p>
+            </li>
+            </ul>
+            </li>
+            <li>
+            <p>Tarihçe: Batıda Augustine’nin 397’de yazdığı İtiraflar ilk örnek olarak kabul edilir. Rousseau’nun İtirafları otobiyografinin modern örneğidir.</p>
+            </li>
+            <li>
+            <p>Türk Edebiyatında: Az sayıda örnek vardır (Muallim Naci, Halikarnas Balıkçısı vb.)</p>
+            </li>
+            <li>
+            <p>Örnek: Cahit Külebi’nin çocukluk dönemini anlattığı metin.</p>
+            </li>
+            </ul>
+            <h4 id="mektup">3. Mektup</h4>
+            <ul>
+            <li>
+            <p>Tanım: Bir kişiye dilek, istek ya da arzuları iletmek amacıyla yazılan yazılardır.</p>
+            </li>
+            <li>
+            <p>Özellikleri:</p>
+            <ul>
+            <li>
+            <p>Özel veya resmi olabilir.</p>
+            </li>
+            <li>
+            <p>Yazılış şekline göre özel, edebi, iş, resmi ve açık mektup türleri vardır.</p>
+            </li>
+            <li>
+            <p>Genellikle giriş, gelişme, sonuç bölümleri bulunur.</p>
+            </li>
+            <li>
+            <p>Özel mektuplarda samimi, içten bir dil kullanılır, çoğunlukla yakınlar arası yazılır.</p>
+            </li>
+            <li>
+            <p>Edebi mektuplar ise edebiyat dünyasının önemli belgeleri olarak kabul edilir.</p>
+            </li>
+            <li>
+            <p>İş mektupları resmi ve kısa, öz, ciddi bir üslupla yazılır.</p>
+            </li>
+            <li>
+            <p>Resmi mektuplar kamu kurumları arasında ya da vatandaşlara yönelik yazışmalardır.</p>
+            </li>
+            <li>
+            <p>Açık mektuplar ise kamuoyuna yönelik, gazete veya dergide yayımlanan mektuplardır.</p>
+            </li>
+            </ul>
+            </li>
+            <li>
+            <p>Örnekler: Behçet Necatigil’den aileye yazılan özel mektup; Rilke’nin edebi mektubu; iş mektubu örneği; resmi ve açık mektup örnekleri.</p>
+            </li>
+            </ul>
+            <hr>
+            <p><strong>Genel Özet:</strong></p>
+            <ol start="9">
+            <li>hafta dersinde kişisel hayatı konu alan metin türlerinden <strong>biyografi, otobiyografi ve mektup</strong> türleri detaylı olarak ele alınmıştır. Biyografiler, tanınmış kişilerin yaşam öykülerini nesnel ve belgelere dayalı olarak aktarır. Otobiyografi, yazarın kendi yaşamını birinci kişi ağzından anlattığı türdür ve daha öznel bir yapıdadır. Mektuplar ise iletişim amacıyla farklı tür ve biçimlerde yazılan yazılardır; özel, edebi, iş, resmi ve açık mektup gibi çeşitleri vardır. Bu türler, hem bireysel yaşamın hem de toplumsal ilişkilerin edebi ve belge değerindeki ürünleridir.</li>
+            </ol>
+
+        </div></div>
+
+
+  <!---------------------------------------------------------------------------------------->
+  
+      <h2 class="unite-title">10. Hafta Ders Notu <span>özet</span></h2>
+
+      <div class="accordion">
+        <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+        <div class="accordion-content">
+
+            <h3 id="sözlü-anlatım-türleri---i">Sözlü Anlatım Türleri - I</h3>
+            <p>Günlük hayatta ve çeşitli kurumlarda kullanılan sözlü anlatım türleri hem bilgi vermek hem de tartışmak amacıyla yapılır. Bu türlerin etkin ve etkili kullanımı, bireyin kendini doğru ifade etmesini sağlar. Sözlü anlatımlar genelde <strong>hazırlıklı</strong> ve <strong>hazırlıksız</strong> olarak ikiye ayrılır.</p>
+            <hr>
+            <h4 id="açık-oturum">1. Açık Oturum</h4>
+            <ul>
+            <li>
+            <p>Önceden belirlenen bir konu uzman bir grup tarafından bir başkan yönetiminde tartışılır.</p>
+            </li>
+            <li>
+            <p>Konu toplumun geniş kesimini ilgilendiren güncel bir meseledir.</p>
+            </li>
+            <li>
+            <p>3-5 konuşmacı vardır, her biri eşit süre içinde görüş bildirir.</p>
+            </li>
+            <li>
+            <p>Amaç ortak karara varmak değil, konunun çok yönlü ele alınmasıdır.</p>
+            </li>
+            <li>
+            <p>Dinleyici geniştir; bazen televizyon, radyo ya da internet üzerinden de yapılabilir.</p>
+            </li>
+            <li>
+            <p>Başkan tarafsızdır, konuşmaları yönetir ve oturum sonunda özet yapar.</p>
+            </li>
+            <li>
+            <p>Konuşmacılar birbirlerinin görüşlerine saygılı olmalıdır.</p>
+            </li>
+            </ul>
+            <h4 id="panel">2. Panel</h4>
+            <ul>
+            <li>
+            <p>Bilimsel, sosyal veya siyasi bir konu uzmanlarca sohbet havasında değerlendirilir.</p>
+            </li>
+            <li>
+            <p>Amaç tartışma değil, farklı görüşlerin ortaya konmasıdır.</p>
+            </li>
+            <li>
+            <p>Konuşmacılar konuya ilişkin bilgi verir; dinleyiciler soru sorabilir.</p>
+            </li>
+            <li>
+            <p>Panel sonunda konuşmalar toparlanır, ancak sonuç bildirilmez.</p>
+            </li>
+            <li>
+            <p>Panelin soru-cevap bölümü varsa “forum” adını alır.</p>
+            </li>
+            </ul>
+            <h4 id="forum">3. Forum</h4>
+            <ul>
+            <li>
+            <p>Açık oturum ve panel benzeri, ancak dinleyicilerin sürece aktif katıldığı toplantıdır.</p>
+            </li>
+            <li>
+            <p>Dinleyiciler yöneticinin kontrolüyle görüş ve sorularını ifade eder.</p>
+            </li>
+            <li>
+            <p>Dinleyicilerin katılımı konunun dağılmasına yol açabileceği için yönetici dikkatli olmalıdır.</p>
+            </li>
+            <li>
+            <p>Amaç, bilgi paylaşımı ve tartışmayı canlandırmaktır.</p>
+            </li>
+            <li>
+            <p>Konuşmalar belli bir sürede sınırlandırılmaz; yönetici konuşmaları denetler.</p>
+            </li>
+            <li>
+            <p>Dinleyici sayısı sınırsızdır.</p>
+            </li>
+            </ul>
+            <h4 id="kongre-kurultay">4. Kongre (Kurultay)</h4>
+            <ul>
+            <li>
+            <p>Uzman ve katılımcıların belirli konular üzerinde görüş ve araştırmalarını sundukları toplantılardır.</p>
+            </li>
+            <li>
+            <p>Bilimsel, sanatsal ya da siyasi amaçlı olabilir.</p>
+            </li>
+            <li>
+            <p>Sunulan bildiriler (tebliğler) bilimsel içeriklidir.</p>
+            </li>
+            <li>
+            <p>Konuşmalar genelde belirli sürelerde, bir başkan yönetiminde yapılır.</p>
+            </li>
+            <li>
+            <p>Kongre sonunda bir kapanış bildirisi hazırlanır.</p>
+            </li>
+            <li>
+            <p>Bilimsel kongrelerde sunulan bildiriler daha sonra kitap halinde yayınlanabilir.</p>
+            </li>
+            </ul>
+            <h4 id="çalıştay">5. Çalıştay</h4>
+            <ul>
+            <li>
+            <p>Uzmanların belli bir konuda derinlemesine analiz, sentez ve problem çözme amaçlı toplandığı çalışma toplantısıdır.</p>
+            </li>
+            <li>
+            <p>Sonuçları yazılı metin haline getirilir.</p>
+            </li>
+            </ul>
+            <h4 id="seminer">6. Seminer</h4>
+            <ul>
+            <li>
+            <p>Uzmanların belirli bir konuda bilgi verdiği ve bu bilgiler üzerinde tartışıldığı toplantıdır.</p>
+            </li>
+            <li>
+            <p>Yükseköğretim kurumlarında öğrencilerin araştırma raporlarını sunduğu grup çalışması şeklinde de olabilir.</p>
+            </li>
+            <li>
+            <p>Sunumlar slayt ve diğer görsel desteklerle yapılabilir.</p>
+            </li>
+            </ul>
+            <h4 id="açılış-konuşması">7. Açılış Konuşması</h4>
+            <ul>
+            <li>
+            <p>Etkinlikleri başlatmak amacıyla yapılan kısa, nazik ve sembolik anlam taşıyan konuşmalardır.</p>
+            </li>
+            <li>
+            <p>Protokol kurallarına uygun olarak seçilen konuşmacılar tarafından yapılır.</p>
+            </li>
+            <li>
+            <p>İçerik kısa ve öz olmalıdır.</p>
+            </li>
+            </ul>
+            <h4 id="demeç">8. Demeç</h4>
+            <ul>
+            <li>
+            <p>Yetkili kişilerin halka açıklama yaptığı, kısa, açık ve anlaşılır konuşmalardır.</p>
+            </li>
+            <li>
+            <p>Abartı ve söz dolandırmadan kaçınılır.</p>
+            </li>
+            <li>
+            <p>Genellikle basın organlarında yer alır.</p>
+            </li>
+            </ul>
+            <h4 id="miting">9. Miting</h4>
+            <ul>
+            <li>
+            <p>Açık hava toplantılarıdır; genellikle toplumsal veya siyasi amaçlıdır.</p>
+            </li>
+            <li>
+            <p>Bir veya birden fazla konuşmacı tarafından halka hitap edilir.</p>
+            </li>
+            </ul>
+            <h4 id="brifing">10. Brifing</h4>
+            <ul>
+            <li>
+            <p>Kısa ve öz bilgi sunumu anlamına gelir.</p>
+            </li>
+            <li>
+            <p>Özellikle kurum yetkililerinin üst düzey yöneticilere yaptığı bilgilendirmelerdir.</p>
+            </li>
+            <li>
+            <p>Dil ve beden dili etkili kullanılmalıdır.</p>
+            </li>
+            </ul>
+            <hr>
+            <h3 id="örnek-çalışma-soruları-ve-cevapları">Örnek Çalışma Soruları ve Cevapları</h3>
+            <ul>
+            <li>Açık oturum, panel, forum, kongre gibi sözlü anlatım türleri arasındaki farklar, özellikleri ve işleyişine yönelik çok sayıda soru bulunmaktadır.</li>
+            </ul>
+            <hr>
+            <p><strong>Genel Özet:</strong></p>
+            <ol start="10">
+            <li>hafta dersinde sözlü anlatım türleri tanıtılmış ve açıklanmıştır. Bu türler, farklı amaçlar için topluluk önünde yapılan konuşmaları kapsar. Açık oturum, panel ve forum temel türler olarak tartışılırken, kongre, çalıştay, seminer, açılış konuşması, demeç, miting ve brifing gibi diğer sözlü iletişim türleri de açıklanmıştır. Her bir türün amacına, yapısına, katılımcılarına ve yönetim biçimine dair detaylar verilmiştir.</li>
+            </ol>
+
+        </div></div>
+  
+    <!------------------------------------------------------------------------>
+
+      <h2 class="unite-title">11. Hafta Ders Notu <span>özet</span></h2>
+
+      <div class="accordion">
+        <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+        <div class="accordion-content">
+
+            <h3 id="sözlü-anlatım-türleri---ii">Sözlü Anlatım Türleri - II</h3>
+<hr>
+<h4 id="nutuk-söylev">1. Nutuk (Söylev)</h4>
+<ul>
+<li>
+<p>Amaç: Belirli bir topluluğa düşünceyi açıklamak, aşılamak ve coşturarak yönlendirmek.</p>
+</li>
+<li>
+<p>Konuşmacıya “hatip” denir.</p>
+</li>
+<li>
+<p>Konuşmada ses tonu, vurgu, jest ve mimikler çok önemlidir.</p>
+</li>
+<li>
+<p>Konular siyasi, askeri, dini, ekonomik veya kültürel olabilir.</p>
+</li>
+<li>
+<p>Mustafa Kemal Atatürk’ün “Nutuk” eseri, en önemli örnektir.</p>
+</li>
+<li>
+<p>Başarılı nutuk için konuşmacının hedef kitleyi iyi tanıması ve etkili iletişim tekniklerini kullanması gerekir.</p>
+</li>
+<li>
+<p>Konuşma, kısa ve vurucu cümlelerle, açık ve net ifade edilmelidir.</p>
+</li>
+</ul>
+<hr>
+<h4 id="konferans">2. Konferans</h4>
+<ul>
+<li>
+<p>Bilimsel, sanatsal veya teknik bir konuda uzman kişiler tarafından hazırlanarak sunulan bilgi verme amaçlı konuşma türüdür.</p>
+</li>
+<li>
+<p>Konuşmacı, dinleyici kitlesinin seviyesine uygun, anlaşılır ve akıcı bir üslupla konuşmalıdır.</p>
+</li>
+<li>
+<p>Konferanslarda konuşmacı önceden hazırlanır, konuşmayı ezberlemek yerine ana başlıklarla anlatır.</p>
+</li>
+<li>
+<p>Konferans genelde 45 dakika ile 1 saat arasında sürer.</p>
+</li>
+<li>
+<p>Amaç dinleyiciyi coşturmak değil, bilgilendirmektir.</p>
+</li>
+<li>
+<p>Etkili konferans için diksiyon, beden dili, ses tonu, vurgu ve zaman yönetimi çok önemlidir.</p>
+</li>
+</ul>
+<hr>
+<h4 id="münazara">3. Münazara</h4>
+<ul>
+<li>
+<p>Önceden belirlenen konuda, karşıt iki görüşün jüri önünde tartışılmasıdır.</p>
+</li>
+<li>
+<p>Her grup 3-5 konuşmacıdan oluşur, konuşmalar önceden hazırlanır.</p>
+</li>
+<li>
+<p>Münazarayı bir başkan yönetir; jüri en iyi sunumu değerlendirir.</p>
+</li>
+<li>
+<p>Dil ve üslup seviyeli, saygılı olmalıdır.</p>
+</li>
+<li>
+<p>Münazara eğitici amaçlıdır; dinleme, mantıklı konuşma, eleştirel düşünme becerileri kazandırır.</p>
+</li>
+<li>
+<p>Konuşmacılar fikirlerini belge, örnek ve istatistiklerle desteklemelidir.</p>
+</li>
+<li>
+<p>Tartışma süreci konuşma, karşı argüman sunma, savunma ve soru-cevap aşamalarından oluşur.</p>
+</li>
+</ul>
+<hr>
+<h4 id="tartışma">4. Tartışma</h4>
+<ul>
+<li>
+<p>İki veya daha fazla kişinin karşıt düşüncelerini karşılıklı savunmasıdır.</p>
+</li>
+<li>
+<p>Seviyeli ve bilimsel delillere dayanmalıdır.</p>
+</li>
+<li>
+<p>Konu önceden belirlenir ve bir başkan tarafından yönetilir.</p>
+</li>
+<li>
+<p>Tartışma, farklı görüşlerin anlaşılması ve dinleme becerilerinin gelişimi açısından faydalıdır.</p>
+</li>
+<li>
+<p>Kırıcı, küçümseyici ifadelerden kaçınılmalıdır.</p>
+</li>
+<li>
+<p>Amaç fikirlerin kazanması değil, sürecin işletilmesidir.</p>
+</li>
+</ul>
+<hr>
+<h4 id="sempozyum-bilgi-şöleni">5. Sempozyum (Bilgi Şöleni)</h4>
+<ul>
+<li>
+<p>Bilimsel ve sanatsal konularda, farklı uzmanların bir araya gelerek belirli bir temada konuştuğu akademik toplantılardır.</p>
+</li>
+<li>
+<p>Konuşmalar önceden hazırlanır ve genellikle yazılı hale getirilip yayınlanır.</p>
+</li>
+<li>
+<p>Oturumlar başkan tarafından yönetilir.</p>
+</li>
+<li>
+<p>Sempozyumlar ulusal veya uluslararası olabilir.</p>
+</li>
+<li>
+<p>Amaç konuyu tartışmak değil, açıklık ve çözüm getirmektir.</p>
+</li>
+<li>
+<p>Sempozyumlarda görsel ve poster sunumlar da yer alabilir.</p>
+</li>
+</ul>
+<hr>
+<h4 id="telekonferans">6. Telekonferans</h4>
+<ul>
+<li>
+<p>Farklı mekânlarda bulunan kişilerin ses ve görüntü ile birbirleriyle iletişim kurduğu elektronik konferanstır.</p>
+</li>
+<li>
+<p>Mekân engelini kaldırır ve zaman ve maliyet açısından tasarruf sağlar.</p>
+</li>
+<li>
+<p>Özellikle uzaktan eğitim ve toplantılar için kullanılır.</p>
+</li>
+<li>
+<p>Teknik altyapı sağlam olmalıdır.</p>
+</li>
+</ul>
+<hr>
+<h4 id="webinar-web-semineri">7. Webinar (Web Semineri)</h4>
+<ul>
+<li>
+<p>İnternet üzerinden yapılan, sesli, görüntülü, metin tabanlı canlı veya isteğe bağlı seminerlerdir.</p>
+</li>
+<li>
+<p>Katılımcılar anket, soru-cevap ve testlerle interaktif olarak katılabilir.</p>
+</li>
+<li>
+<p>Düşük maliyetli ve geniş erişimli eğitim ve tanıtım aracıdır.</p>
+</li>
+<li>
+<p>Webinar hazırlığında planlama, içerik seçimi, tanıtım ve teknik denetim önemlidir.</p>
+</li>
+</ul>
+<hr>
+<h3 id="genel-değerlendirme">Genel Değerlendirme:</h3>
+<ol start="11">
+<li>hafta dersinde sözlü anlatım türlerinin ikinci kısmı ele alınmıştır. Nutuk, konferans, münazara, tartışma, sempozyum, telekonferans ve webinar türlerinin amaçları, özellikleri ve uygulama şekilleri ayrıntılı şekilde incelenmiştir. Özellikle etkili iletişim, hedef kitleye uygunluk, teknik altyapı ve interaktivite konuları vurgulanmıştır.</li>
+</ol>
+
+        </div></div>
+
+ <!------------------------------------------------------------------------>
+
+ <h2 class="unite-title">12. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h3 id="resmî-yazışmalar">Resmî Yazışmalar</h3>
+<ul>
+<li>
+<p><strong>Resmî Yazı Nedir?</strong><br>
+Devlet kurumları, kişiler ve özel kuruluşlar arasında iletişimi sağlamak için yazılan, "Resmî Yazışmalarda Uygulanacak Esas ve Usuller Hakkında Yönetmelik"e göre tanımlanan, belge ve bilgi içerikli yazılardır. Günümüzde çoğunlukla elektronik ortamda yapılır.</p>
+</li>
+<li>
+<p><strong>Resmî Yazışma Türleri:</strong></p>
+<ul>
+<li>
+<p>Kurumlar arası yazışmalar</p>
+</li>
+<li>
+<p>Kurumdan kişiye yazışmalar</p>
+</li>
+<li>
+<p>Kişiden kuruma yazışmalar</p>
+</li>
+<li>
+<p>Kişiden kişiye yazışmalar (örneğin iş mektupları)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Elektronik Yazışma:</strong><br>
+Elektronik Belge Yönetim Sistemi (EBYS), elektronik imza ve elektronik onay kavramlarıyla devlet yazışmalarının dijitalleşmesi sağlanmıştır. Bu sistemlerle zaman, maliyet ve fiziksel alan tasarrufu sağlanır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="dilekçe">Dilekçe</h3>
+<ul>
+<li>
+<p>Kamu veya özel kurumlara istek, şikayet veya bilgi talebi için yazılan resmî mektup türüdür.</p>
+</li>
+<li>
+<p>Üç ana bölümden oluşur:</p>
+<ol>
+<li>
+<p>Konunun kısa açıklaması</p>
+</li>
+<li>
+<p>İstek veya şikayetin belirtilmesi</p>
+</li>
+<li>
+<p>Arz/rica ifadesi ile sonuç</p>
+</li>
+</ol>
+</li>
+<li>
+<p>Dilekçede “arz ederim” ya da “rica ederim” ifadeleri kullanılır; yazıldığı makamın hiyerarşisine bağlı olarak değişir.</p>
+</li>
+<li>
+<p>Yazım kuralları: Tek yüz A4, belirli boşluklar, mavi/siyah kalem, açık ve net dil, imza, adres ve iletişim bilgileri zorunludur.</p>
+</li>
+<li>
+<p>Dilekçe türleri: İstek dilekçesi ve şikayet dilekçesi.</p>
+</li>
+</ul>
+<hr>
+<h3 id="öz-geçmiş-cv">Öz Geçmiş (CV)</h3>
+<ul>
+<li>
+<p>Bireyin eğitim, deneyim, yetenek, beceri ve kişisel bilgilerini belgeleyen kısa yazı türüdür.</p>
+</li>
+<li>
+<p>İş başvurularında kurumların adayları ön değerlendirmesine olanak sağlar.</p>
+</li>
+<li>
+<p>İçeriğinde kişisel bilgiler, eğitim, iş deneyimi, yetkinlikler, sertifikalar, referanslar gibi bilgiler yer alır.</p>
+</li>
+<li>
+<p>Form veya düz metin şeklinde hazırlanabilir.</p>
+</li>
+<li>
+<p>Bilgiler doğru, açık ve belgelendirilebilir olmalıdır.</p>
+</li>
+<li>
+<p>CV’de dinî ve politik içerikler yer almamalıdır.</p>
+</li>
+<li>
+<p>Genel olarak 1-2 sayfa olmalıdır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="rapor">Rapor</h3>
+<ul>
+<li>
+<p>Belirli bir konu veya olaya ilişkin araştırma sonuçlarını içeren yazılı metindir.</p>
+</li>
+<li>
+<p>Amaç, konuyu açıklamak, değerlendirmek ve gerektiğinde öneride bulunmaktır.</p>
+</li>
+<li>
+<p>Türleri: Araştırma raporu, sağlık raporu, bilirkişi raporu, faaliyet raporu vb.</p>
+</li>
+<li>
+<p>Rapor yazımında objektiflik ve bilimsel ölçüler önemlidir.</p>
+</li>
+<li>
+<p>Raporun yapısı genellikle: Başlık, sunulduğu makam, hazırlayanlar, tarih, gerekçe, giriş, gelişme, sonuç, imza, ekler ve kaynakça şeklindedir.</p>
+</li>
+</ul>
+<hr>
+<h3 id="tutanak">Tutanak</h3>
+<ul>
+<li>
+<p>Meclis, kurul, mahkeme gibi yerlerde söylenen sözlerin veya olayların olduğu gibi yazıya geçirilmesidir.</p>
+</li>
+<li>
+<p>Resmî belge niteliği taşır ve olay anında yazılır.</p>
+</li>
+<li>
+<p>Yazımında kronolojik düzen, imza zorunluluğu ve değişikliklerde onay şarttır.</p>
+</li>
+<li>
+<p>İki türü vardır: Toplantı tutanağı ve olay tutanağı.</p>
+</li>
+<li>
+<p>Tutanak yapısı: Başlık, giriş, gelişme, sonuç, tarih ve imza bölümlerinden oluşur.</p>
+</li>
+</ul>
+<hr>
+<h3 id="i̇landuyuru">İlan/Duyuru</h3>
+<ul>
+<li>
+<p>Televizyon, gazete, radyo veya internet gibi kanallarla geniş kitlelere iletilen bilgi türüdür.</p>
+</li>
+<li>
+<p>Resmî ve özel ilanlar olarak ayrılır.</p>
+</li>
+<li>
+<p>Resmî ilanlar devlet kurumları, özel ilanlar ise gerçek veya tüzel kişiler tarafından hazırlanır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="karar">Karar</h3>
+<ul>
+<li>
+<p>Kurumların veya kişilerin toplantı ve araştırmaları sonucunda ulaştıkları kesin yargıların yazılı biçimidir.</p>
+</li>
+<li>
+<p>Karar yazısı; tarih, sayı, toplantı yeri, katılımcılar, alınan kararlar ve imzaları içerir.</p>
+</li>
+<li>
+<p>Karar, oy birliği veya çokluğu ile alınır ve bağlayıcıdır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="i̇ş-mektubu">İş Mektubu</h3>
+<ul>
+<li>
+<p>Ticari veya işle ilgili konularda kullanılan, kısa, net ve resmi bir dille yazılan yazılardır.</p>
+</li>
+<li>
+<p>İçeriğinde gönderen bilgileri, tarih, hitap, konu, talep veya bilgi yer alır.</p>
+</li>
+<li>
+<p>Belgeler varsa eklenir.</p>
+</li>
+<li>
+<p>İş mektuplarında her istek için ayrı mektup yazılmalıdır.</p>
+</li>
+</ul>
+<hr>
+<h3 id="resmî-mektup">Resmî Mektup</h3>
+<ul>
+<li>
+<p>Resmî kurumların birbirlerine veya vatandaşlara yazdıkları yazılardır.</p>
+</li>
+<li>
+<p>Dilekçeden farklı olarak tarih, sıra numarası ve konu başlığı yer alır.</p>
+</li>
+<li>
+<p>Resmî belge niteliğindedir ve yazım şekline dikkat edilir.</p>
+</li>
+</ul>
+
+    </div></div>
+
+
+  <!------------------------------------------------------------------------>
+
+   <!------------------------------------------------------------------------>
+
+ <h2 class="unite-title">13. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h3 id="akademik-yazma-ve-akademik-yazı-özellikleri">Akademik Yazma ve Akademik Yazı Özellikleri</h3>
+<ul>
+<li>
+<p><strong>Akademik Yazma Tanımı:</strong><br>
+Bilimsel bilgi paylaşımını amaçlayan, ileri düzey yazma becerisi gerektiren, bilimsel dil ve kurallara uygun metin oluşturma sürecidir. Akademik yazılar, tezler, makaleler, bilimsel raporlar gibi bilimsel ürünleri kapsar.</p>
+</li>
+<li>
+<p><strong>Özellikleri:</strong></p>
+<ul>
+<li>
+<p>Eleştirel ve nesnel bir yaklaşım gerektirir.</p>
+</li>
+<li>
+<p>Tutarlı ve sistematik olmalıdır.</p>
+</li>
+<li>
+<p>Uzmanlık ve teknik bilgi ister.</p>
+</li>
+<li>
+<p>Günlük dilden farklı, bilimsel ve resmi bir dille yazılır.</p>
+</li>
+<li>
+<p>Okuyucusu genellikle bilim insanlarıdır.</p>
+</li>
+<li>
+<p>Açıklama, bilgi aktarma ve ikna etme amaçlıdır.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="akademik-yazmada-etik-ve-akademik-yazarlık">Akademik Yazmada Etik ve Akademik Yazarlık</h3>
+<ul>
+<li>
+<p><strong>Bilimsel Etik Kuralları:</strong><br>
+TÜBİTAK’ın yayınladığı etik kurallar; uydurma, çarpıtma, aşırma (intihal), tekrar yayım, destek veren kuruluşu belirtmeme, haksız yazarlık, yanıltıcı beyan, görev ihmalinden kaçınma gibi davranışların yapılmaması gerekir.</p>
+</li>
+<li>
+<p><strong>Araştırmacının Özellikleri:</strong></p>
+<ul>
+<li>
+<p>Bilim ahlakına sahip olmalı.</p>
+</li>
+<li>
+<p>Entelektüel merakı olmalı.</p>
+</li>
+<li>
+<p>Titiz ve sabırlı olmalı.</p>
+</li>
+<li>
+<p>Yazım dilini iyi kullanmalı.</p>
+</li>
+<li>
+<p>Literatür tarama, veri toplama, analiz ve kaynak gösterme becerileri gelişmiş olmalı.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="akademik-yazma-süreci">Akademik Yazma Süreci</h3>
+<ul>
+<li>
+<p><strong>Aşamalar:</strong></p>
+<ol>
+<li>
+<p>Yazmaya Hazırlık (konu seçimi, amaç belirleme, hedef kitle, yazı türü, kaynak araştırması)</p>
+</li>
+<li>
+<p>Yazıyı Oluşturma (bilgilerin derlenmesi, taslak oluşturma)</p>
+</li>
+<li>
+<p>Düzeltme (metnin gözden geçirilmesi, içerik ve dil yönünden iyileştirme)</p>
+</li>
+<li>
+<p>Kaynakça Hazırlama (APA stiline uygun kaynak gösterme)</p>
+</li>
+<li>
+<p>Kontrol Etme ve Sunum (son okuma, yazının yayımlanması)</p>
+</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="akademik-metin-türleri">Akademik Metin Türleri</h3>
+<ul>
+<li>
+<p>Akademik metinler, öğretim ve araştırma amaçlıdır, estetik kaygı taşımaz.</p>
+</li>
+<li>
+<p><strong>Başlıca türler:</strong></p>
+<ul>
+<li>
+<p>Makale: Bir konuyu kanıtlarla savunan yazı.</p>
+</li>
+<li>
+<p>Bildiri: Bilimsel kongrelerde sözlü sunulan metin.</p>
+</li>
+<li>
+<p>Tez: Üniversite öğrencileri tarafından yapılan bilimsel araştırma ürünü.</p>
+</li>
+<li>
+<p>Rapor: Bir konu hakkında detaylı inceleme ve sonuç sunan yazı.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Makale, bildiri ve konferans arasındaki farklar vurgulanmıştır.</p>
+</li>
+</ul>
+
+    </div></div>
+
+
+  <!------------------------------------------------------------------------>
+
+   <!------------------------------------------------------------------------>
+
+ <h2 class="unite-title">14. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h3 id="kitle-i̇letişim-araçlarının-ve-sosyal-medyanın-türkçe-üzerindeki-etkisi">Kitle İletişim Araçlarının ve Sosyal Medyanın Türkçe Üzerindeki Etkisi</h3>
+<ul>
+<li>
+<p><strong>Kitle İletişim Araçlarında Türkçe:</strong></p>
+<ul>
+<li>
+<p>Haber programlarında çok sınırlı bir sözcük dağarcığı kullanılıyor.</p>
+</li>
+<li>
+<p>RTÜK yasası Türkçenin kurallarına uygun kullanılmasını zorunlu kılıyor.</p>
+</li>
+<li>
+<p>Ancak, özel yayıncılıkla beraber dilde bozulmalar, yabancı kelimeler, argo, kaba ifadeler yaygınlaştı.</p>
+</li>
+<li>
+<p>Bu durum özellikle genç kuşakların diline olumsuz yansıyor.</p>
+</li>
+<li>
+<p>Yayımcı kuruluşların ve spikerlerin Türkçeyi doğru kullanması için eğitimler ve denetimler öneriliyor.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Sosyal Medyada Türkçe:</strong></p>
+<ul>
+<li>
+<p>Sosyal medya iletişiminde kısa ve hızlı paylaşımlar, yazım ve söyleyiş kurallarına dikkat edilmemesine yol açıyor.</p>
+</li>
+<li>
+<p>Ünlü harflerin atlanması, büyük harf kullanımında kuralsızlıklar, yabancı dil etkisi belirgin.</p>
+</li>
+<li>
+<p>Bu durum dilin yozlaşmasına neden olabilir.</p>
+</li>
+<li>
+<p>Sosyal medyada kullanılan dil, gençler arasında özellikle etkili ve bu yüzden özen gerektirir.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="anlatım-bozuklukları">Anlatım Bozuklukları</h3>
+<ul>
+<li>
+<p><strong>Nedenleri:</strong> Bilgi eksikliği, dilbilgisi kurallarını bilmemek, noktalama hataları, dikkatsizlik, özensizlik gibi sebepler.</p>
+</li>
+<li>
+<p><strong>Anlatım Bozukluğu Türleri:</strong></p>
+<ul>
+<li>
+<p><strong>Anlamsal Bozukluklar:</strong> Yanlış kelime kullanımı, gereksiz kelimeler, anlamca çelişen sözcükler, yanlış kullanılan atasözleri ve deyimler, sözcüğün yanlış yerde kullanılması, mantığa aykırı ifadeler.</p>
+</li>
+<li>
+<p><strong>Yapısal Bozukluklar:</strong> Özne eksikliği, nesne eksikliği, tümleç eksikliği, yüklem eksikliği, özne-yüklem uyumsuzluğu, ek-fiil eksikliği, çatı uyumsuzluğu, eklerin yanlış kullanımı, yanlış kurulmuş tamlamalar.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Örnekler:</strong></p>
+<ul>
+<li>
+<p>“Çekimser” yerine “çekingen” kullanılmalı.</p>
+</li>
+<li>
+<p>“Elinden geleni ardına koymamak” deyimi yanlış kullanılmış.</p>
+</li>
+<li>
+<p>“O kadar zor durumdaydı ki bırak içecek bir tas çorbayı yiyecek bir lokma ekmeği bile yoktu.” ifadesi mantık hatası içerir.</p>
+</li>
+<li>
+<p>Eksik özneler ve nesneler, uyumsuz yüklemler gibi dilbilgisel hatalar anlatım bozukluğuna yol açar.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="alınması-gereken-önlemler">Alınması Gereken Önlemler</h3>
+<ul>
+<li>
+<p>Ana dili eğitiminin güçlendirilmesi; öğretmenlerin iyi yetiştirilmesi ve dil bilgisi öğretimine ağırlık verilmesi.</p>
+</li>
+<li>
+<p>Yabancı dille öğretimden vazgeçilmesi, ana diline önem verilmesi.</p>
+</li>
+<li>
+<p>Dil kurallarını denetleyecek yetkili kurumların etkin hale getirilmesi (Türk Dil Kurumu vb.).</p>
+</li>
+<li>
+<p>Radyo ve televizyonlarda dil eğitimi zorunluluğu ve denetimi.</p>
+</li>
+<li>
+<p>Türkçeyi doğru kullananların teşvik edilmesi, yanlış kullananlara yaptırımlar getirilmesi.</p>
+</li>
+</ul>
+<hr>
+<p><strong>Genel Değerlendirme:</strong><br>
+14. haftada Türkçenin kitle iletişim araçları ve sosyal medya üzerindeki durumu ve etkileri değerlendirilmiş, dilin bozulmasının sebepleri ve anlatım bozuklukları detaylıca açıklanmıştır. Bu bozuklukların önlenmesi için eğitim, denetim ve bilinçlendirme önlemleri önerilmiştir.</p>
+
+    </div></div>
+
+
+  <!------------------------------------------------------------------------>
+
+      <h2 class="info">Summaries prepared by ChatGPT-4o</h2>
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ders Kaynakları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>7. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (7. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>8. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 ( 8. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>9. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (9. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>10. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (10. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>11. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (11. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>12. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (12. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>13. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (13. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>14. Hafta</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Türk Dili/notlar/TÜRK DİLİ 2 (14. HAFTA).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+
+            </div>
+        </div>
+        
+    </section>
+
+    </div>
+
+
+    <h2 class="unite-title">Örnek Çalışma Soruları<span></span></h2>
+
+<div> <!----çalışma soruları başlangıç---->
+    
+    <div class="accordion">
+        <button class="accordion-btn">7. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <!-- Mevcut sorular buraya taşınacak -->
+
+            <h3>7. Hafta Çalışma Soruları</h3><!------Başlık---->
+
+                <div class="soru-kutu">
+                  <ol class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+                    <li>
+                      Aşağıdakilerden hangisi deneme türünün özelliklerinden değildir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Özgün söyleyişlere yer verilir.<br>
+                        b. İroniden geniş ölçüde yararlanılır.<br>
+                        c. Her konuda yazılabilir, konu sınırlaması yoktur.<br>
+                        d. Ele alınan konuda okurun düşünmesi amaçlanır.<br>
+                        <span class="dogru-yesil">e. Düşünceler kesin yargılara bağlanmaya çalışılır.</span>
+                      </div>
+                    </li>
+                    <li>
+                      Aşağıdakilerden hangisi deneme türünün özelliklerinden biri değildir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Öznel bir tartışma üslubuna sahip olması<br>
+                        <span class="dogru-yesil">b. Kurmaca bir tür olması</span><br>
+                        c. Genel okur kitlesine hitap etmesi<br>
+                        d. Nesir (düzyazı) tarzında yazılması<br>
+                        e. İroni, mizah, hiciv vb. farklı anlatım tekniklerini kullanması
+                      </div>
+                    </li>
+                    <li>
+                      Günlük hayattan alınan herhangi bir konu üzerinde bir ispat amacı güdülmeden kaleme alınan yazı türü aşağıdakilerden hangisidir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Makale<br>
+                        b. Eleştiri<br>
+                        c. Anı<br>
+                        <span class="dogru-yesil">d. Deneme</span><br>
+                        e. Gezi yazısı
+                      </div>
+                    </li>
+                    <li>
+                      Aşağıdaki sanatçılardan hangisi söyleşi türünde eser vermiştir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        <span class="dogru-yesil">a. Şevket Rado</span><br>
+                        b. Adalet Ağaoğlu<br>
+                        c. Muallim Naci<br>
+                        d. Reşat Nuri Güntekin<br>
+                        e. Ahmet Hamdi Tanpınar
+                      </div>
+                    </li>
+                    <li>
+                      “Türk edebiyatında günümüzdeki şekliyle ilk röportaj örneklerini … “Anafartalar Kumandanı Mustafa Kemal’le Mülakat” adlı eserle vermiştir.”<br>
+                      Boş bırakılan yere aşağıdakilerden hangisi getirilmelidir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Suut Kemal Yetkin<br>
+                        b. Halikarnas Balıkçısı<br>
+                        c. Yakup Kadri Karaosmanoğlu<br>
+                        <span class="dogru-yesil">d. Ruşen Eşref Ünaydın</span><br>
+                        e. Behçet Necatigil
+                      </div>
+                    </li>
+                    <li>
+                      Gazeteciliğin önemli bir dalıdır, soru-cevap yoluyla hazırlanır. Bir sorunu, olayı, gerçeği araştırma ve inceleme yoluyla anlatan yazılardır.<br>
+                      Yukarıda verilen bilgi hangi edebi türün özelliğini yansıtır?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Eleştiri<br>
+                        b. Biyografi<br>
+                        <span class="dogru-yesil">c. Röportaj</span><br>
+                        d. Otobiyografi<br>
+                        e. Anı
+                      </div>
+                    </li>
+                    <li>
+                      “Bir konu hakkında bilgi toplamak üzere o konu ile ilgili kişilerle görüşüp bilgi toplamak ve daha sonra toplanan bilgileri belirli bir düzen dâhilinde yazıya geçirmek” şeklinde tanımlanan yazı türü aşağıdakilerden hangisidir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Deneme<br>
+                        b. Fıkra<br>
+                        c. Makale<br>
+                        d. Hatırat<br>
+                        <span class="dogru-yesil">e. Röportaj</span>
+                      </div>
+                    </li>
+                    <li>
+                      Aşağıdaki yazılı anlatım türlerinden hangisinde önceden soru hazırlanması gerekir?
+                      <div class="soru-secenek" style="font-weight: 500;">
+                        a. Makale<br>
+                        b. Deneme<br>
+                        <span class="dogru-yesil">c. Röportaj</span><br>
+                        d. Hatıra<br>
+                        e. Gezi yazısı
+                      </div>
+                    </li>
+                  </ol>
+                  <div class="soru-cevap-anahtari">
+                    <strong>Cevap Anahtarı:</strong>
+                    <ol style="padding-left:18px;">
+                      <li><span class="dogru-yesil">E</span></li>
+                      <li><span class="dogru-yesil">B</span></li>
+                      <li><span class="dogru-yesil">D</span></li>
+                      <li><span class="dogru-yesil">A</span></li>
+                      <li><span class="dogru-yesil">D</span></li>
+                      <li><span class="dogru-yesil">C</span></li>
+                      <li><span class="dogru-yesil">E</span></li>
+                      <li><span class="dogru-yesil">C</span></li>
+                    </ol>
+                  </div>
+                </div>
+
+                                  
+  </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">8. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+
+            <h3>8. Hafta Çalışma Soruları</h3><!------Başlık---->
+
+            <div class="soru-kutu">
+              <ol class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+                <li>
+                  Aşağıdaki cümlelerin hangisinde sözü edilen yazı türü yanlış tanımlanmıştır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Tanınmış bir kişiyi, yeri ya da sanat dalını geniş okur kitlelerine, kendi görüş ve düşünceleriyle birleştirerek araştırma, inceleme yoluyla tanıtan, ayrıntılı bilgi veren yazılara röportaj denir.<br>
+                    b. Günü gününe yazılan, üzerinde yazıldığı günün tarihi bulunan yazılar ve bu yazılardan oluşturulan yapıtlara günlük denir.<br>
+                    <span class="dogru-yesil">c. Yazarın birtakım olayları belgelerle, tanıklarla ya da mektuplarla anlattığı yazı türüne anı denir.</span><br>
+                    d. Bilim, sanat, siyaset, spor vb. alanlarının herhangi birinde tanınmış kişilerin, kendi yaşamını anlattığı yazı türüne öz yaşam öyküsü denir.<br>
+                    e. Yazarın gözlem ve bilgiye dayalı olarak, gezip gördüğü yerleri çeşitli yönleriyle, özenli bir anlatımla yansıttığı yazılara gezi yazısı denir.
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi gezi yazısı türünün edebiyatımızdaki önemli temsilcilerindendir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">a. Evliya Çelebi</span><br>
+                    b. Namık Kemal<br>
+                    c. Şinasi<br>
+                    d. İbni Batuta<br>
+                    e. Edirneli Sehî Bey
+                  </div>
+                </li>
+                <li>
+                  I. Kişisel hayatı konu alan metinlerdir.<br>
+                  II. Tarihe ve edebiyata kaynaklık eder.<br>
+                  III. Sade bir dil kullanılır.<br>
+                  IV. Gazete ve dergi yazısıdır.<br>
+                  V. Yazıldığı günün tarihini taşır.<br>
+                  Yukarıdaki numaralanmış cümlelerden hangileri mektup, anı ve günlük için ortak değildir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. I. ve II.<br>
+                    b. II. ve III.<br>
+                    c. I. ve IV.<br>
+                    <span class="dogru-yesil">d. IV. ve V.</span><br>
+                    e. III. ve V.
+                  </div>
+                </li>
+                <li>
+                  Altı yaşımda bile yoktum. Ata binmekten, evden uzaklaşıp değişik yerler görmekten inanılmaz ölçüde hoşnut olurdum. Bir gün at arabasına bindirdi babam beni, eski araba. Yine uzaklaştık evden, değişik değişik yerler gezdik. Ama bir yer vardı, bir köprü, bir tren köprüsü. Bu köprünün altından geçerken sımsıkı sarıldım babama, bu anı hiç unutmayacağım dedim içimden, öyle de oldu, ne zaman bir köprünün altından geçsem bu anı hatırlarım.<br>
+                  Yukarıda verilen parça hangi edebi türün örneğidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Günlük<br>
+                    b. Röportaj<br>
+                    <span class="dogru-yesil">c. Anı</span><br>
+                    d. Gezi<br>
+                    e. Makale
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi günlük türünün özelliklerinden değildir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Hangi gün yazıldığı düşünülen tarihten bellidir.<br>
+                    b. Olan biten olay ve düşünce sıcağı sıcağına yazılmıştır.<br>
+                    c. Yazan kişinin hayatını ve düşüncesini yansıtan bilgiler içerir.<br>
+                    <span class="dogru-yesil">d. Yazar ele aldığı konuyu delillerle ispatlama yoluna gider.</span><br>
+                    e. Samimi bir üslupla yazılır.
+                  </div>
+                </li>
+                <li>
+                  Anı ile ilgili olarak aşağıda verilen bilgilerden hangisi yanlıştır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Anlatıcı, olayları yaşayan ya da tanıklık eden kişidir.<br>
+                    b. Siyasi, edebi, askeri ve sosyal içerikli olabilir.<br>
+                    <span class="dogru-yesil">c. Genellikle betimleyici ve kanıtlayıcı anlatımdan yararlanılır.</span><br>
+                    d. Anlaşılır, içten bir anlatım yöntemi kullanılır.<br>
+                    e. Tarihe ve edebiyata kaynaklık eder.
+                  </div>
+                </li>
+              </ol>
+              <div class="soru-cevap-anahtari">
+                <strong>Cevap Anahtarı:</strong>
+                <ol style="padding-left:18px;">
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                </ol>
+              </div>
+              </div>
+
+
+
+
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">9. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <h3>9. Hafta Çalışma Soruları</h3>
+            <div class="soru-kutu">
+            <ol  class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+              <li>
+                “Burada bir adam var. Onun hakkında birçok belge ve delillerim var. Ben gerçek bir portre çizmeye çalışacağım.” diyen bir yazarın yazdığı yazı türü aşağıdakilerden hangisidir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  a. Makale<br>
+                  b. Öz yaşam öyküsü<br>
+                  <span class="dogru-yesil">c. Yaşam öyküsü</span><br>
+                  d. Anı<br>
+                  e. Eleştiri
+                </div>
+              </li>
+              <li>
+                Edebiyatımızda aşağıdaki düşünce yazılarından hangisi diğerlerine göre daha az örneği bulunan bir türdür?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  a. Makale<br>
+                  b. Deneme<br>
+                  c. Anı<br>
+                  d. Gezi yazısı<br>
+                  <span class="dogru-yesil">e. Öz yaşam öyküsü</span>
+                </div>
+              </li>
+              <li>
+                Aşağıdaki seçeneklerden hangisi resmî yazışma türlerinden biri değildir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  a. Dilekçe<br>
+                  <span class="dogru-yesil">b. Edebi mektup</span><br>
+                  c. Karar<br>
+                  d. Tutanak<br>
+                  e. Rapor
+                </div>
+              </li>
+              <li>
+                Aşağıdaki cümlelerin hangisinde mektup türü ile ilgili olarak bilgi yanlışlığı yapılmıştır?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  a. Konu sınırlaması yoktur, hemen her konuda yazılabilir.<br>
+                  b. Roman gibi bazı yazı türlerinin içerisinde de yer alabilir.<br>
+                  c. Kamu kurumları arasına yazılan mektuplara resmi mektup denir.<br>
+                  d. Gazete ve dergilerde herkesin okuması için yazılan mektuplara açık mektup denir.<br>
+                  <span class="dogru-yesil">e. İş mektuplarında ve dilekçelerde tarih ve adres sağ alt köşeye yazılır.</span>
+                </div>
+              </li>
+              <li>
+                Mektup türüyle ilgili aşağıdaki bilgilerden hangisi yanlıştır?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  <span class="dogru-yesil">a. Yazar herhangi bir konudaki görüşünü karşısındakine kabul ettirmek amacıyla mektuba başvurur.</span><br>
+                  b. Kişilerin bir haberi, bir durumu başkasına iletmek için yazdığı yazılardır.<br>
+                  c. Fuzuli'nin "Şikâyetname" adlı eseri edebi mektup türünün ilk örneklerindendir.<br>
+                  d. Tanzimat'tan sonra gazetelerde yayımlanan birçok mektup görülmüştür.<br>
+                  e. Mektuplar yazılış amaçlarına göre çeşitli isimler alabilir.
+                </div>
+              </li>
+              <li>
+                Mektup türü ile ilgili olarak aşağıdakilerden hangisi yanlıştır?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  a. Mektuplar; edebî, özel ve resmî olarak üçe ayrılmaktadır.<br>
+                  b. Mektup yazılırken çizgisiz, beyaz kâğıt kullanılmalıdır.<br>
+                  c. Mektup yazılırken okunaklı el yazısı tercih edilmelidir.<br>
+                  d. Mektup yazılan kişiye uygun hitap kullanılmalıdır.<br>
+                  <span class="dogru-yesil">e. Mektup yazarken kurşun kalem kullanılmalıdır.</span>
+                </div>
+              </li>
+              <li>
+                Bir kişinin kendi hayat öyküsünü anlattığı yazı türü aşağıdakilerden hangisidir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  <span class="dogru-yesil">a. Otobiyografi</span><br>
+                  b. Biyografi<br>
+                  c. Mektup<br>
+                  d. Anı<br>
+                  e. Sohbet
+                </div>
+              </li>
+              <li>
+                Ünlü kişilerin yaşam öykülerinin başkaları tarafından anlatıldığı yazı türü aşağıdakilerden hangisidir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  <span class="dogru-yesil">a. Biyografi</span><br>
+                  b. Anı<br>
+                  c. Mektup<br>
+                  d. Rapor<br>
+                  e. Otobiyografi
+                </div>
+              </li>
+              <li>
+                Mektupların sağ üst köşesinde aşağıdakilerden hangisi bulunmalıdır?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  a. Adres<br>
+                  b. Hitap sözcüğü<br>
+                  c. İsim soy isim<br>
+                  <span class="dogru-yesil">d. Tarih</span><br>
+                  e. İmza
+                </div>
+              </li>
+            </ol>
+            <div class="soru-cevap-anahtari">
+              <strong>Cevap Anahtarı:</strong>
+              <ol style="padding-left:18px;">
+                <li><span class="dogru-yesil">C</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">B</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">A</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">A</span></li>
+                <li><span class="dogru-yesil">A</span></li>
+                <li><span class="dogru-yesil">D</span></li>
+              </ol>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">10. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <h3>10. Hafta Çalışma Soruları</h3>
+            <div class="soru-kutu">
+            <ol  class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+                <li>
+                  Aşağıdakilerden hangisi “açık oturum” türünün ortak özelliklerinden biridir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Güncel bir konuda bilgi vermek, görüş açıklamak üzere dinleyici kitlesi karşısında yapılan konuşmalardır.<br>
+                    <span class="dogru-yesil">b. Başkan, etkinlik sonunda ortaya çıkan düşünceleri özetleyerek etkinliğin genel bir değerlendirmesini yapması gerekir.</span><br>
+                    c. Konuşmaların daha sonra kitap şeklinde yayınlanması zorunluluğu bulunmaktadır.<br>
+                    d. Genellikle konunun uzmanınca tek oturumda yapılan konuşmalardır.<br>
+                    e. Öğretici konuşmalardır.
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi “bildirili konuşma” türlerinden biridir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Röportaj<br>
+                    b. Anket<br>
+                    c. Mülakat<br>
+                    d. Tartışma<br>
+                    <span class="dogru-yesil">e. Çalıştay</span>
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi “bir kişi tarafından yapılan konuşma” türlerinden biridir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">a. Miting</span><br>
+                    b. Anket<br>
+                    c. Mülakat<br>
+                    d. Panel<br>
+                    e. Röportaj
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi “forum” türünün ortak özelliklerinden biridir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Forum, bilim adamları ve uzmanların belli bir konuda ön hazırlık yapmak üzere bir araya geldikleri inceleme ve değerlendirme toplantılarıdır.<br>
+                    b. Forum, konunun uzmanları tarafından daha çok yüksek düzeyli bilişsel süreçlerin kullanıldığı uzmanlık alanlarına dönük toplantılardır.<br>
+                    c. Forumlarda yoğun olarak analiz, sentez ve problem çözme süreci takip edilen çalışmalardır.<br>
+                    <span class="dogru-yesil">d. Forumda dinleyicilerin katıldığı tartışma ortamı yönüyle panel ve açık oturumların sonunda durumla benzerlik gösterir.</span><br>
+                    e. Forum bittikten sonra yazılı bir metne dönüştürülmektedir.
+                  </div>
+                </li>
+                <li>
+                  Açık oturumla ilgili aşağıdaki bilgilerden hangisi doğrudur?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">a. Bir konu, konunun uzmanı olan 3 ile 5 konuşmacı tarafından tartışılarak ele alınır.</span><br>
+                    b. Açık oturumlarda konuşmaları bir düzenleme kurulu seçer.<br>
+                    c. Açık oturumlarda temel olarak soru cevap tekniğinden yararlanılır.<br>
+                    d. Açık oturumlarda amaç, herhangi bir görüşün doğruluğunu ortaya çıkarmaktır.<br>
+                    e. Açık oturumlar dinleyici kitlesinin olmadığı ortamlarda düzenlenir.
+                  </div>
+                </li>
+                <li>
+                  Açık oturumun sonunda dinleyicilerden soru alındığı takdirde konuşma hangi türe dönüşür?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">a. Forum</span><br>
+                    b. Münazara<br>
+                    c. Konferans<br>
+                    d. Seminer<br>
+                    e. Telekonferans
+                  </div>
+                </li>
+                <li>
+                  <div style="margin-bottom: 4px;">
+                    Bir başkan yönetiminde yapılır. Konuşmacıların tanıtılır, daha sonra konuşmacılara sırasıyla söz verilir. Başkan genellikle yapılan konuşmaları oturumun sonunda toparlar ve özetler. Temel ilkesi değişik görüşlerin eşit oranda temsil edilmesidir.
+                  </div>
+                  Paragrafta açıklanan sözlü anlatım türü aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Seminer<br>
+                    b. Münazara<br>
+                    c. Tartışma<br>
+                    d. Konferans<br>
+                    <span class="dogru-yesil">e. Açık oturum</span>
+                  </div>
+                </li>
+                <li>
+                  <div style="margin-bottom: 4px;">
+                    I. Topluluk karşısında yapılır.<br>
+                    II. Süreci yöneten bir başkan vardır.<br>
+                    III. Dinleyiciler görüşlerini açıklayabilir.
+                  </div>
+                  Yukarıdakilerden hangisi ya da hangileri açık oturumun özellikleri arasında yer alır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Yalnız I<br>
+                    b. Yalnız II<br>
+                    c. Yalnız III<br>
+                    <span class="dogru-yesil">d. I ve II</span><br>
+                    e. I ve III
+                  </div>
+                </li>
+                <li>
+                  Alanında otorite kabul edilen kişiler tarafından bir bilim dalındaki gelişmelerin, belli birikimi olan ilgili kişilere aktarıldığı toplantılara ne ad verilir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Kongre<br>
+                    <span class="dogru-yesil">b. Seminer</span><br>
+                    c. Panel<br>
+                    d. Münazara<br>
+                    e. Forum
+                  </div>
+                </li>
+                <li>
+                  <div style="margin-bottom: 4px;">
+                    • Dinleyicilerin konu ile ilgili bilgi ve tecrübelerini ileri sürmelerine fırsat ve imkân vermek<br>
+                    • Dinleyicileri aktif duruma getirerek konu üzerinde canlı ve hareketli şekilde durmalarını sağlamak
+                  </div>
+                  Yukarıda amaçları açıklanan, aynı zamanda Eski Romalılar zamanında halkın sorunlarını konuşmak üzere toplandıkları alana da adını veren sözlü anlatım türüne ne denir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    a. Arena<br>
+                    b. Toplantı<br>
+                    c. Kongre<br>
+                    <span class="dogru-yesil">d. Forum</span><br>
+                    e. Konferans
+                  </div>
+                </li>
+                <li>
+                  Farklı ülkelerden devlet ve kuruluş temsilcileriyle yöneticilerin katılmasıyla ya da siyasi parti ve derneklerin belli gündemler için bir araya gelmesiyle yapılan toplantılara ne ad verilir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">a. Kongre</span><br>
+                    b. Açık oturum<br>
+                    c. Münazara<br>
+                    d. Telekonferans<br>
+                    e. Sempozyum
+                  </div>
+                </li>
+                <li>
+                  Aşağıdaki sözlü anlatım türlerinden hangisinde sunulan bildiriler kitap hâlinde yayımlanabilir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">a. Kongre</span><br>
+                    b. Telekonferans<br>
+                    c. Panel<br>
+                    d. Açık Oturum<br>
+                    e. Konferans
+                  </div>
+                </li>
+              </ol>
+              <div class="soru-cevap-anahtari">
+                <strong>CEVAP ANAHTARI:</strong>
+                <ol style="padding-left:18px;">
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                </ol>
+              </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">11. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <h3>11. Hafta Çalışma Soruları</h3>
+            <div class="soru-kutu">
+            <ol  class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+              <li>
+                “Doğa bilimlerinden sanata, edebiyattan teknik alanlara, eğitimden siyasete kadar uzmanlık gerektiren herhangi bir konuda, bu içeriği anlayabilecek ve sorular yöneltebilecek dinleyici kitlesi karşısında yapılan konuşmalardandır. Konunun uzmanı bir kişi, bu özellikteki dinleyici kitlesinin beklentilerine uygun olarak konuşmasını bilimsel veriler, analizler ve yargılar ile sunar. Bu konuşma türüne genellikle bilimsel faaliyet yürüten veya bu nitelikte faaliyetlere gereksinim duyan resmî veya özel kurum ve kuruluşlar ev sahipliği yapar; bu konuşma türünün sunum süresi genellikle 45 dakika-1 saat olarak tercih edilir.”
+                <br>
+                Aşağıdakilerden hangisi bu özellikleri barındıran bir konuşma türüdür?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Açık Oturum<br>
+                  B. Panel<br>
+                  <span class="dogru-yesil">C. Konferans</span><br>
+                  D. Nutuk<br>
+                  E. Sempozyum
+                </div>
+              </li>
+              <li>
+                Aşağıdakilerden hangisi günlük konuşma türünde değildir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Sohbet<br>
+                  B. Kutlamalar<br>
+                  C. Telefon Konuşması<br>
+                  D. Tanışma ve Tanıştırma<br>
+                  <span class="dogru-yesil">E. Münazara</span>
+                </div>
+              </li>
+              <li>
+                Aşağıdakilerden hangisi “sempozyum, kongre” türlerinin ortak özelliklerinden değildir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  <span class="dogru-yesil">A. Hazırlıksız konuşmalardır.</span><br>
+                  B. Grup halinde yapılan konuşmalardır.<br>
+                  C. Oturumları yönetecek bir başkana ihtiyaç vardır.<br>
+                  D. Birden fazla oturumda yapılır.<br>
+                  E. Programın sonunda programlarda sunulan bildirileri kapsayan yazılı bir metin oluşturulur.
+                </div>
+              </li>
+              <li>
+                Aşağıdakilerden hangisi “münazara” türünün özelliklerinden biri değildir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Savunma, münazaranın en önemli noktasıdır.<br>
+                  B. Bir konunun tez, antitez şeklinde iki grup tarafından tartışılır.<br>
+                  C. Münazaralarda gruplar üç ya da dörder kişiden oluşur.<br>
+                  D. Münazaralarda jüri de oldukça önemlidir.<br>
+                  <span class="dogru-yesil">E. Konuşmacılar için belli süre olmayıp, konuşmalar bir başkan tarafından yönetilmektedir.</span>
+                </div>
+              </li>
+              <li>
+                Aşağıdakilerden hangisi konferans türünün özelliklerinden biri değildir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Konferansta verilmek istenen düşünceler; açık, anlaşılır ve orijinal olmalıdır.<br>
+                  B. Konferans verilirken konuşmacı, yazdıklarını kâğıttan okumamalıdır.<br>
+                  C. Konuşmacı, gözlerini dinleyicilerin üzerine çevirmeli, böylece onların kendisini ilgiyle izlemelerini sağlamalıdır.<br>
+                  D. Konferans verilmeden önce, bir başkası konferansçıyı bütün özellikleriyle dinleyicilere tanıtmalıdır.<br>
+                  <span class="dogru-yesil">E. Bir jüri karşısında konuşmak konferansın en önemli özelliklerindendir.</span>
+                </div>
+              </li>
+              <li>
+                “Özellikle televizyonlarda yapılan tartışma programlarına uzakta olmalarına rağmen teknoloji yardımıyla uzmanların katıldıkları görülür.”<br>
+                Yukarıda bir özelliğinden bahsedilen sözlü anlatım türü hangisidir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Münazara<br>
+                  B. Söyleşi<br>
+                  C. Konferans<br>
+                  <span class="dogru-yesil">D. Telekonferans</span><br>
+                  E. Forum
+                </div>
+              </li>
+              <li>
+                Toplumu yakından ilgilendiren herhangi bir konu hakkında, dinleyiciler karşısında farklı uzman kişilerin konu ya da olayla ilgili yaptığı seri konuşmalara ne ad verilir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Açık oturum<br>
+                  B. Kongre<br>
+                  <span class="dogru-yesil">C. Sempozyum</span><br>
+                  D. Forum<br>
+                  E. Nutuk
+                </div>
+              </li>
+              <li>
+                Aşağıdaki konuşma türlerinin hangisinde konuşmacı ve dinleyicilerin bir arada bulunmasına gerek yoktur?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Panel<br>
+                  <span class="dogru-yesil">B. Telekonferans</span><br>
+                  C. Konferans<br>
+                  D. Açık oturum<br>
+                  E. Sempozyum
+                </div>
+              </li>
+              <li>
+                I. Panel<br>
+                II. Telekonferans<br>
+                III. Forum<br>
+                IV. Sempozyum<br>
+                Yukarıdaki sözlü anlatım türlerinin hangisinde ya da hangilerinde yönetici olarak bir başkan bulunur?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Yalnız I<br>
+                  B. Yalnız II<br>
+                  C. I ve II<br>
+                  D. I, II ve III<br>
+                  <span class="dogru-yesil">E. I, III ve IV</span>
+                </div>
+              </li>
+              <li>
+                Bir tezle bir antitezin iki farklı taraf arasında tartışıldığı, konuşma ve savunma olmak üzere iki ana bölümden oluşan sözlü anlatım türüne ne ad verilir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Forum<br>
+                  B. Seminer<br>
+                  <span class="dogru-yesil">C. Münazara</span><br>
+                  D. Panel<br>
+                  E. Kongre
+                </div>
+              </li>
+              <li>
+                “Amacı nutukta olduğu gibi dinleyicileri coşkulandırmak değil, o topluluğa bir konu hakkında bilgi vermek, bilgilendirmektir. Dolayısıyla dinleyicisi belirli bir kültür seviyesine ulaşmış kişilerden oluşur.”<br>
+                Özellikleri belirtilen sözlü anlatım türü aşağıdakilerden hangisidir?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Telekonferans<br>
+                  B. Açık oturum<br>
+                  C. Forum<br>
+                  D. Münazara<br>
+                  <span class="dogru-yesil">E. Konferans</span>
+                </div>
+              </li>
+              <li>
+                Aşağıdaki sözlü anlatım türlerinden hangisinde konuşma sürecini yöneten bir kişi bulunmaz?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Kongre<br>
+                  B. Açık oturum<br>
+                  C. Münazara<br>
+                  <span class="dogru-yesil">D. Konferans</span><br>
+                  E. Sempozyum
+                </div>
+              </li>
+              <li>
+                Münazaralarda konuşmacıların aşağıdaki özelliklerinden hangisi ölçülmez?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Konuyu açma<br>
+                  <span class="dogru-yesil">B. Samimiyet</span><br>
+                  C. Konuyu genişletme<br>
+                  D. Örneklendirme<br>
+                  E. Konuyu toparlama
+                </div>
+              </li>
+              <li>
+                Aşağıdaki sözlü anlatım türlerinden hangisinde hakem bulunur?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Açık oturum<br>
+                  <span class="dogru-yesil">B. Münazara</span><br>
+                  C. Forum<br>
+                  D. Panel<br>
+                  E. Konferans
+                </div>
+              </li>
+              <li>
+                Aşağıdakilerden hangisi konferans planında bulunmaz?
+                <div class="soru-secenek" style="font-weight: 500;">
+                  A. Hitap cümlesi<br>
+                  B. Konunun sunuluşu<br>
+                  <span class="dogru-yesil">C. Puanlama</span><br>
+                  D. Sorular ve cevaplar<br>
+                  E. Konunun açılması ve anlatılması
+                </div>
+              </li>
+            </ol>
+            <div class="soru-cevap-anahtari">
+              <strong>CEVAP ANAHTARI:</strong>
+              <ol style="padding-left:18px;">
+                <li><span class="dogru-yesil">C</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">A</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">D</span></li>
+                <li><span class="dogru-yesil">C</span></li>
+                <li><span class="dogru-yesil">B</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">C</span></li>
+                <li><span class="dogru-yesil">E</span></li>
+                <li><span class="dogru-yesil">D</span></li>
+                <li><span class="dogru-yesil">B</span></li>
+                <li><span class="dogru-yesil">B</span></li>
+                <li><span class="dogru-yesil">C</span></li>
+              </ol>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">12. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <h3>12. Hafta Çalışma Soruları</h3>
+            <div class="soru-kutu">
+              <ol class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+                <li>
+                  Dilekçe yazımı ile ilgili olarak aşağıdakilerden hangisi yanlıştır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Dilekçe yazılırken mavi ya da siyah mürekkepli kalem kullanılır.<br>
+                    <span class="dogru-yesil">B. Dilekçenin verildiği tarih kâğıdın sağ üst köşesine yazılmalıdır.</span><br>
+                    C. Dilekçe verilen kurumun adı dilekçenin baş tarafına tam olarak yazılmalıdır.<br>
+                    D. Dilekçe metninde açık, anlaşılır bir anlatım kullanılmalıdır.<br>
+                    E. Dilekçe yazılırken sayfa düzenine dikkat edilmelidir.
+                  </div>
+                </li>
+                <li>
+                  Alanında uzman kişilerin bir durumu ortaya koymak için yazdıkları form yazı türü aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Tutanak<br>
+                    B. Biyografi<br>
+                    <span class="dogru-yesil">C. Rapor</span><br>
+                    D. Mektup<br>
+                    E. Öz geçmiş
+                  </div>
+                </li>
+                <li>
+                  Bir durumun ya da işlemin kayıt altına alınarak ona resmiyet kazandırılması maksadıyla yazılan form yazı türü aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Biyografi<br>
+                    B. Rapor<br>
+                    <span class="dogru-yesil">C. Tutanak</span><br>
+                    D. Mektup<br>
+                    E. Öz geçmiş
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi resmî makamlara yazılan bir mektuptur?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Tutanak<br>
+                    <span class="dogru-yesil">B. Dilekçe</span><br>
+                    C. Öz geçmiş<br>
+                    D. Biyografi<br>
+                    E. Başvuru formu
+                  </div>
+                </li>
+                <li>
+                  Belirli bir gündemle yapılan toplantılardan sonra hazırlanması gereken form yazı türü aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Dilekçe<br>
+                    <span class="dogru-yesil">B. Tutanak</span><br>
+                    C. Tasdikname<br>
+                    D. Arz-ı Hâl<br>
+                    E. Tebellüğ belgesi
+                  </div>
+                </li>
+                <li>
+                  Form öz geçmişlerde aşağıdakilerden hangisi bulunmaz?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Eğitim bilgileri<br>
+                    B. Kişisel bilgiler<br>
+                    C. İletişim bilgileri<br>
+                    D. İş tecrübeleri<br>
+                    <span class="dogru-yesil">E. Fobileri</span>
+                  </div>
+                </li>
+                <li>
+                  Aşağıdaki seçeneklerden hangisi resmî yazışma türlerinden biri değildir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Dilekçe<br>
+                    <span class="dogru-yesil">B. Edebi mektup</span><br>
+                    C. Karar<br>
+                    D. Tutanak<br>
+                    E. Rapor
+                  </div>
+                </li>
+                <li>
+                  I. Bazı resmî kuruluşların veya tüzel kişilerin bir konu üzerine yaptıkları toplantı veya oturumlardan sonra oluşan görüşlerin sonuçlarının onanmış deftere yazılması ile ortaya çıkan yazı türü.<br>
+                  II. Resmî ya da özel kuruluşlara, gerçek ya da tüzel kişilere yazılan, bir dileği, isteği, ihbar ve şikâyeti bildirmek üzere veya herhangi bir konuda bilgi sormak amacıyla yazılan resmî mektup.<br>
+                  III. Meclis, kurul, toplantı, mahkeme gibi yerlerde söylenen sözlerin, tespit edildiği anda aynen yazıya geçirilmesiyle oluşturulan yazı türü.<br>
+                  Yukarıda tanımlanan yazı türleri sırasıyla hangi seçenekte doğru olarak verilmiştir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Dilekçe-öz geçmiş-tutanak<br>
+                    B. Karar-tutanak-dilekçe<br>
+                    C. Öz geçmiş-iş mektubu-karar<br>
+                    <span class="dogru-yesil">D. Karar-dilekçe-tutanak</span><br>
+                    E. Rapor-tutanak-dilekçe
+                  </div>
+                </li>
+                <li>
+                  Aşağıdaki açıklamalardan hangisi ayraç içinde verilen türle uyuşmamaktadır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Bir isteği veya şikâyeti bildirmek için yazılan bir çeşit mektuptur. (Dilekçe)<br>
+                    B. Bir konu veya olay hakkında yapılan araştırma sonuçları yazılır. (Rapor)<br>
+                    C. Alınan kararlar, yaşanan olaylar objektif bir şekilde ele alınır. (Tutanak)<br>
+                    <span class="dogru-yesil">D. Oy birliği ya da oy çokluğu ile ulaşılan sonuçlar anlatılır. (Duyuru)</span><br>
+                    E. Kişinin kendisini ve kariyer hedeflerini anlattığı türdür. (Öz geçmiş)
+                  </div>
+                </li>
+                <li>
+                  “20.01.2020 Pazartesi günü saat 12.00’de nöbetçi olduğum ikinci katta 7-A öğrencilerinden Muhammet Emin ve Seyit Akın’ın kavga ettiğine şahit olunmuştur. Öğrenciler katta bulunan diğer öğretmenlerin yardımıyla ayrılmıştır.”<br>
+                  Bu parça aşağıdaki yazı türlerinin hangisinden alınmıştır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Rapor<br>
+                    <span class="dogru-yesil">B. Tutanak</span><br>
+                    C. Karar<br>
+                    D. Dilekçe<br>
+                    E. Duyuru
+                  </div>
+                </li>
+                <li>
+                  Bir olayın meydana geliş sebebini, sonuçlarını anlatmak için yazılır. Öznel değerlendirmelere yer verilmez ve olaylar olduğu gibi aktarılır.<br>
+                  Bu parçada bahsedilen tür aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">A. Tutanak</span><br>
+                    B. Öz geçmiş<br>
+                    C. Dilekçe<br>
+                    D. İlan<br>
+                    E. Karar
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi raporda bulunması gereken başlıklardan biri değildir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Raporun sunulduğu makam<br>
+                    B. Gerekçe<br>
+                    C. Sonuç<br>
+                    D. Ekler<br>
+                    <span class="dogru-yesil">E. Bilgi alınan kişiler</span>
+                  </div>
+                </li>
+                <li>
+                  “Konuların televizyon, radyo, internet vb. iletişim araçları ile insanlara ulaştırılmasına …………. denir.” cümlesindeki boşluğa aşağıdakilerden hangisi getirilmelidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">A. İlan</span><br>
+                    B. Öz geçmiş<br>
+                    C. Dilekçe<br>
+                    D. Rapor<br>
+                    E. Karar
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi bir öz geçmişte bulunması zorunlu başlıklardan biri değildir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Kişisel bilgiler<br>
+                    B. Eğitim bilgileri<br>
+                    C. Deneyim<br>
+                    D. Referans<br>
+                    <span class="dogru-yesil">E. Hobiler</span>
+                  </div>
+                </li>
+                <li>
+                  Aşağıdakilerden hangisi karar yazarken dikkat edilmesi gereken özelliklerden biri değildir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Kararın alındığı tarih ve saat belirtilmelidir.<br>
+                    B. Yazının okunaklı olmasına dikkat edilmelidir.<br>
+                    C. Toplantıya katılanların ad soyadları yazılmalıdır.<br>
+                    <span class="dogru-yesil">D. Alınan kararların yazılma zorunluluğu yoktur.</span><br>
+                    E. Kararların geçerli olması için imza atılmalıdır.
+                  </div>
+                </li>
+                <li>
+                  “Belgelenmesi gereken bir durumu tespit edenler tarafından imzalanan belge, zabıt varakası olarak bilinir.”<br>
+                  Tanımı verilen resmî yazı türü aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Öz geçmiş<br>
+                    <span class="dogru-yesil">B. Tutanak</span><br>
+                    C. Rapor<br>
+                    D. Dilekçe<br>
+                    E. Karar
+                  </div>
+                </li>
+                <li>
+                  Uluslararası bilimsel terimlerde “curriculum vitae” olarak bilinen resmî yazı türü aşağıdakilerden hangisidir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Tutanak<br>
+                    B. Karar<br>
+                    <span class="dogru-yesil">C. Öz geçmiş</span><br>
+                    D. Dilekçe<br>
+                    E. İlan
+                  </div>
+                </li>
+                <li>
+                  “Kalfalık belgemi kaybettim. Hükümsüzdür.”<br>
+                  Bu parça aşağıdaki türlerden hangisine aittir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Tutanak<br>
+                    B. Dilekçe<br>
+                    C. Rapor<br>
+                    <span class="dogru-yesil">D. Duyuru</span><br>
+                    E. Karar
+                  </div>
+                </li>
+              </ol>
+              <div class="soru-cevap-anahtari">
+                <strong>CEVAP ANAHTARI:</strong>
+                <ol style="padding-left:18px;">
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                </ol>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">13. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <h3>13. Hafta Çalışma Soruları</h3>
+            <div class="soru-kutu">
+              <ol class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+                <li>
+                  Akademik yazma, bilimsel araştırmayla iç içedir, uzmanlık gerektiren teknik ve sistematik bir alandır, raporlaştırmaya dayalı bir metin üretim sürecidir ve günlük dil kullanımından farklıdır.<br>
+                  Yukarıda akademik yazmanın bazı özellikleri verilmiştir. Aşağıda verilen özelliklerden hangisi bu metnin devamına eklenirse bilgi yanlışlığı yapılmış olur?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">A. Akademik yazma eleştirel bir beceridir.</span><br>
+                    B. Akademik yazmanın okuru ikna etmek gibi bir amacı yoktur.<br>
+                    C. Akademik yazma, nesneldir.<br>
+                    D. Akademik yazma, tutarlılık gerektirir.<br>
+                    E. Akademik yazma, dil ve anlatım kurallarına titizlikle uymayı gerektirir.
+                  </div>
+                </li>
+                <li>
+                  <img src="../image/soru2.jpg" style="max-width: 100%;"><br>
+                  Yukarıda akademik yazma sürecini anlatan bir şema verilmiştir. Sürecin basamaklarında oluşan hatanın giderilmesi için hangi numaraların kendi içinde yer değiştirmesi gerekmektedir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. I – II<br>
+                    B. III – V<br>
+                    <span class="dogru-yesil">C. III – IV</span><br>
+                    D. II – IV<br>
+                    E. II – III
+                  </div>
+                  <div style="font-size:16px; font-weight:400; margin-top:8px;">
+                    Kaynakça Hazırlama<br>
+                    Kontrol Düzeltme Etme ve Sunum<br>
+                    Yazıyı Oluşturma<br>
+                    Yazmaya Hazırlık
+                  </div>
+                </li>
+                <li>
+                  Akademik metin türleri, diğer yazı türlerinden farklı olarak, estetik kaygı taşımamaktadır. Bunun sebebi aşağıdakilerden hangisi <b>değildir</b>?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Amacı bilgi vermek olması.<br>
+                    B. Ciddi bir üslup kullanmayı gerektirmesi.<br>
+                    C. Uzmanlık gerektiren konuların ele alınması.<br>
+                    <span class="dogru-yesil">D. Herhangi bir yerde yayımlanmayacak olması.</span><br>
+                    E. Eleştirel bir beceri olması
+                  </div>
+                  <div style="font-size:16px; font-weight:400; margin-top:8px;">
+                    • Makale • Biyografi • Proje • Fıkra<br>
+                    • Gezi Yazısı • Bildiri • Rapor • Resmî e-posta<br>
+                    • Röportaj • Tez • Deneme • Mektup<br>
+                    • Ansiklopedi maddesi
+                  </div>
+                </li>
+                <li>
+                    <img src="../image/türkdilisoru4.png">
+                  Türk Dili dersinde bir grup öğrenci yukarıda verilen metin türleriyle ilgili konu anlatımı yapmakla görevlendirilmişlerdir. Arzu akademik metin türlerini anlatacağına göre aşağıdaki gruplamalardan hangisini seçerse doğru bir anlatım yapabilir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Makale, bildiri, tez, röportaj, deneme, e-posta<br>
+                    B. Tez, röportaj, mektup, deneme, biyografi, makale<br>
+                    C. E-posta, gezi yazısı, fıkra, mektup, tez, rapor<br>
+                    <span class="dogru-yesil">D. Makale, bildiri, tez, proje, rapor, ansiklopedi maddesi</span><br>
+                    E. Deneme, tez, bildiri, röportaj, rapor, proje
+                  </div>
+                </li>
+                <li>
+                  Yüksek lisans gruplarında bilimsel araştırma ve yayın etiği derslerine giren öğretim görevlisi, öğrencilerinden final ödevi olarak akademik bir çalışma yapmalarını istemiştir. Etik kurallara aykırı olan davranışları derste anlatmış ve hazırlayacakları ödevi bunlardan kaçınarak yapmaları gerektiğini belirtmiştir.<br>
+                  Bu durumda öğrenciler, aşağıdaki davranışlardan hangisinden kaçınmak zorunda <b>değildirler</b>?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Uydurma<br>
+                    <span class="dogru-yesil">B. Alıntılama</span><br>
+                    C. Aşırma<br>
+                    D. Çarpıtma<br>
+                    E. Dilimleme
+                  </div>
+                </li>
+                <li>
+                  Akademik yazma yapacak bir araştırmacının hangi özelliğe sahip olması şart <b>değildir</b>?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Araştırmacı bir ruha sahip olmak<br>
+                    B. Yazma sürecinde titiz ve sabırlı olmak<br>
+                    C. Literatür taramayı bilmek<br>
+                    D. Etik kuralları benimsemek<br>
+                    <span class="dogru-yesil">E. Doktora aşamasına gelmiş olmak</span>
+                  </div>
+                </li>
+              </ol>
+              <div class="soru-cevap-anahtari">
+                <strong>CEVAP ANAHTARI:</strong>
+                <ol style="padding-left:18px;">
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">B</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                </ol>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn">14. Hafta Çalışma Soruları</button>
+        <div class="accordion-content accordion-questions">
+            <h3>14. Hafta Çalışma Soruları</h3>
+            <div class="soru-kutu">
+              <ol class="soru-listesi" style="padding-left:18px; font-size: 19px; font-weight: 700;">
+                <li>
+                  Aşağıdaki seçeneklerin hangisinde bir anlatım bozukluğu vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Sınavlar, muhtemelen haftaya ertelenecek.<br>
+                    B. Şahsi sorular sorarak onu bunaltmıştı.<br>
+                    C. Annemin, mutfakta kendi kendine konuştuğu duyuluyordu.<br>
+                    <span class="dogru-yesil">D. Annesini sevmesine rağmen, sık sık tartışıyordu.</span><br>
+                    E. Yaz tatiline çıkmak istediğimi söyledim.
+                  </div>
+                </li>
+                <li>
+                  “Deyimlerin yanlış kullanılması anlatım bozukluğuna neden olur.” Aşağıdaki seçeneklerin hangisinde deyim, anlatım bozukluğuna neden olmayacak şekilde doğru kullanılmıştır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. O kadar telaşlıydı ki etekleri zil çalıyordu.<br>
+                    B. Göze batmak için çok çabalıyordu.<br>
+                    C. Söylediklerime biraz kulak kabartın!<br>
+                    <span class="dogru-yesil">D. Ağzına geleni söylüyordu, çok kızmıştı.</span><br>
+                    E. Bizi mutlu etmek için elinden geleni ardına koymaz.
+                  </div>
+                </li>
+                <li>
+                  Aşağıdaki seçeneklerin hangisinde özne-yüklem uyumsuzluğundan kaynaklanan bir anlatım bozukluğu vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Düğüne, sen ve baban birlikte gelebilirsiniz.<br>
+                    B. Ben, kardeşim ve dayım hiç anlaşamayız.<br>
+                    C. Hep birlikte güzel günler göreceğiz.<br>
+                    D. Kış gelince kayıklar kızağa çekilir.<br>
+                    <span class="dogru-yesil">E. Odunlar şöminenin üstüne dizildiler.</span>
+                  </div>
+                </li>
+                <li>
+                  Aşağıdaki seçeneklerin hangisinde dolaylı tümleç eksikliğinden kaynaklanan bir anlatım bozukluğu vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">A. Defteri dikkatle inceliyor, bir şeyler yazıyordu.</span><br>
+                    B. Sınavdan düşük almak onu rahatsız etmişti.<br>
+                    C. Okula giderken servisi kullanmaya özen gösteriyordu.<br>
+                    D. Köylüler, onun duygusuz biri olduğunu düşünüyordu.<br>
+                    E. Yeni çıkan kitabını imzalamak için buraya geliyor.
+                  </div>
+                </li>
+                <li>
+                  Aşağıdaki seçeneklerin hangisinde çatı uyumsuzluğundan kaynaklanan bir anlatım bozukluğu vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Her şey konuşulup tatlıya bağlanıldı.<br>
+                    B. Konuklar tek tek aranıp haberdar edildi.<br>
+                    C. Aniden kapıyı açıp içeri girdi.<br>
+                    D. Önce etraflıca düşünüldü sonra yapıldı.<br>
+                    <span class="dogru-yesil">E. Çok çalışıp bugüne kadar gelindi.</span>
+                  </div>
+                </li>
+                <li>
+                  “Bundan böyle artık tek başınasın!” cümlesindeki anlatım bozukluğu aşağıdaki işlemlerden hangisi gerçekleştirilirse düzelir?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Sondaki ünlem işareti kaldırılırsa<br>
+                    B. “Tek başınasın” yerine “kendi başınasın” getirilirse<br>
+                    <span class="dogru-yesil">C. “Artık” sözcüğü cümleden çıkarılırsa</span><br>
+                    D. “Artık” sözcüğü en başa alınırsa<br>
+                    E. “Böyle” sözcüğünden sonra bir virgül konulursa
+                  </div>
+                </li>
+                <li>
+                  “Cümlede, gereksiz kelime kullanımı anlatım bozukluğuna neden olur.” Aşağıdaki seçeneklerden hangisinde bu tanıma uyan bir anlatım bozukluğu vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Başkanlık, gerekli işlemleri başlattı.<br>
+                    B. Biraz istirahat ederse iyileşecek.<br>
+                    C. Tükenmez kalemle yazmak sınav kurallarına aykırıdır.<br>
+                    <span class="dogru-yesil">D. Anneannem bu konuda çok hassastı, kılı kırk yarardı.</span><br>
+                    E. Elinde, mavi kaplı bir defter tutuyordu.
+                  </div>
+                </li>
+                <li>
+                  “Cümlede, birbiri ile çelişen sözcüklerin bir arada kullanılması anlatım bozukluğuna sebep olur.” açıklamasındaki anlatım bozukluğunun bir örneği aşağıdaki seçeneklerden hangisinde vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">A. Onunla kesinlikle bir hafta sonu tanışmış olabiliriz.</span><br>
+                    B. Bu, onunla ilk tartışmamız değil.<br>
+                    C. Beni unutmayacağını zannediyorum.<br>
+                    D. Onunla yaklaşık iki yıl kadar önce karşılaştık.<br>
+                    E. Ona bu konuda hak vermem gerektiğini biliyorum.
+                  </div>
+                </li>
+                <li>
+                  “Anlatım sırasında yapılan mantık hataları anlatım bozukluğuna neden olur.” Aşağıdaki seçeneklerin hangisinde bunun bir örneği bulunmaktadır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    A. Bize uzun zamandır selam vermeyen amcam şimdi bizi sık sık ziyaret ediyordu.<br>
+                    B. Göreceli konularda tartışmak genellikle sonuçsuz bir uğraştır.<br>
+                    C. Aklımdan geçenleri görebilsen şaşırırdın!<br>
+                    D. Çok uzaklardan geldiğini vurgulu bir şekilde ifade ediyordu.<br>
+                    <span class="dogru-yesil">E. Liseyi bitirmek şöyle dursun üniversiteyi bile kazanamadı.</span>
+                  </div>
+                </li>
+                <li>
+                  “Deyimler ve atasözleri kalıplaşmış ifadelerdir. Sözcüklerin yerleri değiştirilemez, yerlerine başka sözcükler kullanılamaz.” Aşağıdaki seçeneklerin hangisinde bu kurala uyulmamasından kaynaklanan bir anlatım bozukluğu vardır?
+                  <div class="soru-secenek" style="font-weight: 500;">
+                    <span class="dogru-yesil">A. İç geçirerek “El elin eşeğini şarkı çağırarak ararmış.” diye mırıldandı.</span><br>
+                    B. Beni sürekli “Bir elin nesi var iki elin sesi var.” diyerek ikaz ediyordu.<br>
+                    C. Kardeşine, “Eline koluna hâkim ol!” diye bağırdı.<br>
+                    D. Memleketini “Ormanların göz alabildiğince uzandığı yer.” diyerek tanıttı.<br>
+                    E. Kendine çok güveniyor “Elimi sallasam ellisi!” diyordu.
+                  </div>
+                </li>
+              </ol>
+              <div class="soru-cevap-anahtari">
+                <strong>Cevap Anahtarı</strong>
+                <ol style="padding-left:18px;">
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">C</span></li>
+                  <li><span class="dogru-yesil">D</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                  <li><span class="dogru-yesil">E</span></li>
+                  <li><span class="dogru-yesil">A</span></li>
+                </ol>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion">
+        <button class="accordion-btn"></button>
+        <div class="accordion-content accordion-questions">
+        </div>
+    </div>
+
+
+</div> <!----çalışma soruları bitti---->
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+     <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ek Çalışma Soruları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Final Ek Sorular</h3>
+                    <p></p>
+                    <a href="../Ders Kaynakları/Türk Dili/FİNAL SINAVI İÇİN EK ÇALIŞMA SORULARI.pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+              
+
+            </div>
+        </div>
+        
+    </section>
+    
+
+
+</div>
+</div>
+
+
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

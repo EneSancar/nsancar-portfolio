@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Yazılım Güvenligi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+
+
+
+/* Maskot temel stilleri */
+.maskot-normal-2 {
+    width: 15%;
+    padding-bottom: 20%; /* Kare şeklinde olması için */
+    background-image: url('../image/tiger.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0;
+    transform: scale(0.8) translateY(0);
+    animation: moveUpDown 2s ease-in-out infinite;
+    transition: all 0.3s ease;
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+/* Hover efekti */
+.maskot-normal-2:hover{
+    background-image: url('../image/tiger2.png');
+    transform: scale(1.1) translateY(-10px);
+    filter: drop-shadow(30px 30px 4px #50B2C0);
+}
+
+/* Animasyon */
+@keyframes moveUpDown {
+    0% { transform: scale(0.8) translateY(0); }
+    50% { transform: scale(0.8) translateY(-10px); }
+    100% { transform: scale(0.8) translateY(0); }
+}
+@keyframes moveUpDown {
+    0% { transform: scale(0.8) translateY(0); }
+    50% { transform: scale(0.8) translateY(-10px); }
+    100% { transform: scale(0.8) translateY(0); }
+}
+
+
+@media (max-width: 900px) {
+    .maskot-normal-2{
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+   
+                <div id="maskot" class="maskot-normal-2"></div>
+            
+<h3>SİTE ADMİNİ HEPİNİZE SINAVDA BAŞARILAR DİLER. 🫡🐯</h3>
+            
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+             <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+     <h2 class="info">PDF özeti aşağıda mevcut ama kişisel tavsiyem pdf içerisinde hocanın ders esnasında belirttiği yerleri bizzat üzerinden geçmeniz iyi olacaktır.</h2>
+        <!---------------------------->
+
+
+        <!----------DERS BAŞLIĞI------------------>
+      <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Yazılım Güvenliği</h1>
+      <div class="fakeimg" Style="height:400px; background: url('https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExYXFteWF3ZjZhZ3c5dDZkZGx4NGwzNTJpMjdwMGtoZGlrem1mbWx6OSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/3osxY9kuM2NGUfvThe/giphy.gif'); background-position: center;
+      background-repeat: no-repeat; background-size: cover; background-attachment: fixed; margin-bottom: 50px;"></div>
+      <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+ <h2 class="unite-title">Sayfa 166-293 pdf  <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+       <h1 id="yazılım-güvenliği-detaylı-kapsamlı-özeti">Yazılım Güvenliği Detaylı Kapsamlı Özeti</h1>
+<h2 id="mobil-uygulamalarda-güvenlik-riskleri-ve-saldırı-türleri">1. Mobil Uygulamalarda Güvenlik Riskleri ve Saldırı Türleri</h2>
+<p>Mobil uygulamalar, özellikle kullanıcı cihazları ve ağ bağlantıları üzerinden çeşitli saldırılara açıktır. Güvenliği sağlamak için aşağıdaki adımlar önemlidir:</p>
+<ul>
+<li>
+<p><strong>Hazırlık:</strong> Saldırıların önlenmesi için sistemin ve uygulamanın yapısının bilinmesi,</p>
+</li>
+<li>
+<p><strong>Bilgi Toplama:</strong> Sistem zafiyetlerini keşfetmek için bilgi edinme,</p>
+</li>
+<li>
+<p><strong>İş Parçacığı Modelleme:</strong> Saldırı yüzeylerini katmanlara ayırarak incelemek,</p>
+</li>
+<li>
+<p><strong>Zafiyet Analizi:</strong> Sistemdeki açıklıkları ve güvenlik açıklarını tespit etmek,</p>
+</li>
+<li>
+<p><strong>Saldırıları Belirleme:</strong> Kötü amaçlı yazılımların ve saldırı tekniklerinin tespiti,</p>
+</li>
+<li>
+<p><strong>Güçlü Şifreleme:</strong> Verilerin korunması için AES gibi güçlü algoritmalar kullanmak,</p>
+</li>
+<li>
+<p><strong>Saldırıları Önleme:</strong> Güvenlik duvarları, kimlik doğrulama ve erişim kontrolleri ile saldırıları engellemek,</p>
+</li>
+<li>
+<p><strong>Sistem Açıklarını Düzenli Kontrol:</strong> Sürekli güncelleme ve izleme.</p>
+</li>
+</ul>
+<h3 id="saldırı-türleri-detayları">Saldırı Türleri Detayları:</h3>
+<ul>
+<li>
+<p><strong>İzinsiz Dinleme (Sniffing):</strong> Veri trafiğinin ele geçirilmesi; şifreler, e-postalar, dosyalar hedef alınır.</p>
+</li>
+<li>
+<p><strong>Toplu Gönderim (Spamming):</strong> İstenmeyen mesajlarla kullanıcıların cihazları veya hesapları hedeflenir.</p>
+</li>
+<li>
+<p><strong>Yanıltma (Spoofing):</strong> DNS önbelleğinin değiştirilmesiyle trafik başka IP adreslerine yönlendirilir.</p>
+</li>
+<li>
+<p><strong>Oltalama (Phishing):</strong> Banka veya finans kurumları taklidi yapılarak kullanıcı bilgileri çalınır.</p>
+</li>
+<li>
+<p><strong>Yönlendirme (Pharming):</strong> Kullanıcıyı sahte web sayfalarına yönlendirir.</p>
+</li>
+<li>
+<p><strong>Veri Sızıntısı:</strong> Uygulamalardan kısmi veri çalınması.</p>
+</li>
+<li>
+<p><strong>Hizmet Engelleme (DoS):</strong> Sistemi kullanılamaz hale getirmek için aşırı yükleme, batarya veya frekans engelleme.</p>
+</li>
+</ul>
+<h3 id="i̇ş-parçacığı-modeli">İş Parçacığı Modeli:</h3>
+<ul>
+<li>
+<p><strong>Uygulama Katmanı:</strong> Kötü amaçlı yazılımlar uygulama gibi davranır, kullanıcı tarafından indirilir.</p>
+</li>
+<li>
+<p><strong>Haberleşme Katmanı:</strong> Zararlı yazılımlar bağlantı kanalları yoluyla cihazlara girer.</p>
+</li>
+<li>
+<p><strong>Kaynak Katmanı:</strong> Cihazın kritik bilgileri bu katmanda depolanır ve korunmalıdır.</p>
+</li>
+</ul>
+<hr>
+<h2 id="zafiyet-analizi-ve-test-yöntemleri">2. Zafiyet Analizi ve Test Yöntemleri</h2>
+<h3 id="adli-bilişim">Adli Bilişim:</h3>
+<ul>
+<li>
+<p>Mobil cihazdaki silinmiş veriler dahil olmak üzere veri çıkarımı yapılır.</p>
+</li>
+<li>
+<p>Araçlar: <strong>Micro Systemation’s XRY</strong> ve <strong>Cellecrite UFED Touch Ultimate</strong>.</p>
+</li>
+</ul>
+<h3 id="statik-analiz">Statik Analiz:</h3>
+<ul>
+<li>
+<p>Uygulama çalıştırılmadan kod üzerinde yapılan analiz.</p>
+</li>
+<li>
+<p>Zararlı kodlar, kötü niyetli fonksiyonlar araştırılır.</p>
+</li>
+<li>
+<p>Araçlar: <strong>Android Reverse Tools</strong>, <strong>Static Android Analysis Framework</strong>.</p>
+</li>
+</ul>
+<h3 id="dinamik-analiz">Dinamik Analiz:</h3>
+<ul>
+<li>
+<p>Uygulama çalıştırılarak ağ trafiği ve davranış incelenir.</p>
+</li>
+<li>
+<p>Kötü amaçlı aktiviteler ortaya çıkarılır.</p>
+</li>
+</ul>
+<h3 id="fonksiyonel-test-türleri">Fonksiyonel Test Türleri:</h3>
+<ul>
+<li>
+<p><strong>Birim Testi:</strong> Kodun küçük parçalarının bağımsız test edilmesi,</p>
+</li>
+<li>
+<p><strong>Regresyon Testi:</strong> Değişikliklerden sonra eski işlevlerin bozulmaması testi,</p>
+</li>
+<li>
+<p><strong>Sızma Testi (Penetrasyon Testi):</strong> Sistemlere gerçek saldırı simülasyonu,</p>
+</li>
+<li>
+<p><strong>Laboratuvar Testi:</strong> Farklı ağ ve operatör senaryolarında uygulama testi,</p>
+</li>
+<li>
+<p><strong>Performans Testi:</strong> Cihaz kısıtlamaları (düşük batarya, düşük hafıza) altında uygulama performansı,</p>
+</li>
+<li>
+<p><strong>Kesme Testi:</strong> Uygulamanın beklenmedik duraklamalara karşı davranışı,</p>
+</li>
+<li>
+<p><strong>Kullanılabilirlik Testi:</strong> Kullanıcıların uygulamayı ne kadar benimsediği ve kolay kullandığı.</p>
+</li>
+</ul>
+<hr>
+<h2 id="kişisel-ve-kurumsal-verilerin-korunması">3. Kişisel ve Kurumsal Verilerin Korunması</h2>
+<h3 id="kişisel-verilerin-korunması-i̇çin-temel-önlemler">Kişisel Verilerin Korunması İçin Temel Önlemler:</h3>
+<ul>
+<li>
+<p><strong>Veri Şifreleme:</strong></p>
+<ul>
+<li>Depolama ve iletim sırasında AES gibi endüstri standardı şifreleme,</li>
+</ul>
+</li>
+<li>
+<p><strong>Çift Faktörlü Kimlik Doğrulama (2FA):</strong></p>
+<ul>
+<li>SMS, e-posta, uygulama tabanlı doğrulama ile ek güvenlik,</li>
+</ul>
+</li>
+<li>
+<p><strong>Güçlü Parolalar ve Parola Yönetimi:</strong></p>
+<ul>
+<li>Karmaşık parolalar, parola yöneticileri ve düzenli değişim,</li>
+</ul>
+</li>
+<li>
+<p><strong>Erişim Kontrolü:</strong></p>
+<ul>
+<li>
+<p>Azami yetki prensibi (least privilege),</p>
+</li>
+<li>
+<p>Yetkilendirme seviyeleri,</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Veri Maskelenmesi ve Anonimleştirme:</strong></p>
+<ul>
+<li>Kişisel bilgiler gizlenmeli veya anonimleştirilmeli,</li>
+</ul>
+</li>
+<li>
+<p><strong>Gizlilik Politikaları ve Kullanıcı Onayı:</strong></p>
+<ul>
+<li>
+<p>Açık ve şeffaf veri kullanımı politikaları,</p>
+</li>
+<li>
+<p>Rıza belgeleri,</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Veri İhlali Durumunda Müdahale:</strong></p>
+<ul>
+<li>
+<p>Bildirim prosedürleri,</p>
+</li>
+<li>
+<p>Acil müdahale planları,</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Fiziksel Güvenlik:</strong></p>
+<ul>
+<li>Cihazların korunması, şifrelenmesi,</li>
+</ul>
+</li>
+<li>
+<p><strong>Dijital İmza ve Elektronik Kimlik Doğrulama:</strong></p>
+<ul>
+<li>İşlemlerde kimlik doğrulama,</li>
+</ul>
+</li>
+<li>
+<p><strong>Yazılım ve Sistem Güncellemeleri:</strong></p>
+<ul>
+<li>Otomatik ve düzenli güncellemeler,</li>
+</ul>
+</li>
+<li>
+<p><strong>Veri Silme ve İmha:</strong></p>
+<ul>
+<li>Güvenli silme ve fiziksel imha,</li>
+</ul>
+</li>
+<li>
+<p><strong>Eğitim ve Farkındalık Programları:</strong></p>
+<ul>
+<li>Kimlik avı saldırılarına karşı bilinçlendirme,</li>
+</ul>
+</li>
+<li>
+<p><strong>Veri Paylaşımı ve Üçüncü Taraf Güvenliği:</strong></p>
+<ul>
+<li>Sözleşmeli ve denetlenen veri paylaşımları,</li>
+</ul>
+</li>
+<li>
+<p><strong>Yasal Düzenlemelere Uyum:</strong></p>
+<ul>
+<li>GDPR, KVKK ve benzeri kanunlara uygunluk.</li>
+</ul>
+</li>
+</ul>
+<h3 id="kurumsal-veri-koruma-önlemleri">Kurumsal Veri Koruma Önlemleri:</h3>
+<ul>
+<li>
+<p>Veri şifreleme ve erişim kontrolleri aynı şekilde kurumsal düzeyde uygulanır.</p>
+</li>
+<li>
+<p>Antivirüs, güvenlik duvarları ve ağ izleme gibi teknik önlemler,</p>
+</li>
+<li>
+<p>Veri yedekleme ve acil kurtarma planları,</p>
+</li>
+<li>
+<p>Fiziksel erişim kontrolü ve cihaz güvenliği,</p>
+</li>
+<li>
+<p>Çalışanların güvenlik eğitimleri,</p>
+</li>
+<li>
+<p>Üçüncü tarafların güvenlik uyumu ve denetimi,</p>
+</li>
+<li>
+<p>Sosyal mühendislik saldırılarına karşı eğitim ve politikalar.</p>
+</li>
+</ul>
+<hr>
+<h2 id="türkiye’de-yaygın-güvenlik-açıkları">4. Türkiye’de Yaygın Güvenlik Açıkları</h2>
+<ul>
+<li>
+<p>Hatalı kablosuz ağ ve VPN konfigürasyonu,</p>
+</li>
+<li>
+<p>SQL enjeksiyon (SQL sorgularının değiştirilebilir olması),</p>
+</li>
+<li>
+<p>XSS (başka siteden kod çalıştırma),</p>
+</li>
+<li>
+<p>Zayıf parolalar,</p>
+</li>
+<li>
+<p>Güncellenmemiş sunucu ve işletim sistemleri,</p>
+</li>
+<li>
+<p>Hatalı yapılandırılmış saldırı tespit sistemleri,</p>
+</li>
+<li>
+<p>Güvenlik duvarı olmadan çalışan sistemler.</p>
+</li>
+</ul>
+<hr>
+<h2 id="yazılım-kalite-ve-güvenlik-aktiviteleri-ykg">5. Yazılım Kalite ve Güvenlik Aktiviteleri (YKG)</h2>
+<ul>
+<li>
+<p>YKG, yazılım geliştirme sürecinde kesintisiz yürütülen aktiviteler bütünü.</p>
+</li>
+<li>
+<p>Amaç: Riskleri azaltmak ve <strong>Gizlilik, Bütünlük, Erişilebilirlik (CIA üçgeni)</strong> sağlamak,</p>
+</li>
+<li>
+<p>Kodlama standartları kaliteyi garanti eder,</p>
+</li>
+<li>
+<p>Formal teknik görüşmelerle kodun doğruluğu değerlendirilir,</p>
+</li>
+<li>
+<p>Test stratejileri oluşturulur, dokümanlar kontrol edilir,</p>
+</li>
+<li>
+<p>Yazılım geliştirme standartlarına uyum denetlenir.</p>
+</li>
+</ul>
+<hr>
+<h2 id="yazılım-geliştirme-modelleri-ve-güvenlik-yaklaşımları">6. Yazılım Geliştirme Modelleri ve Güvenlik Yaklaşımları</h2>
+<h3 id="cmm-ve-cmmi">CMM ve CMMI:</h3>
+<ul>
+<li>
+<p>Organizasyonların olgunluk seviyelerini belirler, süreç iyileştirme rehberi sağlar.</p>
+</li>
+<li>
+<p>CMMI, CMM’den gelişmiş olup iş süreçlerini entegre eder.</p>
+</li>
+</ul>
+<h3 id="faa-icmm">FAA-iCMM:</h3>
+<ul>
+<li>Federal havacılıkta kullanılan olgunluk modeli.</li>
+</ul>
+<h3 id="trusted-cmm--tsm">Trusted CMM / TSM:</h3>
+<ul>
+<li>
+<p>Güvenli yazılım geliştirme için yöntemler,</p>
+</li>
+<li>
+<p>Düşük seviyede hatalara karşı önlem ve yüksek seviyede zararlı saldırılara direnç.</p>
+</li>
+</ul>
+<h3 id="sse-cmm">SSE-CMM:</h3>
+<ul>
+<li>Sistem güvenliği mühendisliği olgunluk değerlendirmesi.</li>
+</ul>
+<h3 id="microsoft-sdl">Microsoft SDL:</h3>
+<ul>
+<li>
+<p>13 aşamalı güvenli geliştirme döngüsü:</p>
+<ul>
+<li>Eğitim, risk analizi, güvenli kodlama, test etme, güvenlik müdahale planı, ürün çıkarma sonrası destek.</li>
+</ul>
+</li>
+</ul>
+<h3 id="opensamm">OpenSAMM:</h3>
+<ul>
+<li>
+<p>Yazılım güvenliği olgunluk modeli,</p>
+</li>
+<li>
+<p>Dört temel alan: Yönetişim, Yapım, Doğrulama, Uygulama,</p>
+</li>
+<li>
+<p>Her alanda güvenlik eylemleri ve hedefler belirlenir.</p>
+</li>
+</ul>
+<hr>
+<h2 id="yazılım-geliştirme-süreç-modeli-ygsm-detayları">7. Yazılım Geliştirme Süreç Modeli (YGSM) Detayları</h2>
+<h3 id="temel-aşamalar">Temel Aşamalar:</h3>
+<ul>
+<li>
+<p><strong>Analiz:</strong> Problemin tanımı, gereksinimler, proje planlaması,</p>
+</li>
+<li>
+<p><strong>Çözümleme:</strong> Mevcut sistem incelenir, işlevler ayrıntılı tanımlanır,</p>
+</li>
+<li>
+<p><strong>Tasarım:</strong> Mantıksal ve fiziksel tasarım, güvenlik ihtiyaçları,</p>
+</li>
+<li>
+<p><strong>Gerçekleştirim:</strong> Kodlama ve modül testleri,</p>
+</li>
+<li>
+<p><strong>Test:</strong> Statik (kod analizi) ve dinamik (sistem testi) tekniklerle doğrulama,</p>
+</li>
+<li>
+<p><strong>Bakım:</strong> Düzeltici, uyarlayıcı, iyileştirici ve önleyici bakım faaliyetleri.</p>
+</li>
+</ul>
+<h3 id="yazılım-geliştirmede-önemli-şemsiye-etkinlikler">Yazılım Geliştirmede Önemli Şemsiye Etkinlikler:</h3>
+<ul>
+<li>
+<p>Proje izleme ve denetim,</p>
+</li>
+<li>
+<p>Biçimsel gözden geçirmeler,</p>
+</li>
+<li>
+<p>Yazılım kalite güvencesi,</p>
+</li>
+<li>
+<p>Yapılandırma yönetimi,</p>
+</li>
+<li>
+<p>Belgelenme,</p>
+</li>
+<li>
+<p>Yeniden kullanılabilirlik yönetimi,</p>
+</li>
+<li>
+<p>Ölçümleme,</p>
+</li>
+<li>
+<p>Risk yönetimi.</p>
+</li>
+</ul>
+<hr>
+<h2 id="yazılım-geliştirme-süreç-modelleri-detay">8. Yazılım Geliştirme Süreç Modelleri (Detay)</h2>
+<h3 id="v-modeli">V-Modeli:</h3>
+<ul>
+<li>
+<p>Geliştirme ve test aşamaları V şeklinde simetrik,</p>
+</li>
+<li>
+<p>Dokümantasyon, proje planlama, risk yönetimi ön planda,</p>
+</li>
+<li>
+<p>Özellikle kullanıcı katılımının önemli olduğu projelerde kullanılır,</p>
+</li>
+<li>
+<p>AB standartlarına uyumludur.</p>
+</li>
+</ul>
+<h3 id="gelişigüzel-model">Gelişigüzel Model:</h3>
+<ul>
+<li>Adımlar arasında bağlantı yok, genellikle bireysel küçük projeler için.</li>
+</ul>
+<h3 id="barok-model">Barok Model:</h3>
+<ul>
+<li>Yap-at prototipi, belirsiz ve sabit fiyat sözleşmelerinde risklidir.</li>
+</ul>
+<h3 id="spiral-helezonik-model">Spiral (Helezonik) Model:</h3>
+<ul>
+<li>
+<p>Risk analizi odaklı, kullanıcı geri bildirimine dayalı yinelemeli,</p>
+</li>
+<li>
+<p>Proje küçük ya da karmaşık olsun tüm yaşam döngüsünü kapsar.</p>
+</li>
+</ul>
+<h3 id="prototip-modeli">Prototip Modeli:</h3>
+<ul>
+<li>
+<p>Hızlı prototip oluşturma, kullanıcı geri bildirimi ile iyileştirme,</p>
+</li>
+<li>
+<p>Belirsiz gereksinimler için uygundur.</p>
+</li>
+</ul>
+<h3 id="rad-rapid-application-development">RAD (Rapid Application Development):</h3>
+<ul>
+<li>
+<p>Hızlı uygulama geliştirme, 4. kuşak dillerle hızlandırma,</p>
+</li>
+<li>
+<p>Küçük ve modüler uygulamalarda etkilidir.</p>
+</li>
+</ul>
+<h3 id="şelale-waterfall-model">Şelale (Waterfall) Model:</h3>
+<ul>
+<li>
+<p>Lineer ve sıralı, değişikliklere kapalı,</p>
+</li>
+<li>
+<p>Dokümantasyon odaklı, kullanıcı katılımı azdır.</p>
+</li>
+</ul>
+
+<hr>
+
+<h2 id="bulut-sistem-altyapısı-özeti"><strong>Bulut Sistem Altyapısı Özeti</strong></h2>
+<p>Bulut bilişim, internet üzerinden paylaşılan kaynaklar (sunucular, depolama, ağ, yazılım) aracılığıyla esnek, ölçeklenebilir ve maliyet etkin hizmetler sunar. İşletmeler ve bireyler, fiziksel altyapı yatırımı yapmadan ihtiyaç duydukları kaynaklara anında erişebilir.</p>
+<hr>
+<h4 id="bulut-hizmet-modelleri"><strong>1. Bulut Hizmet Modelleri</strong></h4>
+<ul>
+<li>
+<p><strong>IaaS (Altyapı Katmanı):</strong></p>
+<ul>
+<li>
+<p>Sanal sunucular, depolama, ağ gibi temel kaynakları sağlar.</p>
+</li>
+<li>
+<p>Örnek: Amazon EC2, Microsoft Azure Virtual Machines.</p>
+</li>
+<li>
+<p>Kullanıcılar işletim sistemi ve uygulamaları yönetir.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>PaaS (Platform Katmanı):</strong></p>
+<ul>
+<li>
+<p>Yazılım geliştirme için hazır ortam sunar (veritabanı, ara yüzler, geliştirme araçları).</p>
+</li>
+<li>
+<p>Örnek: Google App Engine, Heroku.</p>
+</li>
+<li>
+<p>Kullanıcı sadece uygulama kodundan sorumludur.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>SaaS (Uygulama Katmanı):</strong></p>
+<ul>
+<li>
+<p>Kullanıma hazır uygulamalar (e-posta, ofis programları).</p>
+</li>
+<li>
+<p>Örnek: Google Workspace, Salesforce.</p>
+</li>
+<li>
+<p>Bakım ve güncellemeler sağlayıcı tarafından yapılır.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="bulut-dağıtım-modelleri"><strong>2. Bulut Dağıtım Modelleri</strong></h4>
+<ul>
+<li>
+<p><strong>Genel Bulut (Public Cloud):</strong></p>
+<ul>
+<li>
+<p>Kaynaklar birden çok kullanıcı tarafından paylaşılır.</p>
+</li>
+<li>
+<p>Uygun maliyetli ve ölçeklenebilir (Örnek: AWS, Google Cloud).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Özel Bulut (Private Cloud):</strong></p>
+<ul>
+<li>
+<p>Tek bir kuruluşa özel kaynaklar.</p>
+</li>
+<li>
+<p>Yüksek güvenlik ve kontrol, ancak maliyetli (Örnek: Şirket içi veri merkezleri).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Hibrit Bulut (Hybrid Cloud):</strong></p>
+<ul>
+<li>
+<p>Genel + özel bulut karışımı.</p>
+</li>
+<li>
+<p>Hassas veriler özel bulutta, diğerleri genel bulutta çalışır.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Topluluk Bulutu (Community Cloud):</strong></p>
+<ul>
+<li>Belirli bir sektör veya organizasyon grubu tarafından paylaşılır (Örnek: Sağlık sektörü bulutu).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h4 id="avantajlar"><strong>3. Avantajlar</strong></h4>
+<ul>
+<li>
+<p><strong>Maliyet Tasarrufu:</strong>  Sabit altyapı maliyetleri yerine kullanılan kadar ödeme.</p>
+</li>
+<li>
+<p><strong>Esneklik:</strong>  Kaynaklar anında artırılabilir/azaltılabilir.</p>
+</li>
+<li>
+<p><strong>Erişim Kolaylığı:</strong>  Her yerden, her cihazdan erişim.</p>
+</li>
+<li>
+<p><strong>Veri Güvenliği:</strong>  Otomatik yedekleme ve şifreleme.</p>
+</li>
+</ul>
+<hr>
+<h4 id="dezavantajlar-ve-riskler"><strong>4. Dezavantajlar ve Riskler</strong></h4>
+<ul>
+<li>
+<p><strong>Güvenlik Endişeleri:</strong>  Veri ihlalleri veya yetkisiz erişim riski.</p>
+</li>
+<li>
+<p><strong>Bağımlılık:</strong>  İnternet bağlantısı ve sağlayıcının sürekliliği kritik.</p>
+</li>
+<li>
+<p><strong>Uyumluluk:</strong>  Yasal düzenlemelere (KVKK, GDPR) uyum gerekliliği.</p>
+</li>
+</ul>
+<hr>
+<h4 id="güvenlik-önlemleri"><strong>5. Güvenlik Önlemleri</strong></h4>
+<ul>
+<li>
+<p><strong>Veri Şifreleme:</strong>  Hassas verileri şifreleyerek saklama.</p>
+</li>
+<li>
+<p><strong>Çok Faktörlü Kimlik Doğrulama (MFA):</strong>  Erişim güvenliğini artırır.</p>
+</li>
+<li>
+<p><strong>Düzenli Yedekleme:</strong>  Veri kaybını önlemek için otomatik yedekler.</p>
+</li>
+<li>
+<p><strong>Güvenlik Duvarı ve İzleme:</strong>  Anormal aktiviteleri tespit etme.</p>
+</li>
+</ul>
+<hr>
+<h4 id="bulut-saldırıları-ve-korunma"><strong>6. Bulut Saldırıları ve Korunma</strong></h4>
+<ul>
+<li>
+<p><strong>Saldırı Türleri:</strong></p>
+<ul>
+<li>
+<p><strong>DoS/DDoS:</strong>  Kaynak tüketerek hizmeti engelleme.</p>
+</li>
+<li>
+<p><strong>Hesap Ele Geçirme:</strong>  Zayıf şifrelerle yetkisiz erişim.</p>
+</li>
+<li>
+<p><strong>Zararlı Yazılımlar:</strong>  Ransomware, veri sızdırma.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Korunma Yöntemleri:</strong></p>
+<ul>
+<li>
+<p><strong>Zero Trust Modeli:</strong>  Tüm erişimlerin sürekli doğrulanması.</p>
+</li>
+<li>
+<p><strong>Güncellemeler:</strong>  Sistem ve yazılımları düzenli güncelleme.</p>
+</li>
+<li>
+<p><strong>Eğitim:</strong>  Çalışanları siber güvenlik konusunda bilinçlendirme.</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="önemli-noktalar"><strong>Önemli Noktalar</strong></h3>
+<ul>
+<li>
+<p><strong>"Paylaşılan Sorumluluk Modeli"</strong>  unutulmamalı:</p>
+<ul>
+<li>Sağlayıcı altyapıyı korur, kullanıcı veri ve erişim güvenliğinden sorumludur.</li>
+</ul>
+</li>
+<li>
+<p><strong>SLA (Hizmet Seviyesi Anlaşması):</strong>  Sağlayıcının performans ve güvenlik taahhütlerini kontrol edin.</p>
+</li>
+</ul>
+
+    </div></div>
+
+    <div class="accordion">
+        <button class="accordion-btn"></button>
+        <div class="accordion-content">
+
+    </div></div>
+
+  <!------------------------------------------------------------------------>
+
+      <h2 class="info">Summaries prepared by ChatGPT-o3</h2>
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ders Kaynakları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Final Ders Notu</h3>
+                    <p>166-293. Sayfalar yer almakta</p>
+                    <a href="../Ders Kaynakları/Yazılım Güvenligi/166-293.pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+
+                    <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Full Pdf</h3>
+                    <p>Tüm Sayfalar yer almakta</p>
+                    <a href="../Ders Kaynakları/Yazılım Güvenligi/YAZILIM GÜVENLİĞİ DERS ÇALIŞMA NOTU.pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+              
+
+            </div>
+        </div>
+        
+    </section>
+
+    </div>
+
+
+   
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+    
+    
+
+
+</div>
+</div>
+
+    
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

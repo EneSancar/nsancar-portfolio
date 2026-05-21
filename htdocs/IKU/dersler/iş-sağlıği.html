@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Ana Sayfa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+    .resource-section {
+  margin-bottom: 32px;
+}
+.resource-section h3 {  
+  margin-bottom: 12px;
+  color: #1a4fff;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.resource-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+.resource-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 18px 24px;
+  min-width: 160px;
+  max-width: 220px;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  font-size: 1.05em;
+  font-weight: 500;
+}
+.resource-card:hover {
+  background: #f0f4ff;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  color: #1a4fff;
+}
+.resource-card span {
+  display: block;
+  width: 100%;
+}
+.resource-note {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+
+.resource-title {
+  margin-bottom: 18px;
+}
+.resource-title h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #82060b;
+  letter-spacing: 1.5px;
+  text-align: left;
+  position: relative;
+  padding-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(130,6,11,0.08);
+}
+.resource-title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #1a4fff 0%, #82060b 100%);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+
+<!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div>
+        <h1>IKU-Bilgisayar Programcılığı Hazırlık Sayfası</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------SAYFA İÇERİK BÖLÜMÜ---------------------------------------------->
+
+<div class="row">
+
+
+    <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+          <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+          <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+ 
+
+
+<!------------------------İÇERİK BÖLÜMÜ-------------------------------->  
+
+  <div class="main" id="main-content">
+
+
+    
+  <img src="../image/1654031998458.jpeg" width="450px">
+
+
+
+    
+
+  </div>
+
+
+
+
+
+</div>
+
+<!------------------------------------------------------------------------------------------------------------->
+ 
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+
+ 
+
+<script type="text/javascript">
+  
+
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var funCard = document.getElementById('funCard');
+        var funModal = document.getElementById('funModal');
+        var closeFunModal = document.getElementById('closeFunModal');
+        funCard.addEventListener('click', function(e) {
+          e.preventDefault();
+          funModal.style.display = 'flex';
+        });
+        closeFunModal.addEventListener('click', function() {
+          funModal.style.display = 'none';
+        });
+        funModal.addEventListener('click', function(e) {
+          if (e.target === funModal) {
+            funModal.style.display = 'none';
+          }
+        });
+      });
+    
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

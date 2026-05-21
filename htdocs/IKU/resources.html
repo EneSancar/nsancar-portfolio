@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Ana Sayfa</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="image/programming-code-signs.png">
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="StudyStyle.css">
+<link rel="stylesheet" href="responsive.css">
+<style>
+    .resource-section {
+  margin-bottom: 32px;
+}
+.resource-section h3 {  
+  margin-bottom: 12px;
+  color: #1a4fff;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+.resource-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-bottom: 8px;
+}
+.resource-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  padding: 18px 24px;
+  min-width: 160px;
+  max-width: 220px;
+  text-decoration: none;
+  color: #222;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.15s;
+  display: flex;
+  align-items: center;
+  font-size: 1.05em;
+  font-weight: 500;
+}
+.resource-card:hover {
+  background: #f0f4ff;
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+  color: #1a4fff;
+}
+.resource-card span {
+  display: block;
+  width: 100%;
+}
+.resource-note {
+  font-size: 0.95em;
+  color: #555;
+  margin-top: 4px;
+  margin-left: 2px;
+}
+
+
+.resource-title {
+  margin-bottom: 18px;
+}
+.resource-title h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #82060b;
+  letter-spacing: 1.5px;
+  text-align: left;
+  position: relative;
+  padding-bottom: 8px;
+  text-shadow: 0 2px 8px rgba(130,6,11,0.08);
+}
+.resource-title h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #1a4fff 0%, #82060b 100%);
+  border-radius: 2px;
+  margin-top: 8px;
+}
+</style>
+</head>
+<body>
+
+
+<!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="#" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="resources-header" style="
+  background: url(image/resources.webp); height: 55vh;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 15px solid rgb(130,6,11);">
+    <div>
+        <h1>RESOURCES</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------------------------SAYFA İÇERİK BÖLÜMÜ---------------------------------------------->
+
+<div class="row">
+
+
+    <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+     <a href="dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+         <a href="dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+ 
+
+
+<!------------------------İÇERİK BÖLÜMÜ-------------------------------->  
+
+  <div class="main" id="main-content">
+
+
+     <div class="resource-title">
+       <h2>Kullandığım Program ve Uygulamalar</h2>
+     </div>
+    <div class="resource-section">
+      <h3>Kod Editörleri</h3>
+      <div class="resource-cards">
+        <a href="https://code.visualstudio.com/" target="_blank" class="resource-card"><span>VS Code</span></a>
+        <a href="https://www.sublimetext.com/" target="_blank" class="resource-card"><span>Sublime Text</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Kod Tarafında Destek Alınan Yapay Zeka Araçları</h3>
+      <div class="resource-cards">
+        <a href="https://www.deepseek.com/" target="_blank" class="resource-card"><span>Deepseek</span></a>
+        <a href="https://chat.openai.com/" target="_blank" class="resource-card"><span>ChatGPT</span></a>
+        <a href="https://www.cursor.so/" target="_blank" class="resource-card"><span>Cursor AI</span></a>
+        <a href="https://github.com/features/copilot" target="_blank" class="resource-card"><span>Github Copilot</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Stok Görseller</h3>
+      <div class="resource-cards">
+        <a href="https://unsplash.com/" target="_blank" class="resource-card"><span>Unsplash</span></a>
+        <a href="https://www.pexels.com/" target="_blank" class="resource-card"><span>Pexels</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Ücretsiz PNG Resimler</h3>
+      <div class="resource-cards">
+        <a href="https://www.pngwing.com/" target="_blank" class="resource-card"><span>pngwing</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Dosya Dönüştürme Araçları</h3>
+      <div class="resource-cards">
+        <a href="https://convertio.co/" target="_blank" class="resource-card"><span>convertio.co</span></a>
+        <a href="https://cloudconvert.com/" target="_blank" class="resource-card"><span>cloudconvert.com</span></a>
+      </div>
+      <p class="resource-note">Ek bilgi: Görsellerinizi jpg'den webp'ye çevirmeniz optimizasyon için faydalı olur.</p>
+    </div>
+    <div class="resource-section">
+      <h3>Hazır Buton, Card vb. Tasarımlar</h3>
+      <div class="resource-cards">
+        <a href="https://uiverse.io/" target="_blank" class="resource-card"><span>uiverse</span></a>
+        <a href="https://codepen.io/" target="_blank" class="resource-card"><span>CodePen</span></a>
+        <a href="https://freefrontend.com/" target="_blank" class="resource-card"><span>freefrontend.com</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Modern Arka Planlar</h3>
+      <div class="resource-cards">
+        <a href="https://www.gradientmagic.com/" target="_blank" class="resource-card"><span>gradientmagic.com</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Animasyonlu Arka Planlar</h3>
+      <div class="resource-cards">
+        <a href="https://giphy.com/" target="_blank" class="resource-card"><span>giphy.com</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>İkonlar</h3>
+      <div class="resource-cards">
+        <a href="https://fontawesome.com/" target="_blank" class="resource-card"><span>fontawesome</span></a>
+        <a href="https://lordicon.com/" target="_blank" class="resource-card"><span>lordicon</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Renk Paletleri</h3>
+      <div class="resource-cards">
+        <a href="https://htmlcolorcodes.com/" target="_blank" class="resource-card"><span>htmlcolorcodes.com</span></a>
+        <a href="https://coolors.co/" target="_blank" class="resource-card"><span>coolors.co</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Sayfa Hızı Ölçüm</h3>
+      <div class="resource-cards">
+        <a href="https://pagespeed.web.dev/" target="_blank" class="resource-card"><span>pagespeed.web.dev</span></a>
+      </div>
+    </div>
+    <div class="resource-section">
+      <h3>Hosting & Domain</h3>
+      <div class="resource-cards">
+        <a href="https://www.natro.com/" target="_blank" class="resource-card"><span>natro.com</span></a>
+        <a href="https://www.hostinger.com.tr/" target="_blank" class="resource-card"><span>hostinger</span></a>
+        <a href="https://www.godaddy.com/" target="_blank" class="resource-card"><span>godaddy</span></a>
+        <a href="https://www.ihs.com.tr/" target="_blank" class="resource-card"><span>ihs</span></a>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br>
+
+    <div class="resource-section">
+      <div class="resource-cards">
+        <a href="#" class="resource-card" id="funCard"><span>TIKLAMA!</span></a>
+      </div>
+    </div>
+  
+    <div id="funModal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.6); align-items:center; justify-content:center;">
+      <div style="background:#fff; border-radius:16px; padding:24px; position:relative; max-width:90vw; max-height:80vh; box-shadow:0 8px 32px rgba(0,0,0,0.18); display:flex; flex-direction:column; align-items:center;">
+        <button id="closeFunModal" style="position:absolute; top:12px; right:16px; background:none; border:none; font-size:2rem; color:#82060b; cursor:pointer;">&times;</button>
+        <img src="image/meme/jahomüebbet.png" alt="Eğlenceli Görsel" style="max-width:620px; max-height:60vh; border-radius:12px; margin-bottom:12px;">
+        <div style="display: flex;">
+        <img src="image/meme/oglumbenum.jpeg" alt="Eğlenceli Görsel" style="max-width:120px; max-height:60vh; border-radius:12px; margin-bottom:12px;">
+        <img src="image/meme/wtf.png" alt="Eğlenceli Görsel" style="max-width:120px; max-height:60vh; border-radius:12px; margin-bottom:12px;">
+        <img src="image/meme/doublewtf.png" alt="Eğlenceli Görsel" style="max-width:120px; max-height:60vh; border-radius:12px; margin-bottom:12px;">
+        <img src="image/meme/Adsız.png" alt="Eğlenceli Görsel" style="max-width:120px; max-height:60vh; border-radius:12px; margin-bottom:12px;">
+      </div>
+        <div style="font-size:1.2rem; color:#1a4fff; font-weight:600;"></div>
+        
+      </div>
+    </div>
+
+
+
+    
+
+  </div>
+
+
+
+
+
+</div>
+
+<!------------------------------------------------------------------------------------------------------------->
+ 
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="js/side menu toogle.js"></script>
+ <script src="js/maskotinfo.js"></script>
+ <script src="js/search bar.js"></script>
+ <script src="js/kronometre.js"></script>
+ <script src="js/backtotop.js"></script>
+ <script src="js/darkmode.js"></script>   
+ <script src="js/maskot js.js"></script>
+ <script src="js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+
+ 
+
+<script type="text/javascript">
+  
+
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var funCard = document.getElementById('funCard');
+        var funModal = document.getElementById('funModal');
+        var closeFunModal = document.getElementById('closeFunModal');
+        funCard.addEventListener('click', function(e) {
+          e.preventDefault();
+          funModal.style.display = 'flex';
+        });
+        closeFunModal.addEventListener('click', function() {
+          funModal.style.display = 'none';
+        });
+        funModal.addEventListener('click', function(e) {
+          if (e.target === funModal) {
+            funModal.style.display = 'none';
+          }
+        });
+      });
+    
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

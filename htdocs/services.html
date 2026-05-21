@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enes Sancar — Web tasarım, hosting ve grafik tasarım hizmetleri">
+  <title>Servisler | Enes Sancar</title>
+  <link rel="icon" href="image/internet.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="image/ns.png" alt="Enes Sancar" height="48">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Ana Sayfa</a></li>
+        <li><a href="about.html">Hakkımda</a></li>
+        <li><a href="project.html">Projeler</a></li>
+        <li><a href="services.html" class="active">Servisler</a></li>
+        <li><a href="fav.html" class="nav-icon" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-hero services-hero reveal">
+    <div class="page-hero-content container">
+      <span class="section-label">Hizmetler</span>
+      <h1>Yaratıcılığı Kodla Buluşturuyoruz</h1>
+      <p>Profesyonel web sitesi, hosting çözümleri ve grafik tasarım — ihtiyacınıza özel, modern ve mobil uyumlu.</p>
+    </div>
+  </section>
+
+  <main class="services-page">
+    <div class="container">
+      <div class="service-features reveal">
+        <div class="service-feature">
+          <i class="fa-solid fa-mobile-screen"></i>
+          <span>Responsive</span>
+        </div>
+        <div class="service-feature">
+          <i class="fa-solid fa-bolt"></i>
+          <span>Hızlı Teslimat</span>
+        </div>
+        <div class="service-feature">
+          <i class="fa-solid fa-headset"></i>
+          <span>Destek</span>
+        </div>
+        <div class="service-feature">
+          <i class="fa-solid fa-palette"></i>
+          <span>Özgün Tasarım</span>
+        </div>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="service-card-icon">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3>Web Tasarım</h3>
+          <p>HTML, CSS, JavaScript ve Bootstrap kullanarak kendiniz ve firmanız hakkında bilgi verebileceğiniz profesyonel, mobil uyumlu ve dinamik web siteleri tasarlıyorum.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-card-icon">
+            <i class="fa-solid fa-globe"></i>
+          </div>
+          <h3>Hosting & Domain</h3>
+          <p>İhtiyaçlarınıza uygun hosting ve domain seçeneklerini araştırıp en güvenilir çözümleri sunuyorum. Yayına alma sürecinde teknik destek sağlıyorum.</p>
+        </article>
+
+        <article class="service-card reveal">
+          <div class="service-card-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+          </div>
+          <h3>Grafik Tasarım</h3>
+          <p>Logo, broşür ve kartvizit gibi görsel kimlik unsurlarını özenle tasarlayarak markanızın benzersiz ve çarpıcı bir görünüme sahip olmasını sağlıyorum.</p>
+        </article>
+      </div>
+
+      <div class="cta-banner reveal">
+        <div>
+          <h2>Projeni konuşalım</h2>
+          <p>Web sitesi veya tasarım ihtiyacın için benimle iletişime geç.</p>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
+          <a href="https://www.instagram.com/ns.sancar7/?hl=tr" class="btn btn-primary" target="_blank" rel="noopener">
+            <i class="fa-brands fa-instagram"></i> Instagram
+          </a>
+          <button class="btn btn-ghost" onclick="showEmail()">
+            <i class="fa-solid fa-envelope"></i> E-posta
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://discord.com/channels/600470766680801290/600482871286824990" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://steamcommunity.com/profiles/76561198886945002/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="about.html">Hakkımda</a>
+        <a href="project.html">Projeler</a>
+        <a href="services.html">Servisler</a>
+        <a href="fav.html">Aktiviteler</a>
+      </nav>
+      <p class="footer-copy">Copyright &copy; 2025 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+
+  <div id="emailbar"><h2>sancar.web3524@gmail.com</h2></div>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>İletişim</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" href="image/programming-code-signs.png">
+<script src="script.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="StudyStyle.css">
+<link rel="stylesheet" href="responsive.css">
+<style>
+    // ... existing styles ...
+    
+    /* İletişim Bölümü Stilleri */
+    .contact-section {
+        padding: 4rem 2rem;
+        background: #ffffff;
+        margin: 2rem auto;
+        max-width: 1200px;
+    }
+    
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        padding: 1rem;
+    }
+    
+    .contact-info {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .contact-item {
+        text-align: center;
+        padding: 2rem;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .contact-item-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(130, 6, 11, 0.9);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        padding: 2rem;
+    }
+    
+    .contact-item i {
+        font-size: 2.5rem;
+        color: white;
+        margin-bottom: 1rem;
+    }
+    
+    .contact-item h3 {
+        color: white;
+        margin-bottom: 0.5rem;
+    }
+    
+    .contact-item p {
+        color: white;
+    }
+    
+    .contact-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    .contact-item:hover .contact-item-overlay {
+        background: rgba(130, 6, 11, 0.95);
+    }
+    
+    .contact-form {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s ease;
+    }
+    
+    .form-group textarea {
+        height: 150px;
+        resize: vertical;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus {
+        border-color: #3498db;
+        outline: none;
+    }
+    
+    .submit-btn {
+        width: 100%;
+        padding: 1rem;
+        background: #82060b;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    
+    .submit-btn:hover {
+        background: rgba(130, 6, 11, 0.9);
+    }
+    
+    @media (max-width: 768px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+        }
+        
+        .contact-info {
+            grid-template-columns: 1fr;
+        }
+        
+        .contact-item:last-child {
+            width: 100%;
+        }
+    }
+    </style>
+</head>
+<body>
+
+
+   
+<!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="#" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="contact-header" style="
+  background: url(image/contact.webp); height: 55vh;
+  text-align: center;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 15px solid rgb(130,6,11);">
+    <div>
+        <h1>CONTACT</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="contact-section">
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <div class="contact-item" style="background-image: url('image/pattern1.jpg')">
+                <div class="contact-item-overlay">
+                    <i class="fas fa-envelope"></i>
+                    <h3>E-posta</h3>
+                    <p>nsancar.vol1@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item" style="background-image: url('image/pattern2.jpg')">
+                <div class="contact-item-overlay">
+                    <i class="fas fa-phone"></i>
+                    <h3>Telefon</h3>
+                    <p>+90 537 391 0997</p>
+                </div>
+            </div>
+            <div class="contact-item" style="background-image: url('image/pattern3.jpg')">
+                <div class="contact-item-overlay">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Adres</h3>
+                    <p>İstanbul Kent Üniversitesi</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <form action="https://formsubmit.co/enes.sancar2@gmail.com" method="POST" id="contactForm">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Adınız" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" placeholder="Konu" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Mesajınız" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Gönder</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<footer>
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+</footer>
+
+
+
+<!-----------------SCRIPT----------------->
+<script src="js/side menu toogle.js"></script>
+<script src="js/maskotinfo.js"></script>
+<script src="js/search bar.js"></script>
+<script src="js/kronometre.js"></script>
+<script src="js/backtotop.js"></script>
+<script src="js/darkmode.js"></script>   
+<script src="js/maskot js.js"></script>
+<script src="js/Likecount.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+<!-----------------SCRIPT----------------->
+
+
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+
+ 
+
+function showAnswer(answerId) {
+      const answer = document.getElementById(answerId);
+      answer.classList.add('show');
+    }
+
+
+</script>
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

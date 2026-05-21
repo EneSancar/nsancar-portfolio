@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Kariyer Gelişimi</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div>
+        <h1>IKU-Bilgisayar Programcılığı Hazırlık Sayfası</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+          <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+           <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+    <h2 class="info">Ders ile ilgilenen hocamız vize sonrası konuların olacağını ve genel değerlendirme dersini izlememizin faydalı olacağından bahsetti. Genel değerlendirme dersi <a href="https://kentedutr.sharepoint.com/:v:/r/sites/Kent-2024-2025-2-25186-1/Shared%20Documents/General/Ders%20Videolar%C4%B1/15.%20Hafta%20Genel%20De%C4%9Ferlendirme.mp4?csf=1&web=1&e=GPOPwK&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D" target="_blank" rel="noopener">Link</a></h2>
+       <!---------------------------->
+
+
+       <!----------DERS BAŞLIĞI------------------>
+     <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Kariyer Gelişimi</h1>
+     <div class="fakeimg" Style="height:400px; background: url('../image/carrer.webp'); background-position: center;
+     background-repeat: no-repeat; background-size: cover; margin-bottom: 50px;"></div>
+     <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+ <h2 class="unite-title">9. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+       <h1 id="i̇nce-beceriler-soft-skills-ve-teknik-beceriler-hard-skills">İnce Beceriler (Soft Skills) ve Teknik Beceriler (Hard Skills)</h1>
+<h2 id="i̇nce-beceriler-soft-skills">1. İnce Beceriler (Soft Skills)</h2>
+<p>Soyut, ölçülmesi zor ama iş hayatında başarı için kritik öneme sahip kişisel ve sosyal yetkinliklerdir.</p>
+<h3 id="ana-soft-skills-başlıkları-ve-açıklamaları">Ana Soft Skills Başlıkları ve Açıklamaları:</h3>
+<ul>
+<li>
+<p><strong>İletişim Becerileri:</strong></p>
+<ul>
+<li>
+<p>Sözlü ve sözsüz iletişim,</p>
+</li>
+<li>
+<p>Müzakere yeteneği, ikna,</p>
+</li>
+<li>
+<p>Sunum becerileri,</p>
+</li>
+<li>
+<p>Topluluk önünde konuşma,</p>
+</li>
+<li>
+<p>Hikaye anlatma,</p>
+</li>
+<li>
+<p>Beden dili,</p>
+</li>
+<li>
+<p>Okuma, anlama ve yazma.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Takım Çalışması:</strong></p>
+<ul>
+<li>
+<p>Geri bildirim alma,</p>
+</li>
+<li>
+<p>İşbirliği,</p>
+</li>
+<li>
+<p>Empati,</p>
+</li>
+<li>
+<p>İkna edici olma,</p>
+</li>
+<li>
+<p>Çeşitlilik bilinci,</p>
+</li>
+<li>
+<p>Zor durumlarla başa çıkabilme,</p>
+</li>
+<li>
+<p>Duygusal zeka.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Liderlik:</strong></p>
+<ul>
+<li>
+<p>Karar verme,</p>
+</li>
+<li>
+<p>Özgüven,</p>
+</li>
+<li>
+<p>Motivasyon,</p>
+</li>
+<li>
+<p>Problem, toplantı ve proje yönetimi,</p>
+</li>
+<li>
+<p>Ekip yönetimi,</p>
+</li>
+<li>
+<p>Mentorluk.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Analitik Düşünme:</strong></p>
+<ul>
+<li>
+<p>Gözlemci ve yaratıcı olmak,</p>
+</li>
+<li>
+<p>Esneklik,</p>
+</li>
+<li>
+<p>İnovasyon,</p>
+</li>
+<li>
+<p>Merak ve öğrenme isteği,</p>
+</li>
+<li>
+<p>Mantıksal düşünme,</p>
+</li>
+<li>
+<p>Problem çözme.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Eleştirel Düşünme:</strong></p>
+<ul>
+<li>
+<p>Mantıklı ve çözüm odaklı yargılar,</p>
+</li>
+<li>
+<p>Doğru karar verme süreçleri.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Zaman Yönetimi:</strong></p>
+<ul>
+<li>
+<p>Planlama ve günlük uygulama,</p>
+</li>
+<li>
+<p>Pomodoro Tekniği (25 dakikalık çalışma periyotları),</p>
+</li>
+<li>
+<p>Eisenhower Matrisi (önceliklendirme yöntemi).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Stres Yönetimi:</strong></p>
+<ul>
+<li>
+<p>Psikolojik baskıyı azaltma teknikleri,</p>
+</li>
+<li>
+<p>Etkili yöntemlerle stresi minimize etme.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Ağ Oluşturma (Networking):</strong></p>
+<ul>
+<li>
+<p>Sivil toplum kuruluşları ve kulüp üyelikleri,</p>
+</li>
+<li>
+<p>Eğitim hayatında sosyal etkinliklere katılım,</p>
+</li>
+<li>
+<p>Profesyonel sosyal ağlar (LinkedIn).</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Esneklik ve Öz Güven:</strong></p>
+<ul>
+<li>
+<p>Farklı insanlarla iletişim kurabilme becerisi,</p>
+</li>
+<li>
+<p>Kendi yetkinliğine güvenme.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Duygusal Çeviklik:</strong></p>
+<ul>
+<li>
+<p>Değişime ve gelişime açık olma,</p>
+</li>
+<li>
+<p>Yükselme isteği.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Empati:</strong></p>
+<ul>
+<li>Başkalarının duygularını anlama ve uygun tepki verme.</li>
+</ul>
+</li>
+<li>
+<p><strong>İş Ahlakı:</strong></p>
+<ul>
+<li>
+<p>Özen, güvenilirlik, organizasyon,</p>
+</li>
+<li>
+<p>Sorumluluk bilinci,</p>
+</li>
+<li>
+<p>Çalışkanlık, çoklu görev yönetimi,</p>
+</li>
+<li>
+<p>Dakiklik, planlama,</p>
+</li>
+<li>
+<p>Sonuç odaklılık,</p>
+</li>
+<li>
+<p>Zaman ve stres yönetimi.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="i̇ş-ahlakını-geliştirme-yöntemleri">İş Ahlakını Geliştirme Yöntemleri:</h3>
+<ul>
+<li>
+<p>Organizasyon düzenleme,</p>
+</li>
+<li>
+<p>Zaman ve stres yönetimi eğitimleri,</p>
+</li>
+<li>
+<p>Günlük planlama ve not alma alışkanlığı.</p>
+</li>
+</ul>
+<hr>
+<h2 id="teknik-beceriler-hard-skills">2. Teknik Beceriler (Hard Skills)</h2>
+<ul>
+<li>
+<p>Ölçülebilir, somut beceriler,</p>
+</li>
+<li>
+<p>Diploma, sertifika, katılım belgeleri gibi resmi yeterlilikler,</p>
+</li>
+<li>
+<p>Duygusal ve iletişim becerileri içermez.</p>
+</li>
+</ul>
+
+    </div></div>
+
+     <!------------------------------------------------------------------------>
+
+     <h2 class="unite-title">10. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1>Temel İletişim Becerileri</h1>
+         <h2 id="i̇letişim-tanımı">1. İletişim Tanımı</h2>
+<ul>
+<li>
+<p>Kişiler arasında duygu, düşünce, bilgi, haber alışverişi,</p>
+</li>
+<li>
+<p>Her türlü biçim ve yolla karşılıklı aktarım.</p>
+</li>
+</ul>
+<h2 id="i̇letişimin-temel-öğeleri">2. İletişimin Temel Öğeleri</h2>
+<ul>
+<li>
+<p><strong>Kaynak (Verici):</strong> Mesajı gönderen kişi veya kişiler,</p>
+</li>
+<li>
+<p><strong>Mesaj (İleti):</strong> Aktarılan bilgi, duygu, tutum ve davranış,</p>
+</li>
+<li>
+<p><strong>Kanal:</strong> Mesajın iletildiği ortam,</p>
+</li>
+<li>
+<p><strong>Alıcı:</strong> Mesajın hedefi,</p>
+</li>
+<li>
+<p><strong>Geri Bildirim:</strong> Alıcının mesajı alıp anlamasını gösteren tepki.</p>
+</li>
+</ul>
+<h2 id="kaynağın-özellikleri-ve-başarı-i̇çin-gerekenler">3. Kaynağın Özellikleri ve Başarı İçin Gerekenler</h2>
+<ul>
+<li>
+<p>Güvenirlik,</p>
+</li>
+<li>
+<p>İletişim becerisi,</p>
+</li>
+<li>
+<p>Sevilmek ve saygınlık,</p>
+</li>
+<li>
+<p>Fiziki görünüm,</p>
+</li>
+<li>
+<p>Tutumlar,</p>
+</li>
+<li>
+<p>Empati yeteneği,</p>
+</li>
+<li>
+<p>Eğitim düzeyi,</p>
+</li>
+<li>
+<p>Çevresel, toplumsal ve kültürel faktörler.</p>
+</li>
+</ul>
+<h2 id="mesajın-özellikleri">4. Mesajın Özellikleri</h2>
+<ul>
+<li>
+<p>Anlaşılır ve açık olmalı,</p>
+</li>
+<li>
+<p>Zamanında iletilmeli,</p>
+</li>
+<li>
+<p>Uygun kanaldan gönderilmeli,</p>
+</li>
+<li>
+<p>Kaynak ve alıcı arasında kalmalı.</p>
+</li>
+</ul>
+<h2 id="kanal-türleri">5. Kanal Türleri</h2>
+<ul>
+<li>
+<p>Sunumsal araçlar,</p>
+</li>
+<li>
+<p>Temsili araçlar,</p>
+</li>
+<li>
+<p>Mekanik ve teknolojik araçlar.</p>
+</li>
+</ul>
+<h2 id="alıcının-rolü-ve-özellikleri">6. Alıcının Rolü ve Özellikleri</h2>
+<ul>
+<li>
+<p>Aktif dinleyici olmalı,</p>
+</li>
+<li>
+<p>Sessizlik sağlanmalı,</p>
+</li>
+<li>
+<p>Önyargılardan arınmalı,</p>
+</li>
+<li>
+<p>Konuşmacının sözünü kesmemeli,</p>
+</li>
+<li>
+<p>Sabırlı ve empatik olmalı,</p>
+</li>
+<li>
+<p>Mesajı doğru algılamalı,</p>
+</li>
+<li>
+<p>Geri besleme yeteneği olmalı,</p>
+</li>
+<li>
+<p>Seçici davranmamalı,</p>
+</li>
+<li>
+<p>Duruma uygun davranmalı,</p>
+</li>
+<li>
+<p>Kaynak rolü de üstlenebilmeli.</p>
+</li>
+</ul>
+<h2 id="geri-bildirim">7. Geri Bildirim</h2>
+<ul>
+<li>Alıcının kaynağa mesajı anladığını ve tepki verdiğini gösterir.</li>
+</ul>
+<h2 id="i̇letişimin-i̇kincil-unsurları">8. İletişimin İkincil Unsurları</h2>
+<ul>
+<li>
+<p><strong>Kodlama – Kod açma:</strong> Kaynağın mesajı alıcıya uygun hale getirmesi ve alıcının bunu çözmesi,</p>
+</li>
+<li>
+<p><strong>Algılama ve Değerlendirme (Filtre):</strong> İnsanların çevresini fark edip yorumlama süreci,</p>
+</li>
+<li>
+<p><strong>Gürültü:</strong> İletişimi engelleyen her türlü dışsal veya içsel faktör.</p>
+</li>
+</ul>
+<h2 id="etkili-i̇letişim">9. Etkili İletişim</h2>
+<ul>
+<li>
+<p>Mesajın amaçlanan şekilde iletilmesi,</p>
+</li>
+<li>
+<p>Karşıdaki kişinin doğru anlaşılıp istenen tepkinin alınması.</p>
+</li>
+</ul>
+<h3 id="etkili-i̇letişimin-önemi">Etkili İletişimin Önemi</h3>
+<ul>
+<li>
+<p>İnsanların birbirini daha iyi anlaması,</p>
+</li>
+<li>
+<p>Kendini daha iyi ifade edebilme,</p>
+</li>
+<li>
+<p>Doğru bilgiye hızlı erişim,</p>
+</li>
+<li>
+<p>Gereksiz tartışmaların önlenmesi,</p>
+</li>
+<li>
+<p>Yapıcı eleştiriler,</p>
+</li>
+<li>
+<p>İşbirliğinin kolaylaşması,</p>
+</li>
+<li>
+<p>İnsanları yönetme ve yönlendirmede zaman ve enerji tasarrufu,</p>
+</li>
+<li>
+<p>Zor insanlarla başa çıkma.</p>
+</li>
+</ul>
+<h2 id="etkili-i̇letişim-i̇çin-gerekenler">10. Etkili İletişim İçin Gerekenler</h2>
+<ul>
+<li>
+<p>Kendini tanımak ve açmak,</p>
+</li>
+<li>
+<p>Kendini doğru ifade etmek,</p>
+</li>
+<li>
+<p>Karşındakini etkin ve ilgiyle dinlemek,</p>
+</li>
+<li>
+<p>Empati kurmak,</p>
+</li>
+<li>
+<p>Hoşgörü ve ön yargısız olmak,</p>
+</li>
+<li>
+<p>Eleştirilere açık olmak,</p>
+</li>
+<li>
+<p>Sözsüz iletişim unsurlarını doğru kullanmak.</p>
+</li>
+</ul>
+
+     </div></div>
+
+      <!------------------------------------------------------------------------>
+
+       <h2 class="unite-title">11. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+          <h1>Diksiyon ve Etkili Beden Dili</h1>
+        <h2 id="diksiyon">1. Diksiyon</h2>
+<ul>
+<li>
+<p><strong>Tanım:</strong> Kelimelerin seçilip düzenlenerek, fikirlerin kolayca anlatılma tarzıdır.</p>
+</li>
+<li>
+<p>Diksiyon, etkili ve anlaşılır konuşmanın temelidir.</p>
+</li>
+</ul>
+<h2 id="konuşma">2. Konuşma</h2>
+<ul>
+<li>
+<p>Duygu, düşünce ve isteklerin görsel ve işitsel öğelerle karşı tarafa aktarılmasıdır.</p>
+</li>
+<li>
+<p>Üç tür konuşma üslubu vardır:</p>
+<ul>
+<li>
+<p><strong>Sade Üslup:</strong> Basit ve anlaşılır dil,</p>
+</li>
+<li>
+<p><strong>Yüksek Üslup:</strong> Ağır ve edebi dil,</p>
+</li>
+<li>
+<p><strong>Karışık Üslup:</strong> Sade ve yüksek üslubun karışımı.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="beden-dili">3. Beden Dili</h2>
+<ul>
+<li>
+<p>Kelimelerle son şeklini alan, ses tonu ile desteklenen hareketlerle gerçekleşen karmaşık bir iletişim süreci.</p>
+</li>
+<li>
+<p>Sözlü iletişimin önemli tamamlayıcısıdır.</p>
+</li>
+</ul>
+<h2 id="jest-ve-mimik">4. Jest ve Mimik</h2>
+<ul>
+<li>
+<p><strong>Jest:</strong> El, kol, baş ve vücudun diğer kısımlarıyla yapılan hareketlerdir.</p>
+<ul>
+<li>Duygu, düşünce ya da konuyu açıklamak için kullanılır.</li>
+</ul>
+</li>
+<li>
+<p><strong>Mimik:</strong> Yüz ifadeleriyle duygu ve düşüncelerin aktarılmasıdır.</p>
+<ul>
+<li>Kaş, göz, ağız ve yüz hareketlerini içerir.</li>
+</ul>
+</li>
+</ul>
+<h2 id="jestlerde-kullanılan-vücut-bölümleri">5. Jestlerde Kullanılan Vücut Bölümleri</h2>
+<ul>
+<li>Gözler, kaşlar, ağız, baş, kollar, eller, parmaklar, bacaklar, vücut.</li>
+</ul>
+<h2 id="mimikte-yüz-i̇fadelerinin-anlattıkları">6. Mimikte Yüz İfadelerinin Anlattıkları</h2>
+<ul>
+<li>Mutluluk, korku, kızgınlık, şaşkınlık, üzüntü, tiksinti gibi temel duygular yüz ifadeleriyle yansıtılır.</li>
+</ul>
+<h2 id="jest-ve-mimiklerin-sınıflandırılması">7. Jest ve Mimiklerin Sınıflandırılması</h2>
+<ul>
+<li>
+<p><strong>Semboller:</strong> Belirli anlamları temsil eder,</p>
+</li>
+<li>
+<p><strong>Açıklayıcılar:</strong> Konuşmayı destekler,</p>
+</li>
+<li>
+<p><strong>Tepki Gösterimleri:</strong> Duygusal tepki,</p>
+</li>
+<li>
+<p><strong>Düzenleyiciler:</strong> Konuşmanın ritmini ve düzenini sağlar,</p>
+</li>
+<li>
+<p><strong>Adaptörler:</strong> Kişisel alışkanlık hareketleri.</p>
+</li>
+</ul>
+<h2 id="olumlu-beden-dili-oluşturma">8. Olumlu Beden Dili Oluşturma</h2>
+<ul>
+<li>
+<p><strong>Göz Teması:</strong> Doğrudan ve uygun süreyle iletişim sağlar,</p>
+</li>
+<li>
+<p><strong>Yüz İfadesi:</strong> Duyguları ve niyeti yansıtmak için önemlidir,</p>
+</li>
+<li>
+<p><strong>Jestler:</strong> Mesajı güçlendirir ve açıklık katar,</p>
+</li>
+<li>
+<p><strong>Beden Duruşu:</strong> Güven ve açıklık hissi verir,</p>
+</li>
+<li>
+<p><strong>Dış Görünüş:</strong> İlk izlenim üzerinde etkili.</p>
+</li>
+</ul>
+
+     </div></div>
+
+      <!------------------------------------------------------------------------>
+
+       <h2 class="unite-title">12. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1>Öz Geçmiş (CV) ve Ön Yazı Hazırlama</h1>
+        <h2 id="cv-öz-geçmiş-nedir">1. CV (Öz Geçmiş) Nedir?</h2>
+<ul>
+<li>
+<p>İş başvurularında kendimizi işverene tanıtmak için hazırlanan yazılı belge,</p>
+</li>
+<li>
+<p>Hayatımız, yeteneklerimiz, tecrübelerimiz ve iş yapma gücümüzü gösterir,</p>
+</li>
+<li>
+<p>Amaç: İş görüşmesine çağrılmak, rakiplerden farklılaşmak, iyi izlenim bırakmak, işverenin ilgisini çekmek,</p>
+</li>
+<li>
+<p>CV sade, düzgün ve konu ile ilgili olmalıdır.</p>
+</li>
+</ul>
+<h2 id="cv-nedir-ve-ne-değildir">2. CV Nedir ve Ne Değildir?</h2>
+<ul>
+<li>
+<p><strong>Değildir:</strong> Uzun paragraf, hayat hikayesi, iş değiştirme sebebi, el yazısı, kişisel fiziksel bilgiler (boy, kilo, aile) gibi detaylar,</p>
+</li>
+<li>
+<p><strong>Olmalıdır:</strong> İşe uyum sağlama ve iş başarısını gösterebilme,</p>
+</li>
+</ul>
+<h2 id="cvnin-amacı">3. CV’nin Amacı</h2>
+<ul>
+<li>
+<p>İşverenin kafasındaki şu iki soruya yanıt vermek:</p>
+<ul>
+<li>
+<p>Bu kişi kimdir, kendini nasıl tanımlar?</p>
+</li>
+<li>
+<p>Bu kişi işi başarabilir mi?</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="etkili-cv-hazırlama-i̇çin-önemli-sorular">4. Etkili CV Hazırlama İçin Önemli Sorular</h2>
+<ul>
+<li>
+<p>Ben kimim? Kendimi nasıl tanımlıyorum?</p>
+</li>
+<li>
+<p>Ne istiyorum? Hangi alanlar ilgimi çekiyor?</p>
+</li>
+<li>
+<p>Eksiklerimi nasıl tamamlarım?</p>
+</li>
+</ul>
+<h2 id="i̇yi-bir-cvnin-özellikleri">5. İyi Bir CV’nin Özellikleri</h2>
+<ul>
+<li>
+<p>Güncel,</p>
+</li>
+<li>
+<p>Ayrıntıdan uzak, sade,</p>
+</li>
+<li>
+<p>Başvurulan pozisyona uygun,</p>
+</li>
+<li>
+<p>Deneyim, beceri ve eğitimle ilgili önemli noktalara işaret eder.</p>
+</li>
+</ul>
+<h2 id="cv’de-yer-alması-gereken-bilgiler">6. CV’de Yer Alması Gereken Bilgiler</h2>
+<ul>
+<li>
+<p>Kişisel Bilgiler: Ad-Soyad, doğum tarihi, askerlik durumu (erkekler için), uyruk, ehliyet (gerekli ise),</p>
+</li>
+<li>
+<p>İletişim Bilgileri: Cep telefonu, e-mail, adres (il ve ilçe),</p>
+</li>
+<li>
+<p>Eğitim Bilgileri: Okul adı, bölüm, mezuniyet tarihi,</p>
+</li>
+<li>
+<p>İş Deneyimleri: Çalışılan yerler, pozisyonlar, tarihleri,</p>
+</li>
+<li>
+<p>Staj Deneyimleri,</p>
+</li>
+<li>
+<p>Yabancı Dil Bilgisi,</p>
+</li>
+<li>
+<p>Bilgisayar Bilgisi,</p>
+</li>
+<li>
+<p>Kurs ve Sertifikalar,</p>
+</li>
+<li>
+<p>Ödüller,</p>
+</li>
+<li>
+<p>Sosyal Aktiviteler,</p>
+</li>
+<li>
+<p>İlgi Alanları,</p>
+</li>
+<li>
+<p>Referanslar (istenildiğinde verilir).</p>
+</li>
+</ul>
+<h2 id="ön-yazı-cover-letter">7. Ön Yazı (Cover Letter)</h2>
+<ul>
+<li>
+<p>İlk izlenimi oluşturur,</p>
+</li>
+<li>
+<p>Adayın işe uygunluğunu ve farkını anlatır,</p>
+</li>
+<li>
+<p>İşverenin ilgisini çekmek için fırsat sağlar.</p>
+</li>
+</ul>
+<h2 id="ön-yazı-yazmanın-püf-noktaları">8. Ön Yazı Yazmanın Püf Noktaları</h2>
+<ul>
+<li>
+<p>Pozisyon ve başvuru kaynağını belirtmek (ör. LinkedIn üzerinden),</p>
+</li>
+<li>
+<p>Kendini tanıtmak ve eğitim/tecrübe özetlemek,</p>
+</li>
+<li>
+<p>İnsan ilişkileri, iletişim, proje ve takım çalışması becerilerinden bahsetmek,</p>
+</li>
+<li>
+<p>Yabancı dil seviyeleri, problem çözme ve analitik düşünme yetenekleri vurgulanmalı,</p>
+</li>
+<li>
+<p>Kısa ve uzun vadeli hedefleri açıklamak,</p>
+</li>
+<li>
+<p>Görüşme talebinde bulunmak,</p>
+</li>
+<li>
+<p>Nazik ve profesyonel kapanış.</p>
+</li>
+</ul>
+<h2 id="kariyer-danışmanlığı">9. Kariyer Danışmanlığı</h2>
+<ul>
+<li>Kariyer danışmanlığı ile ilgili form doldurma, rehberlik hizmetleri,</li>
+</ul>
+
+     </div></div>
+
+      <!------------------------------------------------------------------------>
+
+        <h2 class="unite-title">13. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+        <h1 id="i̇ş-arama-yöntemleri">İş Arama Yöntemleri</h1>
+<h2 id="i̇ş-arama-yöntemleri-1">1. İş Arama Yöntemleri</h2>
+<ul>
+<li>
+<p><strong>Pasif (Klasik) Yaklaşım:</strong> İş ilanlarına başvurma, mevcut açık pozisyonları takip etme,</p>
+</li>
+<li>
+<p><strong>Proaktif (Yenilikçi) Yaklaşım:</strong> Ağ oluşturma, doğrudan işverenlerle iletişim, gizli iş piyasasına erişim.</p>
+</li>
+</ul>
+<h2 id="i̇lk-i̇ş-deneyimini-elde-etmek">2. İlk İş Deneyimini Elde Etmek</h2>
+<ul>
+<li>
+<p>İş deneyimi genellikle aranan bir kriter,</p>
+</li>
+<li>
+<p>Eğitim sırasında iş deneyimi için fırsatlar:</p>
+<ul>
+<li>
+<p>Mesleki uygulama,</p>
+</li>
+<li>
+<p>Öğrenci olarak çalışma,</p>
+</li>
+<li>
+<p>Gönüllü faaliyetler,</p>
+</li>
+<li>
+<p>Proje çalışmaları.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="i̇ş-arama-süreci-aşamaları">3. İş Arama Süreci Aşamaları</h2>
+<ul>
+<li>
+<p>Öz değerlendirme,</p>
+</li>
+<li>
+<p>Kariyer keşfi,</p>
+</li>
+<li>
+<p>Kariyer hazırlığı,</p>
+</li>
+<li>
+<p>Kariyer hedefi oluşturma,</p>
+</li>
+<li>
+<p>İş arama araçlarının hazırlanması (CV, ön yazı),</p>
+</li>
+<li>
+<p>İşe alım şirketlerinin araştırılması,</p>
+</li>
+<li>
+<p>Mülakat sürecine hazırlık,</p>
+</li>
+<li>
+<p>Teklif değerlendirme.</p>
+</li>
+</ul>
+<h2 id="i̇ş-arama-becerilerini-geliştirme-stratejileri">4. İş Arama Becerilerini Geliştirme Stratejileri</h2>
+<ul>
+<li>
+<p>İş tanımı ve beklentilerinin netleştirilmesi,</p>
+</li>
+<li>
+<p>Sektör ve alan araştırması yapma,</p>
+</li>
+<li>
+<p>Lokasyon seçimi,</p>
+</li>
+<li>
+<p>Başvuru araçlarını hazırlama (özgeçmiş, ön yazı),</p>
+</li>
+<li>
+<p>Mülakat becerilerini geliştirme,</p>
+</li>
+<li>
+<p>İşveren araştırması,</p>
+</li>
+<li>
+<p>Organizasyon ve planlama,</p>
+</li>
+<li>
+<p>Takip ve iletişim sürdürme.</p>
+</li>
+</ul>
+<h2 id="i̇ş-piyasasının-anlaşılması">5. İş Piyasasının Anlaşılması</h2>
+<ul>
+<li>
+<p><strong>Reklamı Yapılan İş Piyasası:</strong> İş ilanlarıyla açıkça duyurulan pozisyonlar,</p>
+</li>
+<li>
+<p><strong>Gizli İş Piyasası:</strong> Resmî ilan edilmeyen, ağ oluşturma, doğrudan iletişim ve kariyer fuarları ile erişilen fırsatlar.</p>
+</li>
+</ul>
+<h2 id="gizli-i̇ş-piyasasına-erişim-yolları">6. Gizli İş Piyasasına Erişim Yolları</h2>
+<ul>
+<li>
+<p>Ağ oluşturma (Networking),</p>
+</li>
+<li>
+<p>Bilgilendirici görüşmeler,</p>
+</li>
+<li>
+<p>İşverenle doğrudan iletişim,</p>
+</li>
+<li>
+<p>Kariyer fuarları ve etkinliklere katılım.</p>
+</li>
+</ul>
+<h2 id="i̇ş-arama-becerilerinin-geliştirilmesi">7. İş Arama Becerilerinin Geliştirilmesi</h2>
+<ul>
+<li>
+<p>Kişisel stratejiler oluşturma,</p>
+</li>
+<li>
+<p>Etkili başvuru ve iletişim teknikleri kullanma,</p>
+</li>
+<li>
+<p>Profesyonel ilişkiler kurma ve sürdürme,</p>
+</li>
+<li>
+<p>Güncel kalma ve piyasa trendlerini takip etme.</p>
+</li>
+</ul>
+
+     </div></div>
+
+      <!------------------------------------------------------------------------>
+
+    <h2 class="unite-title">14. Hafta Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+        <div class="accordion-content">
+  <h1 id="i̇ş-arama-yöntemleri">Mülakat Teknikleri</h1>
+            <h3 id="🔹-mülakat-nedir">🔹 <strong>Mülakat Nedir?</strong></h3>
+<ul>
+<li>İşe alım sürecinde, firma yetkilileri ile iş başvurusunda bulunan aday arasında karşılıklı tanıma amacıyla yapılan görüşmedir.</li>
+</ul>
+<hr>
+<h3 id="🔹-mülakat-sırasında-dikkat-edilmesi-gerekenler">🔹 <strong>Mülakat Sırasında Dikkat Edilmesi Gerekenler</strong></h3>
+<ol>
+<li>
+<p><strong>Hazırlıklı olun</strong> – Şirket ve pozisyon hakkında önceden bilgi edinin.</p>
+</li>
+<li>
+<p><strong>İyi izlenim bırakın</strong> – İlk izlenim önemlidir; beden dili, tutum ve davranışlar etkili olur.</p>
+</li>
+<li>
+<p><strong>Doğru sorular sorun</strong> – Sadece cevaplamakla kalmayın; anlamlı sorular sorarak ilgi gösterin.</p>
+</li>
+<li>
+<p><strong>Olumsuzluklardan kaçının</strong> – Eski işverenler, kötü deneyimler hakkında olumsuz konuşmaktan kaçının.</p>
+</li>
+<li>
+<p><strong>Dürüst olun</strong> – Özgeçmişte ve görüşmede abartıya yer vermeyin.</p>
+</li>
+<li>
+<p><strong>Görüşmeye zamanında gidin</strong> – Dakiklik profesyonellik göstergesidir.</p>
+</li>
+</ol>
+<hr>
+<h3 id="🔹-mülakat-teknikleri">🔹 <strong>Mülakat Teknikleri</strong></h3>
+<ul>
+<li>
+<p><strong>Teknikleri geliştirin</strong> – Mülakat pratiği yaparak deneyim kazanın.</p>
+</li>
+<li>
+<p><strong>Kıyafet seçimi</strong> – Pozisyona uygun, profesyonel kıyafet tercih edin.</p>
+</li>
+<li>
+<p><strong>Görüşme becerileri</strong> – İletişim, empati, dinleme gibi becerileri geliştirin.</p>
+</li>
+<li>
+<p><strong>Teşekkür edin</strong> – Görüşme sonrası teşekkür e-postası göndermek pozitif iz bırakır.</p>
+</li>
+<li>
+<p><strong>Uygulamalı görüşme yapın</strong> – Prova yaparak hazırlanmak performansı artırır.</p>
+</li>
+<li>
+<p><strong>Bağlantılarınızı kullanın</strong> – Networking aracılığıyla bilgi alın.</p>
+</li>
+<li>
+<p><strong>Şirketi tanıyın</strong> – Görüşmeye şirket hakkında bilgi sahibi olarak gidin.</p>
+</li>
+<li>
+<p><strong>Telefon mülakatlarına hazırlıklı olun</strong> – Ses tonu, netlik ve hazırlık burada çok önemlidir.</p>
+</li>
+</ul>
+<hr>
+<h3 id="🔹-sık-yapılan-mülakat-hataları">🔹 <strong>Sık Yapılan Mülakat Hataları</strong></h3>
+<ul>
+<li>
+<p>Uygunsuz kıyafet</p>
+</li>
+<li>
+<p>Görüşmeye geç kalmak</p>
+</li>
+<li>
+<p>Yetersiz özgeçmiş bilgisi</p>
+</li>
+<li>
+<p>Görüşme sırasında telefonun çalması</p>
+</li>
+<li>
+<p>Şirket hakkında bilgi sahibi olmamak</p>
+</li>
+<li>
+<p>Dikkatsizlik veya aşırı konuşmak</p>
+</li>
+<li>
+<p>Prova yapmadan görüşmeye gitmek</p>
+</li>
+</ul>
+<hr>
+<h3 id="🔹-mülakat-çeşitleri">🔹 <strong>Mülakat Çeşitleri</strong></h3>
+<ol>
+<li>
+<p><strong>Davranış Bazlı Görüşmeler</strong></p>
+</li>
+<li>
+<p><strong>Bulmaca Mülakatlar</strong></p>
+</li>
+<li>
+<p><strong>Stres Mülakatları</strong></p>
+</li>
+<li>
+<p><strong>Vaka Mülakatları</strong></p>
+</li>
+<li>
+<p><strong>Hazırlıksız Görüşmeler</strong></p>
+</li>
+</ol>
+<hr>
+<h3 id="🔹-davranış-bazlı-görüşmelerde-değerlendirilen-özellikler">🔹 <strong>Davranış Bazlı Görüşmelerde Değerlendirilen Özellikler</strong></h3>
+<ul>
+<li>
+<p>Özgüven</p>
+</li>
+<li>
+<p>Profesyonellik</p>
+</li>
+<li>
+<p>Kritik düşünme becerisi</p>
+</li>
+<li>
+<p>Duyarlılık</p>
+</li>
+<li>
+<p>Girişimcilik</p>
+</li>
+</ul>
+
+    </div></div>
+
+  <!------------------------------------------------------------------------>
+
+      <h2 class="info">Summaries prepared by ChatGPT-o3</h2>
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ders Kaynakları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>9. Hafta</h3>
+                    <p>Soft Skills & Hard Skills</p>
+                    <a href="../Ders Kaynakları/Kariyer Gelişimi/9. Hafta Soft-Skills&Hard Skills.pptx" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+                
+                 <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>10. Hafta</h3>
+                    <p>Temel İletişim Becerileri</p>
+                    <a href="../Ders Kaynakları/Kariyer Gelişimi/10. Hafta Temel İletişim Becerileri.pptx" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+
+                 <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>11. Hafta</h3>
+                    <p>Diksiyon ve etkili beden dili</p>
+                    <a href="../Ders Kaynakları/Kariyer Gelişimi/11. Hafta Diksiyon ve Etkili Beden Dili.pptx" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+
+                 <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>12. Hafta</h3>
+                    <p>Öz geçmiş ve ön yazı hazırlama</p>
+                    <a href="../Ders Kaynakları/Kariyer Gelişimi/12. Hafta Öz Geçmiş ve Ön Yazı Hazırlama.pptx" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+
+                 <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>13. Hafta</h3>
+                    <p>İş arama yöntemleri</p>
+                    <a href="../Ders Kaynakları/Kariyer Gelişimi/13. Hafta İş Arama Yöntemleri.pptx" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+
+                  <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>14. Hafta</h3>
+                    <p>Mülakat Teknikleri</p>
+                    <a href="../Ders Kaynakları/Kariyer Gelişimi/14. Hafta Mülakat Teknikleri.pptx" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+              
+
+            </div>
+        </div>
+        
+    </section>
+
+    </div>
+
+
+   
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+    
+    
+
+
+</div>
+</div>
+
+    
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Veri Tabanı</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+ <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<style>
+.download-btn {
+  background: linear-gradient(90deg, #0eb324 0%, #3ce76f 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 8px;
+  font-size: 0.8em;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(179, 14, 14, 0.15);
+  transition: background 0.3s, transform 0.2s;
+  outline: none;
+  margin-left: 10px;
+}
+.download-btn:hover {
+  background: linear-gradient(90deg, #3ce77e 0%, #0eb34d 100%);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 16px rgba(179, 14, 14, 0.22);
+}
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div style="display: flex; align-items: center;">
+        <!-- Animasyonu ekleyin -->
+  <lottie-player 
+    src="../Animation/Animation - 1749658483941.json" 
+    background="transparent" 
+    speed="1" 
+    style="width: 300px; height: 300px;" 
+    loop autoplay>
+  </lottie-player>
+
+ <h3>Site Admini Hepinize Sınavda Başarılar Diler. 🫡</h3>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+          <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+
+       <!---------------------------->
+
+
+       <!----------DERS BAŞLIĞI------------------>
+     <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Veri Tabanı Yönetim Sistemleri-II</h1>
+     <div class="fakeimg" Style="height:400px; background: url('https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExdzNsc2Rpc3Z0bnZxbmJvdjE0NWh5NGlqM3p0dnZ3dXcwbDJldnJjcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xUPGGu9zmB3gYjxzdC/giphy.gif'); background-position: center;
+     background-repeat: no-repeat; background-attachment: fixed; background-size: cover; margin-bottom: 50px;"></div>
+     <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+ <h2 class="unite-title" style="display: flex; justify-content: space-between; align-items: center;">Vize Notları <span></span><button class="download-btn" onclick="window.open('../Ders Kaynakları/Veri-Tabani/Veri Tabanı Yönetim Sistemleri II ders notu.pdf', '_blank')">Dosyayı indir</button></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+         <h2 id="grammar-alıştırma-soruları-–-cevaplar-ve-açıklamalar"><strong></strong></h2>
+
+        <iframe src="../Ders Kaynakları/Veri-Tabani/Veri Tabanı Yönetim Sistemleri II ders notu.html" width="95%" height="1000px"></iframe>
+
+    </div></div>
+
+      <!------------------------------------------------------------------------>
+
+ <h2 class="unite-title" style="display: flex; justify-content: space-between; align-items: center;">Final Notları <span></span><button class="download-btn" onclick="window.open('../Ders Kaynakları/Veri-Tabani/MSSQL FİNAL SINAVI ÇALIŞMA KONULARI.pdf', '_blank')">Dosyayı indir</button></h2>
+     <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+         <h2 id="grammar-alıştırma-soruları-–-cevaplar-ve-açıklamalar"><strong></strong></h2>
+
+        <iframe src="../Ders Kaynakları/Veri-Tabani/MSSQL FİNAL SINAVI ÇALIŞMA KONULARI.html" width="95%" height="1000px"></iframe>
+
+    </div></div>
+
+
+ <h2 class="unite-title" >SQL Server Management Studio Kurulumu<span></span></h2>
+  <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/mToYyA9SeLY?si=Q6PZVh1qDH2U5HZl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<h2>İlk adımda indireceğiniz program:</h2>
+<a href="https://www.microsoft.com/tr-tr/sql-server/sql-server-downloads" target="_blank" rel="noopener" style="color: #0eb324; font-size: 20px;">Sayfa Linki</a><br>
+ <img src="../image/sqlserver1.png" width="70%" height="70%">
+
+
+<h2>İkinci adımda indireceğiniz program:</h2>
+<a href="https://learn.microsoft.com/tr-tr/ssms/install/install?source=recommendations#step-3---initiate-the-installation" target="_blank" rel="noopener" style="color: #0eb324; font-size: 20px;">Sayfa Linki</a><br>
+ <img src="../image/sqlserver2.png" width="70%" height="70%">
+    
+
+    </div></div>
+
+      <!------------------------------------------------------------------------>
+
+    
+
+    </div>
+
+
+   
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+    
+    
+
+
+</div>
+</div>
+
+    
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>

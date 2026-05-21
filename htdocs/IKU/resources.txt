@@ -1,0 +1,55 @@
+Bu sayfada size sayfa tasarım sürecinde kendi tecrübelerimi aktaracağım kullandığım program uygulamalar aşağıda sıralanmıştır.
+
+
+
+kullanılan kod editörleri
+-VS code
+-Sublime text
+
+kod tarafında destek alınan yapay zeka programları
+-Deepseak
+-Chatgpt
+-Cursor AI
+-Github Copilot
+
+Stok görseller için
+-Unsplash
+-Pexels
+
+ücretsiz png resimler için
+-pngwing
+
+dosya dönüşterme araçları(ek bilgi site yaparken sayfanıza ekleyeceğiniz görselleri jpg formatından webp formatına çevirmenizi öneririm, optimizasyon tarafında büyük fark yatarıyor)
+-convertio.co
+-cloudconvert.com
+
+Hazır buton, card vb. tasarımlar için
+-uıverse
+-CodePen
+-freefrontend.com
+
+şık modern tasarımlara sahip arka planlar için
+-www.gradientmagic.com
+
+animasyonlu hareketli arka plan için
+-giphy.com
+
+ikonlar için
+-fontawesome
+-lordicon
+
+renk oluşturmak için
+-htmlcolorcodes.com
+-coolors.co
+
+sayfanızın hızını ölçmek için
+-pagespeed.web.dev
+
+sayfanız için hosting & domain servisleri
+-natro.com
+-hostinger
+-godaddy
+-ihs 
+
+
+

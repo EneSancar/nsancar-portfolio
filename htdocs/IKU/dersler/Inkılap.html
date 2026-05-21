@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<title>Tarih</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="../image/programming-code-signs.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="image/internet.png">
+<link rel="stylesheet" href="../StudyStyle.css">
+<link rel="stylesheet" href="../responsive.css">
+<style>
+
+</style>
+</head>
+<body>
+
+
+
+   <!-----------------------------------------HEADER----------------------------------------------->
+ <header>
+
+    <div id="navbar">
+
+        <!-------INSTAGRAM ACCOUNT-------->
+            <div class="account-link">
+                    <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" title="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <span style="margin-left: 10px; font-size: 1rem; color: #fff; font-family: 'Segoe UI', Arial, sans-serif; font-weight: 500;">ns.sancar7</span>
+            </div>
+        <!--------------->
+       
+        
+        <div class="div">
+        <!-- Dark mode toggle butonu ekleyin (header'dan sonra) -->
+        <button class="dark-mode-toggle" id="darkModeToggle">
+            <i class="fas fa-moon"></i>
+        </button>
+        </div>
+
+
+   <!--------------SAYFA LİNKLERİ----------------->
+    <div class="menu-elements">
+        <div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+                <div class="links" id="nav-links">
+                    <a href="../index.html" class="menu-title">Ana Sayfa</a>
+
+                    <div class="dropdown">
+                        <a href="../resources.html" class="dropbtn menu-title">Kaynaklar</a>
+                    </div>
+                    <div class="dropdown"><a href="../contact.html" class="menu-title">İletişim</a></div>
+                </div>
+            </div>
+            <div class="search-container">
+                <input type="text" id="dersArama" placeholder="Ders ara... (Örn: Algoritma)" onkeyup="searchCourses()">
+                <button onclick="searchCourses()"><i class="fas fa-search"></i></button>
+                <div id="searchResults" class="search-results"></div>
+            </div>
+      </div>
+    <!------------------------------->
+        
+    </div>
+</header>
+
+<!---------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+<!-------------------------------------ANA SAYFANIN TOP SECTİON---------------------------------------------->
+
+
+<div class="lesson-header">
+    <div>
+        <h1>IKU-Bilgisayar Programcılığı Hazırlık Sayfası</h1>
+    </div>
+</div>
+
+<!----------------------------------------------TOP SECTİON BİTİŞ------------------------------------------------------->
+
+
+
+<div class="row">
+
+   <!-- Side menü toggle butonu -->
+<div class="side-toggle" onclick="toggleSideMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+
+
+    <!--------------------- YAN MENÜ BÖLÜMÜ LİNKLERİN BULUNDUĞU ALAN ---------------------->  
+
+    <div class="side side-menu-deskop" id="side-menu">
+        <!-- Tıklanabilir ögeler -->
+       <div class="side-links">
+        <h1>Dersler / Final </h1>
+                <a href="../dersler/Türk-Dili.html">Türk Dili-II <i class="fa-solid fa-pen-nib"></i></a>
+        <a href="../dersler/Inkılap.html">Atatürk İlkeleri ve İnkılap Tarihi-II <i class="fa-solid fa-book"></i></a>
+        <a href="../dersler/Blok-Zincir.html">Blok Zincir <i class="fa-solid fa-cubes"></i></a>
+        <a href="../dersler/Yazılım-Güvenliği.html">Yazılım Güvenliği<i class="fa-solid fa-chalkboard-user"></i></a>
+          <a href="../dersler/Veri-Tabani.html">Veri Tabanı Yönetim Sistemleri-II <i class="fa-solid fa-database"></i></a>
+        <a href="../dersler/Kariyer-Gelişimi.html">Kariyer Gelişimi <i class="fa-solid fa-user-tie"></i></a>
+         <a href="../dersler/öys.html">Öğrenim Yönetim Sistemleri <i class="fa-solid fa-chalkboard-user"></i></a>
+        <a href="../dersler/Ingilizce.html">İngilizce-II <i class="fa-solid fa-language"></i></a>
+        <a href="../dersler/iş-sağlıği.html">İş Sağlığı ve Güvenliği <i class="fa-solid fa-helmet-safety"></i></a>
+       </div>
+    </div>
+
+    <!-------------------------------------------->
+
+
+
+  <div class="main" id="main-content">
+    <!-- Varsayılan içerik -->
+    <div class="content">
+
+        <!----------BİLGİLENDİRME MESAJI------------------>
+     
+        <!---------------------------->
+
+
+        <!----------DERS BAŞLIĞI------------------>
+      <h1 class="lesson-title" style="font-size: 2.5em; color: #2c3e50; text-align: center; padding: 20px 0; margin: 20px 0 5px 0; border-bottom: 3px solid #b30e0e; text-shadow: 2px 2px 4px rgba(0,0,0,0.1);">Atatürk İlkeleri ve İnkılap Tarihi-II</h1>
+      <div class="fakeimg" Style="height:400px; background: url('../image/atatürk.jpg'); background-position: center;
+      background-repeat: no-repeat; background-size: cover; margin-bottom: 50px;"></div>
+      <!--------------->
+
+
+
+    <!-------------------------iÇERİK BÖLÜMÜ------------------------------->
+
+ <h2 class="unite-title">Final Ders Notu <span>özet</span></h2>
+
+ <div class="accordion">
+    <button class="accordion-btn">İçeriği Görmek için Tıklayınız!</button>
+    <div class="accordion-content">
+
+      <h2 id="atatürk-dönemi-siyasi-gelişmeler">1. Atatürk Dönemi Siyasi Gelişmeler</h2>
+<h3 id="cumhuriyet-döneminde-i̇lk-siyasi-partiler">Cumhuriyet Döneminde İlk Siyasi Partiler</h3>
+<ul>
+<li>
+<p><strong>TBMM’deki Gruplar ve Halk Fırkası’nın Kuruluşu:</strong></p>
+<ul>
+<li>
+<p>TBMM’nin ilk yıllarında üyeler ortak amaç için çalışsa da zamanla kargaşa başladı.</p>
+</li>
+<li>
+<p>1921’de Mustafa Kemal Paşa liderliğinde “Anadolu ve Rumeli Müdafaa-i Hukuk Grubu” kuruldu.</p>
+</li>
+<li>
+<p>Bu grup “Birinci Grup” olarak anılırken muhalifler “İkinci Grup” adını aldı.</p>
+</li>
+<li>
+<p>Birinci Grup millî iradeye, çağdaşlaşmaya, bağımsızlığa; İkinci Grup saltanat ve hilafeti savunuyordu.</p>
+</li>
+<li>
+<p>1923’te Halk Fırkası kuruldu, başkan Mustafa Kemal Paşa oldu. Parti programında tam bağımsızlık ve millet egemenliği vardı.</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ordunun-siyasetten-ayrılması">Ordunun Siyasetten Ayrılması</h3>
+<ul>
+<li>
+<p>Milli Mücadele döneminde asker milletvekili olabiliyordu.</p>
+</li>
+<li>
+<p>1924’te ordu komutanları milletvekilliğini seçti.</p>
+</li>
+<li>
+<p>Mustafa Kemal Paşa, ordunun siyasetten ayrılması ve inkılaba karşı unsurların temizlenmesi için 30 Ekim 1924’te komutanlara milletvekilliğinden ayrılmalarını istedi.</p>
+</li>
+<li>
+<p>Böylece ordu siyasetten arındırıldı.</p>
+</li>
+</ul>
+<h3 id="terakkiperver-cumhuriyet-fırkası’nın-kuruluşu-ve-kapatılması">Terakkiperver Cumhuriyet Fırkası’nın Kuruluşu ve Kapatılması</h3>
+<ul>
+<li>
+<p>1924’te Mustafa Kemal Paşa’ya muhaliflerin kurduğu ilk muhalefet partisi.</p>
+</li>
+<li>
+<p>Liderleri: Kâzım Karabekir Paşa (genel başkan), Ali Fuat Paşa (genel sekreter).</p>
+</li>
+<li>
+<p>Parti muhafazakâr, dini değerlere saygılıydı.</p>
+</li>
+<li>
+<p>Musul Sorunu ve bölgede artan karışıklıklarla bağlantılı Şeyh Sait Ayaklanması’na zemin hazırladı.</p>
+</li>
+<li>
+<p>3 Haziran 1925’te irtica yanlılığı gerekçesiyle kapatıldı.</p>
+</li>
+</ul>
+<h3 id="şeyh-sait-ayaklanması">Şeyh Sait Ayaklanması</h3>
+<ul>
+<li>
+<p>13 Şubat 1925’te başladı, dini ve Kürt bağımsızlığı amaçlı ayaklanmaydı.</p>
+</li>
+<li>
+<p>İngiltere’nin Musul Sorunu kapsamında Türkiye’yi zayıflatma girişimi olduğu ortaya çıktı.</p>
+</li>
+<li>
+<p>Ali Fethi Bey hükümeti başarısız oldu, yerine İsmet Paşa hükümeti kuruldu.</p>
+</li>
+<li>
+<p>Takrir-i Sükûn Kanunu çıkarıldı, sıkıyönetim ilan edildi.</p>
+</li>
+<li>
+<p>Ayaklanma ordu tarafından bastırıldı, liderleri idam edildi.</p>
+</li>
+</ul>
+<h3 id="i̇zmir-suikastı">İzmir Suikastı</h3>
+<ul>
+<li>
+<p>Mustafa Kemal Paşa’ya karşı suikast planı.</p>
+</li>
+<li>
+<p>Terakkiperver Cumhuriyet Fırkası üyeleri ve İttihatçılar dahil.</p>
+</li>
+<li>
+<p>17 Haziran 1926’da suikast önceden haber alınarak engellendi.</p>
+</li>
+<li>
+<p>Suikastçılar yargılandı ve cezalandırıldı.</p>
+</li>
+</ul>
+<h3 id="serbest-cumhuriyet-fırkası">Serbest Cumhuriyet Fırkası</h3>
+<ul>
+<li>
+<p>12 Ağustos 1930’da Mustafa Kemal Paşa’nın talebiyle ikinci muhalefet partisi olarak kuruldu.</p>
+</li>
+<li>
+<p>Genel başkanı Ali Fethi Bey.</p>
+</li>
+<li>
+<p>Cumhuriyet ve laiklik ilkelerine bağlılık şartı vardı.</p>
+</li>
+<li>
+<p>Parti kısa zamanda irtica yanlıları ve rejim karşıtlarının toplandığı bir merkez oldu.</p>
+</li>
+<li>
+<p>İzmir’de gösteriler ve karışıklıklar arttı.</p>
+</li>
+<li>
+<p>17 Kasım 1930’da kapatıldı.</p>
+</li>
+<li>
+<p>Çok partili denemeler başarısız oldu, toplum bu dönemde buna hazır değildi.</p>
+</li>
+</ul>
+<h3 id="menemen-olayı-23-aralık-1930">Menemen Olayı (23 Aralık 1930)</h3>
+<ul>
+<li>
+<p>İrtica hareketi.</p>
+</li>
+<li>
+<p>Derviş Mehmet’in asteğmen Kubilay’ı öldürmesiyle başladı.</p>
+</li>
+<li>
+<p>Sıkıyönetim ilan edildi, suçlular ağır cezalar aldı.</p>
+</li>
+<li>
+<p>Mustafa Kemal Paşa ve ordu irticaya karşı sert tutum aldı.</p>
+</li>
+</ul>
+<hr>
+<h2 id="atatürk-dönemi-türk-dış-politikası">2. Atatürk Dönemi Türk Dış Politikası</h2>
+<h3 id="temel-i̇lkeler-ve-hedefler">Temel İlkeler ve Hedefler</h3>
+<ul>
+<li>
+<p>Gerçekçilik,</p>
+</li>
+<li>
+<p>Karşılıklı diyalog ve doğrudan görüşme,</p>
+</li>
+<li>
+<p>Aşırı düşmanlıktan kaçınma, dostluğa da aşırı bel bağlamama,</p>
+</li>
+<li>
+<p>Rejim farkı gözetmeksizin iyi ilişkiler,</p>
+</li>
+<li>
+<p>Tutarlılık ve güvenilirlik,</p>
+</li>
+<li>
+<p>Komşuların bağımsızlık ve toprak bütünlüğüne saygı,</p>
+</li>
+<li>
+<p>Aktif ama maceracılıktan uzak politika,</p>
+</li>
+<li>
+<p>Milliyetçilik temelli dış politika,</p>
+</li>
+<li>
+<p>Barışın korunması,</p>
+</li>
+<li>
+<p>Çağdaş Türkiye’nin uluslararası alanda tanıtılması.</p>
+</li>
+</ul>
+<h3 id="türkiye-i̇ngiltere-i̇lişkileri">Türkiye-İngiltere İlişkileri</h3>
+<ul>
+<li>
+<p>Lozan sonrası ilişkiler tam anlamıyla düzelmedi,</p>
+</li>
+<li>
+<p>İngiltere Ankara’nın başkent olmasına karşı çıktı,</p>
+</li>
+<li>
+<p>Musul Sorunu, en önemli sorun,</p>
+</li>
+<li>
+<p>Sorun Milletler Cemiyeti’ne taşındı, Türkiye aleyhine karar çıktı,</p>
+</li>
+<li>
+<p>1926’da Ankara’da Sınır ve İyi Komşuluk Antlaşması imzalandı.</p>
+</li>
+</ul>
+<h3 id="türkiye-fransa-i̇lişkileri">Türkiye-Fransa İlişkileri</h3>
+<ul>
+<li>
+<p>Lozan sonrası sorunlar devam etti,</p>
+</li>
+<li>
+<p>1926’da Dostluk ve İyi Komşuluk Antlaşması imzalandı,</p>
+</li>
+<li>
+<p>Fransız misyoner okulları sorunu yaşandı,</p>
+</li>
+<li>
+<p>Türkiye 1929’da Fransızların işlettiği demiryolunu satın aldı.</p>
+</li>
+</ul>
+<h3 id="türkiye-i̇talya-i̇lişkileri">Türkiye-İtalya İlişkileri</h3>
+<ul>
+<li>
+<p>1922’de Mussolini faşist rejimi kurdu,</p>
+</li>
+<li>
+<p>İtalya Musul Sorunu’nda İngiltere’yi destekledi,</p>
+</li>
+<li>
+<p>1930’da Roma’da antlaşma imzalandı,</p>
+</li>
+<li>
+<p>Ancak 1930’lardan sonra Doğu Akdeniz’de yayılmacı politikası nedeniyle ilişkiler bozuldu.</p>
+</li>
+</ul>
+<h3 id="türkiye-yunanistan-i̇lişkileri">Türkiye-Yunanistan İlişkileri</h3>
+<ul>
+<li>
+<p>Lozan sonrası nüfus mübadelesinde anlaşmazlıklar,</p>
+</li>
+<li>
+<p>1926’da Atina Antlaşması ile sorunlar çözüldü,</p>
+</li>
+<li>
+<p>1930’da Ankara Antlaşması ile anlaşmazlıklar sona erdi.</p>
+</li>
+</ul>
+<h3 id="türkiye-sovyetler-birliği-i̇lişkileri">Türkiye-Sovyetler Birliği İlişkileri</h3>
+<ul>
+<li>
+<p>Musul Sorunu nedeniyle Batı’dan uzaklaşıldı,</p>
+</li>
+<li>
+<p>1925’te dostluk ve tarafsızlık antlaşması yapıldı.</p>
+</li>
+</ul>
+<h3 id="doğulu-devletlerle-i̇lişkiler">Doğulu Devletlerle İlişkiler</h3>
+<ul>
+<li>
+<p>Afganistan’la 1921 ve sonrası dostluk antlaşmaları,</p>
+</li>
+<li>
+<p>İran ile sınır sorunları 1926-1932 yılları arasında çözüldü.</p>
+</li>
+</ul>
+<h3 id="türkiye’nin-milletler-cemiyeti’ne-girişi">Türkiye’nin Milletler Cemiyeti’ne Girişi</h3>
+<ul>
+<li>1932’de davet üzerine üyelik kabul edildi.</li>
+</ul>
+<h3 id="balkan-antantı-1934">Balkan Antantı (1934)</h3>
+<ul>
+<li>Türkiye, Yunanistan, Romanya, Yugoslavya arasında karşılıklı güvenlik ve iş birliği.</li>
+</ul>
+<h3 id="boğazlar-sorunu-ve-montrö-sözleşmesi-1936">Boğazlar Sorunu ve Montrö Sözleşmesi (1936)</h3>
+<ul>
+<li>
+<p>Lozan’daki uluslararası komisyon yönetimi sona erdi,</p>
+</li>
+<li>
+<p>Boğazlar tam egemenlik altına alındı.</p>
+</li>
+</ul>
+<h3 id="sadabat-paktı-1937">Sadabat Paktı (1937)</h3>
+<ul>
+<li>Türkiye, İran, Irak, Afganistan arasında saldırmazlık ve iş birliği antlaşması.</li>
+</ul>
+<h3 id="hatay-sorunu-ve-ana-vatana-katılması">Hatay Sorunu ve Ana Vatana Katılması</h3>
+<ul>
+<li>
+<p>İskenderun ve Antakya Türk toprakları,</p>
+</li>
+<li>
+<p>1938’de Hatay Cumhuriyeti kuruldu,</p>
+</li>
+<li>
+<p>1939’da Türkiye’ye katıldı.</p>
+</li>
+</ul>
+<hr>
+<h2 id="türk-i̇nkılabının-temel-i̇lkeleri">3. Türk İnkılabının Temel İlkeleri</h2>
+<h3 id="cumhuriyetçilik">Cumhuriyetçilik</h3>
+<ul>
+<li>
+<p>Millet egemenliği,</p>
+</li>
+<li>
+<p>Demokrasiyle yönetim,</p>
+</li>
+<li>
+<p>Kişisel otorite karşıtı.</p>
+</li>
+</ul>
+<h3 id="milliyetçilik">Milliyetçilik</h3>
+<ul>
+<li>
+<p>Tam bağımsızlık,</p>
+</li>
+<li>
+<p>Irkçı olmayan, vicdan ve duygu temelli,</p>
+</li>
+<li>
+<p>Millî egemenlik, ekonomi, kültür.</p>
+</li>
+</ul>
+<h3 id="halkçılık">Halkçılık</h3>
+<ul>
+<li>
+<p>Eşitlik ve sınıfsız toplum,</p>
+</li>
+<li>
+<p>Sosyal adalet, sosyal güvenlik,</p>
+</li>
+<li>
+<p>Sınıf çıkarlarına karşı.</p>
+</li>
+</ul>
+<h3 id="devletçilik">Devletçilik</h3>
+<ul>
+<li>
+<p>Ekonomide devletin denetimi ve gerektiğinde müdahalesi,</p>
+</li>
+<li>
+<p>Özel girişim öncelikli ama zorunlu işlerde devlet sorumluluğu.</p>
+</li>
+</ul>
+<h3 id="laiklik">Laiklik</h3>
+<ul>
+<li>
+<p>Din ve devlet işlerinin ayrılığı,</p>
+</li>
+<li>
+<p>Din özgürlüğü güvencesi,</p>
+</li>
+<li>
+<p>Akıl ve bilim egemenliği.</p>
+</li>
+</ul>
+<h3 id="i̇nkılapçılık-devrimcilik">İnkılapçılık (Devrimcilik)</h3>
+<ul>
+<li>
+<p>Sürekli gelişim ve yenilenme,</p>
+</li>
+<li>
+<p>Çağın gerekliliklerine uyum,</p>
+</li>
+<li>
+<p>Dinamik bir inkılap anlayışı.</p>
+</li>
+</ul>
+<hr>
+<h2 id="ünite-bazı-önemli-sınav-soruları-ve-cevapları">Ünite Bazı Önemli Sınav Soruları ve Cevapları</h2>
+<ul>
+<li>
+<p>Halk Fırkası’nın ilk genel başkanı: <strong>Mustafa Kemal Paşa</strong></p>
+</li>
+<li>
+<p>Terakkiperver Cumhuriyet Fırkası’nın genel başkanı: <strong>Kâzım Karabekir Paşa</strong></p>
+</li>
+<li>
+<p>Cumhuriyet döneminin ilk muhalefet partisi: <strong>Terakkiperver Cumhuriyet Fırkası</strong></p>
+</li>
+<li>
+<p>Serbest Cumhuriyet Fırkası’nın genel başkanı: <strong>Ali Fethi Bey</strong></p>
+</li>
+<li>
+<p>Balkan Antantı üyeleri: Türkiye, Yunanistan, Romanya, Yugoslavya (Bulgaristan değil)</p>
+</li>
+<li>
+<p>Sadabat Paktı üyeleri: Türkiye, İran, Irak, Afganistan</p>
+</li>
+<li>
+<p>Montrö Sözleşmesi ile Türkiye’nin Boğazlar üzerindeki egemenliği sağlandı</p>
+</li>
+<li>
+<p>Hatay Cumhuriyeti’nin ilk ve tek cumhurbaşkanı: <strong>Tayfur Sökmen</strong></p>
+</li>
+</ul>
+    </div></div>
+
+    <div class="accordion">
+        <button class="accordion-btn"></button>
+        <div class="accordion-content">
+
+    </div></div>
+
+  <!------------------------------------------------------------------------>
+
+      <h2 class="info">Summaries prepared by ChatGPT-o3</h2>
+      <section class="resources">
+        <h1 class="resources-title">
+            <i class="fas fa-book-open"></i>
+            Ders Kaynakları
+        </h1>
+        
+        <div class="resources-container">
+            <div class="resources-grid">
+                <!-- Her kaynak için bir kart -->
+                <div class="resource-card">
+                    <div class="resource-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3>Final Ders Notu</h3>
+                    <p>2. Dönem Güncel Not</p>
+                    <a href="../Ders Kaynakları/Inkılap/Atatürk İlkeleri ve İnkılap Tarihi-II (Final Sınavı Ders Notu).pdf" download>
+                        <i class="fas fa-download"></i> İndir
+                    </a>
+                </div>
+              
+
+            </div>
+        </div>
+        
+    </section>
+
+    </div>
+
+
+   
+
+
+    <h2 class="info">Questions and Notes from Teams Documentation</h2>
+    
+   
+
+    
+    
+    
+
+
+</div>
+</div>
+
+    
+
+
+
+
+<!-----------------FOOTER----------------->
+
+<footer>
+
+    <div class="footerBottom">
+        <p>Copyright &copy;2025; Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+
+</footer>
+
+<!------------------------------------>
+
+
+
+<!-----------------SCRIPT----------------->
+ <script src="../js/side menu toogle.js"></script>
+ <script src="../js/maskotinfo.js"></script>
+ <script src="../js/search bar.js"></script>
+ <script src="../js/kronometre.js"></script>
+ <script src="../js/backtotop.js"></script>
+ <script src="../js/darkmode.js"></script>   
+ <script src="../js/maskot js.js"></script>
+ <script src="../js/Likecount.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+ <!-----------------SCRIPT----------------->
+<script src="../script.js"></script>
+<script type="text/javascript">
+    function toggleMenu() {
+        const links = document.getElementById('nav-links');
+        if (links.style.display === "flex") {
+            links.style.display = "none";
+        } else {
+            links.style.display = "flex";
+        }
+    }
+</script>
+
+
+<!----------------------------------------------------------------------------------->
+<button id="backToTop" class="back-to-top" aria-label="Yukarı çık">
+    <i class="fas fa-arrow-up"></i>
+</button>
+<!----------------------------------------------------------------------------------->
+
+</body>
+</html>
