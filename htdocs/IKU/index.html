@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="tr">
 <head>
 <title>Ana Sayfa</title>
@@ -7,9 +7,9 @@
 <script src="script.js"></script>
   <link rel="icon" type="image/png" href="image/programming-code-signs.png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="icon" href="image/internet.png">
 <link rel="stylesheet" href="StudyStyle.css">
 <link rel="stylesheet" href="responsive.css">
+<link rel="stylesheet" href="iku-polish.css">
 <style>    
   .welcome-section {
     padding: 2rem;
@@ -158,9 +158,9 @@
    <!--------------SAYFA LİNKLERİ----------------->
     <div class="menu-elements">
         <div>
-                <div class="hamburger" onclick="toggleMenu()">
+                <button type="button" class="hamburger" onclick="toggleMenu()" aria-label="Menüyü aç/kapat" aria-expanded="false" aria-controls="nav-links">
                     <i class="fas fa-bars"></i>
-                </div>
+                </button>
 
                 <div class="links" id="nav-links">
                     <a href="index.html" class="menu-title">Ana Sayfa</a>
@@ -442,6 +442,7 @@
 <!-----------------SCRIPT----------------->
  <script src="js/side menu toogle.js"></script>
  <script src="js/maskotinfo.js"></script>
+ <script src="js/iku-common.js"></script>
  <script src="js/search bar.js"></script>
  <script src="js/kronometre.js"></script>
  <script src="js/backtotop.js"></script>
@@ -484,17 +485,7 @@ document.getElementById('likeBtn').addEventListener('click', () => {
       localStorage.setItem('liked', 'true');
     }
   });
-
-    function toggleMenu() {
-        const links = document.getElementById('nav-links');
-        if (links.style.display === "flex") {
-            links.style.display = "none";
-        } else {
-            links.style.display = "flex";
-        }
-    } 
-
-    document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const maskot = document.querySelector('.maskot-normal');
     setTimeout(() => {
         maskot.style.opacity = '1';
