@@ -13,6 +13,11 @@ desktop.ini
 *.log
 .env
 .env.*
+!.env.example
+.env.local
+
+# Yerel gizli ayarlar (asla commit etme)
+htdocs/gallery/config.js
 
 # Cursor (local IDE)
 .cursor/

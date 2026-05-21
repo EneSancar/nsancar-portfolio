@@ -1,13 +1,12 @@
-// --- Google Drive ayarları ---
+// Google Drive klasör ID (herkese açık paylaşım linkiyle uyumlu)
 const folderId = "1Z-KsRAANfGu1AUdkkj36joR5rg-Zs4Op";
-const apiKey = "AIzaSyDvUwAYMeBtp5QoxgMh1tqqKvqSPIQWRaE";
 
 const gallery = document.getElementById("gallery");
 const loader = document.getElementById("loader");
 
-// Google Drive API'den dosya listesi çek
+// API anahtarı sunucuda tutulur (/api/drive — Vercel env: GOOGLE_DRIVE_API_KEY)
 async function loadImages() {
-  const url = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents+and+mimeType+contains+'image/'&key=${apiKey}&fields=files(id,name,mimeType)`;
+  const url = `/api/drive?folderId=${encodeURIComponent(folderId)}`;
 
   try {
     const res = await fetch(url);

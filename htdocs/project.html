@@ -36,10 +36,36 @@
       <div class="projects-hero reveal">
         <span class="section-label">Portfolyo</span>
         <h1>Projelerim</h1>
-        <p>Web tasarım, front-end geliştirme ve kişisel projelerimden bir seçki.</p>
+        <p>UI/UX tasarımları, web geliştirme ve kişisel projelerimden bir seçki.</p>
       </div>
 
-      <div class="project-grid">
+      <section class="projects-section reveal">
+        <h2 class="projects-section-title"><i class="fa-brands fa-figma"></i> UI/UX Tasarımları</h2>
+        <div class="project-grid">
+          <article class="project-card project-card--figma">
+            <div class="project-card-thumb" style="background-image: url('image/projects/cineforum.png')"></div>
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span>Figma</span><span>UI/UX</span><span>Mobil</span><span>AI</span><span>Sosyal</span>
+              </div>
+              <h3>CineForum</h3>
+              <p>Sinema ve dizi tutkunları için topluluk odaklı, yapay zeka destekli sosyal mobil uygulama konsepti.</p>
+              <div class="project-card-actions">
+                <button type="button" class="project-card-link project-detail-btn" data-project="cineforum">
+                  Detayları gör <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <a href="https://www.figma.com/design/cIKG0HpM5bIbO0JzNK9z6y/CINEFORUM?node-id=0-1" class="project-card-link project-card-link--secondary" target="_blank" rel="noopener">
+                  Figma'da aç <i class="fa-brands fa-figma"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="projects-section reveal">
+        <h2 class="projects-section-title"><i class="fa-solid fa-code"></i> Web & Geliştirme</h2>
+        <div class="project-grid">
         <article class="project-card reveal">
           <div class="project-card-thumb" style="background-image: url('image/blockWp.webp')"></div>
           <div class="project-card-body">
@@ -87,9 +113,45 @@
             <span class="project-card-link"><i class="fa-solid fa-lock"></i> Yakında</span>
           </div>
         </article>
-      </div>
+        </div>
+      </section>
     </div>
   </main>
+
+  <div class="project-modal" id="projectModal" aria-hidden="true">
+    <div class="project-modal-backdrop" data-close-modal></div>
+    <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+      <button type="button" class="project-modal-close" aria-label="Kapat" data-close-modal>
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="project-modal-content" id="projectModalContent"></div>
+    </div>
+  </div>
+
+  <template id="project-detail-cineforum">
+    <div class="project-modal-header">
+      <span class="project-modal-badge">UI/UX · Figma</span>
+      <h2 id="projectModalTitle">CineForum</h2>
+      <p class="project-modal-lead">Sinema ve dizi tutkunlarını tek çatı altında toplayan, topluluk odaklı ve yapay zeka destekli sosyal mobil uygulama.</p>
+    </div>
+    <div class="project-modal-preview">
+      <img src="image/projects/cineforum.png" alt="CineForum mobil arayüz tasarımı">
+    </div>
+    <div class="project-modal-body">
+      <h3>Proje tanımı</h3>
+      <p>CineForum, kullanıcıların sadece içerik tüketmesini değil, aynı zamanda bu içerikler etrafında aktif bir topluluk oluşturmasını hedefler.</p>
+      <h3>Temel özellikler</h3>
+      <ul>
+        <li><strong>Topluluk ve tartışma:</strong> Favori film ve diziler hakkında başlık açma, yorum yapma ve fikir alışverişi.</li>
+        <li><strong>Akıllı öneriler:</strong> Yapay zeka ile izleme alışkanlıklarına göre kişiselleştirilmiş film ve dizi tavsiyeleri.</li>
+        <li><strong>Zengin içerik kütüphanesi:</strong> Güncel veritabanı, detaylı yapım bilgileri, oyuncu kadroları ve fragmanlar.</li>
+        <li><strong>Modern deneyim:</strong> Kullanıcı dostu, estetik ve akıcı arayüz ile sinema keşfi.</li>
+      </ul>
+      <a href="https://www.figma.com/design/cIKG0HpM5bIbO0JzNK9z6y/CINEFORUM?node-id=0-1" class="btn btn-primary project-modal-cta" target="_blank" rel="noopener">
+        <i class="fa-brands fa-figma"></i> Figma dosyasını aç
+      </a>
+    </div>
+  </template>
 
   <footer class="site-footer">
     <div class="container footer-inner">

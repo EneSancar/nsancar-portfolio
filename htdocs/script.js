@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSkillBars();
   initGalleryPanels();
   initMovieShowcase();
+  initProjectModal();
   setActiveNavLink();
 });
 
@@ -218,6 +219,45 @@ function initMovieShowcase() {
   nextBtn?.addEventListener("click", () => selectMovie(activeIndex + 1));
 
   renderGenres(thumbs[activeIndex].dataset.genres || "");
+}
+
+/* ===== Project detail modal ===== */
+function initProjectModal() {
+  const modal = document.getElementById("projectModal");
+  const content = document.getElementById("projectModalContent");
+  if (!modal || !content) return;
+
+  const templates = {
+    cineforum: document.getElementById("project-detail-cineforum"),
+  };
+
+  function openModal(key) {
+    const tpl = templates[key];
+    if (!tpl) return;
+    content.innerHTML = "";
+    content.appendChild(tpl.content.cloneNode(true));
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeModal() {
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll(".project-detail-btn").forEach((btn) => {
+    btn.addEventListener("click", () => openModal(btn.dataset.project));
+  });
+
+  modal.querySelectorAll("[data-close-modal]").forEach((el) => {
+    el.addEventListener("click", closeModal);
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
 }
 
 /* ===== Email toast ===== */
