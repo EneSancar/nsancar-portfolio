@@ -127,8 +127,8 @@
         <h2 class="projects-section-title"><i class="fa-solid fa-code"></i> Web & Geliştirme</h2>
         <div class="project-grid">
         <article class="project-card project-card--dev reveal">
-          <div class="project-card-thumb project-card-thumb--img">
-            <img src="image/projects/smart-cargo.png" alt="Smart Cargo kargo firması web sitesi" loading="lazy">
+          <div class="project-card-thumb project-card-thumb--img project-card-thumb--cover-top">
+            <img src="image/projects/smart-cargo.png?v=3" alt="Smart Cargo kargo firması web sitesi" width="1024" height="903" loading="lazy" decoding="async">
           </div>
           <div class="project-card-body">
             <div class="project-card-tags">
@@ -166,15 +166,24 @@
           </div>
         </article>
 
-        <article class="project-card reveal">
-          <div class="project-card-thumb" style="background-image: url('image/my.webp')"></div>
+        <article class="project-card project-card--dev reveal">
+          <div class="project-card-thumb project-card-thumb--img project-card-thumb--cover-top">
+            <img src="image/projects/nsancar-preview.png?v=3" alt="nsancar.com kişisel portfolyo sitesi" width="773" height="1024" loading="lazy" decoding="async">
+          </div>
           <div class="project-card-body">
             <div class="project-card-tags">
-              <span>Portfolio</span><span>Responsive</span>
+              <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Portfolio</span>
             </div>
             <h3>nsancar.com</h3>
-            <p>Kişisel portfolyo sitesi — hizmetler, yetenekler, iletişim ve proje vitrinini bir arada sunar.</p>
-            <a href="index.html" class="project-card-link">Ana sayfa <i class="fa-solid fa-arrow-right"></i></a>
+            <p>Kişisel portfolyo — hero, yetenekler, hızlı erişim, proje vitrinleri ve iletişim bölümlerini tek sayfada sunan modern arayüz.</p>
+            <div class="project-card-actions">
+              <button type="button" class="project-card-link project-detail-btn" data-project="nsancar">
+                Detayları gör <i class="fa-solid fa-circle-info"></i>
+              </button>
+              <a href="index.html" class="project-card-link project-card-link--secondary">
+                Siteye git <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
           </div>
         </article>
         </div>
@@ -306,8 +315,8 @@
       <h2 id="projectModalTitle">Smart Cargo</h2>
       <p class="project-modal-lead">Kargo, parsiyel ve lojistik hizmetleri sunan bir firma için tasarlanan çok sayfalı kurumsal web sitesi.</p>
     </div>
-    <div class="project-modal-preview">
-      <img src="image/projects/smart-cargo.png" alt="Smart Cargo web sitesi önizlemesi" loading="lazy">
+    <div class="project-modal-preview project-modal-preview--sharp">
+      <img src="image/projects/smart-cargo.png?v=3" alt="Smart Cargo web sitesi önizlemesi" width="1024" height="903" loading="lazy" decoding="async">
     </div>
     <div class="project-modal-body">
       <h3>Proje hakkında</h3>
@@ -321,6 +330,32 @@
       </ul>
       <p class="project-modal-note"><i class="fa-solid fa-briefcase"></i> Başakşehir / lojistik sektörü — kurumsal web tasarımı çalışması.</p>
       <a href="smart-cargo/index.html" class="btn btn-primary project-modal-cta">
+        <i class="fa-solid fa-arrow-right"></i> Siteyi gez
+      </a>
+    </div>
+  </template>
+
+  <template id="project-detail-nsancar">
+    <div class="project-modal-header">
+      <span class="project-modal-badge">Web · Portfolio</span>
+      <h2 id="projectModalTitle">nsancar.com</h2>
+      <p class="project-modal-lead">Front-end ve grafik tasarım odaklı kişisel portfolyo sitesi; projeler, yetenekler ve iletişim kanallarını modern bir deneyimle bir araya getirir.</p>
+    </div>
+    <div class="project-modal-preview project-modal-preview--sharp">
+      <img src="image/projects/nsancar-preview.png?v=3" alt="nsancar.com portfolyo önizlemesi" width="773" height="1024" loading="lazy" decoding="async">
+    </div>
+    <div class="project-modal-body">
+      <h3>Site içeriği</h3>
+      <ul>
+        <li><strong>Hero:</strong> Web & Graphic Design başlığı, tanıtım metni ve iletişim çağrıları.</li>
+        <li><strong>Hakkımda:</strong> Profil kartı ve kısa biyografi.</li>
+        <li><strong>Yetenekler:</strong> Teknoloji ikonları ve yüzdelik beceri çubukları (HTML, CSS, JS, Figma, Adobe vb.).</li>
+        <li><strong>Hızlı erişim:</strong> CV, servisler ve aktiviteler kartları.</li>
+        <li><strong>Araçlar & deneyim:</strong> Kullanılan yazılımlar ve uzmanlık alanları.</li>
+        <li><strong>Projeler & iletişim:</strong> Web/grafik vitrin alanları, sosyal profiller ve iletişim kartları.</li>
+      </ul>
+      <p class="project-modal-note"><i class="fa-solid fa-code"></i> Responsive, koyu tema ve bileşen tabanlı düzen.</p>
+      <a href="index.html" class="btn btn-primary project-modal-cta">
         <i class="fa-solid fa-arrow-right"></i> Siteyi gez
       </a>
     </div>

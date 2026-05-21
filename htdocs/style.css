@@ -1257,6 +1257,8 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   content: "";
   position: absolute;
   inset: 0;
+  z-index: 1;
+  pointer-events: none;
   background: linear-gradient(to top, var(--bg-card), transparent 60%);
 }
 
@@ -1355,24 +1357,50 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
 }
 
 .project-card-thumb--img {
-  height: 220px;
-  background: #120608;
+  height: 240px;
+  background: #0a0a12;
   display: flex;
   align-items: flex-start;
   justify-content: center;
   overflow: hidden;
 }
 
-.project-card-thumb--img::after {
-  display: none;
-}
-
 .project-card-thumb--img img {
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: 100%;
   object-fit: contain;
   object-position: top center;
+  image-rendering: auto;
+}
+
+.project-card-thumb--cover-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  image-rendering: auto;
+}
+
+.project-modal-preview--tall,
+.project-modal-preview--sharp {
+  max-height: min(75vh, 720px);
+  overflow-y: auto;
+  border-radius: var(--radius-sm);
+  background: #0a0a12;
+}
+
+.project-modal-preview--tall img,
+.project-modal-preview--sharp img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+  image-rendering: auto;
+}
+
+.project-modal-preview img {
+  image-rendering: auto;
 }
 
 .project-card--dev:hover {

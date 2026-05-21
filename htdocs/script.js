@@ -233,6 +233,7 @@ function initProjectModal() {
     suppworld: document.getElementById("project-detail-suppworld"),
     akim: document.getElementById("project-detail-akim"),
     smartcargo: document.getElementById("project-detail-smartcargo"),
+    nsancar: document.getElementById("project-detail-nsancar"),
     iku: document.getElementById("project-detail-iku"),
   };
 
