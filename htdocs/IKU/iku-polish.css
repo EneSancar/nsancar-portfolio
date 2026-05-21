@@ -1,83 +1,373 @@
-/* IKU — tasarımı bozmadan ince iyileştirmeler */
+/* IKU — görsel iyileştirmeler (marka: #82060b) */
 
-/* Ana sayfa karşılama bölümü — karanlık mod */
+:root {
+  --iku-brand: #82060b;
+  --iku-brand-hover: #9b0000;
+  --iku-brand-soft: rgba(130, 6, 11, 0.12);
+  --iku-accent: #bb86fc;
+  --iku-surface: #f8f9fa;
+  --iku-text: #2c3e50;
+  --iku-text-muted: #5a6a7a;
+}
+
+/* —— Ana sayfa karşılama —— */
+.welcome-section {
+  padding: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.welcome-section .main-title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  color: var(--iku-text);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+.welcome-section .intro-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--iku-text-muted);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  max-width: 52rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.welcome-section .section-title {
+  font-size: 1.5rem;
+  color: var(--iku-text);
+  margin-bottom: 1.25rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.welcome-section .features-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem auto 2rem;
+  max-width: 52rem;
+}
+
+@media (min-width: 900px) {
+  .welcome-section .features-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.welcome-section .feature-item {
+  text-align: center;
+  padding: 1.35rem 1rem;
+  background: var(--iku-surface);
+  border-radius: 12px;
+  border: 1px solid rgba(130, 6, 11, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.welcome-section .feature-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(130, 6, 11, 0.12);
+  border-color: rgba(130, 6, 11, 0.2);
+}
+
+.welcome-section .feature-item i {
+  font-size: 1.75rem;
+  color: var(--iku-brand);
+  margin-bottom: 0.75rem;
+}
+
+.welcome-section .feature-item h3 {
+  color: var(--iku-text);
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+}
+
+.welcome-section .feature-item p {
+  color: var(--iku-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.welcome-section .closing-section {
+  text-align: center;
+  margin-top: 2rem;
+  background: var(--iku-surface);
+  padding: 1.5rem 1.25rem;
+  border-radius: 12px;
+  border: 1px solid rgba(130, 6, 11, 0.08);
+}
+
+.welcome-section .success-message {
+  font-size: 1.15rem;
+  color: var(--iku-text);
+  margin-bottom: 0.75rem;
+}
+
+.welcome-section .contact-invite {
+  color: var(--iku-text-muted);
+}
+
+.welcome-section .contact-link {
+  color: var(--iku-brand);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.welcome-section .contact-link:hover {
+  color: var(--iku-brand-hover);
+  text-decoration: underline;
+}
+
+/* Karanlık mod — karşılama */
 body.dark-mode .welcome-section .main-title,
 body.dark-mode .welcome-section .section-title,
 body.dark-mode .welcome-section .success-message {
-  color: #e8e8e8;
-}
-body.dark-mode .welcome-section .intro-text,
-body.dark-mode .welcome-section .mission-text,
-body.dark-mode .welcome-section .contact-invite {
-  color: #b8b8b8;
-}
-body.dark-mode .welcome-section .feature-item,
-body.dark-mode .welcome-section .mission-section,
-body.dark-mode .welcome-section .closing-section {
-  background: #1e1e1e;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
-}
-body.dark-mode .welcome-section .feature-item h3 {
-  color: #e0e0e0;
-}
-body.dark-mode .welcome-section .feature-item i {
-  color: #bb86fc;
-}
-body.dark-mode .welcome-section .contact-link {
-  color: #bb86fc;
-}
-body.dark-mode .welcome-section .contact-link:hover {
-  color: #9d6fd9;
+  color: #ececec;
 }
 
-/* Arama — karanlık mod ve kaydırma */
+body.dark-mode .welcome-section .intro-text,
+body.dark-mode .welcome-section .contact-invite {
+  color: #b0b0b0;
+}
+
+body.dark-mode .welcome-section .feature-item,
+body.dark-mode .welcome-section .closing-section {
+  background: #252525;
+  border-color: rgba(187, 134, 252, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .welcome-section .feature-item h3 {
+  color: #e8e8e8;
+}
+
+body.dark-mode .welcome-section .feature-item p {
+  color: #a8a8a8;
+}
+
+body.dark-mode .welcome-section .feature-item i {
+  color: var(--iku-accent);
+}
+
+body.dark-mode .welcome-section .contact-link {
+  color: var(--iku-accent);
+}
+
+body.dark-mode .welcome-section .contact-link:hover {
+  color: #d4b3ff;
+}
+
+/* —— Hero (üst banner) —— */
+#header-area {
+  background-image: linear-gradient(
+      135deg,
+      rgba(18, 4, 6, 0.82) 0%,
+      rgba(80, 8, 12, 0.72) 50%,
+      rgba(18, 4, 6, 0.85) 100%
+    ),
+    url('image/library.webp');
+  border-bottom-color: var(--iku-brand);
+}
+
+.header .center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 1.25rem;
+  background: rgba(0, 0, 0, 0.28);
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 92%;
+  margin: 0 auto;
+}
+
+.side-title {
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  line-height: 1.35;
+}
+
+.kutu {
+  border: 1px solid rgba(130, 6, 11, 0.12);
+}
+
+.kutu:hover {
+  border-color: rgba(130, 6, 11, 0.35);
+  box-shadow: 0 6px 20px rgba(130, 6, 11, 0.15);
+}
+
+#maskot-container {
+  max-width: 140px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.maskot-normal:hover {
+  filter: drop-shadow(0 4px 16px rgba(187, 134, 252, 0.35));
+}
+
+#welcome-text,
+.hackerText {
+  color: #fff;
+  font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  text-align: center;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  position: relative;
+}
+
+/* —— Beğen çubuğu —— */
+.Line {
+  background: linear-gradient(
+    90deg,
+    rgba(130, 6, 11, 0.85) 0%,
+    var(--iku-brand) 35%,
+    var(--iku-brand) 65%,
+    rgba(130, 6, 11, 0.85) 100%
+  );
+}
+
+.like-container {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#likeBtn {
+  background: #fff;
+  color: var(--iku-brand);
+  border: 2px solid #fff;
+  padding: 0.45rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+#likeBtn:hover {
+  background: transparent;
+  color: #fff;
+}
+
+#likeBtn:disabled,
+#likeBtn.liked {
+  opacity: 0.75;
+  cursor: default;
+}
+
+#likeCount {
+  color: #fff;
+}
+
+/* —— Bilgi Al butonu (marka rengi) —— */
+#info-button {
+  background-color: var(--iku-brand);
+  animation: slideUp 0.9s forwards;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+#info-button .info-text {
+  animation: none;
+  color: #fff;
+}
+
+#info-button:hover {
+  background-color: var(--iku-brand-hover);
+}
+
+#info-button:hover i {
+  opacity: 1;
+  margin-left: 6px;
+  border-left: none;
+  padding-left: 0;
+}
+
+/* —— Arama —— */
 body.dark-mode #dersArama {
   background: #2a2a2a;
   color: #e0e0e0;
-  border-color: #bb86fc;
+  border-color: var(--iku-accent);
 }
+
 body.dark-mode .search-results {
   background: #232323;
   border-color: #444;
 }
+
 body.dark-mode .search-result-item {
   color: #e0e0e0;
   border-bottom-color: #333;
 }
+
 body.dark-mode .search-result-item:hover,
 body.dark-mode .search-result-item.is-active {
   background: #2d2d3d;
 }
+
 body.dark-mode .search-result-item i {
-  color: #bb86fc;
+  color: var(--iku-accent);
 }
+
 .search-results {
   max-height: 280px;
   overflow-y: auto;
 }
+
 .search-result-item.is-active {
-  background: #f0f4ff;
+  background: var(--iku-brand-soft);
 }
+
 .search-no-result {
   cursor: default;
   color: #666;
 }
+
 body.dark-mode .search-no-result {
   color: #999;
 }
 
-/* Mobil menü — sınıf tabanlı (inline style yerine) */
+/* —— Mobil menü —— */
 @media (max-width: 768px) {
   #navbar .links.is-open {
     display: flex;
   }
+
+  .welcome-section .features-grid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .welcome-section {
+    padding: 1rem;
+  }
+
+  #header-area .center {
+    max-width: 100%;
+    border-radius: 12px;
+  }
 }
 
-/* Erişilebilirlik ve odak */
+/* —— Erişilebilirlik —— */
 .hamburger {
   border: none;
   background: transparent;
 }
+
 .hamburger:focus-visible,
 .dark-mode-toggle:focus-visible,
 #dersArama:focus-visible,
@@ -85,19 +375,22 @@ body.dark-mode .search-no-result {
   outline: 2px solid #fff;
   outline-offset: 2px;
 }
+
 body.dark-mode .hamburger:focus-visible,
 body.dark-mode .dark-mode-toggle:focus-visible {
-  outline-color: #bb86fc;
+  outline-color: var(--iku-accent);
 }
 
-/* Hareket azaltma tercihi */
 @media (prefers-reduced-motion: reduce) {
-  .feature-item,
+  .welcome-section .feature-item,
   .dark-mode-toggle,
-  .search-result-item {
+  .search-result-item,
+  .maskot-normal {
     transition: none;
+    animation: none;
   }
-  .feature-item:hover {
+
+  .welcome-section .feature-item:hover {
     transform: none;
   }
 }

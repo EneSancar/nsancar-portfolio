@@ -468,10 +468,8 @@ body {
 
 #header-area{
   height: 70vh;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('image/library.webp'); 
   background-size: cover;
-  background-position: center; 
-  position: center;
+  background-position: center;
 }
 
 /* Increase the font size of the heading */
@@ -765,30 +763,27 @@ body {
 .right .fade-in:nth-child(4) { animation-delay: 0.4s; }
 
 #info-button {
-  position: absolute; /* Butonu sabit bir konuma getir */
-  bottom: -25.5%; /* Sayfanın alt kısmına doğru konumlandır */
-  left: 73%; /* Yatayda merkezle */
-  transform: translateX(-50%); /* Tam ortalamak için */
-  padding: 8px 10px;
-  font-size: 16px;
+  position: absolute;
+  bottom: -25.5%;
+  left: 73%;
+  transform: translateX(-50%) translateY(20px);
+  padding: 8px 14px;
+  font-size: 15px;
   font-weight: bold;
-  background-color: #007BFF;
-  color: #fff; /* Başlangıçta beyaz renk */
+  background-color: #82060b;
+  color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0; /* Butonu görünür yap */
-  transform: translateY(20px); /* Aşağıdan başla */
-  animation: colorChange 1s infinite, slideUp 0.9s forwards; /* Renk değişim animasyonu ve yukarı kaydırma */
+  opacity: 0;
+  animation: slideUp 0.9s forwards;
 }
 
-
 #info-button .info-text {
-  animation: colorChange 1s infinite; /* Renk değişim animasyonu */
-  transition: color 0.5s ease; /* Sadece yazı rengini değiştir */
+  transition: color 0.3s ease;
 }
 
 @keyframes colorChange {
@@ -812,7 +807,7 @@ body {
 }
 
 #info-button:hover {
-    background-color: #000;
+    background-color: #9b0000;
 }
 #info-button:hover i{
   opacity: 1;
@@ -844,16 +839,18 @@ padding: 25px 0;
 }
 
 #likeBtn {
-  background-color: #4CAF50; /* Yeşil */
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  background-color: #fff;
+  color: #82060b;
+  border: 2px solid #fff;
+  padding: 8px 16px;
+  border-radius: 999px;
   cursor: pointer;
+  font-weight: 600;
 }
 
 #likeBtn:hover {
-  background-color: #45a049; /* Koyu yeşil */
+  background-color: transparent;
+  color: #fff;
 }
 
 #likeBtn {
