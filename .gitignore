@@ -21,3 +21,6 @@ htdocs/gallery/config.js
 
 # Cursor (local IDE)
 .cursor/
+
+# Geçici PDF dönüştürme (orijinal arşive dokunulmaz)
+.tmp-pdfconv/

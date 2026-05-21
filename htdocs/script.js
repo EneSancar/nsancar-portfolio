@@ -230,6 +230,9 @@ function initProjectModal() {
   const templates = {
     cineforum: document.getElementById("project-detail-cineforum"),
     fotoeyes: document.getElementById("project-detail-fotoeyes"),
+    suppworld: document.getElementById("project-detail-suppworld"),
+    akim: document.getElementById("project-detail-akim"),
+    smartcargo: document.getElementById("project-detail-smartcargo"),
     iku: document.getElementById("project-detail-iku"),
   };
 

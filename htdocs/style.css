@@ -1345,6 +1345,15 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   border-color: rgba(242, 78, 30, 0.35);
 }
 
+.project-card--graphic .project-card-tags span:first-child {
+  background: rgba(234, 179, 8, 0.18);
+  color: #facc15;
+}
+
+.project-card--graphic:hover {
+  border-color: rgba(234, 179, 8, 0.35);
+}
+
 .project-card-thumb--img {
   height: 220px;
   background: #120608;
@@ -1501,6 +1510,54 @@ button.project-card-link {
 .project-modal-preview img {
   width: 100%;
   display: block;
+}
+
+.project-modal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-modal-figure {
+  margin: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.project-modal-figure img {
+  width: 100%;
+  display: block;
+  object-fit: contain;
+  max-height: 280px;
+  background: #120608;
+}
+
+.project-modal-figure figcaption {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.project-modal-note {
+  margin-top: 1.25rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  background: rgba(99, 102, 241, 0.1);
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.project-modal-note i {
+  color: var(--accent-light);
 }
 
 .project-modal-body h3 {

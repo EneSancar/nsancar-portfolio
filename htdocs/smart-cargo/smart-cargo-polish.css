@@ -1,0 +1,70 @@
+/* Hafif iyileştirmeler — orijinal tasarım korunur */
+
+.logoimg img {
+  max-width: min(270px, 72vw);
+  height: auto;
+}
+
+.col-2-image img,
+.image-container img,
+.content2 .image img,
+.politika .image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.main .col-2-image img {
+  width: min(550px, 100%);
+}
+
+.menu nav a:focus-visible,
+.card button:focus-visible,
+.btn41-43:focus-visible,
+.btn-box button:focus-visible {
+  outline: 2px solid #f26419;
+  outline-offset: 2px;
+}
+
+.hamburger {
+  padding: 8px;
+  border: none;
+  background: transparent;
+}
+
+.hamburger:focus-visible {
+  outline: 2px solid #f26419;
+  outline-offset: 2px;
+}
+
+.card button {
+  cursor: pointer;
+}
+
+.card button i {
+  margin-left: 0.35rem;
+}
+
+.social a {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.social a:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.politika .center > p {
+  text-transform: none;
+}
+
+.nav-bar ul li a.active {
+  color: #14145a;
+  font-weight: 700;
+}
+
+@media (max-width: 800px) {
+  .nav-bar ul li a.active {
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 4px;
+  }
+}
