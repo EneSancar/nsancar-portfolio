@@ -1407,6 +1407,15 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   border-color: rgba(34, 211, 238, 0.35);
 }
 
+.project-card--desktop .project-card-tags span:first-child {
+  background: rgba(168, 85, 247, 0.18);
+  color: #c084fc;
+}
+
+.project-card--desktop:hover {
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
 .project-card-thumb--contain {
   background-size: contain;
   background-repeat: no-repeat;

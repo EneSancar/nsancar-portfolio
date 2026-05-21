@@ -234,6 +234,7 @@ function initProjectModal() {
     akim: document.getElementById("project-detail-akim"),
     smartcargo: document.getElementById("project-detail-smartcargo"),
     nsancar: document.getElementById("project-detail-nsancar"),
+    timetracker: document.getElementById("project-detail-timetracker"),
     iku: document.getElementById("project-detail-iku"),
   };
 

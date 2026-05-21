@@ -36,7 +36,7 @@
       <div class="projects-hero reveal">
         <span class="section-label">Portfolyo</span>
         <h1>Projelerim</h1>
-        <p>UI/UX tasarımları, grafik tasarım, web geliştirme ve kişisel projelerimden bir seçki.</p>
+        <p>UI/UX tasarımları, grafik tasarım, web ve masaüstü geliştirme projelerimden bir seçki.</p>
       </div>
 
       <section class="projects-section reveal">
@@ -186,6 +186,27 @@
             </div>
           </div>
         </article>
+        </div>
+      </section>
+
+      <section class="projects-section reveal">
+        <h2 class="projects-section-title"><i class="fa-solid fa-desktop"></i> Masaüstü Uygulamalar</h2>
+        <div class="project-grid">
+          <article class="project-card project-card--desktop reveal">
+            <div class="project-card-thumb project-card-thumb--img">
+              <img src="image/projects/time-tracker-plus.png" alt="Time Tracker Plus masaüstü uygulaması arayüzü" width="740" height="448" loading="lazy" decoding="async">
+            </div>
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span>C#</span><span>WPF</span><span>.NET</span><span>Visual Studio</span><span>Figma</span>
+              </div>
+              <h3>Time Tracker Plus</h3>
+              <p>Windows için program ve oyun kullanım süresini izleyen, üretkenlik skoru ve Pomodoro sunan koyu temalı masaüstü uygulaması.</p>
+              <button type="button" class="project-card-link project-detail-btn" data-project="timetracker">
+                Detayları gör <i class="fa-solid fa-circle-info"></i>
+              </button>
+            </div>
+          </article>
         </div>
       </section>
     </div>
@@ -358,6 +379,36 @@
       <a href="index.html" class="btn btn-primary project-modal-cta">
         <i class="fa-solid fa-arrow-right"></i> Siteyi gez
       </a>
+    </div>
+  </template>
+
+  <template id="project-detail-timetracker">
+    <div class="project-modal-header">
+      <span class="project-modal-badge">Masaüstü · WPF</span>
+      <h2 id="projectModalTitle">Time Tracker Plus</h2>
+      <p class="project-modal-lead">Görsel Programlama dersi kapsamında geliştirilen Windows masaüstü uygulaması; kullanım sürelerini izler, üretkenliği ölçer ve odaklanmayı destekler.</p>
+    </div>
+    <div class="project-modal-preview project-modal-preview--sharp">
+      <img src="image/projects/time-tracker-plus.png" alt="Time Tracker Plus dashboard ekranı" width="740" height="448" loading="lazy" decoding="async">
+    </div>
+    <div class="project-modal-body">
+      <h3>Proje hakkında</h3>
+      <p>Time Tracker Plus, bilgisayarda geçirilen zamanı program ve oyun bazında kaydeden bir izleme aracıdır. Dashboard, akıllı panel ve istatistik ekranlarıyla günlük, haftalık ve aylık özetler sunar; kullanıcıya hangi uygulamalara ne kadar süre ayırdığını görsel olarak gösterir.</p>
+      <h3>Özellikler</h3>
+      <ul>
+        <li><strong>Dashboard:</strong> Programlar ve oyunlar için halka grafikleri, zaman aralığı filtreleri (tüm zamanlar, son 24 saat, son hafta).</li>
+        <li><strong>Akıllı panel:</strong> Bugün / bu hafta / bu ay özetleri, üretkenlik skoru, Pomodoro zamanlayıcı ve en çok kullanılan uygulamalar listesi.</li>
+        <li><strong>Modüller:</strong> Hedefler & XP, aktivite haritası, istatistikler, odak modu, projeler, öneriler ve kategoriler.</li>
+        <li><strong>Raporlama:</strong> CSV rapor dışa aktarma ve yeni program ekleme.</li>
+        <li><strong>Arayüz:</strong> Figma ile tasarlanan koyu tema, sidebar navigasyon ve kart tabanlı modern WPF arayüzü.</li>
+      </ul>
+      <h3>Teknoloji & süreç</h3>
+      <ul>
+        <li><strong>Geliştirme:</strong> C#, WPF (.NET Framework), Visual Studio.</li>
+        <li><strong>Tasarım:</strong> Figma ile arayüz tasarımı.</li>
+        <li><strong>Kod:</strong> Uygulama kodunun büyük bölümü Antigravity yapay zeka asistanı ile geliştirildi; proje yönetimi, test ve entegrasyon süreçlerinde aktif rol alındı.</li>
+      </ul>
+      <p class="project-modal-note"><i class="fa-solid fa-graduation-cap"></i> Görsel Programlama — vize dönemi masaüstü uygulama projesi (Time Tracker Plus v1.0).</p>
     </div>
   </template>
 
