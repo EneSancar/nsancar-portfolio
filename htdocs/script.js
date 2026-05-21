@@ -14,10 +14,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeaderScroll();
   initReveal();
   initSkillBars();
+  initStaggerRows();
   initGalleryPanels();
   initMovieShowcase();
   initProjectModal();
   setActiveNavLink();
+  initSpaceParticles();
+  initHeroEntrance();
 });
 
 /* ===== Navigation ===== */
@@ -99,6 +102,41 @@ function initReveal() {
   );
 
   reveals.forEach((el) => observer.observe(el));
+}
+
+/* ===== Staggered row reveals (skills, quick cards, contact) ===== */
+function initStaggerRows() {
+  const rows = [
+    { selector: ".skill-icons", visibleClass: "skill-icons--visible" },
+    { selector: ".cards-row", visibleClass: "cards-row--visible" },
+    { selector: ".contact-row", visibleClass: "contact-row--visible" },
+  ];
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  rows.forEach(({ selector, visibleClass }) => {
+    const row = document.querySelector(selector);
+    if (!row) return;
+
+    if (reducedMotion) {
+      row.classList.add(visibleClass);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            row.classList.add(visibleClass);
+            observer.unobserve(row);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -30px 0px" }
+    );
+
+    observer.observe(row);
+  });
 }
 
 /* ===== Skill bars ===== */
@@ -264,6 +302,142 @@ function initProjectModal() {
 
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+  });
+}
+
+/* ===== Hero entrance ===== */
+function initHeroEntrance() {
+  const hero = document.querySelector(".hero");
+  if (!hero) return;
+
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    hero.classList.add("is-ready");
+    return;
+  }
+
+  requestAnimationFrame(() => {
+    hero.classList.add("is-ready");
+  });
+}
+
+/* ===== Homepage space particles ===== */
+function initSpaceParticles() {
+  const canvas = document.getElementById("spaceParticles");
+  if (!canvas) return;
+
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const colors = ["#ffffff", "#c7d2fe", "#a5f3fc", "#e0e7ff", "#67e8f9"];
+  let width = 0;
+  let height = 0;
+  let particles = [];
+  let rafId = 0;
+  let running = true;
+  let mouseX = 0.5;
+  let mouseY = 0.5;
+
+  function particleCount() {
+    return window.innerWidth < 768 ? 48 : 90;
+  }
+
+  function createParticle() {
+    const depth = Math.random();
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      depth,
+      radius: 0.4 + depth * 1.8 + Math.random() * 0.8,
+      opacity: 0.15 + depth * 0.55,
+      vx: (Math.random() - 0.5) * (0.08 + depth * 0.22),
+      vy: (Math.random() - 0.5) * (0.08 + depth * 0.22),
+      twinkle: Math.random() * Math.PI * 2,
+      twinkleSpeed: 0.008 + Math.random() * 0.02,
+      color: colors[Math.floor(Math.random() * colors.length)],
+    };
+  }
+
+  function resize() {
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = Math.floor(width * dpr);
+    canvas.height = Math.floor(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    particles = Array.from({ length: particleCount() }, createParticle);
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    const parallaxX = (mouseX - 0.5) * 18;
+    const parallaxY = (mouseY - 0.5) * 18;
+
+    for (const p of particles) {
+      let x = p.x + parallaxX * (1 - p.depth);
+      let y = p.y + parallaxY * (1 - p.depth);
+
+      if (!reducedMotion) {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.twinkle += p.twinkleSpeed;
+
+        if (p.x < -10) p.x = width + 10;
+        if (p.x > width + 10) p.x = -10;
+        if (p.y < -10) p.y = height + 10;
+        if (p.y > height + 10) p.y = -10;
+      }
+
+      const twinkle = reducedMotion ? 1 : 0.65 + Math.sin(p.twinkle) * 0.35;
+      const alpha = p.opacity * twinkle;
+
+      ctx.beginPath();
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = alpha;
+      ctx.arc(x, y, p.radius, 0, Math.PI * 2);
+      ctx.fill();
+
+      if (p.depth > 0.72 && p.radius > 1.4) {
+        ctx.beginPath();
+        ctx.globalAlpha = alpha * 0.25;
+        ctx.arc(x, y, p.radius * 3.2, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    ctx.globalAlpha = 1;
+  }
+
+  function loop() {
+    if (!running) return;
+    draw();
+    rafId = requestAnimationFrame(loop);
+  }
+
+  resize();
+  loop();
+
+  window.addEventListener("resize", resize);
+
+  if (!reducedMotion) {
+    window.addEventListener(
+      "mousemove",
+      (e) => {
+        mouseX = e.clientX / width;
+        mouseY = e.clientY / height;
+      },
+      { passive: true }
+    );
+  }
+
+  document.addEventListener("visibilitychange", () => {
+    running = !document.hidden;
+    if (running) {
+      loop();
+    } else {
+      cancelAnimationFrame(rafId);
+    }
   });
 }
 
