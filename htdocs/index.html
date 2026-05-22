@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
+  <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 </head>
 <body class="page-home">
 
@@ -58,7 +59,14 @@
           </div>
         </div>
         <div class="hero-visual hero-enter hero-enter--visual">
-          <img src="image/1889851.png" alt="Web tasarım illüstrasyonu" width="380">
+          <div class="spline-wrapper">
+            <dotlottie-player
+              src="https://lottie.host/7ff72c14-3bb2-4ae8-9721-48d0c095141d/30UV3iqlkS.lottie"
+              background="transparent"
+              loop
+              autoplay>
+            </dotlottie-player>
+          </div>
         </div>
       </div>
     </section>
@@ -78,6 +86,51 @@
             <i class="fa-solid fa-circle-info"></i>
           </a>
         </article>
+      </div>
+    </section>
+
+    <section class="section section--now" id="now">
+      <div class="container reveal">
+        <span class="section-label">Canlı</span>
+        <h2 class="section-title">Şu An Ne Yapıyorum?</h2>
+        <div class="now-grid">
+          <div class="now-card">
+            <div class="now-card-icon">
+              <i class="fa-solid fa-music"></i>
+            </div>
+            <div class="now-card-body">
+              <span class="now-card-label">Dinliyorum</span>
+              <p class="now-card-value">Tame Impala — Let It Happen</p>
+            </div>
+            <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" class="now-card-link" title="Spotify'da aç">
+              <i class="fa-brands fa-spotify"></i>
+            </a>
+          </div>
+          <div class="now-card">
+            <div class="now-card-icon now-card-icon--code">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <div class="now-card-body">
+              <span class="now-card-label">Çalışıyorum</span>
+              <p class="now-card-value">nsancar.com — Portfolyo Güncellemesi</p>
+            </div>
+            <a href="project.html" class="now-card-link" title="Projelere git">
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="now-card">
+            <div class="now-card-icon now-card-icon--film">
+              <i class="fa-solid fa-film"></i>
+            </div>
+            <div class="now-card-body">
+              <span class="now-card-label">İzliyorum</span>
+              <p class="now-card-value">Severance — Season 2</p>
+            </div>
+            <span class="now-card-link now-card-link--static">
+              <i class="fa-solid fa-tv"></i>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -231,11 +284,11 @@
         <div class="gallery-split" id="gallerySplit">
           <div class="gallery-panel web expanded" id="webPanel">
             <h2>Web Design</h2>
-            <a href="gallery/index.html" class="panel-link" aria-label="Web tasarım galerisi"></a>
+            <a href="gallery/index.html?tab=web" class="panel-link" aria-label="Web tasarım galerisi"></a>
           </div>
           <div class="gallery-panel graphic" id="graphicPanel">
             <h2>Graphic Design</h2>
-            <a href="gallery/index.html" class="panel-link" aria-label="Grafik tasarım galerisi"></a>
+            <a href="gallery/index.html?tab=graphic" class="panel-link" aria-label="Grafik tasarım galerisi"></a>
           </div>
         </div>
       </div>
@@ -297,7 +350,7 @@
         <a href="services.html">Servisler</a>
         <a href="fav.html">Aktiviteler</a>
       </nav>
-      <p class="footer-copy">Copyright &copy; 2025 — Designed by <span class="designer">Enes Sancar</span></p>
+      <p class="footer-copy">Copyright &copy; 2026 — Designed by <span class="designer">Enes Sancar</span></p>
     </div>
   </footer>
 
