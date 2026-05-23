@@ -55,14 +55,20 @@ function initNav() {
 }
 
 function setActiveNavLink() {
-  const path = window.location.pathname.split("/").pop() || "index.html";
+  const path = window.location.pathname.replace(/\/$/, "") || "/";
+  const slugMap = {
+    "/hakkimda":    "/hakkimda",
+    "/projeler":    "/projeler",
+    "/servisler":   "/servisler",
+    "/aktiviteler": "/aktiviteler",
+  };
+  const currentSlug = slugMap[path] || path;
+
   document.querySelectorAll(".nav-links a").forEach((link) => {
     const href = link.getAttribute("href");
-    if (href === path || (path === "" && href === "index.html")) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+    const isHome = (href === "/" || href === "/index.html") && (path === "/" || path === "");
+    const isMatch = href === currentSlug || isHome;
+    link.classList.toggle("active", isMatch);
   });
 }
 
