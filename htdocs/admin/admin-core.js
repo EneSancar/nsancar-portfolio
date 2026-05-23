@@ -181,10 +181,40 @@ window.AdminCore = (function () {
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.message || data.error || `HTTP ${res.status}`);
 
-    state[tab] = payload;
-    if (tab === "about") writeAboutBackup(payload);
+    // Kritik: state referansını kırmadan, normalize edilmiş veriyi
+    // mevcut state objesine geri kopyala. Böylece UI'daki data
+    // referansı hâlâ aynı objeyi gösterir.
+    mergeInto(state[tab], payload);
+    if (tab === "about") writeAboutBackup(state[tab]);
 
-    return { ...data, payload };
+    return { ...data, payload: state[tab] };
+  }
+
+  /**
+   * target objesini payload ile in-place günceller.
+   * Referansı korur, böylece UI bağlamaları kopmaz.
+   */
+  function mergeInto(target, source) {
+    // Eski anahtarları temizle
+    for (const key of Object.keys(target)) {
+      if (!(key in source)) delete target[key];
+    }
+    // Yeni/değişen değerleri ata
+    for (const [key, val] of Object.entries(source)) {
+      if (Array.isArray(val)) {
+        // Diziyi in-place güncelle
+        if (!Array.isArray(target[key])) target[key] = [];
+        target[key].length = 0;
+        val.forEach(item => target[key].push(item));
+      } else if (val !== null && typeof val === "object") {
+        if (target[key] === null || typeof target[key] !== "object" || Array.isArray(target[key])) {
+          target[key] = {};
+        }
+        mergeInto(target[key], val);
+      } else {
+        target[key] = val;
+      }
+    }
   }
 
   function slugify(text) {

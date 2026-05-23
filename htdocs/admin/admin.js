@@ -90,7 +90,6 @@
 
     try {
       const data = await C.saveTab(C.state.tab);
-      renderActivePanel();
       showStatus(
         `Kaydedildi. Site ~30-60 sn içinde güncellenir.` +
           (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : "") +
