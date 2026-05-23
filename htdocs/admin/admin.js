@@ -12,10 +12,33 @@
   const statusEl = document.getElementById("adminStatus");
   const tabButtons = document.querySelectorAll("[data-tab]");
 
+  const AUTH_CHECK = "/api/auth-check";
+
   const endpoints = {
     about: { file: "data/about.json", api: "/api/about" },
     projects: { file: "data/projects.json", api: "/api/projects" },
   };
+
+  function authHeaders(secret) {
+    return {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${secret}`,
+      "X-Admin-Secret": secret,
+    };
+  }
+
+  async function verifySecret(secret) {
+    const res = await fetch(AUTH_CHECK, {
+      method: "GET",
+      headers: authHeaders(secret),
+    });
+    const data = await res.json().catch(() => ({}));
+    if (res.ok && data.ok) return { ok: true };
+    return {
+      ok: false,
+      message: data.message || `Sunucu yanıtı: HTTP ${res.status}`,
+    };
+  }
 
   function getSecret() {
     return sessionStorage.getItem(SESSION_KEY);
@@ -93,10 +116,7 @@
     try {
       const res = await fetch(api, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${secret}`,
-        },
+        headers: authHeaders(secret),
         body: JSON.stringify(payload),
       });
 
@@ -117,11 +137,25 @@
     }
   }
 
-  loginForm?.addEventListener("submit", (e) => {
+  loginForm?.addEventListener("submit", async (e) => {
     e.preventDefault();
     const secret = document.getElementById("adminSecret").value.trim();
     if (!secret) return;
+
+    const submitBtn = loginForm.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+    showStatus("Anahtar doğrulanıyor…", true);
+
+    const check = await verifySecret(secret);
+    if (submitBtn) submitBtn.disabled = false;
+
+    if (!check.ok) {
+      showStatus(check.message, false);
+      return;
+    }
+
     setSecret(secret);
+    clearStatus();
     showEditor();
   });
 

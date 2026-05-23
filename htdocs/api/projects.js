@@ -22,7 +22,7 @@ module.exports = async (req, res) => {
   }
 
   if (!isAuthorized(req)) {
-    sendUnauthorized(res);
+    sendUnauthorized(res, req);
     return;
   }
 

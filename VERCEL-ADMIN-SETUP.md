@@ -32,7 +32,12 @@ Vercel → proje → **Settings** → **Environment Variables**
 
 Kod push edildikten sonra Vercel otomatik deploy eder (`vercel.json` → `outputDirectory: htdocs`).
 
-## 5. İlk test
+## 5. Redeploy (önemli)
+
+Ortam değişkeni ekledikten sonra mutlaka **Deployments → son deploy → Redeploy** yap.  
+Aksi halde kayıt *"Geçersiz admin kimlik bilgisi"* hatası verir.
+
+## 6. İlk test
 
 1. `https://nsancar.com/about.html` — içerik JSON’dan geliyor mu?
 2. `https://nsancar.com/admin/` — `ADMIN_SECRET` ile giriş.
