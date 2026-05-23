@@ -431,12 +431,9 @@ function initSpaceParticles() {
   function draw() {
     ctx.clearRect(0, 0, width, height);
 
-    const parallaxX = (mouseX - 0.5) * 18;
-    const parallaxY = (mouseY - 0.5) * 18;
-
     for (const p of particles) {
-      let x = p.x + parallaxX * (1 - p.depth);
-      let y = p.y + parallaxY * (1 - p.depth);
+      let x = p.x;
+      let y = p.y;
 
       if (!reducedMotion) {
         p.x += p.vx;
@@ -479,17 +476,6 @@ function initSpaceParticles() {
   loop();
 
   window.addEventListener("resize", resize);
-
-  if (!reducedMotion) {
-    window.addEventListener(
-      "mousemove",
-      (e) => {
-        mouseX = e.clientX / width;
-        mouseY = e.clientY / height;
-      },
-      { passive: true }
-    );
-  }
 
   document.addEventListener("visibilitychange", () => {
     running = !document.hidden;
