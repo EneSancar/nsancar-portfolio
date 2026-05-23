@@ -36,7 +36,13 @@
       "sectionId": "uiux",
       "title": "CineForum",
       "description": "Sinema ve dizi tutkunları için topluluk odaklı, yapay zeka destekli sosyal mobil uygulama konsepti.",
-      "tags": ["Figma", "UI/UX", "Mobil", "AI", "Sosyal"],
+      "tags": [
+        "Figma",
+        "UI/UX",
+        "Mobil",
+        "AI",
+        "Sosyal"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/cineforum.png?v=2",
@@ -89,7 +95,13 @@
       "sectionId": "uiux",
       "title": "FotoEyes",
       "description": "Türkiye'nin coğrafyasını ve doğa harikalarını profesyonel fotoğrafçılık, keşif ve topluluk deneyimiyle sunan platform konsepti.",
-      "tags": ["Figma", "UI/UX", "Fotoğraf", "Harita", "Topluluk"],
+      "tags": [
+        "Figma",
+        "UI/UX",
+        "Fotoğraf",
+        "Harita",
+        "Topluluk"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/fotoeyes.png",
@@ -152,22 +164,41 @@
       "sectionId": "graphic",
       "title": "SuppWorld",
       "description": "Sporcu takviyeleri sektörü için hayali marka kimliği: logo, kartvizit ve reklam afişi tasarımları.",
-      "tags": ["Marka", "Logo", "Kartvizit", "Afiş"],
+      "tags": [
+        "Marka",
+        "Logo",
+        "Kartvizit",
+        "Afiş"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/suppworld-afis.png",
         "alt": "SuppWorld marka tasarımları önizlemesi"
       },
-      "buttons": { "detail": true },
+      "buttons": {
+        "detail": true
+      },
       "modal": {
         "badge": "Grafik Tasarım · Marka",
         "lead": "Sporcu takviyeleri sektöründe faaliyet gösteren; maksimum performansı, dinamik enerjiyi ve küresel güvenilirliği tek potada eriten modern, iddialı ve vizyoner bir marka konsepti.",
         "preview": {
           "type": "gallery",
           "images": [
-            { "src": "image/projects/suppworld-logo.png", "alt": "SuppWorld logo tasarımı", "caption": "Logo" },
-            { "src": "image/projects/suppworld-kartvizit.png", "alt": "SuppWorld kartvizit tasarımı", "caption": "Kartvizit" },
-            { "src": "image/projects/suppworld-afis.png", "alt": "SuppWorld reklam afişi", "caption": "Reklam afişi" }
+            {
+              "src": "image/projects/suppworld-logo.png",
+              "alt": "SuppWorld logo tasarımı",
+              "caption": "Logo"
+            },
+            {
+              "src": "image/projects/suppworld-kartvizit.png",
+              "alt": "SuppWorld kartvizit tasarımı",
+              "caption": "Kartvizit"
+            },
+            {
+              "src": "image/projects/suppworld-afis.png",
+              "alt": "SuppWorld reklam afişi",
+              "caption": "Reklam afişi"
+            }
           ]
         },
         "sections": [
@@ -197,13 +228,19 @@
       "sectionId": "graphic",
       "title": "Akım — Küresel Isınma",
       "description": "Küresel ısınmayı ve çevresel farkındalığı güçlü görsel metaforlarla anlatan afiş çalışması.",
-      "tags": ["Afiş", "Sosyal Sorumluluk", "İklim"],
+      "tags": [
+        "Afiş",
+        "Sosyal Sorumluluk",
+        "İklim"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/akim-afis.png",
         "alt": "Akım küresel ısınma afişi önizlemesi"
       },
-      "buttons": { "detail": true },
+      "buttons": {
+        "detail": true
+      },
       "modal": {
         "badge": "Grafik Tasarım · Afiş",
         "lead": "Küresel ısınmayı, iklim krizini ve çevresel sorumluluğu güçlü görsel dil ve tipografiyle ele alan sosyal farkındalık afişi.",
@@ -239,7 +276,12 @@
       "sectionId": "web",
       "title": "Smart Cargo",
       "description": "Kargo ve lojistik firması için çok sayfalı kurumsal web sitesi — hizmetler, şubeler ve iletişim.",
-      "tags": ["HTML", "CSS", "JavaScript", "Lojistik"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Lojistik"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/smart-cargo.png?v=3",
@@ -301,7 +343,12 @@
       "sectionId": "web",
       "title": "IKU Ders Notları",
       "description": "İstanbul Kültür Üniversitesi öğrencileri için ders kaynakları, arama ve karanlık mod destekli web uygulaması.",
-      "tags": ["HTML", "CSS", "JavaScript", "Eğitim"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Eğitim"
+      ],
       "thumbnail": {
         "type": "background",
         "src": "image/projects/iku-preview.png"
@@ -353,7 +400,12 @@
       "sectionId": "web",
       "title": "nsancar.com",
       "description": "Kişisel portfolyo — hero, yetenekler, hızlı erişim, proje vitrinleri ve iletişim bölümlerini tek sayfada sunan modern arayüz.",
-      "tags": ["HTML", "CSS", "JavaScript", "Portfolio"],
+      "tags": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "Portfolio"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/nsancar-preview.png?v=3",
@@ -412,7 +464,13 @@
       "sectionId": "desktop",
       "title": "Time Tracker Plus",
       "description": "Windows için program ve oyun kullanım süresini izleyen, üretkenlik skoru ve Pomodoro sunan koyu temalı masaüstü uygulaması.",
-      "tags": ["C#", "WPF", ".NET", "Visual Studio", "Figma"],
+      "tags": [
+        "C#",
+        "WPF",
+        ".NET",
+        "Visual Studio",
+        "Figma"
+      ],
       "thumbnail": {
         "type": "img",
         "src": "image/projects/time-tracker-plus.png",
@@ -420,12 +478,14 @@
         "width": 740,
         "height": 448
       },
-      "buttons": { "detail": true },
+      "buttons": {
+        "detail": true
+      },
       "modal": {
         "badge": "Masaüstü · WPF",
         "lead": "Görsel Programlama dersi kapsamında geliştirilen Windows masaüstü uygulaması; kullanım sürelerini izler, üretkenliği ölçer ve odaklanmayı destekler.",
         "preview": {
-          "type": "sharp",
+          "type": "single",
           "src": "image/projects/time-tracker-plus.png",
           "alt": "Time Tracker Plus dashboard ekranı",
           "width": 740,
@@ -466,6 +526,45 @@
           "label": "Proje raporunu görüntüle",
           "icon": "fa-solid fa-file-pdf",
           "href": "docs/time-tracker-plus-rapor.pdf",
+          "external": true
+        }
+      }
+    },
+    {
+      "id": "proje-1779561695106",
+      "sectionId": "uiux",
+      "title": "Yeni Proje",
+      "description": "aaaaaaaaaa",
+      "tags": [
+        "aaaa bbbb ccc"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/instagram-photoroom-1779561729146.png",
+        "alt": "fa"
+      },
+      "buttons": {
+        "detail": true
+      },
+      "modal": {
+        "badge": "",
+        "lead": "",
+        "preview": {
+          "type": "single",
+          "src": "image/projects/instagram-photoroom-1779561729146.png",
+          "alt": ""
+        },
+        "sections": [
+          {
+            "heading": "Proje tanımı",
+            "type": "paragraph",
+            "content": ""
+          }
+        ],
+        "cta": {
+          "label": "Bağlantı",
+          "icon": "fa-solid fa-link",
+          "href": "",
           "external": true
         }
       }
