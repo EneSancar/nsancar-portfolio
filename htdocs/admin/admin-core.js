@@ -149,6 +149,7 @@ window.AdminCore = (function () {
     SESSION_KEY,
     endpoints,
     state,
+    authHeaders,
     getSecret,
     setSecret,
     verifySecret,
