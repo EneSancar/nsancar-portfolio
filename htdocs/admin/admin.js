@@ -10,6 +10,7 @@
   const reloadBtn = document.getElementById("reloadBtn");
   const saveBtn = document.getElementById("saveBtn");
   const statusEl = document.getElementById("adminStatus");
+  const loginStatusEl = document.getElementById("loginStatus");
   const tabButtons = document.querySelectorAll("[data-tab]");
 
   const AUTH_CHECK = "/api/auth-check";
@@ -49,17 +50,20 @@
     else sessionStorage.removeItem(SESSION_KEY);
   }
 
-  function showStatus(message, ok) {
-    if (!statusEl) return;
-    statusEl.hidden = false;
-    statusEl.textContent = message;
-    statusEl.className = `admin-status ${ok ? "admin-status--ok" : "admin-status--err"}`;
+  function showStatus(message, ok, target) {
+    const el = target || statusEl;
+    if (!el) return;
+    el.hidden = false;
+    el.textContent = message;
+    el.className = `admin-status ${ok ? "admin-status--ok" : "admin-status--err"}`;
   }
 
   function clearStatus() {
-    if (!statusEl) return;
-    statusEl.hidden = true;
-    statusEl.textContent = "";
+    [statusEl, loginStatusEl].forEach((el) => {
+      if (!el) return;
+      el.hidden = true;
+      el.textContent = "";
+    });
   }
 
   function showEditor() {
@@ -144,13 +148,13 @@
 
     const submitBtn = loginForm.querySelector('button[type="submit"]');
     if (submitBtn) submitBtn.disabled = true;
-    showStatus("Anahtar doğrulanıyor…", true);
+    showStatus("Anahtar doğrulanıyor…", true, loginStatusEl);
 
     const check = await verifySecret(secret);
     if (submitBtn) submitBtn.disabled = false;
 
     if (!check.ok) {
-      showStatus(check.message, false);
+      showStatus(check.message, false, loginStatusEl);
       return;
     }
 
