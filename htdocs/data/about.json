@@ -30,20 +30,6 @@
       "period": "2019–2023",
       "location": "Bahçelievler, İstanbul",
       "department": "Web Programlama"
-    },
-    {
-      "id": "edu-1779559967306",
-      "school": "İstanbul Kent Üniversitesi ",
-      "period": "2024-2026",
-      "location": "Kağıthane, İstanbul",
-      "department": "Bilgisayar Programcılığı"
-    },
-    {
-      "id": "edu-1779563570300",
-      "school": "Aydın Ünivesitesi",
-      "period": "2026-2029",
-      "location": "Aydın",
-      "department": "Yönetim Bilişim Sistemleri"
     }
   ],
   "experience": [
