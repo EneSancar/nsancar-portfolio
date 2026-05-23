@@ -1,6 +1,6 @@
 {
   "profile": {
-    "name": "Enes Sancar",
+    "name": "Enes Sancar test",
     "title": "Front-End Developer",
     "photo": "image/enes-about.jpg",
     "photoAlt": "Enes Sancar — İstanbul Kent Üniversitesi ikincilik sertifikası",
@@ -71,5 +71,11 @@
     "Flutter & Dart",
     "WordPress"
   ],
-  "interests": ["Movies", "Music", "Tennis", "Games", "Photograph"]
+  "interests": [
+    "Movies",
+    "Music",
+    "Tennis",
+    "Games",
+    "Photograph"
+  ]
 }
