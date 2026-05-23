@@ -1,61 +1,25 @@
 (function () {
-  const SESSION_KEY = "nsancar_admin_secret";
+  const C = window.AdminCore;
 
   const loginView = document.getElementById("loginView");
-  const editorView = document.getElementById("editorView");
+  const dashboardView = document.getElementById("dashboardView");
   const loginForm = document.getElementById("loginForm");
   const logoutBtn = document.getElementById("logoutBtn");
-  const contentSelect = document.getElementById("contentSelect");
-  const jsonEditor = document.getElementById("jsonEditor");
-  const reloadBtn = document.getElementById("reloadBtn");
   const saveBtn = document.getElementById("saveBtn");
+  const reloadBtn = document.getElementById("reloadBtn");
   const statusEl = document.getElementById("adminStatus");
   const loginStatusEl = document.getElementById("loginStatus");
-  const tabButtons = document.querySelectorAll("[data-tab]");
-
-  const AUTH_CHECK = "/api/auth-check";
-
-  const endpoints = {
-    about: { file: "data/about.json", api: "/api/about" },
-    projects: { file: "data/projects.json", api: "/api/projects" },
-  };
-
-  function authHeaders(secret) {
-    return {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${secret}`,
-      "X-Admin-Secret": secret,
-    };
-  }
-
-  async function verifySecret(secret) {
-    const res = await fetch(AUTH_CHECK, {
-      method: "GET",
-      headers: authHeaders(secret),
-    });
-    const data = await res.json().catch(() => ({}));
-    if (res.ok && data.ok) return { ok: true };
-    return {
-      ok: false,
-      message: data.message || `Sunucu yanıtı: HTTP ${res.status}`,
-    };
-  }
-
-  function getSecret() {
-    return sessionStorage.getItem(SESSION_KEY);
-  }
-
-  function setSecret(value) {
-    if (value) sessionStorage.setItem(SESSION_KEY, value);
-    else sessionStorage.removeItem(SESSION_KEY);
-  }
+  const panelTitle = document.getElementById("panelTitle");
+  const panelAbout = document.getElementById("panelAbout");
+  const panelProjects = document.getElementById("panelProjects");
+  const navItems = document.querySelectorAll(".admin-nav-item[data-tab]");
 
   function showStatus(message, ok, target) {
     const el = target || statusEl;
     if (!el) return;
     el.hidden = false;
     el.textContent = message;
-    el.className = `admin-status ${ok ? "admin-status--ok" : "admin-status--err"}`;
+    el.className = `admin-toast ${ok ? "admin-toast--ok" : "admin-toast--err"}`;
   }
 
   function clearStatus() {
@@ -66,51 +30,52 @@
     });
   }
 
-  function showEditor() {
+  function renderActivePanel() {
+    const tab = C.state.tab;
+    panelTitle.textContent = C.endpoints[tab].title;
+    panelAbout.hidden = tab !== "about";
+    panelProjects.hidden = tab !== "projects";
+
+    if (tab === "about" && C.state.about) {
+      window.AdminAboutUI.render(panelAbout, C.state.about);
+    }
+    if (tab === "projects" && C.state.projects) {
+      window.AdminProjectsUI.render(panelProjects, C.state.projects);
+    }
+  }
+
+  async function loadDashboard() {
+    clearStatus();
+    saveBtn.disabled = true;
+    reloadBtn.disabled = true;
+    try {
+      await C.loadAll();
+      renderActivePanel();
+    } catch (err) {
+      showStatus(`Veri yüklenemedi: ${err.message}`, false);
+    } finally {
+      saveBtn.disabled = false;
+      reloadBtn.disabled = false;
+    }
+  }
+
+  function showDashboard() {
     loginView.hidden = true;
-    editorView.hidden = false;
-    loadCurrentJson();
+    dashboardView.hidden = false;
+    loadDashboard();
   }
 
   function showLogin() {
     loginView.hidden = false;
-    editorView.hidden = true;
+    dashboardView.hidden = true;
     clearStatus();
   }
 
-  async function loadCurrentJson() {
-    const key = contentSelect.value;
-    const { file } = endpoints[key];
-    clearStatus();
-    jsonEditor.value = "Yükleniyor…";
-
-    try {
-      const res = await fetch(`../${file}?v=${Date.now()}`, { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
-      jsonEditor.value = JSON.stringify(data, null, 2);
-    } catch (err) {
-      jsonEditor.value = "";
-      showStatus(`JSON yüklenemedi: ${err.message}`, false);
-    }
-  }
-
-  async function saveJson() {
-    const key = contentSelect.value;
-    const { api } = endpoints[key];
-    const secret = getSecret();
-
+  async function saveCurrent() {
+    const secret = C.getSecret();
     if (!secret) {
-      showStatus("Oturum süresi doldu. Tekrar giriş yapın.", false);
+      showStatus("Oturum kapalı. Tekrar giriş yapın.", false);
       showLogin();
-      return;
-    }
-
-    let payload;
-    try {
-      payload = JSON.parse(jsonEditor.value);
-    } catch {
-      showStatus("Geçersiz JSON. Lütfen sözdizimini kontrol edin.", false);
       return;
     }
 
@@ -118,19 +83,9 @@
     clearStatus();
 
     try {
-      const res = await fetch(api, {
-        method: "POST",
-        headers: authHeaders(secret),
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
-        throw new Error(data.message || data.error || `HTTP ${res.status}`);
-      }
-
+      const data = await C.saveTab(C.state.tab);
       showStatus(
-        "Kaydedildi. Vercel deploy başladıysa site ~30 sn içinde güncellenir." +
+        `Kaydedildi. Site birkaç saniye içinde güncellenir.` +
           (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : ""),
         true
       );
@@ -139,6 +94,14 @@
     } finally {
       saveBtn.disabled = false;
     }
+  }
+
+  function switchTab(tab) {
+    C.state.tab = tab;
+    navItems.forEach((btn) => {
+      btn.classList.toggle("is-active", btn.dataset.tab === tab);
+    });
+    renderActivePanel();
   }
 
   loginForm?.addEventListener("submit", async (e) => {
@@ -150,7 +113,7 @@
     if (submitBtn) submitBtn.disabled = true;
     showStatus("Anahtar doğrulanıyor…", true, loginStatusEl);
 
-    const check = await verifySecret(secret);
+    const check = await C.verifySecret(secret);
     if (submitBtn) submitBtn.disabled = false;
 
     if (!check.ok) {
@@ -158,29 +121,26 @@
       return;
     }
 
-    setSecret(secret);
+    C.setSecret(secret);
     clearStatus();
-    showEditor();
+    showDashboard();
   });
 
   logoutBtn?.addEventListener("click", () => {
-    setSecret(null);
+    C.setSecret(null);
     showLogin();
   });
 
-  contentSelect?.addEventListener("change", loadCurrentJson);
-  reloadBtn?.addEventListener("click", loadCurrentJson);
-  saveBtn?.addEventListener("click", saveJson);
+  saveBtn?.addEventListener("click", saveCurrent);
+  reloadBtn?.addEventListener("click", loadDashboard);
 
-  tabButtons.forEach((btn) => {
+  navItems.forEach((btn) => {
     btn.addEventListener("click", () => {
-      tabButtons.forEach((b) => b.classList.remove("is-active"));
-      btn.classList.add("is-active");
-      contentSelect.value = btn.dataset.tab;
-      loadCurrentJson();
+      if (!btn.dataset.tab) return;
+      switchTab(btn.dataset.tab);
     });
   });
 
-  if (getSecret()) showEditor();
+  if (C.getSecret()) showDashboard();
   else showLogin();
 })();

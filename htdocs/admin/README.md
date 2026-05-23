@@ -1,6 +1,11 @@
 # nsancar.com Admin Panel (v1)
 
-Hakkımda (`data/about.json`) ve Projeler (`data/projects.json`) içeriğini düzenlemek için basit bir arayüz. Kayıtlar tarayıcıdan **doğrudan GitHub’a değil**, Vercel serverless API üzerinden yapılır; `GITHUB_TOKEN` yalnızca sunucu ortam değişkeninde tutulur.
+Hakkımda (`data/about.json`) ve Projeler (`data/projects.json`) içeriğini **form tabanlı** modern panelden düzenle. Kayıtlar tarayıcıdan **doğrudan GitHub’a değil**, Vercel serverless API üzerinden yapılır; `GITHUB_TOKEN` yalnızca sunucu ortam değişkeninde tutulur.
+
+## Arayüz
+
+- **Hakkımda:** profil, sosyal linkler, eğitim, deneyim, yetenekler, ilgi alanları
+- **Projeler:** sayfa başlığı, proje listesi, kart/modal alanları, içerik bölümleri ekle-sil
 
 ## Vercel ortam değişkenleri
 
