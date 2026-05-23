@@ -56,13 +56,42 @@ window.AdminCore = (function () {
     return state;
   }
 
+  function normalizeAboutPayload(payload) {
+    const data = JSON.parse(JSON.stringify(payload));
+    data.profile = data.profile || {};
+    data.profile.social = Array.isArray(data.profile.social) ? data.profile.social : [];
+    data.education = Array.isArray(data.education) ? data.education : [];
+    data.experience = Array.isArray(data.experience) ? data.experience : [];
+    data.skills = Array.isArray(data.skills) ? data.skills : [];
+    data.interests = Array.isArray(data.interests) ? data.interests : [];
+
+    data.education.forEach((edu, i) => {
+      if (!edu.id) edu.id = `edu-${i}-${Date.now()}`;
+    });
+    data.experience.forEach((exp, i) => {
+      if (!exp.id) exp.id = `exp-${i}-${Date.now()}`;
+    });
+
+    return data;
+  }
+
   function cleanProjectsPayload(payload) {
-    payload.projects.forEach((p) => {
+    const data = JSON.parse(JSON.stringify(payload));
+    data.sections = Array.isArray(data.sections) ? data.sections : [];
+    data.projects = Array.isArray(data.projects) ? data.projects : [];
+    data.hero = data.hero || { label: "", title: "", subtitle: "" };
+
+    data.projects.forEach((p) => {
+      if (!p.thumbnail) p.thumbnail = { type: "img", src: "", alt: "" };
+      if (!p.modal) p.modal = { badge: "", lead: "", sections: [] };
+      if (!Array.isArray(p.modal.sections)) p.modal.sections = [];
+      if (!Array.isArray(p.tags)) p.tags = [];
       if (p.buttons?.secondary && !String(p.buttons.secondary.href || "").trim()) {
         delete p.buttons.secondary;
       }
     });
-    return payload;
+
+    return data;
   }
 
   async function saveTab(tab) {
@@ -70,9 +99,14 @@ window.AdminCore = (function () {
     if (!secret) throw new Error("Oturum kapalı. Tekrar giriş yapın.");
 
     const { api } = endpoints[tab];
-    let payload = state[tab];
-    if (!payload) throw new Error("Veri yüklenmedi.");
-    if (tab === "projects") payload = cleanProjectsPayload(JSON.parse(JSON.stringify(payload)));
+    if (!state[tab]) throw new Error("Veri yüklenmedi.");
+
+    let payload =
+      tab === "projects"
+        ? cleanProjectsPayload(state[tab])
+        : tab === "about"
+          ? normalizeAboutPayload(state[tab])
+          : state[tab];
 
     const res = await fetch(api, {
       method: "POST",

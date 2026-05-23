@@ -1,9 +1,10 @@
 (function () {
   const DATA_URL = "data/projects.json";
+  const SC = window.SiteContent;
 
   function escapeHtml(text) {
     const div = document.createElement("div");
-    div.textContent = text;
+    div.textContent = text ?? "";
     return div.innerHTML;
   }
 
@@ -11,8 +12,14 @@
     const thumb = document.createElement("div");
     thumb.className = "project-card-thumb";
 
+    if (!thumbnail?.src) {
+      thumb.classList.add("project-card-thumb--placeholder");
+      thumb.innerHTML = '<i class="fa-solid fa-image" aria-hidden="true"></i>';
+      return thumb;
+    }
+
     if (thumbnail.type === "background") {
-      thumb.style.backgroundImage = `url('${thumbnail.src}')`;
+      thumb.style.backgroundImage = `url('${escapeHtml(thumbnail.src)}')`;
       return thumb;
     }
 
@@ -61,21 +68,12 @@
       hasActions = true;
     }
 
-    if (!hasActions && project.buttons?.detail !== false) {
-      const detailBtn = document.createElement("button");
-      detailBtn.type = "button";
-      detailBtn.className = "project-card-link project-detail-btn";
-      detailBtn.dataset.project = project.id;
-      detailBtn.innerHTML = 'Detayları gör <i class="fa-solid fa-circle-info"></i>';
-      return detailBtn;
-    }
-
     return hasActions ? actions : null;
   }
 
   function buildCard(project, section) {
     const article = document.createElement("article");
-    article.className = `project-card ${section.cardClass} reveal`;
+    article.className = `project-card ${section.cardClass || ""} reveal`.trim();
 
     article.appendChild(buildThumb(project.thumbnail));
 
@@ -84,11 +82,13 @@
 
     const tags = document.createElement("div");
     tags.className = "project-card-tags";
-    tags.innerHTML = (project.tags || []).map((tag) => `<span>${escapeHtml(tag)}</span>`).join("");
+    tags.innerHTML = SC.asArray(project.tags)
+      .map((tag) => `<span>${escapeHtml(tag)}</span>`)
+      .join("");
     body.appendChild(tags);
 
     const title = document.createElement("h3");
-    title.textContent = project.title;
+    title.textContent = project.title || "";
     body.appendChild(title);
 
     const desc = document.createElement("p");
@@ -96,19 +96,15 @@
     body.appendChild(desc);
 
     const actions = buildCardActions(project);
-    if (actions) {
-      if (actions.classList?.contains("project-card-actions")) {
-        body.appendChild(actions);
-      } else {
-        body.appendChild(actions);
-      }
-    }
+    if (actions) body.appendChild(actions);
 
     article.appendChild(body);
     return article;
   }
 
   function buildModalPreview(preview) {
+    if (!preview) return null;
+
     if (preview.type === "gallery" && Array.isArray(preview.images)) {
       const gallery = document.createElement("div");
       gallery.className = "project-modal-gallery";
@@ -120,6 +116,8 @@
       });
       return gallery;
     }
+
+    if (!preview.src) return null;
 
     const wrap = document.createElement("div");
     wrap.className = "project-modal-preview";
@@ -139,20 +137,20 @@
   function buildModalTemplate(project) {
     const tpl = document.createElement("template");
     tpl.id = `project-detail-${project.id}`;
-    const modal = project.modal;
+    const modal = project.modal || {};
 
     const header = document.createElement("div");
     header.className = "project-modal-header";
     header.innerHTML = `
-      <span class="project-modal-badge">${modal.badge || ""}</span>
+      <span class="project-modal-badge">${escapeHtml(modal.badge || "")}</span>
       <h2 id="projectModalTitle">${escapeHtml(project.title)}</h2>
-      <p class="project-modal-lead">${modal.lead || ""}</p>
+      <p class="project-modal-lead">${escapeHtml(modal.lead || "")}</p>
     `;
 
     const body = document.createElement("div");
     body.className = "project-modal-body";
 
-    (modal.sections || []).forEach((section) => {
+    SC.asArray(modal.sections).forEach((section) => {
       if (section.heading) {
         const h3 = document.createElement("h3");
         h3.textContent = section.heading;
@@ -191,10 +189,25 @@
 
     const fragment = document.createDocumentFragment();
     fragment.appendChild(header);
-    if (modal.preview) fragment.appendChild(buildModalPreview(modal.preview));
+    const previewEl = buildModalPreview(modal.preview);
+    if (previewEl) fragment.appendChild(previewEl);
     fragment.appendChild(body);
     tpl.content.appendChild(fragment);
     return tpl;
+  }
+
+  function renderHero(hero) {
+    if (!hero) return;
+    const heroEl = document.querySelector(".projects-hero");
+    if (!heroEl) return;
+
+    const heroLabel = heroEl.querySelector(".section-label");
+    const heroTitle = heroEl.querySelector("h1");
+    const heroSubtitle = heroEl.querySelector("p");
+
+    if (heroLabel) heroLabel.textContent = hero.label || "";
+    if (heroTitle) heroTitle.textContent = hero.title || "";
+    if (heroSubtitle) heroSubtitle.textContent = hero.subtitle || "";
   }
 
   function renderProjects(data) {
@@ -202,31 +215,38 @@
     const templatesHost = document.getElementById("projectTemplates");
     if (!container || !templatesHost) return;
 
-    if (data.hero) {
-      const heroTitle = document.querySelector(".projects-hero h1");
-      const heroLabel = document.querySelector(".projects-hero .section-label");
-      const heroSubtitle = document.querySelector(".projects-hero p");
-      if (heroLabel && data.hero.label) heroLabel.textContent = data.hero.label;
-      if (heroTitle && data.hero.title) heroTitle.textContent = data.hero.title;
-      if (heroSubtitle && data.hero.subtitle) heroSubtitle.textContent = data.hero.subtitle;
-    }
+    renderHero(data.hero);
 
     container.innerHTML = "";
     templatesHost.innerHTML = "";
 
+    const sections = SC.asArray(data.sections);
+    const projects = SC.asArray(data.projects);
+    const sectionIds = new Set(sections.map((s) => s.id));
+
     const projectsBySection = {};
-    data.projects.forEach((project) => {
-      if (!projectsBySection[project.sectionId]) projectsBySection[project.sectionId] = [];
-      projectsBySection[project.sectionId].push(project);
+    const orphanProjects = [];
+
+    projects.forEach((project) => {
+      const sid = project.sectionId;
+      if (!sid || !sectionIds.has(sid)) {
+        orphanProjects.push(project);
+        return;
+      }
+      if (!projectsBySection[sid]) projectsBySection[sid] = [];
+      projectsBySection[sid].push(project);
     });
 
-    data.sections.forEach((section) => {
+    let renderedAny = false;
+
+    sections.forEach((section) => {
       const sectionProjects = projectsBySection[section.id] || [];
       if (!sectionProjects.length) return;
+      renderedAny = true;
 
       const sectionEl = document.createElement("section");
       sectionEl.className = "projects-section reveal";
-      sectionEl.innerHTML = `<h2 class="projects-section-title"><i class="${escapeHtml(section.icon)}"></i> ${escapeHtml(section.title)}</h2>`;
+      sectionEl.innerHTML = `<h2 class="projects-section-title"><i class="${escapeHtml(section.icon || "fa-solid fa-folder")}"></i> ${escapeHtml(section.title)}</h2>`;
 
       const grid = document.createElement("div");
       grid.className = "project-grid";
@@ -239,6 +259,30 @@
       container.appendChild(sectionEl);
     });
 
+    if (orphanProjects.length) {
+      renderedAny = true;
+      const sectionEl = document.createElement("section");
+      sectionEl.className = "projects-section reveal";
+      sectionEl.innerHTML = `<h2 class="projects-section-title"><i class="fa-solid fa-folder-open"></i> Diğer</h2>`;
+      const grid = document.createElement("div");
+      grid.className = "project-grid";
+      const fallbackSection = { cardClass: "project-card--dev" };
+      orphanProjects.forEach((project) => {
+        grid.appendChild(buildCard(project, fallbackSection));
+        templatesHost.appendChild(buildModalTemplate(project));
+      });
+      sectionEl.appendChild(grid);
+      container.appendChild(sectionEl);
+    }
+
+    if (!renderedAny) {
+      const empty = document.createElement("p");
+      empty.className = "content-empty";
+      empty.style.padding = "2rem 0";
+      empty.textContent = "Henüz proje eklenmedi.";
+      container.appendChild(empty);
+    }
+
     if (typeof window.nsancarInitProjectModal === "function") {
       window.nsancarInitProjectModal();
     }
@@ -249,14 +293,16 @@
 
   async function loadProjects() {
     const container = document.getElementById("projectsContainer");
+    const page = document.querySelector(".projects-page");
     if (!container) return;
 
     try {
-      const res = await fetch(DATA_URL);
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      const data = await res.json();
+      const data = await SC.fetchJson(DATA_URL);
       renderProjects(data);
+      page?.classList.remove("projects-page--loading");
+      page?.classList.add("is-ready");
     } catch (err) {
+      page?.classList.remove("projects-page--loading");
       const fallback = document.getElementById("projectsFallback");
       if (fallback) fallback.hidden = false;
       console.error("projects.json yüklenemedi:", err);

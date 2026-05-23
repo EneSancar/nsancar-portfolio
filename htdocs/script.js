@@ -87,23 +87,35 @@ function initHeaderScroll() {
 }
 
 /* ===== Scroll reveal ===== */
-function initReveal() {
-  const reveals = document.querySelectorAll(".reveal");
-  if (!reveals.length) return;
+let nsancarRevealObserver = null;
 
-  const observer = new IntersectionObserver(
+function getRevealObserver() {
+  if (nsancarRevealObserver) return nsancarRevealObserver;
+
+  nsancarRevealObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
+          nsancarRevealObserver.unobserve(entry.target);
         }
       });
     },
     { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
   );
 
-  reveals.forEach((el) => observer.observe(el));
+  return nsancarRevealObserver;
+}
+
+function initReveal() {
+  const reveals = document.querySelectorAll(".reveal:not([data-reveal-bound])");
+  if (!reveals.length) return;
+
+  const observer = getRevealObserver();
+  reveals.forEach((el) => {
+    el.dataset.revealBound = "1";
+    observer.observe(el);
+  });
 }
 
 /* ===== Staggered row reveals (skills, quick cards, contact) ===== */

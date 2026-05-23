@@ -1438,10 +1438,45 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   font-size: 0.95rem;
 }
 
-.info-block .education-entry + .education-entry {
+.info-block .education-entry + .education-entry,
+.info-block .experience-entry + .experience-entry {
   margin-top: 1.25rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--border);
+}
+
+.content-empty,
+.content-loading-text {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.about-content-col--loading .info-block .reveal,
+.about-layout--loading .about-content-col {
+  opacity: 0;
+}
+
+.about-layout.is-ready .about-content-col {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.projects-page--loading .projects-hero {
+  opacity: 0;
+}
+
+.projects-page.is-ready .projects-hero {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.project-card-thumb--placeholder {
+  display: grid;
+  place-items: center;
+  min-height: 160px;
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-muted);
+  font-size: 2rem;
 }
 
 .info-block h3 {
