@@ -64,9 +64,12 @@ npx vercel dev
 
 Kayıt sonrası GitHub commit → Vercel yeniden deploy (~30 sn).
 
+## Görsel yükleme
+
+Profil ve proje görsellerinde **Dosya seç & yükle** — dosya GitHub `htdocs/image/` veya `htdocs/image/projects/` altına gider. Vercel’de `GITHUB_SITE_PREFIX=htdocs/` gerekir.
+
 ## v2 planı
 
-- Sekmeli form arayüzü (JSON editör yerine)
-- Görsel yükleme (GitHub Contents API)
+- Görsel kırpma / önizleme boyutu
 - Ana sayfa ve `fav.html` / aktiviteler JSON
 - Deploy durumu göstergesi

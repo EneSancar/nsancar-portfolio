@@ -569,6 +569,55 @@
   width: auto;
 }
 
+/* Image upload */
+.image-upload-row {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.image-upload-preview {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 10px;
+  border: 1px dashed var(--admin-border);
+  background: rgba(0, 0, 0, 0.25);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.image-upload-preview:not(.has-image)::after {
+  content: "?";
+  color: var(--admin-muted);
+  font-size: 1.25rem;
+}
+
+.image-upload-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+}
+
+.image-upload-preview.has-image img {
+  display: block;
+}
+
+.image-upload-controls {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.image-upload-status {
+  margin: 0;
+  min-height: 1.2em;
+}
+
 [hidden] {
   display: none !important;
 }

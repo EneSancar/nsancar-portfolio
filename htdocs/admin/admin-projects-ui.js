@@ -196,8 +196,20 @@ window.AdminProjectsUI = (function () {
     t.type = "img";
 
     const srcIn = C.input("text", t.src, "image/projects/...");
-    bindInput(srcIn, (v) => { t.src = v; if (project.modal?.preview) project.modal.preview.src = v; });
-    body.appendChild(C.field("Görsel yolu", srcIn));
+    bindInput(srcIn, (v) => {
+      t.src = v;
+      if (project.modal?.preview) project.modal.preview.src = v;
+    });
+    body.appendChild(
+      window.AdminUpload.attachImageField({
+        label: "Kapak görseli",
+        pathInput: srcIn,
+        folder: "image/projects",
+        onUploaded: (path) => {
+          if (project.modal?.preview) project.modal.preview.src = path;
+        },
+      })
+    );
 
     const altIn = C.input("text", t.alt);
     bindInput(altIn, (v) => { t.alt = v; });
@@ -259,7 +271,13 @@ window.AdminProjectsUI = (function () {
     m.preview.type = "single";
     const prevSrc = C.input("text", m.preview.src || project.thumbnail?.src || "");
     bindInput(prevSrc, (v) => { m.preview.src = v; });
-    body.appendChild(C.field("Modal görsel yolu", prevSrc));
+    body.appendChild(
+      window.AdminUpload.attachImageField({
+        label: "Modal görseli",
+        pathInput: prevSrc,
+        folder: "image/projects",
+      })
+    );
 
     const cta = m.cta || (m.cta = { label: "", href: "", icon: "fa-solid fa-link", external: true });
     const ctaLabel = C.input("text", cta.label || "");

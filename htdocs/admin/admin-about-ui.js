@@ -26,7 +26,14 @@ window.AdminAboutUI = (function () {
 
     const photoIn = C.input("text", p.photo, "image/enes-about.jpg");
     bindInput(photoIn, (v) => { p.photo = v; });
-    profileCard.appendChild(C.field("Fotoğraf yolu", photoIn, "Site köküne göre, örn. image/enes-about.jpg"));
+    profileCard.appendChild(
+      window.AdminUpload.attachImageField({
+        label: "Profil fotoğrafı",
+        pathInput: photoIn,
+        folder: "image",
+        hint: "Dosya seçince GitHub’a yüklenir; yol otomatik dolar.",
+      })
+    );
 
     const photoAltIn = C.input("text", p.photoAlt);
     bindInput(photoAltIn, (v) => { p.photoAlt = v; });

@@ -3,13 +3,14 @@ function getGithubConfig() {
   const repo = process.env.GITHUB_REPO;
   const token = process.env.GITHUB_TOKEN;
   const branch = process.env.GITHUB_BRANCH || "main";
-  const pathPrefix = process.env.GITHUB_PATH_PREFIX || "data/";
+  const pathPrefix = process.env.GITHUB_PATH_PREFIX || "htdocs/data/";
+  const sitePrefix = process.env.GITHUB_SITE_PREFIX || "htdocs/";
 
   if (!owner || !repo || !token) {
     return { error: "missing_github_config" };
   }
 
-  return { owner, repo, token, branch, pathPrefix };
+  return { owner, repo, token, branch, pathPrefix, sitePrefix };
 }
 
 async function getFileMeta({ owner, repo, token, branch }, filePath) {
@@ -35,27 +36,26 @@ async function getFileMeta({ owner, repo, token, branch }, filePath) {
   return { sha: data.sha };
 }
 
-async function writeJsonFile(fileName, payload, commitMessage) {
+async function writeFileContent(filePath, contentBase64, commitMessage) {
   const config = getGithubConfig();
   if (config.error) {
     return { ok: false, status: 500, body: { error: config.error, message: "GitHub ortam değişkenleri eksik." } };
   }
 
-  const filePath = `${config.pathPrefix}${fileName}`.replace(/\/{2,}/g, "/");
-  const content = Buffer.from(JSON.stringify(payload, null, 2) + "\n", "utf8").toString("base64");
+  const normalized = filePath.replace(/\/{2,}/g, "/");
 
   let sha = null;
   try {
-    const meta = await getFileMeta(config, filePath);
+    const meta = await getFileMeta(config, normalized);
     sha = meta.sha;
   } catch (err) {
     return { ok: false, status: 502, body: { error: "github_read_failed", message: err.message } };
   }
 
-  const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${encodeURIComponent(filePath)}`;
+  const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${encodeURIComponent(normalized)}`;
   const body = {
-    message: commitMessage || `admin: update ${fileName}`,
-    content,
+    message: commitMessage || `admin: update ${normalized}`,
+    content: contentBase64,
     branch: config.branch,
   };
   if (sha) body.sha = sha;
@@ -85,11 +85,32 @@ async function writeJsonFile(fileName, payload, commitMessage) {
     status: 200,
     body: {
       ok: true,
-      path: filePath,
+      path: normalized,
       commit: data.commit?.sha || null,
       html_url: data.content?.html_url || null,
     },
   };
 }
 
-module.exports = { getGithubConfig, writeJsonFile };
+async function writeJsonFile(fileName, payload, commitMessage) {
+  const config = getGithubConfig();
+  if (config.error) {
+    return { ok: false, status: 500, body: { error: config.error, message: "GitHub ortam değişkenleri eksik." } };
+  }
+
+  const filePath = `${config.pathPrefix}${fileName}`.replace(/\/{2,}/g, "/");
+  const content = Buffer.from(JSON.stringify(payload, null, 2) + "\n", "utf8").toString("base64");
+  return writeFileContent(filePath, content, commitMessage || `admin: update ${fileName}`);
+}
+
+async function writeSiteFile(relativePath, contentBase64, commitMessage) {
+  const config = getGithubConfig();
+  if (config.error) {
+    return { ok: false, status: 500, body: { error: config.error, message: "GitHub ortam değişkenleri eksik." } };
+  }
+
+  const filePath = `${config.sitePrefix}${relativePath}`.replace(/\/{2,}/g, "/");
+  return writeFileContent(filePath, contentBase64, commitMessage || `admin: upload ${relativePath}`);
+}
+
+module.exports = { getGithubConfig, writeJsonFile, writeSiteFile };

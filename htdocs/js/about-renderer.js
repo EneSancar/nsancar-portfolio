@@ -43,14 +43,19 @@
     }
 
     const educationBlock = container.querySelector("[data-about-education]");
-    if (educationBlock && data.education.length) {
-      const edu = data.education[0];
-      const h3 = educationBlock.querySelector("h3");
-      const p = educationBlock.querySelector("p");
-      if (h3) h3.textContent = `${edu.school} / ${edu.period}`;
-      if (p) {
-        p.textContent = `${edu.location}${edu.department ? ` — Bölüm: ${edu.department}` : ""}`;
-      }
+    if (educationBlock) {
+      educationBlock.querySelectorAll(".education-entry").forEach((el) => el.remove());
+      data.education.forEach((edu) => {
+        const entry = document.createElement("div");
+        entry.className = "education-entry";
+        const h3 = document.createElement("h3");
+        h3.textContent = `${edu.school} / ${edu.period}`;
+        const p = document.createElement("p");
+        const dept = edu.department ? ` — Bölüm: ${edu.department}` : "";
+        p.textContent = `${edu.location || ""}${dept}`.trim() || "—";
+        entry.append(h3, p);
+        educationBlock.appendChild(entry);
+      });
     }
 
     const experienceBlock = container.querySelector("[data-about-experience]");
@@ -74,7 +79,7 @@
     if (!root) return;
 
     try {
-      const res = await fetch(DATA_URL);
+      const res = await fetch(`${DATA_URL}?v=${Date.now()}`, { cache: "no-store" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
 
