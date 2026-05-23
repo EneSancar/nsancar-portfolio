@@ -1,0 +1,474 @@
+{
+  "hero": {
+    "label": "Portfolyo",
+    "title": "Projelerim",
+    "subtitle": "UI/UX tasarımları, grafik tasarım, web ve masaüstü geliştirme projelerimden bir seçki."
+  },
+  "sections": [
+    {
+      "id": "uiux",
+      "title": "UI/UX Tasarımları",
+      "icon": "fa-brands fa-figma",
+      "cardClass": "project-card--figma"
+    },
+    {
+      "id": "graphic",
+      "title": "Grafik Tasarım",
+      "icon": "fa-solid fa-palette",
+      "cardClass": "project-card--graphic"
+    },
+    {
+      "id": "web",
+      "title": "Web & Geliştirme",
+      "icon": "fa-solid fa-code",
+      "cardClass": "project-card--dev"
+    },
+    {
+      "id": "desktop",
+      "title": "Masaüstü Uygulamalar",
+      "icon": "fa-solid fa-desktop",
+      "cardClass": "project-card--desktop"
+    }
+  ],
+  "projects": [
+    {
+      "id": "cineforum",
+      "sectionId": "uiux",
+      "title": "CineForum",
+      "description": "Sinema ve dizi tutkunları için topluluk odaklı, yapay zeka destekli sosyal mobil uygulama konsepti.",
+      "tags": ["Figma", "UI/UX", "Mobil", "AI", "Sosyal"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/cineforum.png?v=2",
+        "alt": "CineForum arayüz önizlemesi"
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Figma'da aç",
+          "icon": "fa-brands fa-figma",
+          "href": "https://www.figma.com/design/cIKG0HpM5bIbO0JzNK9z6y/CINEFORUM?node-id=0-1",
+          "external": true
+        }
+      },
+      "modal": {
+        "badge": "UI/UX · Figma",
+        "lead": "Sinema ve dizi tutkunlarını tek çatı altında toplayan, topluluk odaklı ve yapay zeka destekli sosyal mobil uygulama.",
+        "preview": {
+          "type": "single",
+          "src": "image/projects/cineforum.png?v=2",
+          "alt": "CineForum mobil arayüz tasarımı"
+        },
+        "sections": [
+          {
+            "heading": "Proje tanımı",
+            "type": "paragraph",
+            "content": "CineForum, kullanıcıların sadece içerik tüketmesini değil, aynı zamanda bu içerikler etrafında aktif bir topluluk oluşturmasını hedefler."
+          },
+          {
+            "heading": "Temel özellikler",
+            "type": "list",
+            "items": [
+              "<strong>Topluluk ve tartışma:</strong> Favori film ve diziler hakkında başlık açma, yorum yapma ve fikir alışverişi.",
+              "<strong>Akıllı öneriler:</strong> Yapay zeka ile izleme alışkanlıklarına göre kişiselleştirilmiş film ve dizi tavsiyeleri.",
+              "<strong>Zengin içerik kütüphanesi:</strong> Güncel veritabanı, detaylı yapım bilgileri, oyuncu kadroları ve fragmanlar.",
+              "<strong>Modern deneyim:</strong> Kullanıcı dostu, estetik ve akıcı arayüz ile sinema keşfi."
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Figma dosyasını aç",
+          "icon": "fa-brands fa-figma",
+          "href": "https://www.figma.com/design/cIKG0HpM5bIbO0JzNK9z6y/CINEFORUM?node-id=0-1",
+          "external": true
+        }
+      }
+    },
+    {
+      "id": "fotoeyes",
+      "sectionId": "uiux",
+      "title": "FotoEyes",
+      "description": "Türkiye'nin coğrafyasını ve doğa harikalarını profesyonel fotoğrafçılık, keşif ve topluluk deneyimiyle sunan platform konsepti.",
+      "tags": ["Figma", "UI/UX", "Fotoğraf", "Harita", "Topluluk"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/fotoeyes.png",
+        "alt": "FotoEyes arayüz önizlemesi"
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Figma'da aç",
+          "icon": "fa-brands fa-figma",
+          "href": "https://www.figma.com/design/8Z9NWtoilOiqpy0AnFBrNg/Beauty-of-T%C3%BCrkiye?node-id=0-1",
+          "external": true
+        }
+      },
+      "modal": {
+        "badge": "UI/UX · Figma",
+        "lead": "Türkiye'nin zengin coğrafyasını ve saklı kalmış doğa harikalarını vizör arkasından dijital dünyaya taşıyan fotoğrafçılık, keşif ve topluluk platformu.",
+        "preview": {
+          "type": "single",
+          "src": "image/projects/fotoeyes.png",
+          "alt": "FotoEyes web arayüz tasarımı"
+        },
+        "sections": [
+          {
+            "heading": "Genel konsept",
+            "type": "paragraph",
+            "content": "FotoEyes, yalnızca bir galeri değil; fotoğrafları EXIF verileri ve coğrafi konumlarıyla belgeleyen yaşayan bir dijital kütüphanedir. Gezginlerin ve fotoğrafçıların karelerini keşif rotalarına dönüştürür; Unsplash, Pinterest ve 500px'in güçlü yönlerini yerel ve işlevsel bir dokuyla bir araya getirir."
+          },
+          {
+            "heading": null,
+            "type": "paragraph",
+            "content": "<em>«Doğayı tanıdıkça sever, sevdikçe koruruz»</em> manifestosuyla ekolojik farkındalık ve sürdürülebilirliği desteklemeyi hedefler."
+          },
+          {
+            "heading": "Temel özellikler",
+            "type": "list",
+            "items": [
+              "<strong>Kişisel dijital portfolyo:</strong> Yüksek kalitede fotoğraf yükleme ve şık profil sayfası ile dijital kartvizit.",
+              "<strong>Paylaşılabilir profil bağlantıları:</strong> <code>fotoeyes.com/kullaniciadi</code> formatında LinkedIn ve sosyal çevrede kolay paylaşım.",
+              "<strong>Gelişmiş filtreleme ve EXIF:</strong> Kamera, lens, diyafram, enstantane ve ISO bilgileri; şehir, bölge ve ekipman bazlı arama.",
+              "<strong>İnteraktif keşif haritası:</strong> Geotagging ile çekim noktası ve açının Türkiye haritasında görüntülenmesi."
+            ]
+          },
+          {
+            "heading": "Tasarım dili",
+            "type": "paragraph",
+            "content": "Koyu bordo gradient hero, sarı vurgu butonları ve klasik–modern tipografi karışımı; keşif ve sanat odaklı premium bir web deneyimi."
+          }
+        ],
+        "cta": {
+          "label": "Figma dosyasını aç",
+          "icon": "fa-brands fa-figma",
+          "href": "https://www.figma.com/design/8Z9NWtoilOiqpy0AnFBrNg/Beauty-of-T%C3%BCrkiye?node-id=0-1",
+          "external": true
+        }
+      }
+    },
+    {
+      "id": "suppworld",
+      "sectionId": "graphic",
+      "title": "SuppWorld",
+      "description": "Sporcu takviyeleri sektörü için hayali marka kimliği: logo, kartvizit ve reklam afişi tasarımları.",
+      "tags": ["Marka", "Logo", "Kartvizit", "Afiş"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/suppworld-afis.png",
+        "alt": "SuppWorld marka tasarımları önizlemesi"
+      },
+      "buttons": { "detail": true },
+      "modal": {
+        "badge": "Grafik Tasarım · Marka",
+        "lead": "Sporcu takviyeleri sektöründe faaliyet gösteren; maksimum performansı, dinamik enerjiyi ve küresel güvenilirliği tek potada eriten modern, iddialı ve vizyoner bir marka konsepti.",
+        "preview": {
+          "type": "gallery",
+          "images": [
+            { "src": "image/projects/suppworld-logo.png", "alt": "SuppWorld logo tasarımı", "caption": "Logo" },
+            { "src": "image/projects/suppworld-kartvizit.png", "alt": "SuppWorld kartvizit tasarımı", "caption": "Kartvizit" },
+            { "src": "image/projects/suppworld-afis.png", "alt": "SuppWorld reklam afişi", "caption": "Reklam afişi" }
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Marka felsefesi",
+            "type": "paragraph",
+            "content": "<strong>Supp</strong> (supplement), gücü, kas gelişimini, motivasyonu, pre-workout enerjisini ve recovery sürecini simgeler. <strong>World</strong>, küresel otorite, geniş ürün yelpazesi ve profesyonel ekosistemi vurgular. SuppWorld; sporcular için yalnızca bir satıcı değil, bilim ve gücün buluştuğu eksiksiz bir «Takviye Dünyası»dır."
+          },
+          {
+            "heading": "Tasarım çıktıları",
+            "type": "list",
+            "items": [
+              "<strong>Logo:</strong> Enerji ve güveni tek çatı altında toplayan marka işareti.",
+              "<strong>Kartvizit:</strong> İletişim ve dijital kanallar için tutarlı kurumsal kart.",
+              "<strong>Reklam afişi:</strong> Performans ve dinamizmi öne çıkaran kampanya görseli."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-graduation-cap",
+          "text": "İstanbul Kent Üniversitesi Grafik Tasarım dersi — vize dönemi marka kimliği projesi."
+        }
+      }
+    },
+    {
+      "id": "akim",
+      "sectionId": "graphic",
+      "title": "Akım — Küresel Isınma",
+      "description": "Küresel ısınmayı ve çevresel farkındalığı güçlü görsel metaforlarla anlatan afiş çalışması.",
+      "tags": ["Afiş", "Sosyal Sorumluluk", "İklim"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/akim-afis.png",
+        "alt": "Akım küresel ısınma afişi önizlemesi"
+      },
+      "buttons": { "detail": true },
+      "modal": {
+        "badge": "Grafik Tasarım · Afiş",
+        "lead": "Küresel ısınmayı, iklim krizini ve çevresel sorumluluğu güçlü görsel dil ve tipografiyle ele alan sosyal farkındalık afişi.",
+        "preview": {
+          "type": "single",
+          "src": "image/projects/akim-afis.png",
+          "alt": "Akım küresel ısınma afiş tasarımı"
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "«Akım» başlıklı bu çalışma, gezegenimizin ısınma sürecini metaforik ve duygusal bir kompozisyonla aktarır. Amacı, izleyicide acil eylem ihtiyacı uyandırmak ve sürdürülebilirlik mesajını görsel hafızada kalıcı kılmaktır."
+          },
+          {
+            "heading": "Tasarım yaklaşımı",
+            "type": "list",
+            "items": [
+              "<strong>Konsept:</strong> İklim değişikliği ve küresel etkiler.",
+              "<strong>Format:</strong> Büyük ölçekli afiş / poster.",
+              "<strong>Duruş:</strong> Cesur renkler, güçlü tipografi ve anlatı odaklı görsel hiyerarşi."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-graduation-cap",
+          "text": "İstanbul Kent Üniversitesi Grafik Tasarım dersi — vize dönemi afiş projesi."
+        }
+      }
+    },
+    {
+      "id": "smartcargo",
+      "sectionId": "web",
+      "title": "Smart Cargo",
+      "description": "Kargo ve lojistik firması için çok sayfalı kurumsal web sitesi — hizmetler, şubeler ve iletişim.",
+      "tags": ["HTML", "CSS", "JavaScript", "Lojistik"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/smart-cargo.png?v=3",
+        "alt": "Smart Cargo kargo firması web sitesi",
+        "fit": "cover-top",
+        "width": 1024,
+        "height": 903
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Siteye git",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "smart-cargo/index.html",
+          "external": false
+        }
+      },
+      "modal": {
+        "badge": "Web · Kurumsal",
+        "lead": "Kargo, parsiyel ve lojistik hizmetleri sunan bir firma için tasarlanan çok sayfalı kurumsal web sitesi.",
+        "preview": {
+          "type": "sharp",
+          "src": "image/projects/smart-cargo.png?v=3",
+          "alt": "Smart Cargo web sitesi önizlemesi",
+          "width": 1024,
+          "height": 903
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Smart Cargo, İstanbul ve Türkiye genelinde hatlarıyla hizmet veren bir kargo markası için hazırlanan tanıtım sitesidir. Ana sayfa, hakkımızda, hizmetler ve iletişim/şubeler bölümlerinden oluşur."
+          },
+          {
+            "heading": "Özellikler",
+            "type": "list",
+            "items": [
+              "<strong>Çok sayfalı yapı:</strong> Ana sayfa, Hakkımızda, Hizmetler ve İletişim.",
+              "<strong>Hizmet vitrinleri:</strong> Koli, proje ve palet taşımacılığı kartları.",
+              "<strong>Görsel anlatım:</strong> Parallax bölümler, şube görselleri ve kurumsal renk paleti.",
+              "<strong>Mobil menü:</strong> Hamburger navigasyon ve responsive düzen."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-briefcase",
+          "text": "Başakşehir / lojistik sektörü — kurumsal web tasarımı çalışması."
+        },
+        "cta": {
+          "label": "Siteyi gez",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "smart-cargo/index.html",
+          "external": false
+        }
+      }
+    },
+    {
+      "id": "iku",
+      "sectionId": "web",
+      "title": "IKU Ders Notları",
+      "description": "İstanbul Kültür Üniversitesi öğrencileri için ders kaynakları, arama ve karanlık mod destekli web uygulaması.",
+      "tags": ["HTML", "CSS", "JavaScript", "Eğitim"],
+      "thumbnail": {
+        "type": "background",
+        "src": "image/projects/iku-preview.png"
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Siteye git",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "IKU/index.html",
+          "external": false
+        }
+      },
+      "modal": {
+        "badge": "Web · Eğitim",
+        "lead": "İstanbul Kültür Üniversitesi Bilgisayar Programcılığı öğrencileri için hazırlanmış ders kaynakları ve çalışma platformu.",
+        "preview": {
+          "type": "single",
+          "src": "image/projects/iku-preview.png",
+          "alt": "IKU Ders Notları arayüzü"
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Ders notları, PDF kaynaklar ve ders sayfalarını tek bir arayüzde toplayan; arama, yan menü ve karanlık mod ile kullanılabilen bir okul projesi."
+          },
+          {
+            "heading": "Özellikler",
+            "type": "list",
+            "items": [
+              "<strong>Ders arşivi:</strong> Veri tabanı, blok zincir, inkılap ve diğer dersler için ayrı sayfalar.",
+              "<strong>Hızlı arama:</strong> Ders ve kaynaklara anında erişim.",
+              "<strong>Karanlık mod:</strong> Uzun çalışma oturumları için göz yormayan tema.",
+              "<strong>Masaüstü odaklı UI:</strong> Sidebar ve kart tabanlı modern arayüz."
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Projeyi aç",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "IKU/index.html",
+          "external": false
+        }
+      }
+    },
+    {
+      "id": "nsancar",
+      "sectionId": "web",
+      "title": "nsancar.com",
+      "description": "Kişisel portfolyo — hero, yetenekler, hızlı erişim, proje vitrinleri ve iletişim bölümlerini tek sayfada sunan modern arayüz.",
+      "tags": ["HTML", "CSS", "JavaScript", "Portfolio"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/nsancar-preview.png?v=3",
+        "alt": "nsancar.com kişisel portfolyo sitesi",
+        "fit": "cover-top",
+        "width": 773,
+        "height": 1024
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Siteye git",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "index.html",
+          "external": false
+        }
+      },
+      "modal": {
+        "badge": "Web · Portfolio",
+        "lead": "Front-end ve grafik tasarım odaklı kişisel portfolyo sitesi; projeler, yetenekler ve iletişim kanallarını modern bir deneyimle bir araya getirir.",
+        "preview": {
+          "type": "sharp",
+          "src": "image/projects/nsancar-preview.png?v=3",
+          "alt": "nsancar.com portfolyo önizlemesi",
+          "width": 773,
+          "height": 1024
+        },
+        "sections": [
+          {
+            "heading": "Site içeriği",
+            "type": "list",
+            "items": [
+              "<strong>Hero:</strong> Web & Graphic Design başlığı, tanıtım metni ve iletişim çağrıları.",
+              "<strong>Hakkımda:</strong> Profil kartı ve kısa biyografi.",
+              "<strong>Yetenekler:</strong> Teknoloji ikonları ve yüzdelik beceri çubukları (HTML, CSS, JS, Figma, Adobe vb.).",
+              "<strong>Hızlı erişim:</strong> Projeler, servisler ve aktiviteler kartları.",
+              "<strong>Araçlar & deneyim:</strong> Kullanılan yazılımlar ve uzmanlık alanları.",
+              "<strong>Projeler & iletişim:</strong> Web/grafik vitrin alanları, sosyal profiller ve iletişim kartları."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-code",
+          "text": "Responsive, koyu tema ve bileşen tabanlı düzen."
+        },
+        "cta": {
+          "label": "Siteyi gez",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "index.html",
+          "external": false
+        }
+      }
+    },
+    {
+      "id": "timetracker",
+      "sectionId": "desktop",
+      "title": "Time Tracker Plus",
+      "description": "Windows için program ve oyun kullanım süresini izleyen, üretkenlik skoru ve Pomodoro sunan koyu temalı masaüstü uygulaması.",
+      "tags": ["C#", "WPF", ".NET", "Visual Studio", "Figma"],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/time-tracker-plus.png",
+        "alt": "Time Tracker Plus masaüstü uygulaması arayüzü",
+        "width": 740,
+        "height": 448
+      },
+      "buttons": { "detail": true },
+      "modal": {
+        "badge": "Masaüstü · WPF",
+        "lead": "Görsel Programlama dersi kapsamında geliştirilen Windows masaüstü uygulaması; kullanım sürelerini izler, üretkenliği ölçer ve odaklanmayı destekler.",
+        "preview": {
+          "type": "sharp",
+          "src": "image/projects/time-tracker-plus.png",
+          "alt": "Time Tracker Plus dashboard ekranı",
+          "width": 740,
+          "height": 448
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Time Tracker Plus, bilgisayarda geçirilen zamanı program ve oyun bazında kaydeden bir izleme aracıdır. Dashboard, akıllı panel ve istatistik ekranlarıyla günlük, haftalık ve aylık özetler sunar; kullanıcıya hangi uygulamalara ne kadar süre ayırdığını görsel olarak gösterir."
+          },
+          {
+            "heading": "Özellikler",
+            "type": "list",
+            "items": [
+              "<strong>Dashboard:</strong> Programlar ve oyunlar için halka grafikleri, zaman aralığı filtreleri (tüm zamanlar, son 24 saat, son hafta).",
+              "<strong>Akıllı panel:</strong> Bugün / bu hafta / bu ay özetleri, üretkenlik skoru, Pomodoro zamanlayıcı ve en çok kullanılan uygulamalar listesi.",
+              "<strong>Modüller:</strong> Hedefler & XP, aktivite haritası, istatistikler, odak modu, projeler, öneriler ve kategoriler.",
+              "<strong>Raporlama:</strong> CSV rapor dışa aktarma ve yeni program ekleme.",
+              "<strong>Arayüz:</strong> Figma ile tasarlanan koyu tema, sidebar navigasyon ve kart tabanlı modern WPF arayüzü."
+            ]
+          },
+          {
+            "heading": "Teknoloji & süreç",
+            "type": "list",
+            "items": [
+              "<strong>Geliştirme:</strong> C#, WPF (.NET Framework), Visual Studio.",
+              "<strong>Tasarım:</strong> Figma ile arayüz tasarımı.",
+              "<strong>Kod:</strong> Uygulama kodunun büyük bölümü Antigravity yapay zeka asistanı ile geliştirildi; proje yönetimi, test ve entegrasyon süreçlerinde aktif rol alındı."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-graduation-cap",
+          "text": "Görsel Programlama — vize dönemi masaüstü uygulama projesi (Time Tracker Plus v1.0)."
+        },
+        "cta": {
+          "label": "Proje raporunu görüntüle",
+          "icon": "fa-solid fa-file-pdf",
+          "href": "docs/time-tracker-plus-rapor.pdf",
+          "external": true
+        }
+      }
+    }
+  ]
+}

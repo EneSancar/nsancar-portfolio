@@ -33,69 +33,55 @@
   </header>
 
   <main class="about-page">
-    <div class="container about-layout">
+    <noscript>
+      <div class="container" style="padding:2rem 0;">
+        <p>İçeriği görmek için JavaScript etkinleştirin veya <a href="data/about.json">about.json</a> dosyasına bakın.</p>
+      </div>
+    </noscript>
+
+    <div id="aboutFallback" class="container" hidden style="padding:2rem 0;">
+      <p>Hakkımda içeriği yüklenemedi. Lütfen sayfayı yenileyin.</p>
+    </div>
+
+    <div class="container about-layout" id="aboutRoot">
       <aside class="profile-sidebar">
-        <img src="image/enes-about.jpg" alt="Enes Sancar — İstanbul Kent Üniversitesi ikincilik sertifikası" class="profile-img">
+        <img src="image/enes-about.jpg" alt="Enes Sancar" class="profile-img">
         <div class="profile-info">
           <h1>Enes Sancar</h1>
           <p>Front-End Developer</p>
-          <div class="profile-social">
-            <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
-          </div>
+          <div class="profile-social"></div>
         </div>
       </aside>
 
       <div class="about-content-col">
-        <section class="info-block reveal">
+        <section class="info-block reveal" data-about-bio>
           <h2>Hakkımda <i class="fa-solid fa-user"></i></h2>
           <div class="divider"></div>
-          <p>
-            Merhaba! Ben Enes Sancar, Web Programlama Front-end yazılımcıyım ve kendimi durmaksızın bu alanda geliştirmeye adamış birisiyim. Amacım yenilikçi, özgün tasarımlara sahip profesyonel düzeyde web siteleri inşa etmek ve bu doğrultuda en iyi hizmeti sunmak. Bu alanda yardıma ihtiyacın olursa sosyal medya hesaplarım üzerinden veya iletişim bölümünden bana rahatlıkla ulaşabilirsin.
-          </p>
+          <p>Yükleniyor…</p>
         </section>
 
-        <section class="info-block reveal">
+        <section class="info-block reveal" data-about-education>
           <h2>Eğitim <i class="fa-solid fa-user-graduate"></i></h2>
           <div class="divider"></div>
-          <h3>Necip Fazıl Kısakürek Mesleki Teknik Anadolu Lisesi / 2019–2023</h3>
-          <p>Bahçelievler, İstanbul — Bölüm: Web Programlama</p>
+          <h3>—</h3>
+          <p>—</p>
         </section>
 
-        <section class="info-block reveal">
+        <section class="info-block reveal" data-about-experience>
           <h2>Deneyim <i class="fa-solid fa-user-tie"></i></h2>
           <div class="divider"></div>
-          <p><span class="highlight">Teknik Servis</span> — Boranet Bilgisayar, Küçükçekmece / 2022</p>
-          <p><span class="highlight">Sigorta</span> — Bağcılar SGK / 2022–2023</p>
-          <p><span class="highlight">Turizm</span> — Elegance Tur, Fatih / 2022–2023</p>
-          <p><span class="highlight">Lojistik</span> — Smart Cargo, Başakşehir / 2023–2024</p>
         </section>
 
         <div class="two-col reveal">
-          <section class="info-block">
+          <section class="info-block" data-about-skills>
             <h2>Yetenekler <i class="fa-solid fa-code"></i></h2>
             <div class="divider"></div>
-            <ul>
-              <li>HTML / CSS / JavaScript</li>
-              <li>Bootstrap</li>
-              <li>Figma</li>
-              <li>Adobe Photoshop, Illustrator, After Effects</li>
-              <li>SQL & Veritabanı</li>
-              <li>Flutter & Dart</li>
-              <li>WordPress</li>
-            </ul>
+            <ul></ul>
           </section>
-          <section class="info-block">
+          <section class="info-block" data-about-interests>
             <h2>İlgi Alanları <i class="fa-solid fa-table-tennis-paddle-ball"></i></h2>
             <div class="divider"></div>
-            <ul>
-              <li>Movies</li>
-              <li>Music</li>
-              <li>Tennis</li>
-              <li>Games</li>
-              <li>Photograph</li>
-            </ul>
+            <ul></ul>
           </section>
         </div>
       </div>
@@ -123,6 +109,6 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="js/about-renderer.js"></script>
 </body>
 </html>
-

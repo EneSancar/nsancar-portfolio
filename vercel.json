@@ -1,3 +1,9 @@
 {
-  "outputDirectory": "htdocs"
+  "outputDirectory": "htdocs",
+  "functions": {
+    "htdocs/api/**/*.js": {
+      "memory": 128,
+      "maxDuration": 10
+    }
+  }
 }

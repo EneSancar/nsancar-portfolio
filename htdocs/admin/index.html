@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin | nsancar.com</title>
+  <link rel="icon" href="../image/internet.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-page">
+
+  <div class="admin-shell">
+    <section class="admin-card" id="loginView">
+      <h1>Admin Panel</h1>
+      <p class="admin-subtitle">nsancar.com içerik yönetimi (Hakkımda & Projeler)</p>
+      <form class="admin-form" id="loginForm">
+        <div class="field">
+          <label for="adminSecret">Admin gizli anahtarı</label>
+          <input type="password" id="adminSecret" name="secret" autocomplete="current-password" required placeholder="ADMIN_SECRET değeri">
+          <p class="admin-hint">Anahtar yalnızca bu oturum için tarayıcıda tutulur; GitHub token tarayıcıya girilmez.</p>
+        </div>
+        <div class="admin-actions">
+          <button type="submit" class="btn btn-primary">Giriş</button>
+          <a href="../index.html">← Siteye dön</a>
+        </div>
+      </form>
+    </section>
+
+    <section class="admin-card admin-panel" id="editorView" hidden>
+      <div class="admin-header">
+        <div>
+          <h1>İçerik düzenle</h1>
+          <p class="admin-subtitle">JSON düzenleyip kaydedin — değişiklikler GitHub üzerinden deploy edilir.</p>
+        </div>
+        <div>
+          <a href="../index.html">Site</a>
+          <button type="button" class="btn btn-ghost" id="logoutBtn" style="margin-left:0.75rem;">Çıkış</button>
+        </div>
+      </div>
+
+      <div class="admin-tabs">
+        <button type="button" class="admin-tab is-active" data-tab="about">Hakkımda</button>
+        <button type="button" class="admin-tab" data-tab="projects">Projeler</button>
+      </div>
+
+      <select id="contentSelect" hidden aria-hidden="true">
+        <option value="about">about</option>
+        <option value="projects">projects</option>
+      </select>
+
+      <div class="admin-form">
+        <div class="field">
+          <label for="jsonEditor">JSON</label>
+          <textarea id="jsonEditor" spellcheck="false"></textarea>
+        </div>
+        <div class="admin-actions">
+          <button type="button" class="btn btn-primary" id="saveBtn">Kaydet &amp; deploy</button>
+          <button type="button" class="btn btn-ghost" id="reloadBtn">Yeniden yükle</button>
+        </div>
+        <div id="adminStatus" class="admin-status" hidden></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>

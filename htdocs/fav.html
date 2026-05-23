@@ -36,7 +36,7 @@
     <div class="page-hero-content container">
       <span class="section-label">İlgi Alanlarım</span>
       <h1>Hobiler & Aktiviteler</h1>
-      <p>Müzik, sinema, oyun ve daha fazlası — boş zamanlarımda nelerden keyif aldığımı keşfet.</p>
+      <p>Müzik, YouTube, sinema, dizi, okuma ve oyun — boş zamanlarımda nelerden keyif aldığımı keşfet.</p>
     </div>
   </section>
 
@@ -44,11 +44,14 @@
     <div class="container">
       <div class="hobby-pills reveal">
         <span class="hobby-pill"><i class="fa-solid fa-music"></i> Müzik</span>
+        <a href="#channels" class="hobby-pill"><i class="fa-brands fa-youtube"></i> Kanallar</a>
         <span class="hobby-pill"><i class="fa-solid fa-film"></i> Film</span>
+        <a href="#series" class="hobby-pill"><i class="fa-solid fa-tv"></i> Dizi</a>
         <span class="hobby-pill"><i class="fa-solid fa-gamepad"></i> Oyun</span>
         <span class="hobby-pill"><i class="fa-solid fa-camera"></i> Fotoğraf</span>
         <span class="hobby-pill"><i class="fa-solid fa-table-tennis-paddle-ball"></i> Tenis</span>
         <span class="hobby-pill"><i class="fa-solid fa-landmark"></i> Gezi</span>
+        <a href="#library" class="hobby-pill"><i class="fa-solid fa-book"></i> Kütüphane</a>
       </div>
 
       <!-- Music -->
@@ -103,6 +106,55 @@
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- YouTube channels -->
+      <section class="hobby-section reveal" id="channels">
+        <div class="hobby-section-header">
+          <h2><i class="fa-brands fa-youtube"></i> Favori Kanallar</h2>
+          <span class="channel-count-badge" id="channelCount">3 kanal</span>
+        </div>
+        <p class="section-desc">Tasarım, teknoloji ve üretkenlik odaklı kanallar — dinlerken ilham aldığım içerikler.</p>
+
+        <div class="channel-grid" id="channelGrid">
+          <a href="#" class="channel-card" target="_blank" rel="noopener" title="Kanal linkini güncelle">
+            <div class="channel-avatar channel-avatar--yt" aria-hidden="true">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="channel-body">
+              <span class="channel-tag">Tasarım</span>
+              <h3 class="channel-name">Kanal Adı</h3>
+              <p class="channel-desc">Kısa açıklama — ne tür içerik üretiyor, neden takip ediyorsun.</p>
+            </div>
+            <span class="channel-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="#" class="channel-card" target="_blank" rel="noopener">
+            <div class="channel-avatar channel-avatar--yt" aria-hidden="true">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="channel-body">
+              <span class="channel-tag">Teknoloji</span>
+              <h3 class="channel-name">Kanal Adı</h3>
+              <p class="channel-desc">Örn. yazılım, web geliştirme veya araç incelemeleri.</p>
+            </div>
+            <span class="channel-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+          <a href="#" class="channel-card" target="_blank" rel="noopener">
+            <div class="channel-avatar channel-avatar--yt" aria-hidden="true">
+              <i class="fa-brands fa-youtube"></i>
+            </div>
+            <div class="channel-body">
+              <span class="channel-tag">Üretkenlik</span>
+              <h3 class="channel-name">Kanal Adı</h3>
+              <p class="channel-desc">Örn. motivasyon, vlog veya yaratıcı süreçler.</p>
+            </div>
+            <span class="channel-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+          </a>
+        </div>
+        <p class="section-footnote">
+          <i class="fa-solid fa-pen"></i>
+          Her kartta <strong>href</strong>, kanal adı ve etiketi kendi kanallarına göre düzenleyebilirsin.
+        </p>
       </section>
 
       <!-- Movies -->
@@ -261,6 +313,144 @@
             </div>
           </div>
           <p class="movie-showcase-hint"><i class="fa-solid fa-hand-pointer"></i> Posterlere tıklayarak detayı değiştir</p>
+        </div>
+      </section>
+
+      <!-- TV series -->
+      <section class="hobby-section reveal" id="series">
+        <div class="hobby-section-header">
+          <h2><i class="fa-solid fa-tv"></i> Favori Diziler</h2>
+          <span class="series-count-badge" id="seriesCount">4 dizi</span>
+        </div>
+
+        <div class="library-toolbar series-toolbar">
+          <div class="library-filters series-filters" role="tablist" aria-label="Dizi filtreleri">
+            <button type="button" class="library-filter series-filter is-active" data-filter="all" role="tab" aria-selected="true">Tümü</button>
+            <button type="button" class="library-filter series-filter" data-filter="watching" role="tab" aria-selected="false">İzliyorum</button>
+            <button type="button" class="library-filter series-filter" data-filter="finished" role="tab" aria-selected="false">Bitirdim</button>
+            <button type="button" class="library-filter series-filter" data-filter="wishlist" role="tab" aria-selected="false">Listemde</button>
+          </div>
+        </div>
+
+        <div class="series-grid" id="seriesGrid">
+          <article class="series-card" data-status="watching">
+            <div class="series-poster">
+              <div class="series-poster-placeholder series-poster-placeholder--invincible">
+                <i class="fa-solid fa-mask"></i>
+              </div>
+            </div>
+            <div class="series-body">
+              <span class="series-status series-status--watching">İzliyorum</span>
+              <h3 class="series-title">Invincible</h3>
+              <p class="series-meta">Sezon 4 · Animasyon, süper kahraman</p>
+              <div class="series-rating" aria-label="5 üzerinden 5">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="series-card" data-status="finished">
+            <div class="series-poster">
+              <div class="series-poster-placeholder series-poster-placeholder--severance">
+                <i class="fa-solid fa-building"></i>
+              </div>
+            </div>
+            <div class="series-body">
+              <span class="series-status series-status--finished">Bitirdim</span>
+              <h3 class="series-title">Severance</h3>
+              <p class="series-meta">2 sezon · Bilim kurgu, gerilim</p>
+              <div class="series-rating" aria-label="5 üzerinden 5">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="series-card" data-status="finished">
+            <div class="series-poster">
+              <div class="series-poster-placeholder series-poster-placeholder--boys">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+            </div>
+            <div class="series-body">
+              <span class="series-status series-status--finished">Bitirdim</span>
+              <h3 class="series-title">The Boys</h3>
+              <p class="series-meta">4 sezon · Aksiyon, süper kahraman</p>
+              <div class="series-rating" aria-label="5 üzerinden 4">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+              </div>
+            </div>
+          </article>
+
+          <article class="series-card" data-status="wishlist">
+            <div class="series-poster">
+              <div class="series-poster-placeholder">
+                <i class="fa-solid fa-tv"></i>
+              </div>
+            </div>
+            <div class="series-body">
+              <span class="series-status series-status--wishlist">Listemde</span>
+              <h3 class="series-title">Dizi Adı</h3>
+              <p class="series-meta">Sezon bilgisi · Tür</p>
+              <p class="series-note">İzleme listene ekleyeceğin dizileri buraya kopyalayabilirsin.</p>
+            </div>
+          </article>
+        </div>
+        <p class="section-footnote">
+          <i class="fa-solid fa-image"></i>
+          Poster için: <code>favimg/show/</code> klasörüne görsel ekleyip <code>&lt;img src="..."&gt;</code> kullanabilirsin.
+        </p>
+      </section>
+
+      <!-- Library — admin panel: data/activities.json → library[] (ileride) -->
+      <section class="hobby-section reveal" id="library">
+        <div class="hobby-section-header">
+          <h2><i class="fa-solid fa-book-open"></i> Kütüphanem</h2>
+          <span class="library-count-badge" id="libraryCount">0 kitap</span>
+        </div>
+
+        <div class="library-toolbar">
+          <div class="library-filters" role="tablist" aria-label="Kitap filtreleri">
+            <button type="button" class="library-filter is-active" data-filter="all" role="tab" aria-selected="true">Tümü</button>
+            <button type="button" class="library-filter" data-filter="reading" role="tab" aria-selected="false">Okuyorum</button>
+            <button type="button" class="library-filter" data-filter="finished" role="tab" aria-selected="false">Okudum</button>
+            <button type="button" class="library-filter" data-filter="wishlist" role="tab" aria-selected="false">Listemde</button>
+          </div>
+          <p class="library-hint">
+            <i class="fa-solid fa-circle-info"></i>
+            Okuma listem — filtrelerle duruma göre ayırabilirsin. (İleride admin panelden yönetilecek.)
+          </p>
+        </div>
+
+        <div class="library-shelf">
+          <div class="library-empty" id="libraryEmpty">
+            <i class="fa-solid fa-books"></i>
+            <h3>Henüz kitap eklenmedi</h3>
+            <p>Okuduğun, okuduğun veya listene aldığın kitapları aşağıdaki kart şablonuyla ekleyebilirsin.</p>
+          </div>
+
+          <div class="library-grid" id="libraryGrid">
+            <!--
+            Yeni kitap örneği (kopyala-yapıştır):
+
+            <article class="book-card" data-status="finished">
+              <div class="book-cover">
+                <img src="favimg/books/kapak.jpg" alt="Kitap adı" loading="lazy">
+              </div>
+              <div class="book-body">
+                <span class="book-status book-status--finished">Okudum</span>
+                <h3 class="book-title">Kitap Adı</h3>
+                <p class="book-author">Yazar Adı</p>
+                <div class="book-rating" aria-label="5 üzerinden 4">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                </div>
+                <p class="book-note">Kısa not (isteğe bağlı)</p>
+              </div>
+            </article>
+
+            data-status: reading | finished | wishlist
+            Kapak yoksa <div class="book-cover"><div class="book-cover-placeholder"><i class="fa-solid fa-book"></i></div></div>
+            -->
+          </div>
         </div>
       </section>
 

@@ -1,0 +1,75 @@
+{
+  "profile": {
+    "name": "Enes Sancar",
+    "title": "Front-End Developer",
+    "photo": "image/enes-about.jpg",
+    "photoAlt": "Enes Sancar — İstanbul Kent Üniversitesi ikincilik sertifikası",
+    "bio": "Merhaba! Ben Enes Sancar, Web Programlama Front-end yazılımcıyım ve kendimi durmaksızın bu alanda geliştirmeye adamış birisiyim. Amacım yenilikçi, özgün tasarımlara sahip profesyonel düzeyde web siteleri inşa etmek ve bu doğrultuda en iyi hizmeti sunmak. Bu alanda yardıma ihtiyacın olursa sosyal medya hesaplarım üzerinden veya iletişim bölümünden bana rahatlıkla ulaşabilirsin.",
+    "social": [
+      {
+        "href": "https://www.instagram.com/ns.sancar7/?hl=tr",
+        "icon": "fa-brands fa-instagram",
+        "label": "Instagram"
+      },
+      {
+        "href": "https://github.com/EneSancar",
+        "icon": "fa-brands fa-github",
+        "label": "GitHub"
+      },
+      {
+        "href": "https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm",
+        "icon": "fa-brands fa-spotify",
+        "label": "Spotify"
+      }
+    ]
+  },
+  "education": [
+    {
+      "id": "nfk-2019",
+      "school": "Necip Fazıl Kısakürek Mesleki Teknik Anadolu Lisesi",
+      "period": "2019–2023",
+      "location": "Bahçelievler, İstanbul",
+      "department": "Web Programlama"
+    }
+  ],
+  "experience": [
+    {
+      "id": "boranet-2022",
+      "role": "Teknik Servis",
+      "company": "Boranet Bilgisayar",
+      "location": "Küçükçekmece",
+      "period": "2022"
+    },
+    {
+      "id": "sgk-2022",
+      "role": "Sigorta",
+      "company": "Bağcılar SGK",
+      "location": "",
+      "period": "2022–2023"
+    },
+    {
+      "id": "elegance-2022",
+      "role": "Turizm",
+      "company": "Elegance Tur",
+      "location": "Fatih",
+      "period": "2022–2023"
+    },
+    {
+      "id": "smartcargo-2023",
+      "role": "Lojistik",
+      "company": "Smart Cargo",
+      "location": "Başakşehir",
+      "period": "2023–2024"
+    }
+  ],
+  "skills": [
+    "HTML / CSS / JavaScript",
+    "Bootstrap",
+    "Figma",
+    "Adobe Photoshop, Illustrator, After Effects",
+    "SQL & Veritabanı",
+    "Flutter & Dart",
+    "WordPress"
+  ],
+  "interests": ["Movies", "Music", "Tennis", "Games", "Photograph"]
+}

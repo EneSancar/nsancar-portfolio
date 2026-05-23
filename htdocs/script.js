@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
   setActiveNavLink();
   initSpaceParticles();
   initHeroEntrance();
+  initLibraryFilter();
+  initSeriesFilter();
 });
 
 /* ===== Navigation ===== */
@@ -265,19 +267,12 @@ function initProjectModal() {
   const content = document.getElementById("projectModalContent");
   if (!modal || !content) return;
 
-  const templates = {
-    cineforum: document.getElementById("project-detail-cineforum"),
-    fotoeyes: document.getElementById("project-detail-fotoeyes"),
-    suppworld: document.getElementById("project-detail-suppworld"),
-    akim: document.getElementById("project-detail-akim"),
-    smartcargo: document.getElementById("project-detail-smartcargo"),
-    nsancar: document.getElementById("project-detail-nsancar"),
-    timetracker: document.getElementById("project-detail-timetracker"),
-    iku: document.getElementById("project-detail-iku"),
-  };
+  function getTemplate(key) {
+    return document.getElementById(`project-detail-${key}`);
+  }
 
   function openModal(key) {
-    const tpl = templates[key];
+    const tpl = getTemplate(key);
     if (!tpl) return;
     content.innerHTML = "";
     content.appendChild(tpl.content.cloneNode(true));
@@ -292,17 +287,70 @@ function initProjectModal() {
     document.body.style.overflow = "";
   }
 
-  document.querySelectorAll(".project-detail-btn").forEach((btn) => {
-    btn.addEventListener("click", () => openModal(btn.dataset.project));
+  if (!modal.dataset.bound) {
+    modal.dataset.bound = "true";
+
+    document.addEventListener("click", (e) => {
+      const btn = e.target.closest(".project-detail-btn");
+      if (btn?.dataset.project) openModal(btn.dataset.project);
+    });
+
+    modal.querySelectorAll("[data-close-modal]").forEach((el) => {
+      el.addEventListener("click", closeModal);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
+    });
+  }
+}
+
+window.nsancarInitProjectModal = initProjectModal;
+window.nsancarInitReveal = initReveal;
+
+/* ===== Status filters (library, series on fav page) ===== */
+function initStatusFilter(sectionId, filterSelector, cardSelector, countEl, countLabel, gridId) {
+  const section = document.getElementById(sectionId);
+  if (!section) return;
+
+  const grid = gridId ? document.getElementById(gridId) : null;
+  const cards = () => Array.from((grid || section).querySelectorAll(cardSelector));
+  const filters = section.querySelectorAll(filterSelector);
+
+  function updateCount() {
+    if (!countEl) return;
+    const total = cards().length;
+    countEl.textContent = total === 1 ? `1 ${countLabel}` : `${total} ${countLabel}`;
+  }
+
+  function applyFilter(status) {
+    cards().forEach((card) => {
+      card.hidden = status !== "all" && card.dataset.status !== status;
+    });
+  }
+
+  filters.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const status = btn.dataset.filter;
+      filters.forEach((b) => {
+        b.classList.toggle("is-active", b === btn);
+        b.setAttribute("aria-selected", b === btn ? "true" : "false");
+      });
+      applyFilter(status);
+    });
   });
 
-  modal.querySelectorAll("[data-close-modal]").forEach((el) => {
-    el.addEventListener("click", closeModal);
-  });
+  updateCount();
+}
 
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal.classList.contains("is-open")) closeModal();
-  });
+function initLibraryFilter() {
+  const countEl = document.getElementById("libraryCount");
+  initStatusFilter("library", ".library-filter", ".book-card", countEl, "kitap", "libraryGrid");
+}
+
+function initSeriesFilter() {
+  const countEl = document.getElementById("seriesCount");
+  initStatusFilter("series", ".series-filter", ".series-card", countEl, "dizi", "seriesGrid");
 }
 
 /* ===== Hero entrance ===== */
