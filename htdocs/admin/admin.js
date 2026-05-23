@@ -51,6 +51,12 @@
     try {
       await C.loadAll();
       renderActivePanel();
+      if (C.state.lastLoadUsedBackup) {
+        showStatus(
+          "Site henüz yeni deploy olmadığı için kayıtlı son sürümünüz gösteriliyor. 30-60 sn sonra Yenile yapabilirsiniz.",
+          true
+        );
+      }
     } catch (err) {
       showStatus(`Veri yüklenemedi: ${err.message}`, false);
     } finally {
@@ -84,9 +90,11 @@
 
     try {
       const data = await C.saveTab(C.state.tab);
+      renderActivePanel();
       showStatus(
-        `Kaydedildi. Site birkaç saniye içinde güncellenir.` +
-          (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : ""),
+        `Kaydedildi. Site ~30-60 sn içinde güncellenir.` +
+          (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : "") +
+          " Yenile'ye hemen basmayın; deploy bitene kadar eski veri gelebilir.",
         true
       );
     } catch (err) {
@@ -132,7 +140,12 @@
   });
 
   saveBtn?.addEventListener("click", saveCurrent);
-  reloadBtn?.addEventListener("click", loadDashboard);
+  reloadBtn?.addEventListener("click", () => {
+    const ok = confirm(
+      "Veriler siteden yeniden yüklenecek.\n\nDeploy henüz bitmediyse yeni eklediğiniz kayıtlar kaybolmuş gibi görünebilir.\n\nDevam etmek istiyor musunuz?"
+    );
+    if (ok) loadDashboard();
+  });
 
   navItems.forEach((btn) => {
     btn.addEventListener("click", () => {

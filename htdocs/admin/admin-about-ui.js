@@ -133,11 +133,14 @@ window.AdminAboutUI = (function () {
         const card = C.el("div", { className: "admin-repeater-item" });
         card.appendChild(C.el("div", { className: "admin-repeater-item__title", text: `Eğitim ${index + 1}` }));
 
-        [["Okul", "school"], ["Dönem", "period"], ["Konum", "location"], ["Bölüm", "department"]].forEach(([label, key]) => {
-          const inp = C.input("text", edu[key] || "");
-          bindInput(inp, (v) => { edu[key] = v; });
-          card.appendChild(C.field(label, inp));
-        });
+        [["Okul", "school", true], ["Dönem", "period", false], ["Konum", "location", false], ["Bölüm", "department", false]].forEach(
+          ([label, key, required]) => {
+            const inp = C.input("text", edu[key] || "", required ? "Zorunlu" : "");
+            if (required) inp.required = true;
+            bindInput(inp, (v) => { edu[key] = v; });
+            card.appendChild(C.field(required ? `${label} *` : label, inp));
+          }
+        );
 
         const del = C.el("button", { type: "button", className: "btn btn-danger btn-sm", text: "Sil" });
         del.addEventListener("click", () => {
@@ -158,6 +161,9 @@ window.AdminAboutUI = (function () {
         department: "",
       });
       draw();
+      const lastCard = list.lastElementChild;
+      lastCard?.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      lastCard?.querySelector("input")?.focus();
     });
 
     draw();

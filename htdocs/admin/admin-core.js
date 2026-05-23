@@ -7,10 +7,14 @@ window.AdminCore = (function () {
     projects: { file: "data/projects.json", api: "/api/projects", title: "Projeler" },
   };
 
+  const BACKUP_KEY = "nsancar_admin_about_backup";
+  const BACKUP_AT_KEY = "nsancar_admin_about_backup_at";
+
   const state = {
     tab: "about",
     about: null,
     projects: null,
+    lastLoadUsedBackup: false,
   };
 
   function authHeaders(secret) {
@@ -46,12 +50,47 @@ window.AdminCore = (function () {
     return res.json();
   }
 
+  function readAboutBackup() {
+    try {
+      const raw = sessionStorage.getItem(BACKUP_KEY);
+      const at = Number(sessionStorage.getItem(BACKUP_AT_KEY) || 0);
+      if (!raw || !at) return null;
+      if (Date.now() - at > 15 * 60 * 1000) return null;
+      return JSON.parse(raw);
+    } catch {
+      return null;
+    }
+  }
+
+  function writeAboutBackup(data) {
+    sessionStorage.setItem(BACKUP_KEY, JSON.stringify(data));
+    sessionStorage.setItem(BACKUP_AT_KEY, String(Date.now()));
+  }
+
+  function shouldPreferBackup(fetched, backup) {
+    if (!backup || !fetched) return false;
+    const fields = ["education", "experience"];
+    return fields.some((key) => {
+      const a = Array.isArray(backup[key]) ? backup[key].length : 0;
+      const b = Array.isArray(fetched[key]) ? fetched[key].length : 0;
+      return a > b;
+    });
+  }
+
   async function loadAll() {
     const [about, projects] = await Promise.all([
       fetchJson(endpoints.about.file),
       fetchJson(endpoints.projects.file),
     ]);
-    state.about = about;
+
+    state.lastLoadUsedBackup = false;
+    const backup = readAboutBackup();
+    if (backup && shouldPreferBackup(about, backup)) {
+      state.about = backup;
+      state.lastLoadUsedBackup = true;
+    } else {
+      state.about = about;
+    }
     state.projects = projects;
     return state;
   }
@@ -67,6 +106,10 @@ window.AdminCore = (function () {
 
     data.education.forEach((edu, i) => {
       if (!edu.id) edu.id = `edu-${i}-${Date.now()}`;
+      if (typeof edu.school === "string") edu.school = edu.school.trim();
+      if (typeof edu.period === "string") edu.period = edu.period.trim();
+      if (typeof edu.location === "string") edu.location = edu.location.trim();
+      if (typeof edu.department === "string") edu.department = edu.department.trim();
     });
     data.experience.forEach((exp, i) => {
       if (!exp.id) exp.id = `exp-${i}-${Date.now()}`;
@@ -94,6 +137,23 @@ window.AdminCore = (function () {
     return data;
   }
 
+  function validateAboutClient(data) {
+    const errors = [];
+    if (!data?.profile?.name?.trim()) errors.push("Profil: Ad soyad zorunlu.");
+
+    (data.education || []).forEach((edu, i) => {
+      const hasAny =
+        edu.school?.trim() || edu.period?.trim() || edu.location?.trim() || edu.department?.trim();
+      if (!hasAny) {
+        errors.push(`Eğitim ${i + 1}: Tamamen boş satır — doldurun veya silin.`);
+      } else if (!edu.school?.trim()) {
+        errors.push(`Eğitim ${i + 1}: Okul adı zorunlu.`);
+      }
+    });
+
+    return errors;
+  }
+
   async function saveTab(tab) {
     const secret = getSecret();
     if (!secret) throw new Error("Oturum kapalı. Tekrar giriş yapın.");
@@ -108,6 +168,11 @@ window.AdminCore = (function () {
           ? normalizeAboutPayload(state[tab])
           : state[tab];
 
+    if (tab === "about") {
+      const clientErrors = validateAboutClient(payload);
+      if (clientErrors.length) throw new Error(clientErrors.join(" "));
+    }
+
     const res = await fetch(api, {
       method: "POST",
       headers: authHeaders(secret),
@@ -115,7 +180,11 @@ window.AdminCore = (function () {
     });
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.message || data.error || `HTTP ${res.status}`);
-    return data;
+
+    state[tab] = payload;
+    if (tab === "about") writeAboutBackup(payload);
+
+    return { ...data, payload };
   }
 
   function slugify(text) {
@@ -189,6 +258,8 @@ window.AdminCore = (function () {
     verifySecret,
     loadAll,
     saveTab,
+    validateAboutClient,
+    readAboutBackup,
     slugify,
     linesToArray,
     arrayToLines,
