@@ -43,12 +43,14 @@
       <p>Hakkımda içeriği yüklenemedi. Lütfen sayfayı yenileyin.</p>
     </div>
 
-    <div class="container about-layout" id="aboutRoot">
+    <div class="container about-layout about-layout--loading" id="aboutRoot">
       <aside class="profile-sidebar">
-        <img src="image/enes-about.jpg" alt="Enes Sancar" class="profile-img">
+        <div class="profile-img-wrap">
+          <img src="" alt="" class="profile-img" decoding="async">
+        </div>
         <div class="profile-info">
-          <h1>Enes Sancar</h1>
-          <p>Front-End Developer</p>
+          <h1 class="profile-name"></h1>
+          <p class="profile-title"></p>
           <div class="profile-social"></div>
         </div>
       </aside>

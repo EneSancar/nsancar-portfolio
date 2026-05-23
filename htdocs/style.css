@@ -1331,11 +1331,37 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   contain: none; /* reveal class'ının contain:layout paint'ini ezer — sticky için gerekli */
 }
 
+.profile-img-wrap {
+  aspect-ratio: 4 / 5;
+  background: rgba(255, 255, 255, 0.04);
+}
+
 .profile-sidebar .profile-img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center 28%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.about-layout.is-ready .profile-img {
+  opacity: 1;
+}
+
+.about-layout--loading .profile-info {
+  opacity: 0;
+}
+
+.about-layout.is-ready .profile-info {
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.about-layout--loading .profile-name,
+.about-layout--loading .profile-title {
+  min-height: 1.25em;
 }
 
 .profile-sidebar .profile-info {
