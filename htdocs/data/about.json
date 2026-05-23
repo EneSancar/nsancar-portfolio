@@ -30,6 +30,13 @@
       "period": "2019–2023",
       "location": "Bahçelievler, İstanbul",
       "department": "Web Programlama"
+    },
+    {
+      "id": "edu-1779559967306",
+      "school": "İstanbul Kent Üniversitesi ",
+      "period": "2024-2026",
+      "location": "Kağıthane, İstanbul",
+      "department": "Bilgisayar Programcılığı"
     }
   ],
   "experience": [
@@ -60,6 +67,13 @@
       "company": "Smart Cargo",
       "location": "Başakşehir",
       "period": "2023–2024"
+    },
+    {
+      "id": "exp-1779564161516",
+      "role": "stajyer",
+      "company": "hall",
+      "location": "hall ofice",
+      "period": "2026"
     }
   ],
   "skills": [
