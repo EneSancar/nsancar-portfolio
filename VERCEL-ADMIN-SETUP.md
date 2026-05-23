@@ -25,6 +25,7 @@ Vercel → proje → **Settings** → **Environment Variables**
 | `GITHUB_REPO` | `nsancar-portfolio` |
 | `GITHUB_BRANCH` | `main` |
 | `GITHUB_PATH_PREFIX` | `htdocs/data/` |
+| `GITHUB_SITE_PREFIX` | `htdocs/` (görsel yükleme için) |
 
 `GOOGLE_DRIVE_API_KEY` zaten fav galerisi için varsa dokunma.
 
