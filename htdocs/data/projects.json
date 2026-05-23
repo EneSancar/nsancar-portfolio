@@ -427,7 +427,7 @@
         "badge": "Web · Portfolio",
         "lead": "Front-end ve grafik tasarım odaklı kişisel portfolyo sitesi; projeler, yetenekler ve iletişim kanallarını modern bir deneyimle bir araya getirir.",
         "preview": {
-          "type": "sharp",
+          "type": "single",
           "src": "image/projects/nsancar-preview.png?v=3",
           "alt": "nsancar.com portfolyo önizlemesi",
           "width": 773,
@@ -526,45 +526,6 @@
           "label": "Proje raporunu görüntüle",
           "icon": "fa-solid fa-file-pdf",
           "href": "docs/time-tracker-plus-rapor.pdf",
-          "external": true
-        }
-      }
-    },
-    {
-      "id": "proje-1779561695106",
-      "sectionId": "uiux",
-      "title": "Yeni Proje",
-      "description": "aaaaaaaaaa",
-      "tags": [
-        "aaaa bbbb ccc"
-      ],
-      "thumbnail": {
-        "type": "img",
-        "src": "image/projects/instagram-photoroom-1779561729146.png",
-        "alt": "fa"
-      },
-      "buttons": {
-        "detail": true
-      },
-      "modal": {
-        "badge": "",
-        "lead": "",
-        "preview": {
-          "type": "single",
-          "src": "image/projects/instagram-photoroom-1779561729146.png",
-          "alt": ""
-        },
-        "sections": [
-          {
-            "heading": "Proje tanımı",
-            "type": "paragraph",
-            "content": ""
-          }
-        ],
-        "cta": {
-          "label": "Bağlantı",
-          "icon": "fa-solid fa-link",
-          "href": "",
           "external": true
         }
       }
