@@ -7,6 +7,13 @@ window.AdminAboutUI = (function () {
 
   function render(container, data) {
     container.innerHTML = "";
+    data.profile = data.profile || {};
+    data.profile.social = Array.isArray(data.profile.social) ? data.profile.social : [];
+    data.education = Array.isArray(data.education) ? data.education : [];
+    data.experience = Array.isArray(data.experience) ? data.experience : [];
+    data.skills = Array.isArray(data.skills) ? data.skills : [];
+    data.interests = Array.isArray(data.interests) ? data.interests : [];
+
     const p = data.profile;
 
     const profileCard = C.el("section", { className: "admin-card-block" }, [
