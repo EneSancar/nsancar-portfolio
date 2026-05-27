@@ -135,24 +135,38 @@ window.AdminActivitiesUI = (function () {
       fetchBtn.disabled = true;
       fetchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
       avatarStatus.textContent = "Getiriliyor…";
+      avatarStatus.className = "avatar-fetch-status";
 
       try {
         const res = await fetch(`/api/yt-avatar?url=${encodeURIComponent(url)}`);
-        const data = await res.json();
-        if (!res.ok || !data.avatar) throw new Error(data.error || "Bulunamadı");
+        const result = await res.json();
+        if (!res.ok || !result.avatar) throw new Error(result.error || "Bulunamadı");
 
-        ch.avatar = data.avatar;
+        ch.avatar = result.avatar;
         avatarPreview.innerHTML = "";
         const img = document.createElement("img");
-        img.src = data.avatar;
+        img.src = result.avatar;
         img.alt = ch.name;
         avatarPreview.appendChild(img);
         avatarPreview.classList.add("has-avatar");
+
+        // Kanal adı boşsa ve API'den geldiyse otomatik doldur
+        if (!ch.name && result.name) {
+          ch.name = result.name;
+          nameInp.value = result.name;
+          title.textContent = result.name;
+        }
+
         avatarStatus.textContent = "✓ Fotoğraf alındı";
         avatarStatus.className = "avatar-fetch-status ok";
       } catch (err) {
-        avatarStatus.textContent = `Hata: ${err.message}`;
+        avatarStatus.textContent = `${err.message}`;
         avatarStatus.className = "avatar-fetch-status err";
+
+        // Manuel kopyalama yolunu göster
+        const hint = C.el("small", { className: "avatar-hint", text: "İpucu: Kanala git → profil fotoğrafına sağ tık → \"Görsel adresini kopyala\" → aşağıdaki alana yapıştır." });
+        avatarStatus.appendChild(document.createElement("br"));
+        avatarStatus.appendChild(hint);
       } finally {
         fetchBtn.disabled = false;
         fetchBtn.innerHTML = '<i class="fa-solid fa-image"></i> Getir';
@@ -173,6 +187,25 @@ window.AdminActivitiesUI = (function () {
     const urlFieldContainer = C.el("div", { className: "field" });
     urlFieldContainer.appendChild(C.el("label", { text: "YouTube URL + Profil fotoğrafı" }));
     urlFieldContainer.appendChild(urlRow);
+
+    // Manuel avatar URL alanı
+    const manualAvatarInp = C.input("url", ch.avatar || "", "https://yt3.googleusercontent.com/...");
+    manualAvatarInp.addEventListener("input", () => {
+      ch.avatar = manualAvatarInp.value.trim();
+      if (ch.avatar) {
+        avatarPreview.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = ch.avatar;
+        img.alt = ch.name;
+        avatarPreview.appendChild(img);
+        avatarPreview.classList.add("has-avatar");
+      } else {
+        avatarPreview.innerHTML = '<i class="fa-brands fa-youtube"></i>';
+        avatarPreview.classList.remove("has-avatar");
+      }
+    });
+    urlFieldContainer.appendChild(C.field("Avatar URL (manuel)", manualAvatarInp, "Otomatik çekilemezse buraya yapıştırın."));
+
     body.appendChild(urlFieldContainer);
 
     row.appendChild(body);
