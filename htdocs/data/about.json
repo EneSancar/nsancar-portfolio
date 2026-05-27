@@ -1,6 +1,6 @@
 {
   "profile": {
-    "name": "Enes Sancar",
+    "name": "Enes Sancar d",
     "title": "Front-End Developer",
     "photo": "image/sancar-1779560715093.jpeg",
     "photoAlt": "Enes Sancar — İstanbul Kent Üniversitesi ikincilik sertifikası",
@@ -33,7 +33,7 @@
     },
     {
       "id": "edu-1779559967306",
-      "school": "İstanbul Kent Üniversitesi ",
+      "school": "İstanbul Kent Üniversitesi",
       "period": "2024-2026",
       "location": "Kağıthane, İstanbul",
       "department": "Bilgisayar Programcılığı"
