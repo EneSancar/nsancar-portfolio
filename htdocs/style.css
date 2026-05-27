@@ -2382,39 +2382,61 @@ a.hobby-pill:hover {
 
 .channel-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
 }
 
 .channel-card {
   display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.15rem 1.25rem;
-  min-height: 96px;
+  flex-direction: column;
+  padding: 1.5rem 1.25rem 1.25rem;
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   text-decoration: none;
   color: inherit;
+  position: relative;
+  overflow: hidden;
   transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+}
+
+.channel-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff0000, #ff4444);
+  opacity: 0;
+  transition: opacity var(--transition);
 }
 
 .channel-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255, 0, 0, 0.45);
+  border-color: rgba(255, 0, 0, 0.35);
   box-shadow: 0 12px 32px rgba(255, 0, 0, 0.08);
+}
+
+.channel-card:hover::before {
+  opacity: 1;
+}
+
+/* Kart üst satırı: avatar + tag + go ikonu */
+.channel-card > .channel-avatar {
+  align-self: flex-start;
 }
 
 .channel-avatar {
   flex-shrink: 0;
-  width: 52px;
-  height: 52px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.35rem;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
 }
 
 .channel-avatar--yt {
@@ -2444,45 +2466,49 @@ a.hobby-pill:hover {
 
 .channel-tag {
   display: inline-block;
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   color: var(--accent-light);
   background: rgba(99, 102, 241, 0.12);
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .channel-name {
   font-size: 1rem;
-  margin: 0 0 0.35rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
 }
 
 .channel-desc {
   font-size: 0.82rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
   letter-spacing: 0.01em;
   margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 4;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-  opacity: 0.82;
+  opacity: 0.85;
 }
 
 .channel-go {
-  flex-shrink: 0;
-  width: 36px;
-  height: 36px;
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   color: var(--text-muted);
+  font-size: 0.8rem;
   transition: background var(--transition), color var(--transition);
 }
 
