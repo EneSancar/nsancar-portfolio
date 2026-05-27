@@ -2,26 +2,34 @@
   "channels": [
     {
       "id": "ch-1",
-      "name": "Kanal Adı",
-      "tag": "Tasarım",
-      "description": "Kısa açıklama — ne tür içerik üretiyor, neden takip ediyorsun.",
-      "url": "https://youtube.com",
+      "name": "Sertaç Aktan",
+      "tag": "Bilim",
+      "description": "Sertaç Aktan için \"Dijital çağın araştırmacı gazetecisi ve küresel stratejisti\" diyebiliriz. Akıcı diksiyonu ve bilgiyi aktarma becerisiyle, dijital dünyada nitelikli küresel analiz arayanların ilk uğradığı isimlerden biri.",
+      "url": "https://www.youtube.com/@Serta%C3%A7Aktan",
       "avatar": ""
     },
     {
       "id": "ch-2",
-      "name": "Kanal Adı",
-      "tag": "Teknoloji",
-      "description": "Örn. yazılım, web geliştirme veya araç incelemeleri.",
-      "url": "https://youtube.com",
+      "name": "Filmograf",
+      "tag": "Film & Dizi",
+      "description": "Efsane filmlerin analizleri\nFantastik evrenlerin sırları ve detayları\nYönetmenlerin ve oyuncuların hikayeleri\nSinema ve dizi dünyasından bilgiler",
+      "url": "https://www.youtube.com/@Filmograf",
       "avatar": ""
     },
     {
       "id": "ch-3",
-      "name": "Kanal Adı",
-      "tag": "Üretkenlik",
-      "description": "Örn. motivasyon, vlog veya yaratıcı süreçler.",
-      "url": "https://youtube.com",
+      "name": "Emirhan Takva",
+      "tag": "Felsefe",
+      "description": "Emirhan Takva, geleneksel YouTube kalıplarının dışına çıkan, popüler kültür ile entelektüel derinliği mizahi bir dille harmanlayan oldukça özgün bir içerik üreticisi.",
+      "url": "https://www.youtube.com/@emirhantakva",
+      "avatar": ""
+    },
+    {
+      "id": "ch-1779891593402",
+      "name": "Portal",
+      "tag": "",
+      "description": "",
+      "url": "",
       "avatar": ""
     }
   ],
