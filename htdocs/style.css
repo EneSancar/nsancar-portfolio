@@ -2686,6 +2686,19 @@ a.hobby-pill:hover {
   flex-shrink: 0;
 }
 
+.music-track-placeholder {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #1db954, #1ed760);
+  color: #fff;
+  font-size: 1.2rem;
+}
+
 .music-track-info h4 {
   font-size: 0.95rem;
   margin-bottom: 0.2rem;

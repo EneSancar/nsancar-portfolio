@@ -367,13 +367,195 @@ window.AdminActivitiesUI = (function () {
     return row;
   }
 
+  /* ──────────────────────── MUSIC ─────────────────────────── */
+  function buildMusicSection(data) {
+    const wrap = C.el("div", { className: "activities-section", "data-subpanel": "music" });
+    if (!Array.isArray(data.music)) data.music = [];
+
+    const list = C.el("div", { className: "activities-list" });
+    wrap.appendChild(list);
+
+    function rebuild() {
+      list.innerHTML = "";
+      data.music.forEach((m, idx) => list.appendChild(buildMusicRow(m, idx, data, rebuild)));
+      list.appendChild(addButton("Müzik ekle", () => {
+        data.music.push({
+          id: `m-${Date.now()}`,
+          artist: "", title: "", image: "", url: "",
+        });
+        rebuild();
+      }));
+    }
+
+    rebuild();
+    return wrap;
+  }
+
+  function buildMusicRow(m, idx, data, rebuild) {
+    const row = C.el("div", { className: "activities-item-card" });
+
+    const header = C.el("div", { className: "activities-item-header" });
+    const headerTitle = m.artist || m.title
+      ? `${m.artist || "—"} — ${m.title || "—"}`
+      : `Müzik ${idx + 1}`;
+    const title = C.el("span", { className: "activities-item-label", text: headerTitle });
+    header.appendChild(title);
+    header.appendChild(deleteButton(m.title || "bu şarkıyı", () => {
+      data.music.splice(idx, 1);
+      rebuild();
+    }));
+    row.appendChild(header);
+
+    const body = C.el("div", { className: "activities-item-body" });
+
+    // Spotify URL + Getir
+    body.appendChild(buildMusicSpotifyBlock(m, title, row));
+
+    // Sanatçı
+    const artistInp = C.input("text", m.artist, "Sanatçı");
+    artistInp.dataset.role = "music-artist";
+    artistInp.addEventListener("input", () => {
+      m.artist = artistInp.value;
+      title.textContent = `${m.artist || "—"} — ${m.title || "—"}`;
+    });
+    body.appendChild(C.field("Sanatçı *", artistInp));
+
+    // Şarkı adı
+    const titleInp = C.input("text", m.title, "Şarkı adı");
+    titleInp.dataset.role = "music-title";
+    titleInp.addEventListener("input", () => {
+      m.title = titleInp.value;
+      title.textContent = `${m.artist || "—"} — ${m.title || "—"}`;
+    });
+    body.appendChild(C.field("Şarkı adı *", titleInp));
+
+    // Görsel (URL + dosya yükleme tek widget)
+    const imgInp = C.input("text", m.image, "image/music/... veya https://...");
+    imgInp.dataset.role = "music-image";
+    imgInp.addEventListener("input", () => { m.image = imgInp.value.trim(); });
+    body.appendChild(window.AdminUpload.attachImageField({
+      label: "Görsel (sanatçı/albüm)",
+      pathInput: imgInp,
+      folder: "image/music",
+      hint: "Spotify'dan otomatik gelir; istersen dosyadan da yükleyebilirsin.",
+      onUploaded: (path) => { m.image = path; },
+    }));
+
+    row.appendChild(body);
+    return row;
+  }
+
+  function buildMusicSpotifyBlock(m, titleSpan, rowEl) {
+    const container = C.el("div", { className: "field activities-channel-url-block" });
+    container.appendChild(C.el("label", { text: "Spotify URL (otomatik doldurma)" }));
+
+    const urlRow = C.el("div", { className: "activities-url-row" });
+
+    const preview = C.el("div", { className: "channel-avatar-preview" });
+    function renderPreview() {
+      preview.innerHTML = "";
+      const src = m.image && /^https?:/.test(m.image)
+        ? m.image
+        : m.image ? `../${m.image}?v=${Date.now()}` : "";
+      if (src) {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = m.title || "";
+        img.onerror = () => {
+          preview.innerHTML = '<i class="fa-solid fa-music"></i>';
+          preview.classList.remove("has-avatar");
+        };
+        preview.appendChild(img);
+        preview.classList.add("has-avatar");
+      } else {
+        preview.innerHTML = '<i class="fa-solid fa-music"></i>';
+        preview.classList.remove("has-avatar");
+      }
+    }
+    renderPreview();
+
+    const urlInp = C.input("url", m.url, "https://open.spotify.com/track/...");
+    urlInp.addEventListener("input", () => { m.url = urlInp.value.trim(); });
+
+    const fetchBtn = C.el("button", { type: "button", className: "btn btn-ghost btn-sm", title: "Spotify'dan bilgileri getir" });
+    fetchBtn.innerHTML = '<i class="fa-brands fa-spotify"></i> Getir';
+
+    const status = C.el("span", { className: "avatar-fetch-status" });
+
+    fetchBtn.addEventListener("click", async () => {
+      const url = (urlInp.value || "").trim();
+      if (!url) {
+        status.textContent = "Önce Spotify URL'i yapıştırın.";
+        status.className = "avatar-fetch-status err";
+        return;
+      }
+
+      fetchBtn.disabled = true;
+      fetchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+      status.textContent = "Getiriliyor…";
+      status.className = "avatar-fetch-status";
+
+      try {
+        const res = await fetch(`/api/spotify-track?url=${encodeURIComponent(url)}`);
+        const result = await res.json().catch(() => ({}));
+        if (!res.ok) throw new Error(result.error || "Bulunamadı");
+
+        // Bilgileri güncelle ve input'lara yansıt
+        if (result.artist) {
+          m.artist = result.artist;
+          const inp = rowEl.querySelector('input[data-role="music-artist"]');
+          if (inp) inp.value = result.artist;
+        }
+        if (result.title) {
+          m.title = result.title;
+          const inp = rowEl.querySelector('input[data-role="music-title"]');
+          if (inp) inp.value = result.title;
+        }
+        if (result.image) {
+          m.image = result.image;
+          const inp = rowEl.querySelector('input[data-role="music-image"]');
+          if (inp) {
+            inp.value = result.image;
+            inp.dispatchEvent(new Event("input", { bubbles: true }));
+          }
+          renderPreview();
+        }
+        titleSpan.textContent = `${m.artist || "—"} — ${m.title || "—"}`;
+
+        status.textContent = "✓ Bilgiler dolduruldu";
+        status.className = "avatar-fetch-status ok";
+      } catch (err) {
+        status.textContent = err.message || "Hata";
+        status.className = "avatar-fetch-status err";
+      } finally {
+        fetchBtn.disabled = false;
+        fetchBtn.innerHTML = '<i class="fa-brands fa-spotify"></i> Getir';
+      }
+    });
+
+    const urlFieldWrap = C.el("div", { className: "activities-url-field" });
+    urlFieldWrap.appendChild(urlInp);
+
+    const urlBtnWrap = C.el("div", { className: "activities-url-btn-wrap" });
+    urlBtnWrap.appendChild(fetchBtn);
+    urlBtnWrap.appendChild(status);
+
+    urlRow.appendChild(preview);
+    urlRow.appendChild(urlFieldWrap);
+    urlRow.appendChild(urlBtnWrap);
+
+    container.appendChild(urlRow);
+    return container;
+  }
+
   /* ──────────────────────── SUB-TABS + RENDER ──────────────── */
   function buildSubnav() {
     const nav = C.el("div", { className: "activities-subnav", role: "tablist" });
     const tabs = [
-      { id: "channels", label: "Favori Kanallar", icon: "fa-youtube", brand: true },
-      { id: "series",   label: "Favori Diziler",  icon: "fa-tv" },
-      { id: "books",    label: "Kütüphanem (gizli)", icon: "fa-book-open" },
+      { id: "channels", label: "Kanallar", icon: "fa-youtube", brand: true },
+      { id: "series",   label: "Diziler",  icon: "fa-tv" },
+      { id: "music",    label: "Müzikler", icon: "fa-music" },
+      { id: "books",    label: "Kütüphane (gizli)", icon: "fa-book-open" },
     ];
 
     tabs.forEach(t => {
@@ -407,15 +589,18 @@ window.AdminActivitiesUI = (function () {
 
     const sections = C.el("div", { className: "activities-subpanels" });
     const channelsPanel = buildChannelsSection(data);
-    const seriesPanel = buildSeriesSection(data);
-    const booksPanel = buildBooksSection(data);
+    const seriesPanel   = buildSeriesSection(data);
+    const musicPanel    = buildMusicSection(data);
+    const booksPanel    = buildBooksSection(data);
 
     channelsPanel.hidden = activeSubtab !== "channels";
-    seriesPanel.hidden = activeSubtab !== "series";
-    booksPanel.hidden = activeSubtab !== "books";
+    seriesPanel.hidden   = activeSubtab !== "series";
+    musicPanel.hidden    = activeSubtab !== "music";
+    booksPanel.hidden    = activeSubtab !== "books";
 
     sections.appendChild(channelsPanel);
     sections.appendChild(seriesPanel);
+    sections.appendChild(musicPanel);
     sections.appendChild(booksPanel);
     container.appendChild(sections);
   }

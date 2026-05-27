@@ -194,9 +194,38 @@
       .replace(/"/g, "&quot;");
   }
 
+  /* ── MUSIC ─────────────────────────────────────────────────── */
+  function renderMusic(music) {
+    const grid = document.getElementById("musicGrid");
+    if (!grid) return;
+
+    if (!music || !music.length) {
+      grid.innerHTML = "";
+      return;
+    }
+
+    grid.innerHTML = music
+      .map((m) => {
+        const imgSrc = m.image && /^https?:/.test(m.image) ? m.image : m.image || "";
+        const imgHtml = imgSrc
+          ? `<img src="${escHtml(imgSrc)}" alt="${escHtml(m.artist)}" loading="lazy">`
+          : `<div class="music-track-placeholder"><i class="fa-solid fa-music"></i></div>`;
+        return `
+        <div class="music-track">
+          ${imgHtml}
+          <div class="music-track-info">
+            <h4>${escHtml(m.artist)}</h4>
+            <p><i class="fa-solid fa-heart heart"></i> ${escHtml(m.title)}</p>
+          </div>
+        </div>`;
+      })
+      .join("");
+  }
+
   /* ── INIT ───────────────────────────────────────────────────── */
   fetchData()
     .then((data) => {
+      renderMusic(data.music || []);
       renderChannels(data.channels || []);
       renderSeries(data.series || []);
       renderBooks(data.books || []);

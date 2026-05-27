@@ -50,6 +50,7 @@ function validateActivities(payload) {
   if (!Array.isArray(payload.channels)) return "channels dizisi gerekli.";
   if (!Array.isArray(payload.series)) return "series dizisi gerekli.";
   if (!Array.isArray(payload.books)) return "books dizisi gerekli.";
+  if (payload.music !== undefined && !Array.isArray(payload.music)) return "music dizisi gerekli.";
 
   const validStatuses = new Set(["watching", "finished", "wishlist"]);
   for (let i = 0; i < payload.series.length; i++) {
@@ -77,6 +78,17 @@ function validateActivities(payload) {
     const c = payload.channels[i];
     if (!c || typeof c.name !== "string" || !c.name.trim()) {
       return `channels[${i}]: name gerekli.`;
+    }
+  }
+
+  const music = Array.isArray(payload.music) ? payload.music : [];
+  for (let i = 0; i < music.length; i++) {
+    const m = music[i];
+    if (!m || typeof m.title !== "string" || !m.title.trim()) {
+      return `music[${i}]: title gerekli.`;
+    }
+    if (typeof m.artist !== "string" || !m.artist.trim()) {
+      return `music[${i}]: artist gerekli.`;
     }
   }
 

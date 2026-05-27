@@ -146,6 +146,7 @@ window.AdminCore = (function () {
     data.channels = Array.isArray(data.channels) ? data.channels : [];
     data.series   = Array.isArray(data.series)   ? data.series   : [];
     data.books    = Array.isArray(data.books)     ? data.books    : [];
+    data.music    = Array.isArray(data.music)     ? data.music    : [];
 
     data.channels = data.channels
       .map((ch, i) => ({
@@ -189,6 +190,16 @@ window.AdminCore = (function () {
       })
       .filter(b => b.title); // başlığı olmayan kitapları düşür
 
+    data.music = data.music
+      .map((m, i) => ({
+        id:     m.id || `m-${i}-${Date.now()}`,
+        artist: String(m.artist || "").trim(),
+        title:  String(m.title  || "").trim(),
+        image:  String(m.image  || "").trim(),
+        url:    String(m.url    || "").trim(),
+      }))
+      .filter(m => m.artist && m.title);
+
     return data;
   }
 
@@ -199,6 +210,11 @@ window.AdminCore = (function () {
     });
     (data.series || []).forEach((s, i) => {
       if (!s.title?.trim()) errors.push(`Dizi ${i + 1}: Başlık zorunlu — doldurun veya silin.`);
+    });
+    (data.music || []).forEach((m, i) => {
+      if (!m.artist?.trim() || !m.title?.trim()) {
+        errors.push(`Müzik ${i + 1}: Sanatçı ve şarkı adı zorunlu — doldurun veya silin.`);
+      }
     });
     return errors;
   }

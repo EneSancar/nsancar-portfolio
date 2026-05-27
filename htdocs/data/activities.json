@@ -91,5 +91,49 @@
       "rating": 5
     }
   ],
-  "books": []
+  "books": [],
+  "music": [
+    {
+      "id": "m-1",
+      "artist": "Kid Cudi",
+      "title": "Day 'n' Nite",
+      "image": "image/music/kd cudi.jpeg",
+      "url": ""
+    },
+    {
+      "id": "m-2",
+      "artist": "Suisside",
+      "title": "Dark Side Of The Moon",
+      "image": "image/music/suisside.jpg",
+      "url": ""
+    },
+    {
+      "id": "m-3",
+      "artist": "Tame Impala",
+      "title": "Let It Happen",
+      "image": "image/music/tame impala.jpeg",
+      "url": ""
+    },
+    {
+      "id": "m-4",
+      "artist": "Battle Tapes",
+      "title": "Valkyrie",
+      "image": "image/music/battletapes.jpeg",
+      "url": ""
+    },
+    {
+      "id": "m-5",
+      "artist": "M83",
+      "title": "Solitude (Felsmann + Tiley Reinterpretation)",
+      "image": "image/music/m83.png",
+      "url": ""
+    },
+    {
+      "id": "m-6",
+      "artist": "Kendrick Lamar",
+      "title": "Money Trees",
+      "image": "image/music/kendricklamar.jpg",
+      "url": ""
+    }
+  ]
 }
