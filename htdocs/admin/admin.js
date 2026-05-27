@@ -101,6 +101,9 @@
           " Yenile'ye hemen basmayın; deploy bitene kadar eski veri gelebilir.",
         true
       );
+      // Aktiviteler panelini yeniden render et — kayıt sonrası
+      // form referansları güncellenen state'e bağlansın.
+      if (C.state.tab === "activities") renderActivePanel();
     } catch (err) {
       showStatus(`Kayıt başarısız: ${err.message}`, false);
     } finally {

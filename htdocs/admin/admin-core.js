@@ -147,31 +147,60 @@ window.AdminCore = (function () {
     data.series   = Array.isArray(data.series)   ? data.series   : [];
     data.books    = Array.isArray(data.books)     ? data.books    : [];
 
-    data.channels.forEach((ch, i) => {
-      if (!ch.id) ch.id = `ch-${i}-${Date.now()}`;
-      ch.name        = String(ch.name || "").trim();
-      ch.tag         = String(ch.tag  || "").trim();
-      ch.description = String(ch.description || "").trim();
-      ch.url         = String(ch.url  || "").trim();
-    });
-    data.series.forEach((s, i) => {
-      if (!s.id) s.id = `s-${i}-${Date.now()}`;
-      s.title  = String(s.title  || "").trim();
-      s.meta   = String(s.meta   || "").trim();
-      s.poster = String(s.poster || "").trim();
-      s.rating = Number(s.rating) || 0;
-      if (!["watching", "finished", "wishlist"].includes(s.status)) s.status = "wishlist";
-    });
-    data.books.forEach((b, i) => {
-      if (!b.id) b.id = `b-${i}-${Date.now()}`;
-      b.title  = String(b.title  || "").trim();
-      b.author = String(b.author || "").trim();
-      b.note   = String(b.note   || "").trim();
-      b.cover  = String(b.cover  || "").trim();
-      b.rating = Number(b.rating) || 0;
-      if (!["reading", "finished", "wishlist"].includes(b.status)) b.status = "wishlist";
-    });
+    data.channels = data.channels
+      .map((ch, i) => ({
+        id:          ch.id || `ch-${i}-${Date.now()}`,
+        name:        String(ch.name        || "").trim(),
+        tag:         String(ch.tag         || "").trim(),
+        description: String(ch.description || "").trim(),
+        url:         String(ch.url         || "").trim(),
+        avatar:      String(ch.avatar      || "").trim(),
+      }))
+      .filter(ch => ch.name); // adı olmayan kanalları düşür
+
+    data.series = data.series
+      .map((s, i) => {
+        const status = ["watching", "finished", "wishlist"].includes(s.status)
+          ? s.status : "wishlist";
+        return {
+          id:     s.id || `s-${i}-${Date.now()}`,
+          title:  String(s.title  || "").trim(),
+          status,
+          meta:   String(s.meta   || "").trim(),
+          poster: String(s.poster || "").trim(),
+          rating: Number(s.rating) || 0,
+        };
+      })
+      .filter(s => s.title); // başlığı olmayan dizileri düşür
+
+    data.books = data.books
+      .map((b, i) => {
+        const status = ["reading", "finished", "wishlist"].includes(b.status)
+          ? b.status : "wishlist";
+        return {
+          id:     b.id || `b-${i}-${Date.now()}`,
+          title:  String(b.title  || "").trim(),
+          author: String(b.author || "").trim(),
+          status,
+          rating: Number(b.rating) || 0,
+          note:   String(b.note   || "").trim(),
+          cover:  String(b.cover  || "").trim(),
+        };
+      })
+      .filter(b => b.title); // başlığı olmayan kitapları düşür
+
     return data;
+  }
+
+  function validateActivitiesClient(data) {
+    const errors = [];
+    (data.channels || []).forEach((ch, i) => {
+      if (!ch.name?.trim()) errors.push(`Kanal ${i + 1}: Ad zorunlu — doldurun veya silin.`);
+    });
+    (data.series || []).forEach((s, i) => {
+      if (!s.title?.trim()) errors.push(`Dizi ${i + 1}: Başlık zorunlu — doldurun veya silin.`);
+    });
+    return errors;
   }
 
   function validateAboutClient(data) {
@@ -209,6 +238,10 @@ window.AdminCore = (function () {
 
     if (tab === "about") {
       const clientErrors = validateAboutClient(payload);
+      if (clientErrors.length) throw new Error(clientErrors.join(" "));
+    }
+    if (tab === "activities") {
+      const clientErrors = validateActivitiesClient(payload);
       if (clientErrors.length) throw new Error(clientErrors.join(" "));
     }
 
@@ -328,6 +361,7 @@ window.AdminCore = (function () {
     loadAll,
     saveTab,
     validateAboutClient,
+    validateActivitiesClient,
     readAboutBackup,
     slugify,
     linesToArray,
