@@ -43,7 +43,7 @@
           <div class="channel-body">
             ${ch.tag ? `<span class="channel-tag">${escHtml(ch.tag)}</span>` : ""}
             <h3 class="channel-name">${escHtml(ch.name)}</h3>
-            ${ch.description ? `<p class="channel-desc">${escHtml(ch.description)}</p>` : ""}
+            ${ch.description ? `<p class="channel-desc">${escHtml(ch.description).replace(/\n/g, "<br>")}</p>` : ""}
           </div>
           <span class="channel-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
         </a>`;
