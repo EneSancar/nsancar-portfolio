@@ -29,20 +29,25 @@
     if (badge) badge.textContent = `${channels.length} kanal`;
 
     grid.innerHTML = channels
-      .map(
-        (ch) => `
-      <a href="${escHtml(ch.url || "#")}" class="channel-card" target="_blank" rel="noopener">
-        <div class="channel-avatar channel-avatar--yt" aria-hidden="true">
-          <i class="fa-brands fa-youtube"></i>
-        </div>
-        <div class="channel-body">
-          ${ch.tag ? `<span class="channel-tag">${escHtml(ch.tag)}</span>` : ""}
-          <h3 class="channel-name">${escHtml(ch.name)}</h3>
-          ${ch.description ? `<p class="channel-desc">${escHtml(ch.description)}</p>` : ""}
-        </div>
-        <span class="channel-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-      </a>`
-      )
+      .map((ch) => {
+        const avatarHtml = ch.avatar
+          ? `<div class="channel-avatar channel-avatar--photo" aria-hidden="true">
+               <img src="${escHtml(ch.avatar)}" alt="${escHtml(ch.name)}" loading="lazy">
+             </div>`
+          : `<div class="channel-avatar channel-avatar--yt" aria-hidden="true">
+               <i class="fa-brands fa-youtube"></i>
+             </div>`;
+        return `
+        <a href="${escHtml(ch.url || "#")}" class="channel-card" target="_blank" rel="noopener">
+          ${avatarHtml}
+          <div class="channel-body">
+            ${ch.tag ? `<span class="channel-tag">${escHtml(ch.tag)}</span>` : ""}
+            <h3 class="channel-name">${escHtml(ch.name)}</h3>
+            ${ch.description ? `<p class="channel-desc">${escHtml(ch.description)}</p>` : ""}
+          </div>
+          <span class="channel-go" aria-hidden="true"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>`;
+      })
       .join("");
   }
 

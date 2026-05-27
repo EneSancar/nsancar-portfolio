@@ -105,9 +105,75 @@ window.AdminActivitiesUI = (function () {
     descTA.addEventListener("input", () => { ch.description = descTA.value; });
     body.appendChild(C.field("Açıklama", descTA));
 
+    // URL + avatar fetch satırı
+    const urlRow = C.el("div", { className: "activities-url-row" });
+
     const urlInp = C.input("url", ch.url, "https://youtube.com/@...");
     urlInp.addEventListener("input", () => { ch.url = urlInp.value; });
-    body.appendChild(C.field("YouTube URL", urlInp));
+
+    const fetchBtn = C.el("button", { type: "button", className: "btn btn-ghost btn-sm", title: "Profil fotoğrafını getir" });
+    fetchBtn.innerHTML = '<i class="fa-solid fa-image"></i> Getir';
+
+    const avatarStatus = C.el("span", { className: "avatar-fetch-status" });
+
+    // Avatar önizleme
+    const avatarPreview = C.el("div", { className: "channel-avatar-preview" });
+    if (ch.avatar) {
+      const img = document.createElement("img");
+      img.src = ch.avatar;
+      img.alt = ch.name;
+      avatarPreview.appendChild(img);
+      avatarPreview.classList.add("has-avatar");
+    } else {
+      avatarPreview.innerHTML = '<i class="fa-brands fa-youtube"></i>';
+    }
+
+    fetchBtn.addEventListener("click", async () => {
+      const url = urlInp.value.trim();
+      if (!url) { avatarStatus.textContent = "Önce URL girin."; return; }
+
+      fetchBtn.disabled = true;
+      fetchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
+      avatarStatus.textContent = "Getiriliyor…";
+
+      try {
+        const res = await fetch(`/api/yt-avatar?url=${encodeURIComponent(url)}`);
+        const data = await res.json();
+        if (!res.ok || !data.avatar) throw new Error(data.error || "Bulunamadı");
+
+        ch.avatar = data.avatar;
+        avatarPreview.innerHTML = "";
+        const img = document.createElement("img");
+        img.src = data.avatar;
+        img.alt = ch.name;
+        avatarPreview.appendChild(img);
+        avatarPreview.classList.add("has-avatar");
+        avatarStatus.textContent = "✓ Fotoğraf alındı";
+        avatarStatus.className = "avatar-fetch-status ok";
+      } catch (err) {
+        avatarStatus.textContent = `Hata: ${err.message}`;
+        avatarStatus.className = "avatar-fetch-status err";
+      } finally {
+        fetchBtn.disabled = false;
+        fetchBtn.innerHTML = '<i class="fa-solid fa-image"></i> Getir';
+      }
+    });
+
+    const urlFieldWrap = C.el("div", { className: "activities-url-field" });
+    urlFieldWrap.appendChild(urlInp);
+
+    const urlBtnWrap = C.el("div", { className: "activities-url-btn-wrap" });
+    urlBtnWrap.appendChild(fetchBtn);
+    urlBtnWrap.appendChild(avatarStatus);
+
+    urlRow.appendChild(avatarPreview);
+    urlRow.appendChild(urlFieldWrap);
+    urlRow.appendChild(urlBtnWrap);
+
+    const urlFieldContainer = C.el("div", { className: "field" });
+    urlFieldContainer.appendChild(C.el("label", { text: "YouTube URL + Profil fotoğrafı" }));
+    urlFieldContainer.appendChild(urlRow);
+    body.appendChild(urlFieldContainer);
 
     row.appendChild(body);
     return row;
