@@ -45,4 +45,42 @@ function validateProjects(payload) {
   return null;
 }
 
-module.exports = { validateAbout, validateProjects };
+function validateActivities(payload) {
+  if (!isObject(payload)) return "activities verisi bir nesne olmalı.";
+  if (!Array.isArray(payload.channels)) return "channels dizisi gerekli.";
+  if (!Array.isArray(payload.series)) return "series dizisi gerekli.";
+  if (!Array.isArray(payload.books)) return "books dizisi gerekli.";
+
+  const validStatuses = new Set(["watching", "finished", "wishlist"]);
+  for (let i = 0; i < payload.series.length; i++) {
+    const s = payload.series[i];
+    if (!s || typeof s.title !== "string" || !s.title.trim()) {
+      return `series[${i}]: title gerekli.`;
+    }
+    if (!validStatuses.has(s.status)) {
+      return `series[${i}]: status "watching", "finished" veya "wishlist" olmalı.`;
+    }
+  }
+
+  const validBookStatuses = new Set(["reading", "finished", "wishlist"]);
+  for (let i = 0; i < payload.books.length; i++) {
+    const b = payload.books[i];
+    if (!b || typeof b.title !== "string" || !b.title.trim()) {
+      return `books[${i}]: title gerekli.`;
+    }
+    if (!validBookStatuses.has(b.status)) {
+      return `books[${i}]: status "reading", "finished" veya "wishlist" olmalı.`;
+    }
+  }
+
+  for (let i = 0; i < payload.channels.length; i++) {
+    const c = payload.channels[i];
+    if (!c || typeof c.name !== "string" || !c.name.trim()) {
+      return `channels[${i}]: name gerekli.`;
+    }
+  }
+
+  return null;
+}
+
+module.exports = { validateAbout, validateProjects, validateActivities };

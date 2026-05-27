@@ -1,0 +1,52 @@
+{
+  "channels": [
+    {
+      "id": "ch-1",
+      "name": "Kanal Adı",
+      "tag": "Tasarım",
+      "description": "Kısa açıklama — ne tür içerik üretiyor, neden takip ediyorsun.",
+      "url": "https://youtube.com"
+    },
+    {
+      "id": "ch-2",
+      "name": "Kanal Adı",
+      "tag": "Teknoloji",
+      "description": "Örn. yazılım, web geliştirme veya araç incelemeleri.",
+      "url": "https://youtube.com"
+    },
+    {
+      "id": "ch-3",
+      "name": "Kanal Adı",
+      "tag": "Üretkenlik",
+      "description": "Örn. motivasyon, vlog veya yaratıcı süreçler.",
+      "url": "https://youtube.com"
+    }
+  ],
+  "series": [
+    {
+      "id": "s-1",
+      "title": "Invincible",
+      "status": "watching",
+      "meta": "Sezon 4 · Animasyon, süper kahraman",
+      "rating": 5,
+      "poster": ""
+    },
+    {
+      "id": "s-2",
+      "title": "Severance",
+      "status": "finished",
+      "meta": "2 sezon · Bilim kurgu, gerilim",
+      "rating": 5,
+      "poster": ""
+    },
+    {
+      "id": "s-3",
+      "title": "The Boys",
+      "status": "finished",
+      "meta": "4 sezon · Aksiyon, süper kahraman",
+      "rating": 4,
+      "poster": ""
+    }
+  ],
+  "books": []
+}

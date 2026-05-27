@@ -12,6 +12,7 @@
   const panelTitle = document.getElementById("panelTitle");
   const panelAbout = document.getElementById("panelAbout");
   const panelProjects = document.getElementById("panelProjects");
+  const panelActivities = document.getElementById("panelActivities");
   const navItems = document.querySelectorAll(".admin-nav-item[data-tab]");
 
   function showStatus(message, ok, target) {
@@ -33,14 +34,18 @@
   function renderActivePanel() {
     const tab = C.state.tab;
     panelTitle.textContent = C.endpoints[tab].title;
-    panelAbout.hidden = tab !== "about";
-    panelProjects.hidden = tab !== "projects";
+    panelAbout.hidden       = tab !== "about";
+    panelProjects.hidden    = tab !== "projects";
+    panelActivities.hidden  = tab !== "activities";
 
     if (tab === "about" && C.state.about) {
       window.AdminAboutUI.render(panelAbout, C.state.about);
     }
     if (tab === "projects" && C.state.projects) {
       window.AdminProjectsUI.render(panelProjects, C.state.projects);
+    }
+    if (tab === "activities" && C.state.activities) {
+      window.AdminActivitiesUI.render(panelActivities, C.state.activities);
     }
   }
 

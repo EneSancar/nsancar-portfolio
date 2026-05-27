@@ -3,8 +3,9 @@ window.AdminCore = (function () {
   const AUTH_CHECK = "/api/auth-check";
 
   const endpoints = {
-    about: { file: "data/about.json", api: "/api/about", title: "Hakkımda" },
-    projects: { file: "data/projects.json", api: "/api/projects", title: "Projeler" },
+    about:      { file: "data/about.json",      api: "/api/about",      title: "Hakkımda"   },
+    projects:   { file: "data/projects.json",   api: "/api/projects",   title: "Projeler"   },
+    activities: { file: "data/activities.json", api: "/api/activities", title: "Aktiviteler" },
   };
 
   const BACKUP_KEY = "nsancar_admin_about_backup";
@@ -14,6 +15,7 @@ window.AdminCore = (function () {
     tab: "about",
     about: null,
     projects: null,
+    activities: null,
     lastLoadUsedBackup: false,
   };
 
@@ -78,9 +80,10 @@ window.AdminCore = (function () {
   }
 
   async function loadAll() {
-    const [about, projects] = await Promise.all([
+    const [about, projects, activities] = await Promise.all([
       fetchJson(endpoints.about.file),
       fetchJson(endpoints.projects.file),
+      fetchJson(endpoints.activities.file),
     ]);
 
     state.lastLoadUsedBackup = false;
@@ -92,6 +95,7 @@ window.AdminCore = (function () {
       state.about = about;
     }
     state.projects = projects;
+    state.activities = activities;
     return state;
   }
 
@@ -137,6 +141,39 @@ window.AdminCore = (function () {
     return data;
   }
 
+  function normalizeActivitiesPayload(payload) {
+    const data = JSON.parse(JSON.stringify(payload));
+    data.channels = Array.isArray(data.channels) ? data.channels : [];
+    data.series   = Array.isArray(data.series)   ? data.series   : [];
+    data.books    = Array.isArray(data.books)     ? data.books    : [];
+
+    data.channels.forEach((ch, i) => {
+      if (!ch.id) ch.id = `ch-${i}-${Date.now()}`;
+      ch.name        = String(ch.name || "").trim();
+      ch.tag         = String(ch.tag  || "").trim();
+      ch.description = String(ch.description || "").trim();
+      ch.url         = String(ch.url  || "").trim();
+    });
+    data.series.forEach((s, i) => {
+      if (!s.id) s.id = `s-${i}-${Date.now()}`;
+      s.title  = String(s.title  || "").trim();
+      s.meta   = String(s.meta   || "").trim();
+      s.poster = String(s.poster || "").trim();
+      s.rating = Number(s.rating) || 0;
+      if (!["watching", "finished", "wishlist"].includes(s.status)) s.status = "wishlist";
+    });
+    data.books.forEach((b, i) => {
+      if (!b.id) b.id = `b-${i}-${Date.now()}`;
+      b.title  = String(b.title  || "").trim();
+      b.author = String(b.author || "").trim();
+      b.note   = String(b.note   || "").trim();
+      b.cover  = String(b.cover  || "").trim();
+      b.rating = Number(b.rating) || 0;
+      if (!["reading", "finished", "wishlist"].includes(b.status)) b.status = "wishlist";
+    });
+    return data;
+  }
+
   function validateAboutClient(data) {
     const errors = [];
     if (!data?.profile?.name?.trim()) errors.push("Profil: Ad soyad zorunlu.");
@@ -166,7 +203,9 @@ window.AdminCore = (function () {
         ? cleanProjectsPayload(state[tab])
         : tab === "about"
           ? normalizeAboutPayload(state[tab])
-          : state[tab];
+          : tab === "activities"
+            ? normalizeActivitiesPayload(state[tab])
+            : state[tab];
 
     if (tab === "about") {
       const clientErrors = validateAboutClient(payload);
