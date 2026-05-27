@@ -306,10 +306,33 @@
 .btn-primary {
   background: linear-gradient(135deg, var(--admin-accent), #4f46e5);
   color: #fff;
+  transition: background 0.3s, transform 0.15s, box-shadow 0.3s;
 }
 
 .btn-primary:hover {
   filter: brightness(1.08);
+}
+
+.btn-primary.is-saving {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  pointer-events: none;
+  animation: pulse-save 1s ease-in-out infinite;
+}
+
+.btn-primary.is-saved {
+  background: linear-gradient(135deg, var(--admin-success), #16a34a);
+  box-shadow: 0 0 16px rgba(34, 197, 94, 0.3);
+  transform: scale(1.02);
+}
+
+.btn-primary.is-error {
+  background: linear-gradient(135deg, var(--admin-danger), #dc2626);
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.3);
+}
+
+@keyframes pulse-save {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
 }
 
 .btn-ghost {

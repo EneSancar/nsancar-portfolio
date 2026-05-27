@@ -91,21 +91,38 @@
     }
 
     saveBtn.disabled = true;
+    saveBtn.classList.remove("is-saved", "is-error");
+    saveBtn.classList.add("is-saving");
+    saveBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Kaydediliyor…';
     clearStatus();
 
     try {
       const data = await C.saveTab(C.state.tab);
+      saveBtn.classList.remove("is-saving");
+      saveBtn.classList.add("is-saved");
+      saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Kaydedildi!';
       showStatus(
         `Kaydedildi. Site ~30-60 sn içinde güncellenir.` +
           (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : "") +
           " Yenile'ye hemen basmayın; deploy bitene kadar eski veri gelebilir.",
         true
       );
-      // Aktiviteler panelini yeniden render et — kayıt sonrası
-      // form referansları güncellenen state'e bağlansın.
       if (C.state.tab === "activities") renderActivePanel();
+
+      setTimeout(() => {
+        saveBtn.classList.remove("is-saved");
+        saveBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Kaydet';
+      }, 4000);
     } catch (err) {
+      saveBtn.classList.remove("is-saving");
+      saveBtn.classList.add("is-error");
+      saveBtn.innerHTML = '<i class="fa-solid fa-xmark"></i> Hata!';
       showStatus(`Kayıt başarısız: ${err.message}`, false);
+
+      setTimeout(() => {
+        saveBtn.classList.remove("is-error");
+        saveBtn.innerHTML = '<i class="fa-solid fa-cloud-arrow-up"></i> Kaydet';
+      }, 4000);
     } finally {
       saveBtn.disabled = false;
     }
