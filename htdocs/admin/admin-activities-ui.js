@@ -13,6 +13,10 @@ window.AdminActivitiesUI = (function () {
     { value: "wishlist", label: "Listemde" },
   ];
 
+  // Alt sekme durumu — render çağrıları arasında korunur
+  let activeSubtab = "channels";
+
+  /* ──────────────────────── Helpers ─────────────────────────── */
   function statusSelect(statuses, current) {
     const sel = document.createElement("select");
     statuses.forEach(({ value, label }) => {
@@ -37,37 +41,43 @@ window.AdminActivitiesUI = (function () {
     return sel;
   }
 
-  /* ──────────────────────── CHANNELS ──────────────────────── */
-  function buildChannelsSection(data) {
-    const wrap = C.el("div", { className: "activities-section" });
-    wrap.appendChild(C.el("h3", { className: "activities-section-title", text: "Favori Kanallar" }));
+  function deleteButton(title, onDelete) {
+    const btn = C.el("button", { type: "button", className: "btn-icon btn-icon--danger", title: "Sil" });
+    btn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    btn.addEventListener("click", () => {
+      if (confirm(`"${title}" silmek istiyor musunuz?`)) onDelete();
+    });
+    return btn;
+  }
 
-    const list = C.el("div", { className: "activities-list", id: "channelsList" });
+  function addButton(label, onAdd) {
+    const btn = C.el("button", { type: "button", className: "btn btn-ghost btn-sm activities-add-btn" });
+    btn.innerHTML = `<i class="fa-solid fa-plus"></i> ${label}`;
+    btn.addEventListener("click", onAdd);
+    return btn;
+  }
+
+  /* ──────────────────────── CHANNELS ─────────────────────────── */
+  function buildChannelsSection(data) {
+    const wrap = C.el("div", { className: "activities-section", "data-subpanel": "channels" });
+    if (!Array.isArray(data.channels)) data.channels = [];
+
+    const list = C.el("div", { className: "activities-list" });
     wrap.appendChild(list);
 
-    function rebuildList() {
+    function rebuild() {
       list.innerHTML = "";
-      (data.channels || []).forEach((ch, idx) => {
-        list.appendChild(buildChannelRow(ch, idx, data, rebuildList));
-      });
-
-      const addBtn = C.el("button", { type: "button", className: "btn btn-ghost btn-sm" });
-      addBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Kanal ekle';
-      addBtn.addEventListener("click", () => {
-        if (!data.channels) data.channels = [];
+      data.channels.forEach((ch, idx) => list.appendChild(buildChannelRow(ch, idx, data, rebuild)));
+      list.appendChild(addButton("Kanal ekle", () => {
         data.channels.push({
           id: `ch-${Date.now()}`,
-          name: "",
-          tag: "",
-          description: "",
-          url: "",
+          name: "", tag: "", description: "", url: "", avatar: "",
         });
-        rebuildList();
-      });
-      list.appendChild(addBtn);
+        rebuild();
+      }));
     }
 
-    rebuildList();
+    rebuild();
     return wrap;
   }
 
@@ -76,15 +86,11 @@ window.AdminActivitiesUI = (function () {
 
     const header = C.el("div", { className: "activities-item-header" });
     const title = C.el("span", { className: "activities-item-label", text: ch.name || `Kanal ${idx + 1}` });
-    const delBtn = C.el("button", { type: "button", className: "btn-icon btn-icon--danger", title: "Sil" });
-    delBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-    delBtn.addEventListener("click", () => {
-      if (!confirm(`"${ch.name || "bu kanalı"}" silmek istiyor musunuz?`)) return;
+    header.appendChild(title);
+    header.appendChild(deleteButton(ch.name || "bu kanalı", () => {
       data.channels.splice(idx, 1);
       rebuild();
-    });
-    header.appendChild(title);
-    header.appendChild(delBtn);
+    }));
     row.appendChild(header);
 
     const body = C.el("div", { className: "activities-item-body" });
@@ -105,8 +111,39 @@ window.AdminActivitiesUI = (function () {
     descTA.addEventListener("input", () => { ch.description = descTA.value; });
     body.appendChild(C.field("Açıklama", descTA));
 
-    // URL + avatar fetch satırı
+    // URL + otomatik avatar getirme bloğu
+    body.appendChild(buildChannelUrlBlock(ch, nameInp, title, idx));
+
+    row.appendChild(body);
+    return row;
+  }
+
+  function buildChannelUrlBlock(ch, nameInp, titleSpan, idx) {
+    const container = C.el("div", { className: "field activities-channel-url-block" });
+    container.appendChild(C.el("label", { text: "YouTube URL + Profil fotoğrafı" }));
+
     const urlRow = C.el("div", { className: "activities-url-row" });
+
+    // Avatar önizleme
+    const avatarPreview = C.el("div", { className: "channel-avatar-preview" });
+    function renderAvatar() {
+      avatarPreview.innerHTML = "";
+      if (ch.avatar) {
+        const img = document.createElement("img");
+        img.src = ch.avatar;
+        img.alt = ch.name || "";
+        img.onerror = () => {
+          avatarPreview.innerHTML = '<i class="fa-brands fa-youtube"></i>';
+          avatarPreview.classList.remove("has-avatar");
+        };
+        avatarPreview.appendChild(img);
+        avatarPreview.classList.add("has-avatar");
+      } else {
+        avatarPreview.innerHTML = '<i class="fa-brands fa-youtube"></i>';
+        avatarPreview.classList.remove("has-avatar");
+      }
+    }
+    renderAvatar();
 
     const urlInp = C.input("url", ch.url, "https://youtube.com/@...");
     urlInp.addEventListener("input", () => { ch.url = urlInp.value; });
@@ -116,21 +153,13 @@ window.AdminActivitiesUI = (function () {
 
     const avatarStatus = C.el("span", { className: "avatar-fetch-status" });
 
-    // Avatar önizleme
-    const avatarPreview = C.el("div", { className: "channel-avatar-preview" });
-    if (ch.avatar) {
-      const img = document.createElement("img");
-      img.src = ch.avatar;
-      img.alt = ch.name;
-      avatarPreview.appendChild(img);
-      avatarPreview.classList.add("has-avatar");
-    } else {
-      avatarPreview.innerHTML = '<i class="fa-brands fa-youtube"></i>';
-    }
-
     fetchBtn.addEventListener("click", async () => {
-      const url = urlInp.value.trim();
-      if (!url) { avatarStatus.textContent = "Önce URL girin."; return; }
+      const url = (urlInp.value || "").trim();
+      if (!url) {
+        avatarStatus.textContent = "Önce URL girin.";
+        avatarStatus.className = "avatar-fetch-status err";
+        return;
+      }
 
       fetchBtn.disabled = true;
       fetchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i>';
@@ -139,34 +168,23 @@ window.AdminActivitiesUI = (function () {
 
       try {
         const res = await fetch(`/api/yt-avatar?url=${encodeURIComponent(url)}`);
-        const result = await res.json();
+        const result = await res.json().catch(() => ({}));
         if (!res.ok || !result.avatar) throw new Error(result.error || "Bulunamadı");
 
         ch.avatar = result.avatar;
-        avatarPreview.innerHTML = "";
-        const img = document.createElement("img");
-        img.src = result.avatar;
-        img.alt = ch.name;
-        avatarPreview.appendChild(img);
-        avatarPreview.classList.add("has-avatar");
+        renderAvatar();
 
-        // Kanal adı boşsa ve API'den geldiyse otomatik doldur
         if (!ch.name && result.name) {
           ch.name = result.name;
           nameInp.value = result.name;
-          title.textContent = result.name;
+          titleSpan.textContent = result.name;
         }
 
         avatarStatus.textContent = "✓ Fotoğraf alındı";
         avatarStatus.className = "avatar-fetch-status ok";
       } catch (err) {
-        avatarStatus.textContent = `${err.message}`;
+        avatarStatus.textContent = err.message || "Hata";
         avatarStatus.className = "avatar-fetch-status err";
-
-        // Manuel kopyalama yolunu göster
-        const hint = C.el("small", { className: "avatar-hint", text: "İpucu: Kanala git → profil fotoğrafına sağ tık → \"Görsel adresini kopyala\" → aşağıdaki alana yapıştır." });
-        avatarStatus.appendChild(document.createElement("br"));
-        avatarStatus.appendChild(hint);
       } finally {
         fetchBtn.disabled = false;
         fetchBtn.innerHTML = '<i class="fa-solid fa-image"></i> Getir';
@@ -184,66 +202,40 @@ window.AdminActivitiesUI = (function () {
     urlRow.appendChild(urlFieldWrap);
     urlRow.appendChild(urlBtnWrap);
 
-    const urlFieldContainer = C.el("div", { className: "field" });
-    urlFieldContainer.appendChild(C.el("label", { text: "YouTube URL + Profil fotoğrafı" }));
-    urlFieldContainer.appendChild(urlRow);
+    container.appendChild(urlRow);
 
-    // Manuel avatar URL alanı
+    // Manuel avatar URL
     const manualAvatarInp = C.input("url", ch.avatar || "", "https://yt3.googleusercontent.com/...");
     manualAvatarInp.addEventListener("input", () => {
-      ch.avatar = manualAvatarInp.value.trim();
-      if (ch.avatar) {
-        avatarPreview.innerHTML = "";
-        const img = document.createElement("img");
-        img.src = ch.avatar;
-        img.alt = ch.name;
-        avatarPreview.appendChild(img);
-        avatarPreview.classList.add("has-avatar");
-      } else {
-        avatarPreview.innerHTML = '<i class="fa-brands fa-youtube"></i>';
-        avatarPreview.classList.remove("has-avatar");
-      }
+      ch.avatar = (manualAvatarInp.value || "").trim();
+      renderAvatar();
     });
-    urlFieldContainer.appendChild(C.field("Avatar URL (manuel)", manualAvatarInp, "Otomatik çekilemezse buraya yapıştırın."));
+    container.appendChild(C.field("Avatar URL (manuel)", manualAvatarInp, "Otomatik çekilemezse buraya yapıştırın."));
 
-    body.appendChild(urlFieldContainer);
-
-    row.appendChild(body);
-    return row;
+    return container;
   }
 
-  /* ──────────────────────── SERIES ────────────────────────── */
+  /* ──────────────────────── SERIES ─────────────────────────── */
   function buildSeriesSection(data) {
-    const wrap = C.el("div", { className: "activities-section" });
-    wrap.appendChild(C.el("h3", { className: "activities-section-title", text: "Favori Diziler" }));
+    const wrap = C.el("div", { className: "activities-section", "data-subpanel": "series" });
+    if (!Array.isArray(data.series)) data.series = [];
 
-    const list = C.el("div", { className: "activities-list", id: "seriesList" });
+    const list = C.el("div", { className: "activities-list" });
     wrap.appendChild(list);
 
-    function rebuildList() {
+    function rebuild() {
       list.innerHTML = "";
-      (data.series || []).forEach((s, idx) => {
-        list.appendChild(buildSeriesRow(s, idx, data, rebuildList));
-      });
-
-      const addBtn = C.el("button", { type: "button", className: "btn btn-ghost btn-sm" });
-      addBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Dizi ekle';
-      addBtn.addEventListener("click", () => {
-        if (!data.series) data.series = [];
+      data.series.forEach((s, idx) => list.appendChild(buildSeriesRow(s, idx, data, rebuild)));
+      list.appendChild(addButton("Dizi ekle", () => {
         data.series.push({
           id: `s-${Date.now()}`,
-          title: "",
-          status: "wishlist",
-          meta: "",
-          rating: 0,
-          poster: "",
+          title: "", status: "wishlist", meta: "", rating: 0, poster: "",
         });
-        rebuildList();
-      });
-      list.appendChild(addBtn);
+        rebuild();
+      }));
     }
 
-    rebuildList();
+    rebuild();
     return wrap;
   }
 
@@ -252,15 +244,11 @@ window.AdminActivitiesUI = (function () {
 
     const header = C.el("div", { className: "activities-item-header" });
     const title = C.el("span", { className: "activities-item-label", text: s.title || `Dizi ${idx + 1}` });
-    const delBtn = C.el("button", { type: "button", className: "btn-icon btn-icon--danger", title: "Sil" });
-    delBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-    delBtn.addEventListener("click", () => {
-      if (!confirm(`"${s.title || "bu diziyi"}" silmek istiyor musunuz?`)) return;
+    header.appendChild(title);
+    header.appendChild(deleteButton(s.title || "bu diziyi", () => {
       data.series.splice(idx, 1);
       rebuild();
-    });
-    header.appendChild(title);
-    header.appendChild(delBtn);
+    }));
     row.appendChild(header);
 
     const body = C.el("div", { className: "activities-item-body" });
@@ -284,22 +272,16 @@ window.AdminActivitiesUI = (function () {
     ratingSel.addEventListener("change", () => { s.rating = Number(ratingSel.value); });
     body.appendChild(C.field("Puan", ratingSel));
 
-    const posterRow = C.el("div", { className: "activities-poster-row" });
-    const posterInp = C.input("url", s.poster, "https://... veya /favimg/show/...");
-    posterInp.addEventListener("input", () => { s.poster = posterInp.value; });
-    posterRow.appendChild(C.field("Poster URL", posterInp, "Boş bırakılırsa ikon gösterilir."));
-
-    const uploadWrap = C.el("div", { className: "activities-upload-wrap" });
-    window.AdminUpload.attachImageField(uploadWrap, {
-      label: "veya dosyadan yükle",
+    // Poster — attachImageField doğru imzayla
+    const posterInp = C.input("url", s.poster, "/favimg/show/... veya https://...");
+    posterInp.addEventListener("input", () => { s.poster = posterInp.value.trim(); });
+    body.appendChild(window.AdminUpload.attachImageField({
+      label: "Poster",
+      pathInput: posterInp,
       folder: "favimg/show",
-      onUploaded: (url) => {
-        s.poster = url;
-        posterInp.value = url;
-      },
-    });
-    posterRow.appendChild(uploadWrap);
-    body.appendChild(posterRow);
+      hint: "URL yapıştırın veya dosyadan yükleyin. Boş bırakılırsa ikon gösterilir.",
+      onUploaded: (path) => { s.poster = path; },
+    }));
 
     row.appendChild(body);
     return row;
@@ -307,37 +289,28 @@ window.AdminActivitiesUI = (function () {
 
   /* ──────────────────────── BOOKS ─────────────────────────── */
   function buildBooksSection(data) {
-    const wrap = C.el("div", { className: "activities-section" });
-    wrap.appendChild(C.el("h3", { className: "activities-section-title", text: "Kütüphanem" }));
+    const wrap = C.el("div", { className: "activities-section", "data-subpanel": "books" });
+    if (!Array.isArray(data.books)) data.books = [];
 
-    const list = C.el("div", { className: "activities-list", id: "booksList" });
+    const notice = C.el("p", { className: "activities-subnotice", text: "Bu bölüm sitede şu an gizli — yine de buradan düzenleyebilirsiniz." });
+    wrap.appendChild(notice);
+
+    const list = C.el("div", { className: "activities-list" });
     wrap.appendChild(list);
 
-    function rebuildList() {
+    function rebuild() {
       list.innerHTML = "";
-      (data.books || []).forEach((b, idx) => {
-        list.appendChild(buildBookRow(b, idx, data, rebuildList));
-      });
-
-      const addBtn = C.el("button", { type: "button", className: "btn btn-ghost btn-sm" });
-      addBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Kitap ekle';
-      addBtn.addEventListener("click", () => {
-        if (!data.books) data.books = [];
+      data.books.forEach((b, idx) => list.appendChild(buildBookRow(b, idx, data, rebuild)));
+      list.appendChild(addButton("Kitap ekle", () => {
         data.books.push({
           id: `b-${Date.now()}`,
-          title: "",
-          author: "",
-          status: "wishlist",
-          rating: 0,
-          note: "",
-          cover: "",
+          title: "", author: "", status: "wishlist", rating: 0, note: "", cover: "",
         });
-        rebuildList();
-      });
-      list.appendChild(addBtn);
+        rebuild();
+      }));
     }
 
-    rebuildList();
+    rebuild();
     return wrap;
   }
 
@@ -346,15 +319,11 @@ window.AdminActivitiesUI = (function () {
 
     const header = C.el("div", { className: "activities-item-header" });
     const title = C.el("span", { className: "activities-item-label", text: b.title || `Kitap ${idx + 1}` });
-    const delBtn = C.el("button", { type: "button", className: "btn-icon btn-icon--danger", title: "Sil" });
-    delBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
-    delBtn.addEventListener("click", () => {
-      if (!confirm(`"${b.title || "bu kitabı"}" silmek istiyor musunuz?`)) return;
+    header.appendChild(title);
+    header.appendChild(deleteButton(b.title || "bu kitabı", () => {
       data.books.splice(idx, 1);
       rebuild();
-    });
-    header.appendChild(title);
-    header.appendChild(delBtn);
+    }));
     row.appendChild(header);
 
     const body = C.el("div", { className: "activities-item-body" });
@@ -383,33 +352,72 @@ window.AdminActivitiesUI = (function () {
     noteTA.addEventListener("input", () => { b.note = noteTA.value; });
     body.appendChild(C.field("Not", noteTA));
 
-    const coverRow = C.el("div", { className: "activities-poster-row" });
-    const coverInp = C.input("url", b.cover, "https://... veya /favimg/books/...");
-    coverInp.addEventListener("input", () => { b.cover = coverInp.value; });
-    coverRow.appendChild(C.field("Kapak URL", coverInp, "Boş bırakılırsa ikon gösterilir."));
-
-    const uploadWrap = C.el("div", { className: "activities-upload-wrap" });
-    window.AdminUpload.attachImageField(uploadWrap, {
-      label: "veya dosyadan yükle",
+    // Kapak — attachImageField doğru imzayla
+    const coverInp = C.input("url", b.cover, "/favimg/books/... veya https://...");
+    coverInp.addEventListener("input", () => { b.cover = coverInp.value.trim(); });
+    body.appendChild(window.AdminUpload.attachImageField({
+      label: "Kapak",
+      pathInput: coverInp,
       folder: "favimg/books",
-      onUploaded: (url) => {
-        b.cover = url;
-        coverInp.value = url;
-      },
-    });
-    coverRow.appendChild(uploadWrap);
-    body.appendChild(coverRow);
+      hint: "URL yapıştırın veya dosyadan yükleyin.",
+      onUploaded: (path) => { b.cover = path; },
+    }));
 
     row.appendChild(body);
     return row;
   }
 
-  /* ──────────────────────── RENDER ────────────────────────── */
+  /* ──────────────────────── SUB-TABS + RENDER ──────────────── */
+  function buildSubnav() {
+    const nav = C.el("div", { className: "activities-subnav", role: "tablist" });
+    const tabs = [
+      { id: "channels", label: "Favori Kanallar", icon: "fa-youtube", brand: true },
+      { id: "series",   label: "Favori Diziler",  icon: "fa-tv" },
+      { id: "books",    label: "Kütüphanem (gizli)", icon: "fa-book-open" },
+    ];
+
+    tabs.forEach(t => {
+      const btn = C.el("button", {
+        type: "button",
+        className: "activities-subnav-item" + (t.id === activeSubtab ? " is-active" : ""),
+        "data-subtab": t.id,
+        role: "tab",
+      });
+      btn.innerHTML = `<i class="${t.brand ? "fa-brands" : "fa-solid"} ${t.icon}"></i> ${t.label}`;
+      btn.addEventListener("click", () => switchSubtab(t.id));
+      nav.appendChild(btn);
+    });
+
+    return nav;
+  }
+
+  function switchSubtab(id) {
+    activeSubtab = id;
+    document.querySelectorAll(".activities-subnav-item").forEach(btn => {
+      btn.classList.toggle("is-active", btn.dataset.subtab === id);
+    });
+    document.querySelectorAll("[data-subpanel]").forEach(panel => {
+      panel.hidden = panel.dataset.subpanel !== id;
+    });
+  }
+
   function render(container, data) {
     container.innerHTML = "";
-    container.appendChild(buildChannelsSection(data));
-    container.appendChild(buildSeriesSection(data));
-    container.appendChild(buildBooksSection(data));
+    container.appendChild(buildSubnav());
+
+    const sections = C.el("div", { className: "activities-subpanels" });
+    const channelsPanel = buildChannelsSection(data);
+    const seriesPanel = buildSeriesSection(data);
+    const booksPanel = buildBooksSection(data);
+
+    channelsPanel.hidden = activeSubtab !== "channels";
+    seriesPanel.hidden = activeSubtab !== "series";
+    booksPanel.hidden = activeSubtab !== "books";
+
+    sections.appendChild(channelsPanel);
+    sections.appendChild(seriesPanel);
+    sections.appendChild(booksPanel);
+    container.appendChild(sections);
   }
 
   return { render };
