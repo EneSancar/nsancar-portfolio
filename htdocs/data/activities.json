@@ -134,6 +134,27 @@
       "title": "Money Trees",
       "image": "image/music/kendricklamar.jpg",
       "url": ""
+    },
+    {
+      "id": "m-1779901681904",
+      "artist": "Crystal Castles",
+      "title": "Suffocation",
+      "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e022acf8c820a360269715b2d6e",
+      "url": "https://open.spotify.com/intl-tr/track/12oxsGACfwMozi4nK9noGQ?si=1f6dc6d40b1b434a"
+    },
+    {
+      "id": "m-1779901751324",
+      "artist": "Tame Impala",
+      "title": "Not My World",
+      "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02208500450dcd0fd294d7bd3b",
+      "url": "https://open.spotify.com/intl-tr/track/12wDKbddX9bUYHd1Rl8gmu?si=4944eb0a3d4c4da1"
+    },
+    {
+      "id": "m-1779901810730",
+      "artist": "Tame Impala",
+      "title": "List Of People (To Try And Forget About)",
+      "image": "https://image-cdn-fa.spotifycdn.com/image/ab67616d00001e02bf2fe3810d8a6696d3f1b5db",
+      "url": "https://open.spotify.com/intl-tr/track/01iiEi9h8CQGUN2K1xBbTj?si=43142c3450c04db2"
     }
   ]
 }
