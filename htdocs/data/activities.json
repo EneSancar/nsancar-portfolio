@@ -28,7 +28,7 @@
       "id": "ch-1779891593402",
       "name": "Portal",
       "tag": "Psikoloji, Felsefe, Edebiyat",
-      "description": "Portal, modern insanın yalnızlığını, anlam arayışını ve varoluşsal krizlerini felsefe, psikoloji ve popüler kültür süzgecinden geçirerek ele alan sinematik bir dijital kütüphanedir. Kült filmlerin, edebi eserlerin ve derin düşünürlerin teorilerini melankolik ve oldukça estetik bir görsel deneme (video essay) formatında sunar.",
+      "description": "Portal, modern insanın yalnızlığını, anlam arayışını ve varoluşsal krizlerini felsefe, psikoloji ve popüler kültür süzgecinden geçirerek ele alan sinematik bir dijital kütüphanedir.",
       "url": "https://www.youtube.com/@PortalVideo",
       "avatar": "https://yt3.googleusercontent.com/38YY78O8hbLqIarsnr7CtuMBtcdSbFaruB-NO9WKOXOH3oQW9iQ-wR5BgSJpn3O01e8jhBOF=s800-c-k-c0x00ffffff-no-rj"
     },
@@ -47,24 +47,24 @@
       "title": "Invincible",
       "status": "watching",
       "meta": "Sezon 4 · Animasyon, süper kahraman",
-      "rating": 5,
-      "poster": ""
+      "poster": "",
+      "rating": 5
     },
     {
       "id": "s-2",
       "title": "Severance",
       "status": "finished",
       "meta": "2 sezon · Bilim kurgu, gerilim",
-      "rating": 5,
-      "poster": ""
+      "poster": "",
+      "rating": 5
     },
     {
       "id": "s-3",
       "title": "The Boys",
       "status": "finished",
       "meta": "4 sezon · Aksiyon, süper kahraman",
-      "rating": 4,
-      "poster": ""
+      "poster": "",
+      "rating": 4
     }
   ],
   "books": []
