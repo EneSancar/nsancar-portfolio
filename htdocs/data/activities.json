@@ -60,19 +60,27 @@
     },
     {
       "id": "s-2",
-      "title": "Severance",
+      "title": "Arcane",
       "status": "finished",
-      "meta": "2 sezon · Bilim kurgu, gerilim",
+      "meta": "2 sezon · Bilim kurgu, Animasyon",
       "poster": "",
       "rating": 5
     },
     {
       "id": "s-3",
-      "title": "The Boys",
+      "title": "Mr. Robot",
       "status": "finished",
-      "meta": "4 sezon · Aksiyon, süper kahraman",
+      "meta": "4 sezon · Gerilim",
       "poster": "",
-      "rating": 4
+      "rating": 5
+    },
+    {
+      "id": "s-1779900336893",
+      "title": "The Terminal List",
+      "status": "finished",
+      "meta": "1 sezon · Aksiyon",
+      "poster": "",
+      "rating": 5
     }
   ],
   "books": []
