@@ -253,10 +253,11 @@ window.AdminCore = (function () {
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.message || data.error || `HTTP ${res.status}`);
 
-    // Kritik: state referansını kırmadan, normalize edilmiş veriyi
-    // mevcut state objesine geri kopyala. Böylece UI'daki data
-    // referansı hâlâ aynı objeyi gösterir.
-    mergeInto(state[tab], payload);
+    if (tab === "activities") {
+      state[tab] = payload;
+    } else {
+      mergeInto(state[tab], payload);
+    }
     if (tab === "about") writeAboutBackup(state[tab]);
 
     return { ...data, payload: state[tab] };
