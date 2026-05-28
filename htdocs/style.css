@@ -3467,3 +3467,27 @@ a.hobby-pill:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== Preloader ===== */
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg, #0c0e14);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.5rem;
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#preloader.is-hiding {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#lottieCont {
+  width: 200px;
+  height: 150px;
+}

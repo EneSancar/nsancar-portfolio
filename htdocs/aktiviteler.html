@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script>document.documentElement.dataset.theme = localStorage.getItem("ns-theme") || "dark";</script>
+  <div id="preloader">
+    <div id="lottieCont"></div>
+  </div>
 
   <header class="site-header" id="siteHeader">
     <nav class="navbar">
@@ -364,6 +368,7 @@
     </div>
   </footer>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous"></script>
   <script src="script.js"></script>
   <script src="js/activities-renderer.js"></script>
 </body>

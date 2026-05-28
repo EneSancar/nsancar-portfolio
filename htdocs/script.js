@@ -1,5 +1,6 @@
 /* ===== Typed.js ===== */
 document.addEventListener("DOMContentLoaded", () => {
+  initPreloader();
   const typedEl = document.querySelector(".auto-type");
   if (typedEl && typeof Typed !== "undefined") {
     new Typed(".auto-type", {
@@ -575,6 +576,40 @@ function applyTheme(theme, animate) {
     btn.setAttribute("aria-label", theme === "light" ? "Koyu tema" : "Açık tema");
   }
   if (window._reinitParticles) window._reinitParticles();
+}
+
+/* ===== Preloader ===== */
+function initPreloader() {
+  const preloader = document.getElementById("preloader");
+  if (!preloader) return;
+
+  if (typeof lottie !== "undefined") {
+    lottie.loadAnimation({
+      container: document.getElementById("lottieCont"),
+      renderer: "svg",
+      loop: true,
+      autoplay: true,
+      path: "/lottie/loader.json",
+    });
+  }
+
+  const startedAt = Date.now();
+  const MIN_DISPLAY = 900;
+
+  function hidePreloader() {
+    const elapsed = Date.now() - startedAt;
+    const delay = Math.max(0, MIN_DISPLAY - elapsed);
+    setTimeout(() => {
+      preloader.classList.add("is-hiding");
+      setTimeout(() => preloader.remove(), 600);
+    }, delay);
+  }
+
+  if (document.readyState === "complete") {
+    hidePreloader();
+  } else {
+    window.addEventListener("load", hidePreloader, { once: true });
+  }
 }
 
 /* ===== Contact form ===== */
