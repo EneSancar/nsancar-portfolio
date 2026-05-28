@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initLibraryFilter();
   initSeriesFilter();
   initTheme();
-  initLang();
   initContactForm();
 });
 
@@ -576,44 +575,6 @@ function applyTheme(theme, animate) {
     btn.setAttribute("aria-label", theme === "light" ? "Koyu tema" : "Açık tema");
   }
   if (window._reinitParticles) window._reinitParticles();
-}
-
-/* ===== Language toggle ===== */
-function initLang() {
-  const saved = localStorage.getItem("ns-lang") || "tr";
-  applyLang(saved);
-
-  const btn = document.getElementById("langToggle");
-  if (!btn) return;
-  btn.addEventListener("click", () => {
-    const next = (localStorage.getItem("ns-lang") || "tr") === "tr" ? "en" : "tr";
-    localStorage.setItem("ns-lang", next);
-    applyLang(next);
-  });
-}
-
-function applyLang(lang) {
-  if (typeof window.LANG === "undefined") return;
-  const dict = window.LANG[lang] || {};
-  document.documentElement.lang = lang;
-
-  document.querySelectorAll("[data-i18n]").forEach((el) => {
-    const key = el.dataset.i18n;
-    if (dict[key] !== undefined) el.textContent = dict[key];
-  });
-
-  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
-    const key = el.dataset.i18nPh;
-    if (dict[key] !== undefined) el.placeholder = dict[key];
-  });
-
-  document.querySelectorAll("[data-i18n-title]").forEach((el) => {
-    const key = el.dataset.i18nTitle;
-    if (dict[key] !== undefined) el.title = dict[key];
-  });
-
-  const btn = document.getElementById("langToggle");
-  if (btn) btn.textContent = lang === "tr" ? "EN" : "TR";
 }
 
 /* ===== Contact form ===== */
