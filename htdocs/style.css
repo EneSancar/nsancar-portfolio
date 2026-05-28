@@ -3471,8 +3471,11 @@ a.hobby-pill:hover {
 /* ===== Preloader ===== */
 #preloader {
   position: fixed;
-  inset: 0;
-  z-index: 9999;
+  top: var(--header-h, 72px);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
   background: var(--bg, #0c0e14);
   display: flex;
   align-items: center;
