@@ -46,7 +46,7 @@ export default async function handler(req, res) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "nsancar.com <onboarding@resend.dev>",
+        from: "Enes Sancar <noreply@nsancar.com>",
         to: [CONTACT_EMAIL],
         reply_to: email,
         subject: subjectLine,
