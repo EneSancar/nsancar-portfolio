@@ -16,7 +16,7 @@ export default async function handler(req, res) {
   }
 
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
-  const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "sancar.web3524@gmail.com";
+  const CONTACT_EMAIL = process.env.CONTACT_EMAIL || "enes.sancar2@gmail.com";
 
   if (!RESEND_API_KEY) {
     return res.status(500).json({ error: "Mail servisi yapılandırılmamış" });
