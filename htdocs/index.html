@@ -22,14 +22,18 @@
       <a href="/" class="logo">
         <img src="image/ns.png" alt="Enes Sancar" height="48">
       </a>
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn" aria-label="Açık tema"><i class="fa-solid fa-sun"></i></button>
+        <button id="langToggle" class="nav-toggle-btn" aria-label="Dil">EN</button>
+      </div>
       <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="/" class="active">Ana Sayfa</a></li>
-        <li><a href="/hakkimda">Hakkımda</a></li>
-        <li><a href="/projeler">Projeler</a></li>
-        <li><a href="/servisler">Servisler</a></li>
+        <li><a href="/" class="active" data-i18n="nav.home">Ana Sayfa</a></li>
+        <li><a href="/hakkimda" data-i18n="nav.about">Hakkımda</a></li>
+        <li><a href="/projeler" data-i18n="nav.projects">Projeler</a></li>
+        <li><a href="/servisler" data-i18n="nav.services">Servisler</a></li>
         <li><a href="/aktiviteler" class="nav-icon" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
       </ul>
     </nav>
@@ -91,15 +95,15 @@
 
     <section class="section section--now" id="now">
       <div class="container reveal">
-        <span class="section-label">Canlı</span>
-        <h2 class="section-title">Şu An Ne Yapıyorum?</h2>
+        <span class="section-label" data-i18n="label.live">Canlı</span>
+        <h2 class="section-title" data-i18n="title.now">Şu An Ne Yapıyorum?</h2>
         <div class="now-grid">
           <div class="now-card">
             <div class="now-card-icon">
               <i class="fa-solid fa-music"></i>
             </div>
             <div class="now-card-body">
-              <span class="now-card-label">Dinliyorum</span>
+              <span class="now-card-label" data-i18n="label.listening">Dinliyorum</span>
               <p class="now-card-value">Tame Impala — Let It Happen</p>
             </div>
             <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" class="now-card-link" title="Spotify'da aç">
@@ -111,7 +115,7 @@
               <i class="fa-solid fa-code"></i>
             </div>
             <div class="now-card-body">
-              <span class="now-card-label">Çalışıyorum</span>
+              <span class="now-card-label" data-i18n="label.working">Çalışıyorum</span>
               <p class="now-card-value">nsancar.com — Portfolyo Güncellemesi</p>
             </div>
             <a href="/projeler" class="now-card-link" title="Projelere git">
@@ -123,7 +127,7 @@
               <i class="fa-solid fa-film"></i>
             </div>
             <div class="now-card-body">
-              <span class="now-card-label">İzliyorum</span>
+              <span class="now-card-label" data-i18n="label.watching">İzliyorum</span>
               <p class="now-card-value">INVINCIBLE — Season 4</p>
             </div>
             <span class="now-card-link now-card-link--static">
@@ -136,7 +140,7 @@
 
     <section class="section" id="skills">
       <div class="container reveal">
-        <span class="section-label">Yetkinlikler</span>
+        <span class="section-label" data-i18n="label.skills">Yetkinlikler</span>
         <h2 class="section-title">My Skills</h2>
         <div class="skills-grid">
           <div class="skill-icons">
@@ -218,8 +222,8 @@
 
     <section class="section">
       <div class="container reveal">
-        <span class="section-label">Keşfet</span>
-        <h2 class="section-title">Hızlı Erişim</h2>
+        <span class="section-label" data-i18n="label.explore">Keşfet</span>
+        <h2 class="section-title" data-i18n="title.quickaccess">Hızlı Erişim</h2>
         <div class="cards-row">
           <article class="quick-card projects">
             <h3>Projeler</h3>
@@ -256,8 +260,8 @@
 
     <section class="section">
       <div class="container reveal">
-        <span class="section-label">Araçlar & Deneyim</span>
-        <h2 class="section-title">Ne Kullanıyorum?</h2>
+        <span class="section-label" data-i18n="label.tools">Araçlar & Deneyim</span>
+        <h2 class="section-title" data-i18n="title.tools">Ne Kullanıyorum?</h2>
         <div class="ppd-grid">
           <div class="tool-stack">
             <div class="tool-card">
@@ -290,8 +294,8 @@
 
     <section class="section">
       <div class="container reveal">
-        <span class="section-label">Portfolyo</span>
-        <h2 class="section-title">Galeri</h2>
+        <span class="section-label" data-i18n="label.portfolio">Portfolyo</span>
+        <h2 class="section-title" data-i18n="title.gallery">Galeri</h2>
         <div class="gallery-split" id="gallerySplit">
           <div class="gallery-panel web expanded" id="webPanel">
             <h2>Web Design</h2>
@@ -307,8 +311,8 @@
 
     <section class="section">
       <div class="container reveal">
-        <span class="section-label">Bağlantı</span>
-        <h2 class="section-title">İletişim & Profiller</h2>
+        <span class="section-label" data-i18n="label.connect">Bağlantı</span>
+        <h2 class="section-title" data-i18n="title.contact">İletişim & Profiller</h2>
         <div class="contact-row">
           <div class="contact-card">
             <div class="social-icons">
@@ -343,6 +347,34 @@
         </div>
       </div>
     </section>
+
+    <section class="section" id="contactForm-section">
+      <div class="container reveal">
+        <span class="section-label" data-i18n="label.connect">Bağlantı</span>
+        <h2 class="section-title" data-i18n="contact.form.title">Mesaj Gönder</h2>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="contact-form-row">
+            <div class="contact-form-field">
+              <input type="text" name="name" id="cf-name" autocomplete="name" data-i18n-ph="contact.form.name" placeholder="Adın" required>
+            </div>
+            <div class="contact-form-field">
+              <input type="email" name="email" id="cf-email" autocomplete="email" data-i18n-ph="contact.form.email" placeholder="E-posta adresin" required>
+            </div>
+          </div>
+          <div class="contact-form-field">
+            <input type="text" name="subject" id="cf-subject" data-i18n-ph="contact.form.subject" placeholder="Konu">
+          </div>
+          <div class="contact-form-field">
+            <textarea name="message" id="cf-message" rows="5" data-i18n-ph="contact.form.message" placeholder="Mesajın" required></textarea>
+          </div>
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="contact-form-actions">
+            <button type="submit" class="contact-form-btn" data-i18n="contact.form.send">Gönder</button>
+            <p class="contact-form-status" id="contactStatus" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -355,11 +387,11 @@
         <a href="https://steamcommunity.com/profiles/76561198886945002/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
       </div>
       <nav class="footer-nav">
-        <a href="/">Ana Sayfa</a>
-        <a href="/hakkimda">Hakkımda</a>
-        <a href="/projeler">Projeler</a>
-        <a href="/servisler">Servisler</a>
-        <a href="/aktiviteler">Aktiviteler</a>
+        <a href="/" data-i18n="footer.home">Ana Sayfa</a>
+        <a href="/hakkimda" data-i18n="footer.about">Hakkımda</a>
+        <a href="/projeler" data-i18n="footer.projects">Projeler</a>
+        <a href="/servisler" data-i18n="footer.services">Servisler</a>
+        <a href="/aktiviteler" data-i18n="footer.activities">Aktiviteler</a>
       </nav>
       <p class="footer-copy">Copyright &copy; 2026 — Designed by <span class="designer">Enes Sancar</span></p>
     </div>
@@ -368,6 +400,7 @@
   <div id="emailbar"><h2>sancar.web3524@gmail.com</h2></div>
 
   <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

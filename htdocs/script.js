@@ -23,6 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initHeroEntrance();
   initLibraryFilter();
   initSeriesFilter();
+  initTheme();
+  initLang();
+  initContactForm();
 });
 
 /* ===== Navigation ===== */
@@ -395,19 +398,17 @@ function initSpaceParticles() {
   if (!ctx) return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const colors = ["#ffffff", "#c7d2fe", "#a5f3fc", "#e0e7ff", "#67e8f9"];
-  let width = 0;
-  let height = 0;
-  let particles = [];
-  let rafId = 0;
-  let running = true;
-  let mouseX = 0.5;
-  let mouseY = 0.5;
+  const starColors = ["#ffffff", "#c7d2fe", "#a5f3fc", "#e0e7ff", "#67e8f9"];
 
-  function particleCount() {
-    return window.innerWidth < 768 ? 48 : 90;
+  let width = 0, height = 0;
+  let particles = [], nodes = [], rafId = 0;
+  let running = true;
+
+  function isLight() {
+    return document.documentElement.dataset.theme === "light";
   }
 
+  /* ---- dark mode: star particles ---- */
   function createParticle() {
     const depth = Math.random();
     return {
@@ -420,7 +421,18 @@ function initSpaceParticles() {
       vy: (Math.random() - 0.5) * (0.08 + depth * 0.22),
       twinkle: Math.random() * Math.PI * 2,
       twinkleSpeed: 0.008 + Math.random() * 0.02,
-      color: colors[Math.floor(Math.random() * colors.length)],
+      color: starColors[Math.floor(Math.random() * starColors.length)],
+    };
+  }
+
+  /* ---- light mode: geo nodes ---- */
+  function createNode() {
+    return {
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.18,
+      vy: (Math.random() - 0.5) * 0.18,
+      r: 1.5 + Math.random() * 1.5,
     };
   }
 
@@ -431,50 +443,80 @@ function initSpaceParticles() {
     canvas.width = Math.floor(width * dpr);
     canvas.height = Math.floor(height * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    particles = Array.from({ length: particleCount() }, createParticle);
+    const count = window.innerWidth < 768 ? 48 : 90;
+    particles = Array.from({ length: count }, createParticle);
+    const nodeCount = window.innerWidth < 768 ? 28 : 55;
+    nodes = Array.from({ length: nodeCount }, createNode);
   }
 
-  function draw() {
+  function drawDark() {
     ctx.clearRect(0, 0, width, height);
-
     for (const p of particles) {
-      let x = p.x;
-      let y = p.y;
-
       if (!reducedMotion) {
-        p.x += p.vx;
-        p.y += p.vy;
+        p.x += p.vx; p.y += p.vy;
         p.twinkle += p.twinkleSpeed;
-
         if (p.x < -10) p.x = width + 10;
         if (p.x > width + 10) p.x = -10;
         if (p.y < -10) p.y = height + 10;
         if (p.y > height + 10) p.y = -10;
       }
-
       const twinkle = reducedMotion ? 1 : 0.65 + Math.sin(p.twinkle) * 0.35;
       const alpha = p.opacity * twinkle;
-
       ctx.beginPath();
       ctx.fillStyle = p.color;
       ctx.globalAlpha = alpha;
-      ctx.arc(x, y, p.radius, 0, Math.PI * 2);
+      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
       ctx.fill();
-
       if (p.depth > 0.72 && p.radius > 1.4) {
         ctx.beginPath();
         ctx.globalAlpha = alpha * 0.25;
-        ctx.arc(x, y, p.radius * 3.2, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius * 3.2, 0, Math.PI * 2);
         ctx.fill();
       }
     }
+    ctx.globalAlpha = 1;
+  }
 
+  function drawLight() {
+    ctx.clearRect(0, 0, width, height);
+    if (!reducedMotion) {
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0) n.x = width; if (n.x > width) n.x = 0;
+        if (n.y < 0) n.y = height; if (n.y > height) n.y = 0;
+      }
+    }
+    const linkDist = 160;
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < linkDist) {
+          const alpha = (1 - dist / linkDist) * 0.25;
+          ctx.beginPath();
+          ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
+          ctx.lineWidth = 0.8;
+          ctx.globalAlpha = 1;
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+    for (const n of nodes) {
+      ctx.beginPath();
+      ctx.globalAlpha = 0.35;
+      ctx.fillStyle = "#6366f1";
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
     ctx.globalAlpha = 1;
   }
 
   function loop() {
     if (!running) return;
-    draw();
+    if (isLight()) drawLight(); else drawDark();
     rafId = requestAnimationFrame(loop);
   }
 
@@ -482,15 +524,13 @@ function initSpaceParticles() {
   loop();
 
   window.addEventListener("resize", resize);
-
   document.addEventListener("visibilitychange", () => {
     running = !document.hidden;
-    if (running) {
-      loop();
-    } else {
-      cancelAnimationFrame(rafId);
-    }
+    if (running) loop(); else cancelAnimationFrame(rafId);
   });
+
+  /* Expose so theme toggle can trigger a re-style immediately */
+  window._reinitParticles = resize;
 }
 
 /* ===== Email toast ===== */
@@ -505,4 +545,124 @@ function showEmail() {
 /* Legacy helpers (other pages may still reference these) */
 function myFunctionEmail() {
   showEmail();
+}
+
+/* ===== Theme toggle ===== */
+function initTheme() {
+  const saved = localStorage.getItem("ns-theme") || "dark";
+  applyTheme(saved, false);
+
+  const btn = document.getElementById("themeToggle");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const next = document.documentElement.dataset.theme === "light" ? "dark" : "light";
+    applyTheme(next, true);
+    localStorage.setItem("ns-theme", next);
+  });
+}
+
+function applyTheme(theme, animate) {
+  const html = document.documentElement;
+  if (animate) {
+    html.classList.add("theme-transitioning");
+    setTimeout(() => html.classList.remove("theme-transitioning"), 400);
+  }
+  html.dataset.theme = theme;
+  const btn = document.getElementById("themeToggle");
+  if (btn) {
+    btn.innerHTML = theme === "light"
+      ? '<i class="fa-solid fa-moon"></i>'
+      : '<i class="fa-solid fa-sun"></i>';
+    btn.setAttribute("aria-label", theme === "light" ? "Koyu tema" : "Açık tema");
+  }
+  if (window._reinitParticles) window._reinitParticles();
+}
+
+/* ===== Language toggle ===== */
+function initLang() {
+  const saved = localStorage.getItem("ns-lang") || "tr";
+  applyLang(saved);
+
+  const btn = document.getElementById("langToggle");
+  if (!btn) return;
+  btn.addEventListener("click", () => {
+    const next = (localStorage.getItem("ns-lang") || "tr") === "tr" ? "en" : "tr";
+    localStorage.setItem("ns-lang", next);
+    applyLang(next);
+  });
+}
+
+function applyLang(lang) {
+  if (typeof window.LANG === "undefined") return;
+  const dict = window.LANG[lang] || {};
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = el.dataset.i18n;
+    if (dict[key] !== undefined) el.textContent = dict[key];
+  });
+
+  document.querySelectorAll("[data-i18n-ph]").forEach((el) => {
+    const key = el.dataset.i18nPh;
+    if (dict[key] !== undefined) el.placeholder = dict[key];
+  });
+
+  document.querySelectorAll("[data-i18n-title]").forEach((el) => {
+    const key = el.dataset.i18nTitle;
+    if (dict[key] !== undefined) el.title = dict[key];
+  });
+
+  const btn = document.getElementById("langToggle");
+  if (btn) btn.textContent = lang === "tr" ? "EN" : "TR";
+}
+
+/* ===== Contact form ===== */
+function initContactForm() {
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("contactStatus");
+  const btn = form?.querySelector(".contact-form-btn");
+  if (!form || !status || !btn) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const lang = localStorage.getItem("ns-lang") || "tr";
+    const dict = (window.LANG && window.LANG[lang]) || {};
+
+    const name = form.querySelector('[name="name"]')?.value.trim();
+    const email = form.querySelector('[name="email"]')?.value.trim();
+    const subject = form.querySelector('[name="subject"]')?.value.trim();
+    const message = form.querySelector('[name="message"]')?.value.trim();
+    const honey = form.querySelector('[name="_honey"]')?.value;
+
+    if (!name || !email || !message) return;
+
+    btn.disabled = true;
+    btn.textContent = dict["contact.form.sending"] || "Gönderiliyor…";
+    status.textContent = "";
+    status.className = "contact-form-status";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message, _honey: honey }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        status.textContent = dict["contact.form.success"] || "Mesajın iletildi, teşekkürler!";
+        status.className = "contact-form-status is-success";
+        form.reset();
+      } else {
+        throw new Error(data.error || "error");
+      }
+    } catch {
+      status.textContent = dict["contact.form.error"] || "Bir hata oluştu. Lütfen tekrar deneyin.";
+      status.className = "contact-form-status is-error";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = dict["contact.form.send"] || "Gönder";
+    }
+  });
 }

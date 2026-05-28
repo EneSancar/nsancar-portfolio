@@ -18,6 +18,39 @@
   --font: "Plus Jakarta Sans", system-ui, sans-serif;
 }
 
+/* ===== Light theme ===== */
+[data-theme="light"] {
+  --bg: #eef0f9;
+  --bg-elevated: #e4e7f5;
+  --bg-card: #f5f6ff;
+  --border: rgba(99, 102, 241, 0.18);
+  --text: #1a1c2e;
+  --text-muted: #525870;
+  --accent: #4f52d3;
+  --accent-light: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.22);
+  --cyan: #0ea5c9;
+}
+
+[data-theme="light"] body::before {
+  background:
+    radial-gradient(ellipse 80% 50% at 20% -10%, rgba(99, 102, 241, 0.10), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(14, 165, 201, 0.06), transparent),
+    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(99, 102, 241, 0.04), transparent);
+}
+
+[data-theme="light"] .site-header.scrolled {
+  background: rgba(238, 240, 249, 0.85);
+}
+
+/* ===== Theme transition ===== */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.2s ease !important;
+}
+
 /* ===== Reset & base ===== */
 *,
 *::before,
@@ -233,6 +266,44 @@ ul {
 }
 .hamburger.active span:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Nav controls (theme/lang toggles) ===== */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: auto;
+  margin-right: 0.75rem;
+}
+
+.nav-toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.05);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.nav-toggle-btn:hover {
+  background: rgba(99, 102, 241, 0.12);
+  color: var(--accent-light);
+  border-color: var(--accent);
+}
+
+#langToggle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  width: auto;
+  padding: 0 10px;
 }
 
 /* ===== Hero ===== */
@@ -3304,5 +3375,97 @@ a.hobby-pill:hover {
 
   .games-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===== Contact form ===== */
+.contact-form {
+  max-width: 680px;
+  margin: 2rem auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.contact-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.92rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  resize: vertical;
+  width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.contact-form-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.contact-form-btn {
+  padding: 0.75rem 2rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition), opacity var(--transition);
+}
+
+.contact-form-btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.contact-form-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.contact-form-status {
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.contact-form-status.is-success { color: #22c55e; }
+.contact-form-status.is-error { color: #f87171; }
+
+@media (max-width: 560px) {
+  .contact-form-row {
+    grid-template-columns: 1fr;
   }
 }
