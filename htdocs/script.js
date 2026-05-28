@@ -26,7 +26,21 @@ document.addEventListener("DOMContentLoaded", () => {
   initSeriesFilter();
   initTheme();
   initContactForm();
+  initAboutCat();
 });
+
+/* ===== About section cat animation ===== */
+function initAboutCat() {
+  const container = document.getElementById("aboutCatLottie");
+  if (!container || typeof lottie === "undefined") return;
+  lottie.loadAnimation({
+    container,
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/lottie/cat.json",
+  });
+}
 
 /* ===== Navigation ===== */
 function initNav() {

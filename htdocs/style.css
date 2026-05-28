@@ -704,6 +704,31 @@ ul {
 
 /* ===== About preview ===== */
 
+/* ===== About preview row ===== */
+.about-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.about-preview-row .about-card {
+  flex: 1;
+  min-width: 0;
+}
+
+.about-cat-wrap {
+  flex-shrink: 0;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#aboutCatLottie {
+  width: 180px;
+  height: 129px;
+}
+
 .about-card {
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -1647,6 +1672,14 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
     width: 100%;
     text-align: center;
     padding: 0.85rem;
+  }
+
+  .about-preview-row {
+    flex-direction: column;
+  }
+
+  .about-cat-wrap {
+    display: none;
   }
 
   .about-card {
