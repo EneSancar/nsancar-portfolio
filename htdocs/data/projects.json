@@ -303,7 +303,7 @@
         "badge": "Web · Kurumsal",
         "lead": "Kargo, parsiyel ve lojistik hizmetleri sunan bir firma için tasarlanan çok sayfalı kurumsal web sitesi.",
         "preview": {
-          "type": "sharp",
+          "type": "single",
           "src": "image/projects/smart-cargo.png?v=3",
           "alt": "Smart Cargo web sitesi önizlemesi",
           "width": 1024,
@@ -333,7 +333,7 @@
         "cta": {
           "label": "Siteyi gez",
           "icon": "fa-solid fa-arrow-right",
-          "href": "smart-cargo/index.html",
+          "href": "https://smartcargo.com.tr/",
           "external": false
         }
       }
