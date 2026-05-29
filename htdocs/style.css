@@ -2237,6 +2237,72 @@ button.project-card-link {
 
 .page-hero.fav-hero {
   background-image: linear-gradient(rgba(12, 14, 20, 0.55), rgba(12, 14, 20, 0.85)), url("image/favmain.webp");
+  overflow: hidden;
+}
+
+/* Gemini-style floating orbs */
+.fav-hero-orbs {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fho {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0;
+  animation: fhoFloat 12s ease-in-out infinite;
+}
+
+.fho--1 {
+  width: 380px; height: 380px;
+  background: radial-gradient(circle, rgba(99,102,241,0.75), transparent 70%);
+  top: -20%; left: 5%;
+  animation-duration: 11s;
+  animation-delay: 0s;
+  opacity: 0.7;
+}
+
+.fho--2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(168,85,247,0.65), transparent 70%);
+  top: 10%; right: 8%;
+  animation-duration: 14s;
+  animation-delay: -4s;
+  opacity: 0.6;
+}
+
+.fho--3 {
+  width: 260px; height: 260px;
+  background: radial-gradient(circle, rgba(236,72,153,0.55), transparent 70%);
+  bottom: -10%; left: 35%;
+  animation-duration: 10s;
+  animation-delay: -7s;
+  opacity: 0.55;
+}
+
+.fho--4 {
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(34,211,238,0.5), transparent 70%);
+  top: 30%; left: 55%;
+  animation-duration: 13s;
+  animation-delay: -2s;
+  opacity: 0.5;
+}
+
+@keyframes fhoFloat {
+  0%   { transform: translate(0px, 0px) scale(1); }
+  20%  { transform: translate(25px, -18px) scale(1.06); }
+  40%  { transform: translate(-15px, 22px) scale(0.94); }
+  60%  { transform: translate(18px, 8px) scale(1.04); }
+  80%  { transform: translate(-22px, -12px) scale(1.08); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fho { animation: none; }
 }
 
 /* ===== Services page ===== */
