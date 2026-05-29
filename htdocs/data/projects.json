@@ -295,8 +295,8 @@
         "secondary": {
           "label": "Siteye git",
           "icon": "fa-solid fa-arrow-right",
-          "href": "smart-cargo/index.html",
-          "external": false
+          "href": "https://smartcargo.com.tr/",
+          "external": true
         }
       },
       "modal": {
@@ -334,7 +334,7 @@
           "label": "Siteyi gez",
           "icon": "fa-solid fa-arrow-right",
           "href": "https://smartcargo.com.tr/",
-          "external": false
+          "external": true
         }
       }
     },
