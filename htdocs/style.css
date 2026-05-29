@@ -709,6 +709,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 0;
+  position: relative;
 }
 
 .about-preview-row .about-card {
@@ -716,17 +717,20 @@ ul {
   min-width: 0;
   position: relative;
   z-index: 2;
+  -webkit-mask: radial-gradient(circle 90px at calc(100% - 30px) 50%, transparent 89px, #000 90px);
+          mask: radial-gradient(circle 90px at calc(100% - 30px) 50%, transparent 89px, #000 90px);
 }
 
 .about-cat-wrap {
   flex-shrink: 0;
-  width: 160px;
-  margin-left: -52px;
+  width: 0;
+  margin-left: -110px;
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: none;
 }
 
 #aboutCatLottie {
@@ -1681,6 +1685,11 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
 
   .about-preview-row {
     flex-direction: column;
+  }
+
+  .about-preview-row .about-card {
+    -webkit-mask: none;
+            mask: none;
   }
 
   .about-cat-wrap {
