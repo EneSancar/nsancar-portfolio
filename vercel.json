@@ -14,7 +14,7 @@
     { "source": "/fav",           "destination": "/aktiviteler",  "permanent": true }
   ],
   "functions": {
-    "htdocs/api/**/*.js": {
+    "htdocs/api/*.js": {
       "memory": 128,
       "maxDuration": 10
     }
