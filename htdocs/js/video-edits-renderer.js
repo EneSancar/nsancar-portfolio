@@ -212,14 +212,18 @@
 
     function updatePositions() {
       cards.forEach((card, i) => {
-        const offset = (i - index + cards.length) % cards.length;
+        let diff = i - index;
+        const half = cards.length / 2;
+        if (diff > half) diff -= cards.length;
+        else if (diff < -half) diff += cards.length;
+
         card.classList.remove("center", "left-1", "left-2", "right-1", "right-2", "hidden");
 
-        if (offset === 0) card.classList.add("center");
-        else if (offset === 1) card.classList.add("right-1");
-        else if (offset === 2) card.classList.add("right-2");
-        else if (offset === cards.length - 1) card.classList.add("left-1");
-        else if (offset === cards.length - 2) card.classList.add("left-2");
+        if (diff === 0) card.classList.add("center");
+        else if (diff === 1) card.classList.add("right-1");
+        else if (diff === 2) card.classList.add("right-2");
+        else if (diff === -1) card.classList.add("left-1");
+        else if (diff === -2) card.classList.add("left-2");
         else card.classList.add("hidden");
       });
 
