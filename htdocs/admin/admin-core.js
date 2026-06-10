@@ -81,10 +81,12 @@ window.AdminCore = (function () {
     });
   }
 
+  const VIDEO_EDITS_BG = "image/video-edits-bg.gif";
+
   const DEFAULT_VIDEO_EDITS = {
     intro:
       "Bu bölümde After Effects kullanarak yaptığım film ve dizi editleri yer alıyor. Sinema, en sevdiğim hobilerden biri; izlediğim ve içimde derin iz bırakan yapımları kendi perspektifimden ele alarak bu tarz editler üretmeyi seviyorum. Bazıları okul veya iş projeleri, bazıları ise hobim olarak ürettiğim çalışmalar.",
-    backgroundImage: "",
+    backgroundImage: VIDEO_EDITS_BG,
     autoplayMs: 7500,
     edits: [],
   };
@@ -115,6 +117,9 @@ window.AdminCore = (function () {
     }
     state.projects = projects;
     state.videoEdits = videoEdits;
+    if (!String(state.videoEdits.backgroundImage || "").trim()) {
+      state.videoEdits.backgroundImage = VIDEO_EDITS_BG;
+    }
     state.activities = activities;
     return state;
   }
@@ -226,6 +231,7 @@ window.AdminCore = (function () {
   function normalizeVideoEditsPayload(payload) {
     const data = JSON.parse(JSON.stringify(payload));
     data.intro = String(data.intro || "").trim();
+    data.backgroundImage = String(data.backgroundImage || "").trim() || VIDEO_EDITS_BG;
     data.autoplayMs = Number(data.autoplayMs);
     if (!Number.isFinite(data.autoplayMs) || data.autoplayMs < 3000) {
       data.autoplayMs = 7500;

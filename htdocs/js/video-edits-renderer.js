@@ -1,5 +1,6 @@
 (function () {
   const DATA_URL = "data/video-edits.json";
+  const VIDEO_EDITS_BG = "image/video-edits-bg.gif";
   const SC = window.SiteContent;
   const INSERT_AFTER = "graphic";
 
@@ -28,21 +29,19 @@
     section.id = "video-edits";
     section.dataset.sectionId = "video-edits";
 
-    const bgPath = String(data.backgroundImage || "").trim();
-    if (bgPath) {
-      section.classList.add("video-edits-section--has-bg");
-      section.style.backgroundImage = `url("${bgPath.replace(/"/g, '\\"')}")`;
+    const bgPath = String(data.backgroundImage || "").trim() || VIDEO_EDITS_BG;
+    section.classList.add("video-edits-section--has-bg");
+    section.style.backgroundImage = `url("${bgPath.replace(/"/g, '\\"')}")`;
 
-      const bgWrap = document.createElement("div");
-      bgWrap.className = "video-edits-bg";
-      bgWrap.setAttribute("aria-hidden", "true");
+    const bgWrap = document.createElement("div");
+    bgWrap.className = "video-edits-bg";
+    bgWrap.setAttribute("aria-hidden", "true");
 
-      const bgOverlay = document.createElement("div");
-      bgOverlay.className = "video-edits-bg-overlay";
+    const bgOverlay = document.createElement("div");
+    bgOverlay.className = "video-edits-bg-overlay";
 
-      bgWrap.appendChild(bgOverlay);
-      section.appendChild(bgWrap);
-    }
+    bgWrap.appendChild(bgOverlay);
+    section.appendChild(bgWrap);
 
     const content = document.createElement("div");
     content.className = "video-edits-content reveal";
