@@ -1954,12 +1954,17 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   margin: 0 auto;
 }
 
+.video-edits-section .projects-section-title {
+  justify-content: center;
+}
+
 .video-edits-section .video-edits-intro {
   max-width: 52rem;
   color: var(--text-muted);
   line-height: 1.7;
-  margin: -0.25rem 0 1.75rem;
+  margin: -0.25rem auto 2.5rem;
   font-size: 0.98rem;
+  text-align: center;
 }
 
 .video-edits-carousel {
