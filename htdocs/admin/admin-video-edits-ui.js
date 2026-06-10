@@ -86,10 +86,20 @@ window.AdminVideoEditsUI = (function () {
   function render(container, data) {
     container.innerHTML = "";
 
+    const lead = C.el("p", {
+      className: "field-hint video-edits-admin-lead",
+      text: "Projeler sayfasındaki Video Edit / After Effects slaytını buradan yönetirsin. YouTube linki + başlık ekle, kaydet.",
+    });
+    container.appendChild(lead);
+
     const introTA = C.textarea(data.intro || "", 5);
     introTA.placeholder = "Bölüm açıklaması";
     introTA.addEventListener("input", () => { data.intro = introTA.value; });
     container.appendChild(C.field("Bölüm açıklaması", introTA));
+
+    const bgInp = C.input("text", data.backgroundImage || "", "image/video-edits-bg.jpg");
+    bgInp.addEventListener("input", () => { data.backgroundImage = bgInp.value.trim(); });
+    container.appendChild(C.field("Arka plan görseli", bgInp, "Site kökünden yol: image/video-edits-bg.jpg veya tam URL"));
 
     const autoplayInp = C.input("number", data.autoplayMs ?? 7500, "7500");
     autoplayInp.min = "3000";
@@ -100,8 +110,22 @@ window.AdminVideoEditsUI = (function () {
     });
     container.appendChild(C.field("Slayt geçiş süresi (ms)", autoplayInp, "En az 3000. Önerilen: 7000–8000"));
 
-    const heading = C.el("h3", { className: "admin-section-heading", text: "Video editler" });
-    container.appendChild(heading);
+    const headingRow = C.el("div", { className: "video-edits-admin-heading" });
+    headingRow.appendChild(C.el("h3", { className: "admin-section-heading", text: "Video editler" }));
+
+    const quickAdd = C.el("button", { type: "button", className: "btn btn-primary btn-sm" });
+    quickAdd.innerHTML = '<i class="fa-solid fa-plus"></i> Yeni edit ekle';
+    quickAdd.addEventListener("click", () => {
+      if (!Array.isArray(data.edits)) data.edits = [];
+      data.edits.unshift({
+        id: `ve-${Date.now()}`,
+        title: "",
+        youtubeUrl: "",
+      });
+      render(container, data);
+    });
+    headingRow.appendChild(quickAdd);
+    container.appendChild(headingRow);
 
     container.appendChild(buildEditsList(data));
   }

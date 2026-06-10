@@ -112,6 +112,9 @@ function parseYoutubeId(url) {
 function validateVideoEdits(payload) {
   if (!isObject(payload)) return "video-edits verisi bir nesne olmalı.";
   if (typeof payload.intro !== "string") return "intro alanı gerekli.";
+  if (payload.backgroundImage !== undefined && typeof payload.backgroundImage !== "string") {
+    return "backgroundImage metin olmalı.";
+  }
   if (!Array.isArray(payload.edits)) return "edits dizisi gerekli.";
 
   if (payload.autoplayMs !== undefined && (typeof payload.autoplayMs !== "number" || payload.autoplayMs < 3000)) {

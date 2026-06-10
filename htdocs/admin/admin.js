@@ -46,8 +46,15 @@
     if (tab === "projects" && C.state.projects) {
       window.AdminProjectsUI.render(panelProjects, C.state.projects);
     }
-    if (tab === "videoEdits" && C.state.videoEdits) {
-      window.AdminVideoEditsUI.render(panelVideoEdits, C.state.videoEdits);
+    if (tab === "videoEdits") {
+      if (!C.state.videoEdits) {
+        C.state.videoEdits = { intro: "", backgroundImage: "", autoplayMs: 7500, edits: [] };
+      }
+      if (!window.AdminVideoEditsUI?.render) {
+        panelVideoEdits.innerHTML = "<p class=\"field-hint\">Video Editler arayüzü yüklenemedi. Sayfayı yenileyin.</p>";
+      } else {
+        window.AdminVideoEditsUI.render(panelVideoEdits, C.state.videoEdits);
+      }
     }
     if (tab === "activities" && C.state.activities) {
       window.AdminActivitiesUI.render(panelActivities, C.state.activities);

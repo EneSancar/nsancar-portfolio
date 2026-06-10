@@ -25,12 +25,24 @@
   function buildSection(data) {
     const section = document.createElement("section");
     section.className = "projects-section video-edits-section";
+    section.id = "video-edits";
     section.dataset.sectionId = "video-edits";
 
-    const canvas = document.createElement("canvas");
-    canvas.className = "video-edits-parallax";
-    canvas.setAttribute("aria-hidden", "true");
-    section.appendChild(canvas);
+    const bgPath = String(data.backgroundImage || "").trim();
+    if (bgPath) {
+      section.classList.add("video-edits-section--has-bg");
+      section.style.backgroundImage = `url("${bgPath.replace(/"/g, '\\"')}")`;
+
+      const bgWrap = document.createElement("div");
+      bgWrap.className = "video-edits-bg";
+      bgWrap.setAttribute("aria-hidden", "true");
+
+      const bgOverlay = document.createElement("div");
+      bgOverlay.className = "video-edits-bg-overlay";
+
+      bgWrap.appendChild(bgOverlay);
+      section.appendChild(bgWrap);
+    }
 
     const content = document.createElement("div");
     content.className = "video-edits-content reveal";
@@ -48,7 +60,6 @@
       empty.className = "video-edits-empty content-empty";
       empty.textContent = "Henüz edit eklenmedi.";
       content.appendChild(empty);
-      initParallaxBg(canvas, section);
       return section;
     }
 
@@ -79,7 +90,6 @@
 
     content.appendChild(carousel);
     initCarousel(carousel, edits, Number(data.autoplayMs) || 7500, section);
-    initParallaxBg(canvas, section);
     return section;
   }
 
@@ -106,118 +116,6 @@
     }
 
     tryLoad(0);
-  }
-
-  function initParallaxBg(canvas, section) {
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const colors = [
-      "rgba(129, 140, 248, 0.35)",
-      "rgba(251, 191, 36, 0.22)",
-      "rgba(56, 189, 248, 0.2)",
-      "rgba(167, 139, 250, 0.28)",
-      "rgba(244, 114, 182, 0.18)",
-    ];
-
-    let width = 0;
-    let height = 0;
-    let orbs = [];
-    let rafId = 0;
-    let running = false;
-    let scrollShift = 0;
-
-    function createOrb() {
-      const depth = 0.2 + Math.random() * 0.8;
-      return {
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: 24 + depth * 90 + Math.random() * 40,
-        depth,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        vx: (Math.random() - 0.5) * (0.12 + depth * 0.18),
-        vy: (Math.random() - 0.5) * (0.1 + depth * 0.14),
-      };
-    }
-
-    function resize() {
-      const dpr = Math.min(window.devicePixelRatio || 1, 2);
-      width = section.clientWidth;
-      height = section.clientHeight;
-      canvas.width = Math.floor(width * dpr);
-      canvas.height = Math.floor(height * dpr);
-      canvas.style.width = `${width}px`;
-      canvas.style.height = `${height}px`;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-
-      const count = width < 640 ? 10 : 16;
-      orbs = Array.from({ length: count }, createOrb);
-    }
-
-    function draw() {
-      if (!running) return;
-      ctx.clearRect(0, 0, width, height);
-
-      for (const orb of orbs) {
-        if (!reducedMotion) {
-          orb.x += orb.vx;
-          orb.y += orb.vy;
-          if (orb.x < -orb.r) orb.x = width + orb.r;
-          if (orb.x > width + orb.r) orb.x = -orb.r;
-          if (orb.y < -orb.r) orb.y = height + orb.r;
-          if (orb.y > height + orb.r) orb.y = -orb.r;
-        }
-
-        const px = orb.x;
-        const py = orb.y + scrollShift * orb.depth * 0.6;
-        const grad = ctx.createRadialGradient(px, py, 0, px, py, orb.r);
-        grad.addColorStop(0, orb.color);
-        grad.addColorStop(1, "rgba(0, 0, 0, 0)");
-        ctx.fillStyle = grad;
-        ctx.beginPath();
-        ctx.arc(px, py, orb.r, 0, Math.PI * 2);
-        ctx.fill();
-      }
-
-      rafId = requestAnimationFrame(draw);
-    }
-
-    function updateScrollParallax() {
-      const rect = section.getBoundingClientRect();
-      const center = rect.top + rect.height / 2;
-      const viewCenter = window.innerHeight / 2;
-      scrollShift = (center - viewCenter) * 0.08;
-    }
-
-    function start() {
-      if (running) return;
-      running = true;
-      draw();
-    }
-
-    function stop() {
-      running = false;
-      cancelAnimationFrame(rafId);
-    }
-
-    resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(section);
-
-    const visObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) start();
-          else stop();
-        });
-      },
-      { threshold: 0.05 }
-    );
-    visObserver.observe(section);
-
-    window.addEventListener("scroll", updateScrollParallax, { passive: true });
-    updateScrollParallax();
   }
 
   function initCarousel(root, edits, intervalMs, section) {

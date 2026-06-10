@@ -81,11 +81,27 @@ window.AdminCore = (function () {
     });
   }
 
+  const DEFAULT_VIDEO_EDITS = {
+    intro:
+      "Bu bölümde After Effects kullanarak yaptığım film ve dizi editleri yer alıyor. Sinema, en sevdiğim hobilerden biri; izlediğim ve içimde derin iz bırakan yapımları kendi perspektifimden ele alarak bu tarz editler üretmeyi seviyorum. Bazıları okul veya iş projeleri, bazıları ise hobim olarak ürettiğim çalışmalar.",
+    backgroundImage: "",
+    autoplayMs: 7500,
+    edits: [],
+  };
+
+  async function fetchJsonSafe(file, fallback) {
+    try {
+      return await fetchJson(file);
+    } catch {
+      return JSON.parse(JSON.stringify(fallback));
+    }
+  }
+
   async function loadAll() {
     const [about, projects, videoEdits, activities] = await Promise.all([
       fetchJson(endpoints.about.file),
       fetchJson(endpoints.projects.file),
-      fetchJson(endpoints.videoEdits.file),
+      fetchJsonSafe(endpoints.videoEdits.file, DEFAULT_VIDEO_EDITS),
       fetchJson(endpoints.activities.file),
     ]);
 
