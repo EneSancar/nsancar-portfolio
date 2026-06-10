@@ -54,7 +54,11 @@
       </button>
       <div class="video-edits-stage">
         <div class="video-edits-frame-wrap">
-          <iframe class="video-edits-frame" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+          <button type="button" class="video-edits-poster" aria-label="Videoyu oynat">
+            <img class="video-edits-poster-img" alt="" loading="lazy">
+            <span class="video-edits-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+          </button>
+          <iframe class="video-edits-frame" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" hidden></iframe>
         </div>
         <p class="video-edits-slide-title"></p>
       </div>
@@ -65,11 +69,14 @@
     `;
 
     section.appendChild(carousel);
-    initCarousel(carousel, edits, Number(data.autoplayMs) || 7500);
+    initCarousel(carousel, edits, Number(data.autoplayMs) || 7500, section);
     return section;
   }
 
-  function initCarousel(root, edits, intervalMs) {
+  function initCarousel(root, edits, intervalMs, section) {
+    const frameWrap = root.querySelector(".video-edits-frame-wrap");
+    const posterBtn = root.querySelector(".video-edits-poster");
+    const posterImg = root.querySelector(".video-edits-poster-img");
     const iframe = root.querySelector(".video-edits-frame");
     const titleEl = root.querySelector(".video-edits-slide-title");
     const dotsWrap = root.querySelector(".video-edits-dots");
@@ -79,6 +86,8 @@
     let index = 0;
     let timer = null;
     let paused = false;
+    let inView = false;
+    let isPlaying = false;
 
     edits.forEach((_, i) => {
       const dot = document.createElement("button");
@@ -90,28 +99,59 @@
       dotsWrap.appendChild(dot);
     });
 
-    function embedUrl(videoId) {
-      return `https://www.youtube.com/embed/${videoId}?rel=0&autoplay=1`;
+    function embedUrl(videoId, autoplay) {
+      const base = `https://www.youtube.com/embed/${videoId}?rel=0`;
+      return autoplay ? `${base}&autoplay=1` : base;
     }
 
-    function goTo(i) {
-      index = ((i % edits.length) + edits.length) % edits.length;
+    function currentVideoId() {
+      return parseYoutubeId(edits[index]?.youtubeUrl);
+    }
+
+    function updateSlideUi() {
       const edit = edits[index];
-      const videoId = parseYoutubeId(edit.youtubeUrl);
-      if (!videoId) return;
-
-      iframe.src = embedUrl(videoId);
-      titleEl.textContent = edit.title || "";
-
+      titleEl.textContent = edit?.title || "";
       dotsWrap.querySelectorAll(".video-edits-dot").forEach((d, di) => {
         d.classList.toggle("is-active", di === index);
         d.setAttribute("aria-selected", di === index ? "true" : "false");
       });
     }
 
+    function showPoster() {
+      const videoId = currentVideoId();
+      if (!videoId) return;
+
+      isPlaying = false;
+      iframe.hidden = true;
+      iframe.src = "";
+      posterImg.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+      posterImg.alt = edits[index]?.title || "Video önizlemesi";
+      posterBtn.hidden = false;
+      frameWrap.classList.remove("is-playing");
+    }
+
+    function playCurrentVideo() {
+      const videoId = currentVideoId();
+      if (!videoId) return;
+
+      isPlaying = true;
+      posterBtn.hidden = true;
+      iframe.hidden = false;
+      iframe.src = embedUrl(videoId, true);
+      frameWrap.classList.add("is-playing");
+    }
+
+    function goTo(i) {
+      index = ((i % edits.length) + edits.length) % edits.length;
+      if (!edits[index] || !currentVideoId()) return;
+
+      updateSlideUi();
+      showPoster();
+    }
+
     function startTimer() {
       stopTimer();
-      if (edits.length <= 1 || paused) return;
+      if (!inView || edits.length <= 1 || paused) return;
       timer = window.setInterval(() => goTo(index + 1), intervalMs);
     }
 
@@ -152,8 +192,27 @@
       startTimer();
     });
 
+    posterBtn.addEventListener("click", playCurrentVideo);
+
+    const viewObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            inView = true;
+            startTimer();
+          } else {
+            inView = false;
+            stopTimer();
+            if (isPlaying) showPoster();
+          }
+        });
+      },
+      { threshold: 0.35 }
+    );
+
+    viewObserver.observe(section);
+
     goTo(0);
-    startTimer();
   }
 
   function insertSection(section) {
