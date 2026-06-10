@@ -1,4 +1,4 @@
-const { isAuthorized, sendUnauthorized, getAuthFailureReason } = require("./lib/auth");
+const { isAuthorized, sendUnauthorized, getAuthFailureReason } = require("./_lib/auth");
 
 function setCors(res) {
   res.setHeader("Access-Control-Allow-Origin", "*");

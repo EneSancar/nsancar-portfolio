@@ -1,5 +1,5 @@
-const { isAuthorized, sendUnauthorized } = require("./lib/auth");
-const { writeSiteFile } = require("./lib/github");
+const { isAuthorized, sendUnauthorized } = require("./_lib/auth");
+const { writeSiteFile } = require("./_lib/github");
 
 const MAX_BYTES = 4 * 1024 * 1024;
 const ALLOWED_EXT = /\.(jpe?g|png|webp|gif|svg)$/i;

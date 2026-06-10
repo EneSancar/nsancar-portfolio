@@ -3,10 +3,10 @@ window.AdminCore = (function () {
   const AUTH_CHECK = "/api/auth-check";
 
   const endpoints = {
-    about:       { file: "data/about.json",       api: "/api/about",       title: "Hakkımda"      },
-    projects:    { file: "data/projects.json",    api: "/api/projects",    title: "Projeler"      },
-    videoEdits:  { file: "data/video-edits.json", api: "/api/video-edits", title: "Video Editler" },
-    activities:  { file: "data/activities.json",  api: "/api/activities",  title: "Aktiviteler"   },
+    about:       { file: "data/about.json",       api: "/api/admin-save?type=about",       title: "Hakkımda"      },
+    projects:    { file: "data/projects.json",    api: "/api/admin-save?type=projects",    title: "Projeler"      },
+    videoEdits:  { file: "data/video-edits.json", api: "/api/admin-save?type=video-edits", title: "Video Editler" },
+    activities:  { file: "data/activities.json",  api: "/api/admin-save?type=activities",  title: "Aktiviteler"   },
   };
 
   const BACKUP_KEY = "nsancar_admin_about_backup";
