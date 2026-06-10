@@ -1918,6 +1918,7 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   overflow: hidden;
   background: linear-gradient(-45deg, #050508, #16132b, #0b0a1a, #050508);
   background-size: 400% 400%;
+  background-attachment: fixed;
   animation: videoEditsGradient 18s ease infinite;
   border-top: 1px solid rgba(255, 255, 255, 0.03);
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
@@ -1932,6 +1933,7 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
 [data-theme="light"] .projects-section.video-edits-section {
   background: linear-gradient(-45deg, #f8fafc, #e2e8f0, #f1f5f9, #f8fafc);
   background-size: 400% 400%;
+  background-attachment: fixed;
   border-color: rgba(0, 0, 0, 0.05);
 }
 
