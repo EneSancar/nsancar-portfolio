@@ -3,15 +3,23 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/index.html",    "destination": "/",             "permanent": true },
-    { "source": "/about.html",    "destination": "/hakkimda",     "permanent": true },
-    { "source": "/about",         "destination": "/hakkimda",     "permanent": true },
-    { "source": "/project.html",  "destination": "/projeler",     "permanent": true },
-    { "source": "/project",       "destination": "/projeler",     "permanent": true },
-    { "source": "/services.html", "destination": "/servisler",    "permanent": true },
-    { "source": "/services",      "destination": "/servisler",    "permanent": true },
-    { "source": "/fav.html",      "destination": "/aktiviteler",  "permanent": true },
-    { "source": "/fav",           "destination": "/aktiviteler",  "permanent": true }
+    { "source": "/index.html",         "destination": "/",             "permanent": true },
+    { "source": "/about.html",         "destination": "/hakkimda",     "permanent": true },
+    { "source": "/about",              "destination": "/hakkimda",     "permanent": true },
+    { "source": "/hakkimda.html",      "destination": "/hakkimda",     "permanent": true },
+    { "source": "/project.html",       "destination": "/projeler",     "permanent": true },
+    { "source": "/project",            "destination": "/projeler",     "permanent": true },
+    { "source": "/projeler.html",      "destination": "/projeler",     "permanent": true },
+    { "source": "/services.html",      "destination": "/servisler",    "permanent": true },
+    { "source": "/services",           "destination": "/servisler",    "permanent": true },
+    { "source": "/servisler.html",     "destination": "/servisler",    "permanent": true },
+    { "source": "/fav.html",           "destination": "/aktiviteler",  "permanent": true },
+    { "source": "/fav",                "destination": "/aktiviteler",  "permanent": true },
+    { "source": "/aktiviteler.html",   "destination": "/aktiviteler",  "permanent": true },
+    { "source": "/galeri",             "destination": "/gallery",      "permanent": true },
+    { "source": "/galeri/:path*",      "destination": "/gallery/:path*", "permanent": true },
+    { "source": "/gallery/index.html", "destination": "/gallery",    "permanent": true },
+    { "source": "/blog.html",          "destination": "/blog",         "permanent": true }
   ],
   "functions": {
     "htdocs/api/*.js": {
