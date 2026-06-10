@@ -282,6 +282,7 @@
       if (!videoId) return;
 
       isPlaying = true;
+      stopTimer(); // Video oynarken arka planda slaytın geçmesini engeller
       frameWrap.classList.add("is-playing");
       posterBtn.hidden = true;
       posterBtn.setAttribute("aria-hidden", "true");
@@ -299,7 +300,8 @@
 
     function startTimer() {
       stopTimer();
-      if (!inView || edits.length <= 1 || paused) return;
+      // Video oynuyorsa (isPlaying) otomatik kaymayı durdur
+      if (!inView || edits.length <= 1 || paused || isPlaying) return;
       timer = window.setInterval(() => goTo(index + 1), intervalMs);
     }
 
