@@ -71,21 +71,62 @@
       <button type="button" class="video-edits-nav video-edits-nav--prev" aria-label="Önceki">
         <i class="fa-solid fa-chevron-left"></i>
       </button>
-      <div class="video-edits-stage">
-        <div class="video-edits-frame-wrap">
-          <button type="button" class="video-edits-poster" aria-label="Videoyu oynat">
-            <img class="video-edits-poster-img" alt="" loading="lazy">
-            <span class="video-edits-play-btn" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
-          </button>
-          <iframe class="video-edits-frame" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" hidden></iframe>
-        </div>
-        <p class="video-edits-slide-title"></p>
+      <div class="video-edits-carousel-container">
+        <div class="video-edits-track"></div>
       </div>
       <button type="button" class="video-edits-nav video-edits-nav--next" aria-label="Sonraki">
         <i class="fa-solid fa-chevron-right"></i>
       </button>
+      <div class="video-edits-member-info">
+        <h3 class="video-edits-slide-title"></h3>
+      </div>
       <div class="video-edits-dots" role="tablist" aria-label="Slayt seçimi"></div>
     `;
+
+    const track = carousel.querySelector(".video-edits-track");
+    edits.forEach((edit, i) => {
+      const videoId = parseYoutubeId(edit.youtubeUrl);
+      if (!videoId) return;
+
+      const card = document.createElement("div");
+      card.className = "video-edits-card";
+      card.dataset.index = String(i);
+
+      const frameWrap = document.createElement("div");
+      frameWrap.className = "video-edits-frame-wrap";
+
+      const posterBtn = document.createElement("button");
+      posterBtn.type = "button";
+      posterBtn.className = "video-edits-poster";
+      posterBtn.setAttribute("aria-label", `${edit.title || "Video"} oynat`);
+
+      const posterImg = document.createElement("img");
+      posterImg.className = "video-edits-poster-img";
+      posterImg.alt = edit.title || "Video önizlemesi";
+      posterImg.loading = "lazy";
+      setPosterImage(posterImg, videoId, edit.title || "Video önizlemesi");
+
+      const playBtn = document.createElement("span");
+      playBtn.className = "video-edits-play-btn";
+      playBtn.setAttribute("aria-hidden", "true");
+      playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+
+      const iframe = document.createElement("iframe");
+      iframe.className = "video-edits-frame";
+      iframe.title = edit.title || "YouTube video";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.allowFullscreen = true;
+      iframe.loading = "lazy";
+      iframe.hidden = true;
+
+      posterBtn.appendChild(posterImg);
+      posterBtn.appendChild(playBtn);
+      frameWrap.appendChild(posterBtn);
+      frameWrap.appendChild(iframe);
+      card.appendChild(frameWrap);
+      track.appendChild(card);
+    });
 
     content.appendChild(carousel);
     initCarousel(carousel, edits, Number(data.autoplayMs) || 7500, section);
@@ -118,20 +159,26 @@
   }
 
   function initCarousel(root, edits, intervalMs, section) {
-    const frameWrap = root.querySelector(".video-edits-frame-wrap");
-    const posterBtn = root.querySelector(".video-edits-poster");
-    const posterImg = root.querySelector(".video-edits-poster-img");
-    const iframe = root.querySelector(".video-edits-frame");
+    const track = root.querySelector(".video-edits-track");
+    const cards = Array.from(root.querySelectorAll(".video-edits-card"));
     const titleEl = root.querySelector(".video-edits-slide-title");
     const dotsWrap = root.querySelector(".video-edits-dots");
     const prevBtn = root.querySelector(".video-edits-nav--prev");
     const nextBtn = root.querySelector(".video-edits-nav--next");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const animMs = reducedMotion ? 0 : 800;
 
     let index = 0;
     let timer = null;
     let paused = false;
     let inView = false;
     let isPlaying = false;
+    let isAnimating = false;
+
+    if (edits.length <= 1) {
+      prevBtn.hidden = true;
+      nextBtn.hidden = true;
+    }
 
     edits.forEach((_, i) => {
       const dot = document.createElement("button");
@@ -139,48 +186,90 @@
       dot.className = "video-edits-dot";
       dot.setAttribute("role", "tab");
       dot.setAttribute("aria-label", `Slayt ${i + 1}`);
-      dot.addEventListener("click", () => goTo(i));
+      dot.addEventListener("click", () => {
+        goTo(i);
+        startTimer();
+      });
       dotsWrap.appendChild(dot);
     });
+
+    if (edits.length <= 1) {
+      dotsWrap.hidden = true;
+    }
 
     function embedUrl(videoId, autoplay) {
       const base = `https://www.youtube.com/embed/${videoId}?rel=0`;
       return autoplay ? `${base}&autoplay=1` : base;
     }
 
+    function getCenterCard() {
+      return track.querySelector(".video-edits-card.center");
+    }
+
     function currentVideoId() {
       return parseYoutubeId(edits[index]?.youtubeUrl);
     }
 
-    function updateSlideUi() {
-      const edit = edits[index];
-      titleEl.textContent = edit?.title || "";
+    function updatePositions() {
+      cards.forEach((card, i) => {
+        const offset = (i - index + cards.length) % cards.length;
+        card.classList.remove("center", "left-1", "left-2", "right-1", "right-2", "hidden");
+
+        if (offset === 0) card.classList.add("center");
+        else if (offset === 1) card.classList.add("right-1");
+        else if (offset === 2) card.classList.add("right-2");
+        else if (offset === cards.length - 1) card.classList.add("left-1");
+        else if (offset === cards.length - 2) card.classList.add("left-2");
+        else card.classList.add("hidden");
+      });
+
       dotsWrap.querySelectorAll(".video-edits-dot").forEach((d, di) => {
         d.classList.toggle("is-active", di === index);
         d.setAttribute("aria-selected", di === index ? "true" : "false");
       });
     }
 
-    function showPoster() {
-      const videoId = currentVideoId();
-      if (!videoId) return;
+    function updateTitle() {
+      const edit = edits[index];
+      titleEl.style.opacity = "0";
+      window.setTimeout(() => {
+        titleEl.textContent = edit?.title || "";
+        titleEl.style.opacity = "1";
+      }, reducedMotion ? 0 : 250);
+    }
 
+    function stopAllPlayers() {
+      cards.forEach((card) => {
+        const wrap = card.querySelector(".video-edits-frame-wrap");
+        const posterBtn = card.querySelector(".video-edits-poster");
+        const iframe = card.querySelector(".video-edits-frame");
+        if (!wrap || !posterBtn || !iframe) return;
+        iframe.removeAttribute("src");
+        iframe.hidden = true;
+        wrap.classList.remove("is-playing");
+        posterBtn.hidden = false;
+        posterBtn.removeAttribute("aria-hidden");
+      });
       isPlaying = false;
-      iframe.removeAttribute("src");
-      iframe.hidden = true;
-      frameWrap.classList.remove("is-playing");
-      posterBtn.hidden = false;
-      posterBtn.removeAttribute("aria-hidden");
-      setPosterImage(posterImg, videoId, edits[index]?.title || "Video önizlemesi");
+    }
+
+    function showPoster() {
+      stopAllPlayers();
     }
 
     function playCurrentVideo() {
       const videoId = currentVideoId();
-      if (!videoId) return;
+      const centerCard = getCenterCard();
+      if (!videoId || !centerCard) return;
+
+      const wrap = centerCard.querySelector(".video-edits-frame-wrap");
+      const posterBtn = centerCard.querySelector(".video-edits-poster");
+      const iframe = centerCard.querySelector(".video-edits-frame");
+      if (!wrap || !posterBtn || !iframe) return;
 
       isPlaying = true;
-      stopTimer(); // Video oynarken arka planda slaytın geçmesini engeller
-      frameWrap.classList.add("is-playing");
+      stopTimer();
+      wrap.classList.add("is-playing");
       posterBtn.hidden = true;
       posterBtn.setAttribute("aria-hidden", "true");
       iframe.hidden = false;
@@ -188,16 +277,24 @@
     }
 
     function goTo(i) {
-      index = ((i % edits.length) + edits.length) % edits.length;
-      if (!edits[index] || !currentVideoId()) return;
+      if (isAnimating) return;
+      const nextIndex = ((i % edits.length) + edits.length) % edits.length;
+      if (!edits[nextIndex] || !parseYoutubeId(edits[nextIndex].youtubeUrl)) return;
+      if (nextIndex === index && !isPlaying) return;
 
-      updateSlideUi();
+      isAnimating = true;
       showPoster();
+      index = nextIndex;
+      updatePositions();
+      updateTitle();
+
+      window.setTimeout(() => {
+        isAnimating = false;
+      }, animMs);
     }
 
     function startTimer() {
       stopTimer();
-      // Video oynuyorsa (isPlaying) otomatik kaymayı durdur
       if (!inView || edits.length <= 1 || paused || isPlaying) return;
       timer = window.setInterval(() => goTo(index + 1), intervalMs);
     }
@@ -217,6 +314,25 @@
     nextBtn.addEventListener("click", () => {
       goTo(index + 1);
       startTimer();
+    });
+
+    cards.forEach((card) => {
+      const cardIndex = Number(card.dataset.index);
+      const posterBtn = card.querySelector(".video-edits-poster");
+
+      card.addEventListener("click", () => {
+        if (!card.classList.contains("center")) {
+          goTo(cardIndex);
+          startTimer();
+        }
+      });
+
+      posterBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        if (card.classList.contains("center") && !isPlaying) {
+          playCurrentVideo();
+        }
+      });
     });
 
     root.addEventListener("mouseenter", () => {
@@ -239,7 +355,37 @@
       startTimer();
     });
 
-    posterBtn.addEventListener("click", playCurrentVideo);
+    let touchStartX = 0;
+    root.addEventListener(
+      "touchstart",
+      (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+      },
+      { passive: true }
+    );
+
+    root.addEventListener(
+      "touchend",
+      (e) => {
+        const diff = touchStartX - e.changedTouches[0].screenX;
+        if (Math.abs(diff) < 50) return;
+        goTo(index + (diff > 0 ? 1 : -1));
+        startTimer();
+      },
+      { passive: true }
+    );
+
+    root.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goTo(index - 1);
+        startTimer();
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goTo(index + 1);
+        startTimer();
+      }
+    });
 
     const viewObserver = new IntersectionObserver(
       (entries) => {
@@ -259,7 +405,10 @@
 
     viewObserver.observe(section);
 
-    goTo(0);
+    index = 0;
+    updatePositions();
+    updateTitle();
+    startTimer();
   }
 
   function insertSection(section) {
