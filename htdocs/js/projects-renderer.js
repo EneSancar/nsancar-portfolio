@@ -246,6 +246,7 @@
 
       const sectionEl = document.createElement("section");
       sectionEl.className = "projects-section reveal";
+      sectionEl.dataset.sectionId = section.id;
       sectionEl.innerHTML = `<h2 class="projects-section-title"><i class="${escapeHtml(section.icon || "fa-solid fa-folder")}"></i> ${escapeHtml(section.title)}</h2>`;
 
       const grid = document.createElement("div");
@@ -289,6 +290,8 @@
     if (typeof window.nsancarInitReveal === "function") {
       window.nsancarInitReveal();
     }
+
+    document.dispatchEvent(new CustomEvent("projectsRendered"));
   }
 
   async function loadProjects() {

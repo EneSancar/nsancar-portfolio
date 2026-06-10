@@ -95,4 +95,46 @@ function validateActivities(payload) {
   return null;
 }
 
-module.exports = { validateAbout, validateProjects, validateActivities };
+function parseYoutubeId(url) {
+  if (typeof url !== "string" || !url.trim()) return null;
+  const u = url.trim();
+  const patterns = [
+    /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+  ];
+  for (const re of patterns) {
+    const m = u.match(re);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+function validateVideoEdits(payload) {
+  if (!isObject(payload)) return "video-edits verisi bir nesne olmalı.";
+  if (typeof payload.intro !== "string") return "intro alanı gerekli.";
+  if (!Array.isArray(payload.edits)) return "edits dizisi gerekli.";
+
+  if (payload.autoplayMs !== undefined && (typeof payload.autoplayMs !== "number" || payload.autoplayMs < 3000)) {
+    return "autoplayMs en az 3000 olmalı.";
+  }
+
+  for (let i = 0; i < payload.edits.length; i++) {
+    const e = payload.edits[i];
+    if (!e || typeof e.title !== "string" || !e.title.trim()) {
+      return `edits[${i}]: title gerekli.`;
+    }
+    if (typeof e.youtubeUrl !== "string" || !parseYoutubeId(e.youtubeUrl)) {
+      return `edits[${i}]: geçerli bir YouTube bağlantısı gerekli.`;
+    }
+  }
+
+  return null;
+}
+
+module.exports = {
+  validateAbout,
+  validateProjects,
+  validateActivities,
+  validateVideoEdits,
+  parseYoutubeId,
+};

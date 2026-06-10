@@ -3,9 +3,10 @@ window.AdminCore = (function () {
   const AUTH_CHECK = "/api/auth-check";
 
   const endpoints = {
-    about:      { file: "data/about.json",      api: "/api/about",      title: "Hakkımda"   },
-    projects:   { file: "data/projects.json",   api: "/api/projects",   title: "Projeler"   },
-    activities: { file: "data/activities.json", api: "/api/activities", title: "Aktiviteler" },
+    about:       { file: "data/about.json",       api: "/api/about",       title: "Hakkımda"      },
+    projects:    { file: "data/projects.json",    api: "/api/projects",    title: "Projeler"      },
+    videoEdits:  { file: "data/video-edits.json", api: "/api/video-edits", title: "Video Editler" },
+    activities:  { file: "data/activities.json",  api: "/api/activities",  title: "Aktiviteler"   },
   };
 
   const BACKUP_KEY = "nsancar_admin_about_backup";
@@ -15,6 +16,7 @@ window.AdminCore = (function () {
     tab: "about",
     about: null,
     projects: null,
+    videoEdits: null,
     activities: null,
     lastLoadUsedBackup: false,
   };
@@ -80,9 +82,10 @@ window.AdminCore = (function () {
   }
 
   async function loadAll() {
-    const [about, projects, activities] = await Promise.all([
+    const [about, projects, videoEdits, activities] = await Promise.all([
       fetchJson(endpoints.about.file),
       fetchJson(endpoints.projects.file),
+      fetchJson(endpoints.videoEdits.file),
       fetchJson(endpoints.activities.file),
     ]);
 
@@ -95,6 +98,7 @@ window.AdminCore = (function () {
       state.about = about;
     }
     state.projects = projects;
+    state.videoEdits = videoEdits;
     state.activities = activities;
     return state;
   }
@@ -203,6 +207,52 @@ window.AdminCore = (function () {
     return data;
   }
 
+  function normalizeVideoEditsPayload(payload) {
+    const data = JSON.parse(JSON.stringify(payload));
+    data.intro = String(data.intro || "").trim();
+    data.autoplayMs = Number(data.autoplayMs);
+    if (!Number.isFinite(data.autoplayMs) || data.autoplayMs < 3000) {
+      data.autoplayMs = 7500;
+    }
+
+    data.edits = Array.isArray(data.edits) ? data.edits : [];
+    data.edits = data.edits
+      .map((e, i) => ({
+        id: e.id || `ve-${i}-${Date.now()}`,
+        title: String(e.title || "").trim(),
+        youtubeUrl: String(e.youtubeUrl || "").trim(),
+      }))
+      .filter((e) => e.title && e.youtubeUrl);
+
+    return data;
+  }
+
+  function validateVideoEditsClient(data) {
+    const errors = [];
+    if (!data.intro?.trim()) errors.push("Bölüm açıklaması zorunlu.");
+    (data.edits || []).forEach((e, i) => {
+      if (!e.title?.trim()) errors.push(`Edit ${i + 1}: Başlık zorunlu.`);
+      if (!e.youtubeUrl?.trim()) errors.push(`Edit ${i + 1}: YouTube URL zorunlu.`);
+      else if (!parseYoutubeIdClient(e.youtubeUrl)) {
+        errors.push(`Edit ${i + 1}: Geçerli bir YouTube bağlantısı girin.`);
+      }
+    });
+    return errors;
+  }
+
+  function parseYoutubeIdClient(url) {
+    if (!url) return null;
+    const patterns = [
+      /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/,
+      /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+    ];
+    for (const re of patterns) {
+      const m = String(url).match(re);
+      if (m) return m[1];
+    }
+    return null;
+  }
+
   function validateActivitiesClient(data) {
     const errors = [];
     (data.channels || []).forEach((ch, i) => {
@@ -250,7 +300,9 @@ window.AdminCore = (function () {
           ? normalizeAboutPayload(state[tab])
           : tab === "activities"
             ? normalizeActivitiesPayload(state[tab])
-            : state[tab];
+            : tab === "videoEdits"
+              ? normalizeVideoEditsPayload(state[tab])
+              : state[tab];
 
     if (tab === "about") {
       const clientErrors = validateAboutClient(payload);
@@ -258,6 +310,10 @@ window.AdminCore = (function () {
     }
     if (tab === "activities") {
       const clientErrors = validateActivitiesClient(payload);
+      if (clientErrors.length) throw new Error(clientErrors.join(" "));
+    }
+    if (tab === "videoEdits") {
+      const clientErrors = validateVideoEditsClient(payload);
       if (clientErrors.length) throw new Error(clientErrors.join(" "));
     }
 
@@ -269,7 +325,7 @@ window.AdminCore = (function () {
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.message || data.error || `HTTP ${res.status}`);
 
-    if (tab === "activities") {
+    if (tab === "activities" || tab === "videoEdits") {
       state[tab] = payload;
     } else {
       mergeInto(state[tab], payload);
@@ -379,6 +435,7 @@ window.AdminCore = (function () {
     saveTab,
     validateAboutClient,
     validateActivitiesClient,
+    validateVideoEditsClient,
     readAboutBackup,
     slugify,
     linesToArray,

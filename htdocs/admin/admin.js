@@ -12,6 +12,7 @@
   const panelTitle = document.getElementById("panelTitle");
   const panelAbout = document.getElementById("panelAbout");
   const panelProjects = document.getElementById("panelProjects");
+  const panelVideoEdits = document.getElementById("panelVideoEdits");
   const panelActivities = document.getElementById("panelActivities");
   const navItems = document.querySelectorAll(".admin-nav-item[data-tab]");
 
@@ -36,6 +37,7 @@
     panelTitle.textContent = C.endpoints[tab].title;
     panelAbout.hidden       = tab !== "about";
     panelProjects.hidden    = tab !== "projects";
+    panelVideoEdits.hidden  = tab !== "videoEdits";
     panelActivities.hidden  = tab !== "activities";
 
     if (tab === "about" && C.state.about) {
@@ -43,6 +45,9 @@
     }
     if (tab === "projects" && C.state.projects) {
       window.AdminProjectsUI.render(panelProjects, C.state.projects);
+    }
+    if (tab === "videoEdits" && C.state.videoEdits) {
+      window.AdminVideoEditsUI.render(panelVideoEdits, C.state.videoEdits);
     }
     if (tab === "activities" && C.state.activities) {
       window.AdminActivitiesUI.render(panelActivities, C.state.activities);
@@ -107,7 +112,7 @@
           " Yenile'ye hemen basmayın; deploy bitene kadar eski veri gelebilir.",
         true
       );
-      if (C.state.tab === "activities") renderActivePanel();
+      if (C.state.tab === "activities" || C.state.tab === "videoEdits") renderActivePanel();
 
       setTimeout(() => {
         saveBtn.classList.remove("is-saved");

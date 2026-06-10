@@ -1894,6 +1894,135 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
   color: var(--accent-light);
 }
 
+.video-edits-section .video-edits-intro {
+  max-width: 52rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin: -0.25rem 0 1.75rem;
+  font-size: 0.98rem;
+}
+
+.video-edits-carousel {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  gap: 0.75rem 1rem;
+  align-items: center;
+}
+
+.video-edits-stage {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.video-edits-frame-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: #0a0a12;
+  border: 1px solid var(--border);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+}
+
+.video-edits-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-edits-slide-title {
+  margin: 0.85rem 0 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: center;
+}
+
+.video-edits-nav {
+  grid-row: 1;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s, color 0.2s;
+}
+
+.video-edits-nav:hover,
+.video-edits-nav:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  outline: none;
+}
+
+.video-edits-nav--prev { grid-column: 1; }
+.video-edits-nav--next { grid-column: 3; }
+
+.video-edits-dots {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.video-edits-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  border: 0;
+  padding: 0;
+  background: var(--border);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.video-edits-dot.is-active {
+  background: var(--accent-light);
+  transform: scale(1.25);
+}
+
+.video-edits-empty {
+  margin-top: 0;
+}
+
+@media (max-width: 720px) {
+  .video-edits-carousel {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .video-edits-stage {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .video-edits-nav--prev,
+  .video-edits-nav--next {
+    grid-column: 1;
+    justify-self: center;
+  }
+
+  .video-edits-nav--prev { grid-row: 2; }
+  .video-edits-nav--next { grid-row: 3; }
+
+  .video-edits-dots {
+    grid-row: 4;
+  }
+}
+
 .project-card--figma .project-card-tags span:first-child {
   background: rgba(242, 78, 30, 0.18);
   color: #f97316;
