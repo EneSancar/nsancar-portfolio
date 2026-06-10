@@ -27,19 +27,28 @@
     section.className = "projects-section video-edits-section reveal";
     section.dataset.sectionId = "video-edits";
 
-    section.innerHTML = `
+    const canvas = document.createElement("canvas");
+    canvas.className = "video-edits-parallax";
+    canvas.setAttribute("aria-hidden", "true");
+    section.appendChild(canvas);
+
+    const content = document.createElement("div");
+    content.className = "video-edits-content";
+    content.innerHTML = `
       <h2 class="projects-section-title">
         <i class="fa-solid fa-clapperboard"></i> Video Edit / After Effects
       </h2>
       <p class="video-edits-intro">${escapeHtml(data.intro || "")}</p>
     `;
+    section.appendChild(content);
 
     const edits = SC.asArray(data.edits).filter((e) => e && parseYoutubeId(e.youtubeUrl));
     if (!edits.length) {
       const empty = document.createElement("p");
       empty.className = "video-edits-empty content-empty";
       empty.textContent = "Henüz edit eklenmedi.";
-      section.appendChild(empty);
+      content.appendChild(empty);
+      initParallaxBg(canvas, section);
       return section;
     }
 
@@ -68,9 +77,147 @@
       <div class="video-edits-dots" role="tablist" aria-label="Slayt seçimi"></div>
     `;
 
-    section.appendChild(carousel);
+    content.appendChild(carousel);
     initCarousel(carousel, edits, Number(data.autoplayMs) || 7500, section);
+    initParallaxBg(canvas, section);
     return section;
+  }
+
+  function setPosterImage(imgEl, videoId, altText) {
+    const candidates = [
+      `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`,
+      `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`,
+    ];
+
+    function tryLoad(idx) {
+      if (idx >= candidates.length) return;
+      const probe = new Image();
+      probe.onload = () => {
+        if (probe.naturalWidth < 200 && idx < candidates.length - 1) {
+          tryLoad(idx + 1);
+          return;
+        }
+        imgEl.src = candidates[idx];
+        imgEl.alt = altText;
+      };
+      probe.onerror = () => tryLoad(idx + 1);
+      probe.src = candidates[idx];
+    }
+
+    tryLoad(0);
+  }
+
+  function initParallaxBg(canvas, section) {
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const colors = [
+      "rgba(129, 140, 248, 0.35)",
+      "rgba(251, 191, 36, 0.22)",
+      "rgba(56, 189, 248, 0.2)",
+      "rgba(167, 139, 250, 0.28)",
+      "rgba(244, 114, 182, 0.18)",
+    ];
+
+    let width = 0;
+    let height = 0;
+    let orbs = [];
+    let rafId = 0;
+    let running = false;
+    let scrollShift = 0;
+
+    function createOrb() {
+      const depth = 0.2 + Math.random() * 0.8;
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: 24 + depth * 90 + Math.random() * 40,
+        depth,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        vx: (Math.random() - 0.5) * (0.12 + depth * 0.18),
+        vy: (Math.random() - 0.5) * (0.1 + depth * 0.14),
+      };
+    }
+
+    function resize() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      width = section.clientWidth;
+      height = section.clientHeight;
+      canvas.width = Math.floor(width * dpr);
+      canvas.height = Math.floor(height * dpr);
+      canvas.style.width = `${width}px`;
+      canvas.style.height = `${height}px`;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+      const count = width < 640 ? 10 : 16;
+      orbs = Array.from({ length: count }, createOrb);
+    }
+
+    function draw() {
+      if (!running) return;
+      ctx.clearRect(0, 0, width, height);
+
+      for (const orb of orbs) {
+        if (!reducedMotion) {
+          orb.x += orb.vx;
+          orb.y += orb.vy;
+          if (orb.x < -orb.r) orb.x = width + orb.r;
+          if (orb.x > width + orb.r) orb.x = -orb.r;
+          if (orb.y < -orb.r) orb.y = height + orb.r;
+          if (orb.y > height + orb.r) orb.y = -orb.r;
+        }
+
+        const px = orb.x;
+        const py = orb.y + scrollShift * orb.depth * 0.6;
+        const grad = ctx.createRadialGradient(px, py, 0, px, py, orb.r);
+        grad.addColorStop(0, orb.color);
+        grad.addColorStop(1, "rgba(0, 0, 0, 0)");
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.arc(px, py, orb.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      rafId = requestAnimationFrame(draw);
+    }
+
+    function updateScrollParallax() {
+      const rect = section.getBoundingClientRect();
+      const center = rect.top + rect.height / 2;
+      const viewCenter = window.innerHeight / 2;
+      scrollShift = (center - viewCenter) * 0.08;
+    }
+
+    function start() {
+      if (running) return;
+      running = true;
+      draw();
+    }
+
+    function stop() {
+      running = false;
+      cancelAnimationFrame(rafId);
+    }
+
+    resize();
+    const ro = new ResizeObserver(resize);
+    ro.observe(section);
+
+    const visObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) start();
+          else stop();
+        });
+      },
+      { threshold: 0.05 }
+    );
+    visObserver.observe(section);
+
+    window.addEventListener("scroll", updateScrollParallax, { passive: true });
+    updateScrollParallax();
   }
 
   function initCarousel(root, edits, intervalMs, section) {
@@ -122,12 +269,12 @@
       if (!videoId) return;
 
       isPlaying = false;
+      iframe.removeAttribute("src");
       iframe.hidden = true;
-      iframe.src = "";
-      posterImg.src = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
-      posterImg.alt = edits[index]?.title || "Video önizlemesi";
-      posterBtn.hidden = false;
       frameWrap.classList.remove("is-playing");
+      posterBtn.hidden = false;
+      posterBtn.removeAttribute("aria-hidden");
+      setPosterImage(posterImg, videoId, edits[index]?.title || "Video önizlemesi");
     }
 
     function playCurrentVideo() {
@@ -135,10 +282,11 @@
       if (!videoId) return;
 
       isPlaying = true;
+      frameWrap.classList.add("is-playing");
       posterBtn.hidden = true;
+      posterBtn.setAttribute("aria-hidden", "true");
       iframe.hidden = false;
       iframe.src = embedUrl(videoId, true);
-      frameWrap.classList.add("is-playing");
     }
 
     function goTo(i) {
