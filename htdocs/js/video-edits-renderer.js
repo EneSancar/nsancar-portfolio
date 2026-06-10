@@ -24,7 +24,7 @@
 
   function buildSection(data) {
     const section = document.createElement("section");
-    section.className = "projects-section video-edits-section reveal";
+    section.className = "projects-section video-edits-section";
     section.dataset.sectionId = "video-edits";
 
     const canvas = document.createElement("canvas");
@@ -33,7 +33,7 @@
     section.appendChild(canvas);
 
     const content = document.createElement("div");
-    content.className = "video-edits-content";
+    content.className = "video-edits-content reveal";
     content.innerHTML = `
       <h2 class="projects-section-title">
         <i class="fa-solid fa-clapperboard"></i> Video Edit / After Effects
