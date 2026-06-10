@@ -23,6 +23,42 @@
     return null;
   }
 
+  function applySectionBackgroundWhenVisible(section, bgPath) {
+    const safeUrl = bgPath.replace(/"/g, '\\"');
+    let applied = false;
+
+    function apply() {
+      if (applied) return;
+      applied = true;
+      section.style.backgroundImage = `url("${safeUrl}")`;
+    }
+
+    if (!("IntersectionObserver" in window)) {
+      apply();
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          apply();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "240px 0px", threshold: 0.01 }
+    );
+    observer.observe(section);
+  }
+
+  function ensureCardPoster(card, edit) {
+    const img = card.querySelector(".video-edits-poster-img");
+    if (!img || img.dataset.posterLoaded === "1") return;
+    const videoId = parseYoutubeId(edit?.youtubeUrl);
+    if (!videoId) return;
+    img.dataset.posterLoaded = "1";
+    setPosterImage(img, videoId, edit?.title || "Video önizlemesi");
+  }
+
   function buildSection(data) {
     const section = document.createElement("section");
     section.className = "projects-section video-edits-section";
@@ -31,7 +67,7 @@
 
     const bgPath = String(data.backgroundImage || "").trim() || VIDEO_EDITS_BG;
     section.classList.add("video-edits-section--has-bg");
-    section.style.backgroundImage = `url("${bgPath.replace(/"/g, '\\"')}")`;
+    applySectionBackgroundWhenVisible(section, bgPath);
 
     const bgWrap = document.createElement("div");
     bgWrap.className = "video-edits-bg";
@@ -104,7 +140,7 @@
       posterImg.className = "video-edits-poster-img";
       posterImg.alt = edit.title || "Video önizlemesi";
       posterImg.loading = "lazy";
-      setPosterImage(posterImg, videoId, edit.title || "Video önizlemesi");
+      posterImg.decoding = "async";
 
       const playBtn = document.createElement("span");
       playBtn.className = "video-edits-play-btn";
@@ -225,6 +261,12 @@
         else if (diff === -1) card.classList.add("left-1");
         else if (diff === -2) card.classList.add("left-2");
         else card.classList.add("hidden");
+      });
+
+      cards.forEach((card, i) => {
+        if (!card.classList.contains("hidden")) {
+          ensureCardPoster(card, edits[i]);
+        }
       });
 
       dotsWrap.querySelectorAll(".video-edits-dot").forEach((d, di) => {

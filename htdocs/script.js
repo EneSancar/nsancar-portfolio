@@ -95,17 +95,23 @@ function initHeaderScroll() {
   if (!header) return;
 
   let lastScroll = 0;
+  let scrollTicking = false;
 
   window.addEventListener("scroll", () => {
-    const current = window.pageYOffset;
-    header.classList.toggle("scrolled", current > 40);
+    if (scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(() => {
+      const current = window.pageYOffset;
+      header.classList.toggle("scrolled", current > 40);
 
-    if (current > lastScroll && current > 120) {
-      header.classList.add("hidden");
-    } else {
-      header.classList.remove("hidden");
-    }
-    lastScroll = current;
+      if (current > lastScroll && current > 120) {
+        header.classList.add("hidden");
+      } else {
+        header.classList.remove("hidden");
+      }
+      lastScroll = current;
+      scrollTicking = false;
+    });
   }, { passive: true });
 }
 
@@ -537,11 +543,30 @@ function initSpaceParticles() {
   resize();
   loop();
 
-  window.addEventListener("resize", resize);
+  window.addEventListener("resize", resize, { passive: true });
   document.addEventListener("visibilitychange", () => {
     running = !document.hidden;
-    if (running) loop(); else cancelAnimationFrame(rafId);
+    if (running) loop();
+    else cancelAnimationFrame(rafId);
   });
+
+  const canvasObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (!running) {
+            running = true;
+            loop();
+          }
+        } else {
+          running = false;
+          cancelAnimationFrame(rafId);
+        }
+      });
+    },
+    { threshold: 0 }
+  );
+  canvasObserver.observe(canvas);
 
   /* Expose so theme toggle can trigger a re-style immediately */
   window._reinitParticles = resize;
@@ -597,6 +622,8 @@ function initPreloader() {
   const preloader = document.getElementById("preloader");
   if (!preloader) return;
 
+  let hidden = false;
+
   if (typeof lottie !== "undefined") {
     lottie.loadAnimation({
       container: document.getElementById("lottieCont"),
@@ -608,9 +635,11 @@ function initPreloader() {
   }
 
   const startedAt = Date.now();
-  const MIN_DISPLAY = 900;
+  const MIN_DISPLAY = 450;
 
   function hidePreloader() {
+    if (hidden) return;
+    hidden = true;
     const elapsed = Date.now() - startedAt;
     const delay = Math.max(0, MIN_DISPLAY - elapsed);
     setTimeout(() => {
@@ -619,11 +648,8 @@ function initPreloader() {
     }, delay);
   }
 
-  if (document.readyState === "complete") {
-    hidePreloader();
-  } else {
-    window.addEventListener("load", hidePreloader, { once: true });
-  }
+  document.addEventListener("DOMContentLoaded", hidePreloader, { once: true });
+  window.addEventListener("load", hidePreloader, { once: true });
 }
 
 /* ===== Contact form ===== */

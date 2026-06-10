@@ -9,8 +9,12 @@
   };
 
   function fetchData() {
-    return fetch(`${DATA_URL}?v=${Date.now()}`, { cache: "no-store" })
-      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)));
+    if (window.SiteContent?.fetchJson) {
+      return window.SiteContent.fetchJson(DATA_URL);
+    }
+    return fetch(DATA_URL, { cache: "default" }).then((r) =>
+      r.ok ? r.json() : Promise.reject(r.status)
+    );
   }
 
   /* ── CHANNELS ──────────────────────────────────────────────── */

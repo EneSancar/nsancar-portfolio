@@ -19,7 +19,8 @@
     }
 
     if (thumbnail.type === "background") {
-      thumb.style.backgroundImage = `url('${escapeHtml(thumbnail.src)}')`;
+      thumb.dataset.bgSrc = thumbnail.src;
+      thumb.classList.add("project-card-thumb--bg-lazy");
       return thumb;
     }
 
@@ -292,6 +293,39 @@
     }
 
     document.dispatchEvent(new CustomEvent("projectsRendered"));
+    initLazyProjectThumbs(container);
+  }
+
+  let lazyThumbObserver = null;
+
+  function initLazyProjectThumbs(container) {
+    const thumbs = container.querySelectorAll(".project-card-thumb--bg-lazy[data-bg-src]");
+    if (!thumbs.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      thumbs.forEach((thumb) => {
+        thumb.style.backgroundImage = `url('${thumb.dataset.bgSrc}')`;
+        thumb.classList.remove("project-card-thumb--bg-lazy");
+      });
+      return;
+    }
+
+    if (!lazyThumbObserver) {
+      lazyThumbObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            const thumb = entry.target;
+            thumb.style.backgroundImage = `url('${thumb.dataset.bgSrc}')`;
+            thumb.classList.remove("project-card-thumb--bg-lazy");
+            lazyThumbObserver.unobserve(thumb);
+          });
+        },
+        { rootMargin: "120px 0px", threshold: 0.01 }
+      );
+    }
+
+    thumbs.forEach((thumb) => lazyThumbObserver.observe(thumb));
   }
 
   async function loadProjects() {

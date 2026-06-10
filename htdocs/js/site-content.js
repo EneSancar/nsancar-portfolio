@@ -2,11 +2,21 @@
  * Paylaşılan içerik yardımcıları (about / projects JSON sayfaları).
  */
 window.SiteContent = (function () {
+  const JSON_CACHE_TTL_MS = 2 * 60 * 1000;
+  const jsonCache = new Map();
+
   async function fetchJson(path) {
-    const url = `${path}${path.includes("?") ? "&" : "?"}v=${Date.now()}`;
-    const res = await fetch(url, { cache: "no-store" });
+    const key = path.split("?")[0];
+    const cached = jsonCache.get(key);
+    if (cached && Date.now() - cached.at < JSON_CACHE_TTL_MS) {
+      return cached.data;
+    }
+
+    const res = await fetch(key, { cache: "default" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+    const data = await res.json();
+    jsonCache.set(key, { data, at: Date.now() });
+    return data;
   }
 
   function asArray(value) {
@@ -20,6 +30,7 @@ window.SiteContent = (function () {
         return;
       }
       const img = new Image();
+      img.decoding = "async";
       img.onload = () => resolve();
       img.onerror = () => reject(new Error("Görsel yüklenemedi"));
       img.src = src;

@@ -1878,6 +1878,12 @@ a:has(.fa-steam):hover .fa-steam { color: #1b2838; }
 
 .projects-section {
   margin-bottom: 3.5rem;
+  content-visibility: auto;
+  contain-intrinsic-size: auto 420px;
+}
+
+.project-card-thumb--bg-lazy {
+  background-color: rgba(99, 102, 241, 0.06);
 }
 
 .projects-section-title {
