@@ -12,7 +12,8 @@ window.SiteContent = (function () {
       return cached.data;
     }
 
-    const res = await fetch(key, { cache: "default" });
+    const bustUrl = `${key}?v=${Date.now()}`;
+    const res = await fetch(bustUrl, { cache: "no-cache" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
     jsonCache.set(key, { data, at: Date.now() });

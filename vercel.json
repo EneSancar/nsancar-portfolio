@@ -22,7 +22,7 @@
     { "source": "/blog.html",          "destination": "/blog",         "permanent": true }
   ],
   "functions": {
-    "htdocs/api/*.js": {
+    "api/*.js": {
       "memory": 128,
       "maxDuration": 10
     }
@@ -31,7 +31,7 @@
     {
       "source": "/data/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=60, stale-while-revalidate=300" }
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
     },
     {
