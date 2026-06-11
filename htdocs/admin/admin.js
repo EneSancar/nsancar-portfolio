@@ -113,10 +113,16 @@
       saveBtn.classList.remove("is-saving");
       saveBtn.classList.add("is-saved");
       saveBtn.innerHTML = '<i class="fa-solid fa-check"></i> Kaydedildi!';
+      const deployMsg = data.deploy?.triggered
+        ? " Deploy başlatıldı; site ~30-60 sn içinde güncellenir."
+        : data.deploy?.reason === "no_hook_configured"
+          ? " GitHub'a kaydedildi ancak otomatik deploy tetiklenmedi. Vercel'de Deploy Hook ekleyin veya manuel Redeploy yapın."
+          : " GitHub'a kaydedildi. Deploy gecikirse Vercel'den Redeploy yapın.";
       showStatus(
-        `Kaydedildi. Site ~30-60 sn içinde güncellenir.` +
+        `Kaydedildi.` +
           (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : "") +
-          " Yenile'ye hemen basmayın; deploy bitene kadar eski veri gelebilir.",
+          deployMsg +
+          " Yenile'ye deploy bitmeden basmayın.",
         true
       );
       if (C.state.tab === "activities" || C.state.tab === "videoEdits") renderActivePanel();

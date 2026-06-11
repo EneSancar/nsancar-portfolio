@@ -1,3 +1,5 @@
+const { triggerVercelDeploy } = require("./deploy");
+
 function getGithubConfig() {
   const owner = process.env.GITHUB_OWNER;
   const repo = process.env.GITHUB_REPO;
@@ -80,6 +82,8 @@ async function writeFileContent(filePath, contentBase64, commitMessage) {
     };
   }
 
+  const deploy = await triggerVercelDeploy();
+
   return {
     ok: true,
     status: 200,
@@ -88,6 +92,9 @@ async function writeFileContent(filePath, contentBase64, commitMessage) {
       path: normalized,
       commit: data.commit?.sha || null,
       html_url: data.content?.html_url || null,
+      deploy: deploy.triggered
+        ? { triggered: true, job: deploy.job || null }
+        : { triggered: false, reason: deploy.reason || "unknown" },
     },
   };
 }

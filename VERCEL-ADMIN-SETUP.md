@@ -26,8 +26,20 @@ Vercel → proje → **Settings** → **Environment Variables**
 | `GITHUB_BRANCH` | `main` |
 | `GITHUB_PATH_PREFIX` | `htdocs/data/` |
 | `GITHUB_SITE_PREFIX` | `htdocs/` (görsel yükleme için) |
+| `VERCEL_DEPLOY_HOOK_URL` | Deploy Hook URL (admin kaydından sonra siteyi günceller — **zorunlu önerilir**) |
 
 `GOOGLE_DRIVE_API_KEY` zaten fav galerisi için varsa dokunma.
+
+### Deploy Hook (admin kayıtları sitede görünmüyorsa)
+
+Admin panel GitHub'a commit atar; bazen Vercel bu commit'ler için otomatik deploy başlatmaz.
+
+1. Vercel → proje → **Settings** → **Git** → **Deploy Hooks**
+2. Name: `admin-save`, Branch: `main` → **Create Hook**
+3. URL'yi kopyala → Vercel **Environment Variables** → `VERCEL_DEPLOY_HOOK_URL`
+4. **Redeploy** yap
+
+Bundan sonra her admin kaydı deploy'u tetikler.
 
 ## 4. Deploy
 
