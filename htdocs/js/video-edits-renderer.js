@@ -141,6 +141,7 @@
       posterImg.alt = edit.title || "Video önizlemesi";
       posterImg.loading = "lazy";
       posterImg.decoding = "async";
+      setPosterImage(posterImg, videoId, edit.title || "Video önizlemesi");
 
       const playBtn = document.createElement("span");
       playBtn.className = "video-edits-play-btn";

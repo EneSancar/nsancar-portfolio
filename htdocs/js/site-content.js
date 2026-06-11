@@ -2,22 +2,11 @@
  * Paylaşılan içerik yardımcıları (about / projects JSON sayfaları).
  */
 window.SiteContent = (function () {
-  const JSON_CACHE_TTL_MS = 2 * 60 * 1000;
-  const jsonCache = new Map();
-
   async function fetchJson(path) {
-    const key = path.split("?")[0];
-    const cached = jsonCache.get(key);
-    if (cached && Date.now() - cached.at < JSON_CACHE_TTL_MS) {
-      return cached.data;
-    }
-
-    const bustUrl = `${key}?v=${Date.now()}`;
-    const res = await fetch(bustUrl, { cache: "no-cache" });
+    const url = `${path}${path.includes("?") ? "&" : "?"}v=${Date.now()}`;
+    const res = await fetch(url, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    jsonCache.set(key, { data, at: Date.now() });
-    return data;
+    return res.json();
   }
 
   function asArray(value) {
