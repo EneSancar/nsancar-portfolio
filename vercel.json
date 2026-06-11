@@ -29,20 +29,14 @@
   },
   "headers": [
     {
-      "source": "/data/(.*)",
+      "source": "/data/:path*",
       "headers": [
         { "key": "Cache-Control", "value": "no-store, must-revalidate" },
         { "key": "CDN-Cache-Control", "value": "no-store" }
       ]
     },
     {
-      "source": "/(.*\\.(css|js|gif|png|jpg|jpeg|webp|svg|ico|woff2|woff|ttf|lottie))",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
-      ]
-    },
-    {
-      "source": "/(.*\\.(html|htm))",
+      "source": "/:path*.html",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }
       ]
