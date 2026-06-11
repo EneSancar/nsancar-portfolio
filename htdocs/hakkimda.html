@@ -115,38 +115,9 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      var RAW = "https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data";
-      function toFile(path) {
-        return String(path || "").replace(/^\/+/, "").replace(/^data\//, "").split("?")[0];
-      }
-      window.SiteContent = window.SiteContent || {};
-      if (!window.SiteContent.__githubPatch) {
-        window.SiteContent.__githubPatch = true;
-        var prevFetch = window.SiteContent.fetchJson;
-        window.SiteContent.fetchJson = function (path) {
-          var file = toFile(path);
-          return fetch(RAW + "/" + file + "?v=" + Date.now(), { cache: "no-store" })
-            .then(function (r) { if (r.ok) return r.json(); throw new Error("GitHub raw failed"); })
-            .catch(function () {
-              if (prevFetch) return prevFetch(path);
-              var staticPath = path.startsWith("/") ? path : "data/" + file;
-              return fetch(staticPath + "?v=" + Date.now(), { cache: "no-store" }).then(function (r) {
-                if (!r.ok) throw new Error("HTTP " + r.status);
-                return r.json();
-              });
-            });
-        };
-        window.SiteContent.asArray = window.SiteContent.asArray || function (v) {
-          return Array.isArray(v) ? v : [];
-        };
-      }
-    })();
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous" defer></script>
   <script src="script.js" defer></script>
-  <script src="js/site-content.js?v=20260611" defer></script>
+  <script src="js/site-content.js?v=20260612" defer></script>
   <script src="js/about-renderer.js" defer></script>
 </body>
 </html>

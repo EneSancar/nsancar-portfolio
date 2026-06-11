@@ -1,12 +1,37 @@
 /**
  * Paylaşılan içerik yardımcıları (about / projects JSON sayfaları).
+ * JSON doğrudan GitHub'dan okunur — admin kayıtları deploy beklemez.
  */
 window.SiteContent = (function () {
+  const GITHUB_RAW_BASE =
+    "https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data";
+
+  function toFileName(path) {
+    return String(path || "")
+      .replace(/^\/+/, "")
+      .replace(/^data\//, "")
+      .split("?")[0];
+  }
+
   async function fetchJson(path) {
-    const url = `${path}${path.includes("?") ? "&" : "?"}v=${Date.now()}`;
-    const res = await fetch(url, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+    const file = toFileName(path);
+    const bust = Date.now();
+    const sources = [
+      `${GITHUB_RAW_BASE}/${file}?v=${bust}`,
+      `/api/content?file=${encodeURIComponent(file)}&v=${bust}`,
+      `${path.startsWith("/") ? path : `data/${file}`}?v=${bust}`,
+    ];
+
+    for (const url of sources) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (res.ok) return res.json();
+      } catch (_) {
+        /* sonraki kaynak */
+      }
+    }
+
+    throw new Error(`${file} yüklenemedi`);
   }
 
   function asArray(value) {
