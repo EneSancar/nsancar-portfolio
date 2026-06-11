@@ -22,7 +22,7 @@
     { "source": "/blog.html",          "destination": "/blog",         "permanent": true }
   ],
   "functions": {
-    "api/*.js": {
+    "htdocs/api/*.js": {
       "memory": 128,
       "maxDuration": 10
     }
