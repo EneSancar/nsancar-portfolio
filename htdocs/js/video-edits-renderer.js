@@ -474,9 +474,31 @@
     }
   }
 
+  const GITHUB_VIDEO_EDITS =
+    "https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data/video-edits.json";
+
+  async function fetchVideoEditsData() {
+    const bust = Date.now();
+    const sources = [
+      `${GITHUB_VIDEO_EDITS}?v=${bust}`,
+      `/api/content?file=video-edits.json&v=${bust}`,
+    ];
+    if (SC?.fetchJson) sources.push(`${DATA_URL}?v=${bust}`);
+
+    for (const url of sources) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (res.ok) return res.json();
+      } catch (_) {
+        /* sonraki kaynak */
+      }
+    }
+    throw new Error("video-edits.json yüklenemedi");
+  }
+
   async function loadVideoEdits() {
     try {
-      const data = await SC.fetchJson(DATA_URL);
+      const data = await fetchVideoEditsData();
       const section = buildSection(data);
       insertSection(section);
 
