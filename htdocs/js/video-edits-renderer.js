@@ -474,16 +474,24 @@
     }
   }
 
-  const GITHUB_VIDEO_EDITS =
-    "https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data/video-edits.json";
+  const GITHUB_VIDEO_EDITS = [
+    "https://cdn.jsdelivr.net/gh/EneSancar/nsancar-portfolio@main/htdocs/data/video-edits.json",
+    "https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data/video-edits.json",
+  ];
 
   async function fetchVideoEditsData() {
     const bust = Date.now();
     const sources = [
-      `${GITHUB_VIDEO_EDITS}?v=${bust}`,
+      ...GITHUB_VIDEO_EDITS.map((u) => `${u}?v=${bust}`),
       `/api/content?file=video-edits.json&v=${bust}`,
     ];
-    if (SC?.fetchJson) sources.push(`${DATA_URL}?v=${bust}`);
+    if (window.SiteContent?.fetchJson) {
+      try {
+        return await window.SiteContent.fetchJson(DATA_URL);
+      } catch (_) {
+        /* fallback sources below */
+      }
+    }
 
     for (const url of sources) {
       try {

@@ -334,7 +334,7 @@
     if (!container) return;
 
     try {
-      const data = await SC.fetchJson(DATA_URL);
+      const data = await window.SiteContent.fetchJson(DATA_URL);
       renderProjects(data);
       page?.classList.remove("projects-page--loading");
       page?.classList.add("is-ready");

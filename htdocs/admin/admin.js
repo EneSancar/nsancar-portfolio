@@ -116,7 +116,7 @@
       showStatus(
         `Kaydedildi.` +
           (data.commit ? ` (commit: ${data.commit.slice(0, 7)})` : "") +
-          " Site içeriği GitHub'dan anında okunur — sayfayı yenilemen yeterli.",
+          " Sayfayı yenile — değişiklik birkaç saniye içinde görünür.",
         true
       );
       if (C.state.tab === "activities" || C.state.tab === "videoEdits") renderActivePanel();

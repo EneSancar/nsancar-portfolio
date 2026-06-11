@@ -122,7 +122,7 @@
     if (!root) return;
 
     try {
-      const data = await SC.fetchJson(DATA_URL);
+      const data = await window.SiteContent.fetchJson(DATA_URL);
 
       await renderProfile(root.querySelector(".profile-sidebar"), data.profile);
       renderAboutContent(root.querySelector(".about-content-col"), data);
