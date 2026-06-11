@@ -49,6 +49,14 @@ window.AdminCore = (function () {
   }
 
   async function fetchJson(file) {
+    const name = String(file).replace(/^(\.\.\/)?data\//, "");
+    const apiUrl = `/api/content?file=${encodeURIComponent(name)}&v=${Date.now()}`;
+    try {
+      const apiRes = await fetch(apiUrl, { cache: "no-store" });
+      if (apiRes.ok) return apiRes.json();
+    } catch (_) {
+      /* yerel statik fallback */
+    }
     const res = await fetch(`../${file}?v=${Date.now()}`, { cache: "no-store" });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     return res.json();

@@ -99,6 +99,50 @@ async function writeFileContent(filePath, contentBase64, commitMessage) {
   };
 }
 
+async function readJsonFile(fileName) {
+  const config = getGithubConfig();
+  if (config.error) {
+    return { ok: false, status: 500, body: { error: config.error, message: "GitHub ortam değişkenleri eksik." } };
+  }
+
+  const filePath = `${config.pathPrefix}${fileName}`.replace(/\/{2,}/g, "/");
+  const url = `https://api.github.com/repos/${config.owner}/${config.repo}/contents/${encodeURIComponent(filePath)}?ref=${encodeURIComponent(config.branch)}`;
+
+  try {
+    const res = await fetch(url, {
+      headers: {
+        Authorization: `Bearer ${config.token}`,
+        Accept: "application/vnd.github+json",
+        "X-GitHub-Api-Version": "2022-11-28",
+      },
+    });
+
+    if (res.status === 404) {
+      return { ok: false, status: 404, body: { error: "not_found", message: `${fileName} bulunamadı.` } };
+    }
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({}));
+      return {
+        ok: false,
+        status: 502,
+        body: { error: "github_read_failed", message: err.message || `GitHub GET failed (${res.status})` },
+      };
+    }
+
+    const data = await res.json();
+    const raw = Buffer.from(data.content || "", "base64").toString("utf8");
+    const parsed = JSON.parse(raw);
+    return { ok: true, status: 200, body: parsed };
+  } catch (err) {
+    return {
+      ok: false,
+      status: 502,
+      body: { error: "github_read_failed", message: err.message || "JSON okunamadı." },
+    };
+  }
+}
+
 async function writeJsonFile(fileName, payload, commitMessage) {
   const config = getGithubConfig();
   if (config.error) {
@@ -120,4 +164,4 @@ async function writeSiteFile(relativePath, contentBase64, commitMessage) {
   return writeFileContent(filePath, contentBase64, commitMessage || `admin: upload ${relativePath}`);
 }
 
-module.exports = { getGithubConfig, writeJsonFile, writeSiteFile };
+module.exports = { getGithubConfig, readJsonFile, writeJsonFile, writeSiteFile };
