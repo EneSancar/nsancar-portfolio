@@ -12,7 +12,8 @@
     if (window.SiteContent?.fetchJson) {
       return window.SiteContent.fetchJson(DATA_URL);
     }
-    return fetch(DATA_URL, { cache: "default" }).then((r) =>
+    const url = `${DATA_URL}?v=${Date.now()}`;
+    return fetch(url, { cache: "no-store" }).then((r) =>
       r.ok ? r.json() : Promise.reject(r.status)
     );
   }
