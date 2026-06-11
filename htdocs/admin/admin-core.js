@@ -49,9 +49,24 @@ window.AdminCore = (function () {
   }
 
   async function fetchJson(file) {
-    const res = await fetch(`../${file}?v=${Date.now()}`, { cache: "no-store" });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    return res.json();
+    const name = String(file).replace(/^(\.\.\/)?data\//, "");
+    const bust = Date.now();
+    const sources = [
+      `https://cdn.jsdelivr.net/gh/EneSancar/nsancar-portfolio@main/htdocs/data/${name}?v=${bust}`,
+      `https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data/${name}?v=${bust}`,
+      `/api/content?file=${encodeURIComponent(name)}&v=${bust}`,
+      `../${file}?v=${bust}`,
+    ];
+
+    for (const url of sources) {
+      try {
+        const res = await fetch(url, { cache: "no-store" });
+        if (res.ok) return res.json();
+      } catch (_) {
+        /* sonraki kaynak */
+      }
+    }
+    throw new Error(`${name} yüklenemedi`);
   }
 
   function readAboutBackup() {
