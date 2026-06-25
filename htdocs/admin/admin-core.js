@@ -52,10 +52,10 @@ window.AdminCore = (function () {
     const name = String(file).replace(/^(\.\.\/)?data\//, "");
     const bust = Date.now();
     const sources = [
-      `https://cdn.jsdelivr.net/gh/EneSancar/nsancar-portfolio@main/htdocs/data/${name}?v=${bust}`,
-      `https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data/${name}?v=${bust}`,
       `/api/content?file=${encodeURIComponent(name)}&v=${bust}`,
       `../${file}?v=${bust}`,
+      `https://raw.githubusercontent.com/EneSancar/nsancar-portfolio/refs/heads/main/htdocs/data/${name}?v=${bust}`,
+      `https://cdn.jsdelivr.net/gh/EneSancar/nsancar-portfolio@main/htdocs/data/${name}?v=${bust}`
     ];
 
     for (const url of sources) {

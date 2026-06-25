@@ -22,13 +22,13 @@ window.SiteContent = (function () {
     const file = toFileName(path);
     const bust = Date.now();
     const sources = [
-      `https://cdn.jsdelivr.net/gh/${REPO}@main/${DATA_PREFIX}/${file}?v=${bust}`,
-      `https://raw.githubusercontent.com/${REPO}/refs/heads/main/${DATA_PREFIX}/${file}?v=${bust}`,
       `/api/content?file=${encodeURIComponent(file)}&v=${bust}`,
+      `https://raw.githubusercontent.com/${REPO}/refs/heads/main/${DATA_PREFIX}/${file}?v=${bust}`,
+      `https://cdn.jsdelivr.net/gh/${REPO}@main/${DATA_PREFIX}/${file}?v=${bust}`
     ];
 
     if (isLocalHost()) {
-      sources.push(`${path.startsWith("/") ? path : `data/${file}`}?v=${bust}`);
+      sources.unshift(`${path.startsWith("/") ? path : `data/${file}`}?v=${bust}`);
     }
 
     let lastError = null;
