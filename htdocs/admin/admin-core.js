@@ -9,8 +9,9 @@ window.AdminCore = (function () {
     activities:  { file: "data/activities.json",  api: "/api/admin-save?type=activities",  title: "Aktiviteler"   },
   };
 
-  const BACKUP_KEY = "nsancar_admin_about_backup";
-  const BACKUP_AT_KEY = "nsancar_admin_about_backup_at";
+  const BACKUP_PREFIX = "nsancar_admin_backup_";
+  const BACKUP_AT_PREFIX = "nsancar_admin_backup_at_";
+  const BACKUP_TTL = 2 * 60 * 60 * 1000; // 2 saat
 
   const state = {
     tab: "about",
@@ -69,31 +70,33 @@ window.AdminCore = (function () {
     throw new Error(`${name} yüklenemedi`);
   }
 
-  function readAboutBackup() {
+  function readBackup(tab) {
     try {
-      const raw = sessionStorage.getItem(BACKUP_KEY);
-      const at = Number(sessionStorage.getItem(BACKUP_AT_KEY) || 0);
+      const raw = sessionStorage.getItem(BACKUP_PREFIX + tab);
+      const at = Number(sessionStorage.getItem(BACKUP_AT_PREFIX + tab) || 0);
       if (!raw || !at) return null;
-      if (Date.now() - at > 15 * 60 * 1000) return null;
+      if (Date.now() - at > BACKUP_TTL) return null;
       return JSON.parse(raw);
     } catch {
       return null;
     }
   }
 
-  function writeAboutBackup(data) {
-    sessionStorage.setItem(BACKUP_KEY, JSON.stringify(data));
-    sessionStorage.setItem(BACKUP_AT_KEY, String(Date.now()));
+  function writeBackup(tab, data) {
+    try {
+      sessionStorage.setItem(BACKUP_PREFIX + tab, JSON.stringify(data));
+      sessionStorage.setItem(BACKUP_AT_PREFIX + tab, String(Date.now()));
+    } catch { /* sessionStorage dolu — yoksay */ }
   }
 
+  function readAboutBackup() { return readBackup("about"); }
+  function writeAboutBackup(data) { writeBackup("about", data); }
+
+  /** Backup, fetch'ten sonra kaydedilen bir sürüm mü diye kontrol eder. */
   function shouldPreferBackup(fetched, backup) {
     if (!backup || !fetched) return false;
-    const fields = ["education", "experience"];
-    return fields.some((key) => {
-      const a = Array.isArray(backup[key]) ? backup[key].length : 0;
-      const b = Array.isArray(fetched[key]) ? fetched[key].length : 0;
-      return a > b;
-    });
+    // Basit içerik karşılaştırması: JSON string eşleşmiyorsa backup daha güncel
+    return JSON.stringify(backup) !== JSON.stringify(fetched);
   }
 
   const VIDEO_EDITS_BG = "image/video-edits-bg.gif";
@@ -114,6 +117,15 @@ window.AdminCore = (function () {
     }
   }
 
+  function applyBackupIfNewer(tab, fetched) {
+    const backup = readBackup(tab);
+    if (backup && shouldPreferBackup(fetched, backup)) {
+      state.lastLoadUsedBackup = true;
+      return backup;
+    }
+    return fetched;
+  }
+
   async function loadAll() {
     const [about, projects, videoEdits, activities] = await Promise.all([
       fetchJson(endpoints.about.file),
@@ -123,19 +135,14 @@ window.AdminCore = (function () {
     ]);
 
     state.lastLoadUsedBackup = false;
-    const backup = readAboutBackup();
-    if (backup && shouldPreferBackup(about, backup)) {
-      state.about = backup;
-      state.lastLoadUsedBackup = true;
-    } else {
-      state.about = about;
-    }
-    state.projects = projects;
-    state.videoEdits = videoEdits;
+    state.about      = applyBackupIfNewer("about", about);
+    state.projects   = applyBackupIfNewer("projects", projects);
+    state.videoEdits = applyBackupIfNewer("videoEdits", videoEdits);
+    state.activities = applyBackupIfNewer("activities", activities);
+
     if (!String(state.videoEdits.backgroundImage || "").trim()) {
       state.videoEdits.backgroundImage = VIDEO_EDITS_BG;
     }
-    state.activities = activities;
     return state;
   }
 
@@ -367,7 +374,8 @@ window.AdminCore = (function () {
     } else {
       mergeInto(state[tab], payload);
     }
-    if (tab === "about") writeAboutBackup(state[tab]);
+    // Tüm sekmeler için backup yaz — F5'te CDN cache eski veri dönerse backup tercih edilir
+    writeBackup(tab, state[tab]);
 
     return { ...data, payload: state[tab] };
   }
