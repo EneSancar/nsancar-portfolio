@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Didim web tasarım hizmeti — Enes Sancar. Didim'deki oteller, restoranlar, emlak ofisleri ve tüm işletmeler için profesyonel, hızlı ve mobil uyumlu web siteleri. Ücretsiz teklif için iletişime geçin.">
+  <meta name="keywords" content="didim web tasarım, didim web sitesi yaptırma, didim kurumsal web sitesi, didim otel web sitesi, didim restoran web sitesi, didim emlak web sitesi, didim web geliştirici, aydın web tasarım">
+  <meta name="author" content="Enes Sancar">
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="TR-09">
+  <meta name="geo.placename" content="Didim, Aydın">
+  <title>Didim Web Tasarım | Profesyonel Web Sitesi Hizmeti — Enes Sancar</title>
+  <link rel="canonical" href="https://nsancar.com/didim-web-tasarim">
+  <link rel="icon" href="image/internet.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nsancar.com/didim-web-tasarim">
+  <meta property="og:title" content="Didim Web Tasarım | Profesyonel Web Sitesi — Enes Sancar">
+  <meta property="og:description" content="Didim ve Aydın bölgesindeki işletmeler için profesyonel, mobil uyumlu ve hızlı web sitesi tasarımı. Ücretsiz teklif alın.">
+  <meta property="og:image" content="https://nsancar.com/image/ns.png">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Didim Web Tasarım | Enes Sancar">
+  <meta name="twitter:description" content="Didim'deki işletmeler için profesyonel web sitesi tasarımı.">
+
+  <!-- LocalBusiness + WebPage Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Enes Sancar Web Tasarım",
+        "description": "Didim ve Aydın bölgesine profesyonel web tasarım hizmeti.",
+        "url": "https://nsancar.com",
+        "email": "sancar.web3524@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Didim",
+          "addressRegion": "Aydın",
+          "addressCountry": "TR"
+        },
+        "areaServed": [
+          {"@type": "City", "name": "Didim"},
+          {"@type": "City", "name": "Söke"},
+          {"@type": "AdministrativeArea", "name": "Aydın"}
+        ],
+        "serviceType": ["Web Tasarım", "Front-End Geliştirme", "Grafik Tasarım", "Hosting"],
+        "priceRange": "$$"
+      },
+      {
+        "@type": "WebPage",
+        "name": "Didim Web Tasarım Hizmeti",
+        "url": "https://nsancar.com/didim-web-tasarim",
+        "description": "Didim'deki işletmeler için profesyonel web sitesi tasarımı hizmeti.",
+        "breadcrumb": {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://nsancar.com"},
+            {"@type": "ListItem", "position": 2, "name": "Didim Web Tasarım", "item": "https://nsancar.com/didim-web-tasarim"}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Didim Landing Page Özel Stiller ===== */
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      padding: 1rem 0;
+    }
+    .breadcrumb a { color: var(--accent-light); transition: color var(--transition); }
+    .breadcrumb a:hover { color: var(--text); }
+    .breadcrumb i { font-size: 0.65rem; }
+
+    /* Hero Didim */
+    .didim-hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--header-h);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .didim-hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .didim-hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.85rem;
+      background: rgba(34, 211, 238, 0.1);
+      border: 1px solid rgba(34, 211, 238, 0.25);
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--cyan);
+      margin-bottom: 1.25rem;
+      animation: fadeSlideUp 0.7s ease forwards;
+    }
+    .didim-hero__tag::before {
+      content: "";
+      width: 6px; height: 6px;
+      background: var(--cyan);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    .didim-hero__title {
+      font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.25rem;
+      animation: fadeSlideUp 0.7s 0.1s ease both;
+    }
+
+    .didim-hero__title .loc {
+      background: linear-gradient(135deg, var(--cyan), var(--accent-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .didim-hero__desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      max-width: 30rem;
+      margin-bottom: 2rem;
+      animation: fadeSlideUp 0.7s 0.2s ease both;
+    }
+
+    .didim-hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: fadeSlideUp 0.7s 0.3s ease both;
+    }
+
+    .btn-cyan {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.6rem;
+      background: linear-gradient(135deg, var(--cyan), #0ea5e9);
+      color: #0c0e14;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 24px rgba(34, 211, 238, 0.3);
+      font-family: inherit;
+      text-decoration: none;
+    }
+    .btn-cyan:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(34, 211, 238, 0.45);
+    }
+
+    /* Hero sağ — Float cards */
+    .didim-hero__visual {
+      position: relative;
+      height: 480px;
+      animation: fadeSlideUp 0.8s 0.4s ease both;
+    }
+
+    .float-card {
+      position: absolute;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+    .float-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(99,102,241,0.12);
+    }
+    .float-card__icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    .float-card__title { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.15rem; }
+    .float-card__sub { font-size: 0.75rem; color: var(--text-muted); }
+
+    .float-card--1 { top: 20px; left: 50%; transform: translateX(-50%); animation: floatAnim1 4s ease-in-out infinite; }
+    .float-card--2 { top: 160px; left: 5%; animation: floatAnim2 5s ease-in-out infinite; }
+    .float-card--3 { top: 160px; right: 5%; animation: floatAnim1 4.5s ease-in-out infinite; }
+    .float-card--4 { bottom: 100px; left: 50%; transform: translateX(-50%); animation: floatAnim2 3.8s ease-in-out infinite; }
+    .float-card--5 { bottom: 20px; left: 50%; transform: translateX(-50%); animation: floatAnim1 4.2s ease-in-out infinite; }
+
+    .float-card--1 .float-card__icon { background: rgba(34,211,238,0.12); color: var(--cyan); }
+    .float-card--2 .float-card__icon { background: rgba(99,102,241,0.12); color: var(--accent-light); }
+    .float-card--3 .float-card__icon { background: rgba(74,222,128,0.12); color: #4ade80; }
+    .float-card--4 .float-card__icon { background: rgba(249,115,22,0.12); color: #f97316; }
+    .float-card--5 .float-card__icon { background: rgba(168,85,247,0.12); color: #a855f7; }
+
+    /* Merkez logo kartı */
+    .hero-center-badge {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110px; height: 110px;
+      background: var(--bg-elevated);
+      border: 2px solid var(--accent);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 0 12px rgba(99,102,241,0.08), 0 0 40px rgba(99,102,241,0.2);
+      animation: pulse-ring 3s ease-in-out infinite;
+    }
+    .hero-center-badge img { width: 64px; height: auto; }
+
+    /* Bağlantı çizgileri (SVG) */
+    .hero-connections {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
+    @keyframes floatAnim1 {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -12px; }
+    }
+    @keyframes floatAnim2 {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 10px; }
+    }
+    @keyframes pulse-ring {
+      0%, 100% { box-shadow: 0 0 0 12px rgba(99,102,241,0.08), 0 0 40px rgba(99,102,241,0.2); }
+      50% { box-shadow: 0 0 0 20px rgba(99,102,241,0.04), 0 0 60px rgba(99,102,241,0.3); }
+    }
+    @keyframes fadeSlideUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stats bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      margin-top: 5rem;
+    }
+    .stat-item {
+      background: var(--bg-card);
+      padding: 1.75rem 1.5rem;
+      text-align: center;
+      transition: background var(--transition);
+    }
+    .stat-item:hover { background: var(--bg-elevated); }
+    .stat-num {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent-light), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+    .stat-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 500; }
+
+    /* Sektör kartları */
+    .sector-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .sector-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+      position: relative;
+      overflow: hidden;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      cursor: default;
+    }
+    .sector-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--card-glow, transparent);
+      opacity: 0;
+      transition: opacity var(--transition);
+    }
+    .sector-card:hover {
+      border-color: var(--card-border, rgba(99,102,241,0.35));
+      box-shadow: 0 12px 40px var(--card-shadow, rgba(99,102,241,0.1));
+      transform: translateY(-4px);
+    }
+    .sector-card:hover::before { opacity: 1; }
+
+    .sector-card--hotel   { --card-border: rgba(34,211,238,0.4); --card-shadow: rgba(34,211,238,0.12); }
+    .sector-card--resto   { --card-border: rgba(249,115,22,0.4); --card-shadow: rgba(249,115,22,0.12); }
+    .sector-card--emlak   { --card-border: rgba(74,222,128,0.4); --card-shadow: rgba(74,222,128,0.12); }
+    .sector-card--ticaret { --card-border: rgba(168,85,247,0.4); --card-shadow: rgba(168,85,247,0.12); }
+    .sector-card--klinik  { --card-border: rgba(251,191,36,0.4); --card-shadow: rgba(251,191,36,0.12); }
+    .sector-card--kisisel { --card-border: rgba(99,102,241,0.4); --card-shadow: rgba(99,102,241,0.12); }
+
+    .sector-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .sector-card--hotel   .sector-icon { background: rgba(34,211,238,0.12); color: var(--cyan); }
+    .sector-card--resto   .sector-icon { background: rgba(249,115,22,0.12); color: #f97316; }
+    .sector-card--emlak   .sector-icon { background: rgba(74,222,128,0.12); color: #4ade80; }
+    .sector-card--ticaret .sector-icon { background: rgba(168,85,247,0.12); color: #a855f7; }
+    .sector-card--klinik  .sector-icon { background: rgba(251,191,36,0.12); color: #fbbf24; }
+    .sector-card--kisisel .sector-icon { background: rgba(99,102,241,0.12); color: var(--accent-light); }
+
+    .sector-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
+    .sector-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
+
+    .sector-tag {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.25rem 0.65rem;
+      background: rgba(255,255,255,0.05);
+      border-radius: 999px;
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+
+    /* Süreç adımları */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: "";
+      position: absolute;
+      top: 28px; left: 10%;
+      width: 80%; height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--cyan));
+      opacity: 0.25;
+      z-index: 0;
+    }
+    .step-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .step-card:hover {
+      border-color: rgba(99,102,241,0.35);
+      transform: translateY(-4px);
+    }
+    .step-num {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--cyan));
+      color: #fff;
+      font-weight: 800;
+      font-size: 1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      box-shadow: 0 4px 16px var(--accent-glow);
+    }
+    .step-card h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.4rem; }
+    .step-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
+
+    /* Neden ben? */
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    .why-list { display: flex; flex-direction: column; gap: 1rem; }
+    .why-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.25rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: border-color var(--transition), transform var(--transition);
+    }
+    .why-item:hover { border-color: rgba(99,102,241,0.3); transform: translateX(4px); }
+    .why-item__icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      border-radius: 10px;
+      background: rgba(99,102,241,0.12);
+      color: var(--accent-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .why-item h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 0.25rem; }
+    .why-item p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.55; }
+
+    .why-visual {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .why-visual .big-icon {
+      font-size: 5rem;
+      background: linear-gradient(135deg, var(--accent-light), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: block;
+      margin-bottom: 1.5rem;
+      animation: floatAnim1 4s ease-in-out infinite;
+    }
+    .why-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
+    .why-visual p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* CTA bölümü */
+    .didim-cta {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: calc(var(--radius) * 1.5);
+      padding: 4rem 3rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .didim-cta::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,0.12), transparent),
+        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(34,211,238,0.08), transparent);
+      pointer-events: none;
+    }
+    .didim-cta h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.75rem; }
+    .didim-cta p { color: var(--text-muted); font-size: 1.05rem; max-width: 480px; margin: 0 auto 2rem; }
+    .didim-cta__actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 1.1rem 1.4rem;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      transition: color var(--transition);
+    }
+    .faq-q:hover { color: var(--accent-light); }
+    .faq-q i { transition: transform var(--transition); flex-shrink: 0; color: var(--accent-light); }
+    .faq-item.open .faq-q i { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 1.4rem 1.1rem;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* Footer location */
+    .footer-location {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+    }
+    .footer-location i { color: var(--accent-light); }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .didim-hero__grid { grid-template-columns: 1fr; }
+      .didim-hero__visual { height: 300px; }
+      .float-card--1 { top: 0; }
+      .float-card--2 { top: 100px; left: 0; }
+      .float-card--3 { top: 100px; right: 0; }
+      .float-card--4 { bottom: 60px; }
+      .float-card--5 { display: none; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .sector-grid { grid-template-columns: repeat(2, 1fr); }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-steps::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .sector-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .float-card--2, .float-card--3, .float-card--4 { display: none; }
+      .float-card--1 { position: relative; top: auto; left: auto; transform: none; margin: 0 auto; width: 90%; max-width: 320px; }
+      .didim-hero__visual { height: auto; display: flex; justify-content: center; padding: 0 1rem; }
+      .hero-center-badge { display: none; }
+      .hero-connections { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.dataset.theme = localStorage.getItem("ns-theme") || "dark";</script>
+  <canvas id="spaceParticles" class="space-particles" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="/" class="logo">
+        <img src="image/ns.png" alt="Enes Sancar" height="48">
+      </a>
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn" aria-label="Açık tema"><i class="fa-solid fa-sun"></i></button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Ana Sayfa</a></li>
+        <li><a href="/hakkimda">Hakkımda</a></li>
+        <li><a href="/projeler">Projeler</a></li>
+        <li><a href="/servisler">Servisler</a></li>
+        <li><a href="/didim-web-tasarim" class="active">Didim</a></li>
+        <li><a href="/aktiviteler" class="nav-icon" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main style="position:relative;z-index:1;">
+
+    <!-- ── HERO ── -->
+    <section class="didim-hero" id="start">
+      <div class="container">
+        <div class="breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <i class="fa-solid fa-chevron-right"></i>
+          <span>Didim Web Tasarım</span>
+        </div>
+        <div class="didim-hero__grid">
+          <div class="didim-hero__content">
+            <span class="didim-hero__tag"><i class="fa-solid fa-location-dot"></i> Didim, Aydın</span>
+            <h1 class="didim-hero__title">
+              <span class="loc">Didim</span>'deki İşletmeniz İçin<br>
+              Profesyonel Web Sitesi
+            </h1>
+            <p class="didim-hero__desc">
+              Otel, restoran, emlak ofisi ya da herhangi bir işletmeniz için modern, hızlı ve mobil uyumlu web siteleri tasarlıyorum. Rakiplerinizden önce dijitale geçin.
+            </p>
+            <div class="didim-hero__actions">
+              <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" class="btn-cyan" id="hero-cta-instagram">
+                <i class="fa-brands fa-instagram"></i> Teklif İste
+              </a>
+              <button class="btn btn-ghost" onclick="showEmail()" id="hero-cta-email">
+                <i class="fa-solid fa-envelope"></i> E-posta
+              </button>
+              <a href="/servisler" class="btn btn-ghost" id="hero-cta-services">
+                <i class="fa-solid fa-list"></i> Tüm Hizmetler
+              </a>
+            </div>
+          </div>
+
+          <!-- Floating cards visual -->
+          <div class="didim-hero__visual" aria-hidden="true">
+            <svg class="hero-connections" viewBox="0 0 420 480" xmlns="http://www.w3.org/2000/svg">
+              <line x1="210" y1="240" x2="210" y2="60" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.4"/>
+              <line x1="210" y1="240" x2="70" y2="200" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.4"/>
+              <line x1="210" y1="240" x2="350" y2="200" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.4"/>
+              <line x1="210" y1="240" x2="210" y2="390" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.4"/>
+              <defs>
+                <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#6366f1"/>
+                  <stop offset="100%" stop-color="#22d3ee"/>
+                </linearGradient>
+              </defs>
+            </svg>
+
+            <div class="hero-center-badge">
+              <img src="image/ns.png" alt="Enes Sancar">
+            </div>
+
+            <div class="float-card float-card--1">
+              <div class="float-card__icon"><i class="fa-solid fa-hotel"></i></div>
+              <div>
+                <div class="float-card__title">Otel Web Sitesi</div>
+                <div class="float-card__sub">Rezervasyon + Galeri</div>
+              </div>
+            </div>
+            <div class="float-card float-card--2">
+              <div class="float-card__icon"><i class="fa-solid fa-code"></i></div>
+              <div>
+                <div class="float-card__title">Temiz Kod</div>
+                <div class="float-card__sub">HTML · CSS · JS</div>
+              </div>
+            </div>
+            <div class="float-card float-card--3">
+              <div class="float-card__icon"><i class="fa-solid fa-mobile-screen"></i></div>
+              <div>
+                <div class="float-card__title">Mobil Uyumlu</div>
+                <div class="float-card__sub">Her ekran boyutu</div>
+              </div>
+            </div>
+            <div class="float-card float-card--4">
+              <div class="float-card__icon"><i class="fa-solid fa-bolt"></i></div>
+              <div>
+                <div class="float-card__title">Hızlı Teslimat</div>
+                <div class="float-card__sub">5-10 gün</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="stats-bar reveal">
+          <div class="stat-item">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Tamamlanan Proje</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Mobil Uyumluluk</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">90+</div>
+            <div class="stat-label">PageSpeed Skoru</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">7gün</div>
+            <div class="stat-label">Ortalama Teslimat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SEKTÖRLER ── -->
+    <section class="section" id="sektorler">
+      <div class="container reveal">
+        <span class="section-label">Hizmet Verdiğim Sektörler</span>
+        <h2 class="section-title">Didim'deki Hangi İşletmeler<br>Web Sitesine İhtiyaç Duyar?</h2>
+        <div class="sector-grid">
+
+          <article class="sector-card sector-card--hotel">
+            <div class="sector-icon"><i class="fa-solid fa-hotel"></i></div>
+            <h3>Otel &amp; Pansiyon</h3>
+            <p>Didim'in yoğun turizm sezonunda rezervasyonlarınızı artırmak için şık, galeri ve iletişim formu içeren web siteleri.</p>
+            <span class="sector-tag">Didim'in 1 numaralı ihtiyacı</span>
+          </article>
+
+          <article class="sector-card sector-card--resto">
+            <div class="sector-icon"><i class="fa-solid fa-utensils"></i></div>
+            <h3>Restoran &amp; Kafe</h3>
+            <p>Online menü, rezervasyon formu ve Google Maps entegrasyonu ile müşterilerin sizi kolayca bulmasını sağlayan siteler.</p>
+            <span class="sector-tag">Yüksek talep</span>
+          </article>
+
+          <article class="sector-card sector-card--emlak">
+            <div class="sector-icon"><i class="fa-solid fa-house"></i></div>
+            <h3>Emlak &amp; İnşaat</h3>
+            <p>Kentsel dönüşüm ve satılık/kiralık ilan sistemleri için profesyonel portföy siteleri ve ilan yönetimi.</p>
+            <span class="sector-tag">Büyüyen pazar</span>
+          </article>
+
+          <article class="sector-card sector-card--ticaret">
+            <div class="sector-icon"><i class="fa-solid fa-store"></i></div>
+            <h3>Yerel Ticaret</h3>
+            <p>Didim'deki esnaf ve küçük işletmeler için tanıtım ve online sipariş sistemleri içeren basit ama etkili siteler.</p>
+            <span class="sector-tag">Düşük rekabet</span>
+          </article>
+
+          <article class="sector-card sector-card--klinik">
+            <div class="sector-icon"><i class="fa-solid fa-stethoscope"></i></div>
+            <h3>Klinik &amp; Hizmet</h3>
+            <p>Diş klinikleri, güzellik merkezleri ve sağlık hizmetleri için randevu sistemi ve hizmet tanıtım sayfaları.</p>
+            <span class="sector-tag">Randevu sistemi</span>
+          </article>
+
+          <article class="sector-card sector-card--kisisel">
+            <div class="sector-icon"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Kişisel / Freelance</h3>
+            <p>Avukat, mimar, fotoğrafçı ve serbest çalışanlar için portfolyo ve CV siteleri. Kendinizi tanıtın.</p>
+            <span class="sector-tag">Portfolyo odaklı</span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EK HİZMETLER ── -->
+    <section class="section" id="ek-hizmetler">
+      <div class="container reveal">
+        <span class="section-label">Tek Çatı Altında</span>
+        <h2 class="section-title">Web Tasarımın Yanında<br><span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Dijital Paket Çözümler</span></h2>
+        <p style="color:var(--text-muted);max-width:560px;margin-bottom:2.5rem;font-size:0.95rem;line-height:1.75;">
+          Ana hizmetim web tasarım. Ama sitenizi yayına aldıktan sonra da dijital varlığınızı güçlü tutmak için ihtiyaç duyabileceğiniz hizmetleri de sunuyorum.
+        </p>
+        <div class="sector-grid">
+
+          <article class="sector-card sector-card--hotel" style="--card-border:rgba(99,102,241,0.4);--card-shadow:rgba(99,102,241,0.12);">
+            <div class="sector-icon" style="background:rgba(99,102,241,0.12);color:var(--accent-light);">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <h3>Web Tasarım <span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:0.7rem;font-weight:700;"> ANA HİZMET</span></h3>
+            <p>Hızlı, mobil uyumlu ve SEO dostu web siteleri. HTML, CSS ve JavaScript ile sıfırdan, tamamen size özel.</p>
+            <span class="sector-tag">⭐ Birincil odak</span>
+          </article>
+
+          <article class="sector-card sector-card--ticaret">
+            <div class="sector-icon"><i class="fa-solid fa-film"></i></div>
+            <h3>Video Düzenleme</h3>
+            <p>İşletmeniz için tanıtım filmi, sosyal medya reels veya ürün videosu. After Effects &amp; Premiere Pro ile profesyonel kurgu.</p>
+            <span class="sector-tag">Ek hizmet</span>
+          </article>
+
+          <article class="sector-card sector-card--emlak">
+            <div class="sector-icon"><i class="fa-solid fa-palette"></i></div>
+            <h3>Grafik Tasarım</h3>
+            <p>Logo, kartvizit, broşür ve sosyal medya görselleri. Markanızın görsel kimliğini sıfırdan oluşturuyorum.</p>
+            <span class="sector-tag">Ek hizmet</span>
+          </article>
+
+          <article class="sector-card sector-card--kisisel" style="grid-column:1/-1;">
+            <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;">
+              <div class="sector-icon" style="flex-shrink:0;"><i class="fa-solid fa-hashtag"></i></div>
+              <div style="flex:1;min-width:200px;">
+                <h3>Sosyal Medya Yönetimi</h3>
+                <p style="margin:0;">Instagram &amp; Facebook'ta düzenli içerik, görsel tasarım ve yorum yönetimi. Sitenizle senkronize çalışan bir sosyal medya stratejisi.</p>
+              </div>
+              <span class="sector-tag" style="flex-shrink:0;">Ek hizmet</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SÜREÇ ── -->
+    <section class="section" id="surec">
+      <div class="container reveal">
+        <span class="section-label">Nasıl Çalışıyorum?</span>
+        <h2 class="section-title">Web Siteniz 4 Adımda Hazır</h2>
+        <div class="process-steps">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <h4>Ücretsiz Görüşme</h4>
+            <p>İhtiyaçlarınızı ve hedeflerinizi dinliyorum. Instagram veya e-posta ile ulaşın, hemen yanıt veriyorum.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <h4>Tasarım &amp; Onay</h4>
+            <p>İşletmenize özel tasarımı hazırlıyor, sizin onayınızı alıyorum. İstediğiniz değişiklikleri yapıyoruz.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <h4>Geliştirme</h4>
+            <p>HTML, CSS ve JavaScript ile hızlı ve temiz kodlu sitenizi inşa ediyorum. Ortalama 5-10 günde teslim.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <h4>Yayına Alım</h4>
+            <p>Domain, hosting kurulumu ve sitenizi canlıya alıyorum. Sonrası için teknik destek devam ediyor.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── NEDEN BEN ── -->
+    <section class="section" id="neden">
+      <div class="container reveal">
+        <span class="section-label">Neden Enes Sancar?</span>
+        <h2 class="section-title">Didim'de Yerel, Dijitalde Güçlü</h2>
+        <div class="why-grid">
+          <div class="why-list">
+            <div class="why-item">
+              <div class="why-item__icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h4>Yerelden Anlıyorum</h4>
+                <p>Didim'de yaşıyorum. Bölgenin ihtiyaçlarını, turizmini ve yerel pazar dinamiklerini birinci elden biliyorum.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item__icon"><i class="fa-solid fa-mobile-screen"></i></div>
+              <div>
+                <h4>%100 Mobil Uyumlu</h4>
+                <p>Didim'e gelen turistler telefon kullanır. Her sitenin telefonda mükemmel görünmesi önceliğimdir.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item__icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+              <div>
+                <h4>SEO Odaklı</h4>
+                <p>Google'da "Didim otel" gibi aramalarda üst sıralara çıkmanıza yardımcı olacak yapıda siteler üretiyorum.</p>
+              </div>
+            </div>
+            <div class="why-item">
+              <div class="why-item__icon"><i class="fa-solid fa-headset"></i></div>
+              <div>
+                <h4>Sürekli Destek</h4>
+                <p>Site teslim sonrası da yanınızdayım. İçerik güncelleme, teknik sorun — her zaman ulaşabilirsiniz.</p>
+              </div>
+            </div>
+          </div>
+          <div class="why-visual">
+            <i class="fa-solid fa-code big-icon"></i>
+            <h3>Didim'de<br>Web Tasarım</h3>
+            <p style="margin-top:0.5rem;">İstanbul kalitesi,<br>yerel fiyat.</p>
+            <div style="margin-top:2rem;display:flex;flex-direction:column;gap:0.6rem;">
+              <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:var(--text-muted);">
+                <i class="fa-solid fa-check" style="color:#4ade80;"></i> Hızlı teslimat (5-10 gün)
+              </div>
+              <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:var(--text-muted);">
+                <i class="fa-solid fa-check" style="color:#4ade80;"></i> Ücretsiz ilk görüşme
+              </div>
+              <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:var(--text-muted);">
+                <i class="fa-solid fa-check" style="color:#4ade80;"></i> Revizyon hakkı dahil
+              </div>
+              <div style="display:flex;align-items:center;gap:0.6rem;font-size:0.85rem;color:var(--text-muted);">
+                <i class="fa-solid fa-check" style="color:#4ade80;"></i> Domain &amp; hosting yardımı
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SSS ── -->
+    <section class="section" id="sss">
+      <div class="container reveal">
+        <span class="section-label">Sık Sorulan Sorular</span>
+        <h2 class="section-title">Merak Ettikleriniz</h2>
+        <div class="faq-list" id="faqList">
+
+          <div class="faq-item">
+            <button class="faq-q" id="faq-q-1" aria-expanded="false" aria-controls="faq-a-1">
+              Web sitesi yaptırmak ne kadar sürer?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a" id="faq-a-1" role="region" aria-labelledby="faq-q-1">
+              Basit tanıtım siteleri 5-7 gün, daha kapsamlı projeler 10-15 gün içinde teslim edilir. İlk görüşmede size kesin süre bildiririm.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" id="faq-q-2" aria-expanded="false" aria-controls="faq-a-2">
+              Fiyatlar nasıl belirleniyor?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a" id="faq-a-2" role="region" aria-labelledby="faq-q-2">
+              Fiyat, sitenin sayfa sayısına, istenen özelliklere (rezervasyon, galeri, çok dil vb.) ve karmaşıklığına göre değişir. Ücretsiz görüşme sonrası size özel fiyat teklifi sunarım.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" id="faq-q-3" aria-expanded="false" aria-controls="faq-a-3">
+              Domain ve hosting konusunda yardım alabilir miyim?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a" id="faq-a-3" role="region" aria-labelledby="faq-q-3">
+              Evet. Domain (alan adı) seçimi, satın alımı ve hosting kurulumu konusunda baştan sona destek veriyorum.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" id="faq-q-4" aria-expanded="false" aria-controls="faq-a-4">
+              Site yayına girdikten sonra güncelleme yapabilir miyim?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a" id="faq-a-4" role="region" aria-labelledby="faq-q-4">
+              Talep ettiğinizde içerik güncellemesi yapıyorum. Eğer kendi kendinize düzenlemek isterseniz, basit bir panel kurulumu da sağlanabilir.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-q" id="faq-q-5" aria-expanded="false" aria-controls="faq-a-5">
+              Didim dışındaki işletmelere de hizmet veriyor musunuz?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-a" id="faq-a-5" role="region" aria-labelledby="faq-q-5">
+              Evet, Söke, Kuşadası ve Aydın genelindeki işletmelere de hizmet veriyorum. Yüz yüze görüşme isterseniz uygun zaman belirleriz.
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section" id="iletisim">
+      <div class="container">
+        <div class="didim-cta reveal">
+          <span class="section-label">Harekete Geçin</span>
+          <h2>Didim'de Web Sitenizi<br><span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Birlikte Kuralım</span></h2>
+          <p>Ücretsiz görüşme için şimdi ulaşın. 24 saat içinde geri döneceğim.</p>
+          <div class="didim-cta__actions">
+            <a href="https://www.instagram.com/ns.sancar7/" target="_blank" rel="noopener" class="btn-cyan" id="cta-instagram">
+              <i class="fa-brands fa-instagram"></i> Instagram'dan Yaz
+            </a>
+            <button class="btn btn-ghost" onclick="showEmail()" id="cta-email">
+              <i class="fa-solid fa-envelope"></i> E-posta Gönder
+            </button>
+            <a href="/servisler" class="btn btn-ghost" id="cta-services">
+              <i class="fa-solid fa-list"></i> Tüm Hizmetler
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="/">Ana Sayfa</a>
+        <a href="/hakkimda">Hakkımda</a>
+        <a href="/projeler">Projeler</a>
+        <a href="/servisler">Servisler</a>
+        <a href="/didim-web-tasarim" aria-current="page">Didim Web Tasarım</a>
+      </nav>
+      <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Didim, Aydın — Web Tasarım Hizmeti</p>
+      <p class="footer-copy">Copyright &copy; 2026 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+
+  <div id="emailbar">
+    <p style="font-size:0.75rem;opacity:0.6;margin-bottom:0.35rem;">E-posta</p>
+    <h2><a href="mailto:enes.sancar2@gmail.com" style="color:inherit;">enes.sancar2@gmail.com</a></h2>
+    <h2><a href="mailto:sancar.web3524@gmail.com" style="color:inherit;font-size:0.9rem;opacity:0.7;">sancar.web3524@gmail.com</a></h2>
+  </div>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905319722856" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp ile yaz" id="whatsapp-float-btn">
+    <span class="whatsapp-float__label">WhatsApp'tan yaz</span>
+    <span class="whatsapp-float__btn"><i class="fa-brands fa-whatsapp"></i></span>
+  </a>
+
+  <script src="script.js" defer></script>
+  <script>
+    // FAQ accordion
+    document.getElementById("faqList")?.querySelectorAll(".faq-q").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.closest(".faq-item");
+        const isOpen = item.classList.contains("open");
+        document.querySelectorAll(".faq-item.open").forEach(el => {
+          el.classList.remove("open");
+          el.querySelector(".faq-q").setAttribute("aria-expanded", "false");
+        });
+        if (!isOpen) {
+          item.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
