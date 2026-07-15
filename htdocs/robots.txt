@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /IKU/
+Disallow: /admin/
+Disallow: /smart-cargo/
 
 Sitemap: https://nsancar.com/sitemap.xml
