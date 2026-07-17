@@ -713,6 +713,7 @@ function initStatCounters() {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const el = entry.target;
+        const start = parseFloat(el.getAttribute("data-start")) || 0;
         const target = parseFloat(el.getAttribute("data-target"));
         const suffix = el.getAttribute("data-suffix") || "";
         const prefix = el.getAttribute("data-prefix") || "";
@@ -723,7 +724,7 @@ function initStatCounters() {
           if (!startTime) startTime = timestamp;
           const progress = Math.min((timestamp - startTime) / duration, 1);
           const easeProgress = 1 - Math.pow(1 - progress, 3);
-          const current = Math.floor(easeProgress * target);
+          const current = Math.round(start + (target - start) * easeProgress);
           
           el.innerHTML = prefix + current + suffix;
           
