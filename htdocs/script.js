@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initContactForm();
   initAboutCat();
+  initStatCounters();
 });
 
 /* ===== About section cat animation ===== */
@@ -701,4 +702,43 @@ function initContactForm() {
       btn.textContent = dict["contact.form.send"] || "Gönder";
     }
   });
+}
+
+/* ===== Stat Counters ===== */
+function initStatCounters() {
+  const stats = document.querySelectorAll(".stat-num[data-target]");
+  if (!stats.length) return;
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseFloat(el.getAttribute("data-target"));
+        const suffix = el.getAttribute("data-suffix") || "";
+        const prefix = el.getAttribute("data-prefix") || "";
+        const duration = 2000;
+        let startTime = null;
+
+        const step = (timestamp) => {
+          if (!startTime) startTime = timestamp;
+          const progress = Math.min((timestamp - startTime) / duration, 1);
+          const easeProgress = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(easeProgress * target);
+          
+          el.innerHTML = prefix + current + suffix;
+          
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          } else {
+            el.innerHTML = prefix + target + suffix;
+          }
+        };
+        
+        window.requestAnimationFrame(step);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  stats.forEach(stat => observer.observe(stat));
 }

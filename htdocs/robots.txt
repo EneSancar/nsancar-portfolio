@@ -3,5 +3,7 @@ Allow: /
 Disallow: /IKU/
 Disallow: /admin/
 Disallow: /smart-cargo/
+Disallow: /api/
+Disallow: /data/
 
 Sitemap: https://nsancar.com/sitemap.xml
