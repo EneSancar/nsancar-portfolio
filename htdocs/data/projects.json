@@ -272,6 +272,54 @@
       }
     },
     {
+      "id": "solaris-cover",
+      "sectionId": "graphic",
+      "title": "Solaris Kitap Kapağı",
+      "description": "Stanislaw Lem'in başyapıtı Solaris'ten esinlenilerek hazırlanan konsept kitap kapağı tasarımı.",
+      "tags": [
+        "Kitap Kapağı",
+        "İllüstrasyon",
+        "Bilimkurgu"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/solaris-cover.jpg",
+        "alt": "Solaris kitap kapağı tasarımı önizlemesi"
+      },
+      "buttons": {
+        "detail": true
+      },
+      "modal": {
+        "badge": "Grafik Tasarım · Kitap Kapağı",
+        "lead": "Stanislaw Lem'in ölümsüz bilimkurgu eseri Solaris'in derin ve psikolojik atmosferini yansıtan konsept kapak tasarımı.",
+        "preview": {
+          "type": "single",
+          "src": "image/projects/solaris-cover.jpg",
+          "alt": "Solaris konsept kitap kapağı"
+        },
+        "sections": [
+          {
+            "heading": "Tasarım Fikri",
+            "type": "paragraph",
+            "content": "Bu tasarım, romanın ana teması olan 'insan zihninin yansıması' konsepti üzerine kurulmuştur. Astronot başlığındaki yalnız silüet (Harey) ve arka plandaki soyut okyanus motifleri, gezegenin tekinsiz ama büyüleyici doğasını temsil eder."
+          },
+          {
+            "heading": "Detaylar",
+            "type": "list",
+            "items": [
+              "<strong>Atmosfer:</strong> Karanlık, gizemli ve psikolojik derinliği hissettiren kozmik mavi renk paleti.",
+              "<strong>Odak Noktası:</strong> Başlıktaki yansımada beliren kızıl gün batımı ve belirgin kontrast.",
+              "<strong>Tipografi:</strong> Modern, keskin ve bilimkurgu ruhunu güçlü bir şekilde yansıtan yazı tipi seçimi."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-heart",
+          "text": "En sevdiğim kişisel grafik tasarım çalışmalarından biridir."
+        }
+      }
+    },
+    {
       "id": "smartcargo",
       "sectionId": "web",
       "title": "Smart Cargo",
