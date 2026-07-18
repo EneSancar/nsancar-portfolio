@@ -743,3 +743,4 @@ function initStatCounters() {
 
   stats.forEach(stat => observer.observe(stat));
 }
+

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --primary-yellow: #eaf029;
+  --dark-bg: #1f1f1f;
+  --darker-bg: #141414;
+  --light-bg: #f8f8f8;
+  --text-dark: #333333;
+  --text-light: #ffffff;
+  --red-accent: #d32f2f;
+  --border-radius-sm: 8px;
+  --border-radius-md: 16px;
+  --border-radius-lg: 24px;
+  --transition-speed: 0.3s;
+  
+  --font-sans: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background-color: var(--light-bg);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-sans);
+  transition: all var(--transition-speed);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Common Utility Classes */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--primary-yellow);
+  color: var(--text-dark);
+}
+.btn-primary:hover {
+  background-color: #d1d81b;
+}
+
+.btn-dark {
+  background-color: var(--dark-bg);
+  color: var(--text-light);
+}
+.btn-dark:hover {
+  background-color: #000;
+}
+
+.btn-light {
+  background-color: var(--text-light);
+  color: var(--text-dark);
+}
+.btn-light:hover {
+  background-color: #f0f0f0;
+}
