@@ -45,7 +45,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "projeler/Creativo/assets/img/about/about-wide-3.webp",
+        "src": "image/projects/ajans-demo-cover.png",
         "alt": "Dijital Ajans Şablonu Önizlemesi"
       },
       "buttons": {
@@ -62,7 +62,7 @@
         "lead": "Modern ajanslar ve kurumsal şirketler için tasarlanmış; hizmetler, portfolyo, müşteri yorumları ve iletişim modülleri içeren çok yönlü web şablonu.",
         "preview": {
           "type": "single",
-          "src": "projeler/Creativo/assets/img/about/about-wide-3.webp",
+          "src": "image/projects/ajans-demo-cover.png",
           "alt": "Dijital Ajans şablon ekranı"
         },
         "sections": [
