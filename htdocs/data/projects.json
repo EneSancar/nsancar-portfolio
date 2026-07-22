@@ -45,7 +45,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/ajans-demo-cover.png",
+        "src": "image/projects/ajans-demo-cover.png?v=2",
         "alt": "Dijital Ajans Şablonu Önizlemesi"
       },
       "buttons": {
@@ -62,7 +62,7 @@
         "lead": "Modern ajanslar ve kurumsal şirketler için tasarlanmış; hizmetler, portfolyo, müşteri yorumları ve iletişim modülleri içeren çok yönlü web şablonu.",
         "preview": {
           "type": "single",
-          "src": "image/projects/ajans-demo-cover.png",
+          "src": "image/projects/ajans-demo-cover.png?v=2",
           "alt": "Dijital Ajans şablon ekranı"
         },
         "sections": [
