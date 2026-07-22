@@ -6,11 +6,9 @@
 }
 
 .logo-icon {
-  height: 90px;
+  height: 65px;
   width: auto;
   object-fit: contain;
-  transform: scale(1.2);
-  transform-origin: left center;
 }
 
 /* ===== Design tokens ===== */
