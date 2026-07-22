@@ -611,6 +611,167 @@
     }
     .footer-location i { color: var(--accent-light); }
 
+    /* Müşteri Yorumları */
+    .reviews-scroll {
+      display: flex;
+      gap: 1.25rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 1rem;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(99,102,241,0.3) transparent;
+    }
+    .reviews-scroll::-webkit-scrollbar { height: 6px; }
+    .reviews-scroll::-webkit-scrollbar-track { background: transparent; }
+    .reviews-scroll::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 3px; }
+
+    .review-card {
+      flex: 0 0 340px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      scroll-snap-align: start;
+      transition: border-color var(--transition), transform var(--transition);
+      position: relative;
+    }
+    .review-card:hover {
+      border-color: rgba(99,102,241,0.35);
+      transform: translateY(-3px);
+    }
+    .review-stars {
+      display: flex;
+      gap: 2px;
+      margin-bottom: 0.75rem;
+      color: #fbbf24;
+      font-size: 0.9rem;
+    }
+    .review-text {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+    .review-author__name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .review-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.55rem;
+      background: rgba(66,133,244,0.1);
+      border: 1px solid rgba(66,133,244,0.2);
+      border-radius: 999px;
+      font-size: 0.68rem;
+      color: #4285f4;
+      font-weight: 600;
+    }
+    .review-badge i { font-size: 0.72rem; }
+    .reviews-hint {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0.6;
+    }
+
+    /* Hızlı Teklif Formu */
+    .quote-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .quote-form-info h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+    }
+    .quote-form-info p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.75;
+      margin-bottom: 1.5rem;
+    }
+    .quote-form-perks {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .quote-form-perks div {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+    .quote-form-perks i { color: #4ade80; flex-shrink: 0; }
+    .quote-form {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+    }
+    .quote-form .contact-form-field { margin-bottom: 1rem; }
+    .quote-form input,
+    .quote-form select,
+    .quote-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.88rem;
+      transition: border-color var(--transition);
+    }
+    .quote-form input:focus,
+    .quote-form select:focus,
+    .quote-form textarea:focus {
+      outline: none;
+      border-color: var(--accent-light);
+    }
+    .quote-form select { cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 8L1 3h10z' fill='%23888'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; }
+    .quote-form textarea { resize: vertical; min-height: 80px; }
+    .quote-form-btn {
+      width: 100%;
+      padding: 0.85rem 1.5rem;
+      background: linear-gradient(135deg, var(--cyan), #0ea5e9);
+      color: #0c0e14;
+      font-weight: 700;
+      font-size: 0.9rem;
+      border: none;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-family: inherit;
+      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 4px 20px rgba(34,211,238,0.25);
+    }
+    .quote-form-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(34,211,238,0.4);
+    }
+    .quote-form-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .quote-form-status {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      text-align: center;
+    }
+    .quote-form-status.is-success { color: #4ade80; }
+    .quote-form-status.is-error { color: #f87171; }
+
     /* Responsive */
     @media (max-width: 900px) {
       .didim-hero__grid { grid-template-columns: 1fr; }
@@ -625,6 +786,7 @@
       .process-steps { grid-template-columns: repeat(2, 1fr); }
       .process-steps::before { display: none; }
       .why-grid { grid-template-columns: 1fr; }
+      .quote-form-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 600px) {
       .sector-grid { grid-template-columns: 1fr; }
@@ -635,6 +797,7 @@
       .didim-hero__visual { height: auto; display: flex; justify-content: center; padding: 0 1rem; }
       .hero-center-badge { display: none; }
       .hero-connections { display: none; }
+      .review-card { flex: 0 0 280px; }
     }
   </style>
 </head>
@@ -959,6 +1122,73 @@
       </div>
     </section>
 
+    <!-- ── MÜŞTERİ YORUMLARI ── -->
+    <section class="section" id="yorumlar">
+      <div class="container reveal">
+        <span class="section-label">Google Değerlendirmeleri</span>
+        <h2 class="section-title">Müşterilerim Ne Diyor?</h2>
+        <div class="reviews-scroll">
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"İşine başından sonuna kadar bağlıydı ilgisi ve tutarlılığı mükemmeldi uygun fiyata profesyonel bir iş çıkardı. Ben bu adamdan razıyım. Bu adamla geldim bu adamla giderim."</p>
+            <div class="review-author">
+              <span class="review-author__name">Bora</span>
+              <span class="review-badge"><i class="fa-brands fa-google"></i> Google Yorumu</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Web sitemizi yaparken gösterdiğiniz özveri ve yaratıcılık için teşekkür ederim. Sizi tercih ettiğim için çok mutluyum, web sitemizin eski sürümü karmaşıktı ve kullanıcılarımızı çekmiyordu. Yeni tasarımınızla birlikte sayfalar daha hızlı yükleniyor ve içerikler daha düzenli görünüyor."</p>
+            <div class="review-author">
+              <span class="review-author__name">Kazım Kırtıl</span>
+              <span class="review-badge"><i class="fa-brands fa-google"></i> Google Yorumu</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Cafemiz için danıştık kendisine, oldukça profesyonel bir iş çıkardı."</p>
+            <div class="review-author">
+              <span class="review-author__name">Zeliha Dur</span>
+              <span class="review-badge"><i class="fa-brands fa-google"></i> Google Yorumu</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Yaratıcı ve hızlı. Herkese gönül rahatlığıyla tavsiye ederim, eline sağlık."</p>
+            <div class="review-author">
+              <span class="review-author__name">Sensei_Nostra</span>
+              <span class="review-badge"><i class="fa-brands fa-google"></i> Google Yorumu</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            </div>
+            <p class="review-text">"Projem zamanında teslim edildi. Beklentilerimi karşıladı, teşekkür ederim."</p>
+            <div class="review-author">
+              <span class="review-author__name">Designer Corinthians</span>
+              <span class="review-badge"><i class="fa-brands fa-google"></i> Google Yorumu</span>
+            </div>
+          </div>
+
+        </div>
+        <p class="reviews-hint"><i class="fa-solid fa-hand-pointer"></i> Kaydırarak tüm yorumları görebilirsiniz</p>
+      </div>
+    </section>
+
     <!-- ── SSS ── -->
     <section class="section" id="sss">
       <div class="container reveal">
@@ -1016,6 +1246,53 @@
             </div>
           </div>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- ── HIZLI TEKLİF FORMU ── -->
+    <section class="section" id="hizli-teklif">
+      <div class="container reveal">
+        <span class="section-label">İletişim</span>
+        <h2 class="section-title">Hızlı Teklif Alın</h2>
+        <div class="quote-form-grid">
+          <div class="quote-form-info">
+            <h3>Projeniz İçin <span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ücretsiz Teklif</span></h3>
+            <p>Formu doldurun, 24 saat içinde size özel fiyat teklifi ve proje süre tahmini ile geri döneyim. Hiçbir ücret veya taahhüt yok.</p>
+            <div class="quote-form-perks">
+              <div><i class="fa-solid fa-check"></i> Ücretsiz ilk görüşme</div>
+              <div><i class="fa-solid fa-check"></i> 24 saat içinde geri dönüş</div>
+              <div><i class="fa-solid fa-check"></i> Taahhüt yok, fiyat şeffaflığı</div>
+              <div><i class="fa-solid fa-check"></i> Domain & hosting danışmanlığı</div>
+              <div><i class="fa-solid fa-check"></i> Teslimat sonrası destek</div>
+            </div>
+          </div>
+          <form class="quote-form" id="didimQuoteForm" novalidate>
+            <div class="contact-form-field">
+              <input type="text" name="name" placeholder="Adınız Soyadınız" required autocomplete="name">
+            </div>
+            <div class="contact-form-field">
+              <input type="tel" name="phone" placeholder="Telefon Numaranız" required autocomplete="tel">
+            </div>
+            <div class="contact-form-field">
+              <select name="sector" required>
+                <option value="" disabled selected>İşletme Türünüz</option>
+                <option value="Otel / Pansiyon">Otel / Pansiyon</option>
+                <option value="Restoran / Kafe">Restoran / Kafe</option>
+                <option value="Emlak / İnşaat">Emlak / İnşaat</option>
+                <option value="Yerel Ticaret">Yerel Ticaret</option>
+                <option value="Klinik / Sağlık">Klinik / Sağlık</option>
+                <option value="Kişisel / Freelance">Kişisel / Freelance</option>
+                <option value="Diğer">Diğer</option>
+              </select>
+            </div>
+            <div class="contact-form-field">
+              <textarea name="message" rows="3" placeholder="Kısa bir not (opsiyonel)"></textarea>
+            </div>
+            <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+            <button type="submit" class="quote-form-btn">Teklif İste</button>
+            <p class="quote-form-status" id="quoteStatus" aria-live="polite"></p>
+          </form>
         </div>
       </div>
     </section>

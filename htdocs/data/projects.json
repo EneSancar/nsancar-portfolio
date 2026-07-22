@@ -6,6 +6,12 @@
   },
   "sections": [
     {
+      "id": "web",
+      "title": "Web & Geliştirme",
+      "icon": "fa-solid fa-code",
+      "cardClass": "project-card--dev"
+    },
+    {
       "id": "uiux",
       "title": "UI/UX Tasarımları",
       "icon": "fa-brands fa-figma",
@@ -18,12 +24,6 @@
       "cardClass": "project-card--graphic"
     },
     {
-      "id": "web",
-      "title": "Web & Geliştirme",
-      "icon": "fa-solid fa-code",
-      "cardClass": "project-card--dev"
-    },
-    {
       "id": "desktop",
       "title": "Masaüstü Uygulamalar",
       "icon": "fa-solid fa-desktop",
@@ -31,6 +31,64 @@
     }
   ],
   "projects": [
+    {
+      "id": "ajans-template",
+      "sectionId": "web",
+      "title": "nsancar — Ajans & Kurumsal Web Şablonu",
+      "description": "Modern kurumsal markalar, ajanslar ve girişimler için geliştirilmiş; duyarlı, dinamik ve çok sayfalı HTML5/Bootstrap web sitesi şablonu.",
+      "tags": [
+        "HTML5",
+        "CSS3",
+        "Bootstrap 5",
+        "JavaScript",
+        "Kurumsal"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "projeler/Creativo/assets/img/about/about-wide-3.webp",
+        "alt": "Dijital Ajans Şablonu Önizlemesi"
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Canlı Demo",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "projeler/Creativo/index.html",
+          "external": false
+        }
+      },
+      "modal": {
+        "badge": "Web · Kurumsal & Ajans",
+        "lead": "Modern ajanslar ve kurumsal şirketler için tasarlanmış; hizmetler, portfolyo, müşteri yorumları ve iletişim modülleri içeren çok yönlü web şablonu.",
+        "preview": {
+          "type": "single",
+          "src": "projeler/Creativo/assets/img/about/about-wide-3.webp",
+          "alt": "Dijital Ajans şablon ekranı"
+        },
+        "sections": [
+          {
+            "heading": "Proje Özet Özellikleri",
+            "type": "list",
+            "items": [
+              "<strong>Duyarlı Tasarım:</strong> Tüm mobil, tablet ve masaüstü cihazlarla %100 uyumlu Bootstrap 5 altyapısı.",
+              "<strong>Dinamik Bölümler:</strong> İnteraktif portfolyo filtresi (Isotope.js), testimonial slider (Swiper.js) ve süzülebilir SSS sekmeleri.",
+              "<strong>Zengin İçerik Yapısı:</strong> Kurumsal Kimlik, UI/UX, Mobil Uygulama ve Dijital Pazarlama hizmet detay sayfaları.",
+              "<strong>Yerelleştirilmiş Yapı:</strong> Türkçe içerik, TL (₺) fiyatlandırma kartları ve kurumsal iletişim formları."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-laptop-code",
+          "text": "Bootstrap 5 temelli modern ajans şablonu Türkçeleştirilmiş ve ajans konseptine uyarlanmıştır."
+        },
+        "cta": {
+          "label": "Canlı Demoyu İncele",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "projeler/Creativo/index.html",
+          "external": false
+        }
+      }
+    },
     {
       "id": "cineforum",
       "sectionId": "uiux",
@@ -389,7 +447,7 @@
     {
       "id": "iku",
       "sectionId": "web",
-      "title": "IKU Ders Notları",
+      "title": "IKU Çalışma Sayfası",
       "description": "İstanbul Kültür Üniversitesi öğrencileri için ders kaynakları, arama ve karanlık mod destekli web uygulaması.",
       "tags": [
         "HTML",
@@ -406,7 +464,7 @@
         "secondary": {
           "label": "Siteye git",
           "icon": "fa-solid fa-arrow-right",
-          "href": "/IKU",
+          "href": "IKU/index.html",
           "external": false
         }
       },
@@ -438,7 +496,7 @@
         "cta": {
           "label": "Projeyi aç",
           "icon": "fa-solid fa-arrow-right",
-          "href": "/IKU",
+          "href": "IKU/index.html",
           "external": false
         }
       }
@@ -446,7 +504,7 @@
     {
       "id": "nsancar",
       "sectionId": "web",
-      "title": "nsancar.com",
+      "title": "nsancar.com Portfolyom",
       "description": "Kişisel portfolyo — hero, yetenekler, hızlı erişim, proje vitrinleri ve iletişim bölümlerini tek sayfada sunan modern arayüz.",
       "tags": [
         "HTML",

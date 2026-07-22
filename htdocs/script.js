@@ -28,6 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initContactForm();
   initAboutCat();
   initStatCounters();
+  initDidimQuoteForm();
+  initSmoothScroll();
 });
 
 /* ===== About section cat animation ===== */
@@ -744,3 +746,68 @@ function initStatCounters() {
   stats.forEach(stat => observer.observe(stat));
 }
 
+/* ===== Didim Quick Quote Form ===== */
+function initDidimQuoteForm() {
+  const form = document.getElementById("didimQuoteForm");
+  const status = document.getElementById("quoteStatus");
+  const btn = form?.querySelector(".quote-form-btn");
+  if (!form || !status || !btn) return;
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = form.querySelector('[name="name"]')?.value.trim();
+    const phone = form.querySelector('[name="phone"]')?.value.trim();
+    const sector = form.querySelector('[name="sector"]')?.value;
+    const message = form.querySelector('[name="message"]')?.value.trim();
+    const honey = form.querySelector('[name="_honey"]')?.value;
+
+    if (!name || !phone || !sector) return;
+
+    btn.disabled = true;
+    btn.textContent = "Gönderiliyor…";
+    status.textContent = "";
+    status.className = "quote-form-status";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name,
+          email: phone,
+          subject: `[Hızlı Teklif] ${sector}`,
+          message: `Telefon: ${phone}\nİşletme: ${sector}\n\n${message || "(Not yok)"}`,
+          _honey: honey,
+        }),
+      });
+
+      const data = await res.json();
+      if (res.ok && data.ok) {
+        status.textContent = "Talebiniz iletildi! En kısa sürede dönüş yapacağım.";
+        status.className = "quote-form-status is-success";
+        form.reset();
+      } else {
+        throw new Error(data.error || "error");
+      }
+    } catch {
+      status.textContent = "Bir hata oluştu. Lütfen tekrar deneyin veya WhatsApp'tan yazın.";
+      status.className = "quote-form-status is-error";
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "Teklif İste";
+    }
+  });
+}
+
+/* ===== Smooth scroll for anchor links ===== */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((link) => {
+    link.addEventListener("click", (e) => {
+      const target = document.querySelector(link.getAttribute("href"));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  });
+}
