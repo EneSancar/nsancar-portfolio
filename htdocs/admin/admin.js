@@ -14,6 +14,7 @@
   const panelProjects = document.getElementById("panelProjects");
   const panelVideoEdits = document.getElementById("panelVideoEdits");
   const panelActivities = document.getElementById("panelActivities");
+  const panelBlog = document.getElementById("panelBlog");
   const navItems = document.querySelectorAll(".admin-nav-item[data-tab]");
 
   function showStatus(message, ok, target) {
@@ -39,6 +40,7 @@
     panelProjects.hidden    = tab !== "projects";
     panelVideoEdits.hidden  = tab !== "videoEdits";
     panelActivities.hidden  = tab !== "activities";
+    panelBlog.hidden         = tab !== "blog";
 
     if (tab === "about" && C.state.about) {
       window.AdminAboutUI.render(panelAbout, C.state.about);
@@ -58,6 +60,16 @@
     }
     if (tab === "activities" && C.state.activities) {
       window.AdminActivitiesUI.render(panelActivities, C.state.activities);
+    }
+    if (tab === "blog") {
+      if (!C.state.blog) {
+        C.state.blog = { hero: { title: "Blog", subtitle: "" }, categories: [], posts: [] };
+      }
+      if (!window.AdminBlogUI?.render) {
+        panelBlog.innerHTML = '<p class="field-hint">Blog arayüzü yüklenemedi. Sayfayı yenileyin.</p>';
+      } else {
+        window.AdminBlogUI.render(panelBlog, C.state.blog);
+      }
     }
   }
 

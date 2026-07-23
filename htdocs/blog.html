@@ -7,318 +7,532 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-XGTDRWQ0GD');
   </script>
-<title>Blog</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="script.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-<link rel="icon" href="image/favicon.png">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Inconsolata:wght@300&family=Josefin+Sans&family=Teko&display=swap');
-* {
-  box-sizing: border-box;
-  font-family: 'Josefin Sans', sans-serif;
-}
-html{
-  scroll-behavior: smooth;
-}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web tasarım, SEO, teknoloji ve geliştirme üzerine blog yazıları — Enes Sancar. Didim, Söke ve Kuşadası bölgesinde dijital dünyaya dair güncel içerikler.">
+  <meta name="keywords" content="web tasarım blog, seo blog, didim web tasarım, teknoloji yazıları, web geliştirme, enes sancar blog">
+  <meta name="author" content="Enes Sancar">
+  <meta name="robots" content="index, follow">
+  <title>Blog | Web Tasarım & Teknoloji Yazıları — Enes Sancar</title>
+  <link rel="canonical" href="https://nsancar.com/blog">
+  <link rel="icon" href="image/favicon.png">
 
-::-webkit-scrollbar {
-    width: 10px; /* Kaydırma çubuğu genişliği */
-}
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nsancar.com/blog">
+  <meta property="og:title" content="Blog | Web Tasarım & Teknoloji Yazıları — Enes Sancar">
+  <meta property="og:description" content="Web tasarım, SEO, teknoloji ve geliştirme üzerine blog yazıları. Didim ve Aydın bölgesinde dijital dünyaya dair güncel içerikler.">
+  <meta property="og:image" content="https://nsancar.com/image/ns.png">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Enes Sancar Web Tasarım">
 
-::-webkit-scrollbar-thumb {
-    background-color: #888; /* Kaydırma çubuğu rengi */
-    border-radius: 15px; /* Yuvarlak köşeler */
-}
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog | Web Tasarım & Teknoloji Yazıları — Enes Sancar">
+  <meta name="twitter:description" content="Web tasarım, SEO, teknoloji ve geliştirme üzerine blog yazıları.">
+  <meta name="twitter:image" content="https://nsancar.com/image/ns.png">
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Fare üzerine gelindiğinde renk değiştirme */
-}
-
-.clock {
-      font-family: 'Arial', sans-serif;
-      font-size: 1.6em;
-      margin: 10px;
-      color: #999;
-    }
-
-    .time, .time-separator {
-      display: inline-block;
-    }
-
-    
-    #second{
-      color: red;
-      padding: 3px;     
-      border: 3px solid white;
-      border-radius: 2px;
-      cursor: pointer;
-      transition: 0.4s ease;
-    }
-    #second:hover{
-      color: yellow;
-      border: 3px solid blue;
-    }
-
-/* Header */
-
-#navbar {
-    background: rgb(35,35,38);
-background: linear-gradient(90deg, rgba(35,35,38,1) 20%, rgba(65,84,91,1) 100%);
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: top 0.3s;
-  overflow: hidden;
-  z-index: 999;
-}
-
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 20px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-#navbar a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-
-span{
-  color: red;
-}
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
-}
-
-/* Header/logo Title */
-.header {
-  height: 65vh;
-  text-align: center;
-  background: url("image/blockWp.webp");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-
-/* Increase the font size of the heading */
-.header h1 {
-  font-size: 40px;
-}
-
-.header p{
-  margin-top: -15px;
-}
-
-/* Style the top navigation bar */
-.Line {
-  height: 30px;
-  width: 100%;
-  overflow: hidden;
-  background-color: #333;
-}
-
-/* Column container */
-.row {  
-  display: -ms-flexbox; /* IE10 */
-  display: flex;
-  -ms-flex-wrap: wrap; /* IE10 */
-  flex-wrap: wrap;
-}
-
-/* Create two unequal columns that sits next to each other */
-/* Sidebar/left column */
-.side {
-  -ms-flex: 30%; /* IE10 */
-  height: calc(100vh - 20px); /* Gerekli yükseklik ayarlaması */
-  overflow-y: auto; /* Dikey kaydırma çubuğunun görünmesi */
-  flex: 30%;
-  top: 0;
-
-  background-color: #f1f1f1;
-  padding: 20px;
-  position: sticky;
-}
-
-/* Main column */
-.main {   
-  -ms-flex: 70%; /* IE10 */
-  flex: 70%;
-  background-color: white;
-  padding: 20px;
-}
-
-/* Fake image, just for this example */
-.fakeimg {
-  background-color: #aaa;
-  width: 100%;
-  padding: 20px;
-}
-
-/* Footer */
-.footer {
-  padding: 20px;
-  text-align: center;
-  background: #ddd;
-}
-
-/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-  .row {   
-    flex-direction: column;
+  <!-- Schema.org Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": "https://nsancar.com/blog#blog",
+    "url": "https://nsancar.com/blog",
+    "name": "Enes Sancar Blog",
+    "description": "Web tasarım, SEO, teknoloji ve geliştirme üzerine yazılar",
+    "publisher": {
+      "@type": "LocalBusiness",
+      "@id": "https://nsancar.com/#business",
+      "name": "Enes Sancar Web Tasarım"
+    },
+    "inLanguage": "tr-TR"
   }
-}
+  </script>
 
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
-}
-</style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-blog">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("ns-theme") || "dark";</script>
+  <canvas id="spaceParticles" class="space-particles" aria-hidden="true"></canvas>
 
-  <header>  
-  <div id="navbar">
-
-    <div class="clock">
-      <div class="time">03</div>
-      <div class="time-separator">-</div>
-      <div class="time">03</div>
-      <div class="time-separator">-</div>
-      <div class="time">2005</div>
-      <div class="time-separator">/</div>
-    <div id="day" class="time"></div>
-    <div class="time-separator">-</div>
-    <div id="month" class="time"></div>
-    <div class="time-separator">-</div>
-    <div id="year" class="time"></div>
-    <div class="time-separator"></div>
-    <div id="hour" class="time"></div>
-    <div class="time-separator">:</div>
-    <div id="minute" class="time"></div>
-    <div class="time-separator">:</div>
-    <div id="second" class="time" onclick="TimeAndSpace()"></div>
-  </div>
-
-    <div class="links">
-    <a href="/">MainHome</a>
-    <a href="/hakkimda">About</a>
-    <a href="/blog">Blog</a>
-    <a href="#work">Work</a>
-    <a href="/aktiviteler"><i class="fa-solid fa-icons"></i></a>
-    </div>
-
-  </div>
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="/" class="logo" aria-label="NSancar Ana Sayfa">
+        <img src="image/nsancar-logo.png" alt="NSancar" class="logo-icon">
+      </a>
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn" aria-label="Açık tema"><i class="fa-solid fa-sun"></i></button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Ana Sayfa</a></li>
+        <li><a href="/hakkimda">Hakkımda</a></li>
+        <li><a href="/projeler">Projeler</a></li>
+        <li class="has-mega-menu">
+          <a href="/servisler" class="mega-menu-trigger">Hizmetler <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu-panel">
+            <div class="mega-menu-grid">
+              <a href="/servisler#web-tasarim" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-code"></i></div>
+                <div class="mega-card-content">
+                  <h4>Web Tasarım</h4>
+                  <p>Profesyonel, mobil uyumlu ve dinamik web siteleri.</p>
+                </div>
+              </a>
+              <a href="/servisler#hosting-domain" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-globe"></i></div>
+                <div class="mega-card-content">
+                  <h4>Hosting & Domain</h4>
+                  <p>Güvenilir sunucu ve alan adı çözümleri, teknik destek.</p>
+                </div>
+              </a>
+              <a href="/servisler#grafik-tasarim" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="mega-card-content">
+                  <h4>Grafik Tasarım</h4>
+                  <p>Logo, kurumsal kimlik ve marka bilinirliği tasarımları.</p>
+                </div>
+              </a>
+              <a href="/servisler#video-duzenleme" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-film"></i></div>
+                <div class="mega-card-content">
+                  <h4>Video Düzenleme</h4>
+                  <p>Kurumsal video, animasyon ve kurgu prodüksiyonu.</p>
+                </div>
+              </a>
+              <a href="/servisler#sosyal-medya" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-hashtag"></i></div>
+                <div class="mega-card-content">
+                  <h4>Sosyal Medya Yönetimi</h4>
+                  <p>Instagram, Facebook içerik üretimi ve marka yönetimi.</p>
+                </div>
+              </a>
+              <div class="mega-card empty-slot"></div>
+            </div>
+          </div>
+        </li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="/didim-web-tasarim">Didim</a></li>
+        <li><a href="/aktiviteler" class="nav-icon" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
+      </ul>
+    </nav>
   </header>
 
-<div class="header">
-  <div>
-  <h1>Blog Part</h1>
-  <p>from Enes Sancar</p>
+  <main>
+    <!-- Blog Hero -->
+    <section class="blog-hero" id="blogHero">
+      <div class="container">
+        <div class="blog-hero__inner">
+          <div class="blog-hero__content">
+            <div class="blog-hero__overline">
+              <span class="blog-hero__overline-dot"></span>
+              <span class="blog-hero__overline-text">Blog</span>
+            </div>
+            <h1 class="blog-hero__title" id="blogHeroTitle">
+              <span class="word">Yazılar,</span>
+              <span class="word">Düşünceler</span>
+              <span class="word">ve</span>
+              <span class="word italic">İçgörüler.</span>
+            </h1>
+            <p class="blog-hero__desc" id="blogHeroDesc">Web tasarım, SEO, teknoloji ve geliştirme üzerine yazılar. Dijital dünyada faydalı bilgiler ve deneyimler paylaşıyorum.</p>
+          </div>
+          <div class="blog-hero__stats">
+            <div class="blog-hero__stat">
+              <span class="blog-hero__stat-num" id="blogPostCount">0</span>
+              <span class="blog-hero__stat-label">Yazı</span>
+            </div>
+            <div class="blog-hero__stat">
+              <span class="blog-hero__stat-num" id="blogCatCount">0</span>
+              <span class="blog-hero__stat-label">Kategori</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolbar: Filters + Search -->
+    <section class="blog-toolbar" id="blogToolbar">
+      <div class="container blog-toolbar__inner">
+        <div class="blog-filters-scroll" id="blogFiltersScroll">
+          <div class="blog-filters-track" id="blogFilters">
+            <!-- Generated by JS -->
+          </div>
+        </div>
+        <div class="blog-toolbar__divider"></div>
+        <div class="blog-search" id="blogSearchWrap">
+          <div class="blog-search__input-wrap">
+            <i class="fa-solid fa-magnifying-glass blog-search__icon"></i>
+            <input type="search" class="blog-search__input" id="blogSearchInput" placeholder="Yazı ara..." autocomplete="off">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Grid (List view) -->
+    <section class="blog-grid-section" id="blogListView">
+      <div class="container">
+        <div class="blog-grid" id="blogGrid">
+          <!-- Cards rendered by JS -->
+        </div>
+        <div class="blog-empty" id="blogEmpty" hidden>
+          <div class="blog-empty__icon"><i class="fa-solid fa-newspaper"></i></div>
+          <h3 class="blog-empty__title">Henüz yazı yok</h3>
+          <p class="blog-empty__desc">Bu kategoride henüz yazı bulunmuyor.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Detail (Single post view) -->
+    <section class="blog-detail" id="blogDetailView" hidden>
+      <div class="container">
+        <button class="blog-detail__back" id="blogBackBtn">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Tüm Yazılar</span>
+        </button>
+        <article class="blog-detail__article" id="blogArticle">
+          <!-- Rendered by JS -->
+        </article>
+        <div class="blog-detail__related" id="blogRelated">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://discord.com/channels/600470766680801290/600482871286824990" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://steamcommunity.com/profiles/76561198886945002/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="/">Ana Sayfa</a>
+        <a href="/hakkimda">Hakkımda</a>
+        <a href="/projeler">Projeler</a>
+        <a href="/servisler">Servisler</a>
+        <a href="/blog">Blog</a>
+        <a href="/aktiviteler">Aktiviteler</a>
+        <a href="/didim-web-tasarim">Didim Web Tasarım</a>
+      </nav>
+      <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Didim, Aydın — Web Tasarım Hizmeti</p>
+      <p class="footer-copy">Copyright &copy; 2026 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+
+  <div id="emailbar">
+    <p style="font-size:0.75rem;opacity:0.6;margin-bottom:0.35rem;">E-posta</p>
+    <h2><a href="mailto:enes.sancar2@gmail.com" style="color:inherit;">enes.sancar2@gmail.com</a></h2>
+    <h2><a href="mailto:sancar.web3524@gmail.com" style="color:inherit;font-size:0.9rem;opacity:0.7;">sancar.web3524@gmail.com</a></h2>
   </div>
-</div>
 
-<div class="Line">
-</div>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/905319722856" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp ile yaz" id="whatsapp-float-btn">
+    <span class="whatsapp-float__label">WhatsApp'tan yaz</span>
+    <span class="whatsapp-float__btn"><i class="fa-brands fa-whatsapp"></i></span>
+  </a>
 
-<div class="row">
-  <div class="side">
-    <h2>About Me</h2>
-    <h5>Photo of me:</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
-    <h3>More Text</h3>
-    <p>Lorem ipsum dolor sit ame.</p>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div><br>
-    <div class="fakeimg" style="height:60px;">Image</div>
-  </div>
-  <div class="main">
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-     <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-     <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-     <h2>TITLE HEADING</h2>
-    <h5>Title description, Dec 7, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-    <br>
-    <h2>TITLE HEADING</h2>
-    <h5>Title description, Sep 2, 2017</h5>
-    <div class="fakeimg" style="height:200px;">Image</div>
-    <p>Some text..</p>
-    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-  </div>
-</div>
+  <script src="script.js" defer></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const grid = document.getElementById("blogGrid");
+    const emptyEl = document.getElementById("blogEmpty");
+    const filtersTrack = document.getElementById("blogFilters");
+    const searchInput = document.getElementById("blogSearchInput");
+    const listView = document.getElementById("blogListView");
+    const detailView = document.getElementById("blogDetailView");
+    const articleEl = document.getElementById("blogArticle");
+    const relatedEl = document.getElementById("blogRelated");
+    const backBtn = document.getElementById("blogBackBtn");
+    const postCountEl = document.getElementById("blogPostCount");
+    const catCountEl = document.getElementById("blogCatCount");
+    const toolbar = document.getElementById("blogToolbar");
 
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+    let blogData = null;
+    let activeCategory = "all";
+    let searchQuery = "";
 
-<script type="text/javascript">
-  function updateClock() {
-      const now = new Date();
-
-      const day = now.getDate().toString().padStart(2, '0');
-      const month = (now.getMonth() + 1).toString().padStart(2, '0');
-      const year = now.getFullYear();
-
-      const hour = now.getHours().toString().padStart(2, '0');
-      const minute = now.getMinutes().toString().padStart(2, '0');
-      const second = now.getSeconds().toString().padStart(2, '0');
-
-      document.getElementById('day').innerText = day;
-      document.getElementById('month').innerText = month;
-      document.getElementById('year').innerText = year;
-      document.getElementById('hour').innerText = hour;
-      document.getElementById('minute').innerText = minute;
-      document.getElementById('second').innerText = second;
+    async function fetchBlog() {
+      const bust = Date.now();
+      const sources = [
+        `/api/content?file=blog.json&v=${bust}`,
+        `data/blog.json?v=${bust}`,
+      ];
+      for (const url of sources) {
+        try {
+          const res = await fetch(url, { cache: "no-store" });
+          if (res.ok) return res.json();
+        } catch (_) {}
+      }
+      return { hero: { title: "Blog", subtitle: "" }, categories: [], posts: [] };
     }
 
-    // Saati ve tarihi güncellemek için her saniyede bir updateClock fonksiyonunu çağırıyoruz
-    setInterval(updateClock, 1000);
+    function formatDate(dateStr) {
+      if (!dateStr) return "";
+      const months = ["Ocak","Şubat","Mart","Nisan","Mayıs","Haziran","Temmuz","Ağustos","Eylül","Ekim","Kasım","Aralık"];
+      const d = new Date(dateStr);
+      return `${d.getDate()} ${months[d.getMonth()]} ${d.getFullYear()}`;
+    }
 
-    // Sayfa yüklendiğinde saat değerini hemen göstermek için bir kere çağırıyoruz
-    updateClock();
+    function stripHtml(html) {
+      const div = document.createElement("div");
+      div.innerHTML = html;
+      return div.textContent || div.innerText || "";
+    }
 
+    function getFilteredPosts() {
+      let posts = blogData?.posts || [];
+      if (activeCategory !== "all") {
+        posts = posts.filter(p => p.category === activeCategory);
+      }
+      if (searchQuery) {
+        const q = searchQuery.toLowerCase();
+        posts = posts.filter(p =>
+          (p.title || "").toLowerCase().includes(q) ||
+          (p.excerpt || "").toLowerCase().includes(q) ||
+          (p.category || "").toLowerCase().includes(q) ||
+          (p.tags || []).some(t => t.toLowerCase().includes(q))
+        );
+      }
+      return posts;
+    }
 
-</script>
+    function renderFilters() {
+      filtersTrack.innerHTML = "";
+      const categories = ["all", ...(blogData?.categories || [])];
+      const postsByCategory = {};
+      (blogData?.posts || []).forEach(p => {
+        postsByCategory[p.category] = (postsByCategory[p.category] || 0) + 1;
+      });
 
+      categories.forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "blog-filter-btn" + (cat === activeCategory ? " active" : "");
+        const label = cat === "all" ? "Tümü" : cat;
+        const count = cat === "all" ? (blogData?.posts || []).length : (postsByCategory[cat] || 0);
+        btn.innerHTML = `${label} <span class="blog-filter-btn__count">${count}</span>`;
+        btn.addEventListener("click", () => {
+          activeCategory = cat;
+          renderFilters();
+          renderGrid();
+        });
+        filtersTrack.appendChild(btn);
+      });
+    }
+
+    function createPostCard(post, delay) {
+      const card = document.createElement("a");
+      card.className = "blog-card reveal";
+      card.href = `#${post.id}`;
+      card.setAttribute("data-delay", delay);
+      card.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.location.hash = post.id;
+      });
+
+      const hasImage = post.coverImage && post.coverImage.trim();
+
+      card.innerHTML = `
+        <div class="blog-card__thumb">
+          ${hasImage
+            ? `<img src="${post.coverImage}" alt="${post.title}" loading="lazy">`
+            : `<div class="blog-card__thumb-placeholder">
+                <i class="fa-solid fa-feather-pointed"></i>
+              </div>`
+          }
+          <span class="blog-card__category-badge">${post.category || ""}</span>
+        </div>
+        <div class="blog-card__body">
+          <h2 class="blog-card__title">${post.title}</h2>
+          <p class="blog-card__excerpt">${post.excerpt || stripHtml(post.content).slice(0, 160) + "..."}</p>
+          <div class="blog-card__footer">
+            <div class="blog-card__meta">
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-calendar"></i> ${formatDate(post.publishedAt)}
+              </span>
+              <span class="blog-card__meta-item">
+                <i class="fa-regular fa-clock"></i> ${post.readingTime || 3} dk
+              </span>
+            </div>
+            <span class="blog-card__link">
+              Oku <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </div>
+        </div>
+      `;
+
+      return card;
+    }
+
+    function renderGrid() {
+      const posts = getFilteredPosts();
+      grid.innerHTML = "";
+
+      if (!posts.length) {
+        emptyEl.hidden = false;
+        grid.style.display = "none";
+        return;
+      }
+
+      emptyEl.hidden = true;
+      grid.style.display = "";
+
+      posts.forEach((post, i) => {
+        const card = createPostCard(post, (i % 6) + 1);
+        grid.appendChild(card);
+      });
+
+      // Trigger reveal animations
+      requestAnimationFrame(() => {
+        grid.querySelectorAll(".reveal").forEach(el => {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("in-view");
+                observer.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.1 });
+          observer.observe(el);
+        });
+      });
+    }
+
+    function showPostDetail(postId) {
+      const post = (blogData?.posts || []).find(p => p.id === postId);
+      if (!post) return;
+
+      listView.hidden = true;
+      toolbar.hidden = true;
+      detailView.hidden = false;
+
+      // Update page meta
+      document.title = `${post.title} — Enes Sancar Blog`;
+
+      const hasImage = post.coverImage && post.coverImage.trim();
+
+      articleEl.innerHTML = `
+        ${hasImage ? `<div class="blog-detail__cover"><img src="${post.coverImage}" alt="${post.title}"></div>` : ""}
+        <div class="blog-detail__header">
+          <span class="blog-detail__category">${post.category}</span>
+          <h1 class="blog-detail__title">${post.title}</h1>
+          <div class="blog-detail__meta">
+            <span><i class="fa-regular fa-user"></i> ${post.author || "Enes Sancar"}</span>
+            <span><i class="fa-regular fa-calendar"></i> ${formatDate(post.publishedAt)}</span>
+            <span><i class="fa-regular fa-clock"></i> ${post.readingTime || 3} dk okuma</span>
+          </div>
+        </div>
+        <div class="blog-detail__content">${post.content}</div>
+        ${(post.tags || []).length ? `
+          <div class="blog-detail__tags">
+            ${post.tags.map(t => `<span class="blog-detail__tag">#${t}</span>`).join("")}
+          </div>
+        ` : ""}
+      `;
+
+      // Related posts
+      const related = (blogData?.posts || [])
+        .filter(p => p.id !== post.id && p.category === post.category)
+        .slice(0, 3);
+
+      if (related.length) {
+        relatedEl.innerHTML = `
+          <h3 class="blog-related__title">İlgili Yazılar</h3>
+          <div class="blog-related__grid">
+            ${related.map(r => `
+              <a href="#${r.id}" class="blog-related__card">
+                <span class="blog-related__card-cat">${r.category}</span>
+                <h4 class="blog-related__card-title">${r.title}</h4>
+                <span class="blog-related__card-date">${formatDate(r.publishedAt)}</span>
+              </a>
+            `).join("")}
+          </div>
+        `;
+        relatedEl.hidden = false;
+      } else {
+        relatedEl.hidden = true;
+      }
+
+      // Inject BlogPosting schema
+      let schemaEl = document.getElementById("blogPostSchema");
+      if (!schemaEl) {
+        schemaEl = document.createElement("script");
+        schemaEl.type = "application/ld+json";
+        schemaEl.id = "blogPostSchema";
+        document.head.appendChild(schemaEl);
+      }
+      schemaEl.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": post.title,
+        "description": post.excerpt || stripHtml(post.content).slice(0, 160),
+        "datePublished": post.publishedAt,
+        "dateModified": post.updatedAt || post.publishedAt,
+        "author": { "@type": "Person", "name": post.author || "Enes Sancar" },
+        "publisher": { "@type": "LocalBusiness", "@id": "https://nsancar.com/#business" },
+        "mainEntityOfPage": `https://nsancar.com/blog#${post.id}`,
+        "image": post.coverImage || "https://nsancar.com/image/ns.png",
+        "keywords": (post.tags || []).join(", "),
+      });
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function showList() {
+      listView.hidden = false;
+      toolbar.hidden = false;
+      detailView.hidden = true;
+      document.title = "Blog | Web Tasarım & Teknoloji Yazıları — Enes Sancar";
+
+      const schemaEl = document.getElementById("blogPostSchema");
+      if (schemaEl) schemaEl.remove();
+    }
+
+    function handleHash() {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        showPostDetail(hash);
+      } else {
+        showList();
+      }
+    }
+
+    // Search
+    searchInput.addEventListener("input", () => {
+      searchQuery = searchInput.value.trim();
+      renderGrid();
+    });
+
+    // Back button
+    backBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.location.hash = "";
+    });
+
+    // Hash change
+    window.addEventListener("hashchange", handleHash);
+
+    // Init
+    fetchBlog().then(data => {
+      blogData = data;
+      postCountEl.textContent = (data.posts || []).length;
+      catCountEl.textContent = (data.categories || []).length;
+      renderFilters();
+      renderGrid();
+      handleHash();
+    });
+  });
+  </script>
 </body>
 </html>

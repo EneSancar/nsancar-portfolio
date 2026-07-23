@@ -58,7 +58,17 @@ function initNav() {
   });
 
   navLinks.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
+    link.addEventListener("click", (e) => {
+      // Mega menu trigger behavior on mobile
+      if (link.classList.contains('mega-menu-trigger') && window.innerWidth <= 768) {
+        e.preventDefault();
+        const parentLi = link.closest('.has-mega-menu');
+        if (parentLi) {
+          parentLi.classList.toggle('open');
+        }
+        return; // Do not close the main menu
+      }
+
       navLinks.classList.remove("open");
       hamburger.classList.remove("active");
       hamburger.setAttribute("aria-expanded", "false");

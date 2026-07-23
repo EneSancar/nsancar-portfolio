@@ -7,6 +7,7 @@ window.AdminCore = (function () {
     projects:    { file: "data/projects.json",    api: "/api/admin-save?type=projects",    title: "Projeler"      },
     videoEdits:  { file: "data/video-edits.json", api: "/api/admin-save?type=video-edits", title: "Video Editler" },
     activities:  { file: "data/activities.json",  api: "/api/admin-save?type=activities",  title: "Aktiviteler"   },
+    blog:        { file: "data/blog.json",        api: "/api/admin-save?type=blog",        title: "Blog"          },
   };
 
   const BACKUP_PREFIX = "nsancar_admin_backup_";
@@ -19,6 +20,7 @@ window.AdminCore = (function () {
     projects: null,
     videoEdits: null,
     activities: null,
+    blog: null,
     lastLoadUsedBackup: false,
   };
 
@@ -127,11 +129,12 @@ window.AdminCore = (function () {
   }
 
   async function loadAll() {
-    const [about, projects, videoEdits, activities] = await Promise.all([
+    const [about, projects, videoEdits, activities, blog] = await Promise.all([
       fetchJson(endpoints.about.file),
       fetchJson(endpoints.projects.file),
       fetchJsonSafe(endpoints.videoEdits.file, DEFAULT_VIDEO_EDITS),
       fetchJson(endpoints.activities.file),
+      fetchJsonSafe(endpoints.blog.file, { hero: { title: "Blog", subtitle: "" }, categories: [], posts: [] }),
     ]);
 
     state.lastLoadUsedBackup = false;
@@ -139,6 +142,7 @@ window.AdminCore = (function () {
     state.projects   = applyBackupIfNewer("projects", projects);
     state.videoEdits = applyBackupIfNewer("videoEdits", videoEdits);
     state.activities = applyBackupIfNewer("activities", activities);
+    state.blog       = applyBackupIfNewer("blog", blog);
 
     if (!String(state.videoEdits.backgroundImage || "").trim()) {
       state.videoEdits.backgroundImage = VIDEO_EDITS_BG;
@@ -346,7 +350,9 @@ window.AdminCore = (function () {
             ? normalizeActivitiesPayload(state[tab])
             : tab === "videoEdits"
               ? normalizeVideoEditsPayload(state[tab])
-              : state[tab];
+              : tab === "blog"
+                ? normalizeBlogPayload(state[tab])
+                : state[tab];
 
     if (tab === "about") {
       const clientErrors = validateAboutClient(payload);
@@ -360,6 +366,10 @@ window.AdminCore = (function () {
       const clientErrors = validateVideoEditsClient(payload);
       if (clientErrors.length) throw new Error(clientErrors.join(" "));
     }
+    if (tab === "blog") {
+      const clientErrors = validateBlogClient(payload);
+      if (clientErrors.length) throw new Error(clientErrors.join(" "));
+    }
 
     const res = await fetch(api, {
       method: "POST",
@@ -369,7 +379,7 @@ window.AdminCore = (function () {
     const data = await res.json().catch(() => ({}));
     if (!res.ok) throw new Error(data.message || data.error || `HTTP ${res.status}`);
 
-    if (tab === "activities" || tab === "videoEdits") {
+    if (tab === "activities" || tab === "videoEdits" || tab === "blog") {
       state[tab] = payload;
     } else {
       mergeInto(state[tab], payload);
@@ -413,6 +423,40 @@ window.AdminCore = (function () {
       .replace(/[^a-z0-9]+/g, "-")
       .replace(/^-|-$/g, "")
       .slice(0, 40) || `item-${Date.now()}`;
+  }
+
+  function normalizeBlogPayload(payload) {
+    const data = JSON.parse(JSON.stringify(payload));
+    data.hero = data.hero || { title: "Blog", subtitle: "" };
+    data.categories = Array.isArray(data.categories) ? data.categories : [];
+    data.posts = Array.isArray(data.posts) ? data.posts : [];
+
+    data.posts = data.posts.map((p, i) => ({
+      id: p.id || slugify(p.title || `post-${i}`),
+      title: String(p.title || "").trim(),
+      excerpt: String(p.excerpt || "").trim(),
+      content: String(p.content || "").trim(),
+      coverImage: String(p.coverImage || "").trim(),
+      category: String(p.category || "").trim(),
+      tags: Array.isArray(p.tags) ? p.tags.map(t => String(t).trim()).filter(Boolean) : [],
+      author: String(p.author || "Enes Sancar").trim(),
+      publishedAt: String(p.publishedAt || new Date().toISOString().slice(0, 10)).trim(),
+      updatedAt: String(p.updatedAt || new Date().toISOString().slice(0, 10)).trim(),
+      readingTime: Number(p.readingTime) || 3,
+      featured: Boolean(p.featured),
+    })).filter(p => p.title);
+
+    return data;
+  }
+
+  function validateBlogClient(data) {
+    const errors = [];
+    (data.posts || []).forEach((p, i) => {
+      if (!p.title?.trim()) errors.push(`Yazı ${i + 1}: Başlık zorunlu.`);
+      if (!p.content?.trim()) errors.push(`Yazı ${i + 1}: İçerik zorunlu.`);
+      if (!p.category?.trim()) errors.push(`Yazı ${i + 1}: Kategori zorunlu.`);
+    });
+    return errors;
   }
 
   function linesToArray(text) {

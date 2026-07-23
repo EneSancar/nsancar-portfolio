@@ -12,6 +12,7 @@ const {
   validateProjects,
   validateActivities,
   validateVideoEdits,
+  validateBlog,
 } = require("./_lib/validate");
 
 const TYPES = {
@@ -19,6 +20,7 @@ const TYPES = {
   projects:     { file: "projects.json",     validate: validateProjects    },
   activities:   { file: "activities.json",   validate: validateActivities  },
   "video-edits":{ file: "video-edits.json",  validate: validateVideoEdits  },
+  blog:         { file: "blog.json",         validate: validateBlog        },
 };
 
 function setCors(res) {

@@ -109,6 +109,33 @@ function parseYoutubeId(url) {
   return null;
 }
 
+function validateBlog(payload) {
+  if (!isObject(payload)) return "blog verisi bir nesne olmalı.";
+  if (!Array.isArray(payload.posts)) return "posts dizisi gerekli.";
+  if (!Array.isArray(payload.categories)) return "categories dizisi gerekli.";
+
+  for (let i = 0; i < payload.posts.length; i++) {
+    const p = payload.posts[i];
+    if (!p || typeof p.id !== "string" || !p.id.trim()) {
+      return `posts[${i}]: id gerekli.`;
+    }
+    if (typeof p.title !== "string" || !p.title.trim()) {
+      return `posts[${i}]: title gerekli.`;
+    }
+    if (typeof p.content !== "string" || !p.content.trim()) {
+      return `posts[${i}]: content gerekli.`;
+    }
+    if (typeof p.category !== "string" || !p.category.trim()) {
+      return `posts[${i}]: category gerekli.`;
+    }
+    if (typeof p.publishedAt !== "string" || !p.publishedAt.trim()) {
+      return `posts[${i}]: publishedAt gerekli.`;
+    }
+  }
+
+  return null;
+}
+
 function validateVideoEdits(payload) {
   if (!isObject(payload)) return "video-edits verisi bir nesne olmalı.";
   if (typeof payload.intro !== "string") return "intro alanı gerekli.";
@@ -139,5 +166,6 @@ module.exports = {
   validateProjects,
   validateActivities,
   validateVideoEdits,
+  validateBlog,
   parseYoutubeId,
 };
