@@ -767,17 +767,24 @@ function initDidimQuoteForm() {
     e.preventDefault();
 
     const name = form.querySelector('[name="name"]')?.value.trim();
+    const email = form.querySelector('[name="email"]')?.value.trim();
     const phone = form.querySelector('[name="phone"]')?.value.trim();
     const sector = form.querySelector('[name="sector"]')?.value;
     const message = form.querySelector('[name="message"]')?.value.trim();
     const honey = form.querySelector('[name="_honey"]')?.value;
 
-    if (!name || !phone || !sector) return;
+    if (!name || !email || !sector) return;
 
     btn.disabled = true;
     btn.textContent = "Gönderiliyor…";
     status.textContent = "";
     status.className = "quote-form-status";
+
+    const messageParts = [];
+    if (phone) messageParts.push(`Telefon: ${phone}`);
+    messageParts.push(`İşletme: ${sector}`);
+    messageParts.push("");
+    messageParts.push(message || "(Not yok)");
 
     try {
       const res = await fetch("/api/contact", {
@@ -785,9 +792,9 @@ function initDidimQuoteForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           name,
-          email: phone,
+          email,
           subject: `[Hızlı Teklif] ${sector}`,
-          message: `Telefon: ${phone}\nİşletme: ${sector}\n\n${message || "(Not yok)"}`,
+          message: messageParts.join("\n"),
           _honey: honey,
         }),
       });
