@@ -509,9 +509,11 @@ a {
 .hero-product-img {
     position: relative;
     z-index: 2;
-    max-width: 480px;
+    max-width: 650px;
+    width: 115%;
+    margin-left: -7.5%;
     border-radius: 16px;
-    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(0 0 40px rgba(0, 180, 216, 0.5)) drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
     animation: floatProduct 6s ease-in-out infinite;
 }
 
@@ -730,6 +732,11 @@ a {
 }
 
 /* ==================== TABS ==================== */
+.product-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
 .tab-btn {
     opacity: 0.6;
     transition: all 0.3s ease;
@@ -894,16 +901,18 @@ a {
 .spotlight-image {
     position: relative;
     border-radius: 20px;
-    overflow: hidden;
 }
 
 .spotlight-image img {
     border-radius: 20px;
+    width: 115%;
+    margin-left: -7.5%;
     transition: transform var(--transition-slow);
+    filter: drop-shadow(0 0 50px rgba(0, 180, 216, 0.4)) drop-shadow(0 20px 40px rgba(0,0,0,0.6));
 }
 
 .spotlight-image:hover img {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .spotlight-image-badge {
@@ -1892,5 +1901,230 @@ a {
 
     .spotlight-stats {
         flex-direction: column;
+    }
+}
+
+/* ==================== PRODUCT GROUP CARDS ==================== */
+.product-group-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition-base);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-group-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent);
+}
+
+.group-card-image {
+    width: 100%;
+    height: 220px;
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.group-card-image img {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+    transition: var(--transition-base);
+}
+
+.product-group-card:hover .group-card-image img {
+    transform: scale(1.05);
+}
+
+.group-card-content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.group-category-tag {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.group-title {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+.group-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.group-products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    margin-top: auto;
+}
+
+.group-product-tag {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--text-primary);
+}
+
+.btn-detail {
+    display: inline-block;
+    padding: 10px 0;
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition-base);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding-top: 16px;
+    margin-top: 8px;
+}
+
+.product-group-card:hover .btn-detail {
+    color: var(--accent-light);
+    transform: translateX(5px);
+}
+
+/* ==================== DETAIL PAGES ==================== */
+.detail-hero {
+    padding: 140px 0 60px;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.detail-hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.detail-back-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    transition: var(--transition-base);
+}
+
+.detail-back-link:hover {
+    color: var(--accent);
+}
+
+.detail-hero-content h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.detail-hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.detail-hero-image img {
+    max-width: 100%;
+    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.6));
+}
+
+.detail-products-section {
+    padding: 80px 0;
+}
+
+.detail-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.detail-product-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.detail-product-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.detail-product-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.detail-product-specs {
+    margin-top: 20px;
+}
+
+.detail-spec-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.detail-spec-label {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.detail-spec-value {
+    color: var(--text-primary);
+    text-align: right;
+    max-width: 60%;
+}
+
+@media (max-width: 900px) {
+    .detail-hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .detail-products-grid {
+        grid-template-columns: 1fr;
     }
 }

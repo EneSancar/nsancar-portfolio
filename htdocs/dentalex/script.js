@@ -5,14 +5,14 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==================== LANGUAGE SWITCHER ====================
-    const currentLang = localStorage.getItem('dentalex-lang') || 'tr';
+    const currentLang = localStorage.getItem('dentalex-lang') || 'en';
     
     function setLanguage(lang) {
         localStorage.setItem('dentalex-lang', lang);
         document.documentElement.lang = lang;
         
         // Update all translatable elements
-        document.querySelectorAll('[data-lang-tr][data-lang-en]').forEach(el => {
+        document.querySelectorAll('[data-lang-en][data-lang-de]').forEach(el => {
             const text = el.getAttribute(`data-lang-${lang}`);
             if (text) {
                 if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
@@ -59,11 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.getElementById('hamburger');
     const mobileMenu = document.getElementById('mobile-menu');
 
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
-    });
+    if (hamburger && mobileMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        });
+    }
 
     // Close mobile menu on link click
     document.querySelectorAll('.mobile-nav-link').forEach(link => {
@@ -287,12 +289,7 @@ document.addEventListener('DOMContentLoaded', () => {
     workflowSteps.forEach(step => workflowObserver.observe(step));
 
     // ==================== PRELOADER FADE (SIMPLE) ====================
-    document.body.style.opacity = '0';
-    document.body.style.transition = 'opacity 0.5s ease';
-    
-    window.addEventListener('load', () => {
-        document.body.style.opacity = '1';
-    });
+    // Removed to prevent blank screen issues
 
     // ==================== PRODUCTS TABS ====================
     const tabBtns = document.querySelectorAll('.tab-btn');
