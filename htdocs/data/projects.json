@@ -32,6 +32,73 @@
   ],
   "projects": [
     {
+      "id": "dentalexcompo",
+      "sectionId": "web",
+      "title": "Dentalex Compo",
+      "description": "Dental profesyonelleri için Alman mühendisliği ile geliştirilen kompozit ürünlerinin tanıtıldığı kurumsal web sitesi.",
+      "tags": [
+        "Web Tasarım",
+        "Kurumsal",
+        "Katalog",
+        "Koyu Tema"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/dentalex-1.png",
+        "alt": "Dentalex Compo web sitesi"
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Siteye git",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "https://dentalexcompo.de/",
+          "external": true
+        }
+      },
+      "modal": {
+        "badge": "Web · Kurumsal",
+        "lead": "Dentalex Compo kompozit ürünlerinin (Universal Nano Hybrid Composite) global pazarda tanıtımı için tasarlanmış, profesyonellik ve güven veren modern kurumsal web projesi.",
+        "preview": {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "image/projects/dentalex-1.png",
+              "alt": "Dentalex Compo Ana Sayfa",
+              "caption": "Ana Sayfa"
+            },
+            {
+              "src": "image/projects/dentalex-2.png",
+              "alt": "Dentalex Compo Ürün Detayları",
+              "caption": "Ürün Detayları"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Dental sektördeki profesyoneller için yüksek kaliteli ürünleri estetik ve anlaşılır bir şekilde sunmayı hedefleyen bu projede; ürün özellikleri, klinik karakterler ve kullanım endikasyonları modern bir arayüzle sergilenmektedir. Koyu temanın asilliği ve ürün renklerinin vurgusuyla premium bir his yaratılmıştır."
+          },
+          {
+            "heading": "Öne çıkanlar",
+            "type": "list",
+            "items": [
+              "<strong>Modern Tasarım:</strong> Koyu zemin üzerine turkuaz vurgular ve temiz tipografi.",
+              "<strong>Ürün Vitrini:</strong> Şırınga ve ürün kutusu görselleriyle detaylı ürün tanıtımı.",
+              "<strong>İki Dilli Yapı:</strong> İngilizce ve Almanca dil desteği ile global erişim."
+            ]
+          }
+        ],
+        "cta": {
+          "label": "Siteyi incele",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "https://dentalexcompo.de/",
+          "external": true
+        }
+      }
+    },
+    {
       "id": "ajans-template",
       "sectionId": "web",
       "title": "Ajans & Kurumsal Web Demosu",
