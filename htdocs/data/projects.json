@@ -45,7 +45,8 @@
       "thumbnail": {
         "type": "img",
         "src": "image/projects/dentalex-1.png",
-        "alt": "Dentalex Compo web sitesi"
+        "alt": "Dentalex Compo web sitesi",
+        "fit": "cover-top"
       },
       "buttons": {
         "detail": true,
