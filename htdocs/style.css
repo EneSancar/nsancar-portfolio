@@ -5328,3 +5328,237 @@ a.hobby-pill:hover {
   background: rgba(79, 82, 211, 0.1);
   border-color: rgba(79, 82, 211, 0.2);
 }
+
+/* ===== Services Showcase ===== */
+.services-showcase__subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  max-width: 540px;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+.services-showcase__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+}
+
+/* Service card */
+.svc-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.75rem;
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  color: var(--text);
+  overflow: hidden;
+  transition:
+    transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+  will-change: transform;
+}
+
+.svc-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(99, 102, 241, 0.3);
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.25),
+    0 0 60px rgba(99, 102, 241, 0.08);
+}
+
+/* Glow layer */
+.svc-card__glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.svc-card:hover .svc-card__glow {
+  opacity: 1;
+}
+
+/* Per-card accent colours */
+.svc-card--web .svc-card__glow {
+  background: radial-gradient(circle at 30% 20%, rgba(99, 102, 241, 0.12), transparent 70%);
+}
+.svc-card--web .svc-card__icon { color: #818cf8; }
+.svc-card--web:hover { border-color: rgba(99, 102, 241, 0.35); }
+
+.svc-card--hosting .svc-card__glow {
+  background: radial-gradient(circle at 30% 20%, rgba(34, 211, 238, 0.12), transparent 70%);
+}
+.svc-card--hosting .svc-card__icon { color: #22d3ee; }
+.svc-card--hosting:hover { border-color: rgba(34, 211, 238, 0.35); }
+
+.svc-card--graphic .svc-card__glow {
+  background: radial-gradient(circle at 30% 20%, rgba(168, 85, 247, 0.12), transparent 70%);
+}
+.svc-card--graphic .svc-card__icon { color: #a855f7; }
+.svc-card--graphic:hover { border-color: rgba(168, 85, 247, 0.35); }
+
+.svc-card--video .svc-card__glow {
+  background: radial-gradient(circle at 30% 20%, rgba(251, 146, 60, 0.12), transparent 70%);
+}
+.svc-card--video .svc-card__icon { color: #fb923c; }
+.svc-card--video:hover { border-color: rgba(251, 146, 60, 0.35); }
+
+.svc-card--social .svc-card__glow {
+  background: radial-gradient(circle at 30% 20%, rgba(236, 72, 153, 0.12), transparent 70%);
+}
+.svc-card--social .svc-card__icon { color: #ec4899; }
+.svc-card--social:hover { border-color: rgba(236, 72, 153, 0.35); }
+
+/* Icon */
+.svc-card__icon {
+  position: relative;
+  z-index: 1;
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 1.4rem;
+  margin-bottom: 1.25rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.svc-card:hover .svc-card__icon {
+  transform: scale(1.1) rotate(-3deg);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.svc-card__title {
+  position: relative;
+  z-index: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+/* Description */
+.svc-card__desc {
+  position: relative;
+  z-index: 1;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Arrow */
+.svc-card__arrow {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-top: 1.25rem;
+  align-self: flex-end;
+  transition: all 0.3s ease;
+}
+
+.svc-card:hover .svc-card__arrow {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  transform: translateX(4px);
+}
+
+/* Staggered reveal animation */
+.services-showcase .reveal.show .svc-card {
+  animation: svcCardIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.services-showcase .reveal.show .svc-card:nth-child(1) { animation-delay: 0.05s; }
+.services-showcase .reveal.show .svc-card:nth-child(2) { animation-delay: 0.12s; }
+.services-showcase .reveal.show .svc-card:nth-child(3) { animation-delay: 0.19s; }
+.services-showcase .reveal.show .svc-card:nth-child(4) { animation-delay: 0.26s; }
+.services-showcase .reveal.show .svc-card:nth-child(5) { animation-delay: 0.33s; }
+
+@keyframes svcCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Last row: 2 cards centred */
+.services-showcase__grid .svc-card:nth-child(4) {
+  grid-column: 1 / 2;
+}
+.services-showcase__grid .svc-card:nth-child(5) {
+  grid-column: 2 / 3;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .services-showcase__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services-showcase__grid .svc-card:nth-child(4),
+  .services-showcase__grid .svc-card:nth-child(5) {
+    grid-column: auto;
+  }
+  .services-showcase__grid .svc-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    max-width: 420px;
+    justify-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .services-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+  .services-showcase__grid .svc-card:last-child:nth-child(odd) {
+    max-width: none;
+  }
+  .svc-card {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+/* Light theme overrides */
+[data-theme="light"] .svc-card {
+  background: var(--bg-card);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .svc-card:hover {
+  box-shadow:
+    0 20px 40px rgba(99, 102, 241, 0.1),
+    0 0 60px rgba(99, 102, 241, 0.04);
+}
+
+[data-theme="light"] .svc-card__icon {
+  background: rgba(99, 102, 241, 0.06);
+  border-color: rgba(99, 102, 241, 0.12);
+}
+
+[data-theme="light"] .svc-card__arrow {
+  background: rgba(99, 102, 241, 0.06);
+  border-color: rgba(99, 102, 241, 0.15);
+}
