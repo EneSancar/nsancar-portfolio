@@ -2688,6 +2688,7 @@ button.project-card-link {
 
 .project-modal-preview img {
   width: 100%;
+  height: auto;
   display: block;
 }
 
