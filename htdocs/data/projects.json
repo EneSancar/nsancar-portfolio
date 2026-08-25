@@ -32,6 +32,65 @@
   ],
   "projects": [
     {
+      "id": "cafe-moonlight",
+      "sectionId": "uiux",
+      "title": "Cafe Moonlight",
+      "description": "Bir kafe için özel olarak tasarlanmış, 10'dan fazla sayfadan oluşan kapsamlı ve estetik web arayüzü tasarımı.",
+      "tags": [
+        "Figma",
+        "UI/UX",
+        "Web Tasarım",
+        "Kafe"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/cafe-moonlight-1.png",
+        "alt": "Cafe Moonlight web arayüz tasarımı önizlemesi"
+      },
+      "buttons": {
+        "detail": true
+      },
+      "modal": {
+        "badge": "UI/UX · Figma",
+        "lead": "Web tasarım dersi final projesi için hazırlanan, 10'dan fazla sayfadan oluşan kapsamlı 'Cafe Moonlight' kafe web sitesi arayüz tasarımı.",
+        "preview": {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "image/projects/cafe-moonlight-1.png",
+              "alt": "Cafe Moonlight sayfalar genel görünüm",
+              "caption": "Sayfalar Genel Görünüm"
+            },
+            {
+              "src": "image/projects/cafe-moonlight-2.png",
+              "alt": "Cafe Moonlight anasayfa tasarımı",
+              "caption": "Anasayfa Tasarımı"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Bu proje, bir web tasarım dersi final ödevi kapsamında 'Cafe Moonlight' isimli kafe için Figma üzerinden sıfırdan tasarlanmıştır. Proje; anasayfa, hakkımızda, menü, galeri, duyurular, iletişim, kariyer, kvkk, giriş ve kayıt olma gibi 10 detaylı sayfayı içermektedir."
+          },
+          {
+            "heading": "Tasarım detayları",
+            "type": "list",
+            "items": [
+              "<strong>Kapsamlı Yapı:</strong> 10 farklı sayfa tasarımı (Anasayfa, Menü, İletişim, Galeri vb.).",
+              "<strong>Görsel Kimlik:</strong> Kafenin ruhuna uygun, kahve tonlarında estetik ve sıcak renk paleti.",
+              "<strong>Kullanıcı Deneyimi:</strong> Ziyaretçilerin aradıkları bilgiye (menü, iletişim) kolayca ulaşabileceği kullanıcı dostu navigasyon."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-graduation-cap",
+          "text": "Web tasarım dersi final projesi UI çalışması."
+        }
+      }
+    },
+    {
       "id": "dentalexcompo",
       "sectionId": "web",
       "title": "Dentalex Compo",
