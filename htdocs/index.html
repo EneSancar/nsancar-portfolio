@@ -1,49 +1,58 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGTDRWQ0GD"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XGTDRWQ0GD');
-  </script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Didim, Söke, Kuşadası ve Aydın bölgesinde profesyonel web tasarım hizmeti — Enes Sancar. İşletmeniz için hızlı, mobil uyumlu ve SEO dostu web siteleri tasarlıyorum. Ücretsiz teklif alın.">
-  <meta name="keywords" content="didim web tasarım, söke web tasarım, kuşadası web tasarım, aydın web tasarım, bodrum web tasarım, didim web sitesi yaptırma, söke web sitesi, kuşadası web sitesi, didim kurumsal web sitesi, aydın web geliştirici, muğla web tasarım, didim freelance web geliştirici, enes sancar, didim seo">
+  <meta name="description" content="Enes Sancar portfolyo ve kişisel web sitesi. Modern, hızlı ve etkileşimli front-end çözümleri.">
+  <meta name="keywords" content="enes sancar, web geliştirici, front-end geliştirici, web tasarım uzmanı, portfolyo">
   <meta name="author" content="Enes Sancar">
   <meta name="robots" content="index, follow">
-  <meta name="geo.region" content="TR-09">
-  <meta name="geo.placename" content="Didim, Aydın">
-  <title>Didim Web Tasarım | Söke, Kuşadası, Aydın — Enes Sancar</title>
+  <title>Enes Sancar | Front-End Geliştirici & Web Tasarımcı</title>
   <link rel="canonical" href="https://nsancar.com/">
   <link rel="alternate" hreflang="tr" href="https://nsancar.com/">
   <link rel="icon" href="image/favicon.png">
 
+  <!-- LCP preload -->
+  <link rel="preload" as="image" href="image/nsancar-logo.png" fetchpriority="high">
+
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://nsancar.com/">
-  <meta property="og:title" content="Didim, Söke, Kuşadası Web Tasarım | Enes Sancar">
-  <meta property="og:description" content="Didim, Söke, Kuşadası ve Aydın bölgesindeki işletmeler için profesyonel web sitesi tasarımı. Modern, hızlı, mobil uyumlu.">
+  <meta property="og:title" content="Enes Sancar | Front-End Geliştirici & Web Tasarımcı">
+  <meta property="og:description" content="Enes Sancar portfolyo ve kişisel web sitesi. Modern, hızlı ve etkileşimli front-end çözümleri.">
   <meta property="og:image" content="https://nsancar.com/image/ns.png">
   <meta property="og:locale" content="tr_TR">
-  <meta property="og:site_name" content="Enes Sancar Web Tasarım">
+  <meta property="og:site_name" content="Enes Sancar Portfolyo">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Didim, Söke, Kuşadası Web Tasarım | Enes Sancar">
-  <meta name="twitter:description" content="Didim, Söke, Kuşadası ve Aydın bölgesindeki işletmeler için profesyonel web sitesi tasarımı.">
+  <meta name="twitter:title" content="Enes Sancar | Front-End Geliştirici & Web Tasarımcı">
+  <meta name="twitter:description" content="Enes Sancar portfolyo ve kişisel web sitesi.">
   <meta name="twitter:image" content="https://nsancar.com/image/ns.png">
 
+  <!-- Preconnect -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+
+  <!-- Critical inline font-face to prevent FOUT -->
+  <style>
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400 800;
+      font-display: swap;
+      src: url(https://fonts.gstatic.com/s/plusjakartasans/v8/LDIbaomQNQcsA88c7O9yZ4KMCoOg4IA6-91aHEjcWuA_qU79TR_V.woff2) format('woff2');
+      unicode-range: U+0000-00FF;
+    }
+  </style>
+
+  <!-- Non-render-blocking CSS -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"></noscript>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"></noscript>
+
   <link rel="stylesheet" href="style.css">
-  <script type="module" src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"></script>
 
   <!-- LocalBusiness + WebSite Schema -->
   <script type="application/ld+json">
@@ -785,9 +794,90 @@
     <span class="whatsapp-float__btn"><i class="fa-brands fa-whatsapp"></i></span>
   </a>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous" defer></script>
-  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js" defer></script>
   <script src="script.js" defer></script>
+  <script>
+    /* === Performance: Lazy-load 3rd-party scripts === */
+    (function(){
+      /* -- Google Analytics: delay until first user interaction -- */
+      var gtagLoaded = false;
+      function loadGtag(){
+        if(gtagLoaded) return;
+        gtagLoaded = true;
+        var s = document.createElement('script');
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XGTDRWQ0GD';
+        s.async = true;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-XGTDRWQ0GD');
+      }
+      ['scroll','click','touchstart','keydown'].forEach(function(evt){
+        window.addEventListener(evt, loadGtag, {once:true, passive:true});
+      });
+      /* Fallback: load after 5s if no interaction */
+      setTimeout(loadGtag, 5000);
+
+      /* -- Typed.js: load after idle -- */
+      function loadTyped(){
+        var s = document.createElement('script');
+        s.src = 'https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js';
+        s.onload = function(){
+          var el = document.querySelector('.auto-type');
+          if(el && typeof Typed !== 'undefined'){
+            new Typed('.auto-type', {
+              strings: ['Coding','travelling','discovering'],
+              typeSpeed: 80, backSpeed: 60, loop: true
+            });
+          }
+        };
+        document.body.appendChild(s);
+      }
+      if('requestIdleCallback' in window){
+        requestIdleCallback(loadTyped, {timeout: 2000});
+      } else {
+        setTimeout(loadTyped, 300);
+      }
+
+      /* -- Lottie-web: lazy load when about section nears viewport -- */
+      var catContainer = document.getElementById('aboutCatLottie');
+      if(catContainer){
+        var catObs = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              catObs.disconnect();
+              var s = document.createElement('script');
+              s.src = 'https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js';
+              s.crossOrigin = 'anonymous';
+              s.onload = function(){
+                if(typeof initAboutCat === 'function') initAboutCat();
+              };
+              document.body.appendChild(s);
+            }
+          });
+        }, {rootMargin: '200px'});
+        catObs.observe(catContainer);
+      }
+
+      /* -- dotLottie player: lazy load when hero lottie nears viewport -- */
+      var heroLottie = document.querySelector('dotlottie-player');
+      if(heroLottie){
+        var heroObs = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              heroObs.disconnect();
+              var s = document.createElement('script');
+              s.type = 'module';
+              s.src = 'https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs';
+              document.head.appendChild(s);
+            }
+          });
+        }, {rootMargin: '50px'});
+        heroObs.observe(heroLottie);
+      }
+    })();
+  </script>
 </body>
 </html>
 

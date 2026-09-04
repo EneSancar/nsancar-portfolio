@@ -3,6 +3,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.nsancar.com" }], "destination": "https://nsancar.com/:path*", "permanent": true },
     { "source": "/index.html",         "destination": "/",             "permanent": true },
     { "source": "/about.html",         "destination": "/hakkimda",     "permanent": true },
     { "source": "/about",              "destination": "/hakkimda",     "permanent": true },
@@ -20,6 +21,9 @@
     { "source": "/galeri/:path*",      "destination": "/gallery/:path*", "permanent": true },
     { "source": "/gallery/index.html", "destination": "/gallery",    "permanent": true },
     { "source": "/blog.html",          "destination": "/blog",         "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/IKU/:path*", "destination": "/api/gone" }
   ],
   "functions": {
     "htdocs/api/*.js": {
