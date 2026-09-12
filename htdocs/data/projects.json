@@ -32,6 +32,80 @@
   ],
   "projects": [
     {
+      "id": "matt-design-mimarlik",
+      "sectionId": "web",
+      "title": "Matt Design Mimarlık",
+      "description": "Lüks anahtar teslim iç mimari ve özel proje yönetimi sunan mimarlık ofisi için modern, çok dilli ve dinamik web sitesi.",
+      "tags": [
+        "Web Tasarım",
+        "React",
+        "Kurumsal",
+        "İç Mimarlık",
+        "Çok Dilli"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/mattmimarliksitehomepage.png",
+        "alt": "Matt Design Mimarlık web sitesi",
+        "fit": "cover-top"
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Siteye git",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "https://mattdesignmimarlik.com",
+          "external": true
+        }
+      },
+      "modal": {
+        "badge": "Web · Kurumsal & Mimarlık",
+        "lead": "Yalova, İstanbul ve uluslararası alanda lüks anahtar teslim iç mimari çözümler sunan Matt Design Mimarlık için geliştirilen modern, estetik ve prestijli kurumsal web projesi.",
+        "preview": {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "image/projects/mattmimarliksitehomepage.png",
+              "alt": "Matt Design Mimarlık Ana Sayfa",
+              "caption": "Ana Sayfa Görünümü"
+            },
+            {
+              "src": "image/projects/mattmimarlikaboutpage.png",
+              "alt": "Matt Design Mimarlık Hakkımızda Sayfası",
+              "caption": "Hakkımızda Sayfası Görünümü"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Matt Design Mimarlık; konut, lüks villa, modern ofis ve prestijli ticari alanlar için 250.000 m²'yi aşkın alanda anahtar teslim iç mekan tasarımı ve uzaktan proje yönetimi gerçekleştiren bir mimarlık ofisidir. Bu web projesinde markanın lüks ve estetik vizyonunu yansıtan, yüksek performanslı, mobil uyumlu ve modern bir dijital deneyim sunulmuştur."
+          },
+          {
+            "heading": "Öne çıkan özellikler",
+            "type": "list",
+            "items": [
+              "<strong>Modern & Prestijli Arayüz:</strong> Markanın mimari çizgisine yakışır tipografi, zarif renk dengesi ve estetik görsel hiyerarşi.",
+              "<strong>Çok Dilli Altyapı:</strong> Yurt içi ve yurt dışı müşterilere hitap eden Türkçe ve İngilizce (TR / EN) dil seçeneği.",
+              "<strong>Proje & Hizmet Vitrini:</strong> Tamamlanan projelerin ve anahtar teslim mimari çözümlerin yüksek çözünürlüklü görsellerle sunulduğu interaktif vitrin.",
+              "<strong>Mobil Uyumluluk & Hızlı İletişim:</strong> Tüm cihazlarda akıcı çalışan duyarlı tasarım, WhatsApp hızlı iletişim bağlantısı ve kullanıcı dostu gezinme."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-compass-drafting",
+          "text": "Lüks iç mimarlık ve anahtar teslim proje yönetimi alanında hayata geçirilmiş kurumsal web projesi."
+        },
+        "cta": {
+          "label": "Siteyi incele",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "https://mattdesignmimarlik.com",
+          "external": true
+        }
+      }
+    },
+    {
       "id": "cafe-moonlight",
       "sectionId": "uiux",
       "title": "Cafe Moonlight",

@@ -24,3 +24,4 @@ htdocs/gallery/config.js
 
 # Geçici PDF dönüştürme (orijinal arşive dokunulmaz)
 .tmp-pdfconv/
+extract_images.py
