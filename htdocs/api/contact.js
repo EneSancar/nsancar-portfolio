@@ -25,16 +25,16 @@ module.exports = async function handler(req, res) {
   const subjectLine = subject ? `[nsancar.com] ${subject}` : `[nsancar.com] Yeni mesaj — ${name}`;
 
   const html = `
-    <div style="font-family:system-ui,sans-serif;max-width:560px;margin:0 auto;background:#0c0e14;color:#e8eaef;padding:2rem;border-radius:12px;border:1px solid rgba(99,102,241,0.2)">
-      <h2 style="margin:0 0 1.5rem;color:#818cf8">Yeni iletişim formu mesajı</h2>
+    <div style="font-family:system-ui,sans-serif;max-width:560px;margin:0 auto;background:#0d0f14;color:#f1f4f7;padding:2rem;border-radius:4px;border:1px solid rgba(0,240,255,0.2)">
+      <h2 style="margin:0 0 1.5rem;color:#00f0ff">Yeni iletişim formu mesajı</h2>
       <table style="width:100%;border-collapse:collapse">
-        <tr><td style="padding:0.5rem 0;color:#9aa3b5;width:100px">Ad</td><td style="padding:0.5rem 0;font-weight:600">${escHtml(name)}</td></tr>
-        <tr><td style="padding:0.5rem 0;color:#9aa3b5">E-posta</td><td style="padding:0.5rem 0"><a href="mailto:${escHtml(email)}" style="color:#818cf8">${escHtml(email)}</a></td></tr>
-        ${subject ? `<tr><td style="padding:0.5rem 0;color:#9aa3b5">Konu</td><td style="padding:0.5rem 0">${escHtml(subject)}</td></tr>` : ""}
+        <tr><td style="padding:0.5rem 0;color:#8d97a8;width:100px">Ad</td><td style="padding:0.5rem 0;font-weight:600">${escHtml(name)}</td></tr>
+        <tr><td style="padding:0.5rem 0;color:#8d97a8">E-posta</td><td style="padding:0.5rem 0"><a href="mailto:${escHtml(email)}" style="color:#00f0ff">${escHtml(email)}</a></td></tr>
+        ${subject ? `<tr><td style="padding:0.5rem 0;color:#8d97a8">Konu</td><td style="padding:0.5rem 0">${escHtml(subject)}</td></tr>` : ""}
       </table>
       <hr style="border:none;border-top:1px solid rgba(255,255,255,0.08);margin:1.25rem 0">
       <p style="white-space:pre-wrap;line-height:1.7;margin:0">${escHtml(message)}</p>
-      <p style="margin:1.5rem 0 0;font-size:0.8rem;color:#525870">nsancar.com iletişim formu · ${new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" })}</p>
+      <p style="margin:1.5rem 0 0;font-size:0.8rem;color:#55636b">nsancar.com iletişim formu · ${new Date().toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" })}</p>
     </div>
   `;
 

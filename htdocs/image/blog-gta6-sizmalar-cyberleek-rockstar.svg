@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="GTA VI sızıntıları kapak görseli: olay zaman çizelgesi">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#00f0ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="48.5" y="48.5" width="1103" height="533" fill="none" stroke="#00f0ff" stroke-opacity="0.28"/>
+  <g stroke="#00f0ff" stroke-opacity="0.75" stroke-width="1">
+    <path d="M48.5 70.5V48.5H70.5"/>
+    <path d="M1129.5 70.5V48.5H1107.5"/>
+    <path d="M48.5 559.5V581.5H70.5"/>
+    <path d="M1129.5 559.5V581.5H1107.5"/>
+  </g>
+
+  <text x="72" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#8d97a8">OYUN · GÜVENLİK OLAYI</text>
+  <text x="1128" y="96" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#ff4d00">KRONOLOJİ</text>
+  <line x1="72" y1="118" x2="1128" y2="118" stroke="#ffffff" stroke-opacity="0.14"/>
+
+  <text x="72" y="196" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#f1f4f7">Bir oyunu sarsan</text>
+  <text x="72" y="266" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#00f0ff">sızıntı zinciri.</text>
+
+  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">2022 → 2026 · ROCKSTAR GAMES</text>
+
+  <!-- zaman çizelgesi -->
+  <g transform="translate(72 400)">
+    <!-- ana hat -->
+    <line x1="0" y1="0" x2="1056" y2="0" stroke="#ffffff" stroke-opacity="0.18"/>
+    <line x1="0" y1="0" x2="700" y2="0" stroke="#00f0ff" stroke-width="2"/>
+
+    <!-- 2022 -->
+    <line x1="60" y1="-10" x2="60" y2="10" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="60" cy="0" r="4" fill="#00f0ff"/>
+    <text x="60" y="-24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="1" fill="#f1f4f7">2022</text>
+    <text x="60" y="34" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1" fill="#8d97a8">PRE-ALPHA</text>
+    <line x1="60" y1="46" x2="60" y2="64" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="60" y="80" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1" fill="#55636b">SIZINTI</text>
+
+    <!-- 2023 -->
+    <line x1="270" y1="-10" x2="270" y2="10" stroke="#00f0ff" stroke-width="2"/>
+    <circle cx="270" cy="0" r="4" fill="#00f0ff"/>
+    <text x="270" y="-24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="1" fill="#f1f4f7">2023</text>
+    <text x="270" y="34" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1" fill="#8d97a8">DAVA</text>
+    <line x1="270" y1="46" x2="270" y2="64" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="270" y="80" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1" fill="#55636b">YARGI</text>
+
+    <!-- 2024 -->
+    <line x1="480" y1="-10" x2="480" y2="10" stroke="#00f0ff" stroke-width="2" stroke-opacity="0.6"/>
+    <circle cx="480" cy="0" r="4" fill="#00f0ff" fill-opacity="0.6"/>
+    <text x="480" y="-24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="1" fill="#8d97a8">2024</text>
+    <text x="480" y="34" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1" fill="#55636b">SESSİZLİK</text>
+
+    <!-- 2026: olay -->
+    <line x1="700" y1="-12" x2="700" y2="12" stroke="#ff4d00" stroke-width="2.5"/>
+    <circle cx="700" cy="0" r="5.5" fill="#ff4d00"/>
+    <text x="700" y="-24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="1" fill="#ff4d00">2026</text>
+    <text x="700" y="36" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="1" fill="#ff4d00">CYBERLEEK</text>
+
+    <!-- etki kutusu -->
+    <line x1="700" y1="-40" x2="700" y2="-64" stroke="#ff4d00" stroke-width="1"/>
+    <rect x="588" y="-104" width="224" height="40" fill="#ff4d00"/>
+    <text x="700" y="-78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="2" fill="#1a0a00">2.8 MİLYAR $</text>
+
+    <!-- gelecek -->
+    <line x1="1056" y1="-10" x2="1056" y2="10" stroke="#ffffff" stroke-opacity="0.2" stroke-dasharray="3 4"/>
+    <text x="1056" y="-24" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="1" fill="#55636b">—</text>
+  </g>
+
+  <line x1="72" y1="582" x2="1128" y2="582" stroke="#ffffff" stroke-opacity="0.14"/>
+  <text x="72" y="606" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">nsancar.com · SİBER GÜVENLİK</text>
+</svg>

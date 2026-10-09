@@ -431,7 +431,8 @@ function initSpaceParticles() {
   if (!ctx) return;
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const starColors = ["#ffffff", "#c7d2fe", "#a5f3fc", "#e0e7ff", "#67e8f9"];
+  /* Teknik çizim serpinti noktaları: nötr çoğunluk, marka rengi seyrek vurgu */
+  const starColors = ["#ffffff", "#ffffff", "#8d97a8", "#8d97a8", "#00f0ff", "#ff4d00"];
 
   let width = 0, height = 0;
   let particles = [], nodes = [], rafId = 0;
@@ -528,7 +529,7 @@ function initSpaceParticles() {
         if (dist < linkDist) {
           const alpha = (1 - dist / linkDist) * 0.25;
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(99, 102, 241, ${alpha})`;
+          ctx.strokeStyle = `rgba(0, 240, 255, ${alpha})`;
           ctx.lineWidth = 0.8;
           ctx.globalAlpha = 1;
           ctx.moveTo(nodes[i].x, nodes[i].y);
@@ -540,7 +541,7 @@ function initSpaceParticles() {
     for (const n of nodes) {
       ctx.beginPath();
       ctx.globalAlpha = 0.35;
-      ctx.fillStyle = "#6366f1";
+      ctx.fillStyle = "#00b8c4";
       ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
       ctx.fill();
     }

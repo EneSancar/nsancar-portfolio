@@ -254,7 +254,7 @@
         "secondary": {
           "label": "Canlı Demo",
           "icon": "fa-solid fa-arrow-right",
-          "href": "projeler/Creativo/index.html",
+          "href": "projeler/demo-1/index.html",
           "external": false
         }
       },
@@ -285,7 +285,7 @@
         "cta": {
           "label": "Canlı Demoyu İncele",
           "icon": "fa-solid fa-arrow-right",
-          "href": "projeler/Creativo/index.html",
+          "href": "projeler/demo-1/index.html",
           "external": false
         }
       }
@@ -661,13 +661,7 @@
         "src": "image/projects/iku-preview.png"
       },
       "buttons": {
-        "detail": true,
-        "secondary": {
-          "label": "Siteye git",
-          "icon": "fa-solid fa-arrow-right",
-          "href": "IKU/index.html",
-          "external": false
-        }
+        "detail": true
       },
       "modal": {
         "badge": "Web · Eğitim",
@@ -693,13 +687,7 @@
               "<strong>Masaüstü odaklı UI:</strong> Sidebar ve kart tabanlı modern arayüz."
             ]
           }
-        ],
-        "cta": {
-          "label": "Projeyi aç",
-          "icon": "fa-solid fa-arrow-right",
-          "href": "IKU/index.html",
-          "external": false
-        }
+        ]
       }
     },
     {

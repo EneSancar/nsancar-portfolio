@@ -19,9 +19,11 @@ desktop.ini
 # Yerel gizli ayarlar (asla commit etme)
 htdocs/gallery/config.js
 
-# Cursor (local IDE)
+# Cursor / Claude (local IDE)
 .cursor/
+.claude/
 
-# Geçici PDF dönüştürme (orijinal arşive dokunulmaz)
+# Geçici PDF dönüştürme ve yerel betikler (orijinal arşive dokunulmaz)
 .tmp-pdfconv/
 extract_images.py
+htdocs/_opt/

@@ -10,80 +10,87 @@
 
     gtag('config', 'G-XGTDRWQ0GD');
   </script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fotoğraf Galerisi</title>
-  <link rel="stylesheet" href="style.css" />
-   <link rel="stylesheet" href="menu.css" />
-    	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fotoğraf Galerisi | Enes Sancar</title>
+  <meta name="description" content="Enes Sancar'ın çektiği fotoğraflardan seçkiler: doğa, şehir ve gündelik hayat kareleri.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nsancar.com/gallery">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fotoğraf Galerisi | Enes Sancar">
+  <meta property="og:description" content="Doğa, şehir ve gündelik hayattan fotoğraf seçkileri.">
+  <meta property="og:url" content="https://nsancar.com/gallery">
+  <meta property="og:image" content="https://nsancar.com/image/ns.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fotoğraf Galerisi | Enes Sancar">
+  <meta name="twitter:description" content="Doğa, şehir ve gündelik hayattan fotoğraf seçkileri.">
+  <meta name="twitter:image" content="https://nsancar.com/image/ns.png">
+  <link rel="icon" href="/image/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <script>document.documentElement.dataset.theme = localStorage.getItem("ns-theme") || "dark";</script>
 
   <header id="menu">
-		<div id="navbar">
-		<div class="logo"><a href="/"><img src="/image/ns.png" alt="Enes Sancar" height="70"></a></div>
-		
-		<div class="hamburger">
-		  <div class="line"></div>
-		  <div class="line"></div>
-		  <div class="line"></div>
-		</div>
-		<nav class="nav-bar">
-		  <ul>
-			<li><a href="/">Ana Sayfa</a></li>
-			<li><a href="/hakkimda">Hakkımda</a></li>
-			<li><a href="/projeler">Projeler</a></li>
-			<li><a href="/servisler">Servisler</a></li>
-			<li><a href="/aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
-		  </ul>
-		</nav>
-	</div>
-	  </header>
+    <div id="navbar">
+      <a class="logo" href="/" aria-label="Enes Sancar ana sayfa">
+        <img src="/image/nsancar-logo.png" alt="Enes Sancar" height="40">
+      </a>
+      <button class="hamburger" type="button" aria-label="Menü" aria-expanded="false" aria-controls="galeri-menu">
+        <span class="line"></span><span class="line"></span><span class="line"></span>
+      </button>
+      <nav class="nav-bar" id="galeri-menu" aria-label="Ana menü">
+        <ul>
+          <li><a href="/">Ana Sayfa</a></li>
+          <li><a href="/hakkimda">Hakkımda</a></li>
+          <li><a href="/projeler">Projeler</a></li>
+          <li><a href="/servisler">Hizmetler</a></li>
+          <li><a href="/aktiviteler"><i class="fa-solid fa-icons" aria-hidden="true"></i><span class="sr-only">Aktiviteler</span></a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  <section>
-    <h1>📸 Fotoğraf Galerisi</h1>
-    <p>Doğanın renkleri, ışığın dansı...</p>
+  <section class="gallery-hero">
+    <p class="gallery-hero__eyebrow">Galeri</p>
+    <h1>Fotoğraf Galerisi</h1>
+    <p class="gallery-hero__meta">Doğanın renkleri, ışığın dansı ve gündelik hayattan kareler. Büyütmek için bir fotoğrafa dokunun.</p>
   </section>
 
   <main>
     <div id="loader" class="loader-container">
       <div class="spinner"></div>
-      <p>Fotoğraflar yükleniyor...</p>
+      <p>Fotoğraflar yükleniyor</p>
     </div>
 
     <div class="gallery" id="gallery"></div>
   </main>
 
-  <div class="modal" id="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modal-img" />
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Fotoğraf görüntüleme">
+    <button type="button" class="close" aria-label="Kapat">&times;</button>
+    <img class="modal-content" id="modal-img" alt="" />
   </div>
 
   <script src="script.js"></script>
-  <script src="menu.js"></script>
-
   <script>
-    	const hamburger = document.querySelector(".hamburger");
-const navBar = document.querySelector(".nav-bar");
+    var hamburger = document.querySelector(".hamburger");
+    var navBar = document.querySelector(".nav-bar");
 
-hamburger.onclick = function() {
-  navBar.classList.toggle("active");
-}
+    hamburger.addEventListener("click", function () {
+      var open = navBar.classList.toggle("active");
+      hamburger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
 
-// Mobil ekran boyutuna geldiğinde menüyü gizle
-window.addEventListener("resize", function() {
-  if (window.innerWidth > 800) { // Eğer ekran genişliği 800px'den büyükse
-    navBar.classList.remove("active"); // Menüyü gizle
-  }
-});
-
-// Menü öğelerine tıklandığında menüyü gizle
-document.querySelectorAll(".nav-bar ul li a").forEach(function(item) {
-  item.addEventListener("click", function() {
-    navBar.classList.remove("active"); // Menüyü gizle
-  });
-});
-
+    document.querySelectorAll(".nav-bar ul li a").forEach(function (item) {
+      item.addEventListener("click", function () {
+        navBar.classList.remove("active");
+        hamburger.setAttribute("aria-expanded", "false");
+      });
+    });
   </script>
 </body>
 </html>

@@ -153,7 +153,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
   <style>
@@ -192,22 +192,24 @@
     .didim-hero__tag {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      padding: 0.35rem 0.85rem;
-      background: rgba(34, 211, 238, 0.1);
-      border: 1px solid rgba(34, 211, 238, 0.25);
-      border-radius: 999px;
-      font-size: 0.8rem;
-      color: var(--cyan);
+      gap: 0.55rem;
+      padding: 0.35rem 0.75rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
       margin-bottom: 1.25rem;
       animation: fadeSlideUp 0.7s ease forwards;
     }
     .didim-hero__tag::before {
       content: "";
-      width: 6px; height: 6px;
-      background: var(--cyan);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
+      width: 22px; height: 1px;
+      background: var(--marker);
     }
 
     .didim-hero__title {
@@ -220,10 +222,17 @@
     }
 
     .didim-hero__title .loc {
-      background: linear-gradient(135deg, var(--cyan), var(--accent-light));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent);
+      position: relative;
+      white-space: nowrap;
+    }
+    .didim-hero__title .loc::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0.04em;
+      height: 3px;
+      background: var(--accent);
+      opacity: 0.35;
     }
 
     .didim-hero__desc {
@@ -247,21 +256,23 @@
       align-items: center;
       gap: 0.5rem;
       padding: 0.8rem 1.6rem;
-      background: linear-gradient(135deg, var(--cyan), #0ea5e9);
-      color: #0c0e14;
+      background: var(--accent);
+      color: var(--accent-ink);
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       border-radius: var(--radius-sm);
-      border: none;
+      border: 1px solid var(--accent);
       cursor: pointer;
-      transition: transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 24px rgba(34, 211, 238, 0.3);
-      font-family: inherit;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+      font-family: var(--font-mono);
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
       text-decoration: none;
     }
     .btn-cyan:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(34, 211, 238, 0.45);
+      transform: translateY(-1px);
+      background: var(--accent-light);
+      border-color: var(--accent-light);
     }
 
     /* Hero sağ — Float cards */
@@ -281,16 +292,15 @@
       align-items: center;
       gap: 0.9rem;
       backdrop-filter: blur(12px);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
-      transition: transform var(--transition), box-shadow var(--transition);
+      transition: transform var(--transition), border-color var(--transition);
     }
     .float-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(99,102,241,0.12);
+      transform: translateY(-2px);
+      border-color: var(--rule);
     }
     .float-card__icon {
       width: 42px; height: 42px;
-      border-radius: 10px;
+      border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.2rem;
       flex-shrink: 0;
@@ -304,11 +314,8 @@
     .float-card--4 { bottom: 100px; left: 50%; transform: translateX(-50%); animation: floatAnim2 3.8s ease-in-out infinite; }
     .float-card--5 { bottom: 20px; left: 50%; transform: translateX(-50%); animation: floatAnim1 4.2s ease-in-out infinite; }
 
-    .float-card--1 .float-card__icon { background: rgba(34,211,238,0.12); color: var(--cyan); }
-    .float-card--2 .float-card__icon { background: rgba(99,102,241,0.12); color: var(--accent-light); }
-    .float-card--3 .float-card__icon { background: rgba(74,222,128,0.12); color: #4ade80; }
-    .float-card--4 .float-card__icon { background: rgba(249,115,22,0.12); color: #f97316; }
-    .float-card--5 .float-card__icon { background: rgba(168,85,247,0.12); color: #a855f7; }
+    .float-card__icon { background: rgba(0,240,255,0.08); color: var(--accent); }
+    .float-card--4 .float-card__icon { background: rgba(255,77,0,0.1); color: var(--marker); }
 
     /* Merkez logo kartı */
     .hero-center-badge {
@@ -317,10 +324,11 @@
       transform: translate(-50%, -50%);
       width: 110px; height: 110px;
       background: var(--bg-elevated);
-      border: 2px solid var(--accent);
+      border: 1px solid var(--accent);
       border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
-      box-shadow: 0 0 0 12px rgba(99,102,241,0.08), 0 0 40px rgba(99,102,241,0.2);
+      outline: 1px solid var(--border);
+      outline-offset: 6px;
       animation: pulse-ring 3s ease-in-out infinite;
     }
     .hero-center-badge img { width: 64px; height: auto; }
@@ -340,9 +348,10 @@
       0%, 100% { translate: 0 0; }
       50% { translate: 0 10px; }
     }
+    /* Ölçek halkası: gölge yerine incelikli bir dış çizgi nefes alır. */
     @keyframes pulse-ring {
-      0%, 100% { box-shadow: 0 0 0 12px rgba(99,102,241,0.08), 0 0 40px rgba(99,102,241,0.2); }
-      50% { box-shadow: 0 0 0 20px rgba(99,102,241,0.04), 0 0 60px rgba(99,102,241,0.3); }
+      0%, 100% { outline-color: var(--border); outline-offset: 6px; }
+      50% { outline-color: rgba(0,240,255,0.28); outline-offset: 12px; }
     }
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(28px); }
@@ -370,10 +379,7 @@
     .stat-num {
       font-size: 2.2rem;
       font-weight: 800;
-      background: linear-gradient(135deg, var(--accent-light), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: var(--accent);
       line-height: 1;
       margin-bottom: 0.35rem;
     }
@@ -393,44 +399,44 @@
       padding: 1.75rem;
       position: relative;
       overflow: hidden;
-      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      transition: border-color var(--transition), transform var(--transition);
       cursor: default;
     }
+    /* Üst kenarda imleç işareti — kartın kendisi düz kalır. */
     .sector-card::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background: var(--card-glow, transparent);
-      opacity: 0;
-      transition: opacity var(--transition);
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--card-border, var(--accent));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transition);
     }
     .sector-card:hover {
-      border-color: var(--card-border, rgba(99,102,241,0.35));
-      box-shadow: 0 12px 40px var(--card-shadow, rgba(99,102,241,0.1));
-      transform: translateY(-4px);
+      border-color: var(--card-border, rgba(0,240,255,0.35));
+      transform: translateY(-2px);
     }
-    .sector-card:hover::before { opacity: 1; }
+    .sector-card:hover::before { transform: scaleX(1); }
 
-    .sector-card--hotel   { --card-border: rgba(34,211,238,0.4); --card-shadow: rgba(34,211,238,0.12); }
-    .sector-card--resto   { --card-border: rgba(249,115,22,0.4); --card-shadow: rgba(249,115,22,0.12); }
-    .sector-card--emlak   { --card-border: rgba(74,222,128,0.4); --card-shadow: rgba(74,222,128,0.12); }
-    .sector-card--ticaret { --card-border: rgba(168,85,247,0.4); --card-shadow: rgba(168,85,247,0.12); }
-    .sector-card--klinik  { --card-border: rgba(251,191,36,0.4); --card-shadow: rgba(251,191,36,0.12); }
-    .sector-card--kisisel { --card-border: rgba(99,102,241,0.4); --card-shadow: rgba(99,102,241,0.12); }
+    .sector-card--hotel   { --card-border: rgba(0,240,255,0.35); }
+    .sector-card--resto   { --card-border: rgba(255,77,0,0.4); }
+    .sector-card--emlak   { --card-border: rgba(0,240,255,0.25); }
+    .sector-card--ticaret { --card-border: var(--rule); }
+    .sector-card--klinik  { --card-border: rgba(255,77,0,0.35); }
+    .sector-card--kisisel { --card-border: rgba(0,240,255,0.4); }
 
     .sector-icon {
       width: 52px; height: 52px;
-      border-radius: 14px;
+      border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center;
       font-size: 1.4rem;
       margin-bottom: 1rem;
     }
-    .sector-card--hotel   .sector-icon { background: rgba(34,211,238,0.12); color: var(--cyan); }
-    .sector-card--resto   .sector-icon { background: rgba(249,115,22,0.12); color: #f97316; }
-    .sector-card--emlak   .sector-icon { background: rgba(74,222,128,0.12); color: #4ade80; }
-    .sector-card--ticaret .sector-icon { background: rgba(168,85,247,0.12); color: #a855f7; }
-    .sector-card--klinik  .sector-icon { background: rgba(251,191,36,0.12); color: #fbbf24; }
-    .sector-card--kisisel .sector-icon { background: rgba(99,102,241,0.12); color: var(--accent-light); }
+    .sector-icon { background: rgba(0,240,255,0.08); color: var(--accent); }
+    .sector-card--resto   .sector-icon,
+    .sector-card--klinik  .sector-icon { background: rgba(255,77,0,0.1); color: var(--marker); }
+    .sector-card--kisisel .sector-icon { background: rgba(0,240,255,0.1); color: var(--accent-light); }
 
     .sector-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.5rem; }
     .sector-card p { font-size: 0.87rem; color: var(--text-muted); line-height: 1.6; }
@@ -440,7 +446,8 @@
       margin-top: 1rem;
       padding: 0.25rem 0.65rem;
       background: rgba(255,255,255,0.05);
-      border-radius: 999px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
       font-size: 0.73rem;
       color: var(--text-muted);
     }
@@ -456,9 +463,8 @@
       content: "";
       position: absolute;
       top: 28px; left: 10%;
-      width: 80%; height: 2px;
-      background: linear-gradient(90deg, var(--accent), var(--cyan));
-      opacity: 0.25;
+      width: 80%; height: 1px;
+      background: var(--border);
       z-index: 0;
     }
     .step-card {
@@ -472,19 +478,20 @@
       transition: border-color var(--transition), transform var(--transition);
     }
     .step-card:hover {
-      border-color: rgba(99,102,241,0.35);
+      border-color: rgba(0,240,255,0.35);
       transform: translateY(-4px);
     }
     .step-num {
       width: 44px; height: 44px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--cyan));
-      color: #fff;
-      font-weight: 800;
-      font-size: 1rem;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-weight: 500;
+      font-size: 0.9rem;
       display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
-      box-shadow: 0 4px 16px var(--accent-glow);
     }
     .step-card h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 0.4rem; }
     .step-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.55; }
@@ -507,12 +514,12 @@
       border-radius: var(--radius);
       transition: border-color var(--transition), transform var(--transition);
     }
-    .why-item:hover { border-color: rgba(99,102,241,0.3); transform: translateX(4px); }
+    .why-item:hover { border-color: rgba(0,240,255,0.3); transform: translateX(4px); }
     .why-item__icon {
       width: 40px; height: 40px; flex-shrink: 0;
-      border-radius: 10px;
-      background: rgba(99,102,241,0.12);
-      color: var(--accent-light);
+      border-radius: var(--radius-sm);
+      background: rgba(0,240,255,0.08);
+      color: var(--accent);
       display: flex; align-items: center; justify-content: center;
       font-size: 1rem;
     }
@@ -527,14 +534,10 @@
       text-align: center;
     }
     .why-visual .big-icon {
-      font-size: 5rem;
-      background: linear-gradient(135deg, var(--accent-light), var(--cyan));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      font-size: 4rem;
+      color: var(--accent);
       display: block;
-      margin-bottom: 1.5rem;
-      animation: floatAnim1 4s ease-in-out infinite;
+      margin-bottom: 1.25rem;
     }
     .why-visual h3 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.5rem; }
     .why-visual p { color: var(--text-muted); font-size: 0.9rem; }
@@ -552,10 +555,9 @@
     .didim-cta::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(99,102,241,0.12), transparent),
-        radial-gradient(ellipse 50% 40% at 50% 100%, rgba(34,211,238,0.08), transparent);
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--marker);
       pointer-events: none;
     }
     .didim-cta h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 800; margin-bottom: 0.75rem; }
@@ -620,11 +622,11 @@
       -webkit-overflow-scrolling: touch;
       padding-bottom: 1rem;
       scrollbar-width: thin;
-      scrollbar-color: rgba(99,102,241,0.3) transparent;
+      scrollbar-color: rgba(0,240,255,0.3) transparent;
     }
     .reviews-scroll::-webkit-scrollbar { height: 6px; }
     .reviews-scroll::-webkit-scrollbar-track { background: transparent; }
-    .reviews-scroll::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 3px; }
+    .reviews-scroll::-webkit-scrollbar-thumb { background: rgba(0,240,255,0.3); border-radius: 3px; }
 
     .review-card {
       flex: 0 0 340px;
@@ -637,7 +639,7 @@
       position: relative;
     }
     .review-card:hover {
-      border-color: rgba(99,102,241,0.35);
+      border-color: rgba(0,240,255,0.35);
       transform: translateY(-3px);
     }
     .review-stars {
@@ -670,11 +672,11 @@
       align-items: center;
       gap: 0.35rem;
       padding: 0.2rem 0.55rem;
-      background: rgba(66,133,244,0.1);
-      border: 1px solid rgba(66,133,244,0.2);
-      border-radius: 999px;
+      background: var(--bg-sunken);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
       font-size: 0.68rem;
-      color: #4285f4;
+      color: var(--text-muted);
       font-weight: 600;
     }
     .review-badge i { font-size: 0.72rem; }
@@ -748,20 +750,22 @@
     .quote-form-btn {
       width: 100%;
       padding: 0.85rem 1.5rem;
-      background: linear-gradient(135deg, var(--cyan), #0ea5e9);
-      color: #0c0e14;
-      font-weight: 700;
-      font-size: 0.9rem;
-      border: none;
+      background: var(--accent);
+      color: var(--accent-ink);
+      font-weight: 500;
+      font-size: 0.78rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      border: 1px solid var(--accent);
       border-radius: var(--radius-sm);
       cursor: pointer;
-      font-family: inherit;
-      transition: transform var(--transition), box-shadow var(--transition);
-      box-shadow: 0 4px 20px rgba(34,211,238,0.25);
+      font-family: var(--font-mono);
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
     }
     .quote-form-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(34,211,238,0.4);
+      transform: translateY(-1px);
+      background: var(--accent-light);
+      border-color: var(--accent-light);
     }
     .quote-form-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
     .quote-form-status {
@@ -912,8 +916,8 @@
               <line x1="210" y1="240" x2="210" y2="390" stroke="url(#lineGrad)" stroke-width="1.5" stroke-dasharray="5 4" opacity="0.4"/>
               <defs>
                 <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#6366f1"/>
-                  <stop offset="100%" stop-color="#22d3ee"/>
+                  <stop offset="0%" stop-color="#00f0ff"/>
+                  <stop offset="100%" stop-color="#ff4d00"/>
                 </linearGradient>
               </defs>
             </svg>
@@ -1032,17 +1036,17 @@
     <section class="section" id="ek-hizmetler">
       <div class="container reveal">
         <span class="section-label">Tek Çatı Altında</span>
-        <h2 class="section-title">Web Tasarımın Yanında<br><span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Dijital Paket Çözümler</span></h2>
+        <h2 class="section-title">Web Tasarımın Yanında<br><span style="color:var(--accent);">Dijital Paket Çözümler</span></h2>
         <p style="color:var(--text-muted);max-width:560px;margin-bottom:2.5rem;font-size:0.95rem;line-height:1.75;">
           Ana hizmetim web tasarım. Ama sitenizi yayına aldıktan sonra da dijital varlığınızı güçlü tutmak için ihtiyaç duyabileceğiniz hizmetleri de sunuyorum.
         </p>
         <div class="sector-grid">
 
-          <article class="sector-card sector-card--hotel" style="--card-border:rgba(99,102,241,0.4);--card-shadow:rgba(99,102,241,0.12);">
-            <div class="sector-icon" style="background:rgba(99,102,241,0.12);color:var(--accent-light);">
+          <article class="sector-card sector-card--hotel" style="--card-border:rgba(0,240,255,0.4);--card-shadow:rgba(0,240,255,0.1);">
+            <div class="sector-icon" style="background:rgba(0,240,255,0.1);color:var(--accent-light);">
               <i class="fa-solid fa-laptop-code"></i>
             </div>
-            <h3>Web Tasarım <span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:0.7rem;font-weight:700;"> ANA HİZMET</span></h3>
+            <h3>Web Tasarım <span style="color:var(--accent);font-size:0.7rem;font-weight:700;"> ANA HİZMET</span></h3>
             <p>Hızlı, mobil uyumlu ve SEO dostu web siteleri. HTML, CSS ve JavaScript ile sıfırdan, tamamen size özel.</p>
             <span class="sector-tag">⭐ Birincil odak</span>
           </article>
@@ -1322,7 +1326,7 @@
         <h2 class="section-title">Hızlı Teklif Alın</h2>
         <div class="quote-form-grid">
           <div class="quote-form-info">
-            <h3>Projeniz İçin <span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Ücretsiz Teklif</span></h3>
+            <h3>Projeniz İçin <span style="color:var(--accent);">Ücretsiz Teklif</span></h3>
             <p>Formu doldurun, 24 saat içinde size özel fiyat teklifi ve proje süre tahmini ile geri döneyim. Hiçbir ücret veya taahhüt yok.</p>
             <div class="quote-form-perks">
               <div><i class="fa-solid fa-check"></i> Ücretsiz ilk görüşme</div>
@@ -1369,7 +1373,7 @@
     <section class="section" id="bolgesel-hizmet">
       <div class="container reveal">
         <span class="section-label">Hizmet Bölgesi</span>
-        <h2 class="section-title">Didim, Söke ve Çevre Bölgelerde<br><span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Web Tasarım Hizmeti</span></h2>
+        <h2 class="section-title">Didim, Söke ve Çevre Bölgelerde<br><span style="color:var(--accent);">Web Tasarım Hizmeti</span></h2>
         <div style="max-width: 720px; margin: 0 auto; line-height: 1.85; color: var(--text-muted); font-size: 0.95rem;">
           <p>
             <strong style="color: var(--text);">Didim</strong>, yaz aylarında yoğun turist çeken, otel ve restoran sektörünün güçlü olduğu bir tatil beldesi. Bu bölgedeki işletmelerin dijital varlığını güçlendirmek için profesyonel web tasarım hizmeti sunuyorum.
@@ -1378,7 +1382,7 @@
             Sadece Didim değil, <strong style="color: var(--text);">Söke</strong>'deki ticari işletmeler, <strong style="color: var(--text);">Kuşadası</strong>'ndaki otel ve tur acenteleri, <strong style="color: var(--text);">Bodrum</strong> ve <strong style="color: var(--text);">Milas</strong>'taki girişimciler için de web sitesi tasarımı yapıyorum. <strong style="color: var(--text);">Aydın</strong> ve <strong style="color: var(--text);">Muğla</strong> genelinde yerel işletmelerin ihtiyaçlarını anlıyorum.
           </p>
           <p style="margin-top: 1rem;">
-            Her proje için SEO uyumlu altyapı, mobil öncelikli tasarım ve Google PageSpeed optimizasyonu standart olarak dahildir. İşletmenizi Google aramalarında öne çıkaracak, müşterilerinizin sizi kolayca bulacağı bir web sitesi için <a href="https://wa.me/905319722856" style="color: var(--cyan); text-decoration: none; font-weight: 600;">hemen iletişime geçin</a>.
+            Her proje için SEO uyumlu altyapı, mobil öncelikli tasarım ve Google PageSpeed optimizasyonu standart olarak dahildir. İşletmenizi Google aramalarında öne çıkaracak, müşterilerinizin sizi kolayca bulacağı bir web sitesi için <a href="https://wa.me/905319722856" style="color: var(--accent); text-decoration: none; font-weight: 600;">hemen iletişime geçin</a>.
           </p>
         </div>
       </div>
@@ -1389,8 +1393,8 @@
       <div class="container">
         <div class="didim-cta reveal">
           <span class="section-label">Harekete Geçin</span>
-          <h2>Didim'de Web Sitenizi<br><span style="background:linear-gradient(135deg,var(--accent-light),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Birlikte Kuralım</span></h2>
-          <p>Ücretsiz görüşme için şimdi ulaşın. Telefon: <a href="tel:+905319722856" style="color: var(--cyan); text-decoration: none; font-weight: 600;">+90 531 972 28 56</a><br>24 saat içinde geri döneceğim.</p>
+          <h2>Didim'de Web Sitenizi<br><span style="color:var(--accent);">Birlikte Kuralım</span></h2>
+          <p>Ücretsiz görüşme için şimdi ulaşın. Telefon: <a href="tel:+905319722856" style="color: var(--accent); text-decoration: none; font-weight: 600;">+90 531 972 28 56</a><br>24 saat içinde geri döneceğim.</p>
           <div class="didim-cta__actions">
             <a href="https://wa.me/905319722856" target="_blank" rel="noopener" class="btn" style="background-color: #25d366; color: #fff; border: 1px solid #25d366;" id="cta-whatsapp">
               <i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Yazın

@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="2026 bellek krizi kapak görseli: fiyat eğrisi ve wafer tahsis şeması">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#00f0ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="48.5" y="48.5" width="1103" height="533" fill="none" stroke="#00f0ff" stroke-opacity="0.28"/>
+  <g stroke="#00f0ff" stroke-opacity="0.75" stroke-width="1">
+    <path d="M48.5 70.5V48.5H70.5"/>
+    <path d="M1129.5 70.5V48.5H1107.5"/>
+    <path d="M48.5 559.5V581.5H70.5"/>
+    <path d="M1129.5 559.5V581.5H1107.5"/>
+  </g>
+
+  <text x="72" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#8d97a8">DONANIM · BELLEK KRİZİ 2026</text>
+  <text x="1128" y="96" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#ff4d00">FİYAT</text>
+  <line x1="72" y1="118" x2="1128" y2="118" stroke="#ffffff" stroke-opacity="0.14"/>
+
+  <text x="72" y="196" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#f1f4f7">Aynı bellek,</text>
+  <text x="72" y="266" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#00f0ff">iki kat fiyat.</text>
+
+  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">DRAM · NAND · ÜRETİM KAPASİTESİ</text>
+
+  <!-- ── sol: fiyat eğrisi ── -->
+  <g transform="translate(72 362)">
+    <!-- eksen -->
+    <line x1="0" y1="196" x2="620" y2="196" stroke="#ffffff" stroke-opacity="0.16"/>
+    <line x1="0" y1="196" x2="0" y2="0" stroke="#ffffff" stroke-opacity="0.16"/>
+
+    <!-- yatay kılavuzlar -->
+    <g stroke="#ffffff" stroke-opacity="0.07">
+      <line x1="0" y1="147" x2="620" y2="147"/>
+      <line x1="0" y1="98"  x2="620" y2="98"/>
+      <line x1="0" y1="49"  x2="620" y2="49"/>
+    </g>
+
+    <!-- fiyat eğrisi: yatay seyir sonra dik sıçrama -->
+    <polyline points="0,178 88,175 176,171 264,166 352,158 440,120 528,52 616,16"
+      fill="none" stroke="#00f0ff" stroke-width="2.5" vector-effect="non-scaling-stroke"/>
+
+    <!-- sıçramanın başladığı yer -->
+    <line x1="352" y1="158" x2="352" y2="196" stroke="#ff4d00" stroke-width="1" stroke-dasharray="4 4"/>
+    <circle cx="352" cy="158" r="3.5" fill="#ff4d00"/>
+
+    <!-- alan dolgusu -->
+    <polygon points="0,196 0,178 88,175 176,171 264,166 352,158 440,120 528,52 616,16 616,196"
+      fill="#00f0ff" fill-opacity="0.08"/>
+
+    <!-- etiketler -->
+    <text x="0" y="220" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">2025</text>
+    <text x="616" y="220" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">2026</text>
+    <text x="352" y="238" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="2" fill="#ff4d00">AI TALEBİ</text>
+  </g>
+
+  <!-- ── sağ: wafer tahsisi ── -->
+  <g transform="translate(830 372)">
+    <text x="0" y="-14" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">WAFER TAHSİSİ</text>
+
+    <!-- wafer: büyük dilim HBM, küçük dilim tüketici -->
+    <circle cx="90" cy="96" r="84" fill="none" stroke="#ffffff" stroke-opacity="0.2"/>
+    <path d="M90 96 L90 12 A84 84 0 0 1 168 52 Z" fill="#ff4d00" fill-opacity="0.85"/>
+    <path d="M90 96 L168 52 A84 84 0 0 1 174 122 Z" fill="#ff4d00" fill-opacity="0.55"/>
+    <path d="M90 96 L174 122 A84 84 0 0 1 90 180 Z" fill="#f1f4f7" fill-opacity="0.5"/>
+    <path d="M90 96 L90 180 A84 84 0 0 1 6 96 Z" fill="#f1f4f7" fill-opacity="0.28"/>
+    <path d="M90 96 L6 96 A84 84 0 0 1 90 12 Z" fill="#f1f4f7" fill-opacity="0.18"/>
+    <circle cx="90" cy="96" r="2.5" fill="#08090c"/>
+
+    <!-- açıklamalar -->
+    <rect x="196" y="34" width="16" height="16" fill="#ff4d00" fill-opacity="0.85"/>
+    <text x="222" y="47" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#f1f4f7">%65 HBM · AI</text>
+
+    <rect x="196" y="86" width="16" height="16" fill="#f1f4f7" fill-opacity="0.5"/>
+    <text x="222" y="99" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">%35 TÜKETİCİ</text>
+
+    <text x="0" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="2" fill="#8d97a8">1 HBM = ~3 DDR5</text>
+  </g>
+</svg>

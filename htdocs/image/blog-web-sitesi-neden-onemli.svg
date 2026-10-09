@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Web sitesi neden önemli kapak görseli: müşteri karar hunisi">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#00f0ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="48.5" y="48.5" width="1103" height="533" fill="none" stroke="#00f0ff" stroke-opacity="0.28"/>
+  <g stroke="#00f0ff" stroke-opacity="0.75" stroke-width="1">
+    <path d="M48.5 70.5V48.5H70.5"/>
+    <path d="M1129.5 70.5V48.5H1107.5"/>
+    <path d="M48.5 559.5V581.5H70.5"/>
+    <path d="M1129.5 559.5V581.5H1107.5"/>
+  </g>
+
+  <text x="72" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#8d97a8">İŞLETME · DİJİTAL VARLIK</text>
+  <text x="1128" y="96" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#ff4d00">KARAR</text>
+  <line x1="72" y1="118" x2="1128" y2="118" stroke="#ffffff" stroke-opacity="0.14"/>
+
+  <text x="72" y="196" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#f1f4f7">Müşteri arıyor.</text>
+  <text x="72" y="266" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#00f0ff">Siz görünmüyorsunuz.</text>
+
+  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">KARAR YOLU · DÖRT ADIM</text>
+
+  <!-- yatay huni: dört adım, yükseklik azalır -->
+  <g transform="translate(72 356)">
+    <!-- adım 1 -->
+    <rect x="0" y="0" width="238" height="188" fill="#00f0ff" fill-opacity="0.85"/>
+    <text x="20" y="34" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#04161a">01</text>
+    <text x="20" y="86" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="700" font-size="27" fill="#04161a">ARAMA</text>
+    <rect x="20" y="104" width="150" height="7" fill="#04161a" fill-opacity="0.45"/>
+    <rect x="20" y="120" width="110" height="7" fill="#04161a" fill-opacity="0.3"/>
+    <text x="20" y="166" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#04161a" fill-opacity="0.7">100 KİŞİ</text>
+
+    <!-- adım 2 -->
+    <rect x="256" y="34" width="238" height="154" fill="#00f0ff" fill-opacity="0.55"/>
+    <text x="276" y="68" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#04161a">02</text>
+    <text x="276" y="120" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="700" font-size="27" fill="#04161a">BULMA</text>
+    <rect x="276" y="138" width="150" height="7" fill="#04161a" fill-opacity="0.4"/>
+    <text x="276" y="176" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#04161a" fill-opacity="0.7">40 — SİTENİZ YOK</text>
+
+    <!-- adım 3 -->
+    <rect x="512" y="68" width="238" height="120" fill="#ff4d00" fill-opacity="0.85"/>
+    <text x="532" y="102" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#1a0a00">03</text>
+    <text x="532" y="154" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="700" font-size="27" fill="#1a0a00">KAYIP</text>
+    <text x="532" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="2" fill="#1a0a00" fill-opacity="0.75">RAKİBE GİDER</text>
+
+    <!-- adım 4 -->
+    <rect x="768" y="102" width="238" height="86" fill="#f1f4f7" fill-opacity="0.22"/>
+    <text x="788" y="136" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">04</text>
+    <text x="788" y="172" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="700" font-size="22" fill="#f1f4f7">SİZİ HİÇ GÖRMEDİ</text>
+  </g>
+</svg>

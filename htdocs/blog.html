@@ -54,7 +54,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -334,7 +334,9 @@
     function createPostCard(post, index) {
       const card = document.createElement("a");
       card.className = "blog-card reveal";
-      card.href = `/blog/${post.id}`;
+      /* listede statik sayfası olan yazılar doğrudan o adrese gider;
+         olmayanlar için /blog/<id> adresi ajans kuralı olarak kalır. */
+      card.href = post.staticPage || `/blog/${post.id}`;
       card.style.animationDelay = `${index * 0.05}s`;
 
       const hasImage = post.coverImage && post.coverImage.trim();
@@ -447,7 +449,7 @@
           <h3 class="blog-related__title">İlgili Yazılar</h3>
           <div class="blog-related__grid">
             ${related.map(r => `
-              <a href="#${r.id}" class="blog-related__card">
+              <a href="${r.staticPage || "#" + r.id}" class="blog-related__card">
                 <span class="blog-related__card-cat">${r.category}</span>
                 <h4 class="blog-related__card-title">${r.title}</h4>
                 <span class="blog-related__card-date">${formatDate(r.publishedAt)}</span>
@@ -477,7 +479,7 @@
         "dateModified": post.updatedAt || post.publishedAt,
         "author": { "@type": "Person", "name": post.author || "Enes Sancar" },
         "publisher": { "@type": "LocalBusiness", "@id": "https://nsancar.com/#business" },
-        "mainEntityOfPage": `https://nsancar.com/blog#${post.id}`,
+        "mainEntityOfPage": post.staticPage ? "https://nsancar.com" + post.staticPage : "https://nsancar.com/blog#" + post.id,
         "image": post.coverImage || "https://nsancar.com/image/ns.png",
         "keywords": (post.tags || []).join(", "),
       });

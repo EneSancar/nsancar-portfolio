@@ -16,6 +16,8 @@ function renderImages(files) {
     img.src = `https://drive.google.com/thumbnail?id=${file.id}&sz=w1000`;
     img.alt = file.name || "Galeri fotoğrafı";
     img.loading = "lazy";
+    img.tabIndex = 0;
+    img.setAttribute("role", "button");
     gallery.appendChild(img);
   });
   loader.style.display = "none";
@@ -64,16 +66,42 @@ const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 const closeBtn = document.querySelector(".close");
 
+let lastFocused = null;
+
+function openModal(img) {
+  lastFocused = img;
+  modal.style.display = "block";
+  modalImg.src = img.src;
+  modalImg.alt = img.alt || "Galeri fotoğrafı";
+  closeBtn.focus();
+}
+
+function closeModal() {
+  modal.style.display = "none";
+  modalImg.removeAttribute("src");
+  modalImg.alt = "";
+  if (lastFocused) lastFocused.focus();
+}
+
 gallery.addEventListener("click", (e) => {
-  if (e.target.tagName === "IMG") {
-    modal.style.display = "block";
-    modalImg.src = e.target.src;
+  if (e.target.tagName === "IMG") openModal(e.target);
+});
+
+// Klavyeyle gezinme: Enter veya Bosluk ile buyut
+gallery.addEventListener("keydown", (e) => {
+  if (e.target.tagName !== "IMG") return;
+  if (e.key === "Enter" || e.key === " ") {
+    e.preventDefault();
+    openModal(e.target);
   }
 });
 
-closeBtn.onclick = () => (modal.style.display = "none");
+closeBtn.onclick = closeModal;
 modal.onclick = (e) => {
-  if (e.target === modal) modal.style.display = "none";
+  if (e.target === modal) closeModal();
 };
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && modal.style.display === "block") closeModal();
+});
 
 loadImages();

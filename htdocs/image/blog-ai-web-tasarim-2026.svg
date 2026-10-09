@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Yapay zeka ve web tasarım kapak görseli: iş bölümü karşılaştırması">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#00f0ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <rect x="48.5" y="48.5" width="1103" height="533" fill="none" stroke="#00f0ff" stroke-opacity="0.28"/>
+  <g stroke="#00f0ff" stroke-opacity="0.75" stroke-width="1">
+    <path d="M48.5 70.5V48.5H70.5"/>
+    <path d="M1129.5 70.5V48.5H1107.5"/>
+    <path d="M48.5 559.5V581.5H70.5"/>
+    <path d="M1129.5 559.5V581.5H1107.5"/>
+  </g>
+
+  <text x="72" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#8d97a8">YAPAY ZEKA · WEB TASARIM</text>
+  <text x="1128" y="96" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#ff4d00">İŞ BÖLÜMÜ</text>
+  <line x1="72" y1="118" x2="1128" y2="118" stroke="#ffffff" stroke-opacity="0.14"/>
+
+  <text x="72" y="196" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#f1f4f7">Aracı kullanan var,</text>
+  <text x="72" y="266" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="62" letter-spacing="-3" fill="#00f0ff">karar veren var.</text>
+
+  <text x="72" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">İKİ SÜTUN · HANGİ İŞ KİMDE</text>
+
+  <!-- iki sütun: makinenin yaptığı vs insanın yaptığı -->
+  <g transform="translate(72 348)">
+    <!-- sol sütun başlığı -->
+    <text x="0" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#55636b">ARACIN YAPTIĞI</text>
+    <line x1="0" y1="14" x2="500" y2="14" stroke="#ffffff" stroke-opacity="0.14"/>
+
+    <!-- sağ sütun başlığı -->
+    <text x="556" y="0" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#00f0ff">SİZİN YAPTIĞINIZ</text>
+    <line x1="556" y1="14" x2="1056" y2="14" stroke="#00f0ff" stroke-opacity="0.4"/>
+
+    <!-- sol maddeler: sönük, mekanik -->
+    <g>
+      <rect x="0" y="38" width="14" height="14" fill="#ffffff" fill-opacity="0.18"/>
+      <text x="30" y="50" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" fill="#8d97a8">Tekrar eden kod blokları</text>
+
+      <rect x="0" y="82" width="14" height="14" fill="#ffffff" fill-opacity="0.18"/>
+      <text x="30" y="94" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" fill="#8d97a8">Yer tutucu metin ve görsel</text>
+
+      <rect x="0" y="126" width="14" height="14" fill="#ffffff" fill-opacity="0.18"/>
+      <text x="30" y="138" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" fill="#8d97a8">Sık kullanılan düzen önerisi</text>
+
+      <rect x="0" y="170" width="14" height="14" fill="#ffffff" fill-opacity="0.18"/>
+      <text x="30" y="182" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" fill="#8d97a8">Hızlı taslak ve varyasyon</text>
+    </g>
+
+    <!-- ayırıcı -->
+    <line x1="528" y1="30" x2="528" y2="200" stroke="#ffffff" stroke-opacity="0.14"/>
+
+    <!-- sağ maddeler: parlak, vurgulu -->
+    <g>
+      <rect x="556" y="38" width="14" height="14" fill="#00f0ff"/>
+      <text x="586" y="50" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#f1f4f7">Hedef kitleyi tanımak</text>
+
+      <rect x="556" y="82" width="14" height="14" fill="#00f0ff"/>
+      <text x="586" y="94" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#f1f4f7">Neyin öne çıkacağına karar</text>
+
+      <rect x="556" y="126" width="14" height="14" fill="#00f0ff"/>
+      <text x="586" y="138" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#f1f4f7">Marka sesi ve ton</text>
+
+      <rect x="556" y="170" width="14" height="14" fill="#00f0ff"/>
+      <text x="586" y="182" font-family="Archivo, Helvetica, Arial, sans-serif" font-size="21" font-weight="600" fill="#f1f4f7">Teslim sorumluluğu</text>
+    </g>
+
+    <!-- alt not -->
+    <line x1="0" y1="228" x2="1056" y2="228" stroke="#ffffff" stroke-opacity="0.14"/>
+    <text x="0" y="256" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#ff4d00">ARAÇ HIZLANDIRIR · KARAR VERMEZ</text>
+  </g>
+</svg>

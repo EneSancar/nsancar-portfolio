@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <title>Sayfa bulunamadı | Enes Sancar</title>
+  <meta name="description" content="Aradığınız sayfa taşınmış veya kaldırılmış olabilir. Ana sayfaya dönerek devam edebilirsiniz.">
+  <link rel="icon" href="/image/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .err-wrap {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: calc(var(--header-h) + 3rem) 0 4rem;
+    }
+    .err-code {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-bottom: 1.25rem;
+    }
+    .err-code::before { content: ""; width: 22px; height: 1px; background: var(--marker); }
+    .err-wrap h1 {
+      font-size: clamp(2rem, 5.5vw, 3.4rem);
+      margin-bottom: 1rem;
+      max-width: 24ch;
+    }
+    .err-wrap p {
+      color: var(--text-muted);
+      max-width: 56ch;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+    }
+    .err-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+  </style>
+</head>
+<body>
+  <script>document.documentElement.dataset.theme = localStorage.getItem("ns-theme") || "dark";</script>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="/" class="logo" aria-label="NSancar Ana Sayfa">
+        <img src="/image/nsancar-logo.png" alt="NSancar" class="logo-icon">
+      </a>
+    </nav>
+  </header>
+
+  <main class="err-wrap">
+    <div class="container">
+      <p class="err-code">Hata 404</p>
+      <h1>Bu adreste bir sayfa yok</h1>
+      <p>Bağlantı taşınmış veya kaldırılmış olabilir. Aşağıdaki sayfalardan devam edebilirsiniz.</p>
+      <div class="err-actions">
+        <a href="/" class="btn btn-primary">Ana sayfa</a>
+        <a href="/projeler" class="btn btn-ghost">Projeler</a>
+        <a href="/servisler" class="btn btn-ghost">Hizmetler</a>
+        <a href="/blog" class="btn btn-ghost">Blog</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">Copyright &copy; 2026 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+</body>
+</html>

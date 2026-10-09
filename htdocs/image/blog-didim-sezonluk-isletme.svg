@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Didim'deki sezonluk işletmeler için dijital kurulum rehberi kapak görseli">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#00f0ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="630" fill="#08090c"/>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- pafta çerçevesi -->
+  <rect x="48.5" y="48.5" width="1103" height="533" fill="none" stroke="#00f0ff" stroke-opacity="0.28"/>
+  <g stroke="#00f0ff" stroke-opacity="0.75" stroke-width="1">
+    <path d="M48.5 70.5V48.5H70.5"/>
+    <path d="M1129.5 70.5V48.5H1107.5"/>
+    <path d="M48.5 559.5V581.5H70.5"/>
+    <path d="M1129.5 559.5V581.5H1107.5"/>
+  </g>
+
+  <!-- üst şerit -->
+  <text x="72" y="96" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#8d97a8">DIDIM · SEZONLUK ISLETME</text>
+  <text x="1128" y="96" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" letter-spacing="4" fill="#ff4d00">REHBER</text>
+  <line x1="72" y1="118" x2="1128" y2="118" stroke="#ffffff" stroke-opacity="0.14"/>
+
+  <!-- başlık: iki satır -->
+  <text x="72" y="204" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="66" letter-spacing="-3" fill="#f1f4f7">Sezon açılmadan</text>
+  <text x="72" y="278" font-family="Archivo, Helvetica, Arial, sans-serif" font-weight="800" font-size="66" letter-spacing="-3" fill="#00f0ff">kurulumunuz tamam olsun.</text>
+
+  <!-- açıklama -->
+  <text x="72" y="330" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">OTEL · PANSIYON · RESTORAN</text>
+
+  <!-- sezon eğrisi -->
+  <g transform="translate(72 372)">
+    <!-- eksenler -->
+    <line x1="0" y1="150" x2="1056" y2="150" stroke="#ffffff" stroke-opacity="0.16"/>
+    <line x1="0" y1="150" x2="0" y2="14" stroke="#ffffff" stroke-opacity="0.16"/>
+
+    <!-- ocak - nisan: hazırlık -->
+    <rect x="8"   y="132" width="48" height="18" fill="#00f0ff" fill-opacity="0.22"/>
+    <rect x="64"  y="124" width="48" height="26" fill="#00f0ff" fill-opacity="0.28"/>
+    <rect x="120" y="110" width="48" height="40" fill="#00f0ff" fill-opacity="0.36"/>
+    <rect x="176" y="90"  width="48" height="60" fill="#00f0ff" fill-opacity="0.46"/>
+    <!-- mayıs - ağustos: zirve -->
+    <rect x="248" y="58"  width="62" height="92"  fill="#00f0ff" fill-opacity="0.62"/>
+    <rect x="318" y="34"  width="62" height="116" fill="#00f0ff" fill-opacity="0.76"/>
+    <rect x="388" y="18"  width="62" height="132" fill="#00f0ff" fill-opacity="0.9"/>
+    <rect x="458" y="28"  width="62" height="122" fill="#00f0ff" fill-opacity="0.84"/>
+    <rect x="528" y="50"  width="62" height="100" fill="#00f0ff" fill-opacity="0.66"/>
+    <!-- eylül - aralık: değerlendirme -->
+    <rect x="606" y="96"  width="62" height="54" fill="#00f0ff" fill-opacity="0.42"/>
+    <rect x="676" y="120" width="62" height="30" fill="#00f0ff" fill-opacity="0.28"/>
+    <rect x="746" y="134" width="62" height="16" fill="#00f0ff" fill-opacity="0.2"/>
+    <rect x="816" y="138" width="62" height="12" fill="#00f0ff" fill-opacity="0.16"/>
+
+    <!-- zirve işareti: çubuğun üstünde ok, etiket yanında -->
+    <rect x="388" y="4" width="62" height="4" fill="#ff4d00"/>
+    <line x1="419" y1="4" x2="419" y2="-14" stroke="#ff4d00" stroke-width="1.5"/>
+    <rect x="332" y="-40" width="86" height="26" fill="#ff4d00"/>
+    <text x="375" y="-21" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="2" fill="#1a0a00">ZİRVE</text>
+
+    <!-- ay etiketleri -->
+    <text x="10"  y="174" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">OCA</text>
+    <text x="250" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">MAY</text>
+    <text x="390" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">TEM</text>
+    <text x="608" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">EYL</text>
+    <text x="818" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#8d97a8">ARA</text>
+
+    <!-- sağ üst not -->
+    <text x="1056" y="14" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="15" letter-spacing="2" fill="#ff4d00">HAZIRLIK → HASAT</text>
+  </g>
+
+  <line x1="72" y1="582" x2="1128" y2="582" stroke="#ffffff" stroke-opacity="0.14"/>
+  <text x="72" y="606" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" letter-spacing="3" fill="#8d97a8">nsancar.com · DIDIM, AYDIN</text>
+</svg>

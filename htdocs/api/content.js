@@ -9,6 +9,7 @@ const ALLOWED = new Set([
   "projects.json",
   "activities.json",
   "video-edits.json",
+  "blog.json",
 ]);
 
 function setCors(res) {

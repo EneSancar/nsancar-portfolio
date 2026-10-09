@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XGTDRWQ0GD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XGTDRWQ0GD');
+  </script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PS5'te Relapse açığı 7.00 - 13.60 yazılımlarında çalışıyor, 14.00 kapatıyor. Jailbreak gerçekte ne yapıyor, BootROM sızıntısı neden önemli, korsan oyun neden hâlâ zor ve hukuki riskler neler?">
+  <meta name="keywords" content="ps5 kırma, ps5 jailbreak, relapse açığı, ps5 bootrom, ps5 14.00, konsol güvenliği, ps5 korsan oyun, ps5 cfw, sony güvenlik açığı">
+  <meta name="author" content="Enes Sancar">
+  <meta name="robots" content="index, follow">
+  <title>PS5 Kırıldı: Relapse Açığı, BootROM Sızıntısı ve Korsan Yazılım Gerçeği — Enes Sancar Blog</title>
+  <link rel="canonical" href="https://nsancar.com/blog/ps5-kirilma-relapse-nedir">
+  <link rel="alternate" hreflang="tr" href="https://nsancar.com/blog/ps5-kirilma-relapse-nedir">
+  <meta property="og:image:type" content="image/png">
+  <link rel="icon" href="/image/favicon.png">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://nsancar.com/blog/ps5-kirilma-relapse-nedir">
+  <meta property="og:title" content="PS5 Kırıldı: Relapse Açığı, BootROM Sızıntısı ve Korsan Yazılım Gerçeği">
+  <meta property="og:description" content="Relapse açığı hangi sürümlerde çalışıyor, ne yapabiliyor, ne yapamıyor ve hukuki riskler neler? Teknik ve tarafsız bir inceleme.">
+  <meta property="og:image" content="https://nsancar.com/image/blog-ps5-kirilma-relapse-og.png">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Enes Sancar Web Tasarım">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="PS5 Kırıldı: Relapse Açığı ve Korsan Yazılım Gerçeği">
+  <meta name="twitter:description" content="Relapse açığı hangi sürümlerde çalışıyor, ne yapabiliyor ve hukuki riskler neler?">
+  <meta name="twitter:image" content="https://nsancar.com/image/blog-ps5-kirilma-relapse-og.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": "https://nsancar.com/blog/ps5-kirilma-relapse-nedir#post",
+        "headline": "PS5 Kırıldı: Relapse Açığı, BootROM Sızıntısı ve Korsan Yazılım Gerçeği",
+        "description": "PS5'te Relapse açığı 7.00 - 13.60 yazılımlarında çalışıyor, 14.00 kapatıyor. Jailbreak gerçekte ne yapıyor, BootROM sızıntısı neden önemli, korsan oyun neden hâlâ zor ve hukuki riskler neler?",
+        "image": "https://nsancar.com/image/blog-ps5-kirilma-relapse-og.png",
+        "datePublished": "2026-10-09",
+        "dateModified": "2026-10-09",
+        "author": { "@type": "Person", "name": "Enes Sancar", "url": "https://nsancar.com/hakkimda" },
+        "publisher": { "@type": "LocalBusiness", "@id": "https://nsancar.com/#business" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://nsancar.com/blog/ps5-kirilma-relapse-nedir" },
+        "keywords": "ps5 jailbreak, relapse, bootrom, konsol güvenliği, korsan yazılım",
+        "articleSection": "Oyun & Teknoloji",
+        "inLanguage": "tr-TR"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://nsancar.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://nsancar.com/blog" },
+          { "@type": "ListItem", "position": 3, "name": "PS5 Kırıldı: Relapse Açığı, BootROM Sızıntısı ve Korsan Yazılım Gerçeği", "item": "https://nsancar.com/blog/ps5-kirilma-relapse-nedir" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="page-blog">
+  <script>document.documentElement.dataset.theme = localStorage.getItem("ns-theme") || "dark";</script>
+  <canvas id="spaceParticles" class="space-particles" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar">
+      <a href="/" class="logo" aria-label="NSancar Ana Sayfa">
+        <img src="/image/nsancar-logo.png" alt="NSancar" class="logo-icon">
+      </a>
+      <div class="nav-controls">
+        <button id="themeToggle" class="nav-toggle-btn" aria-label="Açık tema"><i class="fa-solid fa-sun"></i></button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/">Ana Sayfa</a></li>
+        <li><a href="/hakkimda">Hakkımda</a></li>
+        <li><a href="/projeler">Projeler</a></li>
+        <li class="has-mega-menu">
+          <a href="/servisler" class="mega-menu-trigger">Hizmetler <i class="fa-solid fa-chevron-down"></i></a>
+          <div class="mega-menu-panel">
+            <div class="mega-menu-grid">
+              <a href="/servisler#web-tasarim" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-code"></i></div>
+                <div class="mega-card-content">
+                  <h4>Web Tasarım</h4>
+                  <p>Profesyonel, mobil uyumlu ve dinamik web siteleri.</p>
+                </div>
+              </a>
+              <a href="/servisler#hosting-domain" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-globe"></i></div>
+                <div class="mega-card-content">
+                  <h4>Hosting & Domain</h4>
+                  <p>Güvenilir sunucu ve alan adı çözümleri, teknik destek.</p>
+                </div>
+              </a>
+              <a href="/servisler#grafik-tasarim" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                <div class="mega-card-content">
+                  <h4>Grafik Tasarım</h4>
+                  <p>Logo, kurumsal kimlik ve marka bilinirliği tasarımları.</p>
+                </div>
+              </a>
+              <a href="/servisler#video-duzenleme" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-film"></i></div>
+                <div class="mega-card-content">
+                  <h4>Video Düzenleme</h4>
+                  <p>Kurumsal video, animasyon ve kurgu prodüksiyonu.</p>
+                </div>
+              </a>
+              <a href="/servisler#sosyal-medya" class="mega-card">
+                <div class="mega-card-icon"><i class="fa-solid fa-hashtag"></i></div>
+                <div class="mega-card-content">
+                  <h4>Sosyal Medya Yönetimi</h4>
+                  <p>Instagram, Facebook içerik üretimi ve marka yönetimi.</p>
+                </div>
+              </a>
+              <div class="mega-card empty-slot"></div>
+            </div>
+          </div>
+        </li>
+        <li><a href="/blog" class="active">Blog</a></li>
+        <li><a href="/didim-web-tasarim">Didim</a></li>
+        <li><a href="/aktiviteler" class="nav-icon" title="Aktiviteler"><i class="fa-solid fa-icons"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="blog-detail">
+      <div class="container">
+        <a href="/blog" class="blog-detail__back">
+          <i class="fa-solid fa-arrow-left"></i>
+          <span>Tüm Yazılar</span>
+        </a>
+
+        <article class="blog-detail__article">
+          <div class="blog-detail__cover">
+            <img src="/image/blog-ps5-kirilma-relapse.svg" alt="PS5 kırılması ve Relapse açığı üzerine teknik inceleme kapak görseli" width="1200" height="630">
+          </div>
+
+          <div class="blog-detail__header">
+            <span class="blog-detail__category">Oyun &amp; Teknoloji</span>
+            <h1 class="blog-detail__title">PS5 Kırıldı: Relapse Açığı, BootROM Sızıntısı ve Korsan Yazılım Gerçeği</h1>
+            <div class="blog-detail__meta">
+              <span><i class="fa-regular fa-user"></i> Enes Sancar</span>
+              <span><i class="fa-regular fa-calendar"></i> 9 Eki 2026</span>
+              <span><i class="fa-regular fa-clock"></i> 13 dk okuma</span>
+            </div>
+          </div>
+
+          <div class="blog-detail__content">
+            <p>"PS5 kırıldı" başlığı son haftalarda her yerde. Sosyal medyada kısa videolar, forumlarda "artık her oyun bedava" iddiaları, satış sitelerinde kırılmış konsol ilanları. Ama başlıkların altında duran teknik gerçek, çoğu zaman manşetlerden çok daha sınırlı. Bu yazı, olanı olduğu gibi anlatıyor: ne oldu, hangi konsollar etkilendi, gerçekte ne yapılabiliyor ve hukuki olarak neyin riski var.</p>
+
+            <p>Baştan söyleyeyim: bu yazı bir kırma rehberi değil. Adımlar, dosyalar veya araç bağlantıları yok. Amaç, haberi duyan birinin "bu benim için ne anlama geliyor" sorusuna dürüst bir yanıt vermek. Konuya ilgi duyan bir okuyucunun iki tuş vuruşuyla ulaşacağı bilgiler zaten internette var; asıl eksik olan, bu bilginin abartıdan arındırılmış hâli.</p>
+
+            <h2>Kısaca: ne oldu, ne olmadı</h2>
+
+            <p>29 Eylül 2026'da <strong>Relapse</strong> adı verilen bir açık kamuya açıldı. Kaynak kodu yayımlanan proje, PS5'in sistem yazılımında en derin katmana kadar erişim sağlıyor. Etkilenen sürümler <strong>7.00 ile 13.60 arası</strong>. Sony'nin 16 Eylül'de çıkardığı <strong>14.00 sürümü bu açığı kapatıyor</strong>.</p>
+
+            <p>Yani manşetlerin "her PS5 kırıldı" iddiası doğru değil. Doğru ifade şu: <em>iki haftadan uzun süredir güncellenmemiş, standart veya Pro bir PS5 kırılabilir durumda.</em> Güncel kalan konsollar kapsam dışında.</p>
+
+            <h2>Jailbreak tam olarak ne demek?</h2>
+
+            <p>Bu kelimenin etrafında ciddi bir kavram kirliliği var. Netleştirmek için üç katmanı ayırmak gerekiyor.</p>
+
+            <h3>İmzalı kod kuralı</h3>
+
+            <p>Modern konsollar yalnızca üreticinin dijital imzasını taşıyan yazılımı çalıştırır. Konsol, açılırken her çalıştırılacak dosyanın imzasını kontrol eder; imza yoksa çalıştırmaz. Bu, korsanlığın önündeki asıl engeldir. Jailbreak dediğimiz şey, bu kontrolü aşmak için konsolun kendi kodunda bir açık bulmak demektir.</p>
+
+            <h3>Geçici mi, kalıcı mı?</h3>
+
+            <p>Burada en kritik ayrım geliyor: <strong>tethered</strong> ve <strong>untethered</strong>. Untethered bir kırma, konsol kapandıktan sonra da kalıcı olur. Tethered bir kırma ise her yeniden başlatmadan sonra yeniden uygulanmak zorundadır. Relapse, mevcut hâliyle <strong>tethered</strong>: konsolu kapatıp açtığınızda açık kapanıyor ve işlemi baştan yapmanız gerekiyor.</p>
+
+            <p>Çoğu kısa videonun atladığı nokta tam olarak burası. "Artık kalıcı olarak kırıldı" diye bir durum yok.</p>
+
+            <h3>Kullanıcı deneyimi</h3>
+
+            <p>Önceki yöntemlerde kırma işlemi, sürüme bağlı olarak kırk dakikaya kadar uzayabiliyordu. Relapse'in pratik olarak öne çıkan yanı bu: işlem <strong>saniyeler</strong> içinde tamamlanıyor. Açığın kendisi teknik olarak devrim niteliğinde olmayabilir; ama kullanılabilirliği, onu haber değeri taşır hâle getirdi.</p>
+
+            <h2>Relapse hangi sürümleri kapsıyor?</h2>
+
+            <table class="bd-table">
+              <caption>Sürüm aralığı ve durum</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Yazılım sürümü</th>
+                  <th scope="col">Durum</th>
+                  <th scope="col">Not</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>7.00 - 13.60</td>
+                  <td>Etkilenen aralık</td>
+                  <td>Standart PS5, PS5 Slim ve PS5 Pro dahil</td>
+                </tr>
+                <tr>
+                  <td>14.00 ve üzeri</td>
+                  <td>Açık kapalı</td>
+                  <td>Sony 16 Eylül 2026'da yayımladı</td>
+                </tr>
+                <tr>
+                  <td>Fabrika çıkışı 14.00</td>
+                  <td>Kapsam dışı</td>
+                  <td>Yeni üretim konsollar doğrudan güncel sürümle geliyor</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Dikkat edilmesi gereken bir ayrıntı var: konsolların fabrikadan hangi sürümle çıktığı partiden partiye değişir. "Yeni aldım, kesin kapsam dışıdır" demek doğru değil; tam tersi de doğru değil. Kesin bilgi yalnızca konsolun kendi ayarlar ekranından okunur.</p>
+
+            <h2>BootROM sızıntısı neden farklı bir mesele</h2>
+
+            <p>Relapse'in etrafındaki tartışmanın asıl ağırlığı, tek bir açıktan değil, onun altındaki <strong>BootROM sızıntısından</strong> geliyor.</p>
+
+            <p>BootROM, konsol açıldığında çalışan ilk kod parçası. Çipe üretim sırasında yazılıyor ve normal koşullarda sonradan değiştirilemiyor. Bir yazılım güncellemesi, anakarta lehimlenmiş bir çipteki kodu değiştiremez. Bu yüzden BootROM seviyesindeki bir zafiyet, sıradan bir yazılım hatasından yapısal olarak farklıdır: <strong>yamalanması donanım revizyonu gerektirir.</strong></p>
+
+            <p>Burada iki şeyi birlikte okumak gerekiyor:</p>
+
+            <ul>
+              <li>Halihazırda satılmış konsollar için bu, uzun vadeli bir kırılganlık anlamına gelir.</li>
+              <li>Buna karşılık korsan yazılım geliştirmek için gerekli olan şey yalnızca BootROM değildir. Oyunların kendisi ayrıca imzalı ve şifreli; derin erişim tek başına oyun çalıştırmaya yetmiyor.</li>
+            </ul>
+
+            <div class="bd-note">
+              <strong>Özetle:</strong> BootROM sızıntısı, "Sony bunu bir güncellemeyle kapatır" ihtimalini
+              ortadan kaldırdığı için önemli. Ama "her oyun artık çalışır" anlamına gelmiyor.
+            </div>
+
+            <h2>Ne yapılabiliyor, ne yapılamıyor</h2>
+
+            <p>Kamuya açık kaynakların ve gösterim videolarının ortak noktası şu tablo. Bunu iki sütunda görmek, konuyu abartılı anlatan içeriklerden ayıran şey:</p>
+
+            <table class="bd-table">
+              <caption>Kırılmış bir konsolda gerçekte ne oluyor</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Yapılabilen</th>
+                  <th scope="col">Yapılamayan</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Homebrew yazılım çalıştırma</td>
+                  <td>Konsolu kapatmadan kalıcı kırılmış tutma</td>
+                </tr>
+                <tr>
+                  <td>Emülatör kurma</td>
+                  <td>Çevrimiçi oyunlara güvenle girmek</td>
+                </tr>
+                <tr>
+                  <td>Hata ayıklama menülerine erişim</td>
+                  <td>Her oyunun çalışacağını garanti etmek</td>
+                </tr>
+                <tr>
+                  <td>Dosya yönetimi (FTP)</td>
+                  <td>Sony hesabını riske atmadan işlem yapmak</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Sağ sütundaki maddeler, sol sütundakilerin doğal sonucu. Kırma işlemi bir yetenek açıyor; ama o yeteneğin sınırları, tek bir açıkla aşılamayacak kadar çok katmanlı.</p>
+
+            <h2>Korsan oyun tarafı: neden hâlâ zor</h2>
+
+            <p>İnternetteki en yaygın iddia şu: "Artık tüm oyunlara erişim var." Bu iddiayı değerlendirmek için oyunların nasıl korunduğuna bakmak gerekiyor.</p>
+
+            <h3>İmza ve şifreleme ayrı engeller</h3>
+
+            <p>Bir oyunun çalışması için dosyalarının okunabilir olması ve paketin imzasının doğrulanabilir olması gerekir. Jailbreak, sistem düzeyinde erişim sağlar; ama oyun paketlerinin kendi şifrelemesini kendiliğinden çözmez. Bu yüzden oyun bazlı kırma çalışmaları, açıktan ayrı bir emek ister ve oyun güncellemeleriyle sürekli bozulur.</p>
+
+            <h3>Sürüm uyumsuzluğu</h3>
+
+            <p>Topluluk raporlarında adı geçen oyunlar tek tek sayılıyor. "Şu oyun çalışıyor" demek, "tüm kütüphane çalışıyor" demek değil. Üstelik çalıştığı söylenen yapımların bir kısmı bağımsız olarak doğrulanmamış, tek bir kullanıcının kaydına dayanıyor.</p>
+
+            <h3>Güncelleme ve yama sorunu</h3>
+
+            <p>Modern oyunların çoğu, çıkışından sonra yıllarca yama alıyor. Kırılmış bir konsolda bu yamaları almak, çoğu zaman kırmanın kendisini bozar. Yani bedava görünen şey, sürümü sabitlenmiş, güncellenemeyen ve çevrimiçi kısmı çalışmayan bir oyun hâline geliyor.</p>
+
+            <h2>Gerçek riskler: abartılan ve abartılmayan</h2>
+
+            <p>Riskleri ikiye ayırmak gerekiyor: gerçekten olan şeyler ve korkutmak için söylenenler.</p>
+
+            <h3>Abartılmayan riskler</h3>
+
+            <ul>
+              <li><strong>Hesap ve ban riski:</strong> Kırılmış konsolla çevrimiçi hizmetlere bağlanmak, hesabın askıya alınmasıyla sonuçlanabilir. Bu, satın alınmış dijital oyunları da kaybetmek anlamına gelir.</li>
+              <li><strong>Tuğlama:</strong> Yanlış işlem, konsolu açılmaz hâle getirebilir. Garanti kapsamı dışında kalır.</li>
+              <li><strong>Zararlı yazılım:</strong> Kırma aracı gibi sunulan dosyaların bir kısmı, konsola değil kullanıcının hesaplarına yöneliyor. Aracı çalıştıran bilgisayara bulaşan zararlılar daha yaygın bir sonuç.</li>
+              <li><strong>Değer kaybı:</strong> Kırılmış konsollar ikinci el piyasasında öngörülemez bir değere sahip; güncelleme geldiğinde bu değer bir anda düşebilir.</li>
+            </ul>
+
+            <h3>Korkutmak için söylenenler</h3>
+
+            <p>"Sony uzaktan konsolunuzu kapatır" gibi iddialar dolaşıyor. Böyle bir uzaktan kapatma mekanizması kamuya açık kaynaklarda doğrulanmış değil. Gerçek yaptırımlar daha sıradan ve daha kesin: hesap askıya alma, garanti dışı kalma ve çevrimiçi özelliklerin kaybı.</p>
+
+            <h2>Türkiye'de hukuki durum</h2>
+
+            <p>Bu kısmı atlamak, yazının en önemli bölümünü atlamak olur. Türkiye'de yazılım ve oyun, 5846 sayılı Fikir ve Sanat Eserleri Kanunu kapsamında korunuyor ve konu iki ayrı maddeye birden giriyor.</p>
+
+            <table class="bd-table">
+              <caption>FSEK kapsamındaki iki ayrı fiil</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Madde</th>
+                  <th scope="col">Kapsam</th>
+                  <th scope="col">Öngörülen yaptırım</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>FSEK 71</td>
+                  <td>Eseri izinsiz çoğaltma, dağıtma, satma</td>
+                  <td>Bir yıldan beş yıla kadar hapis veya adli para cezası; şikâyete tabi</td>
+                </tr>
+                <tr>
+                  <td>FSEK 72</td>
+                  <td>Teknik koruma önlemini (şifreleme, erişim kontrolü) etkisiz kılan program veya donanımı üretme, satma, satışa sunma</td>
+                  <td>Altı aydan iki yıla kadar hapis</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p>Bu tabloda dikkat çeken şey şu: <strong>72. maddede "kişisel kullanım" ayrımı var.</strong> Yasa, teknik korumayı kırma aracını <em>kişisel kullanım amacı dışında</em> elinde bulunduranı, üreteni veya satanı cezalandırıyor. Yani mevzuatın asıl ağırlığı, kırılmış konsol satan ve kırma aracını dağıtan tarafa dönüyor — son kullanıcıya değil.</p>
+
+            <p>Bunu bir hukuki danışmanlık olarak okumayın; kanun metninin söylediği şey bu, uygulaması ise somut olaya göre değişir. Ama şu pratik sonuç net: <em>kırılmış konsol satmak, kırma işlemini ticari hâle getirmek, korsan oyun dağıtmak</em> — üçü de yasanın hedefinde. Ve bu işlemler, çoğu zaman işletme sahibi taraf olmasa bile adının geçtiği bir soruşturmaya dönüşebilir. Ticari faaliyet yürüten birinin, müşterisine böyle bir hizmet sunması ayrı bir sorumluluk alanı.</p>
+
+            <h2>Peki neden insanlar hâlâ yapıyor?</h2>
+
+            <p>Yazının başında tarafsız olacağımı söyledim, o yüzden bunu da yazmak gerekiyor. Jailbreak topluluğunun önemli bir kısmı korsanlık için değil, başka sebeplerle ilgileniyor:</p>
+
+            <ul>
+              <li><strong>Konsol ömrünü uzatmak:</strong> Destek biten bir konsolu medya oynatıcı veya emülatör kutusuna çevirmek.</li>
+              <li><strong>Onarım ve araştırma:</strong> Donanım arızası teşhisi için düşük seviyeli erişim gerekmesi.</li>
+              <li><strong>Güvenlik araştırması:</strong> Açığı bulan araştırmacıların büyük kısmı bunu satın alınmış içeriği çoğaltmak için yapmıyor.</li>
+              <li><strong>Erişilebilirlik:</strong> Resmî olarak sunulmayan bazı yardımcı işlevler.</li>
+            </ul>
+
+            <p>Aynı araç, niyete göre farklı bir şeye dönüşüyor. Bu ayrımı yapmayan içerikler, tartışmayı tamamen "bedava oyun" eksenine sıkıştırıyor; oysa meselenin yarısı bundan bağımsız.</p>
+
+            <h2>Ne yapmalı?</h2>
+
+            <p>Konuyu somut birkaç karara indirmek mümkün:</p>
+
+            <ol>
+              <li><strong>Yazılım sürümünüzü güncel tutun.</strong> 14.00 ve sonrası, bilinen bu açığın dışında. Güncelleme, konsolun değerini ve çevrimiçi güvenliğini koruyor.</li>
+              <li><strong>Duyduğunuz her şeyi doğrulayın.</strong> "Tüm oyunlar açıldı" gibi iddiaların çoğu, tek bir gösterim videosuna dayanıyor. Bağımsız doğrulama olmadan bunları gerçek kabul etmeyin.</li>
+              <li><strong>Kırılmış konsol almayın, satmayın.</strong> Ticari tarafı hem maddi hem hukuki olarak en riskli kısım.</li>
+              <li><strong>Aracı çalıştıran bilgisayara dikkat edin.</strong> Zararlı yazılım riski, konsolun kendisinden çok onu hazırlayan cihazda ortaya çıkıyor.</li>
+              <li><strong>Hesabınızı koruyun.</strong> Kırılmış bir konsolla çevrimiçi hizmetlere girmek, kaybetmeye değmeyecek bir bahis.</li>
+            </ol>
+
+            <h2>Sonuç</h2>
+
+            <p>PS5'in kırılması, teknik olarak gerçek ve önemli bir gelişme. BootROM seviyesindeki bir zafiyet, konsolun ömrünü yıllara yayacak bir kırılganlık yaratıyor ve Sony'nin bunu bir güncellemeyle kapatma imkânı bulunmuyor. Bu yönüyle haber, hak ettiği ilgiyi görüyor.</p>
+
+            <p>Ama etrafındaki anlatı, tekniğin çok önüne geçti. Kalıcı olmayan bir açık, çalıştığı doğrulanmamış oyun listeleri ve "her şey bedava" beklentisiyle karıştığında, ortaya çıkan tablo ne haberin kendisi ne de gerçek kullanım. Gerçek şu: PS5 üzerindeki korsan yazılım, düşündüğünüzden çok daha dar bir alanda ve her adımda kırılgan. Üstüne bir de Türkiye'de satan tarafı doğrudan ceza hükmüyle karşı karşıya.</p>
+
+            <p>Konsol tarafında okumaya devam etmek isterseniz <a href="/blog/gta6-sizmalar-cyberleek-rockstar">GTA VI sızıntısı ve oyun endüstrisinde güvenlik</a> yazısına göz atabilirsiniz. Donanım tarafındaki fiyat hareketleri için <a href="/blog/ram-ssd-fiyat-artisi-2026">2026 bellek krizi rehberi</a> burada.</p>
+
+            <h3>Kaynaklar</h3>
+            <ul>
+              <li><a href="https://tbreak.com/ps5-jailbreak-relapse-firmware-13-60/" target="_blank" rel="noopener nofollow">tbreak — PS5 jailbreak reaches firmware 13.60 with Relapse</a></li>
+              <li><a href="https://www.techspot.com/news/114037-new-ps5-jailbreak-works-almost-every-firmware-version.html" target="_blank" rel="noopener nofollow">TechSpot — A new PS5 jailbreak works on almost every firmware version</a></li>
+              <li><a href="https://www.consolemodding.it/en/blogs/news/ps5-jailbreak-2026-bootrom-exploit-explained" target="_blank" rel="noopener nofollow">Console Modding — BootROM exploit explained</a></li>
+              <li><a href="https://www.mevzuat.gov.tr/mevzuatmetin/1.3.5846.pdf" target="_blank" rel="noopener nofollow">Mevzuat — 5846 sayılı Fikir ve Sanat Eserleri Kanunu</a></li>
+            </ul>
+
+            <div class="bd-note">
+              <strong>Not:</strong> Bu yazı bilgilendirme amaçlıdır; hukuki danışmanlık yerine geçmez.
+              Somut bir durumunuz varsa bir avukata danışmanız gerekir.
+            </div>
+          </div>
+
+          <div class="blog-detail__tags">
+            <span class="blog-detail__tag">#ps5</span>
+            <span class="blog-detail__tag">#jailbreak</span>
+            <span class="blog-detail__tag">#relapse</span>
+            <span class="blog-detail__tag">#konsol-guvenligi</span>
+            <span class="blog-detail__tag">#korsan-yazilim</span>
+            <span class="blog-detail__tag">#sony</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-social">
+        <a href="https://www.instagram.com/ns.sancar7/?hl=tr" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://open.spotify.com/user/31tlprmrgvur2f4ozlcxvoefkqzm" target="_blank" rel="noopener" aria-label="Spotify"><i class="fa-brands fa-spotify"></i></a>
+        <a href="https://github.com/EneSancar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://discord.com/channels/600470766680801290/600482871286824990" target="_blank" rel="noopener" aria-label="Discord"><i class="fa-brands fa-discord"></i></a>
+        <a href="https://steamcommunity.com/profiles/76561198886945002/" target="_blank" rel="noopener" aria-label="Steam"><i class="fa-brands fa-steam"></i></a>
+      </div>
+      <nav class="footer-nav">
+        <a href="/">Ana Sayfa</a>
+        <a href="/hakkimda">Hakkımda</a>
+        <a href="/projeler">Projeler</a>
+        <a href="/servisler">Servisler</a>
+        <a href="/blog">Blog</a>
+        <a href="/aktiviteler">Aktiviteler</a>
+        <a href="/didim-web-tasarim">Didim Web Tasarım</a>
+      </nav>
+      <p class="footer-location"><i class="fa-solid fa-location-dot"></i> Didim, Aydın — Web Tasarım Hizmeti</p>
+      <p class="footer-copy">Copyright &copy; 2026 — Designed by <span class="designer">Enes Sancar</span></p>
+    </div>
+  </footer>
+
+  <div id="emailbar">
+    <p style="font-size:0.75rem;opacity:0.6;margin-bottom:0.35rem;">E-posta</p>
+    <h2><a href="mailto:enes.sancar2@gmail.com" style="color:inherit;">enes.sancar2@gmail.com</a></h2>
+    <h2><a href="mailto:sancar.web3524@gmail.com" style="color:inherit;font-size:0.9rem;opacity:0.7;">sancar.web3524@gmail.com</a></h2>
+  </div>
+
+  <a href="https://wa.me/905319722856" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp ile yaz" id="whatsapp-float-btn">
+    <span class="whatsapp-float__label">WhatsApp'tan yaz</span>
+    <span class="whatsapp-float__btn"><i class="fa-brands fa-whatsapp"></i></span>
+  </a>
+
+  <script src="/script.js" defer></script>
+</body>
+</html>
