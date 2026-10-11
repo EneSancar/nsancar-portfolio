@@ -50,7 +50,7 @@
     }
     if (tab === "videoEdits") {
       if (!C.state.videoEdits) {
-        C.state.videoEdits = { intro: "", backgroundImage: "image/video-edits-bg.gif", autoplayMs: 7500, edits: [] };
+        C.state.videoEdits = { intro: "", backgroundImage: "image/video-edits-bg.webp", autoplayMs: 7500, edits: [] };
       }
       if (!window.AdminVideoEditsUI?.render) {
         panelVideoEdits.innerHTML = "<p class=\"field-hint\">Video Editler arayüzü yüklenemedi. Sayfayı yenileyin.</p>";

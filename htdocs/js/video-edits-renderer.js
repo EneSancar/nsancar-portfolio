@@ -1,6 +1,6 @@
 (function () {
   const DATA_URL = "data/video-edits.json";
-  const VIDEO_EDITS_BG = "image/video-edits-bg.gif";
+  const VIDEO_EDITS_BG = "image/video-edits-bg.webp";
   const SC = window.SiteContent;
   const INSERT_AFTER = "graphic";
 

@@ -101,7 +101,7 @@ window.AdminCore = (function () {
     return JSON.stringify(backup) !== JSON.stringify(fetched);
   }
 
-  const VIDEO_EDITS_BG = "image/video-edits-bg.gif";
+  const VIDEO_EDITS_BG = "image/video-edits-bg.webp";
 
   const DEFAULT_VIDEO_EDITS = {
     intro:

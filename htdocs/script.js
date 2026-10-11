@@ -1,3 +1,11 @@
+/* ===== i18n Auto-Loader ===== */
+if (!window.i18n && !document.querySelector('script[src*="i18n.js"]')) {
+  const i18nScript = document.createElement("script");
+  i18nScript.src = "/js/i18n.js";
+  i18nScript.defer = true;
+  document.head.appendChild(i18nScript);
+}
+
 /* ===== Typed.js ===== */
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
@@ -16,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initReveal();
   initSkillBars();
   initStaggerRows();
-  initGalleryPanels();
   initMovieShowcase();
   initProjectModal();
   setActiveNavLink();
@@ -215,33 +222,6 @@ function initSkillBars() {
   );
 
   fills.forEach((fill) => observer.observe(fill));
-}
-
-/* ===== Gallery panels ===== */
-function initGalleryPanels() {
-  const webPanel = document.getElementById("webPanel");
-  const graphicPanel = document.getElementById("graphicPanel");
-  if (!webPanel || !graphicPanel) return;
-
-  webPanel.addEventListener("mouseenter", () => {
-    webPanel.classList.add("expanded");
-    webPanel.classList.remove("collapsed");
-    graphicPanel.classList.add("collapsed");
-    graphicPanel.classList.remove("expanded");
-  });
-
-  graphicPanel.addEventListener("mouseenter", () => {
-    graphicPanel.classList.add("expanded");
-    graphicPanel.classList.remove("collapsed");
-    webPanel.classList.add("collapsed");
-    webPanel.classList.remove("expanded");
-  });
-
-  document.getElementById("gallerySplit")?.addEventListener("mouseleave", () => {
-    webPanel.classList.add("expanded");
-    webPanel.classList.remove("collapsed");
-    graphicPanel.classList.remove("expanded", "collapsed");
-  });
 }
 
 /* ===== Movie showcase ===== */

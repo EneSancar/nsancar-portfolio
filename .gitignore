@@ -27,3 +27,5 @@ htdocs/gallery/config.js
 .tmp-pdfconv/
 extract_images.py
 htdocs/_opt/
+htdocs/_imgnew/
+htdocs/_shot/

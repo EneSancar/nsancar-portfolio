@@ -82,6 +82,7 @@
       </a>
       <div class="nav-controls">
         <button id="themeToggle" class="nav-toggle-btn" aria-label="Açık tema"><i class="fa-solid fa-sun"></i></button>
+        <button id="langToggle" class="nav-toggle-btn lang-toggle-btn" aria-label="Switch to English" title="Switch to English"><i class="fa-solid fa-globe"></i><span class="lang-code">EN</span></button>
       </div>
       <button class="hamburger" id="hamburger" aria-label="Menü" aria-expanded="false">
         <span></span><span></span><span></span>
@@ -165,29 +166,29 @@
 
       <div class="about-content-col about-content-col--loading">
         <section class="info-block reveal" data-about-bio>
-          <h2>Hakkımda <i class="fa-solid fa-user"></i></h2>
+          <h2><span data-i18n="about.bio_title">Hakkımda</span> <i class="fa-solid fa-user"></i></h2>
           <div class="divider"></div>
           <p class="content-loading-text">Yükleniyor…</p>
         </section>
 
         <section class="info-block reveal" data-about-education>
-          <h2>Eğitim <i class="fa-solid fa-user-graduate"></i></h2>
+          <h2><span data-i18n="about.edu_title">Eğitim</span> <i class="fa-solid fa-user-graduate"></i></h2>
           <div class="divider"></div>
         </section>
 
         <section class="info-block reveal" data-about-experience>
-          <h2>Deneyim <i class="fa-solid fa-user-tie"></i></h2>
+          <h2><span data-i18n="about.exp_title">Deneyim</span> <i class="fa-solid fa-user-tie"></i></h2>
           <div class="divider"></div>
         </section>
 
         <div class="two-col reveal">
           <section class="info-block" data-about-skills>
-            <h2>Yetenekler <i class="fa-solid fa-code"></i></h2>
+            <h2><span data-i18n="about.skills_title">Yetenekler</span> <i class="fa-solid fa-code"></i></h2>
             <div class="divider"></div>
             <ul></ul>
           </section>
           <section class="info-block" data-about-interests>
-            <h2>İlgi Alanları <i class="fa-solid fa-table-tennis-paddle-ball"></i></h2>
+            <h2><span data-i18n="about.interests_title">İlgi Alanları</span> <i class="fa-solid fa-table-tennis-paddle-ball"></i></h2>
             <div class="divider"></div>
             <ul></ul>
           </section>
@@ -219,6 +220,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" crossorigin="anonymous" defer></script>
   <script src="script.js" defer></script>
+  <script src="js/i18n.js" defer></script>
   <script src="js/site-content.js?v=20260613" defer></script>
   <script src="js/about-renderer.js" defer></script>
 

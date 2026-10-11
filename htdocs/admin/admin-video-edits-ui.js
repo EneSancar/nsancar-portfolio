@@ -88,7 +88,7 @@ window.AdminVideoEditsUI = (function () {
 
     const lead = C.el("p", {
       className: "field-hint video-edits-admin-lead",
-      text: "Projeler sayfasındaki Video Edit / After Effects slaytını buradan yönetirsin. Arka plan sabittir (image/video-edits-bg.gif); video eklerken kaybolmaz.",
+      text: "Projeler sayfasındaki Video Edit / After Effects slaytını buradan yönetirsin. Arka plan sabittir (image/video-edits-bg.webp); video eklerken kaybolmaz.",
     });
     container.appendChild(lead);
 
@@ -98,7 +98,7 @@ window.AdminVideoEditsUI = (function () {
     container.appendChild(C.field("Bölüm açıklaması", introTA));
 
     if (!String(data.backgroundImage || "").trim()) {
-      data.backgroundImage = "image/video-edits-bg.gif";
+      data.backgroundImage = "image/video-edits-bg.webp";
     }
 
     const autoplayInp = C.input("number", data.autoplayMs ?? 7500, "7500");

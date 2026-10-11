@@ -32,6 +32,82 @@
   ],
   "projects": [
     {
+      "id": "lera-hotel",
+      "sectionId": "web",
+      "title": "Lera Hotel Didim",
+      "description": "Didim'in kalbinde yer alan butik otel için 5 dilli rezervasyon altyapısı, mobil uyumlu ve modern kurumsal web sitesi.",
+      "tags": [
+        "Web Tasarım",
+        "Otel & Turizm",
+        "Çok Dilli (5 Dil)",
+        "SEO",
+        "Didim"
+      ],
+      "thumbnail": {
+        "type": "img",
+        "src": "image/projects/lerahotel1.webp",
+        "alt": "Lera Hotel Didim web sitesi ana sayfa görünümü",
+        "fit": "cover-top",
+        "width": 1919,
+        "height": 909
+      },
+      "buttons": {
+        "detail": true,
+        "secondary": {
+          "label": "Siteye git",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "https://www.lerahotel.com/",
+          "external": true
+        }
+      },
+      "modal": {
+        "badge": "Web · Otel & Turizm",
+        "lead": "Didim Atatürk Bulvarı üzerinde modern mimarisi ve 12 butik odasıyla konaklama sunan Lera Hotel için geliştirilen 5 dilli, rezervasyon odaklı ve yüksek performanslı kurumsal web sitesi.",
+        "preview": {
+          "type": "gallery",
+          "images": [
+            {
+              "src": "image/projects/lerahotel1.webp",
+              "alt": "Lera Hotel Didim Ana Sayfa Görünümü",
+              "caption": "Ana Sayfa & Rezervasyon Ekranı"
+            },
+            {
+              "src": "image/projects/lerahotel2.webp",
+              "alt": "Lera Hotel Didim Odalar ve Hizmetler Görünümü",
+              "caption": "Oda Seçenekleri & Hizmet Vitrini"
+            }
+          ]
+        },
+        "sections": [
+          {
+            "heading": "Proje hakkında",
+            "type": "paragraph",
+            "content": "Lera Hotel Didim; Altınkum Plajı'na ve tarihi Apollon Tapınağı'na yakın konumu, 12 konforlu butik odası ile yerli ve yabancı misafirlerine huzurlu bir tatil deneyimi sunan bir butik oteldir. Bu web projesinde Didim'in uluslararası turist kitlesine hitap eden 5 dilli yapı, hızlı oda rezervasyon kanalları ve mobil öncelikli kullanıcı deneyimi başarıyla hayata geçirilmiştir."
+          },
+          {
+            "heading": "Öne çıkan özellikler",
+            "type": "list",
+            "items": [
+              "<strong>5 Dilli Altyapı (i18n):</strong> Türkçe, İngilizce, Almanca, Lehçe ve Rusça (TR / EN / DE / PL / RU) dil seçenekleri ve özel hreflang mimarisi.",
+              "<strong>Hızlı Rezervasyon & WhatsApp:</strong> Ziyaretçilerin doğrudan en iyi fiyat garantisiyle telefon ve WhatsApp üzerinden tek tıkla rezervasyon yapabilmesi.",
+              "<strong>Oda & Olanaklar Vitrini:</strong> 12 butik odanın özellikleri, otel olanakları ve konum bilgilerinin yüksek kaliteli görsellerle interaktif sunumu.",
+              "<strong>Kapsamlı Yerel SEO & Şema:</strong> Hotel ve LocalBusiness JSON-LD şemaları, Didim lokasyon hedefli meta etiketleri ve üst düzey Google PageSpeed optimizasyonu."
+            ]
+          }
+        ],
+        "note": {
+          "icon": "fa-solid fa-hotel",
+          "text": "Didim bölgesinde turizm ve butik otelcilik sektörü için hayata geçirilmiş canlı kurumsal web projesi."
+        },
+        "cta": {
+          "label": "Siteyi incele",
+          "icon": "fa-solid fa-arrow-right",
+          "href": "https://www.lerahotel.com/",
+          "external": true
+        }
+      }
+    },
+    {
       "id": "matt-design-mimarlik",
       "sectionId": "web",
       "title": "Matt Design Mimarlık",
@@ -45,7 +121,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/mattmimarliksitehomepage.png",
+        "src": "image/projects/mattmimarliksitehomepage.webp",
         "alt": "Matt Design Mimarlık web sitesi",
         "fit": "cover-top"
       },
@@ -65,12 +141,12 @@
           "type": "gallery",
           "images": [
             {
-              "src": "image/projects/mattmimarliksitehomepage.png",
+              "src": "image/projects/mattmimarliksitehomepage.webp",
               "alt": "Matt Design Mimarlık Ana Sayfa",
               "caption": "Ana Sayfa Görünümü"
             },
             {
-              "src": "image/projects/mattmimarlikaboutpage.png",
+              "src": "image/projects/mattmimarlikaboutpage.webp",
               "alt": "Matt Design Mimarlık Hakkımızda Sayfası",
               "caption": "Hakkımızda Sayfası Görünümü"
             }
@@ -118,7 +194,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/cafe-moonlight-1.png",
+        "src": "image/projects/cafe-moonlight-1.webp",
         "alt": "Cafe Moonlight web arayüz tasarımı önizlemesi"
       },
       "buttons": {
@@ -131,12 +207,12 @@
           "type": "gallery",
           "images": [
             {
-              "src": "image/projects/cafe-moonlight-1.png",
+              "src": "image/projects/cafe-moonlight-1.webp",
               "alt": "Cafe Moonlight sayfalar genel görünüm",
               "caption": "Sayfalar Genel Görünüm"
             },
             {
-              "src": "image/projects/cafe-moonlight-2.png",
+              "src": "image/projects/cafe-moonlight-2.webp",
               "alt": "Cafe Moonlight anasayfa tasarımı",
               "caption": "Anasayfa Tasarımı"
             }
@@ -177,7 +253,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/dentalex-1.png",
+        "src": "image/projects/dentalex-1.webp",
         "alt": "Dentalex Compo web sitesi",
         "fit": "cover-top"
       },
@@ -197,12 +273,12 @@
           "type": "gallery",
           "images": [
             {
-              "src": "image/projects/dentalex-1.png",
+              "src": "image/projects/dentalex-1.webp",
               "alt": "Dentalex Compo Ana Sayfa",
               "caption": "Ana Sayfa"
             },
             {
-              "src": "image/projects/dentalex-2.png",
+              "src": "image/projects/dentalex-2.webp",
               "alt": "Dentalex Compo Ürün Detayları",
               "caption": "Ürün Detayları"
             }
@@ -321,7 +397,7 @@
         "lead": "Sinema ve dizi tutkunlarını tek çatı altında toplayan, topluluk odaklı ve yapay zeka destekli sosyal mobil uygulama.",
         "preview": {
           "type": "single",
-          "src": "image/projects/cineforum.png?v=2",
+          "src": "image/projects/cineforum.webp?v=2",
           "alt": "CineForum mobil arayüz tasarımı"
         },
         "sections": [
@@ -431,7 +507,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/suppworld-afis.png",
+        "src": "image/projects/suppworld-afis.webp",
         "alt": "SuppWorld marka tasarımları önizlemesi"
       },
       "buttons": {
@@ -454,7 +530,7 @@
               "caption": "Kartvizit"
             },
             {
-              "src": "image/projects/suppworld-afis.png",
+              "src": "image/projects/suppworld-afis.webp",
               "alt": "SuppWorld reklam afişi",
               "caption": "Reklam afişi"
             }
@@ -494,7 +570,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/akim-afis.png",
+        "src": "image/projects/akim-afis.webp",
         "alt": "Akım küresel ısınma afişi önizlemesi"
       },
       "buttons": {
@@ -505,7 +581,7 @@
         "lead": "Küresel ısınmayı, iklim krizini ve çevresel sorumluluğu güçlü görsel dil ve tipografiyle ele alan sosyal farkındalık afişi.",
         "preview": {
           "type": "single",
-          "src": "image/projects/akim-afis.png",
+          "src": "image/projects/akim-afis.webp",
           "alt": "Akım küresel ısınma afiş tasarımı"
         },
         "sections": [
@@ -542,7 +618,7 @@
       ],
       "thumbnail": {
         "type": "img",
-        "src": "image/projects/solaris-cover.jpg",
+        "src": "image/projects/solaris-cover.webp",
         "alt": "Solaris kitap kapağı tasarımı önizlemesi"
       },
       "buttons": {
@@ -553,7 +629,7 @@
         "lead": "Stanislaw Lem'in ölümsüz bilimkurgu eseri Solaris'in derin ve psikolojik atmosferini yansıtan konsept kapak tasarımı.",
         "preview": {
           "type": "single",
-          "src": "image/projects/solaris-cover.jpg",
+          "src": "image/projects/solaris-cover.webp",
           "alt": "Solaris konsept kitap kapağı"
         },
         "sections": [
