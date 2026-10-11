@@ -1,11 +1,3 @@
-/* ===== i18n Auto-Loader ===== */
-if (!window.i18n && !document.querySelector('script[src*="i18n.js"]')) {
-  const i18nScript = document.createElement("script");
-  i18nScript.src = "/js/i18n.js";
-  i18nScript.defer = true;
-  document.head.appendChild(i18nScript);
-}
-
 /* ===== Typed.js ===== */
 document.addEventListener("DOMContentLoaded", () => {
   initPreloader();
