@@ -2,14 +2,14 @@
  * POST /api/chat — Gemini destekli site asistanı (Vercel serverless).
  *
  * Beklenen body: { message: string, history?: [{ role: "user"|"model", text: string }] }
- * Ortam değişkenleri: GEMINI_API_KEY (zorunlu), GEMINI_MODEL (opsiyonel, varsayılan gemini-2.0-flash)
+ * Ortam değişkenleri: GEMINI_API_KEY (zorunlu), GEMINI_MODEL (opsiyonel, varsayılan gemini-2.5-flash)
  *
  * Site bilgisi _lib/github üzerinden okunur (about/projects/blog JSON);
  * GitHub erişilemezse gömülü özet kullanılır. 5 dakikalık bellek-içi önbellek.
  */
 const { readJsonFile } = require("./_lib/github");
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
 const MAX_MESSAGE_LEN = 600;
 const MAX_HISTORY = 8;
 const RATE_WINDOW_MS = 60 * 1000;
