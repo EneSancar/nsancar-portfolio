@@ -191,6 +191,23 @@
   color: var(--text);
 }
 
+/* Daktilo efekti sırasında yanıp sönen imleç */
+.chatbot-msg--bot.is-typing::after {
+  content: "▍";
+  color: var(--accent);
+  animation: chatbot-caret 0.8s steps(1) infinite;
+}
+
+@keyframes chatbot-caret {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
 .chatbot-msg--user {
   align-self: flex-end;
   background: var(--accent-ink);

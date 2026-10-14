@@ -91,6 +91,36 @@
     return div;
   }
 
+  // Bot cevabını daktilo efektiyle yazar: önce düz metin akar, bitince
+  // linkler tıklanabilir hale gelir. Hareket azaltma tercihine saygı duyar.
+  function typeBotMessage(el, rawText, onDone) {
+    var reduceMotion =
+      window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var div = addMessage(el, "bot", "");
+    if (reduceMotion || rawText.length < 8) {
+      div.innerHTML = formatBotText(rawText);
+      if (onDone) onDone();
+      return;
+    }
+    div.classList.add("is-typing");
+    var i = 0;
+    var total = rawText.length;
+    // Uzun cevaplar ~2 saniyede, kısalar daha yavaş aksın
+    var charsPerTick = Math.max(1, Math.ceil(total / 110));
+    var timer = setInterval(function () {
+      i += charsPerTick;
+      div.innerHTML = escHtml(rawText.slice(0, i)).replace(/\n/g, "<br>");
+      el.messages.scrollTop = el.messages.scrollHeight;
+      if (i >= total) {
+        clearInterval(timer);
+        div.innerHTML = formatBotText(rawText);
+        div.classList.remove("is-typing");
+        el.messages.scrollTop = el.messages.scrollHeight;
+        if (onDone) onDone();
+      }
+    }, 18);
+  }
+
   function addGreeting(el) {
     addMessage(
       el,
@@ -136,10 +166,14 @@
       typing.remove();
 
       if (res.ok && data.reply) {
-        addMessage(el, "bot", formatBotText(data.reply));
         state.history.push({ role: "user", text: text });
         state.history.push({ role: "model", text: data.reply });
         state.history = state.history.slice(-MAX_HISTORY);
+        setSending(el, false);
+        typeBotMessage(el, data.reply, function () {
+          el.input.focus();
+        });
+        return;
       } else {
         addMessage(el, "error", escHtml(data.error || "Asistan şu an cevap veremiyor, lütfen biraz sonra tekrar dene."));
       }
