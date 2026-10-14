@@ -2,14 +2,17 @@
  * POST /api/chat — Gemini destekli site asistanı (Vercel serverless).
  *
  * Beklenen body: { message: string, history?: [{ role: "user"|"model", text: string }] }
- * Ortam değişkenleri: GEMINI_API_KEY (zorunlu), GEMINI_MODEL (opsiyonel, varsayılan gemini-2.5-flash)
+ * Ortam değişkenleri: GEMINI_API_KEY (zorunlu), GEMINI_MODEL (opsiyonel, varsayılan gemini-3.1-flash-lite)
+ * Bir model 404 dönerse listedeki sonrakini dener (model kapatılmalarına karşı fallback).
  *
  * Site bilgisi _lib/github üzerinden okunur (about/projects/blog JSON);
  * GitHub erişilemezse gömülü özet kullanılır. 5 dakikalık bellek-içi önbellek.
  */
 const { readJsonFile } = require("./_lib/github");
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.5-flash";
+// Yeni modeller önce; biri 404 dönerse sıradakini dene.
+const DEFAULT_MODELS = ["gemini-3.1-flash-lite", "gemini-3.5-flash-lite", "gemini-2.5-flash-lite", "gemini-2.5-flash"];
+const MODELS = process.env.GEMINI_MODEL ? [process.env.GEMINI_MODEL] : DEFAULT_MODELS;
 const MAX_MESSAGE_LEN = 600;
 const MAX_HISTORY = 8;
 const RATE_WINDOW_MS = 60 * 1000;
@@ -156,36 +159,54 @@ module.exports = async (req, res) => {
   const siteContext = await buildSiteContext();
 
   try {
-    const r = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`,
-      {
-        method: "POST",
-        headers: {
-          "x-goog-api-key": apiKey,
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          system_instruction: { parts: [{ text: buildSystemPrompt(siteContext) }] },
-          contents: [...history, { role: "user", parts: [{ text: message }] }],
-          generationConfig: { maxOutputTokens: 350, temperature: 0.7 },
-        }),
+    const body = JSON.stringify({
+      system_instruction: { parts: [{ text: buildSystemPrompt(siteContext) }] },
+      contents: [...history, { role: "user", parts: [{ text: message }] }],
+      generationConfig: { maxOutputTokens: 350, temperature: 0.7 },
+    });
+
+    let lastErr = "";
+    for (const model of MODELS) {
+      try {
+        const r = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`,
+          {
+            method: "POST",
+            headers: {
+              "x-goog-api-key": apiKey,
+              "Content-Type": "application/json",
+            },
+            body,
+          }
+        );
+
+        const data = await r.json().catch(() => ({}));
+        if (!r.ok) {
+          lastErr = JSON.stringify(data).slice(0, 300);
+          console.error(`Gemini API error [${model}]:`, r.status, lastErr);
+          // 404 = model kullanım dışı → sıradakini dene; diğer hatalarda bekleme yapma
+          if (r.status === 404) continue;
+          res.status(502).json({ error: "Asistan şu an cevap veremiyor, lütfen biraz sonra tekrar dene." });
+          return;
+        }
+
+        const reply = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("").trim();
+        if (!reply) {
+          res.status(502).json({ error: "Asistan şu an cevap veremiyor, lütfen biraz sonra tekrar dene." });
+          return;
+        }
+
+        res.status(200).json({ reply });
+        return;
+      } catch (err) {
+        // Ağ hatası: sonraki modeli dene
+        lastErr = String(err?.message || err).slice(0, 200);
+        console.error(`Gemini fetch error [${model}]:`, lastErr);
       }
-    );
-
-    const data = await r.json().catch(() => ({}));
-    if (!r.ok) {
-      console.error("Gemini API error:", r.status, JSON.stringify(data).slice(0, 500));
-      res.status(502).json({ error: "Asistan şu an cevap veremiyor, lütfen biraz sonra tekrar dene." });
-      return;
     }
 
-    const reply = data.candidates?.[0]?.content?.parts?.map((p) => p.text || "").join("").trim();
-    if (!reply) {
-      res.status(502).json({ error: "Asistan şu an cevap veremiyor, lütfen biraz sonra tekrar dene." });
-      return;
-    }
-
-    res.status(200).json({ reply });
+    console.error("Gemini: tüm modeller denendi, cevap alınamadı.", lastErr);
+    res.status(502).json({ error: "Asistan şu an cevap veremiyor, lütfen biraz sonra tekrar dene." });
   } catch (err) {
     console.error("chat API error:", err);
     res.status(500).json({ error: "Sunucu hatası, lütfen tekrar dene." });
